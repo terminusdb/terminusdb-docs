@@ -35,3 +35,8 @@ jobs:
         with:
           branch: gh-pages
           folder: .
+          clean-exclude: |
+            main
+            rc
+            canary
+            v*
