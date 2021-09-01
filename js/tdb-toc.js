@@ -16,7 +16,7 @@ function tdb_TOC(sHTML)
         sO          = "",
         len         = 0;
 
-    toc.innerHTML   = '<div style="top:0;left:0;z-index:11;"><img class="tdb-ico" src="../../img/ico/terminusdb-icon-contents-page.png" title="Hide contents page..."/></div>' + p + 
+    toc.innerHTML   = '<div style="top:0;left:0;z-index:11;"><img class="tdb-ico" src="img/ico/terminusdb-icon-contents-page.png" title="Hide contents page..."/></div>' + p + 
                       'Table of contents</p>';
     doc.innerHTML   = sHTML;
     doc             = doc.querySelectorAll("h1, h2, h3, h4");
