@@ -18,7 +18,7 @@
 - [<span class="tdb-f">Get Started</span>](overviews/get-started)
   - [Starting overview](overviews/get-started?id=starting-overview)
   - [Installation overview](overviews/get-started?id=installation-overview)
-  - [Interfaces overview](overviews/get-started?id=terminusdb-interfaces)
+  - [Interfaces overview](overviews/get-started?id=interfaces-overview)
 
 <hr class="tdb-l"/>
 
