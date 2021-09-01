@@ -16,7 +16,7 @@ function tdb_TOC(sHTML)
         sO          = "",
         len         = 0;
 
-    toc.innerHTML   = '<div style="top:0;left:0;z-index:11;"><img class="tdb-ico" src="../img/ico/terminusdb-icon-contents-page.png" title="Hide contents page..."/></div>' + p + 
+    toc.innerHTML   = '<div style="top:0;left:0;z-index:11;"><img class="tdb-ico" src="../../img/ico/terminusdb-icon-contents-page.png" title="Hide contents page..."/></div>' + p + 
                       'Table of contents</p>';
     doc.innerHTML   = sHTML;
     doc             = doc.querySelectorAll("h1, h2, h3, h4");
@@ -68,51 +68,5 @@ function tdb_TOC(sHTML)
 
 function hideC(t)
 {
-    console.log(t);
-
-    console.log(t.clientWidth);
-
     t.style.visibility = (t.clientWidth <= 298 ? "hidden" : "visible")
-
-/*
-    if (t == 1 || t == 2)
-    { 
-        d = document.getElementById("contents-page");        
-        v = document.getElementById("contents-page").style.visibility;
-        
-        if (t == 1 && v.indexOf("hidden") > -1)
-            d.style.visibility = "visible";
-
-    
-    }
-    
-    if (t == 1 && __tdb_bC == 0)
-    {
-        alert(t);
-        t = document.getElementById("contents-page");
-        __tdb_hC = 1;
-    }
-    else if (t == 2)
-    {
-        alert(t);
-        document.getElementById("contents-page").style.visibility = 'hidden';
-        // __tdb_hC == 0;
-        __tdb_bC = 1;
-        return;
-    }
-     
-    t.style.visibility = (__tdb_hC == 1 && t.clientWidth <= 290 ? 'hidden' : 'visible');
-
-    /*
-    if (t == 2 || t == null)
-    {
-        t = document.getElementById("contents-page");
-        __tdb_hC = 1;
-    }
-
-    if (__tdb_hC == 1)
-        return;
-
-    t.style.visibility = (__tdb_hC == 1 || t.clientWidth <= 290 ? 'hidden' : 'visible');
-    */
 }
