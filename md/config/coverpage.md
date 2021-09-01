@@ -3,7 +3,7 @@
 > TerminusDB Developer Documentation
 <!-- background image -->
 <p>
-    <img src="../../img/diagrams/terminusdb-cover-page.png"/>
+    <img src="img/diagrams/terminusdb-cover-page.png"/>
 </p>
 
 <!--
