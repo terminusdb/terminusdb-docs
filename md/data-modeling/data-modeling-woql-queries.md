@@ -12,9 +12,7 @@ WOQL is a powerful query language that enables you to concisely query complex da
 
 [WOQL condition operators](#woql-condition-operators)
 
-[WOQL math operators](#woql-condition-operators)
-
-[WOQL regular expressions](#woql-condition-operators)
+[WOQL math operators](#woql-math-operators)
 
 #### Diagram: The three core WOQL concepts
 
@@ -228,8 +226,9 @@ The `WOQL.and()` operator has identical behavior to the `and` condition in proce
 
 ### WOQL or operator
 
-Single triple pattern matching like the above is 
+<!-- to-do: REFACTOR -->
 
+Single triple pattern matching like the above is 
 
 certainly neat, but there’s a limited number of things that can be expressed as a single pattern of triples, even with all our variables turned on. However, WOQL also provides logical operators, AND, OR which allow you to combine as many basic patterns as you like into incredibly expressive queries in very simple forms.
 
@@ -322,8 +321,8 @@ jsonld = WOQLQuery().dict()
 
 ### WOQL regular expressions
 
-How to [use regular expressions](how-to/how-to-use-regex) with WOQL.
+How to [use regular expressions](how-to-guides/how-to-use-regex) with WOQL.
 
 ### WOQL update data
 
-How to [update data](how-to/how-to-update-data) using WOQL triples.
+How to [update data](how-to-guides/how-to-update-data) using WOQL triples.
