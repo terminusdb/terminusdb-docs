@@ -90,7 +90,7 @@
 - [<span class="tdb-f">WOQL queries<span>](data-modeling/data-modeling-woql-queries)
   - [WOQL triples](data-modeling/data-modeling-woql-queries?id=woql-triples)
   - [WOQL variables](data-modeling/data-modeling-woql-queries?id=woql-variables)
-  - [WOQL operators](data-modeling/data-modeling-woql-queries?id=woql-operators)
+  - [WOQL operators](data-modeling/data-modeling-woql-queries?id=woql-condition-operators)
 
 <hr class="tdb-l"/>
 
