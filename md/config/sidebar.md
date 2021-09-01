@@ -1,4 +1,4 @@
-<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-start.png)</i> <span class="tdb-k-h2">Quick Links</span>
+<i class="tdb-i">![Quick links](../../img/ico/terminusdb-icon-quick-links.png)</i> <span class="tdb-f">Quick Links</span>
 
 - [Docs home](/)
 - [TerminusDB home](/)
@@ -9,7 +9,7 @@
 
 <hr class="tdb-l"/>
 
-<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-start.png)</i> <span class="tdb-k-h2">Overviews</span>
+<i class="tdb-i">![Overviews](../../img/ico/terminusdb-icon-overviews.png)</i> <span class="tdb-f">Overviews</span>
 
 - [<span class="tdb-f">Introduction</span>](overviews/introduction)
   - [What is TerminusDB?](overviews/introduction?id=what-is-terminusdb)
@@ -18,11 +18,11 @@
 - [<span class="tdb-f">Get Started</span>](overviews/get-started)
   - [Starting overview](overviews/get-started?id=starting-overview)
   - [Installation overview](overviews/get-started?id=installation-overview)
-  - [Interfaces overview](overviews/get-started?id=interfaces-overview)
+  - [Interfaces overview](overviews/get-started?id=the-available-interfaces)
 
-<hr class="tdb-l"/>
+<br>
 
-<i class="tdb-i">![Install](../../img/ico/terminusdb-icon-install.png)</i> <span class="tdb-k-h2">Installation Options</span>
+<i class="tdb-i">![Install](../../img/ico/terminusdb-icon-install.png)</i> <span class="tdb-f">Installation Options</span>
 
 - [<span class="tdb-f">Install Desktop</span>](install/install-desktop)
   - [Requirements](install/install-desktop?id=requirements)
@@ -40,9 +40,9 @@
   - [Requirements](install/install-python-client?id=requirements)
   - [Install steps](install/install-python-client?id=install-steps)
 
-<hr class="tdb-l"/>
+<br>
 
-<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-start.png)</i> <span class="tdb-k-h2">Quick Start Tutorials</span>
+<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-start.png)</i> <span class="tdb-f">Quick Start Tutorials</span>
 
 - [<span class="tdb-f">Quick start with JavaScript</span>](resources/to-do)
   - [Connect to the server](resources/to-do)
@@ -66,9 +66,9 @@
   - [Math operations](resources/to-do)
   - [Data manipulation](resources/to-do)
 
-<hr class="tdb-l"/>
+<br>
 
-<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-start.png)</i> <span class="tdb-k-h2">How-to Guides</span>
+<i class="tdb-i">![How to guides](../../img/ico/terminusdb-icon-how-to.png)</i> <span class="tdb-f">How-to Guides</span>
 
 - [Create a simple database](how-to-guides/how-to-create-simple-database)
 - [Add a date and time](how-to-guides/how-to-add-date-and-time)
@@ -78,9 +78,9 @@
 - [Update data](how-to-guides/how-to-update-data)
 - [Use regular expressions](how-to-guides/how-to-use-regex)
 
-<hr class="tdb-l"/>
+<br>
 
-<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-start.png)</i> <span class="tdb-k-h2">Data Modeling</span>
+<i class="tdb-i">![Data modeling](../../img/ico/terminusdb-icon-data-modeling.png)</i> <span class="tdb-f">Data Modeling</span>
 
 - [<span class="tdb-f">Modeling with the console</span>](data-modeling/data-modeling-with-console)
 - [<span class="tdb-f">Graph Databases</span>](data-modeling/data-modeling-graph-databases)
@@ -92,9 +92,9 @@
   - [WOQL variables](data-modeling/data-modeling-woql-queries?id=woql-variables)
   - [WOQL operators](data-modeling/data-modeling-woql-queries?id=woql-condition-operators)
 
-<hr class="tdb-l"/>
+<br>
 
-<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-start.png)</i> <span class="tdb-k-h2" title="hello">TerminusDB Concepts</span>
+<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-concepts.png)</i> <span class="tdb-f" title="hello">TerminusDB Concepts</span>
 
 - [<span class="tdb-f">ACID Transactions</span>](concepts/concepts-acid)
   - [What is Acid?](concepts/concepts-acid?id=what-is-acid)
@@ -118,9 +118,9 @@
 - [<span class="tdb-f">Immutability</span>](concepts/concepts-immutability)
   - [Advantages of immutability](concepts/concepts-immutability?advantages-of-immutability)
 
-<hr class="tdb-l"/>
+<br>
 
-<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-start.png)</i> <span class="tdb-k-h2">Reference Guides</span>
+<i class="tdb-i">![Reference guides](../../img/ico/terminusdb-icon-reference-guides.png)</i> <span class="tdb-f">Reference Guides</span>
 
 - [<span class="tdb-f">WOQL class reference</span>](reference-guides/reference-woql-json-ld)
   - [WOQL classes](reference-guides/reference-woql-json-ld?woql-classs)
