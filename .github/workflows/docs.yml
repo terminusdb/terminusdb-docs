@@ -7,6 +7,7 @@ on:
       - canary
       - v*
       - next
+      - beta
 
 env:
   LATEST_RELEASE_BRANCH: v4.2
@@ -44,3 +45,4 @@ jobs:
             canary
             v*
             next
+            beta
