@@ -19,13 +19,12 @@ $ export TERMINUSDB_ACCESS_TOKEN="my very long token here"
 At the begining of your python script you can simply write:
 
 ```python
-import os
 from terminusdb_client import WOQLClient
 user = f"jimbo"
 team = f"logicistics" # My Team name
 endpoint = f"https://cloud-dev.dcm.ist/{team}/"
 client = WOQLClient(endpoint)
-client.connect(user=user,team=team)
+client.connect(user=user,team=team,use_token=True)
 ```
 
 The most common way to use the client is to:
