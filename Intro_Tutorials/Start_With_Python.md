@@ -1,7 +1,5 @@
 ## TerminusDB Client Python
 
-The terminusdb_client library consists of 4 major components: WOQLClient, WOQLQuery, WOQLViews and WOQLDataFrame (optional, included only if installed with the [dataframe] option). In this guide, we will show the basic usage of each component. For detail documentation of the Python client, please refer to the [full documentation](https://terminusdb.github.io/terminusdb-client-python/). For a full example of using all the code shown below, see the [bike example in Jupyter notebook](https://github.com/terminusdb/terminusdb-tutorials/blob/master/bike-tutorial/python/Create%20TerminusDB%20Graph%20with%20Python%20Client.ipynb).
-
 ### WOQLClient
 
 A connection object that allows you to connect to TerminusX (or
@@ -9,14 +7,11 @@ TerminusDB). To create an client object, you will have to provide a
 URL to the server. You can get a code snippet from TerminusX in your
 profile page which will have all of these variables filled out for you.
 
-NOTE: *You will need to have an access key set*. This is available in
-your profile page and you can set it in your environment as:
+NOTE: [You will need to have an access key set](../UI.md). After you
+have done this come back here with your copied python snippet.
 
-```shell
-$ export TERMINUSDB_ACCESS_TOKEN="my very long token here"
-```
-
-At the begining of your python script you can simply write:
+At the begining of your python script you can simply write the snippet
+that you have recieved. For instance:
 
 ```python
 import os
