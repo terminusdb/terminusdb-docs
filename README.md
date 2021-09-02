@@ -10,3 +10,4 @@ You can find links that will help you get started:
   - [CURL Examples](reference/CURL.md) which can be used to help you build your own client.
 * Getting Started Guide
   - [Python Getting Started Guide](Start_With_Python.md)
+
