@@ -5,7 +5,8 @@ You can find links that will help you get started:
 
 * [Getting Your Key](UI.md)
 * Reference
-  - [Document API](reference/DOCUMENT.md)
-  - [Schema](reference/SCHEMA.md)
+  - [Document API](reference/DOCUMENT.md) api reference to help you get started.
+  - [Schema](reference/SCHEMA.md) which documents the schema language in detail.
+  - [CURL Examples](reference/CURL.md) which can be used to help you build your own client.
 * Getting Started Guide
   - [Python Getting Started Guide](Start_With_Python.md)
