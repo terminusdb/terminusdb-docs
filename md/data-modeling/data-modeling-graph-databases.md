@@ -1,6 +1,6 @@
 # Graph Databases
 
-> **On this page:** An introduction to some of the core concepts behind TerminusDB graph databases.
+> **On this page:** An introduction to modeling data with TerminusDB graph databases, with examples and comparisons with relational databases.
 
 ## Key topics
 
