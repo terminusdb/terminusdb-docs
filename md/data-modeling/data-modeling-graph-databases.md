@@ -4,11 +4,11 @@
 
 **Key topics**
 
-[Data modeling](to-to)
+[Data modeling](#data-modeling)
 
-[Data query](to-do)
+[Data query](#data-query)
 
-[Classes and properties](to-do)
+[Classes](#classes)
 
 ## Data modeling
 
