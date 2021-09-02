@@ -2,7 +2,7 @@
 
 > **On this page:** An introduction to some of the core concepts behind TerminusDB graph databases.
 
-**Key topics**
+## Key topics
 
 [Data modeling](#data-modeling)
 
