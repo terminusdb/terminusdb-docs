@@ -192,7 +192,7 @@ number of properties defined as well as some number of keywords
 describing various class attributes. An example of a class would be as
 follows:
 
-```
+```javascript
 { "@id" : "Dog",
   "@type" : "Class",
   "@base" : "Dog_",

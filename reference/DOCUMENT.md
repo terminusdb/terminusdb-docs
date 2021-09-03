@@ -126,7 +126,7 @@ In other words, a json list of document IDs.
 # The schema endpoint
 The schema endpoint can be used to query information about classes in a resource. These queries happen through a GET on the following endpoint:
 
-```jsx
+```
 GET /api/schema/<resource path>
 ```
 
