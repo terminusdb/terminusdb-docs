@@ -48,11 +48,11 @@ will need to put some data in it. First we need to add a schema. (See
 Supposing the data I'm initially interested in is the following player
 roster.
 
-name | position
+| name | position |
 --------------
-George | Centre Back
-Doug | Full Back
-Karen | Centre Forward
+| George | Centre Back |
+| Doug | Full Back |
+| Karen | Centre Forward |
 
 The schema which corresponds to this might look as follows:
 
