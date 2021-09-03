@@ -5,9 +5,9 @@ You can find links that will help you get started:
 
 * [Getting Your Key](UI.md)
 * Getting Started Guide
-  - [Python Getting Started Guide](Start_With_Python.md) to get up and
+  - [Python Getting Started Guide](Intro_Tutorials/Start_With_Python.md) to get up and
     running with the document interface in Python.
-  - [Javascript Getting Started Guide](Start_With_JS.md) to get up and
+  - [Javascript Getting Started Guide](Intro_Tutorials/Start_With_JS.md) to get up and
     running with the document interface in javascript.
 * Reference
   - [Schema](reference/SCHEMA.md) which documents the schema language
