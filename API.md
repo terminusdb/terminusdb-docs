@@ -18,7 +18,7 @@ The TerminusDB Server HTTP API JSON documents have optional elements notated wit
 ## Connect
 
 ```
-GET http://localhost:6363/api/ -u admin:root
+GET http://localhost:6363/api/
 ```
 
 The Connect API endpoint returns the `system:User` object associated
@@ -86,7 +86,7 @@ The payload in this case is:
 ```
 DELETE http://localhost:6363/api/db/<organization>/<dbid>
 ```
-The post argument is a JSON document of the following form
+The delete argument is a JSON document of the following form:
 
 ```jsx
 { < "force" : Boolean >
@@ -98,7 +98,7 @@ The post argument is a JSON document of the following form
 ```
 POST http://localhost:6363/api/organization
 ```
-The JSON API post parameter is:
+The post argument is a JSON document of the following form:
 
 ```jsx
 { "organization_name" : Organization_Name,
@@ -113,7 +113,7 @@ This endpoint will add the user `User_Name` to the organization
 ```
 DELETE http://localhost:6363/api/organization
 ```
-The JSON API parameter is:
+The delete argument is a JSON document of the following form:
 
 ```jsx
 { "organization_name" : Organization_Name }
@@ -186,9 +186,9 @@ information in the JSON document.
 ## Get Roles
 
 ```
-POST http://localhost:6363/api/role
+GET http://localhost:6363/api/role
 ```
-The JSON API post parameter is:
+The JSON API get parameter is:
 
 ```jsx
 { <"agent_name" : Agent_Name >,
@@ -361,7 +361,8 @@ Fetch layers from `remote`, then attempt a rebase from the remote branch `remote
 ### Example:
 Fetch layers from remote repository: `cow_information`, branch `main` and rebase to the local branch `branch_a`
 
-``` POST http://localhost:6363/api/pull/admin/cowid/local/branch/branch_a
+```
+POST http://localhost:6363/api/pull/admin/cowid/local/branch/branch_a
 ```
 The JSON payload is:
 
@@ -390,7 +391,8 @@ Creates a new branch as specified by the URI, starting from the branch given by 
 ### Example:
 Create a new branch called `branch_a` from the remote repository `cow_information`, branch `main`
 
-``` POST "http://127.0.0.1:6363/api/branch/admin/cowid/local/branch_a"
+```
+POST http://127.0.0.1:6363/api/branch/admin/cowid/local/branch_a
 ```
 
 JSON payload:
@@ -405,7 +407,7 @@ JSON payload:
 ```
 DELETE http://localhost:6363/api/branch/<organization>/<dbid>/<repo>/<branchid>
 ```
-Post argument is a JSON document of the following form
+Delete argument is a JSON document of the following form
 
 ```jsx
 { < "force" : Boolean >
@@ -450,12 +452,12 @@ JSON payload
 DELETE http://localhost:6363/api/graph/<organization>/<dbid>/<repo>/branch/<branchid>/<instance|schema|inference>/<graphid>
 ```
 
-This takes a post parameter:
+This takes the following parameter:
 
 ```jsx
 {"commit_info" : { "author" : Author, "message" : Message }}
 ```
-This API deletes the graph specified by the absolute graph descriptor in the URI.
+Deletes the graph specified by the absolute graph descriptor in the URI.
 If multiple graphs are created with different commits as above, the graphid needs to be specified.
 
 
@@ -466,13 +468,15 @@ DELETE http://localhost:6363/api/graph/admin/cowid/local/main/
 ```
 JSON payload
 ```jsx
-{"commit_info" : { "author" : "user@terminusdb.com", "message" : "created a graph!" }}
+{"commit_info" : { "author" : "user@terminusdb.com", "message" : "deleted a graph!" }}
 ```
 
 ## Squash
 
 ```
 POST http://localhost:6363/api/squash/<organization>/<dbid>/
+```
+```
 POST http://localhost:6363/api/squash/<organization>/<dbid>/local/branch/<branchid>
 ```
 
@@ -522,6 +526,8 @@ JSON return:
 
 ```
 POST http://localhost:6363/api/reset/<organization>/<dbid>/
+```
+```
 POST http://localhost:6363/api/reset/<organization>/<dbid>/local/branch/<branchid>
 ```
 
@@ -555,6 +561,8 @@ JSON payload:
 
 ```
 GET http://localhost:6363/api/triples/<organization>/<dbid>/<repo>/branch/<branchid>/<type>/<name><?format=turtle>
+```
+```
 GET http://localhost:6363/api/triples/<organization>/<dbid>/<repo>/commit/<refid>/<type>/<name><?format=turtle>
 ```
 
@@ -585,7 +593,7 @@ it can be an empty string).
 ```
 PUT http://localhost:6363/api/triples/<organization>/<dbid>/local/branch/<branchid>/<type>/<name>
 ```
-Post argument is a JSON document of the following form
+Put argument is a JSON document of the following form
 
 ```jsx
 { "turtle" : TTL_String,
@@ -599,11 +607,23 @@ to the graph specified.
 
 ```
 POST http://localhost:6363/api/woql
+```
+```
 POST http://localhost:6363/api/woql/<organization>/<dbid>
+```
+```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/_meta
+```
+```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>
+```
+```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/_commits
+```
+```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/branch/<branchid>
+```
+```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/commit/<refid>
 ```
 
@@ -640,9 +660,17 @@ result object, which has the form:
 
 ```
 POST http://localhost:6363/api/optimize/_system
+```
+```
 POST http://localhost:6363/api/optimize/<organization>/<dbid>
+```
+```
 POST http://localhost:6363/api/optimize/<organization>/<dbid>/_meta
+```
+```
 POST http://localhost:6363/api/optimize/<organization>/<dbid>/<repo>/_commits
+```
+```
 POST http://localhost:6363/api/optimize/<organization>/<dbid>/<repo>/branch/<branch>
 ```
 
