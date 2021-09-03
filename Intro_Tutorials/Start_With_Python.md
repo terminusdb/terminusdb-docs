@@ -14,7 +14,6 @@ At the begining of your python script you can simply write the snippet
 that you have recieved. For instance:
 
 ```python
-import os
 from terminusdb_client import WOQLClient
 user = f"jimbo"
 team = f"logicistics" # My Team name
