@@ -17,4 +17,6 @@ You can find links that will help you get started:
     from CURL.
   - [Document API](reference/DOCUMENT.md) detailed api reference to
     the document interface
-
+* Explanation
+  - [Documents](Explanation/DOCUMENTS.md) in a knowledge graph and how
+    to use them.
