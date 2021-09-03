@@ -19,7 +19,7 @@ graph structure allowing sophisticated search and traversal.
 
 Documents do not have to be shallow but can instead contain
 *subdocuments* as well.  A subdocument is owned by its containing
-document, and is a fragment of the grahp which is only pointed to by
+document, and is a fragment of the graph which is only pointed to by
 the containing document, although it may have any number of out-going
 links to other documents or subdocuments itself.
 
