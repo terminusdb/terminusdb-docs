@@ -9,14 +9,8 @@ TerminusDB). To create an client object, you will have to provide a
 URL to the server. You can get a code snippet from TerminusX in your
 profile page which will have all of these variables filled out for you.
 
-NOTE: *You will need to have an access key set*. This is available in
-your profile page and you can set it in your environment as:
-
-```shell
-$ export TERMINUSX_ACCESS_TOKEN="your very long token here"
-```
-
-Or you can define it as a string in your code using a variable for testing purposes.
+NOTE: [You will need to have an access key set](../UI.md). After you
+have done this come back here with your copied python snippet.
 
 At the begining of your javascript file you can simply define a WOQLClient object as:
 

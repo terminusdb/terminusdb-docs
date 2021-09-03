@@ -1,14 +1,24 @@
-## TerminusDB Client Python
+## TerminusX Client Python
+
+This quick-start guide to the Python client is designed to get you up
+and running quickly on TerminusX. If you want to explore the full
+client library, see our [Python Client
+Documentation](https://terminusdb.github.io/terminusdb-client-python/dev/
+) for more details.
+
 
 ### WOQLClient
 
 A connection object that allows you to connect to TerminusX (or
 TerminusDB). To create an client object, you will have to provide a
 URL to the server. You can get a code snippet from TerminusX in your
-profile page which will have all of these variables filled out for you.
+profile page which will have all of these variables filled out for
+you..
 
 NOTE: [You will need to have an access key set](../UI.md). After you
 have done this come back here with your copied python snippet.
+
+
 
 At the begining of your python script you can simply write the snippet
 that you have recieved. For instance:
