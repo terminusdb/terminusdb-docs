@@ -613,9 +613,12 @@ the `NamedEntity` class) and might look as follows:
 ### `@inherits`
 
 The `@inherits` keyword allows classes to inherit properties (and the
-`@subdocument` designation) from parent classes. This inheritance tree
-is also available as a `subsumption` relation in the WOQL query
-language, and provides the semantics for *frames* in the *schema API*.
+`@subdocument` designation) from parent classes. It does *not*
+inhereit key strategies.
+
+This inheritance tree is also available as a `subsumption` relation in
+the WOQL query language, and provides the semantics for *frames* in
+the *schema API*.
 
 The range of `@inherits` may be either a class, or a list of
 classes. For instance:
