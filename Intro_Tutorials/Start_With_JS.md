@@ -202,4 +202,5 @@ const result = await client.query(query);
   transaction_retry_count: 0
 }
 ```
-Now you can make some interesting queries and query your database. For list of available query fucntions you can follow this [link](https://terminusdb.github.io/terminusdb-client-js/#/api/woql.js?id=woql)
+
+Now you can make some interesting queries and query your database. For list of available query functions you can follow this [link](https://terminusdb.github.io/terminusdb-client-js/#/api/woql.js?id=woql)
