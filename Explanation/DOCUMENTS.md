@@ -200,6 +200,63 @@ with our player object. For example:
 It is also possible for subdocuments to point recursively to
 subdocuments, or to other documents.
 
+### Inheritence
+
+When creating classes, it is often very useful to use inheritence to
+simplify the specification of classes. It is also useful to signal
+that you want to be treated as a specific case of a more general
+object.
+
+Classes in TerminusX allow us to inherit from multiple classes.  All of
+the inherited properties *must*, however, be compatible. For instance,
+You can't inherit a property-field called `date_of_birth` of type
+`xsd:date` and another of the same name which is `xsd:dateTime`.
+
+Inheritence inherits properties, but it also inherits the
+`@subdocument` designation. It does not, however, inherit the `@key`
+designations, `@base` or `@abstract` system properties.
+
+The `NonPlayerCharacter` is an example of a `Player` which also has an
+aritificial intelligence to play it (rather than a normal login). We
+might imagine another inherited character which has login details
+`HumanPlayer`.
+
+```javascript
+{ "@type" : "Enum",
+  "@id" : "AI",
+  "@values" : ["first_genetic_algo_player_X1", "super_player_v2.5"]}
+
+{ "@type" : "Class",
+  "@id" : "NonPlayerCharacter",
+  "@key" : { "@type" : "Lexical", "@fields" : ["name"]} },
+  "@inherits" : ["Player"]
+  "ai" : "AI"}
+
+{ "@type" : "Class",
+  "@id" : "HumanPlayer",
+  "@key" : { "@type" : "Lexical", "@fields" : ["login_name"]},
+  "@inherits" : ["Player"]
+  "login_name" : "xsd:string",
+  "password" : "xsd:string" }
+```
+
+You can obtain the entire description of a class, including its
+inherited qualities, by using the ["schema" API
+call](../reference/DOCUMENT.md) from the document API.
+
+An example result from the schema in `NonPlayerCharacter` would be:
+
+```javacsript
+{ "@type" : "Class",
+  "@id" : "HumanPlayer",
+  "@key" : { "@type" : "Lexical", "@fields" : ["login_name"]},
+  "@inherits" : ["Player"]
+  "login_name" : "xsd:string",
+  "password" : "xsd:string",
+  "name" : "xsd:string",
+  "stats" : "Stats" }
+```
+
 ### Visualising the Graph
 
 With both documents and subdocuments and references to other documents
