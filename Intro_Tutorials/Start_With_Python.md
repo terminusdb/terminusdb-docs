@@ -49,7 +49,7 @@ Supposing the data I'm initially interested in is the following player
 roster.
 
 | name | position |
---------------
+|---|---|
 | George | Centre Back |
 | Doug | Full Back |
 | Karen | Centre Forward |
