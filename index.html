@@ -144,7 +144,6 @@
 <body>
   <div id="contents-page" class="tdb-d"></div>
   <div id="contents-ctrl" class="tdb-c"></div>
-  
   <div id="app"></div>
   <script>
     window.$docsify = 
@@ -153,6 +152,7 @@
         homepage      : 'terminusx/quick-start-overview.md',
         loadSidebar   : 'config/sidebar.md',
         loadFooter    : 'config/footer.md',
+        onlyCover     : true,
         auto2top      : true,
         search: 
         {
@@ -166,7 +166,6 @@
           errorText  : 'Error',
           successText: 'Done'
         },
-
         plugins: 
         [
           function(hook) 
