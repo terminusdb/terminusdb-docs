@@ -1,4 +1,4 @@
-<i class="tdb-i">![Quick links](img/ico/terminusdb-icon-quick-links.png)</i><span class="tdb-f">TerminusX Quick Start</span>
+<i class="tdb-i">![Quick links](../img/ico/terminusdb-icon-quick-links.png)</i><span class="tdb-f">TerminusX Quick Start</span>
 
 - [Quick start overview](terminusx/quick-start-overview)
 - [Get your API key](terminusx/get-your-api-key)
