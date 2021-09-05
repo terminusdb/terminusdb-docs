@@ -5,31 +5,195 @@
   <title>TerminusDB</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+  <link rel="stylesheet" href="css/terminusdb-docs.css">
+  <style>
+
+    :root {
+
+      --cover-blockquote-color           : rgb(100,100,100);
+      --cover-color                      : rgb(255, 255, 255);
+      --cover-margin                     : 0 auto;
+      --cover-max-width                  : 68em;
+      --cover-text-align                 : center;
+      --cover-button-border              : rgb(79, 83, 93) 2px solid;
+      --cover-button-color               : rgb(79, 83, 93);
+      --cover-button-primary-border      : var(--cover-button-border);
+      --cover-button-primary-background  : var(--cover-button-color);
+
+      --search-padding                   : 0em;
+      --search-input-background-size     : 2em;
+      --search-input-border-width        : 12px;
+      --search-input-border-color        : rgb(0, 0, 0);
+      --search-input-background-color    : var(--search-input-border-color);
+      --search-input-placeholder-color   : rgb(150, 150, 150);
+      --search-result-keyword-background : var(--search-input-border-color);
+      --search-result-item-color         : rgb(180, 180, 180);
+
+      --zoomimage-overlay-background     : rgba(0, 0, 0, .75); 
+
+      --content-max-width                 : var(--cover-max-width);
+
+      --sidebar-toggle-background         : rgb(255,255,255);
+      --sidebar-toggle-border-radius      : var(--border-radius-s);
+      --sidebar-toggle-border-style       : solid;
+      --sidebar-toggle-border-width       : 0;
+      --sidebar-toggle-icon-color         : rgb(0,0,0);
+      --sidebar-toggle-icon-width         : 16px;
+      --sidebar-toggle-icon-height        : 10px;
+      --sidebar-toggle-width              : 40px;
+      --sidebar-toggle-height             : 36px;
+      --sidebar-toggle-icon-stroke-width  : 1px;
+      --sidebar-toggle-offset-left        : 8px;
+      --sidebar-toggle-offset-top         : 8px;
+    
+      --sidebar-border-color              : rgb(120, 120, 120);
+      --sidebar-width                     : 20rem; /* 24rem; */
+      --sidebar-nav-indent                : 0em; /* 3.2em; */
+      --sidebar-nav-margin                : 0rem 0rem 0rem;
+      --sidebar-background                : rgb(40, 42, 47);
+      --sidebar-nav-link-color--hover     : var(--link-color);
+      --sidebar-nav-link-color--active    : var(--link-color);
+      --sidebar-padding                   : 0px 10px;
+      /* --sidebar-nav-pagelink-background-image             : ; */
+
+      --link-color                        : lightblue;
+      --link-color--hover                 : var(--link-color);
+      --link-text-decoration              : none;
+      --link-text-decoration--hover       : underline;
+      
+      --cover-background-color            : rgb(255, 255, 255);
+      --cover-background-image            : "img/terminusdb-why-choose-cover.png";
+      --cover-heading-color               : rgb(0, 0, 0);
+      --cover-heading-font-size           : var(--font-size-xxl);
+      --cover-heading-font-weight         : normal;
+
+      --blockquote-background             : rgb(35, 35, 35);
+      --blockquote-border-color           : var(--link-color);
+      --heading-color                     : rgb(240, 240, 240);
+
+      --base-background-color             : rgb(47, 49, 54); 
+      --base-font-family                  : -apple-system, BlinkMacSystemFont, "Arial Unicode MS";
+      --base-font-color                   : rgb(255,255,255);
+      --base-font-size                    : 14px;
+      --base-font-weight                  : normal;
+      --base-line-height                  : 1.7;
+
+      --mark-background                   :#ffecb3;
+      
+      --pre-font-family                   : var(--code-font-family);
+      --pre-font-size                     : var(--code-font-size);
+      --pre-font-weight                   : normal;
+
+      --selection-color                   : rgb(0, 0, 0);
+
+      --small-font-size                   : var(--font-size-s);
+
+      --strong-color                      : var(--heading-color);
+      --strong-font-weight                : 600;
+
+      --subsup-font-size                  : var(--font-size-s);
+
+      --docsifytabs-border-px             : 0.1px;
+      --docsifytabs-margin                : 0;
+      --docsifytabs-border-color          : rgb(64,64,64);
+      --docsifytabs-tab-background        : var(--table-row-odd-background); 
+      --docsifytabs-tab-color             : var(--base-font-color);
+      --docsifytabs-tab-color--active     : var(--base-font-color);
+      --docsifytabs-tab-highlight-px      : 3px;
+      --docsifytabs-tab-highlight-color   : var(--link-color);
+      --docsifytabs-tab-padding           : 1em 1em;
+      --docsifytabs-content-padding       : 1rem;
+
+      --copycode-background               : rgb(20, 20, 20);
+      --copycode-color                    : lightblue;
+
+      --code-block-border-radius          : 3px;
+      --code-theme-background             : var(--sidebar-background);
+      --code-font-family                  : "Courier New";    
+      --code-font-size                    : 14px;
+      --code-font-weight                  : lighter;
+      --code-tab-size                     : 4;
+      --code-block-padding                : 0.8em 0.8em 0.8em 1.1em;
+      --code-inline-background            : rgb(53, 71, 85);
+      --code-inline-border-radius         : var(--code-block-border-radius);
+      --code-inline-padding               : 0.1em 0.3em 0.1em 0.3em;
+  
+      --table-body-border-width           : 0.5px;
+      --table-cell-border-color           : var(--copycode-background);
+      --table-cell-border-width           : var(--table-body-border-width);
+      --table-cell-padding                : 1em 1em;
+      --table-head-background             : var(--sidebar-background);  
+      --table-head-border-color           : var(--table-cell-border-color);
+      --table-head-border-width           : var(--table-body-border-width);
+      --table-row-odd-background          : rgb(43, 45, 49);
+
+      --pagination-border-top             : 0.5px solid var(--docsifytabs-border-color);
+      --pagination-label-color            : var(--link-color);
+      --pagination-title-color            : var(--pagination-label-color);
+
+      --notice-important-background       : pink;
+      --notice-important-border-color     : crimson;
+      --notice-important-border-style     : solid;
+      --notice-important-color            : black;
+
+    }
+</style>
 </head>
 <body>
+  <div id="contents-page" class="tdb-d"></div>
+  <div id="contents-ctrl" class="tdb-c"></div>
+  
   <div id="app"></div>
   <script>
-    window.$docsify = {
-      auto2top: true,
-      // loadSidebar: '_sidebar.md',
-      name: 'TerminusDB',
-      repo: 'terminusdb/terminusdb',
-      search: {
-        noData: {
-          '/': 'No results!'
+    window.$docsify = 
+    {
+        basePath      : `md/`,
+        homepage      : 'terminusx/quick-start-overview.md',
+        loadSidebar   : 'config/sidebar.md',
+        loadFooter    : 'config/footer.md',
+        auto2top      : true,
+        search: 
+        {
+          depth       : 4,
+          noData      : 'No results.',
+          placeholder : 'Search...'
         },
-        paths: 'auto',
-        placeholder: {
-          '/': 'Search'
-        }
-      }
+        copyCode: 
+        {
+          buttonText : 'Copy',
+          errorText  : 'Error',
+          successText: 'Done'
+        },
+
+        plugins: 
+        [
+          function(hook) 
+          {
+            hook.afterEach(function(html) { tdb_TOC(html); });
+          }
+        ]
     }
+
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+    <script src="https://unpkg.com/docsify-copy-code@2"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <script src="https://unpkg.com/@terminusdb/terminusdb-client/dist/terminusdb-client.min.js"></script>  
+    <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-http.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-csv.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-regex.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
+    <script src="js/tdb-toc.js">
+  </script>
+
 </body>
 </html>
