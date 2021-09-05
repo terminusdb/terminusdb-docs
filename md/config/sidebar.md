@@ -1,4 +1,4 @@
-<i class="tdb-i">![Quick start](../../img/ico/terminusdb-icon-quick-links.png)</i><span class="tdb-f">TerminusX Quick Start</span>
+<img class="tdb-i" src="img/ico/terminusdb-icon-quick-links.png" title="Quick start"/><span class="tdb-f">TerminusX Quick Start</p>
 
 - [Quick start overview](terminusx/quick-start-overview)
 - [Get your API key](terminusx/get-your-api-key)
@@ -6,7 +6,7 @@
 
 <br>
 
-<i class="tdb-i">![Reference guides](../../img/ico/terminusdb-icon-concepts.png)</i><span class="tdb-f">Reference Guides</span>
+<img class="tdb-i" src="img/ico/terminusdb-icon-concepts.png" title="Reference guides"/><span class="tdb-f">Reference Guides</p>
 
 - [CURL reference](terminusx/curl-reference)
 - [Schema reference](terminusx/schema-reference)
@@ -14,7 +14,7 @@
 
 <br>
 
-<i class="tdb-i">![Explanations](../../img/ico/terminusdb-icon-reference-guides.png)</i><span class="tdb-f">Explanations</span> 
+<img class="tdb-i" src="img/ico/terminusdb-icon-reference-guides.png" title="Explanations"/><span class="tdb-f">Explanations</p></div>
 
 - [Documents](terminusx/documents)
 
