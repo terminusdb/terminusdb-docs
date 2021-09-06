@@ -159,7 +159,7 @@ To use the TerminusX document interface, [create a schema](#create-a-schema) and
 
 - [Define a schema](#code-define-a-schema)
 
-- [Add the schema to a document](#code-add-a-schema-to-document)
+- [Add a schema](#code-add-a-schema)
 
 - [Add documents](#code-Add-documents)
 
@@ -216,9 +216,9 @@ schema = { "@type"   : "Class",
 
 <!-- tabs:end -->
 
-#### Code: Add the schema to a document
+#### Code: Add a schema
 
-Add the schema object to a document.
+Add the schema object to the database.
 
 <!-- tabs:start -->
 
@@ -365,7 +365,7 @@ const documents = await client.getDocument({ as_list: "true" });
 ```python
 
 documents = client.query_document({"@type"   : "Player",
-                                   "position": "Full Back})
+                                   "position": "Full Back"})
 
 matches = list(documents)
 
