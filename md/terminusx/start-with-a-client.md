@@ -36,14 +36,14 @@ Define and initialize a WOQLClient, and connect to a database using the example 
 
 const TerminusDBClient = require("@terminusdb/terminusdb-client");
 
-let key = "your API key here"; // If not set as an environment variable.
+const client = new TerminusClient.WOQLClient("https://cloud.terminusdb.com/cloudabc/"{user:"user@email.com",
+                                                organization:"cloudabc"})
 
-const client = new TerminusClient.WOQLClient("https://cloud.terminusdb.com/cloudabc/");
+//set the key as an environment variable.
+client.setApiKey(process.env.TERMINUSDB_ACCESS_TOKEN)
 
-client.localAuth({key: key, type: "jwt"});
-client.organization("cloudabc");
-
-client.connect().then(()=>{
+client.connect().then((result)=>{
+    console.log(result)
 }).catch((err)=>{
     console.error(err);
 });
