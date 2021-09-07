@@ -58,12 +58,12 @@ client.connect().then(()=>{
 ```python
 
 from terminusdb_client import WOQLClient
-user     = f"jimbo"
-team     = f"logicistics" # My team name.
+user     = "jimbo"
+team     = "logicistics" # My team name.
 endpoint = f"https://cloud-dev.dcm.ist/{team}/"
 client   = WOQLClient(endpoint)
 
-client.connect(user=user, team=team)
+client.connect(user=user, team=team, use_token=True)
 
 
 ```
@@ -103,7 +103,7 @@ client.connect().then(()=>{
 
 ```python
 
-client.connect(team=team, user="admin", db="example_db")
+client.connect(team=team, user="admin", db="example_db", use_token=True)
 
 
 ```
@@ -143,7 +143,7 @@ client.connect().then(async()=>{
 
 ```python
 
-client.connect(key="root", account="admin", user="admin")
+client.connect(team=team, user="admin", use_token=True)
 
 client.create_database("example_db")
 
@@ -205,12 +205,15 @@ const schema = { "@type" : "Class",
 
 ```python
 
-schema = { "@type"   : "Class",
-           "@id"     : "Player",
-           "@key"    : {"@type" : "Lexical", "@fields" : ["name"]},
-           "name"    : "xsd:string",
-           "position": "xsd:string" }
+from terminusdb_client.woql_schema import WOQLSchema, DocumentTemplate, LexicalKey
 
+schema = WOQLSchema()
+
+class Player(DocumentTemplate):
+    _schema = schema
+    _key = LexicalKey("name")
+    name: str
+    position: str
 
 ```
 
@@ -239,10 +242,7 @@ await client.addDocument(schema, { graph_type: "schema" });
 
 ```python
 
-client.insert_document(schema,
-                       graph_type = "schema",
-                       commit_msg = "Adding Player Schema")
-
+schema.commit(client, commit_msg = "Adding Player Schema")
 
 ```
 
@@ -290,22 +290,10 @@ await client.addDocument(objects);
 ```python
 
 objects = [
-    {
-        "@type"   : "Player",
-        "name"    : "George",
-        "position": "Centre Back"
-    },
-    {
-        "@type"   : "Player",
-        "name"    : "Doug",
-        "position": "Full Back"
-    },
-    {
-        "@type"   : "Player",
-        "name"    : "Karen",
-        "position": "Centre Forward"
-    }
-  ]
+    Player(name="George", position="Centre Back"),
+    Player(name="Doug", position="Full Back"),
+    Player(name="Karen", position="Centre Forward")
+    ]
 
 client.insert_document(objects, commit_msg = f"Inserting player data")
 
