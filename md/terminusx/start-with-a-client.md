@@ -60,7 +60,7 @@ client.connect().then(()=>{
 from terminusdb_client import WOQLClient
 user     = "jimbo"
 team     = "logicistics" # My team name.
-endpoint = "https://cloud-dev.dcm.ist/{team}/"
+endpoint = f"https://cloud-dev.dcm.ist/{team}/"
 client   = WOQLClient(endpoint)
 
 client.connect(user=user, team=team, use_token=True)
