@@ -38,7 +38,7 @@ const TerminusDBClient = require("@terminusdb/terminusdb-client");
 
 let key = "your API key here"; // If not set as an environment variable.
 
-const client = new TerminusClient.WOQLClient("https://cloud-dev.dcm.ist/cloudabc/");
+const client = new TerminusClient.WOQLClient("https://cloud.terminusdb.com/cloudabc/");
 
 client.localAuth({key: key, type: "jwt"});
 client.organization("cloudabc");
@@ -60,7 +60,7 @@ client.connect().then(()=>{
 from terminusdb_client import WOQLClient
 user     = "jimbo"
 team     = "logicistics" # My team name.
-endpoint = f"https://cloud-dev.dcm.ist/{team}/"
+endpoint = f"https://cloud.terminusdb.com/{team}/"
 client   = WOQLClient(endpoint)
 
 client.connect(user=user, team=team, use_token=True)
