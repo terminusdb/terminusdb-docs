@@ -229,7 +229,7 @@ Add the schema object to the database.
 
 ```javascript
 
-await client.addDocument(schema, { graph_type: "schema" });
+client.addDocument(schema, { graph_type: "schema" })
 
 
 ```
@@ -276,7 +276,7 @@ const objects = [
     }
 ];
         
-await client.addDocument(objects);
+client.addDocument(objects)
 
 
 ```
@@ -313,8 +313,10 @@ Get a list of documents or specific documents added to the schema
 
 ```javascript
 
-const documents = await client.getDocument({ as_list: "true" });
-
+async getDoc (){
+  const documents = await client.getDocument({ as_list: "true" });
+  console.log(documents)
+}
 
 ```
 
