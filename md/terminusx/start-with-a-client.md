@@ -6,6 +6,7 @@ The TerminusDB client package contains the two core components outlined below. T
 
 - [Connect WOQLClient](#connect-with-WOQLClient) to connect to TerminusX.
 
+
 ## Install the WOQLClient beta version
 
 This session explaining how download and install the client beta version
@@ -16,7 +17,7 @@ This session explaining how download and install the client beta version
 
 ### **JavaScript**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Define and initialize a WOQLClient in JavaScript using the package `@terminusdb/terminusdb-client`
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Install a WOQLClient in JavaScript
 
 
 ```bash
@@ -31,11 +32,13 @@ npm link ../terminusdb-client-js
 
 ```
 
-
 ### **Python**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Define and initialize a WOQLClient in JavaScript using the package `@terminusdb/terminusdb-client`
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Install a WOQLClient in Python
 
+<br>
+
+<!-- tabs:end -->
 
 ## Connect with WOQLClient
 
