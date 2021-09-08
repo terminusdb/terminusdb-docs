@@ -360,6 +360,7 @@ print(list(documents))
 
 print("=============")
 
+# getting a specific document by id
 play_doug = client.get_document("Player_Doug")
 print("Specific document")
 print(player_doug)
