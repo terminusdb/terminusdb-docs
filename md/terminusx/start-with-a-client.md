@@ -352,10 +352,100 @@ const documents = await client.getDocument({ as_list: "true" });
 
 ```python
 
-documents = client.query_document({"@type"   : "Player",
+documents = client.get_all_documents()
+
+# documents comes back as a iterable that can be convert into a list
+print("All documents")
+print(list(documents))
+
+print("=============")
+
+play_doug = client.get_document("Player_Doug")
+print("Specific document")
+print(player_doug)
+
+
+```
+
+```results
+
+All documents
+[
+  {
+    '@id'   : 'Player_Doug',
+    '@type' : 'Player',
+    name    : 'Doug',
+    position: 'Full Back'
+  },
+  {
+    '@id'   : 'Player_George',
+    '@type' : 'Player',
+    name    : 'George',
+    position: 'Center Back'
+  },
+  {
+    '@id'   : 'Player_Karen',
+    '@type' : 'Player',
+    name    : 'Karen',
+    position: 'Center Forward'
+  }
+]
+=============
+Specific document
+{
+    '@id'   : 'Player_Doug',
+    '@type' : 'Player',
+    name    : 'Doug',
+    position: 'Full Back'
+  }
+
+
+```
+
+<!-- tabs:end -->
+
+
+#### Code: Query documents
+
+Get a list of documents that matches the query 
+
+<!-- tabs:start -->
+
+### **JavaScript**
+
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below. 
+
+```javascript
+
+const query = {
+    "type": "Player",
+    "query": { "position": "Full Back" },
+   }
+  client.queryDocument(query,{"as_list":true});
+
+
+```
+
+```results
+
+[{"@type" : "Player",
+  "name" : "Doug",
+  "position" : "Full Back"}]
+
+
+```
+
+### **Python**
+
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-python.png)</i>Get a specific document using `query_document`. Results, stored in `matches`, are shown further below.  
+
+```python
+
+matches = client.query_document({"@type"   : "Player",
                                    "position": "Full Back"})
 
-matches = list(documents)
+# matches comes back as a iterable that can be convert into a list
+print(list(matches))
 
 
 ```
