@@ -6,12 +6,7 @@ The TerminusDB client package contains the two core components outlined below. T
 
 - [Connect WOQLClient](#connect-with-WOQLClient) to connect to TerminusX.
 
-
-## Install the WOQLClient beta version
-
-This session explaining how download and install the client beta version
-
-<br>
+## Install WOQLClient
 
 <!-- tabs:start -->
 
@@ -26,17 +21,41 @@ git clone https://github.com/terminusdb/terminusdb-client-js.git
 git checkout dev
 cd terminusdb-client-js
 npm i
-
 // then in your project
 npm link ../terminusdb-client-js
-
 ```
 
 ### **Python**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Install a WOQLClient in Python
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-python.png)</i>Install the canary version of the Python client using pip.
 
-<br>
+Using a virtural environment is highly recommended. See full details in [Python documentation](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
+
+**Create a new virtual environment call terminusdb-env**
+
+```
+python3 -m venv terminusdb-env
+```
+
+**Activate terminusdb-env environment**
+
+ - for Unix/macOS
+
+```
+source terminusdb-env/bin/activate
+```
+
+- for Windows
+
+```
+.\terminusdb-env\Scripts\activate
+```
+
+**Installing canary version of the Python client**
+
+```
+python3 -m pip install git+ssh://git@github.com:terminusdb/terminusdb-client-python.git@canary
+```
 
 <!-- tabs:end -->
 
@@ -161,7 +180,6 @@ client.connect().then(async()=>{
     {
         label:   "ExampleDatabase",
         comment: "Created new ExampleDatabase",
-        schema:true
     });
 }).catch((err)=>{
     console.error(err);
