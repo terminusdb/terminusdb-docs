@@ -6,8 +6,6 @@ The TerminusDB client package contains the two core components outlined below. T
 
 - [Connect WOQLClient](#connect-with-WOQLClient) to connect to TerminusX.
 
-- [Query with WOQL](#query-with-WOQL) for database queries. 
-
 ## Connect with WOQLClient
 
 A `WOQLClient` object enables connection to TerminusX (or TerminusDB.) To create a client object:
