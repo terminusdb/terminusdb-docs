@@ -12,7 +12,7 @@ The TerminusDB client package contains the two core components outlined below. T
 
 A `WOQLClient` object enables connection to TerminusX (or TerminusDB.) To create a client object:
 
-- [Get your API key](terminusx/get-your-API-key)
+- [Get your API key](terminusx/get-your-api-key)
 
 - Copy the JavaScript code snippet generated in the step above.
 
