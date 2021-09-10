@@ -9,8 +9,6 @@ on:
       - next
       - beta
 
-env:
-  LATEST_RELEASE_BRANCH: v10.0
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -31,18 +29,3 @@ jobs:
           target-folder: ${{ steps.extract_branch.outputs.branch }}
           folder: .
           clean-exclude: CNAME
-
-      - name: Deploy to root 🚀
-        uses: JamesIves/github-pages-deploy-action@4.0.0
-        if: ${{ steps.extract_branch.outputs.branch == env.LATEST_RELEASE_BRANCH }}
-        with:
-          branch: gh-pages
-          folder: .
-          clean-exclude: |
-            CNAME
-            main
-            rc
-            canary
-            v*
-            next
-            beta
