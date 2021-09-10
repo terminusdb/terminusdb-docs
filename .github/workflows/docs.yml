@@ -25,4 +25,17 @@ jobs:
             next
             beta
 
-      - run: sed -i 's/LATEST_RELEASE_BRANCH/${{ env.LATEST_RELEASE_BRANCH }}/g' index.html
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Replace LATEST_RELEASE_BRANCH
+      - run: |
+          sed -i 's/LATEST_RELEASE_BRANCH/${{ env.LATEST_RELEASE_BRANCH }}/g' index.html
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m 'Replace LATEST_RELEASE_BRANCH with ${{ env.LATEST_RELEASE_BRANCH }}'
+          git push
+        working-directory: gh-pages
