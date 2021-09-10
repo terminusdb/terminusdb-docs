@@ -10,7 +10,7 @@ on:
       - beta
 
 env:
-  LATEST_RELEASE_BRANCH: v4.2
+  LATEST_RELEASE_BRANCH: v10.0
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
