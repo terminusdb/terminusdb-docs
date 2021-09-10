@@ -1,0 +1,28 @@
+name: Docs
+on:
+  push:
+    branches:
+      - home
+
+env:
+  LATEST_RELEASE_BRANCH: v10.0
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.1
+
+      - uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: gh-pages
+          folder: .
+          clean-exclude: |
+            CNAME
+            main
+            rc
+            canary
+            v*
+            next
+            beta
+
+      - run: sed -i 's/LATEST_RELEASE_BRANCH/${{ env.LATEST_RELEASE_BRANCH }}/g' index.html
