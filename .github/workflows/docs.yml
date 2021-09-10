@@ -31,7 +31,7 @@ jobs:
           path: gh-pages
 
       - name: Replace LATEST_RELEASE_BRANCH
-      - run: |
+        run: |
           sed -i 's/LATEST_RELEASE_BRANCH/${{ env.LATEST_RELEASE_BRANCH }}/g' index.html
           git config user.name github-actions
           git config user.email github-actions@github.com
