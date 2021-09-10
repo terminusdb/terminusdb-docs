@@ -28,4 +28,3 @@ jobs:
           branch: gh-pages
           target-folder: ${{ steps.extract_branch.outputs.branch }}
           folder: .
-          clean-exclude: CNAME
