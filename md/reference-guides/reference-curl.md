@@ -4,6 +4,22 @@ Some CURL examples to help with building clients in various languages.
 
 <!-- to-do: REFACTOR -->
 
+# Get the Bearer Token
+[Get an access key set](https://github.com/terminusdb/terminusdb-docs/blob/v10.0/UI.md).
+
+ This key needs to be set as an environment variable before you start your client. You can do this in bash with the following:
+
+```bash
+$ export TERMINUSDB_ACCESS_TOKEN="my very long token here"
+
+```
+# Authorization Token
+
+```bash
+curl -H "Authorization: OAuth TERMINUSDB_ACCESS_TOKEN" https://cloud-dev.dcm.ist/{organization}/
+```
+
+
 # Connect
 
 ```bash
