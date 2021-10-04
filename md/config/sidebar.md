@@ -53,7 +53,7 @@
 
 <span class="tdb-f tdb-pd">How-to Guides</span><!-- <img class="tdb-i" src="img/ico/terminusdb-icon-how-to.png" title="How to"/> -->
 
-- [Create a Simple Database](how-to-guides/how-to-create-simple-database)
+- [Create a Simple Database](resources/to-do)
 - [Add a Date and Time](how-to-guides/how-to-add-date-and-time)
 - [Load Turtle Files](how-to-guides/how-to-load-turtle-files)
 - [Find an Object State](how-to-guides/how-to-find-object-state)
