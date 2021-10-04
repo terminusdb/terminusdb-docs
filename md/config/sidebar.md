@@ -44,12 +44,12 @@
 
 <span class="tdb-f tdb-pd">Quick Start Tutorials</span><!-- <img class="tdb-i" src="img/ico/terminusdb-icon-quick-start.png" title="Quick start"/> -->
 
-- [Quick start with JavaScript](resources/to-do)
-- [Quick start with Python](resources/to-do)
-- [Quick start with the Dashboard](resources/to-do)
-- [Quick start with the CLI](resources/to-do)
-- [Quick start schema](resources/to-do)
-- [Quick start query](resources/to-do)
+- [<span style="color: gray">Quick start with JavaScript</span>](resources/to-do)
+- [<span style="color: gray">Quick start with Python</span>](resources/to-do)
+- [<span style="color: gray">Quick start with the Dashboard</span>](resources/to-do)
+- [<span style="color: gray">Quick start with the CLI</span>](resources/to-do)
+- [<span style="color: gray">Quick start schema</span>](resources/to-do)
+- [<span style="color: gray">Quick start query</span>](resources/to-do)
 
 <span class="tdb-f tdb-pd">How-to Guides</span><!-- <img class="tdb-i" src="img/ico/terminusdb-icon-how-to.png" title="How to"/> -->
 
