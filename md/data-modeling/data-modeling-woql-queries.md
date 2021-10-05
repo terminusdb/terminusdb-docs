@@ -310,7 +310,7 @@ let jsonld = query.json()
 
 ```python
 
-jsonld = WOQLQuery().dict()
+jsonld = WOQLQuery().to_dict()
 
 
 ```
