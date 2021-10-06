@@ -76,7 +76,7 @@ second. This gives us back all two-hop paths possible in the
 graph.
 
 ```javascript
-triple("doc:My_Object", "v:Predicate", "v:Intermediate")
+triple("My_Object", "v:Predicate", "v:Intermediate")
 triple("v:Intermediate", "v:Predicate", "v:Object")
 ```
 
