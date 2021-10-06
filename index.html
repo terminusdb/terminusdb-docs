@@ -152,7 +152,7 @@
     {
         basePath      : `md/`,
         homepage      : 'overviews/introduction.md',
-        loadSidebar   : 'config/sidebar.md',
+        loadSidebar   : true,
         loadFooter    : 'config/footer.md',
         coverpage     : 'config/coverpage.md',
         onlyCover     : true,   
@@ -168,6 +168,10 @@
           buttonText : 'Copy',
           errorText  : 'Error',
           successText: 'Done'
+        },
+        alias:
+        {
+          '.*/_sidebar.md': '/config/sidebar.md'
         },
         plugins: 
         [
