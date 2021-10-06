@@ -36,7 +36,7 @@
 
 <!-- [Install Desktop](install/install-desktop) -->
 - [Install from Source Code](install/install-from-source-code)
-- [Install as a Docker Containter](install/install-as-docker-container)
+- [Install as a Docker Container](install/install-as-docker-container)
 - [Install a JavaScript Client](install/install-javascript-client)
 - [Install a Python Client](install/install-python-client)
 
