@@ -3,11 +3,7 @@ on:
   push:
     branches:
       - main
-      - rc
-      - canary
       - v*
-      - next
-      - beta
 
 jobs:
   build-and-deploy:
