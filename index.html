@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TerminusDB Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+  <link rel="stylesheet" href="css/terminusdb-docs.css">
+  <link rel="icon" type="image/png" href="img/ico/terminusx-color.png">
+  <style>
+
+    :root {
+
+      --cover-blockquote-color           : rgb(100,100,100);
+      --cover-color                      : rgb(255, 255, 255);
+      --cover-margin                     : 0 auto;
+      --cover-max-width                  : 68em;
+      --cover-text-align                 : center;
+      --cover-button-border              : rgb(79, 83, 93) 2px solid;
+      --cover-button-color               : rgb(79, 83, 93);
+      --cover-button-primary-border      : var(--cover-button-border);
+      --cover-button-primary-background  : var(--cover-button-color);
+
+      --search-padding                   : 0em;
+      --search-input-background-size     : 2em;
+      --search-input-border-width        : 12px;
+      --search-input-border-color        : rgb(0, 0, 0);
+      --search-input-background-color    : var(--search-input-border-color);
+      --search-input-placeholder-color   :rgb(150, 150, 150);
+      --search-result-keyword-background : var(--selection-color);
+      --search-result-keyword-color      : white;      
+      --search-result-item-color         : rgb(180, 180, 180);
+
+      --zoomimage-overlay-background     : rgba(0, 0, 0, .75); 
+
+      --content-max-width                 : var(--cover-max-width);
+
+      --sidebar-toggle-background         : rgb(255,255,255);
+      --sidebar-toggle-border-radius      : var(--border-radius-s);
+      --sidebar-toggle-border-style       : solid;
+      --sidebar-toggle-border-width       : 0;
+      --sidebar-toggle-icon-color         : rgb(0,0,0);
+      --sidebar-toggle-icon-width         : 16px;
+      --sidebar-toggle-icon-height        : 10px;
+      --sidebar-toggle-width              : 40px;
+      --sidebar-toggle-height             : 36px;
+      --sidebar-toggle-icon-stroke-width  : 1px;
+      --sidebar-toggle-offset-left        : 8px;
+      --sidebar-toggle-offset-top         : 8px;
+
+      --sidebar-width                     : 18rem;
+      --sidebar-background                : rgb(40, 42, 47);
+      --sidebar-border-color              : black;
+
+      --sidebar-margin                    : 0px;
+      --sidebar-nav-indent                : 0em;
+      --sidebar-nav-margin                : 0rem 0rem 0rem;
+      --sidebar-padding                   : 0px 10px 0px 10px;
+      
+      --link-color                        : lightblue;
+      --link-color--hover                 : var(--link-color);
+      --link-text-decoration              : none;
+      --link-text-decoration--hover       : underline;
+      
+      --cover-background-color            : rgb(255, 255, 255);
+      --cover-background-image            : "../../img/ico/terminusx-color.png";
+      --cover-heading-color               : rgb(0, 0, 0);
+      --cover-heading-font-size           : var(--font-size-xxl);
+      --cover-heading-font-weight         : normal;
+
+      --blockquote-background             : rgb(35, 35, 35);
+      --blockquote-border-color           : var(--link-color);
+      --heading-color                     : rgb(240, 240, 240);
+
+      --base-background-color             : rgb(47, 49, 54);
+      --base-font-family                  : -apple-system, BlinkMacSystemFont, "Arial Unicode MS", "Sora", "Arial", "Verdana", "Tahoma";
+      --base-font-color                   : rgb(255,255,255);
+      --base-font-size                    : 14px;
+      --base-font-weight                  : normal;
+      --base-line-height                  : 1.7;    
+
+      --mark-background                   :#ffecb3;
+      
+      --pre-font-family                   : var(--code-font-family);
+      --pre-font-size                     : var(--code-font-size);
+      --pre-font-weight                   : normal;
+
+      --selection-color                   : orangered;
+
+      --small-font-size                   : var(--font-size-s);
+
+      --strong-color                      : var(--heading-color);
+      --strong-font-weight                : 600;
+
+      --subsup-font-size                  : var(--font-size-s);
+
+      --docsifytabs-border-px             : 0.1px;
+      --docsifytabs-margin                : 0;
+      --docsifytabs-border-color          : rgb(64,64,64);
+      --docsifytabs-tab-background        : var(--table-row-odd-background); 
+      --docsifytabs-tab-color             : var(--base-font-color);
+      --docsifytabs-tab-color--active     : var(--base-font-color);
+      --docsifytabs-tab-highlight-px      : 3px;
+      --docsifytabs-tab-highlight-color   : var(--link-color);
+      --docsifytabs-tab-padding           : 1em 1em;
+      --docsifytabs-content-padding       : 1rem;
+
+      --copycode-background               : rgb(20, 20, 20);
+      --copycode-color                    : lightblue;
+
+      --code-block-border-radius          : 3px;
+      --code-theme-background             : var(--sidebar-background);
+      --code-font-family                  : "Courier New";    
+      --code-font-size                    : 14px;
+      --code-font-weight                  : ;
+      --code-tab-size                     : 4;
+      --code-block-padding                : 1.8em 0.8em 1.8em;
+      --code-inline-background            :rgb(53, 71, 85);
+      --code-inline-border-radius         : var(--code-block-border-radius);
+      --code-inline-padding               : 0.1em 0.3em 0.1em 0.3em;
+  
+      --table-body-border-width           : 0.5px;
+      --table-cell-border-color           : var(--copycode-background);
+      --table-cell-border-width           : var(--table-body-border-width);
+      --table-cell-padding                : 1em 1em;
+      --table-head-background             : var(--sidebar-background);  
+      --table-head-border-color           : var(--table-cell-border-color);
+      --table-head-border-width           : var(--table-body-border-width);
+      --table-row-odd-background          : rgb(43, 45, 49);
+
+      --pagination-border-top             : 0.5px solid var(--docsifytabs-border-color);
+      --pagination-label-color            : var(--link-color);
+      --pagination-title-color            : var(--pagination-label-color);
+
+      --notice-important-background       : pink;
+      --notice-important-border-color     : crimson;
+      --notice-important-border-style     : solid;
+      --notice-important-color            : black;
+
+      --navbar-root-margin               : 5 5 5 5em;
+
+    }
+</style>
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+  var u="https://terminusdb.matomo.cloud/";
+  _paq.push(['setTrackerUrl', u+'matomo.php']);
+  _paq.push(['setSiteId', '1']);
+  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+  g.async=true; g.src='//cdn.matomo.cloud/terminusdb.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->	
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8481758.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</head>
+<body>
+  <div id="contents-page" class="tdb-d"></div>
+  <div id="contents-ctrl" class="tdb-c tdb-shadow"></div>
+  <div id="app"></div>
+  <script>
+    window.$docsify = 
+    {
+        basePath      : `md/`,
+        homepage      : 'overviews/introduction.md',
+        loadSidebar   : true,
+        loadFooter    : 'config/footer.md',
+        coverpage     : 'config/coverpage.md',
+        onlyCover     : true,   
+        auto2top      : true,
+        search: 
+        {
+          depth       : 4,
+          noData      : 'No results.',
+          placeholder : 'Search...'
+        },
+        copyCode: 
+        {
+          buttonText : 'Copy',
+          errorText  : 'Error',
+          successText: 'Done'
+        },
+        alias:
+        {
+          '.*/_sidebar.md': '/config/sidebar.md'
+        },
+        plugins: 
+        [
+          function(hook, vm) 
+          {
+            hook.beforeEach(function(html) 
+            {
+              document.getElementById("main").style.visibility = "hidden"; 
+              return tdb_nav() + html; 
+            });
+            hook.afterEach(function(html) { tdb_TOC(html); });
+            hook.doneEach(function() { document.getElementById("main").style.visibility = "visible"; });
+            hook.ready(function() {
+              var d = document.getElementById("main").style;
+                  d.float = "left";
+                  d.marginLeft = "50px";
+            });
+          }
+        ]
+    }
+
+  </script>
+    <script src="js/tdb-navbar.js"></script>
+    <script src="js/tdb-toc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+    <script src="https://unpkg.com/docsify-copy-code@2"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <script src="https://unpkg.com/@terminusdb/terminusdb-client/dist/terminusdb-client.min.js"></script>  
+    <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-http.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-csv.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
+    <script src="//unpkg.com/prismjs/components/prism-regex.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
+  </script>
+
+</body>
+</html>
