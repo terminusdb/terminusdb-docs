@@ -1,17 +1,105 @@
-# API
+# HTTP API
 
-API definitions for terminusdb.
+> **On this page:** Documentation of HTTP endpoints, requests, and responses.
 
-### General rule
+The HTTP API supports HTTP clients with a REST interface.
 
-The TerminusDB Server HTTP API JSON documents have optional elements notated with angle-brackets, for instance:
+## Introduction
 
-```jsx
-{
-  <"optional" : "foo">,
-  "required" : "bar"
-}
+The API is divided into logical sections subdivided by endpoint.
+
+### Endpoint
+
+An endpoint is an HTTP method and a path. The method is one of `GET`, `POST`,
+`PUT`, or `DELETE`. The path starts with `/api`. It's followed by a segment for
+the relevant operation, e.g. `/db` for operations on a database. It may end with
+segments that serve as arguments, e.g. `/<team>/<db>` representing a team name
+and a database name.
+
+### Using `curl` or `httpie`
+
+In addition to API documentation, w
+
+### TerminusX or TerminusDB?
+
+The URL base and authentication for an endpoint will differ depending on whether
+the host is TerminusX or an instance of TerminusDB.
+
+#### URL Base
+
+The URL base for the API is the part of the URL before the endpoint path. In
+other words, it's everything before `/api`.
+
+For TerminusX, the URL base may look something like this (for the team
+`cloudabc`):
+
+```shell
+export BASE='https://cloud.terminusdb.com/cloudabc'
 ```
+
+For TerminusDB, the URL base may look something like this:
+
+```shell
+export BASE='http://localhost:6363'
+```
+
+To simplify the `curl` examples on this page, we will use `$BASE` in place of
+the actual URL base.
+
+#### Authentication
+
+For TerminusX, you use an access token with `Bearer` authorization:
+
+```shell
+export TERMINUSDB_ACCESS_TOKEN='...'
+curl -H "Authorization: Bearer $TERMINUSDB_ACCESS_TOKEN" ...
+```
+
+For TerminusDB, you use a username and password (i.e. `Basic` authorization):
+
+```shell
+export TERMINUSDB_USER='...'
+export TERMINUSDB_PASS='...'
+curl -u "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
+```
+
+To simplify the `curl` examples on this page, we will use an environment
+variable that you can define for either host.
+
+For TerminusX, define:
+
+```shell
+export AUTH="-H 'Authorization: Bearer $TERMINUSDB_ACCESS_TOKEN'"
+```
+
+For TerminusDB, define:
+
+```shell
+export AUTH="-u '$TERMINUSDB_USER:$TERMINUSDB_PASS'"
+```
+
+Then, every `curl` command will look like this:
+
+```shell
+curl "$AUTH" ...
+```
+
+### Endpoint Arguments
+
+An endpoint may expect arguments in an HTTP request as path segments, as query
+parameters, or as JSON in the body.
+
+* A segment is a part of the path separated from other segments by a slash
+  (`/`).
+* A parameter comes after the path and a question mark (`?`). It is separated
+  from other parameters by an ampersand (`&`).
+* The body may include a JSON object with expected fields and values.
+
+> <span title="Take note!">:memo:</span> If a request includes JSON, it must
+> also have the header:
+> ```shell
+> Content-Type: application/json
+> ```
 
 ---
 
