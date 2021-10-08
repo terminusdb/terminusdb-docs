@@ -107,30 +107,30 @@ With the exception of resource identifiers which are used to specify the graphs 
 
 In WOQL.js, there are 3 distinct ways of expressing variables within queries. All are semantically equivalent, although the first is generally preferred as it is easier to type and it is easier to distinguish variables from constants at a glance due to the lack of quote marks around the variables
 
-1
+- 1
 
 ```javascript
     let [a, b, c] = vars('a', 'b', 'c')
     triple(a, b, c)
 ```
 
-2
+- 2
 
 ```javascript
     triple('v:a', 'v:b', 'v:c')
 ```
 
-3
+- 3
 
 ```javascript
-    triple({'@type': 'woql:Variable', 'woql:variable_name': {"@type": 'xsd:string', '@value': 'a'}} ....)
+    triple({'@type': 'NodeValue', 'variable': 'a'} ....)
 ```
 
 WOQL uses the formal logical approach to variables known as unification - this allows most WOQL functions to serve as both pattern matchers and pattern generators, depending on whether a variable or constant is provided as an argument. If a variable is provided, WOQL will generate all possible valid solutions which fill the variable value. If a constant is provided, WOQL will match only those solutions with exactly that value. With the exception of resource identifiers, WOQL functions accept either variables or constants in virtually all of their arguments.
 
 ## Prefixes in WOQL.js
 
-Internally, TerminusDB uses strict RDF rules to represent all data. This means that all identifiers and properties are represented by IRIs (which are a superset of URLs). However, IRIs are difficult to remember and tedious to type. RDF in general gets around this problem by allowing prefixed forms as shorthand - so for example, we can use "rdf:type" rather than "http://obscure.w3c.url/with/embedded/dates#type". TerminusDB defines a set of standard prefixes which are availabe to use and also allows users to extend this by adding their own prefix designations to the system. The set of standard prefixes includes the basic language elements (rdf, rdfs, owl), datatype elements (xsd, xdd) and internal namespaces (ref, repo, system, vio). It also pre-defines two prefixes for user-use - the 'doc' prefix for instance data IRIs and the 'scm' prefix for schema IRIs. So we can write "doc:X" or "scm:X" and this will always resolve to a valid IRI in all databases.
+Internally, TerminusDB uses strict RDF rules to represent all data. This means that all identifiers and properties are represented by IRIs (which are a superset of URLs). However, IRIs are difficult to remember and tedious to type. RDF in general gets around this problem by allowing prefixed forms as shorthand - so for example, we can use `rdf:type` rather than `http://www.w3.org/1999/02/22-rdf-syntax-ns#`. TerminusDB defines a set of standard prefixes which are availabe to use and also allows users to extend this by adding their own prefix designations to the system. The set of standard prefixes includes the basic language elements (rdf, rdfs, owl), datatype elements (xsd, xdd) and internal namespaces (ref, repo, system, vio). It also pre-defines two prefixes for user-use - the `@base` prefix for instance data IRIs and the `@schema` prefix for schema IRIs. So we can write `@base:X` or `@schema:X` and this will always resolve to a valid IRI in all databases.
 
 
 WOQL goes a step beyond supporting prefixes and automatically applies prefixes wherever possible allowing users to specify prefixes only when necessary.
@@ -144,4 +144,4 @@ The default prefixes are applied in the following way
 ## WOQL Functions
 
 
-The JSON-LD form of WOQL supports a well-defined set of functions (woql:Triple, woql:Regexp...) - in WOQL.js these functions are known as primitives. WOQL.js supports all of these primite functions and adds several extensions on top - functions that compose multiple primitives, functions that compose partial primitives and can be chained together, and simple helper functions to make it easier to format the arguments correctly. The table below shows the full range of functions supported by WOQL.js and groups them together into categories to make it easier to find the required function for specific problems.
+The JSON-LD form of WOQL supports a well-defined set of functions (`woql:Triple`, `woql:Regexp`...) - in WOQL.js these functions are known as primitives. WOQL.js supports all of these primite functions and adds several extensions on top - functions that compose multiple primitives, functions that compose partial primitives and can be chained together, and simple helper functions to make it easier to format the arguments correctly. The table below shows the full range of functions supported by WOQL.js and groups them together into categories to make it easier to find the required function for specific problems.
