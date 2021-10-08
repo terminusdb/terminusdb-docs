@@ -94,9 +94,9 @@ A WOQLQuery object containing the quad pattern matching rule
 
 
 ```js
-let [class, prop] = vars("class", "prop")
+let [class, prop] = vars("class", "key")
 
-quad(class, "domain", prop, "schema/main")
+quad(class, "sys:key", key, "schema")
 ```
 
 <hr class="section-separator"/>
@@ -160,7 +160,7 @@ Selects (filters) a list of variables from the enclosed sub-query and removes th
 select(...Vars, Subq)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -177,12 +177,12 @@ A WOQLQuery object containing the filtered variables and subquery
 ```js
 let [grouped, subject, class] = vars("grouped", "subject", "class")
 
-select(grouped).group_by(subject, class, grouped).triple(subject, "type", class)   
+select(grouped).group_by(subject, class, grouped).triple(subject, "type", class)
 ```
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->    
+<!----------------------------------------------------------------------------------------->
 
 <!-- and -->
 <div class="anchor-sub-headings-style">
@@ -201,7 +201,7 @@ Logical conjunction of the contained queries - all queries must match or the ent
 and(...Subqueries)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -224,7 +224,7 @@ and(
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->    
+<!----------------------------------------------------------------------------------------->
 <!-- or -->
 <div class="anchor-sub-headings-style">
     <span class="anchor-sub-headings">or</span>
@@ -243,7 +243,7 @@ or(...Subqueries)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -267,7 +267,7 @@ or(
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->    
+<!----------------------------------------------------------------------------------------->
 <!-- opt -->
 <div class="anchor-sub-headings-style">
     <span class="anchor-sub-headings">opt</span>
@@ -284,7 +284,7 @@ Specifies that the Subquery is optional - if it does not match the query will no
 opt(Subquery) ~ optional(Subquery) (alias))
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -304,7 +304,7 @@ opt().triple(subject, 'label', "A")
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 
 <!-- not -->
 
@@ -323,7 +323,7 @@ Logical negation of the contained subquery - if the subquery matches, the query 
 not(Subquery)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -343,7 +343,7 @@ not().triple(subject, 'label', label)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 
 <!-- isa -->
 <div class="anchor-sub-headings-style">
@@ -362,7 +362,7 @@ isa(IRI, Class)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -401,7 +401,7 @@ Tests whether a given Class subsumes another class
 sub(ClassA, ClassB) ~ subsumption(ClassA, ClassB) (Alias)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -441,7 +441,7 @@ Generate a new IRI from the prefix and a hash of the variables which will be uni
 unique(Prefix, Vars, NewIRI)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -482,7 +482,7 @@ idgen(Prefix, Vars, NewIRI) ~ idgenerator(Prefix, Vars, NewIRI) (Alias)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                         | Types                                                                | Requirement                |
 |---------------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -504,7 +504,7 @@ idgen("doc:Person", ["John", "Smith"], newid)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 
 <!-- true -->
 <div class="anchor-sub-headings-style">
@@ -522,7 +522,7 @@ A function that always matches, always returns true
 true()
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 None
 
 <div class="anchor-sub-parts">Returns</div>
@@ -532,12 +532,12 @@ A WOQLQuery object containing the true value that will match any pattern
 
 
 ```js
-when(true()).triple("a", "b", "c")
+and(true(),triple("a", "b", "c"))
 ```
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 <!-- eq -->
 
 <div class="anchor-sub-headings-style">
@@ -571,7 +571,7 @@ A WOQLQuery object containing the ID that matches
 
 ```js
 let [nid] = vars("mike")
-idgen("doc:mike", nid)
+idgen("mike", nid)
 ```
 
 <hr class="section-separator"/>
@@ -594,7 +594,7 @@ Specifies an offset position in the results to start listing results from
 start(Start, Subq)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 
 | Arguments                                    | Types                                                                | Requirement                |
@@ -637,7 +637,7 @@ Specifies a maximum number of results that will be returned from the subquery
 limit(Limit, Subq)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -658,7 +658,7 @@ limit(100).triple(a, b, c)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 
 <!--path -->
 <div class="anchor-sub-headings-style">
@@ -668,7 +668,7 @@ limit(100).triple(a, b, c)
 
 <i class="fa fa-check status-stable"/>
 
-Performs a path regular expression match on the graph  
+Performs a path regular expression match on the graph
 
 <div class="anchor-sub-parts">Syntax</div>
 
@@ -676,7 +676,7 @@ Performs a path regular expression match on the graph
 path(Subject, Pattern, Object, Path)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -695,12 +695,12 @@ A WOQLQuery which contains the path regular expression matching expression
 ```js
 let [person, grand_uncle, lineage] = vars("person", "grand uncle", "lineage")
 
-path(person, ((father|mother) {2,2}), brother), grand_uncle, lineage)  
+path(person, ((father|mother) {2,2}), brother), grand_uncle, lineage)
 ```
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 
 <!-- order_by -->
 <div class="anchor-sub-headings-style">
@@ -718,7 +718,7 @@ Orders the results of the contained subquery by a precedence list of variables
 order_by(...Ordervars, Subq)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -762,7 +762,7 @@ group_by(GroupVars, PatternVars, GroupedVar, Subq)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -889,7 +889,7 @@ member(name, ["john", "joe", "frank"])
 
 <i class="fa fa-check status-stable"/>
 
-Matches or generates the length of a list  
+Matches or generates the length of a list
 
 <div class="anchor-sub-parts">Syntax</div>
 
@@ -898,7 +898,7 @@ length(List, Len)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -914,7 +914,7 @@ A WOQLQuery which contains the Length pattern matching expression
 ```js
 let [count] = vars("count")
 
-length(["john", "joe", "frank"], count)  
+length(["john", "joe", "frank"], count)
 
 ```
 
@@ -942,7 +942,7 @@ concat(List, Concatenated)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -958,7 +958,7 @@ A WOQLQuery which contains the Concatenation pattern matching expression
 ```js
 let [first_name, last_name, full_name] = vars("first", "last", "full")
 
-concat([first_name, " ", last_name], full_name)  
+concat([first_name, " ", last_name], full_name)
 
 ```
 
@@ -974,7 +974,7 @@ concat([first_name, " ", last_name], full_name)
 
 <i class="fa fa-check status-stable"/>
 
-A trimmed version of Untrimmed (with leading and trailing whitespace removed) is stored in Trimmed   
+A trimmed version of Untrimmed (with leading and trailing whitespace removed) is stored in Trimmed
 
 
 <div class="anchor-sub-parts">Syntax</div>
@@ -984,7 +984,7 @@ trim(Untrimmed, Trimmed)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1008,7 +1008,7 @@ trim("hello   ", trimmed)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->     
+<!----------------------------------------------------------------------------------------->
 <!-- substr -->
 
 <div class="anchor-sub-headings-style">
@@ -1026,7 +1026,7 @@ Generates a Substring From String, starting from Begin offset, of length Length,
 substr(String, Before, Length, After, SubString) ~ substring(String, Before, Length, After, SubString) (Alias)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1045,14 +1045,14 @@ A WOQLQuery which contains the Substring pattern matching expression
 ```js
 let [trimmed] = ['trimmed']
 
-substr("helloIAmTerminusDb", 8, 8, 2, )
+substr("helloIAmTerminusDb", 8, 8, 2, trimmed)
 //trimmed contains "hello"
 
 ```
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->     
+<!----------------------------------------------------------------------------------------->
 
 
 <!-- upper -->
@@ -1072,7 +1072,7 @@ Generates or matches an upper-case version of String in Capitalized
 upper(String, Capitalized)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1094,7 +1094,7 @@ upper("aBCe", allcaps)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->     
+<!----------------------------------------------------------------------------------------->
 
 <!--lower-->
 <div class="anchor-sub-headings-style">
@@ -1112,7 +1112,7 @@ Generates or matches a lower-case version of String in LowerCased
 lower(String, LowerCased)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1153,7 +1153,7 @@ Pads out the string Input to be exactly Len long by appending the Pad character 
 pad(Input, Pad, Len, Output)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1177,7 +1177,7 @@ pad("joe", " ", 8, fixed)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->    
+<!----------------------------------------------------------------------------------------->
 
 <!-- split -->
 <div class="anchor-sub-headings-style">
@@ -1187,7 +1187,7 @@ pad("joe", " ", 8, fixed)
 
 <i class="fa fa-check status-stable"/>
 
-Splits a string (Input) into a list strings (Output) by removing separator  
+Splits a string (Input) into a list strings (Output) by removing separator
 
 <div class="anchor-sub-parts">Syntax</div>
 
@@ -1195,7 +1195,7 @@ Splits a string (Input) into a list strings (Output) by removing separator
 split(Input, Separator, Output)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1219,7 +1219,7 @@ split("joe has a hat", " ", words)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->    
+<!----------------------------------------------------------------------------------------->
 <!--- join -->
 <div class="anchor-sub-headings-style">
     <span class="anchor-sub-headings">join</span>
@@ -1236,7 +1236,7 @@ Joins a list variable together (Input) into a string variable (Output) by gluein
 join(Input, Glue, Output)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1260,7 +1260,7 @@ join(["joe", "has", "a", "hat", " ", sentence)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->   
+<!----------------------------------------------------------------------------------------->
 
 <!-- re -->
 <div class="anchor-sub-headings-style">
@@ -1278,7 +1278,7 @@ Matches the regular expression defined in Patern against the Test string, to pro
 re(Pattern, Test, Matches) ~ regexp(Pattern, Test, Matches) (Alias)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1302,7 +1302,7 @@ WOQL.re("h(.).*", "hello", [e, llo])
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->   
+<!----------------------------------------------------------------------------------------->
 
 <!-- like -->
 <div class="anchor-sub-headings-style">
@@ -1321,7 +1321,7 @@ like(StringA, StringB, Distance)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1345,7 +1345,7 @@ like("hello", "hallo", dist)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->   
+<!----------------------------------------------------------------------------------------->
 
 
 ### Updates / Transactions
@@ -1367,7 +1367,7 @@ Adds a single triple to the database
 add_triple(Subject, Predicate, Object)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1387,7 +1387,7 @@ add_triple("john", "age", 42)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->   
+<!----------------------------------------------------------------------------------------->
 
 <!-- add_quad -->
 
@@ -1407,7 +1407,7 @@ add_quad(Subject, Predicate, Object, Graph)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1423,12 +1423,12 @@ A WOQLQuery which contains the add_quad insert statement
 
 
 ```js
-add_quad("Person", "type", "owl:Class", "schema/main")
+add_quad("@schema:Person", "rdf:type", "sys:Class", "schema")
 ```
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->   
+<!----------------------------------------------------------------------------------------->
 
 <!-- delete_triple -->
 <div class="anchor-sub-headings-style">
@@ -1446,7 +1446,7 @@ Deletes a single triple from the default graph of the database
 delete_triple(Subject, Predicate, Object)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1467,7 +1467,7 @@ delete_triple("john", "age", 42)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->   
+<!----------------------------------------------------------------------------------------->
 <!--  delete_quad -->
 
 <div class="anchor-sub-headings-style">
@@ -1486,7 +1486,7 @@ delete_quad(Subject, Predicate, Object, Graph)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1502,7 +1502,7 @@ A WOQLQuery which contains the Delete Quad Statement
 
 
 ```js
-delete_quad("Person", "type", "owl:Class", "schema/main")
+delete_quad("@schema:Person", "rdf:type", "sys:Class", "schema")
 ```
 
 <hr class="section-separator"/>
@@ -1518,7 +1518,7 @@ delete_quad("Person", "type", "owl:Class", "schema/main")
 
 <i class="fa fa-check status-stable"/>
 
-Generates a transaction which encompasses all situations in which the Condition is true, the Consequent will be executed - the when block encapsulates a single transaction and allows a single query to express multiple transactions (by including multiple when blocks)  
+Generates a transaction which encompasses all situations in which the Condition is true, the Consequent will be executed - the when block encapsulates a single transaction and allows a single query to express multiple transactions (by including multiple when blocks)
 
 <div class="anchor-sub-parts">Syntax</div>
 
@@ -1527,7 +1527,7 @@ when(Condition, Consequent)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1541,7 +1541,7 @@ A WOQLQuery which contains the conditional transactional statement
 
 
 ```js
-when(true).add_triple("doc:john", "type", "scm:Person")  
+add_triple("john", "rdf:type", "@schema:Person")
 ```
 
 <hr class="section-separator"/>
@@ -1574,7 +1574,7 @@ you must use evaluate to avoid clashing with javascripts eval() function)
 </div>
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1596,7 +1596,7 @@ evaluate(plus(2, minus(3, 1)), result)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 
 <!-- sum -->
 
@@ -1616,7 +1616,7 @@ computes the sum of the List of values passed. In contrast to other arithmetic f
 sum(List, Total)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1639,7 +1639,7 @@ sum([2, 3, 4, 5], result)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 
 <!-- plus -->
 <div class="anchor-sub-headings-style">
@@ -1659,7 +1659,7 @@ adds two numbers together
 plus(Number1, Number2)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1681,7 +1681,7 @@ evaluate(plus(2, plus(3, 1)), result)
 
 <hr class="section-separator"/>
 
-<!----------------------------------------------------------------------------------------->  
+<!----------------------------------------------------------------------------------------->
 
 <!-- minus -->
 
@@ -1692,7 +1692,7 @@ evaluate(plus(2, plus(3, 1)), result)
 
 <i class="fa fa-check status-stable"/>
 
-Subtracts Number2 from Number1  
+Subtracts Number2 from Number1
 
 <div class="anchor-sub-parts">Syntax</div>
 
@@ -1701,7 +1701,7 @@ Subtracts Number2 from Number1
 minus(Number1, Number2)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1745,7 +1745,7 @@ times(Number1, Number2)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1793,7 +1793,7 @@ divide(Number1, Number2)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1837,7 +1837,7 @@ Generates the nearest lower integer to the passed number
 floor(Number1)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1881,7 +1881,7 @@ Integer division: divides Number1 by Number2 to return an integer value
 div(Number1, Number2)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1928,7 +1928,7 @@ exp(Number1, Number2)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -1974,7 +1974,7 @@ less(Val1, Val2)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2020,7 +2020,7 @@ greater(Val1, Val2)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2069,7 +2069,7 @@ get(AsVArs, QueryResource)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2115,7 +2115,7 @@ put(AsVArs, Subq, FileResource)
 
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2161,7 +2161,7 @@ as(SourceLocator, VarName, Type)
 
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2237,7 +2237,7 @@ remote("http://url.of.resource", {type: "csv"})
 
 <i class="fa fa-check status-stable"/>
 
-Identifies a file resource as a path on the server and specifies the format through the options   
+Identifies a file resource as a path on the server and specifies the format through the options
 
 <div class="anchor-sub-parts">Syntax</div>
 
@@ -2247,7 +2247,7 @@ file(Path, Opts)
 
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2279,7 +2279,7 @@ file("/path/to/file", {type: 'turtle'} )
 
 <i class="fa fa-check status-stable"/>
 
-Identifies a resource as a local path on the client, to be sent to the server through a HTTP POST request, with the format defined through the options  
+Identifies a resource as a local path on the client, to be sent to the server through a HTTP POST request, with the format defined through the options
 
 <div class="anchor-sub-parts">Syntax</div>
 
@@ -2289,7 +2289,7 @@ post(Path, opts)
 
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2330,7 +2330,7 @@ using(GraphResource, Subq)
 
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2374,7 +2374,7 @@ into(GraphResource, Subq)
 
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2390,8 +2390,8 @@ A WOQLQuery which will be written into the graph in question
 
 
 ```js
-using("admin/minecraft").into("instance/main").add_triple("a", "type", "scm:X")
-//writes a single tripe (doc:a, rdf:type, scm:X) into the main instance graph
+using("admin/minecraft").into("instance").add_triple("a", "rdf:type", "@schema:X")
+//writes a single tripel ("a", "rdf:type", "@schema:X") into the main instance graph
 
 ```
 
@@ -2419,7 +2419,7 @@ size(ResourceID, Size)
 
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2462,7 +2462,7 @@ triple_count(ResourceID, Count)
 
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2490,7 +2490,7 @@ triple_count("admin/minecraft/local/_commits", tc)
 
 ### Document Queries (Experimental / Unstable)
 
-Document queries take or return entire JSON-LD document as arguments. This relies upon the internal frame-generation capabilities of the database and requires the user to have defined discrete document classes to dictate at what points the graph traversal is truncated - a document is considered to contain all objects within it, with the exception of predicates and classes that belong to other documents. This takes some care - improperly defined it can lead to very slow queries which contain the whole database unrolled into a single document - not normally what we require.   
+Document queries take or return entire JSON-LD document as arguments. This relies upon the internal frame-generation capabilities of the database and requires the user to have defined discrete document classes to dictate at what points the graph traversal is truncated - a document is considered to contain all objects within it, with the exception of predicates and classes that belong to other documents. This takes some care - improperly defined it can lead to very slow queries which contain the whole database unrolled into a single document - not normally what we require.
 
 <!-- update_object -->
 
@@ -2511,7 +2511,7 @@ update_object(JSONLD)
 ```
 
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2526,13 +2526,10 @@ A WOQLQuery which contains the update object expression
 
 ```js
 update_object({
-    "@id": "doc:joe",
-    "@type": "scm:Person",
-    "rdfs:label": {
-        "@type": "xsd:string",
-        "@value": "Joe"
-    }
-})
+    "@id": "Person/joe",
+    "@type": "Person",
+    "name": "Joe"
+    })
 ```
 
 <hr class="section-separator"/>
@@ -2557,7 +2554,7 @@ Deletes the entire refered document and all references to it
 delete_object(JSON_or_IRI)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2571,7 +2568,7 @@ A WOQLQuery which object deletion expression
 
 
 ```js
-delete_object("doc:mydoc")
+delete_object("Person/mydoc")
 ```
 
 <hr class="section-separator"/>
@@ -2596,7 +2593,7 @@ Saves the entire document with IRI DocumentIRI into the JSONLD variable
 read_object(DocumentIRI, JSONLD)
 ```
 
-<div class="anchor-sub-parts">Arguments</div>  
+<div class="anchor-sub-parts">Arguments</div>
 
 | Arguments                                    | Types                                                                | Requirement                |
 |----------------------------------------------|----------------------------------------------------------------------|----------------------------|
@@ -2612,7 +2609,7 @@ A WOQLQuery which contains the document retrieval expression
 ```js
 let [mydoc] = vars("mydoc")
 
-read_object("doc:a", mydoc)
+read_object("Person/a", mydoc)
 //mydoc will have the json-ld document with ID doc:x stored in it
 ```
 
