@@ -1009,7 +1009,7 @@ An example of an object `Person` that can have 0 to any number of friends. This 
 { 
     "@id"   : "Me",
     "@type" : "Person",
-    "tasks" : 
+    "friends" : 
     [
         { 
             "@type" : "Person",
