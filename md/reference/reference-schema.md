@@ -53,7 +53,7 @@ The **context object** is a special schema object affecting the entire schema. T
     "@documentation"   : 
     {
         "@title"       : "WOQL schema",
-        "@authors"     : ["Gavin Mendel-Gleason"]
+        "@authors"     : ["Gavin Mendel-Gleason"],
         "@description" : "The WOQL schema providing a complete specification of the WOQL syntax. 
                          This enables: 
                          * WOQL queries to be checked for syntactic correctness.
@@ -848,7 +848,7 @@ In the example range class below, `first_name` and `last_name` are strings, `yea
 }
 { 
     "@type"         : "Person",
-    "@id"           : "Person/Hannibal_Barca"
+    "@id"           : "Person/Hannibal_Barca",
     "first_name"    : "Hannibal",
     "last_name"     : "Barca",
     "knows"         : 
@@ -1009,7 +1009,7 @@ An example of an object `Person` that can have 0 to any number of friends. This 
 { 
     "@id"   : "Me",
     "@type" : "Person",
-    "tasks" : 
+    "friends" : 
     [
         { 
             "@type" : "Person",
