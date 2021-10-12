@@ -26,14 +26,11 @@ The basic unit of specification is a **class**. A class definition is a schema o
 #### Code: The basic unit of specification
 
 ```json
-
 { 
     "@type" : "Class",
     "@id"   : "Person",
     "name"  : "xsd:string" 
 }
-
-
 ```
 
 ## Context object
@@ -45,7 +42,6 @@ The **context object** is a special schema object affecting the entire schema. T
 #### Code: The context object
 
 ```json
-
 {   "@type"            : "@context",
     "@schema"          : "http://terminusdb.com/schema/woql#",
     "@base"            : "terminusdb://woql/data/",
@@ -62,8 +58,6 @@ The **context object** is a special schema object affecting the entire schema. T
                          * Helps to prevent errors and detect conflicts in merge of queries.",   
     } 
 }
-
-
 ```
 
 This example does the following:
@@ -86,15 +80,12 @@ This example does the following:
 All properties in the context object that do not start with `@`, such as `xsd`, are URI definitions. They must be of the form shown below. Prefix and URI are defined by their respective regular expressions. That is, a prefix has an identifier starting with an alphabetic character followed by alphanumeric characters. The URI has a protocol followed by valid URI characters. Each prefix is paired with a URI.
 
 ```
-
 Prefix := ":alpha::alphaNum:*"
 URI    := ":alpha:alphaNum:*://:uriChar:*"
 
 {   ...
     Prefix : URI
     ... }
-
-
 ```
 
 ## Context keywords
@@ -108,7 +99,6 @@ The `@schema` keyword specifies the default URI expansion to use for all element
 #### Code: Context keyword @schema
 
 ```json
-
 { 
     "@type"       : "@context",
     "@schema"     : "http://terminusdb.com/schema/woql#",
@@ -125,8 +115,6 @@ The `@schema` keyword specifies the default URI expansion to use for all element
     "name"        : "xsd:string",
     "query"       : "Query" 
 }
-
-
 ```
 
 ### @base
@@ -136,7 +124,6 @@ The `@schema` keyword specifies the default URI expansion to use for all element
 #### Code: A document in the instance graph 
 
 ```json
-
 { 
     "@type"     : "NamedQuery",
     "@id"       : "NamedQuery_my_query",
@@ -146,8 +133,6 @@ The `@schema` keyword specifies the default URI expansion to use for all element
         "@type" : "True" 
     }
 }
-
-
 ```
 
 ### @documentation
@@ -181,7 +166,6 @@ The `@type` of the object. At the schema level, this is one of: `Enum`, `Class`,
 #### Code: An example of a class
 
 ```json
-
 { 
     "@id"         : "Dog",
     "@type"       : "Class",
@@ -194,14 +178,11 @@ The `@type` of the object. At the schema level, this is one of: `Enum`, `Class`,
     "name"        : "xsd:string",
     "hair_colour" : "Colour" 
 }
-
-
 ```
 
 #### Code: An example of a class instance
 
 ```json
-
 { 
     "@type"       : "@context",
     "@base"       : "http://i/",
@@ -213,8 +194,6 @@ The `@type` of the object. At the schema level, this is one of: `Enum`, `Class`,
     "name"        : "Cerberus",
     "hair_colour" : "Grey" 
 }
-
-
 ```
 
 #### Enum
@@ -224,7 +203,6 @@ An `Enum` is a non-standard class in which each instance is a simple URI with no
 #### Code: An example of an enum class 
 
 ```json
-
 { 
     "@type"   : "Enum",
     "@id"     : "PrimaryColour",
@@ -235,17 +213,12 @@ An `Enum` is a non-standard class in which each instance is a simple URI with no
         "Yellow"
     ] 
 }
-
-
 ```
 
 <!-- to-do: Anything else needed here? -->
 
 ```json
-
 "Blue"
-
-
 ```
 
 #### TaggedUnion
@@ -259,7 +232,6 @@ Examples below of a schema with a TaggedUnion and a concrete [TaggedUnion class 
 #### Code: An example schema with a TaggedUnion
 
 ```json
-
 { 
     "@type"     : "@context",
     "@base"     : "http://i/",
@@ -287,14 +259,11 @@ Examples below of a schema with a TaggedUnion and a concrete [TaggedUnion class 
     "left"      : "BinaryTree",
     "right"     : "BinaryTree" 
 }
-
-
 ```
 
 #### Code: An example TaggedUnion class extension
 
 ```json
-
 { 
     "@type"     : "Node",
     "value"     : 0,
@@ -309,8 +278,6 @@ Examples below of a schema with a TaggedUnion and a concrete [TaggedUnion class 
         "leaf"  : []
     }
 }
-
-
 ```
 
 #### Unit
@@ -324,7 +291,6 @@ The `@id` key of a class defines the class name and identifier. The name uniquel
 #### Code: The @id key of a class
 
 ```json
-
 { 
     "@id"         : "NamedQuery",
     "@type"       : "Class",
@@ -336,8 +302,6 @@ The `@id` key of a class defines the class name and identifier. The name uniquel
     "name"        : "xsd:string",
     "query"       : "Query" 
 }
-
-
 ```
 
 ### @key
@@ -355,7 +319,6 @@ Given the [simple document definition](#code-a-simple-document-defintion) below,
 #### Code: An example Lexical key
 
 ```json
-
 { 
     "@type"         : "@context",
     "@schema"       : "http://example.com/people#",
@@ -378,8 +341,6 @@ Given the [simple document definition](#code-a-simple-document-defintion) below,
     "last_name"     : "xsd:string",
     "year_of_birth" : "xsd:gYear"
 }
-
-
 ```
 
 #### Code: A simple document defintion
@@ -387,15 +348,12 @@ Given the [simple document definition](#code-a-simple-document-defintion) below,
 <!-- to-do: Is the last document element missing a colon and date of birth? -->
 
 ```json
-
 { 
     "@type"         : "Person",
     "first_name"    : "Hasdrupal",
     "last_name"     : "Barca",
     "year_of_birth" : "-245" 
 }
-
-
 ```
 
 #### Hash
@@ -428,7 +386,6 @@ In the example below, `ValueHash` is formed only from the value of `layer:identi
 #### Code: An example ValueHash key
 
 ```json
-
 { 
     "@id"              : "layer:Layer",
     "@type"            : "Class",
@@ -447,8 +404,6 @@ In the example below, `ValueHash` is formed only from the value of `layer:identi
     },
     "layer:identifier" : "xsd:string" 
 }
-
-
 ```
 
 #### Random
@@ -458,7 +413,6 @@ Use `Random` as a convenient key type when an object has no important characteri
 #### Code: An example of a Random key
 
 ```json
-
 { 
     "@id"                   : "UserDatabase",
     "@type"                 : "Class",
@@ -483,8 +437,6 @@ Use `Random` as a convenient key type when an object has no important characteri
     "creation_date"         : "xsd:dateTime",
     "state"                 : "DatabaseState" 
 }
-
-
 ```
 
 ### @documentation
@@ -500,7 +452,6 @@ The `@comment` is the class description.
 The `@properties` keyword is a JSON object with pairs of the form:
 
 ```json
-
 { 
     "property_1" : "description_1",
     
@@ -508,8 +459,6 @@ The `@properties` keyword is a JSON object with pairs of the form:
 
     "property_n" : "description_n" 
 }
-
-
 ```
 
 ### @base
@@ -519,7 +468,6 @@ The `@properties` keyword is a JSON object with pairs of the form:
 #### Code: An example of the @base keyword
 
 ```json
-
 { 
     "@type"            : "@context",
     "@documentation"   : 
@@ -556,8 +504,6 @@ The `@properties` keyword is a JSON object with pairs of the form:
     },
     "layer:identifier" : "xsd:string" 
 }
-
-
 ```
 
 ### @subdocument
@@ -597,8 +543,6 @@ See below for examples of a subdocument declaration in a schema, and a correspon
     "postal_code"  : "xsd:string",
     "street"       : "xsd:string"
 }
-
-
 ```
 
 #### Code: An example subdocument
@@ -606,7 +550,6 @@ See below for examples of a subdocument declaration in a schema, and a correspon
 <!-- to-do: Confirm value Address" missing leading " -->
 
 ```json
-
 { 
     "@type"           : "Person",
     "@id"             : "doug",
@@ -619,8 +562,6 @@ See below for examples of a subdocument declaration in a schema, and a correspon
         "street"      : "Cool Harbour lane"
     }
 }
-
-
 ```
 
 ### @abstract
@@ -634,7 +575,6 @@ An example of the abstract keyword in a schema, and a concrete instance of the `
 #### Code: An example of the abstract keyword
 
 ```json
-
 { 
     "@type"     : "@context",
     "@base"     : "terminusdb://i/",
@@ -651,21 +591,16 @@ An example of the abstract keyword in a schema, and a concrete instance of the `
     "@id"       : "Person",
     "@inherits" : ["NamedEntity"] 
 }
-
-
 ```
 
 <!-- to-do: Doug missing leading " -->
 
 ```json
-
 { 
     "@type" : "Person",
     "@id"   : "doug",
     "name"  : "Doug A. Trench" 
 }
-
-
 ```
 
 ### @inherits
@@ -679,7 +614,6 @@ This inheritance tree is also available as a `subsumption` relation in the WOQL 
 The range of `@inherits` may be a class or a list of classes. For example:
 
 ```json
-
 { 
     ...,
 
@@ -687,8 +621,6 @@ The range of `@inherits` may be a class or a list of classes. For example:
 
     ... 
 }
-
-
 ```
 Or
 
@@ -703,7 +635,6 @@ Or
 
     ... 
 }
-
 ```
 
 #### Multiple inheritence
@@ -715,7 +646,6 @@ An example of inheritance of properties and an object meeting this specification
 #### Code: An example of inheritence
 
 ```json
-
 { 
     "@type"      : "@context",
     "@base"      : "http://i/",
@@ -739,20 +669,15 @@ An example of inheritance of properties and an object meeting this specification
         "RightHanded", "LeftHanded"
     ] 
 }
-
-
 ```
 
 ```json
-
 { 
     "@type"      : "TwoHanded",
     "@id"        : "a two-hander",
     "left_hand"  : "Pretty sinister",
     "right_hand" : "But this one is dexterous" 
 }
-
-
 ```
 
 ## Class properties
@@ -760,18 +685,12 @@ An example of inheritance of properties and an object meeting this specification
 All non-keywords are treated as properties of the class, with the form:
 
 ```json
-
 <property> : <Class>
-
-
 ```
 Or
 
 ```json
-
 <property> : { "@type" : <TypeFamily>,  "@class" : <Class> }
-
-
 ```
 
 ### Range classes
@@ -785,7 +704,6 @@ In the example range class below, `first_name` and `last_name` are strings, `yea
 #### Code: An example range class
 
 ```json
-
 { 
     "@type"         : "@context",
     "@schema"       : "http://example.com/people#",
@@ -812,8 +730,6 @@ In the example range class below, `first_name` and `last_name` are strings, `yea
     },
     "year_of_birth" : "xsd:gYear" 
 }
-
-
 ```
 
 <!-- to-do: Check missing ":" and year of birth value (formerly "year_of_birth" "-245") -->
@@ -821,7 +737,6 @@ In the example range class below, `first_name` and `last_name` are strings, `yea
 #### Code: An example of a concrete set of documents 
 
 ```json
-
 { 
     "@type"         : "Person",
     "@id"           : "Person/Hasdrubal_Barca",
@@ -857,8 +772,6 @@ In the example range class below, `first_name` and `last_name` are strings, `yea
     ],
     "year_of_birth" : "-247" 
 }
-
-
 ```
 
 ## Type families
@@ -872,7 +785,6 @@ Use `Optional` as a type family where a property is not required.
 #### Code: An example of type family Optional
 
 ```json
-
 { 
     "@type"      : "@context",
     "@schema"    : "http://example.com/people#",
@@ -888,34 +800,27 @@ Use `Optional` as a type family where a property is not required.
         "@class" : "xsd:string" 
     }
 }
-
-
 ```
 
 Supply an optional `comment` field in `CodeBlock`. Both of the following documents are valid:
 
 ```json
-
 { 
     "@type"   : "CodeBlock",
     "@id"     : "my_code_block",
     "code"    : "print('hello world')",
     "comment" : "This is a silly bit of code" 
 }
-
-
 ```
+
 OR
 
 ```json
-
 { 
     "@type" : "CodeBlock",
     "@id"   : "my_code_block",
     "code"  : "print('hello world')" 
 }
-
-
 ```
 
 ### List
@@ -925,7 +830,6 @@ Use `List` to specify an ordered collection, with multiplicity, of values of a c
 #### Code: An example of type family List
 
 ```json
-
 { 
     "@type"      : "@context",
     "@base"      : "http://i/",
@@ -946,14 +850,11 @@ Use `List` to specify an ordered collection, with multiplicity, of values of a c
     "@key"       : "ValueHash",
     "name"       : "xsd:string" 
 }
-
-
 ```
 
 An example of an object `Task` contained in a `List` of elements known as a `TaskList`. This list is retrieved in the same order that it is inserted. It is also capable of storing duplicates.
 
 ```json
-
 { 
     "@id"   : "my_task_list",
     "@type" : "TaskList",
@@ -969,8 +870,6 @@ An example of an object `Task` contained in a `List` of elements known as a `Tas
         }
     ]
 }
-
-
 ```
 
 ### Set
@@ -980,7 +879,6 @@ Use `Set` to specify an unordered set of values of a class or datatype.
 #### Code: An example of type family Set
 
 ```json
-
 { 
     "@type"      : "@context",
     "@base"      : "http://i/",
@@ -996,8 +894,6 @@ Use `Set` to specify an unordered set of values of a class or datatype.
         "@class" : "Person" 
     }
 }
-
-
 ```
 
 An example of an object `Person` that can have 0 to any number of friends. This list has no order and is retrieved from the database in a potentially different order. Inserted duplicates do not create additional linkages and only a single of the multiple supplied results are returned.
@@ -1005,11 +901,10 @@ An example of an object `Person` that can have 0 to any number of friends. This 
 <!-- to-do: escape character in @id removed -->
 
 ```json
-
 { 
-    "@id"   : "Me",
-    "@type" : "Person",
-    "friends" : 
+    "@id"           : "Me",
+    "@type"         : "Person",
+    "friends"       : 
     [
         { 
             "@type" : "Person",
@@ -1023,8 +918,5 @@ An example of an object `Person` that can have 0 to any number of friends. This 
         }
     ]
 }
-
-
 ```
-
 <!-- to-do: Type family Array is missing -->
