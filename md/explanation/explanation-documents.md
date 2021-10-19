@@ -87,7 +87,7 @@ The following table describes the properties of the JSON document definition abo
 | Property | Value | Description |
 | -------- | ----- | ---------- |
 | `@type`  | `Player` | The type of data held - a football player |   
-| `@id`    | `Player/George` | The address of the document used for retrieval, update, or deletion, or as a reference used in other documents. If the address in `@id` is unambiguous, for example, when used in the same collection, then `@id` can be used as-is, i.e., as `Player/George`. Otherwise, the `@base` property is required. |
+| `@id`    | `Player/George` | The address of the document used for retrieval, update, or deletion, or as a reference used in other documents. If the address in `@id` is **unambiguous**, for example, when used in the same collection, then `@id` can be used as-is, i.e., as `Player/George`. Otherwise, the `@base` property is required. |
 | `@base`  | `terminusdb://Roster/schema#` | The **fully qualified** address for `Player/George` expanding to `terminusdb://Roster/document/Player/George`. |
 
 ### Unique document @id 
