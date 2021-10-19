@@ -100,13 +100,13 @@ TerminusDB enables references to other documents, forming a **graph of documents
 
 ### Create objects from data
 
-The [simple document example](#a-simple-document-example) introduced above is convertible to an object that refers to each player, as demonstrated in the code-snippet [Player and Roster classes](#code-player-and-roster-classes). In this snippet, the `Roster` class points to a `Set` of `Player`s (or `Player` classes.)
+The [simple document example](#a-simple-document-example) introduced above is convertible to an object that refers to each player, as demonstrated in the code-snippet [Player and roster classes](#code-player-and-roster-classes). In this snippet, the `Roster` class points to a `Set` of `Player`s (or `Player` classes.)
  
 #### The Set property
 
 The `Set` property in the code-snippet is a *type family* allowing us to state that the `player` property can have any number of `Player`s attached. `Set` does not provide ordering or multiplicity; a `Player` is either connected or not connected. For ordering and multiplicity, use `@type` `List` or `Array`.
 
-#### Code: Player and Roster classes
+#### Code: Player and roster classes
 
 ```json
 { "@type"    : "@context",

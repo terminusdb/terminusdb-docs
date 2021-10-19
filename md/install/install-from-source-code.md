@@ -18,7 +18,7 @@ A list of prerequisite components depending on your operating system. Click on t
 | Component | Version | Required to | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Arch Linux | ![info](../../img/ico/terminusdb-icon-linux.png)<br>Debian or Ubuntu | ![info](../../img/ico/terminusdb-icon-linux.png)<br>Fedora or Red Hat | ![info](../../img/ico/terminusdb-icon-apple.png)<br>Mac&nbsp;&nbsp;OS<br><br> | ![info](../../img/ico/terminusdb-icon-windows.png)<br>Windows<br><br> |
 -->
 
-| Component | Version | Required to: | <img src="./../img/ico/terminusdb-icon-linux.svg"/><br>Arch Linux | <img src="./../img/ico/terminusdb-icon-linux.svg"/><br>Debian or Ubuntu | <img src="./../img/ico/terminusdb-icon-linux.svg"/><br>Fedora or Red Hat | <img src="./../img/ico/terminusdb-icon-apple.svg"/><br>macOS<br><br> | <img src="./../img/ico/terminusdb-icon-windows.svg"/><br>Windows<br><br> |
+| Component | Version | Required to: | <img src="../../img/ico/terminusdb-icon-linux.svg"/><br>Arch Linux | <img src="../../img/ico/terminusdb-icon-linux.svg"/><br>Debian or Ubuntu | <img src="../../img/ico/terminusdb-icon-linux.svg"/><br>Fedora or Red Hat | <img src="../../img/ico/terminusdb-icon-apple.svg"/><br>macOS<br><br> | <img src="../../img/ico/terminusdb-icon-windows.svg"/><br>Windows<br><br> |
 | - | - | - | :-: | :-: | :-: | :-: | :-: |
 | [apt](https://pkgs.org/download/apt) | `Latest` | Install SWI-Prolog.                               |          | &#10004; |          |          | |
 | [git](https://git-scm.com/downloads) | `Latest` | Clone TerminusDB rom GitHub.                      | &#10004; | &#10004; | &#10004; | &#10004; | | 
