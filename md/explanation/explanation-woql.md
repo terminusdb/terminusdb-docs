@@ -1,20 +1,3 @@
----
-title: WOQL.js - the Definitive Guide
-layout: default
-parent: Reference
-nav_order: 6
-has_children: true
-permalink: /reference/woql
----
-## Table of contents
-
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
----
-
 ## Fluent Style
 
 The TerminusDB query libraries make extensive use of the fluent style to simplify the expression of complex compound queries. Many WOQL query words accept a sub-query as an argument and, rather than using a functional (Lisp-like) style of capturing containment, a style where sub-queries are appended to the initial function as a new function is preferred.
@@ -22,13 +5,13 @@ The TerminusDB query libraries make extensive use of the fluent style to simplif
 rather than using a functional style:
 
 ```javascript
-    select(a, b, triple(c, d, e))
+select(a, b, triple(c, d, e))
 ```
 
 the fluent style would be:
 
 ```javascript
-    select(a, b).triple(c, d, e)
+select(a, b).triple(c, d, e)
 ```
 
 Both styles are legal WOQL and semantically equivalent. However, the second 'fluent' style is preferred because it is easier to read and easier to write primarily becaue it greatly reduces the amount of vizual parameter matching that the reader and writer have to perform in order to verify that their query is correct.
@@ -38,15 +21,15 @@ Fluent queries are parsed left to right - functions to the right of a given func
 the functional style of expresing conjunction using the WOQL and() function is straightforward and is often most useful for clarity:
 
 ```javascript
-    and(triple(a, b, c), triple(d, e, f))
+and(triple(a, b, c), triple(d, e, f))
 ```
 
 the fluent style allows us to use any of the following forumlations with the same semantics:
 
 ```javascript
-    and(triple(a, b, c)).triple(d, e, f)
-    triple(a, b, c).and().triple(d, e, f)
-    triple(a, b, c).triple(d, e, f)
+and(triple(a, b, c)).triple(d, e, f)
+triple(a, b, c).and().triple(d, e, f)
+triple(a, b, c).triple(d, e, f)
 ```
 
 The third concise form is unambiguous in situations where the WOQL functions that are chained together do not take sub-clauses - and because conjunction is so frequently used, this short-hand form, where the and() is implicit, is convenient in many situations. However it should be used with care - the conjunction is always applied to the function immediately to the left of the '.' in the chain and not to any functions further up the chain.  If used improperly, with clauses that do take sub-clauses, it will produce improperly specified queries, in particular with negation (not) and optional functions (opt).
@@ -54,30 +37,31 @@ The third concise form is unambiguous in situations where the WOQL functions tha
 So, for example, the following query:
 
 ```javascript
-    triple(a, b, c).opt().triple(d, e, f).triple(g, h, i)
+triple(a, b, c).opt().triple(d, e, f).triple(g, h, i)
 ```
 
 is equivalent to the following query in the functional style:
 
 ```javascript
-    and(
-        triple(a, b, c),
-        opt(
-            and(
-                triple(d, e, f),
-                triple(g, h, i)
-            )
+and(
+    triple(a, b, c),
+    opt(
+        and(
+            triple(d, e, f),
+            triple(g, h, i)
         )
     )
+)
 ```
 
 It is easy to misinterpret it when you mean to express:
+
 ```javascript
-    and(
-        triple(a, b, c),
-        opt().triple(d, e, f),
-        triple(g, h, i)
-    )
+and(
+    triple(a, b, c),
+    opt().triple(d, e, f),
+    triple(g, h, i)
+)
 ```
 
 As a general rule, if in doubt, use the functional style explicitly with and() as this makes it clear and explicit which functions are sub-clauses of other functions.
@@ -110,20 +94,20 @@ In WOQL.js, there are 3 distinct ways of expressing variables within queries. Al
 1
 
 ```javascript
-    let [a, b, c] = vars('a', 'b', 'c')
-    triple(a, b, c)
+let [a, b, c] = vars('a', 'b', 'c')
+triple(a, b, c)
 ```
 
 2
 
 ```javascript
-    triple('v:a', 'v:b', 'v:c')
+triple('v:a', 'v:b', 'v:c')
 ```
 
 3
 
 ```javascript
-    triple({'@type': 'woql:Variable', 'woql:variable_name': {"@type": 'xsd:string', '@value': 'a'}} ....)
+triple({'@type': 'woql:Variable', 'woql:variable_name': {"@type": 'xsd:string', '@value': 'a'}} ....)
 ```
 
 WOQL uses the formal logical approach to variables known as unification - this allows most WOQL functions to serve as both pattern matchers and pattern generators, depending on whether a variable or constant is provided as an argument. If a variable is provided, WOQL will generate all possible valid solutions which fill the variable value. If a constant is provided, WOQL will match only those solutions with exactly that value. With the exception of resource identifiers, WOQL functions accept either variables or constants in virtually all of their arguments.
@@ -136,12 +120,11 @@ Internally, TerminusDB uses strict RDF rules to represent all data. This means t
 WOQL goes a step beyond supporting prefixes and automatically applies prefixes wherever possible allowing users to specify prefixes only when necessary.
 
 The default prefixes are applied in the following way
-    - "doc" applies to woql:subject (first argument to triple) where instance data IRIs are normally what is required
-    - "scm" applies to woql:predicate and other arguments (sub, type) where schema elements are normally required
-    - when standard predicates are used with no prefix (label, type, comment, subClassOf, domain, range) the standard correct prefixes are applied
-    - otherwise if no prefix is applied a string is assumed
+- "doc" applies to woql:subject (first argument to triple) where instance data IRIs are normally what is required
+- "scm" applies to woql:predicate and other arguments (sub, type) where schema elements are normally required
+- when standard predicates are used with no prefix (label, type, comment, subClassOf, domain, range) the standard correct prefixes are applied
+- otherwise if no prefix is applied a string is assumed
 
 ## WOQL Functions
-
 
 The JSON-LD form of WOQL supports a well-defined set of functions (woql:Triple, woql:Regexp...) - in WOQL.js these functions are known as primitives. WOQL.js supports all of these primite functions and adds several extensions on top - functions that compose multiple primitives, functions that compose partial primitives and can be chained together, and simple helper functions to make it easier to format the arguments correctly. The table below shows the full range of functions supported by WOQL.js and groups them together into categories to make it easier to find the required function for specific problems.

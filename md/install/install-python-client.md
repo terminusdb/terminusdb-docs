@@ -14,12 +14,12 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Installation requirements
 
-| Required                                    | Version   | Required to:                             | ![info](../../img/ico/terminusdb-icon-linux.png)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.png)<br>MacOS | ![info](../../img/ico/terminusdb-icon-windows.png)<br>Windows |
+| Required                                    | Version   | Required to:                             | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.svg)<br>macOS | ![info](../../img/ico/terminusdb-icon-windows.svg)<br>Windows |
 | ------------------------                    | --------- | ------------------------                 | :------: | :------: | :------: |
-| [TerminusDB bootstrap](install/install-as-docker-container) | `Latest`  | Install the TerminusDB server as a Docker container | &#10004; | &#10004; | &#10004; |
+| [TerminusDB bootstrap](install/install-as-docker-container) | `Latest`  | Install the TerminusDB server as a Docker container. | &#10004; | &#10004; | &#10004; |
 | [Git](https://git-scm.com/downloads)        | `Latest`  | Build and install the Python client from source. | &#10004; | &#10004; | &#10004; |
-| [GitBash](https://git-scm.com/downloads)    | `Latest ` | Use the Python CLI (recommended shell)   | &#10004; | &#10004; | &#10004; |
-| [Python](https://www.python.org/downloads/) | `3.6+`    | Use the TerminusDB Python client         | &#10004; | &#10004; | &#10004; |
+| [GitBash](https://git-scm.com/downloads)    | `Latest ` | Use the Python CLI (recommended shell.)   | &#10004; | &#10004; | &#10004; |
+| [Python](https://www.python.org/downloads/) | `3.6+`    | Use the TerminusDB Python client.         | &#10004; | &#10004; | &#10004; |
 
 ## Install steps
 
@@ -39,9 +39,9 @@ In an **administrator** shell, run the command below to update `pip`, `setuptool
 
 <!-- tabs:start -->
 
-### **Linux/Mac OS**
+### **Linux/macOS**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.png)</i><i class="tdb-i">![info](../../img/ico/terminusdb-icon-apple.png)</i>
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.svg)</i><i class="tdb-i">![info](../../img/ico/terminusdb-icon-apple.svg)</i>
 
 ```bash
 python3 -m pip install --upgrade pip setuptools wheel
@@ -49,7 +49,7 @@ python3 -m pip install --upgrade pip setuptools wheel
 
 ### **Windows**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-windows.png)</i>
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-windows.svg)</i>
 
 ```bash
 py -m pip install --upgrade pip setuptools wheel

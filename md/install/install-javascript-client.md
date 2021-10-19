@@ -14,14 +14,11 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Table: Installation requirements
 
-| Component | Version | Required to: | ![info](../../img/ico/terminusdb-icon-linux.png)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.png)<br>MacOS | ![info](../../img/ico/terminusdb-icon-windows.png)<br>Windows |
+| Component | Version | Required to: | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.svg)<br>macOS | ![info](../../img/ico/terminusdb-icon-windows.svg)<br>Windows |
 | ------------------------                      | -------  | - | :---------: | :------: | :------: |
-| [GitBash](https://git-scm.com/downloads)      | `Latest` | Use the `npm` CLI | &#10004; | &#10004; | &#10004; |
-| [NodeJS](https://nodejs.org/en/)              | `0.10+` | Use NodeJS event functionality | &#10004; | &#10004; | &#10004; |
-| [npm](https://www.npmjs.com/package/download) | `Latest` | Use NodeJS package manager     | &#10004; | &#10004; | &#10004; |
-
->:information_source:&nbsp;<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>**NodeJS version**<br>
-NodeJS version 0.10 or higher is required. NodeJS version 8.1.4 is recommended.
+| [GitBash](https://git-scm.com/downloads)      | `Latest` | Use the `npm` CLI. | &#10004; | &#10004; | &#10004; |
+| [NodeJS](https://nodejs.org/en/)              | `0.10+` | Use NodeJS event functionality. Version `0.10` or higher is required, version `8.1.4` is recommended. | &#10004; | &#10004; | &#10004; |
+| [npm](https://www.npmjs.com/package/download) | `Latest` | Use NodeJS package manager. | &#10004; | &#10004; | &#10004; |
 
 ## Install steps
 
