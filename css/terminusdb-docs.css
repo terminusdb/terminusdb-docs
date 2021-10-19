@@ -13,7 +13,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 
 .tdb-k-h1       { font-size: 20px; color: rgb(255, 255, 255); }
 .tdb-k-h2       { font-size: 14px; color: rgb(255, 255, 255); }
-.tdb-f          { font-size: 14px; color: goldenrod; font-weight: lighter;}
+.tdb-f          { font-size: 14px; color: wheat; font-weight: lighter;}
 .tdb-pd         { margin-left: 20px; }
 .tdb-fs         { font-size: 20px; }
 .tdb-h          { height: 6px; }
@@ -120,7 +120,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 }
 
 .tdb-ico {
-    fill      : goldenrod;
+    fill      : wheat;
     width     : 40px;
     height    : 40px;
     opacity   : .6;
@@ -142,7 +142,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 
 .tdb-ico-nav-f1
 {
-    fill: orange;
+    fill: wheat;
 
 }
 
@@ -151,6 +151,12 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     fill: white;
 }
 
+.tdb-ico-os
+{
+    width: 44px;
+    height: 44px;
+    fill: cyan;
+}
 
 .tdb-im {
     display     : block;
