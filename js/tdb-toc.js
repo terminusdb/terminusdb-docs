@@ -1,5 +1,5 @@
 var __tdb_hC = false;
-var __tdb_init = false; // Set to true if visibility starts as hidden#
+var __tdb_init = false; // Set to true if visibility starts as hidden/
 var __tdb_width = 300;
     
 function tdb_TOC(sHTML)
@@ -18,9 +18,8 @@ function tdb_TOC(sHTML)
         sI          = "",
         sO          = "";
 
-    toc.innerHTML   = p + 'Table of contents</span>' + br + br + 'In this article:' + br + br; 
-    tocCtrl.innerHTML = '<img onclick="hideCtrl()" src="img/ico/terminusdb-icon-contents-page.png" title="Show/hide contents page"/>'; 
-    
+    toc.innerHTML   = p + 'Table of contents</span>' + br + br; // + 'In this article:' + br + br; 
+    tocCtrl.innerHTML = '<img onclick="hideCtrl()" src="img/ico/terminusdb-icon-contents-page.png" title="Show/hide contents page..."/>'; 
     doc.innerHTML   = sHTML;
     doc             = doc.querySelectorAll("h1, h2, h3, h4, h5");
     
