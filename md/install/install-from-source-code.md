@@ -39,7 +39,7 @@ Install, build and run TerminusDB from source code with the following steps.
 
 - [Run the TerminusDB system database](#run-the-terminusdb-system-database)
 
-?> <i class="tdb-i">![info](../../img/ico/terminusdb-icon-windows.svg)</i> **Install from source code on Windows:**<br><br>Install [WSL](https://ubuntu.com/wsl) and [Ubuntu](https://ubuntu.com/#download)<br><br>In Ubuntu terminal: `sudo apt install make`<br><br>In Ubuntu terminal: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`<br><br>Follow the install steps below for **Debian or Ubuntu**<br><br>
+?> <i class="tdb-i">![info](../../img/ico/terminusdb-icon-windows.svg)</i> **Install from source code on Windows:**<br><br>Install [WSL](https://ubuntu.com/wsl) and [Ubuntu](https://ubuntu.com/#download)<br><br>In Ubuntu terminal: `sudo apt install make`<br><br>In Ubuntu terminal: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`<br><br>Follow the install steps below for **Debian or Ubuntu**
 
 ### Install SWI-Prolog
 

@@ -297,3 +297,14 @@ With a bit of practice, designing your knowledge graphs in TerminusDB will becom
   "name"       : "Ireland",
   "coordinates": [ ... ] }
 ```
+
+## See also
+
+### TerminusDB document interface 
+
+The TerminusDB [Document Interface Reference](reference/reference-document-interface) guide.
+
+
+### TerminusDB schema reference
+
+The TerminusDB [Schema Reference](reference/reference-schema.md) guide.

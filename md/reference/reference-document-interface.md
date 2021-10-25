@@ -1,4 +1,4 @@
-# A Document Interface
+# Document Interface Reference
 
 The document interface consists of two endpoints. The first endpoint, `document`, is how we get documents into and out of TerminusDB. Since schemas consist of documents too, this is also how you'd update the schema.
 

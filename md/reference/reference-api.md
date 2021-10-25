@@ -1,4 +1,4 @@
-# API
+# HTTP API Reference
 
 API definitions for terminusdb.
 

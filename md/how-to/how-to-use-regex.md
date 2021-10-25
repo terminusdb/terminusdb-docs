@@ -2,7 +2,7 @@
 
 > **On this page:** A how-to guide to using regular expressions with WOQL and **JavaScript**.
 
-WOQL provides [Pearl Compatible Regular Expressions](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions) (PCRE) using the predicate `regexp` with the structure:
+WOQL provides **Pearl Compatible Regular Expressions** ([PCRE](resources/glossary?id=pcre)) using the predicate `regexp` with the structure:
 
 ```regex
 regexp(pattern, string, match_list)

@@ -1,4 +1,4 @@
-# Command Line Interface
+# CLI Reference
 
 > **On this page:** Use the TerminusDB Command Line Interface (CLI) to perform a range of data definition and manipulation operations.     
 

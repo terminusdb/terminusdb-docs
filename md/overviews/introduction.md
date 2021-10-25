@@ -62,11 +62,11 @@ TerminusDB is highly configurable with powerful features for rapidly and collabo
 
 ## The TerminusDB Git-like model
 
-TerminusDB has many Git-like features including revision-control and distributed collaboration. Similar to Git, TerminusDB is open source, model-driven, and uses the Resource Description Framework ([RDF](to-do)) specification for collaboration.
+TerminusDB has many Git-like features including revision-control and distributed collaboration. Similar to Git, TerminusDB is open source, model-driven, and uses the **Resource Description Framework** ([RDF](resources/glossary#RDF)) specification for collaboration.
 
 ### Delta-encoding
 
-TerminusDB implements an advanced Git-like model, using *delta encoding* to store append or delta-only changes to graphs. These deltas are stored in succinct [terminusdb-store](https://github.com/terminusdb/terminusdb-store) data structures. The delta encoding approach enables branch, merge, push, pull, clone, time-travel, and other Git-like operations.  
+TerminusDB implements an advanced Git-like model, using [delta encoding](resources/glossary/data-encoding) to store append or delta-only changes to graphs. These deltas are stored in succinct [terminusdb-store](https://github.com/terminusdb/terminusdb-store) data structures. The delta encoding approach enables branch, merge, push, pull, clone, time-travel, and other Git-like operations.  
 
 #### Diagram: TerminusDB Git-like operations
 
