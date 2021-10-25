@@ -4,17 +4,13 @@
 
 a.tdb-k:link    { font-weight: normal; }
 a.tdb-k:active  { color: var(--link-color); }
-/*
-a.tdb-k:visited { color: var(--link-color); }
-*/
+a.tdb-k:visited { color: skyblue; } /* { color: var(--link-color); } */
 a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
-
 .tdb-b:hover    { background: #000; color: var(--link-color); }
-
 .tdb-k-h1       { font-size: 20px; color: rgb(255, 255, 255); }
 .tdb-k-h2       { font-size: 14px; color: rgb(255, 255, 255); }
-.tdb-f          { font-size: 14px; color: wheat; font-weight: lighter;}
-.tdb-pd         { margin-left: 20px; }
+.tdb-f          { font-size: 14px; color: rgb(255, 255, 255); }
+.tdb-pd         { margin-left: 0px; }
 .tdb-fs         { font-size: 20px; }
 .tdb-h          { height: 6px; }
 .tdb-g          { color: rgb(190, 190, 190); }
@@ -35,27 +31,9 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     transition    : 0.5s;
 }
 
-.tdb-msg
-{
-    border-radius   :3px;
-    background-color:lightblue;
-    color           :black;
-    padding         :5px;
-}
-
 .tdb-b:hover {
     background: #000;
     color     : var(--link-color);
-}
-
-.tdb-bgi {
-    position     : fixed;
-    z-index      : -1;
-    top          : 0;
-    right        : 0;
-    opacity      : 0.1;
-    padding-top  : 10px;
-    padding-right: 140px;
 }
 
 .tdb-d {
@@ -63,8 +41,9 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     z-index     : 10;
     padding-left: 20px;
     padding-top : 15px;
-    box-shadow  : 0px 0px 25px 1px rgb(30,30,30);
+    /* box-shadow  : 0px 0px 25px 1px rgb(30,30,30); */
     border-left : 0.1rem solid black;
+    background-color: rgb(40, 42, 47);
     top         : 0;
     right       : 0;
     width       : 20%;
@@ -78,13 +57,13 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 }
 
 .tdb-nav {
-    top: 0px; 
-    z-index: 10; 
+    top: 0px;
     border-radius: 4px; 
     position: absolute;
     width: 862px; 
-    height: 85px;
-    background-color: rgba(0, 0, 0, .8);
+    height: 80px;
+    background-color:rgb(30, 30, 30);
+    /* background-color: rgb(0, 0, 0); */
 }
 
 .tdb-nav-span {
@@ -103,7 +82,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     z-index         : 15;
     display         : flex;
     justify-content : center;
-    width           : 70px;
+    width           : 54px;
     top             : 5px;
     right           : 0px;
 }
@@ -120,7 +99,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 }
 
 .tdb-ico {
-    fill      : wheat;
+    fill      : silver;
     width     : 40px;
     height    : 40px;
     opacity   : .6;
@@ -142,7 +121,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 
 .tdb-ico-nav-f1
 {
-    fill: wheat;
+    fill: silver;
 
 }
 
@@ -151,15 +130,164 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     fill: white;
 }
 
-.tdb-ico-os
-{
-    width: 44px;
-    height: 44px;
-    fill: cyan;
-}
-
 .tdb-im {
     display     : block;
     margin-left : auto;
     margin-right: auto;
+}
+
+.tdb-cover-img {
+    /* background-image: url(../img/diagrams/terminusdb-cover-page.png); */
+    background-size: 100%;
+    position: relative;
+    resize: both;
+    overflow: auto;
+    width: 910px;
+    height: 820px;
+}
+
+.tdb-cover-bg {
+    background-image: url(../img/ico/terminusx-color.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    opacity: 0.1;
+    padding-top: 10px;
+    padding-right: 140px;
+}
+
+:root {
+
+    --cover-blockquote-color           : rgb(100,100,100);
+    --cover-color                      : rgb(255, 255, 255);
+    --cover-background-color           : var(--cover-color);
+    --cover-margin                     : 0 auto;
+    --cover-max-width                  : 100%;
+    --cover-text-align                 : center;
+      
+    --cover-heading-color              : #080404;
+    --cover-background-image           : ;
+    --cover-heading-font-size          : var(--font-size-xxl);
+    --cover-heading-font-weight        : normal;
+
+    --cover-button-border              : rgb(79, 83, 93) 2px solid;
+    --cover-button-color               : rgb(79, 83, 93);
+    --cover-button-primary-border      : var(--cover-button-border);
+    --cover-button-primary-background  : var(--cover-button-color);
+
+    --search-padding                   : 0em;
+    --search-input-background-size     : 2em;
+    --search-input-border-width        : 12px;
+    --search-input-border-color        : rgb(0, 0, 0);
+    --search-input-background-color    : var(--search-input-border-color);
+    --search-input-placeholder-color   :rgb(150, 150, 150);
+    --search-result-keyword-background : var(--selection-color);
+    --search-result-keyword-color      : white;      
+    --search-result-item-color         : rgb(180, 180, 180);
+
+    --zoomimage-overlay-background     : rgba(0, 0, 0, .75); 
+
+    --content-max-width                 : 68em;
+
+    --sidebar-toggle-background         : rgb(255,255,255);
+    --sidebar-toggle-border-radius      : var(--border-radius-s);
+    --sidebar-toggle-border-style       : solid;
+    --sidebar-toggle-border-width       : 0;
+    --sidebar-toggle-icon-color         : rgb(0,0,0);
+    --sidebar-toggle-icon-width         : 16px;
+    --sidebar-toggle-icon-height        : 10px;
+    --sidebar-toggle-width              : 40px;
+    --sidebar-toggle-height             : 36px;
+    --sidebar-toggle-icon-stroke-width  : 1px;
+    --sidebar-toggle-offset-left        : 8px;
+    --sidebar-toggle-offset-top         : 8px;
+
+    --sidebar-width                     : 18rem;
+    --sidebar-background                : rgb(40, 42, 47);
+    --sidebar-border-color              : black;
+    --sidebar-margin                    : 0px;
+    --sidebar-nav-indent                : 0em;
+    --sidebar-nav-margin                : 0rem 0rem 0rem;
+    --sidebar-padding                   : 0px 0px 0px 15px;
+    
+    --link-color                        : lightblue;
+    --link-color--hover                 : var(--link-color);
+    --link-text-decoration              : none;
+    --link-text-decoration--hover       : underline;
+    
+    --blockquote-background             : rgb(35, 35, 35);
+    --blockquote-border-color           : var(--link-color);
+    --heading-color                     : rgb(250, 250, 250);
+    --heading-h1-color                  : var(--heading-color);
+    --heading-h2-color                  : var(--heading-color);
+    --heading-h3-color                  : var(--heading-color);
+    --heading-h4-color                  : var(--heading-color);
+    --heading-h3-font-weight            : normal;
+    --heading-h4-font-weight            : normal;
+
+    --base-color                        : rgb(170, 170, 170);
+    --base-background-color             : rgb(47, 49, 54);
+    --base-font-family                  : -apple-system, BlinkMacSystemFont, "Arial Unicode MS", "Sora", "Arial", "Verdana", "Tahoma";
+    --base-font-size                    : 14px;
+    --base-font-weight                  : normal;
+    --base-line-height                  : 1.6;    
+
+    --mark-background                   : #ffecb3;
+    
+    --pre-font-family                   : var(--code-font-family);
+    --pre-font-size                     : var(--code-font-size);
+    --pre-font-weight                   : normal;
+
+    --selection-color                   : orangered;
+
+    --small-font-size                   : var(--font-size-s);
+
+    --strong-color                      : var(--heading-color);
+    --strong-font-weight                : 600;
+
+    --subsup-font-size                  : var(--font-size-s);
+
+    --docsifytabs-border-px             : 0.1px;
+    --docsifytabs-margin                : 0;
+    --docsifytabs-border-color          : rgb(64,64,64);
+    --docsifytabs-tab-background        : var(--table-row-odd-background); 
+    --docsifytabs-tab-color             : var(--base-font-color);
+    --docsifytabs-tab-color--active     : var(--base-font-color);
+    --docsifytabs-tab-highlight-px      : 3px;
+    --docsifytabs-tab-highlight-color   : var(--link-color);
+    --docsifytabs-tab-padding           : 1em 1em;
+    --docsifytabs-content-padding       : 1rem;
+
+    --copycode-background               : rgb(20, 20, 20);
+    --copycode-color                    : lightblue;
+
+    --code-block-border-radius          : 3px;
+    --code-theme-background             : var(--sidebar-background);
+    --code-font-family                  : "Courier New";    
+    --code-font-size                    : 14px;
+    --code-font-weight                  : ;
+    --code-tab-size                     : 4;
+    --code-block-padding                : 1.8em 0.8em 1.8em;
+    --code-inline-background            :rgb(53, 71, 85);
+    --code-inline-border-radius         : var(--code-block-border-radius);
+    --code-inline-padding               : 0.1em 0.3em 0.1em 0.3em;
+
+    --table-body-border-width           : 0.5px;
+    --table-cell-border-color           : var(--copycode-background);
+    --table-cell-border-width           : var(--table-body-border-width);
+    --table-cell-padding                : 1em 1em;
+    --table-head-background             : var(--sidebar-background);  
+    --table-head-border-color           : var(--table-cell-border-color);
+    --table-head-border-width           : var(--table-body-border-width);
+    --table-row-odd-background          : rgb(43, 45, 49);
+
+    --notice-tip-background             : black; /* rgb(0, 0, 30); */
+    --notice-important-background       : black; /* rgb(70, 0, 0); */
+    --notice-important-border-color     : rgb(255, 0, 0);
+    --notice-padding                    : 2em 3.5em;
 }
