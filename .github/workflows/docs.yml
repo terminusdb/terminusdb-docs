@@ -10,32 +10,24 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.1
-
-      - uses: JamesIves/github-pages-deploy-action@4.0.0
-        with:
-          branch: gh-pages
-          folder: .
-          clean-exclude: |
-            CNAME
-            main
-            rc
-            canary
-            v*
-            next
-            beta
+      - uses: actions/checkout@v2
 
       - uses: actions/checkout@v2
         with:
           ref: gh-pages
           path: gh-pages
 
-      - name: Replace LATEST_RELEASE_BRANCH
+      - name: Substitute LATEST_RELEASE_BRANCH
+        run: sed -i 's/LATEST_RELEASE_BRANCH/${{ env.LATEST_RELEASE_BRANCH }}/g' index.html
+
+      - name: Copy files
+        run: cp index.html gh-pages/
+
+      - name: Commit changes
+        working-directory: gh-pages
         run: |
-          sed -i 's/LATEST_RELEASE_BRANCH/${{ env.LATEST_RELEASE_BRANCH }}/g' index.html
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m 'Replace LATEST_RELEASE_BRANCH with ${{ env.LATEST_RELEASE_BRANCH }}'
+          git commit -m 'Update from home branch'
           git push
-        working-directory: gh-pages
