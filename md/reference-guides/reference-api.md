@@ -16,9 +16,12 @@ the relevant operation, e.g. `/db` for operations on a database. It may end with
 segments that serve as arguments, e.g. `/<team>/<db>` representing a team name
 and a database name.
 
-### Using `curl` or `httpie`
+### Using `curl` and `httpie`
 
-In addition to API documentation, w
+For each endpoint, we give examples on how to access it using two popular
+command-line tools, `curl` and `httpie`. (We're fans of the less-well-known
+`xh`, but it uses the exact same arguments as `httpie`, so replace `httpie` with
+`xh` if you prefer the latter.)
 
 ### TerminusX or TerminusDB?
 
@@ -43,8 +46,8 @@ For TerminusDB, the URL base may look something like this:
 export BASE='http://localhost:6363'
 ```
 
-To simplify the `curl` examples on this page, we will use `$BASE` in place of
-the actual URL base.
+To simplify the `curl` and `httpie` examples on this page, we will use `$BASE`
+for the URL base.
 
 #### Authentication
 
@@ -52,7 +55,11 @@ For TerminusX, you use an access token with `Bearer` authorization:
 
 ```shell
 export TERMINUSDB_ACCESS_TOKEN='...'
+
+curl --header "Authorization: Bearer $TERMINUSDB_ACCESS_TOKEN" ...
 curl -H "Authorization: Bearer $TERMINUSDB_ACCESS_TOKEN" ...
+
+httpie --bearer "$TERMINUSDB_ACCESS_TOKEN" ...
 ```
 
 For TerminusDB, you use a username and password (i.e. `Basic` authorization):
@@ -60,39 +67,44 @@ For TerminusDB, you use a username and password (i.e. `Basic` authorization):
 ```shell
 export TERMINUSDB_USER='...'
 export TERMINUSDB_PASS='...'
+
+curl --user "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
 curl -u "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
+
+httpie --auth "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
+httpie -a "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
 ```
 
-To simplify the `curl` examples on this page, we will use an environment
-variable that you can define for either host.
+To simplify the command-line examples on this page, we will use an environment
+variable for the command.
 
-For TerminusX, define:
+For TerminusX, define one of the following:
 
 ```shell
-export AUTH="-H 'Authorization: Bearer $TERMINUSDB_ACCESS_TOKEN'"
+export CURL="curl -H 'Authorization: Bearer $TERMINUSDB_ACCESS_TOKEN'"
+
+export HTTPIE="httpie --bearer '$TERMINUSDB_ACCESS_TOKEN'"
 ```
 
-For TerminusDB, define:
+For TerminusDB, define one of the following:
 
 ```shell
-export AUTH="-u '$TERMINUSDB_USER:$TERMINUSDB_PASS'"
+export CURL="curl -u '$TERMINUSDB_USER:$TERMINUSDB_PASS'"
+
+export HTTPIE="httpie -a "'$TERMINUSDB_USER:$TERMINUSDB_PASS'"
 ```
 
-Then, every `curl` command will look like this:
-
-```shell
-curl "$AUTH" ...
-```
+Then, every command will use either `$CURL` or `$HTTPIE`.
 
 ### Endpoint Arguments
 
 An endpoint may expect arguments in an HTTP request as path segments, as query
 parameters, or as JSON in the body.
 
-* A segment is a part of the path separated from other segments by a slash
+* A path segment is a part of the path separated from other segments by a slash
   (`/`).
-* A parameter comes after the path and a question mark (`?`). It is separated
-  from other parameters by an ampersand (`&`).
+* A query parameter comes after the path and a question mark (`?`). It is
+  separated from other parameters by an ampersand (`&`).
 * The body may include a JSON object with expected fields and values.
 
 > <span title="Take note!">:memo:</span> If a request includes JSON, it must
@@ -101,73 +113,73 @@ parameters, or as JSON in the body.
 > Content-Type: application/json
 > ```
 
----
+## Sections
 
-## Connect
+## Creating and deleting databases
 
-```
-GET http://localhost:6363/api/
-```
+### Creating a database
 
-The Connect API endpoint returns the `system:User` object associated
-with the authentication provided. If no authentication is provided,
-the user will be the predefined `terminusdb:///system/data/anonymous`
-user.
-
-## Create Database
-
-```
-POST http://localhost:6363/api/db/<organization>/<dbid>
+```shell
+POST $BASE/api/db/<team>/<database>
 ```
 
-The post argument is a JSON document of the following form:
+Create a new database for a team.
 
-```jsx
+#### Path segments
+
+| Name         | What should be substituted                                   |
+| ------------ | --------------------------------------------------------- |
+| `<team>`     | identifier of the team under which the created database will be found |
+| `<database>` | identifier of the created database |
+
+#### Request headers
+
+| Header         | Value              | Required? |
+| -------------- | ------------------ | --------- |
+| `Content-Type` | `application/json` | Yes       |
+
+#### Query parameters
+
+No query parameters required.
+
+#### Request body
+
+The request body must be a JSON object with the following keys:
+
+| Key | Type | Value | Required / Optional (default value) |
+| --- | ----- | --------- | --- |
+| `label` | String | displayed name of the created database | Required |
+| `comment` | String | description of the created database | Required |
+| `public` | Boolean | visibility of the created database to anonymous users | Optional (`false`) |
+| `schema` | Boolean | schema-checking disabled for the created database | Optional (`false`) |
+| `prefixes` | Object | default instance and schema prefixes | Optional (see below) |
+
+The `prefixes` object must be a JSON object with the following keys:
+
+| Key | Type | Value | Required / Optional (default value) |
+| --- | ----- | --------- | --- |
+| `@base` | String | default instance prefix | Optional (`terminusdb:///data/`) |
+| `@schema` | String | default schema prefix | Optional (`terminusdb:///schema#`) |
+
+#### Examples
+
+To create a database with the identifier `mydb` for the team `myteam`, use one
+of the following:
+
+```shell
+$CURL -X POST "$BASE/api/db/myteam/mydb" -H "Content-Type: application/json" -d @- <<EOF
 {
-   < "prefixes" : { < "@base" : Base_Prefix >,
-                   < "@schema" : Schema_Prefix > } >
-  "label" : "A Label",
-  "comment" : "A Comment",
-  < "public" : Boolean >,
-  < "schema" : Boolean >
+  "label": "My Database",
+  "comment": "The best first TerminusDB database ever"
 }
+EOF
 ```
-Creates a new database with database ID `dbid` for organization `organization`.
 
-The default prefixes associated with the document and the schema can be specified.
+```shell
+$HTTPIE "$BASE/api/db/admin/mydb" label="My Database" comment="The best first TerminusDB database ever"
+```
 
-
-`label`: display name of thre database
-
-`comment`: database description
-
-`label` and `comment` are required fields.
-
-
-The `public` boolean will determine if this database has read visibility
-to the anonymous user. It defaults to false.
-
-The `schema` boolean will determine if this database is created with
-an empty schema, or if it is running in "schema free" mode. It
-defaults to false.
-
-### Example:
-
-Create a database with the following:
-organization: admin
-dbid: cowid
-label: label
-comment "information about cows"
-
-The payload in this case is:
- ```jsx
-{
-   "prefixes": {"@base": "base_prefix",
-              "@schema": "schema_prefix"},
-   "comment" : "information about cows",
-   "label" : "cow label"
-}
- ```
+/*
 
 ## Delete Database
 
@@ -767,3 +779,5 @@ appropriate strategy. This call is not recursive, i.e. it will only
 optimize access to the respective graph collection specified.
 
 In the case of an unspecified branch, `main` is assumed.
+
+*/
