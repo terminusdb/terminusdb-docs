@@ -237,7 +237,7 @@ See the [WOQL](explanation/explanation-woql) explanation for an overview of WOQL
 
 ### WOQL Reference
 
-See the [WOQL Reference](reference/woql-reference) for detailed developer reference guides.
+See the [WOQL Reference](reference/reference-woql-json-ld) for detailed developer reference guides.
 
 ### How-to guides
 
