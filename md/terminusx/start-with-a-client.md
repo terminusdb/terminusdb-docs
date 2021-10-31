@@ -301,8 +301,8 @@ client.addDocument(objects)
 ```python
 objects = [
     Player(name="George", position="Centre Back"),
-    Player(name="Doug", position="Full Back"),
-    Player(name="Karen", position="Centre Forward")
+    Player(name="Doug",   position="Full Back"),
+    Player(name="Karen",  position="Centre Forward")
     ]
 
 client.insert_document(objects, commit_msg = f"Inserting player data")
@@ -398,7 +398,7 @@ Specific document
     '@type' : 'Player',
     name    : 'Doug',
     position: 'Full Back'
-  }
+}
 ```
 
 <!-- tabs:end -->
@@ -415,9 +415,9 @@ Get a list of documents that matches the query
 
 ```javascript
 const query = {
-    "type": "Player",
+    "type" : "Player",
     "query": { "position": "Full Back" },
-   }
+  }
   client.queryDocument(query,{"as_list":true});
 ```
 
@@ -433,7 +433,7 @@ const query = {
 
 ```python
 matches = client.query_document({"@type"   : "Player",
-                                   "position": "Full Back"})
+                                 "position": "Full Back"})
 
 # matches comes back as a iterable that can be convert into a list
 print(list(matches))

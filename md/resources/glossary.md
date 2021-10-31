@@ -109,6 +109,14 @@ The process of translating a data structure or object state into a format that c
 
 [Read more](https://en.wikipedia.org/wiki/Serialization)
 
+## Data modeling
+
+### Boundary
+
+### Domain
+
+### Subdomain
+
 ## General database
 
 ### Schema
@@ -116,6 +124,12 @@ The process of translating a data structure or object state into a format that c
 The organization of data as a blueprint of how the database is constructed.
 
 [Read more](https://en.wikipedia.org/wiki/Database_schema)
+
+### Attribute
+
+### Entity
+
+### Relationship
 
 ## TerminusDB specific
 
@@ -143,6 +157,12 @@ In contrast to an [immutable](#immutable) object, a mutable object is changeable
 
 **Perl Compatible Regular Expressions** (PCRE) is a library which implements a regular expression engine, inspired by the capabilities of the Perl programming language. PCRE's syntax is more powerful and flexible than many other regular-expression libraries.
 
-[Read more](ttps://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions)
+[Read more](https://en.wikipedia.org/wiki/Perl_Compatible_Regular_Expressions)
 
+### IRI
 
+The **Internationalized Resource Identifier** (IRI) is an internet protocol standard which builds on the Uniform Resource Identifier (URI) protocol by greatly expanding the set of permitted characters. IRIs extend URIs by using the Universal Character Set, where URIs were limited to ASCII, with far fewer characters. IRIs may be represented by a sequence of octets but by definition are defined as a sequence of characters, because IRIs may be spoken or written by hand.
+
+[Read more](https://en.wikipedia.org/wiki/Internationalized_Resource_Identifier)
+
+### Unification

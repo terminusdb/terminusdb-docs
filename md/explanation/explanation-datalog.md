@@ -82,3 +82,9 @@ triple("v:Intermediate", "v:Predicate", "v:Object")
 
 And here we refer to a specific starting node and search for every
 two-hop path starting from *this* object.
+
+## See also
+
+### Documents
+
+[Documents](explanation/explanation-documents) in a knowledge graph and how to use them.

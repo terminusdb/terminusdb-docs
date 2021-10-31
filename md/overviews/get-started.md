@@ -87,3 +87,7 @@ New to TerminusDB? Find out more in an [Introduction to TerminusDB](overviews/in
 ### An introduction to TerminusX
 
 New to TerminusX? Find out more in an [Introduction to TerminusX](terminusx/introduction).
+
+### Documents
+
+[Documents](explanation/explanation-documents) in a knowledge graph and how to use them.

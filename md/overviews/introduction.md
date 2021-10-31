@@ -80,8 +80,12 @@ Read our [white paper](https://github.com/terminusdb/terminusdb/blob/main/docs/w
 
 ### Get started
 
-[Get started](overviews/get-started) with an overview of the available [installation options](overviews/get-started#installation-overview) and an overview of the [TerminusDB interafces](overviews/get-started#interfaces-overview) and their interconnections.
+[Get Started](overviews/get-started) with an overview of the available [Installation Options](overviews/get-started#installation-overview) and an overview of the [TerminusDB Interafces](overviews/get-started#interfaces-overview) and their interconnections.
 
 ### TerminusX
 
 An [Introduction to TerminusX](terminusx/introduction) the cloud infrastructure underpinning TerminusDB.
+
+### Documents
+
+[Documents](explanation/explanation-documents) in a knowledge graph and how to use them.

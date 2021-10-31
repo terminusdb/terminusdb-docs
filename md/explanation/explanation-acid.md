@@ -53,3 +53,9 @@ Similar to read isolation, completing write transactions ensures isolation with 
 ## Durability
 
 TerminusDB is durable. Transactions failing mid-run do not corrupt data. Data is protected from external sources of potential corruption such as operating system bugs. In the unlikely event of a partial commit, previous layers remain unchanged and recoverable. Backups are significantly simplified, requiring copy storage only to ensure a safely recoverable state.
+
+## See also
+
+### Documents
+
+[Documents](explanation/explanation-documents) in a knowledge graph and how to use them.

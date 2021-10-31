@@ -105,3 +105,9 @@ A transaction in a graph is also a hierarchical operation, ensuring [ACID transa
 - The layer name of the new instance graph is written to the repository graph, enabling the identification of the current, most recent state of the repository.
 
 - The layer name of the repository graph is labeled as the newest version and kept in the layer store as a named pointer to a layer.
+
+## See also
+
+### Documents
+
+[Documents](explanation/explanation-documents) in a knowledge graph and how to use them.

@@ -158,3 +158,9 @@ POST /api/schema/<resource path>
 | author | | The commit author |
 | message | | The commit message |
 | schema_checking | | Value should be either enabled or disabled |
+
+## See also
+
+### Documents
+
+[Documents](explanation/explanation-documents) in a knowledge graph and how to use them.

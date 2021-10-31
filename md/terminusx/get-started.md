@@ -1,4 +1,4 @@
-# Quick start overview
+# Get Started
 
 > **On this page:** Everything you need to get started with TerminusX.
 
