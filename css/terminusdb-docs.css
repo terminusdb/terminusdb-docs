@@ -4,7 +4,7 @@
 
 a.tdb-k:link    { font-weight: normal; }
 a.tdb-k:active  { color: var(--link-color); }
-a.tdb-k:visited { color: skyblue; } /* { color: var(--link-color); } */
+/* a.tdb-k:visited { color: skyblue; } /* { color: var(--link-color); } */
 a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 .tdb-b:hover    { background: #000; color: var(--link-color); }
 .tdb-k-h1       { font-size: 20px; color: rgb(255, 255, 255); }
@@ -146,23 +146,31 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     height: 820px;
 }
 
+.tdb-bgi {
+    background-image: url("../img/ico/terminusx-color.png");
+    background-repeat: no-repeat; 
+    background-size: 100%; 
+    z-index: -1; 
+    height: 800px; 
+    width: 800px; 
+}
+
+.tdb-landing-bg { 
+    position: absolute; 
+    margin: auto;  
+    opacity: 0.03;
+}
+
 .tdb-cover-bg {
-    background-image: url(../img/ico/terminusx-color.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
     position: fixed;
-    width: 800px;
-    height: 800px;
-    z-index: -1;
-    top: 0;
-    right: 0;
     opacity: 0.1;
     padding-top: 10px;
     padding-right: 140px;
+    top: 0;
+    right: 0;
 }
 
 :root {
-
     --cover-blockquote-color           : rgb(100,100,100);
     --cover-color                      : rgb(255, 255, 255);
     --cover-background-color           : var(--cover-color);
@@ -207,7 +215,8 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     --sidebar-toggle-offset-left        : 8px;
     --sidebar-toggle-offset-top         : 8px;
 
-    --sidebar-width                     : 18rem;
+ /* --sidebar-nav-pagelink-background-image: url(); */
+    --sidebar-width                     : 19rem;
     --sidebar-background                : rgb(40, 42, 47);
     --sidebar-border-color              : black;
     --sidebar-margin                    : 0px;
@@ -286,8 +295,8 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     --table-head-border-width           : var(--table-body-border-width);
     --table-row-odd-background          : rgb(43, 45, 49);
 
-    --notice-tip-background             : black; /* rgb(0, 0, 30); */
-    --notice-important-background       : black; /* rgb(70, 0, 0); */
+    --notice-tip-background             : var(--sidebar-background);
+    --notice-important-background       : var(--sidebar-background);
     --notice-important-border-color     : rgb(255, 0, 0);
     --notice-padding                    : 2em 3.5em;
 }
