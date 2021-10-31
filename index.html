@@ -45,12 +45,13 @@
           function(hook, vm) 
           {
             hook.beforeEach(function(html) 
-            {
-              document.getElementById("main").style.visibility = "hidden"; 
+            { 
               return tdb_nav() + html; 
             });
-            hook.afterEach(function(html) { tdb_TOC(html); });
-            hook.doneEach(function() { document.getElementById("main").style.visibility = "visible"; });
+            hook.afterEach(function(html) { tdb_TOC(html);});
+            hook.doneEach(function() { 
+                  document.title += " - TerminusDB Docs";
+            });
             hook.ready(function() {
               var d = document.getElementById("main").style;
                   d.float = "left";
@@ -68,6 +69,7 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
     <script src="https://unpkg.com/@terminusdb/terminusdb-client/dist/terminusdb-client.min.js"></script>  
+    <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-python.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-http.min.js"></script>
@@ -75,7 +77,6 @@
     <script src="//unpkg.com/prismjs/components/prism-csv.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-regex.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
     <script src="js/tdb-navbar.js"></script>
     <script src="js/tdb-toc.js"></script>
     <script src="js/tdb-matomo.js"></script>
