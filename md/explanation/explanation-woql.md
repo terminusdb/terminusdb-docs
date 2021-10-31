@@ -233,7 +233,7 @@ The JSON-LD form of WOQL supports a well-defined set of functions such as `woql:
 
 ### WOQL Explanation
 
-See the [WOQL] explanation for an overview of WOQL.  
+See the [WOQL](explanation/explanation-woql) explanation for an overview of WOQL.  
 
 ### WOQL Reference
 
