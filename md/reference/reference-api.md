@@ -166,8 +166,8 @@ Body:
 
 ```json
 {
-  "api:status": "api:success"
-  "@type": "api:DbCreateResponse",
+  "api:status": "api:success",
+  "@type": "api:DbCreateResponse"
 }
 ```
 
@@ -237,8 +237,8 @@ Body:
 
 ```json
 {
-  "api:status": "api:success"
-  "@type": "api:DbDeleteResponse",
+  "api:status": "api:success",
+  "@type": "api:DbDeleteResponse"
 }
 ```
 
