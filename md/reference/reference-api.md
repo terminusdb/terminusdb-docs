@@ -110,7 +110,7 @@ parameters, or as JSON in the body.
 > <span title="Take note!">:memo:</span> If a request includes JSON, it must
 > also have the header:
 >
-> ```shell
+> ```
 > Content-Type: application/json
 > ```
 
@@ -120,26 +120,26 @@ parameters, or as JSON in the body.
 
 ### Creating a database
 
-```shell
+```
 POST $BASE/api/db/<team>/<database>
 ```
 
 Create a new database for a team.
 
-#### Path segments
+#### Segments
 
 | Name         | What should be substituted                           |
 | ------------ | ---------------------------------------------------- |
 | `<team>`     | identifier of the team owner of the created database |
 | `<database>` | identifier of the created database                   |
 
-#### Request headers
+#### Headers
 
 | Header         | Value              | Required? |
 | -------------- | ------------------ | --------- |
 | `Content-Type` | `application/json` | Yes       |
 
-#### Request body
+#### Body
 
 The request body is be a JSON object with the following fields:
 
