@@ -377,7 +377,7 @@ $HTTPIE \
   @file.json
 ```
 
-The file `file.json` might look like one of these:
+The file `file.json` can look like one of these:
 
 ```
 { "@type": "Person", "name": "Socrates" }
