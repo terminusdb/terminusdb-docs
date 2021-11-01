@@ -375,7 +375,6 @@ $CURL \
 $HTTPIE \
   "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person%20instances" \
   @file.json
-EOF
 ```
 
 The file `file.json` might look like one of these:
