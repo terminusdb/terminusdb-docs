@@ -337,7 +337,7 @@ EOF
 ```
 
 **Insert a new instance into the database `mydb` of the team `myteam` using the
-`Person` type defined above.**
+`Person` type from the above schema.**
 
 ```shell
 $CURL \
@@ -361,8 +361,8 @@ $HTTPIE \
 EOF
 ```
 
-**Insert instances from a file into the database `mydb` of the team `myteam`
-using the `Person` type defined above.**
+**Insert instances from the file `file.json` into the database `mydb` of the
+team `myteam` using the `Person` type from the above schema.**
 
 ```shell
 $CURL \
