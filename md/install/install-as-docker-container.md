@@ -16,19 +16,20 @@
 
 A list of prerequisite components depending on your operating system. Click on the required component to download it from the provider's website.
 
-| Component | Version  | Required to: | ![info](../../img/ico/terminusdb-icon-linux.png)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.png)<br>MacOS  | ![info](../../img/ico/terminusdb-icon-windows.png)<br>Windows |
+#### Table: Installation requirements
+
+| Component | Version  | Required to: | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.svg)<br>macOS | ![info](../../img/ico/terminusdb-icon-windows.svg)<br>Windows |
 | - | - | - | :-: | :-: | :--: |
-| [Git](https://git-scm.com/downloads) | `Latest` | Clone the TerminusDB bootstrap and run the container script | &#10004;    | &#10004; | &#10004; |
-| [Git Bash](https://git-scm.com/downloads) | `Latest` | Clone the TerminusDB bootstrap and run the container script | &#10004;    | &#10004; | &#10004; |
-| [Sudo](to-do) | `Latest` | Access security | &#10004;    | &#10004; | &#10004; |
-| [Docker](https://www.docker.com/products/docker-desktop) | `Latest` | Use the TerminusDB docker container |             | &#10004; | &#10004; |
-| [Package manager](https://www.docker.com/products/container-runtime) | `Latest` | Implement docker for Linux systems  | &#10004;    |          |          |
+| [Git](https://git-scm.com/downloads)                                 | `Latest` | Clone the TerminusDB bootstrap and run the container script. | &#10004; | &#10004; | &#10004; |
+| [Git Bash](https://git-scm.com/downloads)                            | `Latest` | Clone the TerminusDB bootstrap and run the container script. | &#10004; | &#10004; | &#10004; |
+| [Sudo](https://www.sudo.ws/download.html)                            | `Latest` | Access security. | &#10004; | &#10004; | &#10004; |
+| [Docker](https://www.docker.com/products/docker-desktop)             | `Latest` | Use the TerminusDB docker container. | | &#10004; | &#10004; |
+| [Package manager](https://www.docker.com/products/container-runtime) | `Latest` | Implement docker for Linux systems. | &#10004; | | |
 
-
->:information_source:&nbsp;<i class="tdb-i">![info](../../img/ico/terminusdb-icon-windows.png)</i>**Docker memory allocation on Windows**<br>
+?><i class="tdb-i">![info](../../img/ico/terminusdb-icon-windows.svg)</i>**Docker memory allocation on Windows**<br>
 On Windows, the default memory allocated for the Docker is **2GB**. TerminusDB is an in-memory database so it is advised to increase the allocation in Docker desktop settings.
 
->:information_source:&nbsp;<i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.png)</i>**Linux package manager**<br>
+?><i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.svg)</i>**Linux package manager**<br>
 On Linux, use your distro's package manager for containerized deployments. Click on the Package manager link in the requirements table above for more information.
 
 ## Install steps
@@ -71,17 +72,13 @@ This generates the message: `terminusdb-server container started https://127.0.0
 - Remove previous volumes. Enter `y` to confirm removal when prompted.   
 - Rerun the container.
 
->:warning:&nbsp;&nbsp;&nbsp;**Warning:** Removing previous volumes will erase local data.
+!> **Warning:** Removing previous volumes will erase local data.
 
 ```bash
 TERMINUSDB_TAG=dev ./terminusdb-container stop
-```
 
-```bash
 ./terminusdb-container rm
-```
 
-```bash
 ./terminusdb-container run
 ```
 
@@ -144,6 +141,8 @@ To run the container script with values specific to your environment:
 
 A description of some of the environment variables in `ENV.example` and their defaults.
 
+#### Table: Environment variables reference
+
 | Environment variable name     | Default value | Description |
 | ----------------------------- | ------------- | ---------- |
 | `TERMINUSDB_DOCKER`           | `sudo docker` | Default docker command|
@@ -162,7 +161,6 @@ A description of some of the environment variables in `ENV.example` and their de
 | `TERMINUSDB_HTTPS_ENABLED`    | `false` | Enable `HTTPS`|
 | `TERMINUSDB_SSL_CERT`         | *A self-signed cert* | Path to SSL cert inside `terminusdb-server` container |
 | `TERMINUSDB_SSL_CERT_KEY`     | *A self-created private key* | Path to private key for SSL cert inside container |
-
 
 ### Examples of setting environment variables 
 

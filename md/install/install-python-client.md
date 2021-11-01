@@ -12,25 +12,26 @@
 
 A list of prerequisite components depending on your operating system. Click on the required component to download it from the provider's website.
 
-#### Installation requirements 
-| Required                                    | Version   | Required to:                             | ![info](../../img/ico/terminusdb-icon-linux.png)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.png)<br>MacOS | ![info](../../img/ico/terminusdb-icon-windows.png)<br>Windows |
+#### Installation requirements
+
+| Required                                    | Version   | Required to:                             | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.svg)<br>macOS | ![info](../../img/ico/terminusdb-icon-windows.svg)<br>Windows |
 | ------------------------                    | --------- | ------------------------                 | :------: | :------: | :------: |
-| [TerminusDB bootstrap](to-do)               | `Latest`  | Install the TerminusDB server as a Docker container | &#10004; | &#10004; | &#10004; |
-| [Git](to-do)                                | `Latest`  | Build and install the Python client from source. | &#10004; | &#10004; | &#10004; |
-| [GitBash](to-do)                            | `Latest ` | Use the Python CLI (recommended shell)   | &#10004; | &#10004; | &#10004; |
-| [Python](https://www.python.org/downloads/) | `3.6+`    | Use the TerminusDB Python client         | &#10004; | &#10004; | &#10004; |
+| [TerminusDB bootstrap](install/install-as-docker-container) | `Latest`  | Install the TerminusDB server as a Docker container. | &#10004; | &#10004; | &#10004; |
+| [Git](https://git-scm.com/downloads)        | `Latest`  | Build and install the Python client from source. | &#10004; | &#10004; | &#10004; |
+| [GitBash](https://git-scm.com/downloads)    | `Latest ` | Use the Python CLI (recommended shell.)   | &#10004; | &#10004; | &#10004; |
+| [Python](https://www.python.org/downloads/) | `3.6+`    | Use the TerminusDB Python client.         | &#10004; | &#10004; | &#10004; |
 
 ## Install steps
 
 Install and use the TerminusDB Python client with the following steps.  
 
-- [Install the TerminusDB bootstrap](to-do)
+- [Install the TerminusDB bootstrap](#install-the-terminusdb-bootstrap)
 - [Install the latest Python components](#install-the-latest-python-components)
 - [Install the TerminusDB Python client](#install-the-terminusdb-python-client)
 
 ### Install the TerminusDB bootstrap
 
-Follow the [TerminusDB bootstrap](to-do) instructions to install the TerminusDB server `terminusdb-server` as a Docker container. 
+Follow the [TerminusDB bootstrap](install/install-as-docker-container) instructions to install the TerminusDB server `terminusdb-server` as a Docker container. 
 
 ### Install the latest Python components
 
@@ -38,9 +39,9 @@ In an **administrator** shell, run the command below to update `pip`, `setuptool
 
 <!-- tabs:start -->
 
-### **Linux/Mac OS**
+### **Linux/macOS**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.png)</i><i class="tdb-i">![info](../../img/ico/terminusdb-icon-apple.png)</i>
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.svg)</i><i class="tdb-i">![info](../../img/ico/terminusdb-icon-apple.svg)</i>
 
 ```bash
 python3 -m pip install --upgrade pip setuptools wheel
@@ -48,7 +49,7 @@ python3 -m pip install --upgrade pip setuptools wheel
 
 ### **Windows**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-windows.png)</i>
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-windows.svg)</i>
 
 ```bash
 py -m pip install --upgrade pip setuptools wheel
@@ -95,12 +96,17 @@ Build and install the Python client from source.
 ```bash
 python -m pip install git+https://github.com/terminusdb/terminusdb-client-python.git
 ```
+
 ## See also
 
 ### Start with a Client API
 
-An example use of the Python Client in [Start with a Client API](terminusx/start-with-a-client?id=connect-with-woqlclient).
+An example use of the Python client in [Start with a Client API](terminusx/start-with-a-client?id=connect-with-woqlclient).
 
-### Detailed documentation
+### Client reference
 
-Refer to the [Python](reference-guides/reference-client?id=python) Client Reference. 
+[Python client reference guides](reference/reference-client?id=python-client-reference).
+
+### Tutorials
+
+More [JavaScript and Python client tutorials](reference/reference-client?id=tutorials).

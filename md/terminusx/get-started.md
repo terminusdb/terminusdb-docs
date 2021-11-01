@@ -1,4 +1,4 @@
-# Quick start overview
+# Get Started
 
 > **On this page:** Everything you need to get started with TerminusX.
 
@@ -12,12 +12,12 @@ The TerminusX Documentation interface enables you to interact with TerminusX usi
 
 ## Reference guides
 
-[Schema](reference-guides/reference-schema) for document specification using JSON-based syntax.     
+[Schema](reference/reference-schema) for document specification using JSON-based syntax.     
 
-[CURL](reference-guides/reference-curl) to build your own client or use the document interface from CURL. 
+[CURL](reference/reference-curl) to build your own client or use the document interface from CURL. 
 
-[Document API](reference-guides/reference-document-interface) a detailed document interface API reference.
+[Document API](reference/reference-document-interface) a detailed document interface API reference.
 
 ## Explanations
 
-[Documents](concepts/concepts-documents) in a knowledge graph and how to use them.
+[Documents](explanation/explanation-documents) in a knowledge graph and how to use them.

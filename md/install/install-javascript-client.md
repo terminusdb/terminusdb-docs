@@ -12,14 +12,13 @@
 
 A list of prerequisite components depending on your operating system. Click on the required component to download it from the provider's website.
 
-| Component | Version | Required to: | ![info](../../img/ico/terminusdb-icon-linux.png)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.png)<br>MacOS | ![info](../../img/ico/terminusdb-icon-windows.png)<br>Windows |
-| ------------------------                      | -------  | - | :---------: | :------: | :------: |
-| [GitBash](to-do)                              | `Latest` | Use the `npm` CLI | &#10004; | &#10004; | &#10004; |
-| [NodeJS](https://nodejs.org/en/)              | `0.10+` | Use NodeJS event functionality | &#10004; | &#10004; | &#10004; |
-| [npm](https://www.npmjs.com/package/download) | `Latest` | Use NodeJS package manager     | &#10004; | &#10004; | &#10004; |
+#### Table: Installation requirements
 
->:information_source:&nbsp;<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>**NodeJS version**<br>
-NodeJS version 0.10 or higher is required. NodeJS version 8.1.4 is recommended.
+| Component | Version | Required to: | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Linux | ![info](../../img/ico/terminusdb-icon-apple.svg)<br>macOS | ![info](../../img/ico/terminusdb-icon-windows.svg)<br>Windows |
+| ------------------------                      | -------  | - | :---------: | :------: | :------: |
+| [GitBash](https://git-scm.com/downloads)      | `Latest` | Use the `npm` CLI. | &#10004; | &#10004; | &#10004; |
+| [NodeJS](https://nodejs.org/en/)              | `0.10+` | Use NodeJS event functionality. Version `0.10` or higher is required, version `8.1.4` is recommended. | &#10004; | &#10004; | &#10004; |
+| [npm](https://www.npmjs.com/package/download) | `Latest` | Use NodeJS package manager. | &#10004; | &#10004; | &#10004; |
 
 ## Install steps
 
@@ -42,8 +41,7 @@ Use the minified script `terminusdb-client.min.js` [in a CDN](#use-in-a-cdn) or 
 Use the minified script in your Content Delivery Network (CDN.) 
 
 ```html
-<script src="https://unpkg.com/@terminusdb/terminusdb-client/dist/terminusdb-client.min.js">
-</script>
+<script src="https://unpkg.com/@terminusdb/terminusdb-client/dist/terminusdb-client.min.js"></script>
 ```
 
 #### Download the script
@@ -58,9 +56,13 @@ Download the minified script from `https://unpkg.com/browse/@terminusdb/terminus
 
 ### Start with a Client API
 
-An example use of the JavaScript Client in [Start with a Client API](terminusx/start-with-a-client?id=connect-with-woqlclient).
+An example use of the JavaScript client in [Start with a Client API](terminusx/start-with-a-client?id=connect-with-woqlclient).
 
-### Detailed documentation
+### Client reference
 
-Refer to the [JavaScript](reference-guides/reference-client?id=javascript) Client Reference. 
+[JavaScript client reference guides](reference/reference-client?id=javaScript-client-reference).
+
+### Tutorials
+
+More [JavaScript and Python client tutorials](reference/reference-client?id=tutorials).
 

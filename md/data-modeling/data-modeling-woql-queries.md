@@ -321,8 +321,8 @@ jsonld = WOQLQuery().dict()
 
 ### WOQL regular expressions
 
-How to [use regular expressions](how-to-guides/how-to-use-regex) with WOQL.
+How to [use regular expressions](how-to/how-to-use-regex) with WOQL.
 
 ### WOQL update data
 
-How to [update data](how-to-guides/how-to-update-data) using WOQL triples.
+How to [update data](how-to/how-to-update-data) using WOQL triples.

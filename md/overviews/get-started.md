@@ -24,29 +24,29 @@ Start a TerminusDB server.
 
 ### Go 
 
-Create, query, and maintain your databases using several [programmatic interfaces](#interfaces-overview). 
+Create, query, and maintain your databases using several [programmatic interfaces](#interfaces-overview).
 
 ## Installation overview
 
-Interaction with TerminusDB databases is through the TerminusBD Server. The server provides a [RESTful](to-do) API using the [JSON-LD](to-do) exchange format. This enables you to develop applications with your toolchain to utilize the powerful features of graph search and storage. 
+Interaction with TerminusDB databases is through the TerminusBD Server. The server provides a **RESTful** API using the **JSON-LD** exchange format. This enables you to develop applications with your toolchain to utilize the powerful features of graph search and storage. 
 
 To install a TerminusDB server and use TerminusDB databases programmatically in your applications, the installation options below are available. Click on an option for detailed install instructions.
 
 ### Source code
 
-Install from the [source code](install-source-code) in [GitHub](https://github.com/terminusdb/terminusdb).
+Install from the [source code](install/install-from-source-code) in [GitHub](https://github.com/terminusdb/terminusdb).
 
 ### Docker container
 
-Install as a [Docker container](install-docker) also referred to as the TerminusDB bootstrap.
+Install as a [Docker container](install/install-as-docker-container) also referred to as the **TerminusDB bootstrap**.
 
 ### Javascript client
 
-Install as a [Node4j](to-do)-based [JavaScript client](install-javascript).
+Install as a [Node.js](https://nodejs.org/en/download/)-based [JavaScript client](install/install-javascript-client).
 
 ### Python client
 
-Install as a [Python client](install-python). Also requires a [Docker container](install-docker) installation.
+Install as a [Python client](install/install-python-client). Also requires a [Docker container](install/install-as-docker-container) installation.
 
 #### Diagram: TerminusDB and TerminusX install options
 
@@ -54,13 +54,13 @@ Install as a [Python client](install-python). Also requires a [Docker container]
 
 ## Interfaces overview
 
-TerminusDB provides several interfaces for creating, querying, and maintaining your databases. Depending on the component/s you choose to install, you can interact with TerminusDB using one or more of the [available interfaces](#available-interfaces) listed below.
+TerminusDB provides several interfaces for creating, querying, and maintaining your databases. Depending on the component/s you choose to install, you can interact with TerminusDB using one or more of the available interfaces listed below.
 
 Use one or a combination of several TerminusDB interfaces.
 
 ### Command Line Interface
 
-The TerminusDB [Command Line Interface](quick-start-with-the-cli) (CLI.)   
+The TerminusDB [Command Line Interface](reference/reference-cli) (CLI.)   
 
 ### Dashboard
 
@@ -68,11 +68,11 @@ The TerminusX [dashboard](terminusx/get-started) providing a visual interaface.
  
 ### APIs 
 
-The TerminusDB [Javascript client](quick-start-with-javascript) and [Python client](quick-start-with-python) APIs. 
+The TerminusDB [Javascript client](install/install-javascript-client) and [Python client](install/install-python-client) APIs. 
 
 ### Query
 
-The TerminusDB [Web Objects Query Language](data-modeling-data-modeling-woql-queries) (WOQL) for use across all interfaces.    
+The TerminusDB [Web Objects Query Language](explanation/explanation-woql) (WOQL.)    
 
 #### Diagram: TerminusDB interfaces 
 
@@ -82,8 +82,12 @@ The TerminusDB [Web Objects Query Language](data-modeling-data-modeling-woql-que
 
 ### An introduction to TerminusDB
 
-New to TerminusDB? Find out more in our [Introduction](overviews/introducton). 
+New to TerminusDB? Find out more in an [Introduction to TerminusDB](overviews/introduction). 
 
 ### An introduction to TerminusX
 
-New to TerminusX? Find out more in our [Introduction](terminusx/introducton).
+New to TerminusX? Find out more in an [Introduction to TerminusX](terminusx/introduction).
+
+### Documents
+
+[Documents](explanation/explanation-documents) in a knowledge graph and how to use them.
