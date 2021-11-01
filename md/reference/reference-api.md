@@ -298,7 +298,7 @@ The request body should have one of these formats:
 * a newline-delimited stream of JSON objects
 * a JSON array of objects
 
-> <span title="TODO!">:red\_circle:</span> TODO: Describe or point to a
+> <span title="TODO!">:bangbang:</span> TODO: Describe or point to a
 > description of the objects.
 
 #### Response
