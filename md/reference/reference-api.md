@@ -158,6 +158,19 @@ The `prefixes` value is a JSON object with the following fields:
 | `@base`   | string | default instance prefix | Optional (`terminusdb:///data/`)   |
 | `@schema` | string | default schema prefix   | Optional (`terminusdb:///schema#`) |
 
+#### Response
+
+Status: `200 OK`
+
+Body:
+
+```json
+{
+  "api:status": "api:success"
+  "@type": "api:DbCreateResponse",
+}
+```
+
 #### Code samples
 
 **Create a database `mydb` for the team `myteam`**
@@ -215,6 +228,19 @@ The request body is an optional JSON object with the following field:
 > state and that database is requested to be deleted, TerminusDB will, by
 > default, not delete the database. Use `{ "force": true }` to require
 > TerminusDB to delete the database.
+
+#### Response
+
+Status: `200 OK`
+
+Body:
+
+```json
+{
+  "api:status": "api:success"
+  "@type": "api:DbDeleteResponse",
+}
+```
 
 #### Code samples
 
