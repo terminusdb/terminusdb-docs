@@ -177,7 +177,7 @@ EOF
 
 ```shell
 $HTTPIE \
-  $BASE/api/db/admin/mydb \
+  $BASE/api/db/myteam/mydb \
   label="My Database" \
   comment="The best first TerminusDB database ever"
 ```
@@ -215,6 +215,23 @@ The request body is an optional JSON object with the following field:
 > state and that database is requested to be deleted, TerminusDB will, by
 > default, not delete the database. Use `{ "force": true }` to require
 > TerminusDB to delete the database.
+
+#### Code samples
+
+**Delete a database `mydb` from the team `myteam`**
+
+```shell
+$CURL \
+  -X DELETE \
+  $BASE/api/db/myteam/mydb
+EOF
+```
+
+```shell
+$HTTPIE \
+  DELETE \
+  $BASE/api/db/myteam/mydb
+```
 
 <!--
 
