@@ -379,7 +379,7 @@ $HTTPIE \
 
 The file `file.json` can look like one of these:
 
-```jsonl
+```json
 { "@type": "Person", "name": "Socrates" }
 { "@type": "Person", "name": "Aristotle" }
 { "@type": "Person", "name": "Plato" }
