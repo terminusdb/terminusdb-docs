@@ -121,7 +121,7 @@ parameters, or as JSON in the body.
 ### Creating a database
 
 ```
-POST $BASE/api/db/<team>/<database>
+POST /api/db/<team>/<database>
 ```
 
 Create a new database for a team.
@@ -141,22 +141,22 @@ Create a new database for a team.
 
 #### Body
 
-The request body is be a JSON object with the following fields:
+The request body is a JSON object with the following fields:
 
-| Key        | Type    | Value                                                 | Required / Optional (default value) |
-| ---------- | ------- | ----------------------------------------------------- | ----------------------------------- |
-| `label`    | string  | displayed name of the created database                | Required                            |
-| `comment`  | string  | description of the created database                   | Required                            |
-| `public`   | boolean | visibility of the created database to anonymous users | Optional (`false`)                  |
-| `schema`   | boolean | schema-checking disabled for the created database     | Optional (`false`)                  |
-| `prefixes` | object  | default instance and schema prefixes                  | Optional (see below)                |
+| Key        | Type    | Value                                                 | Required / Optional (default) |
+| ---------- | ------- | ----------------------------------------------------- | ----------------------------- |
+| `label`    | string  | displayed name of the created database                | Required                      |
+| `comment`  | string  | description of the created database                   | Required                      |
+| `public`   | boolean | visibility of the created database to anonymous users | Optional (`false`)            |
+| `schema`   | boolean | schema-checking disabled for the created database     | Optional (`false`)            |
+| `prefixes` | object  | default instance and schema prefixes                  | Optional (see below)          |
 
 The `prefixes` value is a JSON object with the following fields:
 
-| Key       | Type   | Value                   | Required / Optional (default value) |
-| --------- | ------ | ----------------------- | ----------------------------------- |
-| `@base`   | string | default instance prefix | Optional (`terminusdb:///data/`)    |
-| `@schema` | string | default schema prefix   | Optional (`terminusdb:///schema#`)  |
+| Key       | Type   | Value                   | Required / Optional (default)      |
+| --------- | ------ | ----------------------- | ---------------------------------- |
+| `@base`   | string | default instance prefix | Optional (`terminusdb:///data/`)   |
+| `@schema` | string | default schema prefix   | Optional (`terminusdb:///schema#`) |
 
 #### Code samples
 
@@ -182,20 +182,41 @@ $HTTPIE \
   comment="The best first TerminusDB database ever"
 ```
 
+### Delete a database
+
+```
+DELETE /api/db/<team>/<database>
+```
+
+Delete an existing database from a team.
+
+#### Segments
+
+| Name         | What should be substituted                   |
+| ------------ | -------------------------------------------- |
+| `<team>`     | identifier of the team owner of the database |
+| `<database>` | identifier of the database                   |
+
+#### Headers
+
+| Header         | Value              | Required?                             |
+| -------------- | ------------------ | ------------------------------------- |
+| `Content-Type` | `application/json` | Yes, if the request body is not empty |
+
+#### Body
+
+The request body is an optional JSON object with the following field:
+
+| Key     | Type    | Value             | Required / Optional (default) |
+| ------- | ------- | ----------------- | ----------------------------- |
+| `force` | boolean | see comment below | Optional (`false`)            |
+
+> <span title="Take note!">:memo:</span> If a database is in an inconsistent
+> state and that database is requested to be deleted, TerminusDB will, by
+> default, not delete the database. Use `{ "force": true }` to require
+> TerminusDB to delete the database.
+
 <!--
-
-## Delete Database
-
-```
-DELETE http://localhost:6363/api/db/<organization>/<dbid>
-```
-
-The delete argument is a JSON document of the following form:
-
-```jsx
-{ < "force" : Boolean >
-}
-```
 
 ## Add User to Organization
 
