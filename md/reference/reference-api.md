@@ -310,7 +310,7 @@ corresponding document in the request body.
 
 #### Code samples
 
-**Insert a schema for the database `mydb` of the team `myteam`.**
+**Insert a schema into the database `mydb` of the team `myteam`.**
 
 ```shell
 $CURL \
@@ -336,7 +336,7 @@ $HTTPIE \
 EOF
 ```
 
-**Insert an instance for the database `mydb` of the team `myteam` using the
+**Insert an instance into the database `mydb` of the team `myteam` using the
 `Person` type defined above.**
 
 ```shell
