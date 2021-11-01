@@ -34,10 +34,10 @@ The URL base for the API is the part of the URL before the endpoint path. In
 other words, it's everything before `/api`.
 
 For TerminusX, the URL base may look something like this (for the team
-`cloudabc`):
+`myteam`):
 
 ```shell
-export BASE='https://cloud.terminusdb.com/cloudabc'
+export BASE='https://cloud.terminusdb.com/myteam'
 ```
 
 For TerminusDB, the URL base may look something like this:
@@ -118,7 +118,7 @@ parameters, or as JSON in the body.
 
 ## Creating and deleting databases
 
-### Creating a database
+### Creating databases
 
 ```
 POST /api/db/<team>/<database>
@@ -195,7 +195,7 @@ $HTTPIE \
   comment="The best first TerminusDB database ever"
 ```
 
-### Delete a database
+### Deleting databases
 
 ```
 DELETE /api/db/<team>/<database>
@@ -261,7 +261,7 @@ $HTTPIE \
 
 ## Inserting and updating documents
 
-### Insert new documents (schema or instance)
+### Inserting documents
 
 ```
 POST /api/document/<team>/<database>
@@ -391,6 +391,73 @@ The file `file.json` can look like one of these:
   { "@type": "Person", "name": "Aristotle" },
   { "@type": "Person", "name": "Plato" }
 ]
+```
+
+### Replacing documents
+
+```
+PUT /api/document/<team>/<database>
+```
+
+Replace existing documents – either schemas or instances – in a database.
+
+#### Segments
+
+| Name         | What should be substituted |
+| ------------ | -------------------------- |
+| `<team>`     | team identifier            |
+| `<database>` | database identifier        |
+
+#### Parameters
+
+| Label        | Value description                      | Required / Optional (default) |
+| ------------ | -------------------------------------- | ----------------------------- |
+| `author`     | commit author                          | Required                      |
+| `message`    | commit message                         | Required                      |
+| `graph_type` | document type (`schema` or `instance`) | Optional (`instance`)         |
+
+#### Headers
+
+| Header         | Value              | Required? |
+| -------------- | ------------------ | --------- |
+| `Content-Type` | `application/json` | Yes       |
+
+#### Response
+
+Status: `200 OK`
+
+Body: a JSON array of strings, where each string is the identifier of the
+corresponding document in the request body.
+
+#### Code samples
+
+**Replace an existing schema in the database `mydb` of the team `myteam`.**
+
+```shell
+$CURL \
+  -X PUT \
+  "$BASE/api/document/myteam/mydb?author=myuser&message=replace%20Person&graph_type=schema" \
+  -d @- <<EOF
+{
+  "@id": "Person",
+  "@type": "Class",
+  "name": "xsd:string",
+  "age": { "@type": "Optional", "@class": "xsd:decimal" }
+}
+EOF
+```
+
+```shell
+$HTTPIE \
+  PUT \
+  "$BASE/api/document/myteam/mydb?author=myuser&message=replace%20Person&graph_type=schema" <<EOF
+{
+  "@id": "Person",
+  "@type": "Class",
+  "name": "xsd:string",
+  "age": { "@type": "Optional", "@class": "xsd:decimal" }
+}
+EOF
 ```
 
 <!--
