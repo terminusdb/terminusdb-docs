@@ -315,6 +315,7 @@ corresponding document in the request body.
 ```shell
 $CURL \
   -X POST \
+  -H "Content-Type: application/json" \
   "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person&graph_type=schema" \
   -d @- <<EOF
 {
@@ -342,6 +343,7 @@ EOF
 ```shell
 $CURL \
   -X POST \
+  -H "Content-Type: application/json" \
   "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person%20instance" \
   -d @- <<EOF
 {
@@ -367,6 +369,7 @@ team `myteam` using the `Person` type from the above schema.**
 ```shell
 $CURL \
   -X POST \
+  -H "Content-Type: application/json" \
   "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person%20instances" \
   --data-binary @file.json
 ```
@@ -436,6 +439,7 @@ corresponding document in the request body.
 ```shell
 $CURL \
   -X PUT \
+  -H "Content-Type: application/json" \
   "$BASE/api/document/myteam/mydb?author=myuser&message=replace%20Person&graph_type=schema" \
   -d @- <<EOF
 {
