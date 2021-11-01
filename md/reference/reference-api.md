@@ -261,13 +261,13 @@ $HTTPIE \
 
 ## Inserting and updating documents
 
-### Insert a new document (schema or instance)
+### Insert new documents (schema or instance)
 
 ```
 POST /api/document/<team>/<database>
 ```
 
-Insert a new document – either a schema or an instance – into a database.
+Insert new documents – either schemas or instances – into a database.
 
 #### Segments
 
@@ -293,13 +293,13 @@ Insert a new document – either a schema or an instance – into a database.
 
 #### Body
 
-The request body follows one of the following two formats:
+The request body should have one of these formats:
 
 * a newline-delimited stream of JSON objects
 * a JSON array of objects
 
 > <span title="TODO!">:red\_circle:</span> TODO: Describe or point to a
-> description of each object.
+> description of the objects.
 
 #### Response
 
@@ -310,7 +310,7 @@ corresponding document in the request body.
 
 #### Code samples
 
-**Insert a schema into the database `mydb` of the team `myteam`.**
+**Insert a new schema into the database `mydb` of the team `myteam`.**
 
 ```shell
 $CURL \
@@ -336,7 +336,7 @@ $HTTPIE \
 EOF
 ```
 
-**Insert an instance into the database `mydb` of the team `myteam` using the
+**Insert a new instance into the database `mydb` of the team `myteam` using the
 `Person` type defined above.**
 
 ```shell
@@ -359,6 +359,39 @@ $HTTPIE \
   "name": "Socrates"
 }
 EOF
+```
+
+**Insert instances from a file into the database `mydb` of the team `myteam`
+using the `Person` type defined above.**
+
+```shell
+$CURL \
+  -X POST \
+  "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person%20instances" \
+  --data-binary @file.json
+```
+
+```shell
+$HTTPIE \
+  "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person%20instances" \
+  @file.json
+EOF
+```
+
+The file `file.json` might look like one of these:
+
+```
+{ "@type": "Person", "name": "Socrates" }
+{ "@type": "Person", "name": "Aristotle" }
+{ "@type": "Person", "name": "Plato" }
+```
+
+```
+[
+  { "@type": "Person", "name": "Socrates" },
+  { "@type": "Person", "name": "Aristotle" },
+  { "@type": "Person", "name": "Plato" }
+]
 ```
 
 <!--
