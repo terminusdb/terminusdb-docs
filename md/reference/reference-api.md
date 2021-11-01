@@ -109,6 +109,7 @@ parameters, or as JSON in the body.
 
 > <span title="Take note!">:memo:</span> If a request includes JSON, it must
 > also have the header:
+>
 > ```shell
 > Content-Type: application/json
 > ```
@@ -127,10 +128,10 @@ Create a new database for a team.
 
 #### Path segments
 
-| Name         | What should be substituted                                   |
-| ------------ | --------------------------------------------------------- |
-| `<team>`     | identifier of the team under which the created database will be found |
-| `<database>` | identifier of the created database |
+| Name         | What should be substituted                           |
+| ------------ | ---------------------------------------------------- |
+| `<team>`     | identifier of the team owner of the created database |
+| `<database>` | identifier of the created database                   |
 
 #### Request headers
 
@@ -138,36 +139,35 @@ Create a new database for a team.
 | -------------- | ------------------ | --------- |
 | `Content-Type` | `application/json` | Yes       |
 
-#### Query parameters
-
-No query parameters required.
-
 #### Request body
 
-The request body must be a JSON object with the following keys:
+The request body is be a JSON object with the following fields:
 
-| Key | Type | Value | Required / Optional (default value) |
-| --- | ----- | --------- | --- |
-| `label` | String | displayed name of the created database | Required |
-| `comment` | String | description of the created database | Required |
-| `public` | Boolean | visibility of the created database to anonymous users | Optional (`false`) |
-| `schema` | Boolean | schema-checking disabled for the created database | Optional (`false`) |
-| `prefixes` | Object | default instance and schema prefixes | Optional (see below) |
+| Key        | Type    | Value                                                 | Required / Optional (default value) |
+| ---------- | ------- | ----------------------------------------------------- | ----------------------------------- |
+| `label`    | string  | displayed name of the created database                | Required                            |
+| `comment`  | string  | description of the created database                   | Required                            |
+| `public`   | boolean | visibility of the created database to anonymous users | Optional (`false`)                  |
+| `schema`   | boolean | schema-checking disabled for the created database     | Optional (`false`)                  |
+| `prefixes` | object  | default instance and schema prefixes                  | Optional (see below)                |
 
-The `prefixes` object must be a JSON object with the following keys:
+The `prefixes` value is a JSON object with the following fields:
 
-| Key | Type | Value | Required / Optional (default value) |
-| --- | ----- | --------- | --- |
-| `@base` | String | default instance prefix | Optional (`terminusdb:///data/`) |
-| `@schema` | String | default schema prefix | Optional (`terminusdb:///schema#`) |
+| Key       | Type   | Value                   | Required / Optional (default value) |
+| --------- | ------ | ----------------------- | ----------------------------------- |
+| `@base`   | string | default instance prefix | Optional (`terminusdb:///data/`)    |
+| `@schema` | string | default schema prefix   | Optional (`terminusdb:///schema#`)  |
 
-#### Examples
+#### Code samples
 
-To create a database with the identifier `mydb` for the team `myteam`, use one
-of the following:
+**Create a database `mydb` for the team `myteam`**
 
 ```shell
-$CURL -X POST "$BASE/api/db/myteam/mydb" -H "Content-Type: application/json" -d @- <<EOF
+$CURL \
+  -X POST \
+  -H "Content-Type: application/json" \
+  $BASE/api/db/myteam/mydb \
+  -d @- <<EOF
 {
   "label": "My Database",
   "comment": "The best first TerminusDB database ever"
@@ -176,16 +176,20 @@ EOF
 ```
 
 ```shell
-$HTTPIE "$BASE/api/db/admin/mydb" label="My Database" comment="The best first TerminusDB database ever"
+$HTTPIE \
+  $BASE/api/db/admin/mydb \
+  label="My Database" \
+  comment="The best first TerminusDB database ever"
 ```
 
-/*
+<!--
 
 ## Delete Database
 
 ```
 DELETE http://localhost:6363/api/db/<organization>/<dbid>
 ```
+
 The delete argument is a JSON document of the following form:
 
 ```jsx
@@ -198,6 +202,7 @@ The delete argument is a JSON document of the following form:
 ```
 POST http://localhost:6363/api/organization
 ```
+
 The post argument is a JSON document of the following form:
 
 ```jsx
@@ -213,6 +218,7 @@ This endpoint will add the user `User_Name` to the organization
 ```
 DELETE http://localhost:6363/api/organization
 ```
+
 The delete argument is a JSON document of the following form:
 
 ```jsx
@@ -221,12 +227,12 @@ The delete argument is a JSON document of the following form:
 
 This endpoint will delete the organization `Organization_Name`.
 
-
 ## Update Organization Name
 
 ```
 POST http://localhost:6363/api/organization/<organization_name>
 ```
+
 The JSON API post parameter is:
 
 ```jsx
@@ -234,7 +240,6 @@ The JSON API post parameter is:
 ```
 
 This endpoint will update the name of the organization in the path to `New_Name`.
-
 
 ## Add User
 
@@ -288,6 +293,7 @@ information in the JSON document.
 ```
 GET http://localhost:6363/api/role
 ```
+
 The JSON API get parameter is:
 
 ```jsx
@@ -319,7 +325,6 @@ The JSON API post parameter is:
 This endpoint will update the roles in the database with the
 associated list of actions for the named agents.
 
-
 ## Clone
 
 ```
@@ -337,19 +342,20 @@ The JSON payload is:
 }
 ```
 
-
 The API call creates a new database under the same DB ID as the cloned
 database, or with the new database ID `new_dbid` if provided.
 
 The other options are exactly as with create db.
 
 ### Example:
+
 Clone the database `admin/cowid`.
 
 ```
 POST http://localhost:6363/api/clone/admin/cowid
 
 ```
+
 JSON payload:
 
 ```jsx
@@ -388,15 +394,17 @@ The JSON API document is:
 The `rebase_from` contains an absolute string descriptor for the reference we are rebasing from. It may be a ref or a branch. Author should be the author of the newly produced commits.
 
 This operation will attempt to construct a new history which has the
-same contents as that given by "rebase_from" by repeated application
+same contents as that given by "rebase\_from" by repeated application
 of diverging commits.
 
 ### Example:
+
 If the `user` wants to rebase the database `admin/cowid`, from `branch_a` to `main`, then the argument is:
 
 ```
 POST "http://127.0.0.1:6363/api/rebase/admin/cowid/local/branch/main"
 ```
+
 and the payload is:
 
 ```jsx
@@ -412,6 +420,7 @@ and the payload is:
 ```
 POST http://localhost:6363/api/push/<organization>/<dbid>[/<repo>/branch/<branchid>/]
 ```
+
 The JSON API document is:
 
 ```jsx
@@ -427,6 +436,7 @@ If `"push_prefixes"` is true, then it will also push the prefixes
 associated with the database to the remote.
 
 ### Example:
+
 Push the local branch `branch_a` to the branch `main` of the remote repository `cow_information`.
 Include the prefixes of the local database and update the prefixes of the remote.
 
@@ -442,12 +452,12 @@ The JSON payload is:
   "push_prefixes" : "True" }
 ```
 
-
 ## Pull
 
 ```
 POST http://localhost:6363/api/pull/<organization>/<dbid>[/<repo>/branch/<branchid>/]
 ```
+
 JSON API document is:
 
 ```jsx
@@ -459,11 +469,13 @@ JSON API document is:
 Fetch layers from `remote`, then attempt a rebase from the remote branch `remote_branch` onto the local branch specified in the URL.
 
 ### Example:
+
 Fetch layers from remote repository: `cow_information`, branch `main` and rebase to the local branch `branch_a`
 
 ```
 POST http://localhost:6363/api/pull/admin/cowid/local/branch/branch_a
 ```
+
 The JSON payload is:
 
 ```jsx
@@ -471,7 +483,6 @@ The JSON payload is:
   "remote_branch" : "main",
 }
 ```
-
 
 ## Branch
 
@@ -489,6 +500,7 @@ JSON API document is:
 Creates a new branch as specified by the URI, starting from the branch given by `origin` or empty if it is unspecified.
 
 ### Example:
+
 Create a new branch called `branch_a` from the remote repository `cow_information`, branch `main`
 
 ```
@@ -507,6 +519,7 @@ JSON payload:
 ```
 DELETE http://localhost:6363/api/branch/<organization>/<dbid>/<repo>/<branchid>
 ```
+
 Delete argument is a JSON document of the following form
 
 ```jsx
@@ -515,11 +528,12 @@ Delete argument is a JSON document of the following form
 ```
 
 ### Example:
+
 Delete branch `local/branch_a`.
+
 ```
 DELETE http://localhost:6363/api/branch/admin/cowid/local/branch_a
 ```
-
 
 ## Create Graph
 
@@ -536,15 +550,18 @@ This takes a post parameter:
 This API call creates a new graph as specified by the absolute graph descriptor in the URI.
 
 ### Example:
+
 Create a graph for `admin/cowid`
+
 ```
 POST http://localhost:6363/api/graph/admin/cowid/local/main/
 ```
+
 JSON payload
+
 ```jsx
 {"commit_info" : { "author" : "user@terminusdb.com", "message" : "created a graph!" }}
 ```
-
 
 ## Delete Graph
 
@@ -557,16 +574,20 @@ This takes the following parameter:
 ```jsx
 {"commit_info" : { "author" : Author, "message" : Message }}
 ```
+
 Deletes the graph specified by the absolute graph descriptor in the URI.
 If multiple graphs are created with different commits as above, the graphid needs to be specified.
 
-
 ### Example:
-delete the graph for: ```admin/cowid```
+
+delete the graph for: `admin/cowid`
+
 ```
 DELETE http://localhost:6363/api/graph/admin/cowid/local/main/
 ```
+
 JSON payload
+
 ```jsx
 {"commit_info" : { "author" : "user@terminusdb.com", "message" : "deleted a graph!" }}
 ```
@@ -576,6 +597,7 @@ JSON payload
 ```
 POST http://localhost:6363/api/squash/<organization>/<dbid>/
 ```
+
 ```
 POST http://localhost:6363/api/squash/<organization>/<dbid>/local/branch/<branchid>
 ```
@@ -588,7 +610,7 @@ This takes a post parameter:
 
 This API endpoint allows you to squashes a branch to a single
 commit. If the branch is left unspecified, it defaults to
-`"local/main"`. The commit created can be attached to an arbitrary branch using ```reset`` (see below).
+`"local/main"`. The commit created can be attached to an arbitrary branch using \`\`\`reset\`\` (see below).
 
 It returns a json object of the form
 
@@ -602,12 +624,15 @@ It returns a json object of the form
 This commit path can be used with reset, to add the commit to a specified branch as described above.
 
 ### Example:
-Squash branch ```local/main``` into a single commit.
+
+Squash branch `local/main` into a single commit.
 
 ```
 POST http://127.0.0.1:6363/api/squash/admin/cowid/local/branch/main
 ```
+
 JSON payload:
+
 ```jsx
 {"commit_info" : { "author" : "user@terminusdb.com", "message" : "squashed_main" }}
 ```
@@ -621,12 +646,12 @@ JSON return:
   "api:status":"api:success"}
 ```
 
-
 ## Reset
 
 ```
 POST http://localhost:6363/api/reset/<organization>/<dbid>/
 ```
+
 ```
 POST http://localhost:6363/api/reset/<organization>/<dbid>/local/branch/<branchid>
 ```
@@ -639,13 +664,16 @@ This takes a post parameter:
 
 This API endpoint allows you to set a branch to an arbitrary
 commit. If the branch is left unspecified, it defaults to `"local/main"`.
-The commit descriptor has to be a valid one, for example the return from ```squash``` above.
+The commit descriptor has to be a valid one, for example the return from `squash` above.
 
 ### Example:
-Set the brach ```local/main``` to the squashed commit specified above.
+
+Set the brach `local/main` to the squashed commit specified above.
+
 ```
 POST http://localhost:6363/api/reset/admin/cowid/local/main
 ```
+
 JSON payload:
 
 ```jsx
@@ -662,6 +690,7 @@ JSON payload:
 ```
 GET http://localhost:6363/api/triples/<organization>/<dbid>/<repo>/branch/<branchid>/<type>/<name><?format=turtle>
 ```
+
 ```
 GET http://localhost:6363/api/triples/<organization>/<dbid>/<repo>/commit/<refid>/<type>/<name><?format=turtle>
 ```
@@ -676,6 +705,7 @@ hope to support other formats.
 ```
 POST http://localhost:6363/api/triples/<organization>/<dbid>/local/branch/<branchid>/<type>/<name>
 ```
+
 Post argument is a JSON document of the following form
 
 ```jsx
@@ -693,6 +723,7 @@ it can be an empty string).
 ```
 PUT http://localhost:6363/api/triples/<organization>/<dbid>/local/branch/<branchid>/<type>/<name>
 ```
+
 Put argument is a JSON document of the following form
 
 ```jsx
@@ -708,21 +739,27 @@ to the graph specified.
 ```
 POST http://localhost:6363/api/woql
 ```
+
 ```
 POST http://localhost:6363/api/woql/<organization>/<dbid>
 ```
+
 ```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/_meta
 ```
+
 ```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>
 ```
+
 ```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/_commits
 ```
+
 ```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/branch/<branchid>
 ```
+
 ```
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/commit/<refid>
 ```
@@ -755,21 +792,24 @@ result object, which has the form:
   }
 ```
 
-
 ## Optimize
 
 ```
 POST http://localhost:6363/api/optimize/_system
 ```
+
 ```
 POST http://localhost:6363/api/optimize/<organization>/<dbid>
 ```
+
 ```
 POST http://localhost:6363/api/optimize/<organization>/<dbid>/_meta
 ```
+
 ```
 POST http://localhost:6363/api/optimize/<organization>/<dbid>/<repo>/_commits
 ```
+
 ```
 POST http://localhost:6363/api/optimize/<organization>/<dbid>/<repo>/branch/<branch>
 ```
@@ -780,4 +820,4 @@ optimize access to the respective graph collection specified.
 
 In the case of an unspecified branch, `main` is assumed.
 
-*/
+-->
