@@ -128,10 +128,10 @@ Create a new database for a team.
 
 #### Segments
 
-| Name         | What should be substituted                           |
-| ------------ | ---------------------------------------------------- |
-| `<team>`     | identifier of the team owner of the created database |
-| `<database>` | identifier of the created database                   |
+| Name         | What should be substituted |
+| ------------ | -------------------------- |
+| `<team>`     | team identifier            |
+| `<database>` | database identifier        |
 
 #### Headers
 
@@ -143,7 +143,7 @@ Create a new database for a team.
 
 The request body is a JSON object with the following fields:
 
-| Key        | Type    | Value                                                 | Required / Optional (default) |
+| Key        | Type    | Value description                                     | Required / Optional (default) |
 | ---------- | ------- | ----------------------------------------------------- | ----------------------------- |
 | `label`    | string  | displayed name of the created database                | Required                      |
 | `comment`  | string  | description of the created database                   | Required                      |
@@ -153,7 +153,7 @@ The request body is a JSON object with the following fields:
 
 The `prefixes` value is a JSON object with the following fields:
 
-| Key       | Type   | Value                   | Required / Optional (default)      |
+| Key       | Type   | Value description       | Required / Optional (default)      |
 | --------- | ------ | ----------------------- | ---------------------------------- |
 | `@base`   | string | default instance prefix | Optional (`terminusdb:///data/`)   |
 | `@schema` | string | default schema prefix   | Optional (`terminusdb:///schema#`) |
@@ -173,13 +173,13 @@ Body:
 
 #### Code samples
 
-**Create a database `mydb` for the team `myteam`**
+**Create a database `mydb` for the team `myteam`.**
 
 ```shell
 $CURL \
   -X POST \
   -H "Content-Type: application/json" \
-  $BASE/api/db/myteam/mydb \
+  "$BASE/api/db/myteam/mydb" \
   -d @- <<EOF
 {
   "label": "My Database",
@@ -190,7 +190,7 @@ EOF
 
 ```shell
 $HTTPIE \
-  $BASE/api/db/myteam/mydb \
+  "$BASE/api/db/myteam/mydb" \
   label="My Database" \
   comment="The best first TerminusDB database ever"
 ```
@@ -205,10 +205,10 @@ Delete an existing database from a team.
 
 #### Segments
 
-| Name         | What should be substituted                   |
-| ------------ | -------------------------------------------- |
-| `<team>`     | identifier of the team owner of the database |
-| `<database>` | identifier of the database                   |
+| Name         | What should be substituted |
+| ------------ | -------------------------- |
+| `<team>`     | team identifier            |
+| `<database>` | database identifier        |
 
 #### Headers
 
@@ -220,7 +220,7 @@ Delete an existing database from a team.
 
 The request body is an optional JSON object with the following field:
 
-| Key     | Type    | Value             | Required / Optional (default) |
+| Key     | Type    | Value description | Required / Optional (default) |
 | ------- | ------- | ----------------- | ----------------------------- |
 | `force` | boolean | see comment below | Optional (`false`)            |
 
@@ -244,19 +244,121 @@ Body:
 
 #### Code samples
 
-**Delete a database `mydb` from the team `myteam`**
+**Delete a database `mydb` from the team `myteam`.**
 
 ```shell
 $CURL \
   -X DELETE \
-  $BASE/api/db/myteam/mydb
+  "$BASE/api/db/myteam/mydb"
 EOF
 ```
 
 ```shell
 $HTTPIE \
   DELETE \
-  $BASE/api/db/myteam/mydb
+  "$BASE/api/db/myteam/mydb"
+```
+
+## Inserting and updating documents
+
+### Insert a new document (schema or instance)
+
+```
+POST /api/document/<team>/<database>
+```
+
+Insert a new document – either a schema or an instance – into a database.
+
+#### Segments
+
+| Name         | What should be substituted |
+| ------------ | -------------------------- |
+| `<team>`     | team identifier            |
+| `<database>` | database identifier        |
+
+#### Parameters
+
+| Label          | Value description                                                            | Required / Optional (default) |
+| -------------- | ---------------------------------------------------------------------------- | ----------------------------- |
+| `author`       | commit author                                                                | Required                      |
+| `message`      | commit message                                                               | Required                      |
+| `graph_type`   | document type (`schema` or `instance`)                                       | Optional (`instance`)         |
+| `full_replace` | replace existing document(s) with the same identifier(s) (`true` or `false`) | Optional (`false`)            |
+
+#### Headers
+
+| Header         | Value              | Required? |
+| -------------- | ------------------ | --------- |
+| `Content-Type` | `application/json` | Yes       |
+
+#### Body
+
+The request body follows one of the following two formats:
+
+* a newline-delimited stream of JSON objects
+* a JSON array of objects
+
+> <span title="TODO!">:red\_circle:</span> TODO: Describe or point to a
+> description of each object.
+
+#### Response
+
+Status: `200 OK`
+
+Body: a JSON array of strings, where each string is the identifier of the
+corresponding document in the request body.
+
+#### Code samples
+
+**Insert a schema for the database `mydb` of the team `myteam`.**
+
+```shell
+$CURL \
+  -X POST \
+  "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person&graph_type=schema" \
+  -d @- <<EOF
+{
+  "@id": "Person",
+  "@type": "Class",
+  "name": "xsd:string"
+}
+EOF
+```
+
+```shell
+$HTTPIE \
+  "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person&graph_type=schema" <<EOF
+{
+  "@id": "Person",
+  "@type": "Class",
+  "name": "xsd:string"
+}
+EOF
+```
+
+**Insert an instance for the database `mydb` of the team `myteam` using the
+`Person` type defined above.**
+
+```shell
+$CURL \
+  -X POST \
+  "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person%20instance" \
+  -d @- <<EOF
+{
+  "@type": "Person",
+  "name": "Socrates"
+}
+EOF
+```
+
+```shell
+$HTTPIE \
+  "$BASE/api/document/myteam/mydb?author=myuser&message=insert%20Person%20instance" <<EOF
+{
+  "@type": "Person",
+  "name": "Socrates"
+}
+EOF
 ```
 
 <!--
