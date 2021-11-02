@@ -16,12 +16,16 @@ the relevant operation, e.g. `/db` for operations on a database. It may end with
 segments that serve as arguments, e.g. `/<team>/<db>` representing a team name
 and a database name.
 
-### Using `curl` and `httpie`
+### Code samples
 
-For each endpoint, we give examples on how to access it using two popular
-command-line tools, `curl` and `httpie`. (We're fans of the less-well-known
-`xh`, but it uses the exact same arguments as `httpie`, so replace `httpie` with
-`xh` if you prefer the latter.)
+For each endpoint, we give code samples using two popular command-line tools,
+[`curl`][curl] and [`httpie`][httpie]. See the documentation for those tools if
+you are not familiar with them.
+
+> <span title="Take note!">:memo:</span> Some of us are fans of the
+> less-well-known [`xh`][xh]. Fortunately, it uses the exact same arguments as
+> `httpie`. If you want to try `xh`, just replace `httpie` with `xh` in the code
+> samples.
 
 ### TerminusX or TerminusDB?
 
@@ -1090,3 +1094,9 @@ optimize access to the respective graph collection specified.
 In the case of an unspecified branch, `main` is assumed.
 
 -->
+
+[curl]: https://curl.se/
+
+[httpie]: https://httpie.io/
+
+[xh]: https://github.com/ducaale/xh
