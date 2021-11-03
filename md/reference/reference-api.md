@@ -60,7 +60,6 @@ For TerminusX, you use an access token with `Bearer` authorization:
 ```shell
 export TERMINUSDB_ACCESS_TOKEN='...'
 
-curl --header "Authorization: Bearer $TERMINUSDB_ACCESS_TOKEN" ...
 curl -H "Authorization: Bearer $TERMINUSDB_ACCESS_TOKEN" ...
 
 httpie --bearer "$TERMINUSDB_ACCESS_TOKEN" ...
@@ -72,10 +71,8 @@ For TerminusDB, you use a username and password (i.e. `Basic` authorization):
 export TERMINUSDB_USER='...'
 export TERMINUSDB_PASS='...'
 
-curl --user "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
 curl -u "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
 
-httpie --auth "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
 httpie -a "$TERMINUSDB_USER:$TERMINUSDB_PASS" ...
 ```
 
@@ -136,12 +133,6 @@ Create a new database for a team.
 | ------------ | -------------------------- |
 | `<team>`     | team identifier            |
 | `<database>` | database identifier        |
-
-#### Headers
-
-| Header         | Value              | Required? |
-| -------------- | ------------------ | --------- |
-| `Content-Type` | `application/json` | Yes       |
 
 #### Body
 
@@ -214,12 +205,6 @@ Delete an existing database from a team.
 | `<team>`     | team identifier            |
 | `<database>` | database identifier        |
 
-#### Headers
-
-| Header         | Value              | Required?                             |
-| -------------- | ------------------ | ------------------------------------- |
-| `Content-Type` | `application/json` | Yes, if the request body is not empty |
-
 #### Body
 
 The request body is an optional JSON object with the following field:
@@ -288,12 +273,6 @@ Insert new documents – either schemas or instances – into a database.
 | `message`      | commit message                                                               | Required                      |
 | `graph_type`   | document type (`schema` or `instance`)                                       | Optional (`instance`)         |
 | `full_replace` | replace existing document(s) with the same identifier(s) (`true` or `false`) | Optional (`false`)            |
-
-#### Headers
-
-| Header         | Value              | Required? |
-| -------------- | ------------------ | --------- |
-| `Content-Type` | `application/json` | Yes       |
 
 #### Body
 
