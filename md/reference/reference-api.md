@@ -239,7 +239,6 @@ Body:
 $CURL \
   -X DELETE \
   "$BASE/api/db/myteam/mydb"
-EOF
 ```
 
 ```shell
