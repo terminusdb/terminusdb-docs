@@ -401,12 +401,6 @@ Replace existing documents – either schemas or instances – in a database.
 | `message`    | commit message                         | Required                      |
 | `graph_type` | document type (`schema` or `instance`) | Optional (`instance`)         |
 
-#### Headers
-
-| Header         | Value              | Required? |
-| -------------- | ------------------ | --------- |
-| `Content-Type` | `application/json` | Yes       |
-
 #### Response
 
 Status: `200 OK`
