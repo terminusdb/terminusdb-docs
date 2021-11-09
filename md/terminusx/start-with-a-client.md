@@ -321,7 +321,7 @@ Get a list of documents or specific documents added to the schema
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below. 
 
 ```javascript
-async getDoc (){
+async function getDoc(){
   const documents = await client.getDocument({ as_list: "true" });
   console.log(documents)
 }
