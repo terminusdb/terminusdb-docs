@@ -45,4 +45,9 @@ cd "$TERMINUSDB_DIR"
 PATH="$TERMINUSDB_DIR:$PATH" make all
 cp "$TERMINUSDB_DIR/docs/CLI.md" "$REFERENCE_DIR/CLI.md"
 
+echo "Removing untracked files..."
+
+cd "$TOP_DIR"
+git clean -d -f -f
+
 echo "Done."

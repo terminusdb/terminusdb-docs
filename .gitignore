@@ -1,2 +1,9 @@
-node_modules/
+# Temporary directory for any use
 /tmp/
+
+# Files generated during CI that we don't want to clean.
+/md/reference/CLI.md
+/md/reference/ref.md
+/md/reference/repository.md
+/md/reference/system_schema.md
+/md/reference/woql.md
