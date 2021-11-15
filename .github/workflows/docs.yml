@@ -18,6 +18,9 @@ jobs:
           echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 
+      - name: Run reference generation script
+        run: bash .github/generate_docs.sh ${{ steps.extract_branch.outputs.branch }}
+
       - name: Deploy to subdir 🚀
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
