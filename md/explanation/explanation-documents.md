@@ -58,9 +58,9 @@ Karen,  Centre Forward
 #### Code: Football roster class definition
 
 ```json
-{ "@type"   : "@context",
-  "@schema" : "terminusdb://Roster/document/",
-  "@base"   : "terminusdb://Roster/schema#" }
+{ "@type"    : "@context",
+  "@schema"  : "terminusdb://Roster/schema#",
+  "@base"    : "terminusdb://Roster/document" }
 
 { "@type"   : "Class",
   "@id"     : "Player",
@@ -73,7 +73,7 @@ Karen,  Centre Forward
 ```json
 { "@type"   : "Player",
   "@id"     : "Player/George",
-  "@base"   : "terminusdb://Roster/schema#",
+  "@base"   : "terminusdb://Roster/document",
   "name"    : "George",
   "position": "Centre Back" }
 ```
@@ -109,24 +109,20 @@ The `Set` property in the code-snippet is a *type family* allowing us to state t
 #### Code: Player and roster classes
 
 ```json
-{ "@type"    : "@context",
-  "@schema"  : "terminusdb://Roster/document/",
-  "@base"    : "terminusdb://Roster/schema#" }
+{ "@type"  : "@context",
+  "@schema": "terminusdb://Roster/schema#",
+  "@base"  : "terminusdb://Roster/document" }
+
+{ "@type"   : "Class",
+  "@id"     : "Player",
+  "name"    : "xsd:string",
+  "position": "xsd:string" }
 
 { "@type"    : "Class",
-  "@id"      : "Player",
-  "name"     : "xsd:string",
-  "position" : "xsd:string" }
-
-{ 
-  "@type"    : "Class",
   "@id"      : "Roster",
-  "player"   : 
-  { 
+  "player"   : { 
      "@type" : "Set",
-     "@class": "Player" 
-  } 
-}
+     "@class": "Player" } }
 ```
 
 ### Create documents from class specifications
@@ -136,9 +132,9 @@ A set of documents that meets the above specification and that represents the da
 #### Code: CSV roster data in document form
 
 ```json
-{ "@type"   : "Roster",
-  "@id"     : "Roster/Wolves",
-  "player"  : [ "Player/George", "Player/Karen", "Player/Doug" ] }
+{ "@type" : "Roster",
+  "@id"   : "Roster/Wolves",
+  "player": [ "Player/George", "Player/Karen", "Player/Doug" ] }
 
 { "@type"   : "Player",
   "@id"     : "Player/George",
@@ -169,9 +165,9 @@ In the subdocument example below, the schema specification defines players with 
 #### Code: An example of a player stats subdocument
 
 ```json
-{ "@type"       : "@context",
-  "@schema"     : "terminusdb://Game/document/",
-  "@base"       : "terminusdb://Game/schema#" }
+{ "@type"  : "@context",
+  "@schema": "terminusdb://Roster/schema#",
+  "@base"  : "terminusdb://Roster/document" }
 
 { "@type"       : "Class",
   "@id"         : "Stats",
@@ -184,10 +180,10 @@ In the subdocument example below, the schema specification defines players with 
   "wisdom"      : "xsd:integer",
   "constitution": "xsd:integer" }
 
-{ "@type"       : "Class",
-  "@id"         : "Player",
-  "name"        : "xsd:string",
-  "stats"       : "Stats" }
+{ "@type": "Class",
+  "@id"  : "Player",
+  "name" : "xsd:string",
+  "stats": "Stats" }
 ```
 
 In the example below, the subdocument enables sending and retrieving `Stats` with the `Player` object. It is also possible for subdocuments to point recursively to other subdocuments or documents.
@@ -195,8 +191,7 @@ In the example below, the subdocument enables sending and retrieving `Stats` wit
 #### Code: Stats with the player object
 
 ```json
-{ 
-  "@type"         : "Player",
+{ "@type"         : "Player",
   "@id"           : "Player/Hieronymous",
   "stats"         : 
   { 
@@ -231,26 +226,26 @@ With a bit of practice, designing your knowledge graphs in TerminusDB will becom
 #### Code: Contact graph schema
 
 ```json
-{ "@type"       : "@context",
-  "@schema"     : "terminusdb://People/document/",
-  "@base"       : "terminusdb://People/schema#" }
+{ "@type"  : "@context",
+  "@schema": "terminusdb://Roster/schema#",
+  "@base"  : "terminusdb://Roster/document" }
 
 { "@type"       : "Class",
   "@id"         : "Coordinate",
   "@subdocument": [],
-  "@key"        : { "@type" : "Random"},
+  "@key"        : { "@type" : "Random" },
   "lat"         : "xsd:decimal",
   "long"        : "xsd:decimal" }
 
-{ "@type"       : "Class",
-  "@id"         : "Map",
-  "coordinates" : { "@type" : "Array",
-                    "@class": "Coordinate" } }
+{ "@type"      : "Class",
+  "@id"        : "Map",
+  "coordinates": { "@type" : "Array",
+                   "@class": "Coordinate" } }
 
-{ "@type"       : "Class",
-  "@id"         : "Country",
-  "name"        : "xsd:string",
-  "map"         : "Map" }
+{ "@type": "Class",
+  "@id"  : "Country",
+  "name" : "xsd:string",
+  "map"  : "Map" }
 
 { "@type"       : "Class",
   "@id"         : "Address",
@@ -259,33 +254,33 @@ With a bit of practice, designing your knowledge graphs in TerminusDB will becom
   "country"     : "Country",
   "street"      : "xsd:string" }
 
-{ "@type"       : "Class",
-  "@id"         : "Person",
-  "name"        : "xsd:string",
-  "address"     : "Address",
-  "friend"      : "Person" }
+{ "@type"  : "Class",
+  "@id"    : "Person",
+  "name"   : "xsd:string",
+  "address": "Address",
+  "friend" : "Person" }
 ```
 
 #### Code: Contact graph document
 
 ```json
-{ "@type"      : "Person",
-  "@id"        : "Person/Joe",
-  "name"       : "Joe Bloggs",
-  "address"    : { "@type"  : "Address",
-                   "@id"    : "Adress/aa1264e404a5b34381abc37cad83fabd",
-                   "street" : "Elm St.",
-                   "country": "Country/USA" },
-  "friend"     : [ "Person/Jill" ] }
+{ "@type"  : "Person",
+  "@id"    : "Person/Joe",
+  "name"   : "Joe Bloggs",
+  "address": { "@type"  : "Address",
+               "@id"    : "Adress/aa1264e404a5b34381abc37cad83fabd",
+               "street" : "Elm St.",
+               "country": "Country/USA" },
+  "friend" : [ "Person/Jill" ] }
 
-{ "@type"      : "Person",
-  "@id"        : "Person/Jill",
-  "name"       : "Jill Smith",
-  "address"    : { "@type"  : "Address",
-                   "@id"    : "Adress/5fba7438dc2b23258d304bb8cd1222bd",
-                   "street" : "Main St.",
-                   "country": "Country/Ireland" },
-  "friend"     : [ "Person/Joe" ] }
+{ "@type"  : "Person",
+  "@id"    : "Person/Jill",
+  "name"   : "Jill Smith",
+  "address": { "@type"  : "Address",
+               "@id"    : "Adress/5fba7438dc2b23258d304bb8cd1222bd",
+               "street" : "Main St.",
+               "country": "Country/Ireland" },
+  "friend" : [ "Person/Joe" ] }
 
 { "@type"      : "Country",
   "@id"        : "Country/USA",
