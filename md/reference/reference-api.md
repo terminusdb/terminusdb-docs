@@ -247,7 +247,7 @@ $HTTPIE \
   "$BASE/api/db/myteam/mydb"
 ```
 
-## Inserting and updating documents
+## Inserting, updating, and querying documents
 
 ### Inserting documents
 
@@ -438,6 +438,45 @@ $HTTPIE \
   "age": { "@type": "Optional", "@class": "xsd:decimal" }
 }
 EOF
+```
+
+### Querying documents
+
+```
+GET /api/document/<team>/<database>
+```
+
+Get documents – either schemas or instances – from a database.
+
+#### Segments
+
+| Name         | What should be substituted |
+| ------------ | -------------------------- |
+| `<team>`     | team identifier            |
+| `<database>` | database identifier        |
+
+#### Parameters
+
+| Label        | Value description                      | Default |
+| ------------ | -------------------------------------- | ----------------------------- |
+| `graph_type` | document type (`schema` or `instance`) | `instance`         |
+| `skip` | (non-negative) number of documents to skip in response | `0`         |
+| `count` | (non-negative) number of documents to include in response | all         |
+| `minimized` | stream one document per line | `true`         |
+| `as_list` | respond with an array of documents  | `false`         |
+| `prefixed` | include the prefix with all identifiers | `false`         |
+
+> <span title="Take note!">:memo:</span> With `prefixed=true`, all identifiers
+> in the response have a prefix. For a schema-defined identifier such as the
+> value of `@type` or the name of a field, the prefix will be the value of
+> `@schema` in the context. For an instance-defined identifier such as the value
+> of `@id`, the prefix will be the value of `@base` in the context.
+
+#### Code samples
+
+```shell
+$HTTPIE \
+  "$BASE/api/document/myteam/mydb?graph_type=schema"
 ```
 
 <!--
