@@ -77,17 +77,27 @@ Define and initialize a WOQLClient, and connect to a database using the example 
 ```javascript
 const TerminusDBClient = require("@terminusdb/terminusdb-client");
 
-const client = new TerminusDBClient.WOQLClient("https://cloud.terminusdb.com/cloudabc/",
-                    {user:"user@email.com", organization:"cloudabc"})
+// TODO: change the team name 
+const team = "TEAM_NAME";
+const client = new TerminusDBClient.WOQLClient(`https://cloud.terminusdb.com/${team}/`, {
+    user: "user@email.com",
+    organization: team
+});
 
 //set the key as an environment variable.
 client.setApiKey(process.env.TERMINUSDB_ACCESS_TOKEN)
 
-client.connect().then((result)=>{
-    console.log(result)
-}).catch((err)=>{
-    console.error(err);
-})
+const connectToServer = async () => {
+    try {
+        await client.connect();
+    } catch (err) {
+        console.error(err)
+    }
+
+    console.log("Connected to TerminusDB successfully!")
+};
+
+connectToServer();
 
 ```
 
@@ -124,11 +134,7 @@ Connect to an existing database using the example below.
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Connect to a database.
 
 ```javascript
-client.connect().then(()=>{
-    client.db('ExampleDatabase');
-}).catch((err)=>{
-    console.error(err);
-});
+client.db('ExampleDatabase');
 ```
 
 ### **Python**
@@ -155,15 +161,22 @@ Create a new database using the example below.
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Create a database.
 
 ```javascript
-client.connect().then(async()=>{
-    await client.createDatabase('ExampleDatabase', 
-    {
-        label:   "ExampleDatabase",
-        comment: "Created new ExampleDatabase",
-    });
-}).catch((err)=>{
-    console.error(err);
-});
+const createNewDB = async () => {
+  try {
+
+      await client.createDatabase('ExampleDatabase', {
+          label: "ExampleDatabase",
+          comment: "Created new ExampleDatabase",
+      });
+
+      console.log("Database created Successfully!")
+
+  } catch (err) {
+      console.error(err)
+  }
+};
+
+createNewDB();
 ```
 
 ### **Python**
@@ -246,10 +259,10 @@ Add the schema object to the database.
 
 ### **JavaScript**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Add the schema object to a document using `addDocument`.
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Add the schema object to a document using `addDocument` which returns a Promise.
 
 ```javascript
-client.addDocument(schema, { graph_type: "schema" })
+await client.addDocument(schema, { graph_type: "schema" })
 ```
 
 ### **Python**
@@ -270,7 +283,7 @@ Once added, Add documents corresponding to the schema.
 
 ### **JavaScript**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Add documents to the schema using `addDocument`.
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Add documents to the schema using `addDocument` which returns a Promise.
 
 ```javascript
 const objects = [
@@ -291,7 +304,7 @@ const objects = [
     }
 ];
         
-client.addDocument(objects)
+await client.addDocument(objects);
 ```
 
 ### **Python**
@@ -321,7 +334,7 @@ Get a list of documents or specific documents added to the schema
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below. 
 
 ```javascript
-async getDoc (){
+async function getDoc (){
   const documents = await client.getDocument({ as_list: "true" });
   console.log(documents)
 }
@@ -418,7 +431,7 @@ const query = {
     "type": "Player",
     "query": { "position": "Full Back" },
    }
-  client.queryDocument(query,{"as_list":true});
+  await client.queryDocument(query,{"as_list":true});
 ```
 
 ```results
