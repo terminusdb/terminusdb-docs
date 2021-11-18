@@ -413,14 +413,14 @@ Use `Random` as a convenient key type when an object has no important characteri
 #### Code: An example of a Random key
 
 ```json
-{ 
+{
     "@id"                   : "UserDatabase",
     "@type"                 : "Class",
     "@documentation"        : 
     {
         "@comment"          : "A normal user database.",
         "@properties"       : 
-        { 
+        {
             "label"         : "The label name of the database.",
             "comment"       : "A comment associated with the database.",
             "creation_date" : "The time of creation of the database.",
@@ -429,7 +429,7 @@ Use `Random` as a convenient key type when an object has no important characteri
     },
     "@inherits"             : "Database",
     "@key"                  : 
-    { 
+    {
         "@type"             : "Random" 
     },
     "label"                 : "xsd:string",
@@ -441,7 +441,45 @@ Use `Random` as a convenient key type when an object has no important characteri
 
 ### @documentation
 
-Use `@documentation` to add documentation to the class and the property fields of the class. The keywords of the `@documentation` object are `@comment` and `@properties`. See the [Random key](#code-an-example-random-key) example above, for examples of these keywords.
+Use `@documentation` to add documentation to the class and the property fields or values of the class. The keywords of the `@documentation` object are `@comment` and either `@properties` or `@values` for standard classes or `Enums` respectively. See the [Random key](#code-an-example-random-key) example above, for examples of these keywords.
+
+For `Enum` we can write as follows:
+
+```json
+{
+    "@id": "Pet",
+    "@type": "Enum",
+    "@documentation" : {
+        "@comment" : "What kind of pet?",
+        "@values" : {
+            "dog" : "A doggie",
+            "cat" : "A kitty"
+        }
+    },
+   "@value" : ["dog","cat"]
+}
+```
+
+For a standard `Class` we can write as follows:
+
+```json
+{
+    "@id": "Person",
+    "@type": "Class",
+    "@documentation" : {
+        "@comment" : "Information about people",
+        "@values" : {
+            "name" : "The persons name",
+            "friends" : "The kinds of company someone keeps"
+        }
+    },
+   "name" : "xsd:string",
+   "friends" : {
+       "@type" : "Set",
+       "@class" : "Person"
+   }
+}
+```
 
 #### @comment
 
