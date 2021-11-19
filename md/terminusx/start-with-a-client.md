@@ -334,9 +334,9 @@ Get a list of documents or specific documents added to the schema
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below. 
 
 ```javascript
-async function getDoc (){
+const getDocs = async () => {
   const documents = await client.getDocument({ as_list: "true" });
-  console.log(documents)
+  console.log("All Documents",documents)
 }
 ```
 
@@ -427,11 +427,14 @@ Get a list of documents that matches the query
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below. 
 
 ```javascript
-const query = {
-    "type": "Player",
-    "query": { "position": "Full Back" },
-   }
-  await client.queryDocument(query,{"as_list":true});
+const queryDocuments = async () => {
+  const query = {
+      "type": "Player",
+      "query": { "position": "Full Back" },
+     }
+  const result = await client.queryDocument(query,{"as_list":true});
+  console.log("Query Documents",result)
+}
 ```
 
 ```results
