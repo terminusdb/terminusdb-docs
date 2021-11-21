@@ -69,7 +69,7 @@ dt = datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S"))
 
 query = WOQL().woql_and
 (
-    WOQL().insert("doc:my_obj", "scm:Object"),
+    WOQL().insert("doc:my_obj", "@schema:Object"),
     WOQL().add_triple("doc:my_obj", "created_dt", WOQL().datetime(dt))
 )
 

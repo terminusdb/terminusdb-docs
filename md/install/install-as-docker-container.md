@@ -216,7 +216,7 @@ TERMINUSDB_DOCKER="podman" ./terminusdb-container [COMMAND]
 
 ## Server deployment
 
-> The TerminusDB server is deployed to your computer by default. 
+?> The TerminusDB server is deployed to your computer by default. 
 
 ### Local computer deployment
 

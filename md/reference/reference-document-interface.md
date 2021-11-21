@@ -40,7 +40,7 @@ The alternative method uses a POST rather than a get, specifies the header `X-HT
 
 ```jsx
 {
-    "type": "Person",
+    "@rdf:type": "Person",
     "count": 10,
     "query": { "age": 42 },
 }

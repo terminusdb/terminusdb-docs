@@ -10,7 +10,7 @@
 
 [The TerminusDB Git-like model](#the-terminusdb-git-like-model)
  
-## What is TermninusDB?
+## What is TerminusDB?
 
 TerminusDB is a powerful, in-memory graph database enabling you to maximize your productivity and the value of your data. TerminusDB has numerous features and several interfaces enabling you to create data-intensive, immutable, and synchronized databases with built-in version control and other [Git-like](#the-terminusdb-git-like-model) operations.
 

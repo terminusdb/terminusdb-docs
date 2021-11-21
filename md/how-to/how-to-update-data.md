@@ -8,7 +8,7 @@ When updating a WOQL triple with an unknown value that may or may not exist, fir
 
 ## Update the gender of a person
 
-Update the `"scm:gender"` of `"doc:Person_1"` to `"Male"`.
+Update the `"@schema:gender"` of `"doc:Person_1"` to `"Male"`.
 
 #### Code: Update gender
 
@@ -23,11 +23,11 @@ Update the `"scm:gender"` of `"doc:Person_1"` to `"Male"`.
 ```javascript
 when
 (
-    triple("doc:Person_1", "scm:gender", "v:Value"),
+    triple("doc:Person_1", "@schema:gender", "v:Value"),
     and
     (
-        delete_triple("doc:Person_1", "scm:gender", "v:Value"),
-        add_triple("doc:Person_1",    "scm:gender", literal("Male", "string"))
+        delete_triple("doc:Person_1", "@schema:gender", "v:Value"),
+        add_triple("doc:Person_1",    "@schema:gender", literal("Male", "string"))
     )
 )
 ```
@@ -39,11 +39,11 @@ when
 ```python
 query = WOQL().when
 (
-    WOQL().triple("doc:my_document", "scm:my_property", "v:Value"),
+    WOQL().triple("doc:my_document", "@schema:my_property", "v:Value"),
     WOQL().woql_and
     (
-        WOQL().delete_triple("doc:my_document", "scm:my_property","v:Value"),
-        WOQL().add_triple("doc:my_document",    "scm:my_property", 
+        WOQL().delete_triple("doc:my_document", "@schema:my_property","v:Value"),
+        WOQL().add_triple("doc:my_document",    "@schema:my_property", 
             WOQL().literal("New Value",         "xsd:string"))
     )
 ),

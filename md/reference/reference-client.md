@@ -1,4 +1,4 @@
-# Client and WOQL Reference Guides
+# Client and WOQL Reference
 
 > **On this page:** JavaScript and Python client and Web Objects Query Language (WOQL) reference guides and tutorials. 
 

@@ -2,9 +2,9 @@
 
 > **On this page:** A definition of frequently occuring terms and acronyms in this documentation site.
 
-> **Context:** Unless otherwise stated, the context for all glossary definitions is computer, data, or information science.
+?> **Context:** Unless otherwise stated, the context for all glossary definitions is computer, data, or information science.
 
-> **Source:** Unless otherwise stated, the source of all defintions is [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
+?> **Source:** Unless otherwise stated, the source of all defintions is [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)
 
 ## Graph concepts
 

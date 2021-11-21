@@ -52,7 +52,7 @@ triple(Subject, Predicate, Object)
 
 let [subj, obj] = vars("subj", "obj")
 
-triple(s, "type", o)
+triple(s, "@rdf:type", o)
 ```
 
 <hr class="section-separator"/>
@@ -177,7 +177,7 @@ A WOQLQuery object containing the filtered variables and subquery
 ```js
 let [grouped, subject, class] = vars("grouped", "subject", "class")
 
-select(grouped).group_by(subject, class, grouped).triple(subject, "type", class)   
+select(grouped).group_by(subject, class, grouped).triple(subject, "@rdf:type", class)   
 ```
 
 <hr class="section-separator"/>
@@ -1423,7 +1423,7 @@ A WOQLQuery which contains the add_quad insert statement
 
 
 ```js
-add_quad("Person", "type", "owl:Class", "schema/main")
+add_quad("Person", "@rdf:type", "owl:Class", "schema/main")
 ```
 
 <hr class="section-separator"/>
@@ -1502,7 +1502,7 @@ A WOQLQuery which contains the Delete Quad Statement
 
 
 ```js
-delete_quad("Person", "type", "owl:Class", "schema/main")
+delete_quad("Person", "@rdf:type", "owl:Class", "schema/main")
 ```
 
 <hr class="section-separator"/>
@@ -1541,7 +1541,7 @@ A WOQLQuery which contains the conditional transactional statement
 
 
 ```js
-when(true).add_triple("doc:john", "type", "scm:Person")  
+when(true).add_triple("doc:john", "@rdf:type", "@schema:Person")  
 ```
 
 <hr class="section-separator"/>
@@ -2390,8 +2390,8 @@ A WOQLQuery which will be written into the graph in question
 
 
 ```js
-using("admin/minecraft").into("instance/main").add_triple("a", "type", "scm:X")
-//writes a single tripe (doc:a, rdf:type, scm:X) into the main instance graph
+using("admin/minecraft").into("instance/main").add_triple("a", "@rdf:type", "@schema:X")
+//writes a single tripe (doc:a, rdf:type, @schema:X) into the main instance graph
 
 ```
 
@@ -2527,7 +2527,7 @@ A WOQLQuery which contains the update object expression
 ```js
 update_object({
     "@id": "doc:joe",
-    "@type": "scm:Person",
+    "@type": "@schema:Person",
     "rdfs:label": {
         "@type": "xsd:string",
         "@value": "Joe"

@@ -392,7 +392,7 @@ A WOQLQuery which contains the add class expression
 
 ```js
 add_class("MyClass")
-//equivalent to add_quad("MyClass", "type", "owl:Class", "schema/main")
+//equivalent to add_quad("MyClass", "@rdf:type", "owl:Class", "schema/main")
 ```
 
 <hr class="section-separator"/>
@@ -430,7 +430,7 @@ A WOQLQuery which contains the add property expression
 
 ```js
 add_property("myprop")
-/*equivalent to add_quad("myprop", "type", "owl:DatatypeProperty", "schema/main")
+/*equivalent to add_quad("myprop", "@rdf:type", "owl:DatatypeProperty", "schema/main")
     .add_quad("myprop", "range", "xsd:string", "schema/main")*/
 ```
 
@@ -469,7 +469,7 @@ A WOQLQuery which contains the add document class expression
 
 ```js
 doctype("MyClass")
-/*equivalent to add_quad("MyClass", "type", "owl:Class", "schema/main")
+/*equivalent to add_quad("MyClass", "@rdf:type", "owl:Class", "schema/main")
     .add_quad("MyClass", "subClassOf", "system:Document", "schema/main") */
 ```
 
@@ -663,7 +663,7 @@ A WOQLQuery which contains the insert expression
 
 ```js
 insert("mydoc", "MyType")
-//equivalent to add_triple("mydoc", "type", "MyType")
+//equivalent to add_triple("mydoc", "@rdf:type", "MyType")
 ```
 
 <hr class="section-separator"/>

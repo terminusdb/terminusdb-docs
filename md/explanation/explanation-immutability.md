@@ -1,6 +1,6 @@
 # Immutability
 
-> **On this page:** An introduction to the hierarchy and system of graphs used by TerminusDB for collaboration and revision control.
+> **On this page:** An explanation of how TerminusDB implements immutability, and handles deleted and new data.
 
 TerminusDB is an immutable data store. When data is written to a store, it does not change or mutate existing data. Any deleted data is masked, any new data resulting from a transaction is added on top of the mask.
 

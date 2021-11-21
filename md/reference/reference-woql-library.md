@@ -31,10 +31,10 @@ The values argument allows values to be passed for any of the internal variables
 
 	
 	```js
-	lib().classes("scm:Person")
+	lib().classes("@schema:Person")
 	```
 	</div>
-    specifies that only the class with ID scm:Person will be matched
+    specifies that only the class with ID @schema:Person will be matched
 
 * object - a json key-value object where the keys are the names of the variables to be set and the value is the value for that variable.
 
@@ -42,10 +42,10 @@ The values argument allows values to be passed for any of the internal variables
 
 	
 	```js
-	lib().classes({'Class ID': "scm:Person"})
+	lib().classes({'Class ID': "@schema:Person"})
 	```
 	</div>
-	specifies that only the class with ID scm:Person will be matched
+	specifies that only the class with ID @schema:Person will be matched
 
 
 * WOQLQuery - a woql query which serves as a constraint on any variable mentioned in the query
@@ -55,10 +55,10 @@ The values argument allows values to be passed for any of the internal variables
 	
 	```js
 	let [clist] = vars("Class List")
-    lib().classes(member(clist, ['scm:Person', 'scm:Animal']))
+    lib().classes(member(clist, ['@schema:Person', '@schema:Animal']))
 	```
 	</div>
-	specifies that only the class with ID scm:Person and scm:Animal will be matched
+	specifies that only the class with ID @schema:Person and @schema:Animal will be matched
 
 
 <!-- Variables -->
@@ -127,8 +127,8 @@ WOQLQuery containing the classes pattern matching expression
 ```js
 let [cls] = vars("Class ID")
 
-lib().classes(eq (cls, 'scm:X'))
-//retrieves the class with IRI scm:X
+lib().classes(eq (cls, '@schema:X'))
+//retrieves the class with IRI @schema:X
 
 ```
 
@@ -287,8 +287,8 @@ WOQLQuery containing the objects pattern matching expression
 ```js
 let [ot] = vars("Object Type")
 
-lib().objects(member(ot, ['scm:Y', 'scm:Z']))
-//retrieves all objects of type scm:Z and scm:Y
+lib().objects(member(ot, ['@schema:Y', '@schema:Z']))
+//retrieves all objects of type @schema:Z and @schema:Y
 ```
 
 <hr class="section-separator"/>
@@ -365,8 +365,8 @@ WOQLQuery containing the object metadata pattern matching expression
 ```js
 let [t] = vars("Type ID")
 
-lib().object_metadata(eq(t, 'scm:Z'))
-//retrieves all objects of type scm:Z with their metadata
+lib().object_metadata(eq(t, '@schema:Z'))
+//retrieves all objects of type @schema:Z with their metadata
 ```
 
 <hr class="section-separator"/>
@@ -405,7 +405,7 @@ WOQLQuery containing the property metadata pattern matching expression
 ```js
 lib().property_metadata()
 
-//retrieves all objects of type scm:Z with their metadata    
+//retrieves all objects of type @schema:Z with their metadata    
 ```
 
 <hr class="section-separator"/>

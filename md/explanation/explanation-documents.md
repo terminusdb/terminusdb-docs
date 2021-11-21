@@ -172,7 +172,7 @@ In the subdocument example below, the schema specification defines players with 
 { "@type"       : "Class",
   "@id"         : "Stats",
   "@subdocument": [],
-  "@key"        : { "@type" : "Random"},
+  "@key"        : { "@type" : "Random" },
   "strength"    : "xsd:integer",
   "intelligence": "xsd:integer",
   "dexterity"   : "xsd:integer",
@@ -250,7 +250,7 @@ With a bit of practice, designing your knowledge graphs in TerminusDB will becom
 { "@type"       : "Class",
   "@id"         : "Address",
   "@subdocument": [],
-  "@key"        : { "@type" : "Random"},
+  "@key"        : { "@type" : "Random" },
   "country"     : "Country",
   "street"      : "xsd:string" }
 
