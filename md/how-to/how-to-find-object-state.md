@@ -1,6 +1,6 @@
 # How to Find an Object State 
 
-> **On this page:** A how-to guide to finding an object state at a given time in Python.
+> **On this page:** A how-to guide to find an object state at a given time in Python.
 
 ## Steps
 

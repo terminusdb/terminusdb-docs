@@ -321,7 +321,7 @@ Get a list of documents or specific documents added to the schema
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below. 
 
 ```javascript
-async function getDoc(){
+async getDoc (){
   const documents = await client.getDocument({ as_list: "true" });
   console.log(documents)
 }
@@ -415,7 +415,7 @@ Get a list of documents that matches the query
 
 ```javascript
 const query = {
-    "type" : "Player",
+    "@rdf:type" : "Player",
     "query": { "position": "Full Back" },
   }
   client.queryDocument(query,{"as_list":true});

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>TerminusDB Docs</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
@@ -18,44 +18,47 @@
       window.$docsify = 
       {
         basePath      : `md/`,
-        homepage      : 'overviews/introduction.md',
-        loadSidebar   : true,
-        loadFooter    : 'config/footer.md',
         coverpage     : 'config/coverpage.md',
+        homepage      : 'overviews/introduction.md',
+        loadSidebar   : 'config/sidebar.md',
+        loadNavbar    : 'config/navbar.md',
+        loadFooter    : 'config/footer.md',
         onlyCover     : true,   
         auto2top      : true,
-        search: 
-        {
-          depth       : 4,
-          noData      : 'No results.',
-          placeholder : 'Search...'
+        search: {
+            depth      : 4,
+            noData     : 'No results.',
+            placeholder: 'Search...'
         },
-        copyCode: 
-        {
-          buttonText : 'Copy',
-          errorText  : 'Error',
-          successText: 'Done'
+        copyCode: {
+            buttonText : 'Copy',
+            errorText  : 'Error',
+            successText: 'Done'
         },
-        alias:
-        {
+        pagination: {
+            previousText    : 'Previous section',
+            nextText        : 'Next section',
+            crossChapter    : true,
+            crossChapterText: true,
+        },
+        alias: {
           '.*/_sidebar.md': '/config/sidebar.md'
         },
         plugins: 
         [
-          function(hook, vm) 
+          function(hook, vm)
           {
-            hook.beforeEach(function(html) 
-            { 
-              return tdb_nav() + html; 
+            hook.afterEach(function(html) { 
+              tdb_TOC(html);
             });
-            hook.afterEach(function(html) { tdb_TOC(html);});
             hook.doneEach(function() { 
-                  document.title += " - TerminusDB Docs";
+              document.title += " - TerminusDB Docs";
             });
             hook.ready(function() {
               var d = document.getElementById("main").style;
-                  d.float = "left";
                   d.marginLeft = "50px";
+                  d.marginTop  = "65px";
+                  d.float      = "left";
             });
           }
         ]
@@ -65,6 +68,7 @@
     <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="https://unpkg.com/docsify-copy-code@2"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>

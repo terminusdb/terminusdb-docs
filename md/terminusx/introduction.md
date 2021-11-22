@@ -8,7 +8,7 @@
 
 [Why choose TerminusX?](#why-choose-terminusx)
 
-## What is TermninusX?
+## What is TerminusX?
 
 TerminusX is a cloud self-service data platform built on [TerminusDB](overviews/introduction). Use it to collaborate with colleagues to quickly build a vibrant ecosystem of domain data products. TerminusX is in **public beta** and you can [signup now](https://dashboard.terminusdb.com/).
 

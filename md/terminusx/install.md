@@ -10,7 +10,7 @@ Everything you need to install and run a browser and promise-based TerminusDB Ja
 
 [Install a JavaScript Client](install/install-a-javascript-client)
 
-## Install as a Docker Container
+## Install a Python Client
 
 Everything you need to install and run a TerminusDB Python client.
 
