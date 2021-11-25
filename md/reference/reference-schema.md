@@ -206,7 +206,7 @@ An `Enum` is a non-standard class in which each instance is a simple URI with no
 { 
     "@type"   : "Enum",
     "@id"     : "PrimaryColour",
-    "@values" : 
+    "@value" : 
     [
         "Red", 
         "Blue", 
