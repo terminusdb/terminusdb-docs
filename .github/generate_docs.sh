@@ -41,9 +41,8 @@ command -v ronn > /dev/null 2>&1 || sudo apt install ronn
 echo "Building CLI documentation..."
 
 cd "$TERMINUSDB_DIR"
-# The script `src/utils/compile_docs.sh` needs `terminusdb` in the path.
 PATH="$TERMINUSDB_DIR:$PATH" make all
-cp "$TERMINUSDB_DIR/docs/CLI.md" "$REFERENCE_DIR/CLI.md"
+cp "$TERMINUSDB_DIR/docs/terminusdb.1.ronn" "$REFERENCE_DIR/CLI.md"
 
 echo "Removing untracked files..."
 
