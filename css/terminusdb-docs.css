@@ -1,32 +1,32 @@
-.sidebar .search {
-  margin-top: 0;
+.sidebar .search 
+{
+    margin-top: 0;
 }
 
-body .pagination-item-label svg {
-    height: 3em;
-    stroke-linecap: round;
+body .pagination-item-label svg 
+{
+    stroke-linecap : round;
     stroke-linejoin: round;
-    stroke-width: 3px;
+    stroke-width   : 3px;
+    height         : 3em;
+    
 }
 
-body .docsify-pagination-container {
+body .docsify-pagination-container 
+{
     border-width: 0px;
-    margin-top: 0px; 
+    margin-top  : 0px; 
 }
 
 a.tdb-k:link    { font-weight: normal; text-decoration: none; }
 a.tdb-k:active  { color: var(--link-color); }
 a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 .tdb-b:hover    { background: #000; color: var(--link-color); }
-.tdb-k-h1       { font-size: 20px; color: rgb(255, 255, 255); }
-.tdb-k-h2       { font-size: 14px; color: rgb(255, 255, 255); }
-.tdb-f          { font-size: 14px; color: rgb(255, 255, 255); }
+.tdb-k-h1       { font-size: 20px; color: white; }
+.tdb-k-h2       { font-size: 14px; color: white; }
+.tdb-f          { font-size: 14px; color: white; }
 .tdb-k-c        { font-size: 18px; }
 .tdb-k-c:link   { text-decoration: none; }
-
-.tdb-k-c-2        { font-size: 12px; }
-.tdb-k-c-2:link   { text-decoration: none; }
-
 
 .tdb-pd-h       { line-height: 60px;}    
 .tdb-fs         { font-size: 20px; }
@@ -34,7 +34,8 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 .tdb-g          { color: rgb(190, 190, 190); }
 .tdb-dg         { color: rgb(120, 120, 120); }
 
-.tdb-b {
+.tdb-b 
+{
     display       : inline-block;
     color         : silver;
     cursor        : pointer;
@@ -49,12 +50,14 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     transition    : 0.5s;
 }
 
-.tdb-b:hover {
+.tdb-b:hover 
+{
     background: #000;
     color     : var(--link-color);
 }
 
-.tdb-d {
+.tdb-d 
+{
     position        : fixed;
     overflow-y      : auto;
     border-left     : 0.1rem solid black;
@@ -68,31 +71,34 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     height          : 100%;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar 
+{
     width: 0px;
 }
 
-.tdb-nav {
+.tdb-nav 
+{
     position        : absolute;
     text-align      : left;
     visibility      : visible; 
-    z-index         : -1;
     background-color: rgb(30, 30, 30);
     border-radius   : 4px;
     top             : -20px;
-    width           : 863px; 
+    width           : 918px; 
     height          : 80px;
     left            : 50px;
 }   
 
-.tdb-nav-span {
+.tdb-nav-span 
+{
     display    : inline-block;
-    width      : 119px;
+    width      : 127px;
     padding-top: 30px;
     text-align : center;
 }
 
-.tdb-c {
+.tdb-c 
+{
     position        : fixed;
     cursor          : pointer;
     background-color: #fff;
@@ -105,18 +111,21 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     right           : 0px;
 }
 
-.tdb-l {
+.tdb-l 
+{
     height          : 1px;
     border          : none;
     background-color: rgba(10, 10, 10);     
 }
 
-.tdb-i { 
+.tdb-i 
+{ 
     vertical-align: middle;
     margin-right  : 5px;
 }
 
-.tdb-ico {
+.tdb-ico 
+{
     fill      : silver;
     width     : 30px;
     height    : 30px;
@@ -124,88 +133,89 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     transition: 0.4s;
 }
 
-.tdb-ico:hover {
+.tdb-ico:hover 
+{
     cursor : pointer;
     opacity: 1;
 }
 
-.tdb-ico-nav {
-    padding-right: 5px;
-    width: 22px;
-    height: 22px;
+.tdb-ico-nav 
+{
+    padding-right : 5px;
+    width         : 22px;
+    height        : 22px;
     vertical-align: top;
+    fill          :skyblue;
 }
 
-.tdb-ico-nav-f1 {
-    fill: silver;
-}
-
-.tdb-ico-nav-f2 {
-    fill: white;
-}
-
-.tdb-im {
-    display     : block;
-    margin-left : auto;
-    margin-right: auto;
-}
-
-.tdb-bgi {
-    background-image: url("../img/ico/terminusx-color.png");
-    background-repeat: no-repeat;
+.tdb-bgi 
+{
+    background-image   : url("../img/ico/terminusx-color.png");
+    background-repeat  : no-repeat;
     background-position: center;
-    background-size: 100%; 
-    z-index: -1; 
-    height: 800px; 
-    width: 800px; 
+    background-size    : 100%; 
+    z-index            : -1; 
+    height             : 800px; 
+    width              : 800px; 
 }
 
-.tdb-landing-bg { 
+.tdb-landing-bg 
+{ 
     position: absolute; 
     margin  : auto;  
     opacity : 0.03;
 }
 
-.tdb-cover-bg {
+.tdb-cover-bg 
+{
     position: absolute;
     display : inline-block;
     opacity : 0.09;
     top     : 0;
 }
 
-.tdb-img-cvr {
-    background-image   : url("../img/diagrams/terminusdb-cover-page.png");
+.tdb-img-cvr 
+{
     background-repeat  : no-repeat;
     background-position: center;
     background-size    : 750px;
-    z-index            : 1;
-    height             : 780px;
     width              : 950px;
+    opacity            : 0.8;
+    transition         : opacity 400ms;
 }
 
-.tdb-img-cvr-pgs {
-    background-image   : url("../img/diagrams/terminusdb-cover-pages.png");
-    background-repeat  : no-repeat;
-    background-position: center;
-    background-size: 750px;
-    z-index            : 1;
-    height: 280px;
-    width: 950px;
+.tdb-img-cvr-main 
+{
+    background-image: url("../img/diagrams/terminusdb-cover-page.png");
+    height          : 780px;
 }
 
-.tdb-d-cvr-opt {
+.tdb-img-cvr-sub 
+{
+    background-image: url("../img/diagrams/terminusdb-cover-pages.png");
+    height          : 710px;
+}
+
+.tdb-d-cvr-opt 
+{
     position       : relative;
     text-decoration: none;
     text-align     : left;
-    color          : rgb(90, 90, 90);
+    color          : skyblue;
     width          : 110px;
-    opacity        : 0;
+    opacity        : 0;    
     transition     : opacity 400ms;
 }
 
-.tdb-cvr-2 {
-    text-align: right; 
-    color     : skyblue;
+.tdb-d-cvr-opt-2 
+{
+    position       : relative;
+    text-decoration: none;
+    text-align     : left;
+    color          : skyblue;
+    width          : 145px;
+    opacity        : 0;
+    transition     : opacity 400ms;
 }
 
 :root {
@@ -238,7 +248,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 
     --zoomimage-overlay-background     : rgba(0, 0, 0, .75); 
 
-    --content-max-width                 : 68em;
+    --content-max-width                 : 72em;
 
     --sidebar-toggle-background         : rgb(255,255,255);
     --sidebar-toggle-border-radius      : var(--border-radius-s);
@@ -255,7 +265,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 
     --sidebar-nav-pagelink-background-image: ;
     --sidebar-nav-link-background-image : ;
-    --sidebar-width                     : 19rem;
+    --sidebar-width                     : 17rem;
     --sidebar-background                : rgb(40, 42, 47);
     --sidebar-border-color              : black;
     --sidebar-margin                    : 0px;
