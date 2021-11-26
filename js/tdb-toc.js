@@ -1,33 +1,45 @@
-var __tdb_hC = false;
-var __tdb_init = false; // Set to true if visibility starts as hidden/
-var __tdb_width = 300;
+var __tdb_hC    = false;
+var __tdb_init  = false; // Set to true if visibility starts as hidden
+var __tdb_width = 312;   // Auto-hide threshold 
     
 function tdb_TOC(sHTML)
 {    
-    var toc         = document.getElementById("contents-page"),
-        tocCtrl     = document.getElementById("contents-ctrl"),
-        doc         = document.createElement("href"),
-        p           = '<span class="tdb-f">',
-        dv          = '<div class="tdb-h"></div>';
-        br          = "<br>",
-        sHdr        = "",
-        sDiagram    = "",
-        sTable      = "",
-        sCode       = "",
-        sData       = "";
-        sI          = "",
-        sO          = "";
+    var toc      = document.getElementById("contents-page"),
+        tocCtrl  = document.getElementById("contents-ctrl"),
+        doc      = document.createElement("href"),
+        p        = '<span class="tdb-f">',
+        dv       = '<div class="tdb-h"></div>';
+        br       = "<br>",
+        sVis     = "visible",
+        sHid     = "hidden",
+        sHdr     = "",
+        sDiagram = "",
+        sTable   = "",
+        sCode    = "",
+        sData    = "",
+        sI       = "",
+        sO       = "",
+        nLen     = "";
 
-    toc.innerHTML   = p + 'Table of contents</span>' + br + br; // + 'In this article:' + br + br; 
-    tocCtrl.innerHTML = '<img onclick="hideCtrl()" src="img/ico/terminusdb-icon-contents-page.png" title="Show/hide contents page..."/>'; 
-    doc.innerHTML   = sHTML;
-    doc             = doc.querySelectorAll("h1, h2, h3, h4, h5");
+    doc.innerHTML= sHTML;
+    doc = doc.querySelectorAll("h1, h2, h3, h4, h5");
+    nLen= doc.length;
+
+    if (nLen == 1)
+    {
+        toc.style.visibility = sHid;
+        tocCtrl.style.visibility = sHid;
+        return;
+    }
+    
+    toc.innerHTML    = p + 'Table of contents</span>' + br + br;
+    tocCtrl.innerHTML= '<img onclick="hideCtrl()" src="img/ico/terminusdb-icon-contents-page.png" title="Show/hide contents page..."/>'; 
     
     window.addEventListener("resize", function() { hideC(toc, tocCtrl); });
 
     hideC(toc, tocCtrl);
     
-    for (var i = 0; i < doc.length; i++)
+    for (var i = 0; i < nLen; i++)
     {
         sI = doc[i].innerHTML;
 
@@ -51,9 +63,8 @@ function tdb_TOC(sHTML)
                 sI = br + sI.replace("tdb-k tdb-g", "tdb-k tdb-k-h2");
             else if (sO.indexOf("h4") > -1)
                 sI = sI.replace("tdb-k tdb-g", "tdb-k tdb-dg");
-                // sI = "-&nbsp;</font>" + sI;
             else if (sO.indexOf("h5") > -1)
-                sI = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>" + sI;
+                sI = "&nbsp;&nbsp;</font>" + sI;
 
             sHdr += dv + sI + br;
         }
@@ -75,28 +86,26 @@ function tdb_TOC(sHTML)
 
 function hideCtrl()
 {
-    // Quick fix - a more efficient solution to follow.
+    // Quick fix.
 
     var v = document.getElementById("contents-page");
 
-    if (v.style.visibility == "visible")
+    if (v.style.visibility == sVis)
     {
-        v.style.visibility = "hidden";
-
+        v.style.visibility = sHid;
         __tdb_hC = true;
     }
     else
     {   
-        v.style.visibility = "visible";
+        v.style.visibility = sVis;
 
         __tdb_hC = false;
     }
-
 } 
 
 function hideC(t, tC)
 {
-    // Quick fix - a more efficient solution to follow.
+    // Quick fix.
 
     if (__tdb_init)
     {
@@ -104,7 +113,6 @@ function hideC(t, tC)
         return;
     }
 
-    t.style.visibility = (t.clientWidth > __tdb_width && !__tdb_hC ? "visible" : "hidden");
-    
-    tC.style.visibility = (t.clientWidth > __tdb_width ? "visible" : "hidden");
+    t.style.visibility = (t.clientWidth > __tdb_width && !__tdb_hC ? sVis : sHid);
+    tC.style.visibility = (t.clientWidth > __tdb_width ? sVis : sHid);
 }
