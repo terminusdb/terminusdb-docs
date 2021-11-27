@@ -161,14 +161,14 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 
 .tdb-landing-bg 
 { 
-    position: absolute; 
+    position: fixed; 
     margin  : auto;  
     opacity : 0.03;
 }
 
 .tdb-cover-bg 
 {
-    position: absolute;
+    position: fixed;
     display : inline-block;
     opacity : 0.09;
     top     : 0;
@@ -176,6 +176,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 
 .tdb-img-cvr 
 {
+    position           : relative;
     background-repeat  : no-repeat;
     background-position: center;
     background-size    : 750px;
@@ -187,7 +188,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 .tdb-img-cvr-main 
 {
     background-image: url("../img/diagrams/terminusdb-cover-page.png");
-    height          : 780px;
+    height          : 810px;
 }
 
 .tdb-img-cvr-sub 
@@ -196,26 +197,29 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     height          : 710px;
 }
 
-.tdb-d-cvr-opt 
+.tdb-d-cvr
 {
-    position       : relative;
+    position       : absolute;
     text-decoration: none;
+    display        : flex;
+    align-items    : center;
     text-align     : left;
     color          : skyblue;
-    width          : 110px;
-    opacity        : 0;    
+    padding        : 20px;
+    opacity        : 0;
     transition     : opacity 400ms;
+}
+
+.tdb-d-cvr-opt 
+{
+    height: 60px;
+    width : 162px;   
 }
 
 .tdb-d-cvr-opt-2 
 {
-    position       : relative;
-    text-decoration: none;
-    text-align     : left;
-    color          : skyblue;
-    width          : 145px;
-    opacity        : 0;
-    transition     : opacity 400ms;
+    height: 165px;
+    width : 180px;
 }
 
 :root {
