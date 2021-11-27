@@ -44,8 +44,6 @@
 * [Graphs](explanation/explanation-graphs)
 * [Immutability](explanation/explanation-immutability)
 * [WOQL](explanation/explanation-woql)
-* [WOQL 2](data-modeling/data-modeling-woql-queries)
-
 
 <hr class="tdb-l"/>
 

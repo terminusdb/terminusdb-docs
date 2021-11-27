@@ -160,7 +160,7 @@ Unification in functions enables most WOQL functions to serve as both pattern ma
 
 ### Expressing variables
 
-In WOQL.js, there are three distinct ways of expressing variables within queries. All are semantically equivalent, although the first is generally preferred as it is easier to type and it is easier to distinguish variables from constants at a glance due to the lack of quotation marks around the variables
+In WOQL.js, there are two distinct ways of expressing variables within queries. All are semantically equivalent. The first is generally preferred as it is easier to type and easier to distinguish variables from constants at a glance due to the lack of quotation marks around the variables
 
 #### Code: WOQL variables using let
 
@@ -173,12 +173,6 @@ triple(a, b, c)
 
 ```javascript
 triple('v:a', 'v:b', 'v:c')
-```
-
-#### Code: WOQL variables using expanded syntax
-
-```javascript
-triple({'@type': 'woql:Variable', 'woql:variable_name': {"@type": 'xsd:string', '@value': 'a'}} ....)
 ```
 
 ## WOQL prefixes
@@ -197,18 +191,18 @@ TerminusDB defines a set of standard prefixes to use, enabling users to extend b
 - Datatype elements (xsd, xdd.) 
 - Internal namespaces (ref, repo, system, vio.) 
 
-### Prefixes doc and @schema
+### Prefixes @base and @schema
 
-TerminusDB also defines the two prefixes listed below. These enable users to write expressions such as `"doc:X"` or `"@schema:X"` and ensure expressions always resolve to valid IRIs in all databases.
+TerminusDB also defines the two **optional** prefixes listed below. These enable users to write expressions such as `"@base:X"` or `"@schema:X"` and ensure expressions always resolve to valid IRIs in all databases.
 
-- The `"doc"` prefix for instance-data IRIs.
+- The `"@base"` prefix for instance-data IRIs.
 - The `"@schema"` prefix for schema IRIs. 
 
 ### Automatic prefixes 
 
 WOQL goes a step beyond supporting prefixes by automatically applying prefixes where possible, enabling users to specify prefixes only when necessary. The default prefixes are applied as follows:
 
-- `"doc"` applies to **woql:subject** (first argument to triple) where **instance data IRIs** are normally required.
+- `"@base"` applies to **woql:subject** (first argument to triple) where **instance data IRIs** are normally required.
 - `"@schema"` applies to **woql:predicate** and other arguments (`sub`, `type`) where **schema elements** are normally required.
 - When standard predicates are used without a prefix, the standard correct prefixes are applied. 
     - `label` 

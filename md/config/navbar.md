@@ -21,7 +21,7 @@
     </span>
     <span class="tdb-nav-span" style="padding-top:13px; padding-bottom: 10px; border-radius: 4px; background-color: rgb(70, 70, 70);">
         <svg class="tdb-ico-nav tdb-ico-nav-f2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12l-20 12 5-12-5-12z"/></svg>
-        <a class="tdb-k tdb-k-h2" target="_blank" href="https://signup.terminusdb.com/login?state=hKFo2SBSRDBEZTBKSnRsNGQ5VmtpcU1tUkEtLWVNU21NMzlIZqFupWxvZ2luo3RpZNkgaG83c0VvamFrZVM3cGxBZ283WGozMEh4TG1EZ2ZGV1WjY2lk2SAzNjVQc0IwQW1VbUIyb2RTRndleldrWDMxQlp2NlBvSA&client=365PsB0AmUmB2odSFwezWkX31BZv6PoH&protocol=oauth2&redirect_uri=https%3A%2F%2Fdashboard.terminusdb.com%2F&audience=https%3A%2F%2Fterminuscloud%2Fusers&scope=openid%20profile%20email&response_type=code&response_mode=query&nonce=cmtfVDI0S256blJERjBEQi1HM3Y0R2NXR0dkR0wxb04zN1ltbEVqLmFIZg%3D%3D&code_challenge=uwlBrIfNTl1Dq-tRstEiRt0d7ECHDNTDJfyQP-1Yw3w&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtc3BhLWpzIiwidmVyc2lvbiI6IjEuMTkuMiJ9" title="Sign-in or sign-up to TerminusX...">Sign In</a>
+        <a class="tdb-k tdb-k-h2" target="_blank" href="https://dashboard.terminusdb.com" title="Sign-in or sign-up to TerminusX...">Sign In</a>
     </span>
     <span class="tdb-nav-span">
         <svg class="tdb-ico-nav tdb-ico-nav-f1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12c0 6.627-5.373 12-12 12s-12-5.373-12-12h2c0 5.514 4.486 10 10 10s10-4.486 10-10-4.486-10-10-10c-2.777 0-5.287 1.141-7.099 2.977l2.061 2.061-6.962 1.354 1.305-7.013 2.179 2.18c2.172-2.196 5.182-3.559 8.516-3.559 6.627 0 12 5.373 12 12zm-13-6v8h7v-2h-5v-6h-2z"/></svg>
