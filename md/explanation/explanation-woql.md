@@ -225,10 +225,6 @@ The JSON-LD form of WOQL supports a well-defined set of functions such as `woql:
 
 ## See also
 
-### WOQL Explanation
-
-See the [WOQL](explanation/explanation-woql) explanation for an overview of WOQL.  
-
 ### WOQL Reference
 
 See the [WOQL Reference](reference/reference-woql-json-ld) for detailed developer reference guides.
