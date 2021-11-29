@@ -1,8 +1,8 @@
 # Start with a Client API
 
-> **On this page:** A step-by-step guide with examples to install and get started with a JavaScript or Python client.  
+> **On this page:** A step-by-step guide with examples to install and get started with a JavaScript or Python client.
 
-This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](https://terminusdb.github.io/terminusdb-client-js/) or [TerminusDB Python Client](https://terminusdb.github.io/terminusdb-client-python/) for detailed documentation.  
+This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](https://terminusdb.github.io/terminusdb-client-js/) or [TerminusDB Python Client](https://terminusdb.github.io/terminusdb-client-python/) for detailed documentation. If you want to access the code which is discussed in this page [here](../../code-examples/start-with-client/) are the Javascript and Python code examples.
 
 ## Install WOQLClient
 
@@ -77,17 +77,27 @@ Define and initialize a WOQLClient, and connect to a database using the example 
 ```javascript
 const TerminusDBClient = require("@terminusdb/terminusdb-client");
 
-const client = new TerminusDBClient.WOQLClient("https://cloud.terminusdb.com/cloudabc/",
-                    {user:"user@email.com", organization:"cloudabc"})
+// TODO: change the team name 
+const team = "TEAM_NAME";
+const client = new TerminusDBClient.WOQLClient(`https://cloud.terminusdb.com/${team}/`, {
+    user: "user@email.com",
+    organization: team
+});
 
 //set the key as an environment variable.
 client.setApiKey(process.env.TERMINUSDB_ACCESS_TOKEN)
 
-client.connect().then((result)=>{
-    console.log(result)
-}).catch((err)=>{
-    console.error(err);
-})
+const connectToServer = async () => {
+    try {
+        await client.connect();
+    } catch (err) {
+        console.error(err)
+    }
+
+    console.log("Connected to TerminusDB successfully!")
+};
+
+connectToServer();
 
 ```
 
@@ -124,11 +134,7 @@ Connect to an existing database using the example below.
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Connect to a database.
 
 ```javascript
-client.connect().then(()=>{
-    client.db('ExampleDatabase');
-}).catch((err)=>{
-    console.error(err);
-});
+client.db('ExampleDatabase');
 ```
 
 ### **Python**
@@ -155,15 +161,22 @@ Create a new database using the example below.
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Create a database.
 
 ```javascript
-client.connect().then(async()=>{
-    await client.createDatabase('ExampleDatabase', 
-    {
-        label:   "ExampleDatabase",
-        comment: "Created new ExampleDatabase",
-    });
-}).catch((err)=>{
-    console.error(err);
-});
+const createNewDB = async () => {
+  try {
+
+      await client.createDatabase('ExampleDatabase', {
+          label: "ExampleDatabase",
+          comment: "Created new ExampleDatabase",
+      });
+
+      console.log("Database created Successfully!")
+
+  } catch (err) {
+      console.error(err)
+  }
+};
+
+createNewDB();
 ```
 
 ### **Python**
@@ -246,10 +259,10 @@ Add the schema object to the database.
 
 ### **JavaScript**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Add the schema object to a document using `addDocument`.
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Add the schema object to a document using `addDocument` which returns a Promise.
 
 ```javascript
-client.addDocument(schema, { graph_type: "schema" })
+await client.addDocument(schema, { graph_type: "schema" })
 ```
 
 ### **Python**
@@ -270,7 +283,7 @@ Once added, Add documents corresponding to the schema.
 
 ### **JavaScript**
 
-<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Add documents to the schema using `addDocument`.
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Add documents to the schema using `addDocument` which returns a Promise.
 
 ```javascript
 const objects = [
@@ -291,7 +304,7 @@ const objects = [
     }
 ];
         
-client.addDocument(objects)
+await client.addDocument(objects);
 ```
 
 ### **Python**
@@ -301,8 +314,8 @@ client.addDocument(objects)
 ```python
 objects = [
     Player(name="George", position="Centre Back"),
-    Player(name="Doug",   position="Full Back"),
-    Player(name="Karen",  position="Centre Forward")
+    Player(name="Doug", position="Full Back"),
+    Player(name="Karen", position="Centre Forward")
     ]
 
 client.insert_document(objects, commit_msg = f"Inserting player data")
@@ -321,9 +334,9 @@ Get a list of documents or specific documents added to the schema
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below. 
 
 ```javascript
-async getDoc (){
+const getDocs = async () => {
   const documents = await client.getDocument({ as_list: "true" });
-  console.log(documents)
+  console.log("All Documents",documents)
 }
 ```
 
@@ -398,7 +411,7 @@ Specific document
     '@type' : 'Player',
     name    : 'Doug',
     position: 'Full Back'
-}
+  }
 ```
 
 <!-- tabs:end -->
@@ -414,11 +427,14 @@ Get a list of documents that matches the query
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below. 
 
 ```javascript
-const query = {
-    "@rdf:type" : "Player",
-    "query": { "position": "Full Back" },
-  }
-  client.queryDocument(query,{"as_list":true});
+const queryDocuments = async () => {
+  const query = {
+      "type": "Player",
+      "query": { "position": "Full Back" },
+     }
+  const result = await client.queryDocument(query,{"as_list":true});
+  console.log("Query Documents",result)
+}
 ```
 
 ```results
@@ -433,7 +449,7 @@ const query = {
 
 ```python
 matches = client.query_document({"@type"   : "Player",
-                                 "position": "Full Back"})
+                                   "position": "Full Back"})
 
 # matches comes back as a iterable that can be convert into a list
 print(list(matches))
