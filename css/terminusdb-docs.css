@@ -58,6 +58,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 
 .tdb-d 
 {
+    visibility      : hidden;
     position        : fixed;
     overflow-y      : auto;
     border-left     : 0.1rem solid black;
@@ -227,7 +228,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     --cover-color                      : rgb(255, 255, 255);
     --cover-background-color           : var(--cover-color);
     --cover-margin                     : 0 auto;
-    --cover-max-width                  : 100%;
+    --cover-max-width                  : 1000em;
     --cover-text-align                 : center;
       
     --cover-heading-color              : #080404;
