@@ -20,16 +20,16 @@ How to load Turtle files using **The TerminusDB CLI** and **Python**.
 
 How to find an object state at a given time in **Python**.
 
-[Find an Object State](how-to/find-an-object-state)
+[Find an Object State](how-to/how-to-find-object-state)
 
 ## Perform Graph Queries
 
 How to perform graph queries in **Python**.
 
-[Perform Graph Queries](how-to/perform-graph-queries)
+[Perform Graph Queries](how-to/how-to-perform-graph-queries)
 
 ## Use Regular Expressions
 
 How to use regular expressions with **WOQL** and **JavaScript**.
 
-[Use Regular Expressions](how-to/use-regular-expressions)
+[Use Regular Expressions](how-to/how-to-use-regex)
