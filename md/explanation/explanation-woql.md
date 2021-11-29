@@ -235,7 +235,7 @@ See the [WOQL Reference](reference/reference-woql-json-ld) for detailed develope
 
 ### How-to guides
 
-See the [How-to Guides](how-to/how-to) for further examples of using WOQL.
+See the [How-to Guides](landing/how-to-guides) for further examples of using WOQL.
 
 ### Documents
 

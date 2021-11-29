@@ -39,7 +39,7 @@
         <a class="tdb-k-c" target="_parent" title="Introduction to TerminusDB..." href="#/overviews/introduction">Introduction to TerminusDB</a>
     </div>
     <div id="id-pgs-02" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: -68px; top: 274px; text-align: right;"> 
-        <a class="tdb-k-c" target="_parent" title="Detailed installation..." href="#/install/install">Detailed installation guides</a>
+        <a class="tdb-k-c" target="_parent" title="Detailed installation..." href="#/landing/install">Detailed installation guides</a>
     </div>
     <div id="id-pgs-03" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: -68px; top: 484px; text-align: right;"> 
         <a class="tdb-k-c" target="_parent" title="WOQL guides..." href="#/explanation/explanation-woql">Web Objects Query Language (WOQL)</a>

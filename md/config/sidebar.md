@@ -12,11 +12,11 @@
 * [<span class="tdb-f">Overviews</span>](overviews/overviews)
 * [Introduction to TerminusDB](overviews/introduction)
 * [Get Started](overviews/get-started)
-* [<span class="tdb-f">Installation Options</span>](install/install)
+* [<span class="tdb-f">Installation Options</span>](landing/install)
 * [Install from Source Code](install/install-from-source-code)
 * [Install as a Docker Container](install/install-as-docker-container)
 * [<span class="tdb-k-h1 tdb-pd-h">TerminusDB and X</span>](test/three)
-* [<span class="tdb-f">Tutorials</span>](tutorials/tutorials)
+* [<span class="tdb-f">Tutorials</span>](reference/reference-client)
 * [JavaScript and Python](reference/reference-client)
 * [<span class="tdb-f">How-to Guides</span>](landing/how-to-guides)
 <!-- * [Add a Date and Time](how-to/how-to-add-date-and-time) -->
@@ -33,10 +33,10 @@
 * [Terminus Store](reference/reference-terminus-store)
 * [Javascript Client Reference](reference/reference-client)
 * [Python Client Reference](reference/reference-client)
-* [<span class="tdb-f">WOQL Reference</span>](reference/woql-reference)
+* [<span class="tdb-f">WOQL Reference</span>](landing/woql-reference-guides.md)
 * [WOQL Class Reference](reference/reference-woql-json-ld)
-* [JavaScript WOQL Client Reference](reference/reference-client)
-* [Python WOQL Client Reference](reference/reference-client)
+* [JavaScript Client WOQL Reference](reference/reference-client)
+* [Python Client WOQL Reference](reference/reference-client)
 * [<span class="tdb-f">Explanations</span>](landing/explanation)
 * [ACID Transactions](explanation/explanation-acid)
 * [Datalog](explanation/explanation-datalog)
@@ -47,5 +47,9 @@
 
 <hr class="tdb-l"/>
 
+<span style="padding-left: 20px">&copy; 2021 TerminusDB</span>
+
+<!--
 * [Copyright statement](resources/to-do)
 * [Release notes](resources/to-do)
+-->

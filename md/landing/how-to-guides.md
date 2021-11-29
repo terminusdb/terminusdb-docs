@@ -3,7 +3,7 @@
 # How-to Guides
 
 > **On this page:** How-to guides for perform various operations in TerminusDB.
-
+<!--
 ## Add a Date and Time
 
 How to add a date and time in **Python**.   
@@ -15,7 +15,7 @@ How to add a date and time in **Python**.
 How to load Turtle files using **The TerminusDB CLI** and **Python**.
 
 [Load Turtle Files](how-to/load-turtle-files)
-
+-->
 ## Find an Object State
 
 How to find an object state at a given time in **Python**.
