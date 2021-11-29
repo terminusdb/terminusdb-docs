@@ -1,8 +1,8 @@
 >> TerminusX and TerminusDB Technical Documentation
 
-<div class="tdb-bgi tdb-cover-bg"></div> 
+<div class="tdb-bgi tdb-cover-bg"></div>
 
-<div id="id-cvr" class="tdb-img-cvr tdb-img-cvr-main" onmouseover="tdb_nav_cover(1)" onmouseout="tdb_nav_cover(0)">
+<div id="id-cvr" class="tdb-img-cvr tdb-img-cvr-main" onmouseover="tdb_cvrMain(1)" onmouseout="tdb_cvrMain(0)">
     <div id="id-01" class="tdb-d-cvr tdb-d-cvr-opt" style="left: 392px; top: 0px; justify-content: center;"> 
         <a class="tdb-k-c" target="_parent" title="Tutorials for all levels..." href="#/reference/reference-client?id=tutorials">Tutorials</a>
     </div>
@@ -34,7 +34,7 @@
 
 >> More quick links
 
-<div id="id-cvr-pgs" class="tdb-img-cvr tdb-img-cvr-sub" onmouseover="tdb_cvr_p(1)" onmouseout="tdb_cvr_p(0)">
+<div id="id-cvr-pgs" class="tdb-img-cvr tdb-img-cvr-sub" onmouseover="tdb_cvrSub(1)" onmouseout="tdb_cvrSub(0)">
     <div id="id-pgs-01" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: -68px; top: 65px; text-align: right;"> 
         <a class="tdb-k-c" target="_parent" title="Introduction to TerminusDB..." href="#/overviews/introduction">Introduction to TerminusDB</a>
     </div>
@@ -42,7 +42,7 @@
         <a class="tdb-k-c" target="_parent" title="Detailed installation..." href="#/install/install">Detailed installation guides</a>
     </div>
     <div id="id-pgs-03" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: -68px; top: 484px; text-align: right;"> 
-        <a class="tdb-k-c" target="_parent" title="WOQL guides..." href="#/landing/woql-reference">Web Objects Query Language (WOQL)</a>
+        <a class="tdb-k-c" target="_parent" title="WOQL guides..." href="#/explanation/explanation-woql">Web Objects Query Language (WOQL)</a>
     </div>
     <div id="id-pgs-04" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: 834px; top: 65px;"> 
         <a class="tdb-k-c" target="_parent" title="Introduction to TerminusX..." href="#/terminusx/introduction">Introduction to TerminusX</a>
@@ -55,6 +55,8 @@
     </div>
 </div>
 
->> Get started step-by-step
-
+<!--
+[TerminusX](terminusx/introduction "Introduction to TerminusX..." )
+[TerminusDB](overviews/introduction "Introduction to TerminusDB..." )
+-->
 [Home](https://terminusdb.com/ "TerminusX website...")

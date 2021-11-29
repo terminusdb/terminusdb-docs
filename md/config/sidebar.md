@@ -19,8 +19,8 @@
 * [<span class="tdb-f">Tutorials</span>](tutorials/tutorials)
 * [JavaScript and Python](reference/reference-client)
 * [<span class="tdb-f">How-to Guides</span>](landing/how-to-guides)
-* [Add a Date and Time](how-to/how-to-add-date-and-time)
-* [Load Turtle Files](how-to/how-to-load-turtle-files)
+<!-- * [Add a Date and Time](how-to/how-to-add-date-and-time) -->
+<!-- * [Load Turtle Files](how-to/how-to-load-turtle-files) -->
 * [Find an Object State](how-to/how-to-find-object-state)
 * [Perform Graph Queries](how-to/how-to-perform-graph-queries)
 * [Use Regular Expressions](how-to/how-to-use-regex)

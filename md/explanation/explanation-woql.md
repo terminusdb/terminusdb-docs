@@ -213,6 +213,8 @@ WOQL goes a step beyond supporting prefixes by automatically applying prefixes w
     - `range`
 - Otherwise if no prefix is applied a string is assumed.
 
+<!--
+
 ## WOQL functions
 
 The JSON-LD form of WOQL supports a well-defined set of functions such as `woql:Triple` and `woql:Regexp`. In WOQL.js these functions are known as **primitives**. WOQL.js also adds several extensions to these primitives: 
@@ -220,6 +222,8 @@ The JSON-LD form of WOQL supports a well-defined set of functions such as `woql:
 - Functions that are composed of multiple primitives. 
 - Functions that compose partial primitives and can be chained together. 
 - Simple helper functions to make it easier to format the arguments correctly. 
+
+-->
 
 <!-- The table below shows the full range of functions supported by WOQL.js and groups them together into categories to make it easier to find the required function for specific problems. -->
 
