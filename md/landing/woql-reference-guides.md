@@ -2,7 +2,7 @@
 
 # WOQL Reference
 
-> **On this page:** Developer reference guides to the TerminusDB Web Objects Query Language (WOQL) for querying TerminusDB databases.
+> **On this page:** Developer reference guides to the TerminusDB web object Query Language (WOQL) for querying TerminusDB databases.
 
 ## WOQL Class Reference
 

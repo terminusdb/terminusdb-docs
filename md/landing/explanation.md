@@ -36,6 +36,6 @@ An explanation of how TerminusDB implements immutability, and handles deleted an
 
 ## WOQL
 
-A brief explanation of the TerminusDB Web Objects Query Langauge (WOQL.)
+A brief explanation of the TerminusDB web object Query Langauge (WOQL.)
 
 [WOQL](explanation/explanation-woql)

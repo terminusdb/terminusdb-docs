@@ -12,7 +12,7 @@
 
 ## Data modeling
 
-TerminusDB organizes data in a simple object-based structure to make it intuitive to model the real world.
+TerminusDB organizes data in a simple object-based structure making it intuitive to model the real world.
 
 Traditional relational databases divide data into tables, columns, and rows. In TerminusDB, everything is an object. Objects can have properties. Properties may link to other objects. A network of interlinked objects forms a graph structure - the foundation of graph databases.
 
@@ -39,7 +39,7 @@ A family tree database stores data representing individuals, their parents, and 
 
 ## Data query
 
-Querying a graph database using TerminusDB's [Web Objects Query Language](to-do) (WOQL) is also easier than using SQL. The examples below demonstrate retrieving the name of Bob's mother and grandmother. 
+Querying a graph database using TerminusDB's [web object Query Language](to-do) (WOQL) is also easier than using SQL. The examples below demonstrate retrieving the name of Bob's mother and grandmother. 
 
 ### Query using SQL
 
@@ -52,8 +52,8 @@ The graph (WOQL) example uses a triple pattern to get both names in one short qu
 `v:person_id = mother => v:mother = mother => v:grandmother`
 
 #### Code: Family tree traversal using SQL
-```sql
 
+```sql
 select  name 
 from    table_name 
 where   person_id = 
@@ -77,13 +77,11 @@ where   person_id =
 
         )
 )
-
-
 ```
 
 #### Code: Family tree traversal using WOQL
-```javascript
 
+```javascript
 WOQL.and
 (
    WOQL.triple("v:person",         "mother", "v:mother_id"),
@@ -91,8 +89,6 @@ WOQL.and
    WOQL.triple("v:mother_id",      "mother", "v:grandmother_id"),
    WOQL.triple("v:grandmother_id", "name",   "v:grandmother_name"),
 )
-
-
 ```
 
 ## Classes
@@ -126,6 +122,7 @@ Using a small organization as an example, the simple steps below are applied to 
 The elements relevant to this example are identified in the table below. Note that as each element is described, the relationship/s between them begin to emerge.
 
 #### Table: Elements of an organization
+
 | Element | Element description |
 | ------- | ----------- |
 | `organization` | The main organization. |
@@ -141,6 +138,7 @@ The elements relevant to this example are identified in the table below. Note th
 A property is an item of data describing the element.
 
 #### Table: The properties of elements
+
 | Element | Properties |
 | ------- | -------- |
 | `organization` | `name`, `lifespan_start`, `lifespan_end`, `description` |
@@ -156,6 +154,7 @@ A property is an item of data describing the element.
 Relationships define the associations or interactions between elements.
 
 #### Table: The relationship between elements
+
 | Element | Element | Relationship (phrasal verb) | Relationship description |
 | ------- | ------- | ------------ | ---- |
 | `organization` | `team`     | `consists of` | An `organization` `consists of` `team`s |

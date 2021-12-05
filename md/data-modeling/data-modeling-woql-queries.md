@@ -1,6 +1,6 @@
 # WOQL Queries
 
-> **On this page:** An introduction to the TerminusDB query language - the Web Objects Query Language (WOQL.)
+> **On this page:** An introduction to the TerminusDB query language - the web object Query Language (WOQL.)
 
 WOQL is a powerful query language that enables you to concisely query complex data patterns and structures. WOQL is based on a small set of simple concepts making it easy to use. There are just three fundamental concepts to WOQL - [WOQL triples](#woql-triples), [WOQL variables](#woql-variables) and **WOQL operators** as illustrated in [Diagram: The three core WOQL concepts](#diagram-the-three-core-woql-concepts).
 
@@ -53,14 +53,11 @@ Triples are added to a TerminusDB database using the `add_triple` method.
 #### Code: WOQL add_triple method
 
 ```javascript
-
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property
 
 WOQL.add_triple('jake', 'date-of-birth', '01-jan-1935')
     .add_triple('jake', 'parent',        'mary')
     .add_triple('mary', `date-of-birth`, `01-jan-1930`)
-
-
 ```
 
 ## WOQL variables
@@ -99,12 +96,9 @@ Select every `object-id` into `v:person-id` where `property` `date-of-birth` has
 Select every person born on `01-jan-1935`.
 
 ```javascript
-
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property
 
 WOQL.triple('v:person-id', 'date-of-birth', '01-jan-1935')
-
-
 ```
 
 #### Code: WOQL var in triple slot 2.
@@ -118,12 +112,9 @@ Select every `property` into `v:property-list` where `object-id` `jake` has the 
 Select all of Jake's properties with the `value` `10`.
 
 ```javascript
-
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property
 
 WOQL.triple('jake', 'v:property-list', '10')
-
-
 ```
 
 #### Code: WOQL var in triple slot 3.
@@ -137,12 +128,9 @@ Select every `value` into `v:jakes-parent` where `object-id` `jake` has the `val
 Select Jake's parents.
 
 ```javascript
-
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property
 
 WOQL.triple('jake', 'parent', "v:jakes-parent")
-
-
 ```
 
 ### Two-variable triple pattern
@@ -160,12 +148,9 @@ Examples of two WOQL variables in all combinations are listed below.
 Select every `object-id` and `value` into variables `v:object-id` and `v:value` respectively with `property` `10`.
 
 ```javascript
-
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property
 
 WOQL.triple('v:object-id', 'v:value', 10)
-
-
 ```
 
 #### Code: WOQL vars in triple slots 1 and 3.
@@ -173,12 +158,9 @@ WOQL.triple('v:object-id', 'v:value', 10)
 Select every `object-id` and `property` into varibles `v:object-id` and `v:date-of-birth` respectively with `value` `date-born`.
 
 ```javascript
-
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property
 
 WOQL.triple('v:object-id', 'date-born', 'v:date-of-birth')
-
-
 ```
 
 #### Code: WOQL vars in triple slots 2 and 3.
@@ -186,12 +168,9 @@ WOQL.triple('v:object-id', 'date-born', 'v:date-of-birth')
 Select every `value` and `property` into varibles `v:joe-properties` and `v:property-values` respectively with `object-id` `joe`.
 
 ```javascript
-
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property 
 
 WOQL.triple('joe', 'v:joe-properties', "v:property-values")
-
-
 ```
 
 ### Three-variable triple pattern
@@ -201,12 +180,9 @@ Select every triple.
 #### Code: WOQL star method
 
 ```javascript
-
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property 
 
 WOQL.star()
-
-
 ```
 
 ## WOQL condition operators
@@ -253,14 +229,11 @@ To use a WOQL math operator, encapsulated it in `WOQL.eval` show in the examples
 Bind the value of `1` `plus` `2` to the variable `x`. The variable `x` is reusable in later queries.
 
 ```javascript
-
 let [ x ] = vars('x')
 
 WOQL.eval(plus(1, 2), x)
 
 // Result x = 3
-
-
 ```
 
 #### Code: WOQL times and div math operators
@@ -268,7 +241,6 @@ WOQL.eval(plus(1, 2), x)
 Bind the value of `3` `times` `2` to the variable `product` `and` bind the value of `product` divided by (`div`) `2` to the variable `result`.
 
 ```javascript
-
 let [product, result] = vars('product', 'result')
 and
 (
@@ -282,7 +254,6 @@ and
     | ------- | ------ |
     | 6       | 3      |
 */
-
 ```
 
 ## WOQL in JSON-LD format
@@ -298,10 +269,7 @@ WOQL queries are converted to the JSON-LD document format for transmission over 
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Use the JavaScript `query` object.
 
 ```javascript
-
 let jsonld = query.json()
-
-
 ```
 
 ### **Python**
@@ -309,10 +277,7 @@ let jsonld = query.json()
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-python.png)</i>Use the Python `WOQLQuery().dict()` class.
 
 ```python
-
 jsonld = WOQLQuery().dict()
-
-
 ```
 
 <!-- tabs:end -->

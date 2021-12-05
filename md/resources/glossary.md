@@ -135,7 +135,7 @@ The organization of data as a blueprint of how the database is constructed.
 
 ### WOQL
 
-WOQL (**Web Objects Query Language**) is TerminusDB's query language for querying complex data patterns and structures. WOQL is based on three fundamental concepts: WOQL [triples](#triples), WOQL **variables** and WOQL **operators**. WOQL is also provides [PCRE](#pcre).
+WOQL (**web object Query Language**) is TerminusDB's query language for querying complex data patterns and structures. WOQL is based on three fundamental concepts: WOQL [triples](#triples), WOQL **variables** and WOQL **operators**. WOQL is also provides [PCRE](#pcre).
 
 [Read more](data-modeling/data-modeling-woql-queries)
 

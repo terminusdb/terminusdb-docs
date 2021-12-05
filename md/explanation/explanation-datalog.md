@@ -20,7 +20,7 @@ Similar to its super-set Prolog, Datalog is based on **predicates**. Predicates 
 
 ## Advantages of Datalog in queries
 
-Variables in Datalog are restricted to finite **atomic** values. The use of atomic values simplifies query optimization and guarantees the termination of queries even in the event of recursion. The finite atomic values restriction is relaxed in [WOQL](to-do) (the Web Objects Query Language used in TerminusDB) to enable lists that are useful in aggregation and dis-aggregation queries such as `group by` and `member` respectively. However, TerminusDB retains the pure declarative quality of
+Variables in Datalog are restricted to finite **atomic** values. The use of atomic values simplifies query optimization and guarantees the termination of queries even in the event of recursion. The finite atomic values restriction is relaxed in [WOQL](to-do) (the web object Query Language used in TerminusDB) to enable lists that are useful in aggregation and dis-aggregation queries such as `group by` and `member` respectively. However, TerminusDB retains the pure declarative quality of
 Datalog.    
 
 ### Datalog compared with SQL

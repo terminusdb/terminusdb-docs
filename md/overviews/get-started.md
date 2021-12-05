@@ -72,7 +72,7 @@ The TerminusDB [Javascript client](install/install-javascript-client) and [Pytho
 
 ### Query
 
-The TerminusDB [Web Objects Query Language](explanation/explanation-woql) (WOQL.)    
+The TerminusDB [web object Query Language](explanation/explanation-woql) (WOQL.)    
 
 #### Diagram: TerminusDB interfaces 
 

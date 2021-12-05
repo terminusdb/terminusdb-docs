@@ -1,6 +1,6 @@
 # WOQL
 
-> **On this page:** A brief explanation of the TerminusDB Web Objects Query Langauge (WOQL.)
+> **On this page:** A brief explanation of the TerminusDB web object Query Langauge (WOQL.)
 
 ## Key topics
 
@@ -12,7 +12,7 @@
 
 [WOQL prefixes](#woql-prefixes)
 
-[WOQL functions](#woql-functions)
+<!-- [WOQL functions](#woql-functions) -->
 
 ## WOQL fluent vs. functional style
 
@@ -148,7 +148,7 @@ WOQL allows variables or constants to be substituted for any argument to all its
 
 ### Unification
 
-WOQL uses the formal-logical approach to variables known as unification [unification](glossary?id=unification) borrowed from the Prolog engine that implements WOQL within TerminusDB. 
+WOQL uses the formal-logical approach to variables known as [unification](glossary?id=unification) borrowed from the Prolog engine that implements WOQL within TerminusDB. 
 
 #### Unification in variables
 
