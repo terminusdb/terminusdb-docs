@@ -115,6 +115,7 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 .tdb-l 
 {
     height          : 1px;
+    line-height: 1px;
     border          : none;
     background-color: rgba(10, 10, 10);     
 }
@@ -123,21 +124,6 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 { 
     vertical-align: middle;
     margin-right  : 5px;
-}
-
-.tdb-ico 
-{
-    fill      : silver;
-    width     : 30px;
-    height    : 30px;
-    opacity   : .6;
-    transition: 0.4s;
-}
-
-.tdb-ico:hover 
-{
-    cursor : pointer;
-    opacity: 1;
 }
 
 .tdb-ico-nav 
@@ -198,6 +184,13 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     height          : 710px;
 }
 
+.tdb-img-cvr-venn
+{
+    background-image: url("../img/diagrams/terminusdb-woql-venn.png");
+    background-size : 640px;
+    height          : 640px;
+}
+
 .tdb-d-cvr
 {
     position       : absolute;
@@ -223,8 +216,42 @@ a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
     width : 180px;
 }
 
+.tdb-cvr-sub-txt
+{
+    font-size: 18px;
+    color    : rgb(140, 140, 140);
+}
+
+.tdb-soc
+{
+    display         : flex;
+    padding-left    : 20px; 
+    padding-top     : 20px;
+    height          : 55px;
+}
+
+.tdb-soc-ico 
+{
+    fill      : white;
+    width     : 28px;
+    height    : 28px;
+    opacity   : .6;
+    transition: 400ms;
+}
+
+.tdb-soc-ico:hover 
+{
+    cursor : pointer;
+    opacity: 1;
+}
+
+.tdb-soc-w 
+{
+    width: 66px;
+}
+
 :root {
-    --cover-blockquote-color           : rgb(100,100,100);
+    --cover-blockquote-color           : rgb(70, 70, 70);
     --cover-color                      : rgb(255, 255, 255);
     --cover-background-color           : var(--cover-color);
     --cover-margin                     : 0 auto;
