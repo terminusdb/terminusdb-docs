@@ -1,39 +1,41 @@
-// window.addEventListener("resize", function() { tdb_cvrImage(); });
-
 function tdb_cvrMain(o)
 {
-    document.getElementById("id-cvr").style.opacity = (o == 1 ? o : 0.8);
+    const cClass = ["ready-transition", "ready-spinner"]; 
+    var docBody = document.body.classList;
 
-    document.getElementById("id-01").style.opacity = o;
-    document.getElementById("id-02").style.opacity = o;
-    document.getElementById("id-03").style.opacity = o;
-    document.getElementById("id-04").style.opacity = o;
-    document.getElementById("id-05").style.opacity = o;
-    document.getElementById("id-06").style.opacity = o;
-    document.getElementById("id-07").style.opacity = o;
-    document.getElementById("id-08").style.opacity = o;
-    document.getElementById("id-09").style.opacity = o;
+    o == 1 ? docBody.remove(cClass[0], cClass[1]) : docBody.add(cClass[0], cClass[1]);
+
+    tdb_cvrOpac("cvr", (o == 1 ? o : 0.8));   
+    tdb_cvrOpac("opt", o, 9);
 }
 
 function tdb_cvrSub(o)
 {
-    document.getElementById("id-cvr-pgs").style.opacity = (o == 1 ? o : 0.8);
-
-    document.getElementById("id-pgs-01").style.opacity = o;
-    document.getElementById("id-pgs-02").style.opacity = o;
-    document.getElementById("id-pgs-03").style.opacity = o;
-    document.getElementById("id-pgs-04").style.opacity = o;
-    document.getElementById("id-pgs-05").style.opacity = o;
-    document.getElementById("id-pgs-06").style.opacity = o;
+    tdb_cvrOpac("cvr-pgs", (o == 1 ? o : 0.8));
+    tdb_cvrOpac("pgs", o, 6);
 }
 
-function tdb_hide()
+function tdb_cvrVenn(o)
+{       
+    tdb_cvrOpac("cvr-venn", (o == 1 ? o : 0.8));
+    tdb_cvrOpac("venn", o, 4);
+}
+
+function tdb_cvrOpac(i, o, r)
 {
-    document.getElementById("id-nav").style.visibility = "hidden";
+    // i - id, o - opacity, r - repeat
+
+    if (r == null)
+        document.getElementById(`id-${i}`).style.opacity = o;
+    else
+        for (var n = 1; n <= r; n++)
+            document.getElementById(`id-${i}-` + (n < 10 ? `0${n}` : n)).style.opacity = o;
 }
 
 function tdb_cvrImage()
 {
+    /*
+
     var div1 = document.getElementById("id-cvr").style,
         div2 = document.getElementById("id-cvr-pgs").style;
 
@@ -51,4 +53,5 @@ function tdb_cvrImage()
         div1.height     = "810px"; 
         div2.height     = "710px";       
     }
+    */
 }

@@ -1,25 +1,27 @@
-var __tdb_hC    = false;
-var __tdb_init  = false; // Set to true if visibility starts as hidden
-var __tdb_width = 312;   // Auto-hide threshold 
+const __tdb_width = 312, // Auto-hide threshold 
+      __cVis = "visible",
+      __cHid = "hidden"
+
+var  __tdb_init = false, // Set to true if visibility starts as hidden 
+     __tdb_hC   = false;
     
 function tdb_TOC(sHTML)
 {    
     var toc      = document.getElementById("contents-page"),
         tocCtrl  = document.getElementById("contents-ctrl"),
         doc      = document.createElement("href"),
-        p        = '<span class="tdb-f">',
-        dv       = '<div class="tdb-h"></div>';
-        br       = "<br>",
-        sVis     = "visible",
-        sHid     = "hidden",
         sHdr     = "",
         sDiagram = "",
         sTable   = "",
         sCode    = "",
         sData    = "",
+        nLen     = "",
         sI       = "",
-        sO       = "",
-        nLen     = "";
+        sO       = "";
+
+    const sp = '<span class="tdb-f">',
+          dv = '<div class="tdb-h"></div>',
+          br = "<br>";
 
     doc.innerHTML= sHTML;
     doc = doc.querySelectorAll("h1, h2, h3, h4, h5");
@@ -27,14 +29,14 @@ function tdb_TOC(sHTML)
 
     if (nLen == 1)
     {
-        toc.style.visibility = sHid;
-        tocCtrl.style.visibility = sHid;
+        toc.style.visibility = __cHid;
+        tocCtrl.style.visibility = __cHid;
         return;
     }
     
-    toc.innerHTML    = p + 'Table of contents</span>' + br + br;
-    tocCtrl.innerHTML= '<img onclick="hideCtrl()" src="img/ico/terminusdb-icon-contents-page.png" title="Show/hide contents page..."/>'; 
-    
+    tocCtrl.innerHTML = '<img onclick="hideCtrl()" src="img/ico/terminusdb-icon-contents-page.png" title="Show/hide contents page..."/>'; 
+    toc.innerHTML     = sp + 'Table of contents</span>' + br + br;
+
     window.addEventListener("resize", function() { hideC(toc, tocCtrl); });
 
     hideC(toc, tocCtrl);
@@ -75,13 +77,13 @@ function tdb_TOC(sHTML)
     toc.innerHTML += (sTable.length > 0 || sDiagram.length > 0 || sCode.length > 0 || sData.length > 0 ? '<hr class="tdb-l"/>' : br);
 
     if (sTable.length > 0)
-        toc.innerHTML += p + 'Tables</span>' + sTable + br;
+        toc.innerHTML += sp + 'Tables</span>' + sTable + br;
     if (sDiagram.length > 0)
-        toc.innerHTML += p + 'Diagrams</span>' + sDiagram + br;
+        toc.innerHTML += sp + 'Diagrams</span>' + sDiagram + br;
     if (sData.length > 0)
-        toc.innerHTML += p + 'Data</span>' + sData + br;
+        toc.innerHTML += sp + 'Data</span>' + sData + br;
     if (sCode.length > 0)
-        toc.innerHTML += p + 'Code</span>' + sCode + br;
+        toc.innerHTML += sp + 'Code</span>' + sCode + br;
 }
 
 function hideCtrl()
@@ -90,14 +92,14 @@ function hideCtrl()
 
     var v = document.getElementById("contents-page");
 
-    if (v.style.visibility == sVis)
+    if (v.style.visibility == __cVis)
     {
-        v.style.visibility = sHid;
+        v.style.visibility = __cHid;
         __tdb_hC = true;
     }
     else
     {   
-        v.style.visibility = sVis;
+        v.style.visibility = __cVis;
 
         __tdb_hC = false;
     }
@@ -113,6 +115,6 @@ function hideC(t, tC)
         return;
     }
 
-    t.style.visibility = (t.clientWidth > __tdb_width && !__tdb_hC ? sVis : sHid);
-    tC.style.visibility = (t.clientWidth > __tdb_width ? sVis : sHid);
+    t.style.visibility = (t.clientWidth > __tdb_width && ! __tdb_hC ? __cVis : __cHid);
+    tC.style.visibility = (t.clientWidth > __tdb_width ?__cVis : __cHid);
 }
