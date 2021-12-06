@@ -465,7 +465,7 @@ print(list(matches))
 
 #### Code: Query documents using WOQL
 
-Query documents using Web Object Query Language(WOQL) to get same result given by the above example. You can find more about WOQL [here](https://terminusdb.com/docs/main/#/explanation/explanation-woql).
+Query documents using Web Object Query Language (WOQL) to get same result given by the above example. You can find more about WOQL [here](/#/explanation/explanation-woql).
 
 <!-- tabs:start -->
 
@@ -502,7 +502,10 @@ const queryDocuments = async () => {
 
 ```python
 WOQL = WOQLQuery()
-query = WOQL.triple("v:Player", "position", WOQL.string("Full Back")).triple("v:Player","position", "v:position")
+
+query = WOQL.triple("v:Player", "position", WOQL.string("Full Back")).triple(
+    "v:Player", "position", "v:position"
+)
 
 results = client.query(query)
 print("Specific document using WOQL")
@@ -512,7 +515,12 @@ print(results['bindings'])
 ```
 
 ```results
-[{'Player': 'Player/Doug', 'position': {'@type': 'xsd:string', '@value': 'Full Back'}}]
+[
+  {
+    Player: 'Player/Doug',
+    position: { '@type': 'xsd:string', '@value': 'Full Back' }
+  }
+]
 ```
 
 <!-- tabs:end -->
