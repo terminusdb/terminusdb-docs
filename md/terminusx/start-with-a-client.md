@@ -2,7 +2,7 @@
 
 > **On this page:** A step-by-step guide with examples to install and get started with a JavaScript or Python client.
 
-This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](https://terminusdb.github.io/terminusdb-client-js/) or [TerminusDB Python Client](https://terminusdb.github.io/terminusdb-client-python/) for detailed documentation. If you want to access the code which is discussed in this page [here](../../code-examples/start-with-client/) are the Javascript and Python code examples.
+This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](https://terminusdb.github.io/terminusdb-client-js/) or [TerminusDB Python Client](https://terminusdb.github.io/terminusdb-client-python/) for detailed documentation. If you want to access the code which is discussed in this page [here](https://github.com/terminusdb/terminusdb-docs/tree/main/code-examples/start-with-client) are the Javascript and Python code examples.
 
 ## Install WOQLClient
 
@@ -465,7 +465,7 @@ print(list(matches))
 
 #### Code: Query documents using WOQL
 
-Query documents using Web Object Query Language (WOQL) to get same result given by the above example. You can find more about WOQL [here](/#/explanation/explanation-woql).
+Query documents using Web Object Query Language (WOQL) to get same result given by the above example. You can find more about WOQL [here](explanation/explanation-woql).
 
 <!-- tabs:start -->
 
