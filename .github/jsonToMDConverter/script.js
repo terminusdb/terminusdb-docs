@@ -56,27 +56,17 @@ const uniq = (list) => {
   });
 };
 
-const files = [
-    "/src/terminus-schema/woql.json",
-    "/src/terminus-schema/ref.json",
-    "/src/terminus-schema/repository.json",
-    "/src/terminus-schema/system_schema.json",
-];
-
-var sourceDir = process.argv[2];
-var destinationDir = process.argv[3];
+const srcFile = process.argv[2];
+const dstFile = process.argv[3];
 
 const getJSONAndGenerateMDFile = async () => {
-    for (var i in files){
-        let file = sourceDir + files[i];
-        console.error(file);
-        fs.readFile(file, (error, body) => {
+        console.log(`Source: ${srcFile}\nDestination: ${dstFile}`);
+        fs.readFile(srcFile, (error, body) => {
             if (error) {
                 throw error;
             }
             // parse contents of the json file
             var json_list = "[" + body.toString().replace(/}\s*{/g, "},\n\n{") + "]"
-            console.log(json_list);
             let parsedWoqlJSON = JSON.parse(json_list);
 
             let mdContents = "";
@@ -126,17 +116,14 @@ const getJSONAndGenerateMDFile = async () => {
                 }
             });
 
-            // write the conetents into the file
-            var f = destinationDir+file.split("/").pop().split(".")[0]+'.md';
-
-            fs.writeFile(f, mdContents, (err) => {
+            // write the contents into the file
+            fs.writeFile(dstFile, mdContents, (err) => {
                 if (err) {
                     console.error(err);
                     return;
                 }
             });
         });
-    };
 };
 
 getJSONAndGenerateMDFile();
