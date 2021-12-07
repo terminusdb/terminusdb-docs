@@ -47,8 +47,7 @@ command -v ronn > /dev/null 2>&1 || sudo apt install ronn
 
 echo "Building CLI documentation..."
 
-cd "$TERMINUSDB_DIR"
-PATH="$TERMINUSDB_DIR:$PATH" make all
+make -C "$TERMINUSDB_DIR" all
 cp "$TERMINUSDB_DIR/docs/terminusdb.1.ronn" "$REFERENCE_DIR/reference-cli.md"
 
 echo "Removing untracked files..."
