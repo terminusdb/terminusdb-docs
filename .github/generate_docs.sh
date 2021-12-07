@@ -19,7 +19,6 @@ if [[ $(echo "$BRANCH" | grep -vE "^main|^v") ]]; then
 fi
 
 TOP_DIR="$(git rev-parse --show-toplevel)"
-JSON_CONVERTER_DIR="$TOP_DIR/.github/jsonToMDConverter"
 REFERENCE_DIR="$TOP_DIR/md/reference"
 TERMINUSDB_DIR="$TOP_DIR/terminusdb"
 
@@ -32,7 +31,15 @@ git clone -b "$BRANCH" --depth 1 \
 
 echo "Building reference schema documentation..."
 
-(cd "$JSON_CONVERTER_DIR"; npm install; npm test -- "$TERMINUSDB_DIR/" "$REFERENCE_DIR/")
+SCHEMA_SRC_DIR="$TERMINUSDB_DIR/src/terminus-schema"
+SCHEMA_DST_DIR="$REFERENCE_DIR"
+
+cd "$TOP_DIR/.github/jsonToMDConverter"
+npm install
+npm test -- "$SCHEMA_SRC_DIR/woql.json"          "$SCHEMA_DST_DIR/reference-woql-schema.md"
+npm test -- "$SCHEMA_SRC_DIR/ref.json"           "$SCHEMA_DST_DIR/reference-ref-schema.md"
+npm test -- "$SCHEMA_SRC_DIR/repository.json"    "$SCHEMA_DST_DIR/reference-repository-schema.md"
+npm test -- "$SCHEMA_SRC_DIR/system_schema.json" "$SCHEMA_DST_DIR/reference-system-schema.md"
 
 echo "Installing ronn (if needed)..."
 
@@ -42,7 +49,7 @@ echo "Building CLI documentation..."
 
 cd "$TERMINUSDB_DIR"
 PATH="$TERMINUSDB_DIR:$PATH" make all
-cp "$TERMINUSDB_DIR/docs/terminusdb.1.ronn" "$REFERENCE_DIR/CLI.md"
+cp "$TERMINUSDB_DIR/docs/terminusdb.1.ronn" "$REFERENCE_DIR/reference-cli.md"
 
 echo "Removing untracked files..."
 
