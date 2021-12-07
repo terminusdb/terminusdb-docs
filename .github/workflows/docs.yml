@@ -20,7 +20,7 @@ jobs:
 
       - name: Generate docs
         run: |
-          sh .github/generate_docs.sh ${{ steps.extract_branch.outputs.branch }}
+          bash .github/generate_docs.sh ${{ steps.extract_branch.outputs.branch }}
           # Don't copy this to gh-pages
           rm -f .gitignore
 
