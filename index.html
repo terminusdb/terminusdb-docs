@@ -53,18 +53,23 @@
             hook.afterEach(function(html, next) 
             { 
               tdb_TOC(html); next(html); 
-              tdb_adjust() 
+              tdb_adjust(); 
             });
             hook.doneEach(function() 
             { 
+              var sLoc = location.href;
+
+              console.log(`Current file location: ${sLoc}`);
+
+              if (sLoc.indexOf("#/") > -1 && sLoc.indexOf("/#/") == -1)
+                location.href = sLoc.replace("#/", "/#/");
+
               tdb_init(); 
-              tdb_hashCheck(); 
-              tdb_adjust() 
+              tdb_adjust(); 
             });   
           }
         ]
       }
-
     </script>    
     <script src="//js.hs-scripts.com/8481758.js" type="text/javascript" id="hs-script-loader" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
