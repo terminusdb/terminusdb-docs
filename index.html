@@ -7,9 +7,9 @@
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
-    <link rel="stylesheet" href="./css/terminusdb-docs.css">
+    <link rel="stylesheet" href="css/terminusdb-docs.css">
     <link rel="icon" type="image/png" href="img/ico/terminusx-color.png">
-    <script src="./js/tdb-initialize.js"></script>
+    <script src="js/tdb-initialize.js"></script>
   </head>
   <body>
     <div id="contents-page" class="tdb-d"></div>
@@ -41,11 +41,10 @@
             crossChapter    : true,
             crossChapterText: true,
         },
-        
-        // alias: {
-        //  '.*/_sidebar.md': '/config/sidebar.md',
-        //  '.*/_navbar.md': '/config/navbar.md'
-        // },
+        alias: {
+        '.*/_sidebar.md': '/config/sidebar.md',
+        '.*/_navbar.md': '/config/navbar.md'
+        },
         
         plugins: 
         [
@@ -73,8 +72,8 @@
     <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-csv.min.js"></script>
-    <script src="./js/tdb-matomo.js"></script>
-    <script src="./js/tdb-cover.js"></script>
-    <script src="./js/tdb-toc.js"></script>
+    <script src="js/tdb-matomo.js"></script>
+    <script src="js/tdb-cover.js"></script>
+    <script src="js/tdb-toc.js"></script>
   </body>
 </html>
