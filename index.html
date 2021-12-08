@@ -50,12 +50,15 @@
         [
           function(hook, vm)
           {
-            hook.afterEach(function(html) { tdb_TOC(html); tdb_adjust() });    
-            hook.ready(function() { tdb_adjust(); });
+            hook.beforeEach(function(content) { tdb_hashCheck(); })
+            hook.afterEach(function(html, next) { tdb_TOC(html); next(html); tdb_adjust() });
+            hook.doneEach(function() { tdb_init(); tdb_adjust() });   
+            /* hook.ready(function() { tdb_adjust(); }); */
+            
           }
         ]
       }
-    window.onhashchange = function() { tdb_init(); }
+
     </script>    
     <script src="//js.hs-scripts.com/8481758.js" type="text/javascript" id="hs-script-loader" async defer></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
