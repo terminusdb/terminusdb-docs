@@ -30,18 +30,14 @@ function tdb_localStore()
 function tdb_hashCheck()
 {
     var sLoc = location.href;
-
-    console.log(`Current file location: ${sLoc}`);
-
+             
     if (sLoc.indexOf("#/") > -1 && sLoc.indexOf("/#/") == -1)
-        location.href = sLoc.replace("#/", "/#/");
+      window.location.replace(sLoc.replace("#/", "/#/"));
 }
 
-function tdb_init() 
+function tdb_title() 
 {
     const cSfx = " - TerminusDB Docs";
-
-    console.log(`Adding${cSfx} suffix...`)
 
     // Set title and hide navbar on home page.
 
