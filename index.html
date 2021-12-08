@@ -50,21 +50,19 @@
         [
           function(hook, vm)
           {
-            hook.afterEach(function(html, next) 
+           // hook.afterEach(function(html, next) 
+           // {
+           //   tdb_TOC(html); next(html);
+           // });
+            hook.doneEach(function() 
             {
               var sLoc = location.href;
 
-              console.log(`Current file location: ${sLoc}`);
+              console.log(`Current file location (index.html): ${sLoc}`);
 
               if (sLoc.indexOf("#/") > -1 && sLoc.indexOf("/#/") == -1)
-                location.href = sLoc.replace("#/", "/#/");
-              
-              tdb_TOC(html); next(html); 
-              tdb_adjust();
-               
-            });
-            hook.doneEach(function() 
-            {
+                window.location.replace(sLoc.replace("#/", "/#/"));
+                
               tdb_init(); 
               tdb_adjust(); 
             });   
