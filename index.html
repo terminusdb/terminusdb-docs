@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="description" content="Description">
     <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" type="image/png" href="img/ico/terminusx-color.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
     <link rel="stylesheet" href="css/terminusdb-docs.css">
-    <link rel="icon" type="image/png" href="img/ico/terminusx-color.png">
     <script src="js/tdb-initialize.js"></script>
   </head>
   <body>
@@ -25,6 +25,7 @@
         loadNavbar    : 'config/navbar.md',
         loadFooter    : 'config/footer.md',
         onlyCover     : true,
+        routerMode    : 'history',
         search: {
             depth      : 4,
             noData     : 'No results.',
@@ -50,22 +51,8 @@
         [
           function(hook, vm)
           {
-           // hook.afterEach(function(html, next) 
-           // {
-           //   tdb_TOC(html); next(html);
-           // });
-            hook.doneEach(function() 
-            {
-              var sLoc = location.href;
-
-              console.log(`Current file location (index.html): ${sLoc}`);
-
-              if (sLoc.indexOf("#/") > -1 && sLoc.indexOf("/#/") == -1)
-                window.location.replace(sLoc.replace("#/", "/#/"));
-                
-              tdb_init(); 
-              tdb_adjust(); 
-            });   
+            hook.afterEach(function(html, next) { tdb_TOC(html); next(html); });
+            hook.doneEach(function() { tdb_title(); tdb_adjust(); });   
           }
         ]
       }
