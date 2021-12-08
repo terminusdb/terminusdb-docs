@@ -33,7 +33,7 @@ function tdb_hashCheck()
 
     console.log(`Current file location: ${sLoc}`);
 
-    if (sLoc.indexOf("#") > -1 && sLoc.indexOf("/#/") == 0)
+    if (sLoc.indexOf("#/") > -1 && sLoc.indexOf("/#/") == -1)
         location.href = sLoc.replace("#/", "/#/");
 }
 
