@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
     <link rel="stylesheet" href="css/terminusdb-docs.css">
     <link rel="icon" type="image/png" href="img/ico/terminusx-color.png">
+    <script src="../js/tdb-initialize.js"></script>
   </head>
   <body>
     <div id="contents-page" class="tdb-d"></div>
@@ -17,7 +18,7 @@
     <script>
       window.$docsify = 
       {
-        basePath      : `md/`,
+        basePath      : '#/md/',
         coverpage     : 'config/coverpage.md',
         homepage      : 'overviews/introduction.md',
         loadSidebar   : 'config/sidebar.md',
@@ -49,8 +50,8 @@
         [
           function(hook, vm)
           {
-            hook.afterEach(function(html) { tdb_TOC(html); });    
-            hook.ready(function() { tdb_adjust(); tdb_theme(); });
+            hook.afterEach(function(html) { tdb_TOC(html); tdb_adjust() });    
+            hook.ready(function() { tdb_adjust(); });
           }
         ]
       }
@@ -61,7 +62,6 @@
     <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/@alertbox/docsify-footer/dist/docsify-footer.min.js"></script>
     <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <script src="https://unpkg.com/docsify-copy-code@2"></script>
@@ -72,9 +72,8 @@
     <script src="//unpkg.com/prismjs/components/prism-json.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-sql.min.js"></script>
     <script src="//unpkg.com/prismjs/components/prism-csv.min.js"></script>
-    <script src="js/tdb-matomo.js"></script>
-    <script src="js/tdb-initialize.js"></script>
-    <script src="js/tdb-cover.js"></script>
-    <script src="js/tdb-toc.js"></script>
+    <script src="../js/tdb-matomo.js"></script>
+    <script src="../js/tdb-cover.js"></script>
+    <script src="../js/tdb-toc.js"></script>
   </body>
 </html>
