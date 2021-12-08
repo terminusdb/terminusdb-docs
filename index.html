@@ -50,11 +50,17 @@
         [
           function(hook, vm)
           {
-            // hook.beforeEach(function(content) { tdb_hashCheck(); })
-            hook.afterEach(function(html, next) { tdb_TOC(html); next(html); tdb_adjust() });
-            hook.doneEach(function() { tdb_init(); tdb_hashCheck(); tdb_adjust() });   
-            /* hook.ready(function() { tdb_adjust(); }); */
-            
+            hook.afterEach(function(html, next) 
+            { 
+              tdb_TOC(html); next(html); 
+              tdb_adjust() 
+            });
+            hook.doneEach(function() 
+            { 
+              tdb_init(); 
+              tdb_hashCheck(); 
+              tdb_adjust() 
+            });   
           }
         ]
       }
