@@ -1,5 +1,3 @@
-
-
 if (tdb_localStore()) 
 {
     //  Include search plugin if local storage is enabled.
@@ -14,6 +12,8 @@ if (tdb_localStore())
 
 function tdb_localStore() 
 {
+    console.log("Checking local storage...")
+
     try 
     {
       localStorage.setItem('x', 'x');
@@ -31,14 +31,17 @@ function tdb_hashCheck()
 {
     var sLoc = location.href;
 
+    console.log(sLoc);
+
     if (sLoc.indexOf("#") > -1 && sLoc.indexOf("/#/") == 0)
         location.href = sLoc.replace("#/", "/#/");
-
 }
 
 function tdb_init() 
 {
     const cSfx = " - TerminusDB Docs";
+
+    console.log(`Adding${cSfx} suffix...`)
 
     // Set title and hide navbar on home page.
 
@@ -77,47 +80,4 @@ function tdb_theme(t)
         
         oldLink.href = "css/terminusdb-docs-light.css";
     }
-
-    return; 
-
-    var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
-
-    var newlink = document.createElement("link");
-    newlink.setAttribute("rel", "stylesheet");
-    newlink.setAttribute("type", "text/css");
-    newlink.setAttribute("href", cssFile);
-
-    document.getElementsByTagName("head").item(cssLinkIndex).replaceChild(newlink, oldlink);
 }
-
-/*
-function tdb_theme()
-{
-    return;
-
-    document.documentElement.style.setProperty('--base-background-color', 'rgb(250, 250, 250)'); 
-
-    document.documentElement.style.setProperty('--heading-color', 'rgb(0, 0, 0)');
-
-    document.documentElement.style.setProperty('--sidebar-background', 'rgb(250, 250, 250)');
-    
-    document.documentElement.style.setProperty('--link-color', 'rgb(3, 179, 248)');
-
-    document.documentElement.style.setProperty('--pagination-label-color', 'rgb(0, 0, 0)'); 
-
-    document.documentElement.style.setProperty('--blockquote-background', 'rgb(220, 220, 220)');
-
-    document.documentElement.style.setProperty('--table-row-odd-background', 'rgb(240, 240, 240)');
-
-    document.documentElement.style.setProperty('--base-color', 'rgb(50, 50, 50)');
-
-    document.documentElement.style.setProperty('--table-cell-border-color', 'rgb(200, 200, 200)');
-
-   // document.querySelector('.tdb-ico-nav').style.setProperty('fill', 'rgb(0, 0, 0)');;
-
-    // console.log(document.getElementsByClassName("tdb-ico-nav").length);
-
-   // document.getElementsByClassName("tdb-ico-nav")[0].style.fill = "rgb(0, 0, 0)";
-
-}
-*/
