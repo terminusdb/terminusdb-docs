@@ -463,6 +463,68 @@ print(list(matches))
 
 <!-- tabs:end -->
 
+#### Code: Query documents using WOQL
+
+Query documents using Web Object Query Language (WOQL) to get same result given by the above example. You can find more about WOQL [here](explanation/explanation-woql).
+
+<!-- tabs:start -->
+
+### **JavaScript**
+
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-node-js.png)</i>Get specific documents using a query using `WOQL.triple()` to create a WOQL query and then execute that query using `client.query()`. Results, stored in `results`, are shown further below. 
+
+```javascript
+const queryDocuments = async () => {
+  const { WOQL } = TerminusDBClient;
+    const query = WOQL.triple(
+      "v:Player",
+      "position",
+      WOQL.string("Full Back")
+    ).triple("v:Player", "position", "v:position");
+
+  const results = await client.query(query);
+  console.log("Query Documents using WOQL: ",results.bindings);
+}
+```
+
+```results
+[
+  {
+    Player: 'Player/Doug',
+    position: { '@type': 'xsd:string', '@value': 'Full Back' }
+  }
+]
+```
+
+### **Python**
+
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-python.png)</i>Get specific documents using `WOQLQuery()` and use `WOQLQuery().triple()` to create a WOQL query and then execute that query using `client.query()`. Results, stored in `results`, are shown further below.  
+
+```python
+WOQL = WOQLQuery()
+
+query = WOQL.triple("v:Player", "position", WOQL.string("Full Back")).triple(
+    "v:Player", "position", "v:position"
+)
+
+results = client.query(query)
+print("Specific document using WOQL")
+
+# results['bindings'] holds the query output as a list
+print(results['bindings'])
+```
+
+```results
+[
+  {
+    Player: 'Player/Doug',
+    position: { '@type': 'xsd:string', '@value': 'Full Back' }
+  }
+]
+```
+
+<!-- tabs:end -->
+
 ## See also
 
 ### Client reference
