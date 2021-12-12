@@ -1,5 +1,9 @@
+console.log("Initialize...");
+
 function tdb_checkLocalStore()
 {
+    console.log("Check local store 1...");
+    
     if (tdb_localStore()) 
     {
         //  Include search plugin if local storage is enabled.
@@ -15,7 +19,7 @@ function tdb_checkLocalStore()
 
 function tdb_localStore() 
 {
-    console.log("Checking local store...")
+    console.log("Check local store 2...");
 
     try 
     {
