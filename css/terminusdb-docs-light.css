@@ -23,13 +23,13 @@ a.tdb-k:active  { color: var(--link-color); }
 a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
 .tdb-k-h1       { font-size: 20px; color: rgb(0, 0, 0); font-weight: bold; }
 .tdb-k-h2       { font-size: 14px; color: rgb(0, 0, 0); font-weight: bold; }
-.tdb-f          { font-size: 14px; color: rgb(0, 0, 0); }
-.tdb-k-c        { font-size: 18px; }
+.tdb-f          { font-size: 14px; color: rgb(0, 0, 0); font-weight: bold; }
+.tdb-k-c        { font-size: 18px; font-weight: bold; }
 .tdb-k-c:link   { text-decoration: none; }
 
 .tdb-pd-h       { line-height: 60px;}    
 .tdb-fs         { font-size: 20px; }
-.tdb-h          { height: 6px; }
+.tdb-h          { height: 6px;}
 .tdb-g          { color: rgb(0, 0, 0); }
 .tdb-dg         { color: rgb(140, 140, 140); }
 

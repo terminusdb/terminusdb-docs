@@ -1,3 +1,11 @@
+.tdb-cvr-l        
+{ 
+    font-weight: normal; 
+    font-size  : 18px; 
+}
+
+.tdb-cvr-l:link { text-decoration: none; }
+
 .tdb-cvr-bg-img 
 {
     position           : fixed;
@@ -47,11 +55,10 @@
 .tdb-cvr-d
 {
     position       : absolute;
-    text-decoration: none;
     text-align     : right;
-    color          : rgb(129, 159, 197);
     padding-left   : 10px;
     padding-right  : 10px;
+    color          : rgb(129, 159, 197);
     opacity        : 0;
     transition     : opacity 400ms;
 }
