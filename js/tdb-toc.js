@@ -58,7 +58,7 @@ function tdb_TOC(sHTML)
         else
         {
             sO = doc[i].outerHTML;
-
+            
             if (sO.indexOf("h1") > -1)
                 sI = sI.replace("tdb-k tdb-g", "tdb-k tdb-k-h1");
             else if (sO.indexOf("h2") > -1)

@@ -12,8 +12,6 @@ if (tdb_localStore())
 
 function tdb_localStore() 
 {
-    console.log("Checking local storage...")
-
     try 
     {
       localStorage.setItem('x', 'x');
@@ -21,18 +19,10 @@ function tdb_localStore()
 
       return true;
     } 
-    catch (e) 
-    {
+    catch (e)
+    { 
       return false;
     }
-}
-
-function tdb_hashCheck()
-{
-    var sLoc = location.href;
-             
-    if (sLoc.indexOf("#/") > -1 && sLoc.indexOf("/#/") == -1)
-      window.location.replace(sLoc.replace("#/", "/#/"));
 }
 
 function tdb_title() 
@@ -45,18 +35,11 @@ function tdb_title()
     {
         document.title = `Home${cSfx}`;
         
-        tdb_navHide();
+        tdb_cvrHide("nav");
+        tdb_cvrHide("theme");
     }
     else
         document.title += cSfx;
-}
-
-function tdb_navHide()
-{
-    var e = document.getElementById("id-nav");
-        
-    if (typeof(e) != 'undefined' && e != null)
-        e.style.visibility = "hidden";
 }
 
 function tdb_adjust()
@@ -70,10 +53,8 @@ function tdb_adjust()
 
 function tdb_theme(t) 
 {
-    if (t == 1)
-    {
-        var oldLink = document.getElementsByTagName("link").item(1);
-        
-        oldLink.href = "css/terminusdb-docs-light.css";
-    }
+    var cssLnk = document.getElementsByTagName("link").item(3);
+    const cssList = ["dark", "light"];
+
+    cssLnk.href = `css/terminusdb-docs-${cssList[t]}.css`;
 }

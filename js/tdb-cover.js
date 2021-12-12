@@ -16,7 +16,7 @@ function tdb_cvrSub(o)
 }
 
 function tdb_cvrVenn(o)
-{       
+{
     tdb_cvrOpac("cvr-venn", (o == 1 ? o : 0.8));
     tdb_cvrOpac("venn", o, 4);
 }
@@ -32,26 +32,10 @@ function tdb_cvrOpac(i, o, r)
             document.getElementById(`id-${i}-` + (n < 10 ? `0${n}` : n)).style.opacity = o;
 }
 
-function tdb_cvrImage()
+function tdb_cvrHide(i)
 {
-    /*
+    const e = document.getElementById(`id-${i}`)
 
-    var div1 = document.getElementById("id-cvr").style,
-        div2 = document.getElementById("id-cvr-pgs").style;
-
-    if (window.innerWidth < 1034)
-    {
-        div1.visibility = "hidden";
-        div2.visibility = "hidden";
-        div1.height     = "0px";
-        div2.height     = "0px";
-    }
-    else
-    {
-        div1.visibility = "visible";
-        div2.visibility = "visible";
-        div1.height     = "810px"; 
-        div2.height     = "710px";       
-    }
-    */
+    if (typeof(e) != 'undefined' && e != null)
+        e.style.visibility = "hidden";
 }
