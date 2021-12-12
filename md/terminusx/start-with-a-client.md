@@ -2,7 +2,9 @@
 
 > **On this page:** A step-by-step guide with examples to install and get started with a JavaScript or Python client.
 
-This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](https://terminusdb.github.io/terminusdb-client-js/) or [TerminusDB Python Client](https://terminusdb.github.io/terminusdb-client-python/) for detailed documentation. If you want to access the code which is discussed in this page [here](../../code-examples/start-with-client/) are the Javascript and Python code examples.
+This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](https://terminusdb.github.io/terminusdb-client-js/) or [TerminusDB Python Client](https://terminusdb.github.io/terminusdb-client-python/) for detailed documentation. The code discussed on this page is also available in full:
+- JavaScript: [getting-started.js](code-examples/start-with-client/getting-started.js ':ignore')
+- Python: [getting-started.py](code-examples/start-with-client/getting-started.js ':ignore')
 
 ## Install WOQLClient
 
