@@ -83,7 +83,7 @@ PUT /api/document/<resource path>
 
 Where resource path is the usual strings like `admin/foo` for database foo, or `_system` for the system graph, or `admin/foo/_meta` for the metadata graph of the foo database, etc.
 
-The documents to be submitted are given as post data. Multiple documents can be specified at once, either as a stream of JSON objects, or as a JSON list containing the documents to be replaced. If a document is specified that does not exist in the database, an error is returned unless `create` is set to `true` in which case it is inserted.
+The documents to be submitted are given as post data. Multiple documents can be specified at once, either as a stream of JSON objects, or as a JSON list containing the documents to be replaced. If a document is specified that does not exist in the database, an error is returned.
 
 ### Parameters
 
@@ -92,7 +92,6 @@ The documents to be submitted are given as post data. Multiple documents can be 
 | author | | The commit author |
 | message | | The commit message |
 | graph_type | instance | either instance or schema. Used to switch between submitting to the instance or the schema graph. |
-| create | false | insert if the document was not already in the database. |
 
 ## Deleting documents
 Existing documents can be deleted through a DELETE request on the following endpoint:
