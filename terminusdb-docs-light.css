@@ -1,0 +1,284 @@
+.sidebar .search 
+{
+    margin-top: 0;
+}
+
+body .pagination-item-label svg 
+{
+    stroke-linecap : round;
+    stroke-linejoin: round;
+    stroke-width   : 3px;
+    height         : 3em;
+    
+}
+
+body .docsify-pagination-container 
+{
+    border-width: 0px;
+    margin-top  : 0px; 
+}
+
+a.tdb-k:link    { text-decoration: none; }
+a.tdb-k:active  { color: var(--link-color); }
+a.tdb-k:hover   { color: var(--link-color); text-decoration: underline; }
+.tdb-k-h1       { font-size: 20px; color: rgb(0, 0, 0); font-weight: bold; }
+.tdb-k-h2       { font-size: 14px; color: rgb(0, 0, 0); font-weight: bold; }
+.tdb-f          { font-size: 14px; color: rgb(0, 0, 0); }
+.tdb-k-c        { font-size: 18px; }
+.tdb-k-c:link   { text-decoration: none; }
+
+.tdb-pd-h       { line-height: 60px;}    
+.tdb-fs         { font-size: 20px; }
+.tdb-h          { height: 6px; }
+.tdb-g          { color: rgb(0, 0, 0); }
+.tdb-dg         { color: rgb(140, 140, 140); }
+
+.tdb-d 
+{
+    visibility      : hidden;
+    position        : fixed;
+    overflow-y      : auto;
+    border-left     : 0.1rem solid rgb(230, 230, 230);
+    background-color: rgb(255, 255, 255);
+    z-index         : 1;
+    padding-left    : 20px;
+    padding-top     : 15px;
+    top             : 0;
+    right           : 0;
+    width           : 20%;
+    height          : 100%;
+}
+
+::-webkit-scrollbar 
+{
+    width: 0px;
+}
+
+.tdb-nav 
+{
+    position        : absolute;
+    text-align      : left;
+    visibility      : visible; 
+    background-color: rgb(240, 240, 240);
+    border-radius   : 4px;
+    top             : -20px;
+    width           : 918px; 
+    height          : 80px;
+    left            : 50px;
+}   
+
+.tdb-theme
+{
+    position        : fixed;
+    visibility      : visible;
+    padding-left    : 20px;
+    height          : 55px;
+    top             : 34px;
+    left            : 1240px;
+    width           : 120px; 
+    height          : 30px;
+}
+
+.tdb-nav-span 
+{
+    display    : inline-block;
+    width      : 127px;
+    padding-top: 30px;
+    text-align : center;
+}
+
+.tdb-nav-sign
+{
+    background-color: rgb(210, 210, 210);
+    padding-top     : 13px; 
+    padding-bottom  : 13px; 
+    border-radius   : 4px; 
+}
+
+.tdb-c 
+{
+    position        : fixed;
+    cursor          : pointer;
+    background-color: rgb(255, 255, 255);
+    display         : flex;
+    justify-content : center;
+    border-radius   : 5px;
+    z-index         : 2;
+    width           : 54px;
+    top             : 5px;
+    right           : 0px;
+}
+
+.tdb-l 
+{
+    height          : 1px;
+    line-height      : 1px;
+    border          : none;
+    background-color: rgba(180, 180, 180);     
+}
+
+.tdb-i 
+{ 
+    vertical-align: middle;
+    margin-right  : 5px;
+}
+
+.tdb-ico-nav 
+{
+    padding-right : 5px;
+    width         : 22px;
+    height        : 22px;
+    vertical-align: top;
+    fill          :rgb(90, 90, 90);
+}
+
+.tdb-soc
+{
+    display         : flex;
+    padding-left    : 20px; 
+    padding-top     : 20px;
+    height          : 55px;
+}
+
+.tdb-soc-ico 
+{
+    fill      : rgb(50, 50, 50);
+    width     : 28px;
+    height    : 28px;
+    opacity   : .6;
+    transition: 400ms;
+}
+
+.tdb-soc-ico:hover 
+{
+    cursor : pointer;
+    opacity: 1;
+}
+
+.tdb-soc-w 
+{
+    width: 66px;
+}
+
+:root 
+{
+    --search-padding                   : 0em;
+    --search-input-background-size     : 2em;
+    --search-input-border-width        : 12px;
+    --search-input-border-color        : rgb(220, 220, 220);
+    --search-input-background-color    : rgb(220, 220, 220);
+    --search-input-placeholder-color   : rgb(100, 100, 100);
+    --search-result-keyword-background : var(--selection-color);
+    --search-result-keyword-color      : rgb(0, 0, 0);      
+    --search-result-item-color         : rgb(180, 180, 180);
+
+    --zoomimage-overlay-background     : rgba(210, 210, 210, .75); 
+
+    --content-max-width                 : 72em;
+
+    --sidebar-toggle-background         : rgb(170, 170, 170);
+    --sidebar-toggle-border-radius      : var(--border-radius-s);
+    --sidebar-toggle-border-style       : solid;
+    --sidebar-toggle-border-width       : 0;
+    --sidebar-toggle-icon-color         : rgb(255, 255, 255);
+    --sidebar-toggle-icon-width         : 16px;
+    --sidebar-toggle-icon-height        : 10px;
+    --sidebar-toggle-width              : 40px;
+    --sidebar-toggle-height             : 36px;
+    --sidebar-toggle-icon-stroke-width  : 1px;
+    --sidebar-toggle-offset-left        : 8px;
+    --sidebar-toggle-offset-top         : 8px;
+
+    --sidebar-nav-pagelink-background-image: ;
+    --sidebar-background  : rgb(255, 255, 255);
+    --sidebar-border-color: rgb(200, 200, 200);
+    --sidebar-nav-margin  : 0rem 0rem 0rem;
+    --sidebar-padding     : 0px 0px 0px 0px;
+    --sidebar-width       : 17rem;
+    --sidebar-margin      : 0em;
+    --sidebar-nav-indent  : 0em;
+    --sidebar-nav-link-background-color--active: var(--blockquote-background); 
+    --sidebar-nav-link-color--active: rgb(10, 10, 10);
+    
+    --link-color                        : rgb(4, 129, 179);
+    --link-text-decoration              : none;
+    --link-text-decoration--hover       : underline;
+    
+    --pagination-label-color           : rgb(50, 50, 50);
+    --pagination-label-font-size       : 12px;
+    --pagination-title-color           : rgb(50, 50, 50);
+    
+    --blockquote-background             : rgb(220, 220, 220);
+    --blockquote-border-color           : var(--link-color);
+    
+    --heading-color                     : rgb(0, 0, 0);
+    --heading-h1-color                  : var(--heading-color);
+    --heading-h2-color                  : var(--heading-color);
+    --heading-h3-color                  : var(--heading-color);
+    --heading-h4-color                  : var(--heading-color);
+    --heading-h3-font-weight            : normal;
+    --heading-h4-font-weight            : bold;
+
+    --base-color                        : rgb(70, 70, 70);
+    --base-background-color             : rgb(255, 255, 255);
+    --base-font-family                  : -apple-system, BlinkMacSystemFont, "Arial Unicode MS", "Sora", "Arial", "Verdana", "Tahoma";
+    --base-font-size                    : 14px;
+    --base-font-weight                  : normal;
+    --base-line-height                  : 1.6;    
+
+    --mark-background                   : #ffecb3;
+    
+    --pre-font-family                   : var(--code-font-family);
+    --pre-font-size                     : var(--code-font-size);
+    --pre-font-weight                   : normal;
+
+    --selection-color                   : goldenrod;
+
+    --small-font-size                   : var(--font-size-s);
+
+    --strong-color                      : var(--heading-color);
+    --strong-font-weight                : 600;
+
+    --subsup-font-size                  : var(--font-size-s);
+
+    --docsifytabs-border-px             : 0.1px;
+    --docsifytabs-margin                : 0;
+    --docsifytabs-border-color          : rgb(210, 210, 210);
+    --docsifytabs-tab-background        : rgb(240, 240, 240); 
+    --docsifytabs-tab-color             : var(--base-font-color);
+    --docsifytabs-tab-color--active     : var(--base-font-color);
+    --docsifytabs-tab-highlight-px      : 3px;
+    --docsifytabs-tab-highlight-color   : var(--link-color);
+    --docsifytabs-tab-padding           : 1em 1em;
+    --docsifytabs-content-padding       : 1rem;
+
+    --copycode-background               : rgb(20, 20, 20);
+    --copycode-color                    : lightblue;
+
+    --code-block-border-radius          : 3px;
+    --code-theme-background             : rgb(40, 42, 47);
+    --code-theme-background             : rgb(50, 50, 50);
+   
+    --code-font-family                  : "Courier New";
+    --code-font-size                    : 14px;
+    --code-font-weight                  : ;
+    --code-tab-size                     : 4;
+    --code-block-padding                : 1.8em 0.8em 1.8em;
+    --code-inline-background            : var(--link-color);
+    --code-inline-border-radius         : var(--code-block-border-radius);
+    --code-inline-padding               : 0.1em 0.3em 0.1em 0.3em;
+
+    --table-body-border-width           : 0.5px;
+    --table-cell-border-color           : var(--docsifytabs-border-color);
+    --table-cell-border-width           : var(--table-body-border-width);
+    --table-cell-padding                : 1em 1em;
+    --table-head-background             : rgb(250, 250, 250); /* var(--sidebar-background); */  
+    --table-head-border-color           : var(--docsifytabs-border-color);
+    --table-head-border-width           : var(--table-body-border-width);
+    --table-row-odd-background          : var(--docsifytabs-tab-background);
+
+    --notice-tip-background             : var(--docsifytabs-tab-background);
+    --notice-important-background       : var(--docsifytabs-tab-background);
+    --notice-important-border-color     : rgb(255, 0, 0);
+    --notice-padding                    : 2em 3.5em;
+}
