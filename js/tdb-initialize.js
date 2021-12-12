@@ -1,13 +1,16 @@
-if (tdb_localStore()) 
+function tdb_checkLocalStore()
 {
-    //  Include search plugin if local storage is enabled.
+    if (tdb_localStore()) 
+    {
+        //  Include search plugin if local storage is enabled.
 
-    var script = document.createElement('script');
+        var script = document.createElement('script');
 
-    script.src = 'https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js';
-    script.async = false;
-        
-    document.head.appendChild(script);
+        script.src = 'https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js';
+        script.async = false;
+            
+        document.head.appendChild(script);
+    }
 }
 
 function tdb_localStore() 
