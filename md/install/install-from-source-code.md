@@ -105,6 +105,8 @@ brew install swi-prolog
 swipl
 
 pack_install(terminus_store_prolog).
+
+halt.
 ```
 
 ### **macOS**
@@ -115,6 +117,8 @@ pack_install(terminus_store_prolog).
 swipl
 
 pack_install(terminus_store_prolog).
+
+halt.
 ```
 <!-- tabs:end -->
 

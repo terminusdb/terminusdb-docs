@@ -1,5 +1,3 @@
-<div class="tdb-bgi tdb-landing-bg"></div>
-
 # Explanations
 
 > **On this page:** A selection of technologies and design concepts explained.

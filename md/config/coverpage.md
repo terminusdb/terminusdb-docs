@@ -1,33 +1,33 @@
 >> TerminusX and TerminusDB Technical Documentation
 
-<div class="tdb-bgi tdb-cover-bg"></div>
+<div class="tdb-cvr-bg-img"></div>
 
-<div id="id-cvr" class="tdb-img-cvr tdb-img-cvr-main" onmouseover="tdb_cvrMain(1)" onmouseout="tdb_cvrMain(0)">
-    <div id="id-opt-01" class="tdb-d-cvr tdb-d-cvr-opt" style="left: 392px; top: 0px; justify-content: center;"> 
+<div id="id-cvr" class="tdb-cvr-img tdb-cvr-img-main" onmouseover="tdb_cvrMain(1)" onmouseout="tdb_cvrMain(0)">
+    <div id="id-opt-01" class="tdb-cvr-d tdb-cvr-d-opt" style="left: 378px; top: 25px; text-align: center;"> 
         <a class="tdb-k-c" target="_parent" title="Tutorials for all levels..." href="#/reference/reference-client?id=tutorials">Tutorials</a>
     </div>
-    <div id="id-opt-02" class="tdb-d-cvr tdb-d-cvr-opt" style="left: 392px; top: 430px; justify-content: center;">
+    <div id="id-opt-02" class="tdb-cvr-d tdb-cvr-d-opt" style="left: 378px; top: 435px; text-align: center;">
         <a class="tdb-k-c" target="_parent" title="An introduction to TerminusX..." href="#/terminusx/introduction">Introduction</a>
     </div>
-    <div id="id-opt-03" class="tdb-d-cvr tdb-d-cvr-opt" style="left: 392px; top: 750px; justify-content: center;">
+    <div id="id-opt-03" class="tdb-cvr-d tdb-cvr-d-opt" style="left: 378px; top: 756px; text-align: center;">
         <a class="tdb-k-c" target="_blank" title="Blogs..." href="https://terminusdb.com/blog/">Blogs</a>
     </div>
-    <div id="id-opt-04" class="tdb-d-cvr tdb-d-cvr-opt" style="top: 164px; left: 52px; justify-content: right;">
+    <div id="id-opt-04" class="tdb-cvr-d tdb-cvr-d-opt" style="top: 182px; left: 27px;">
         <a class="tdb-k-c" target="_parent" title="Get started in a few minutes..." href="#/landing/quick-start">Quick Start</a>
     </div>
-    <div id="id-opt-05" class="tdb-d-cvr tdb-d-cvr-opt" style="top: 164px; left: 734px;">
+    <div id="id-opt-05" class="tdb-cvr-d tdb-cvr-d-opt" style="top: 182px; left: 734px; text-align: left;">
         <a class="tdb-k-c" target="_parent" title="Explanations..." href="#/landing/explanation">Explanations</a>
     </div>
-    <div id="id-opt-06" class="tdb-d-cvr tdb-d-cvr-opt" style="top: 374px; left: -35px; justify-content: right;">
+    <div id="id-opt-06" class="tdb-cvr-d tdb-cvr-d-opt" style="top: 390px; left: -62px;">
         <a class="tdb-k-c" target="_blank" title="GitHub Repo..." href="https://github.com/terminusdb/">GitHub</a>
     </div>
-    <div id="id-opt-07" class="tdb-d-cvr tdb-d-cvr-opt" style="top: 374px; left: 820px;">
+    <div id="id-opt-07" class="tdb-cvr-d tdb-cvr-d-opt" style="top: 390px; left: 820px; text-align: left;">
         <a class="tdb-k-c" target="_parent" title="How-to guides..." href="#/landing/how-to-guides">How-to Guides</a>
     </div>
-    <div id="id-opt-08" class="tdb-d-cvr tdb-d-cvr-opt" style="top: 585px; left: 52px; justify-content: right;">
+    <div id="id-opt-08" class="tdb-cvr-d tdb-cvr-d-opt" style="top: 598px; left: 27px;">
         <a class="tdb-k-c" target="_blank" title="TerminusDB Notion..." href="https://www.notion.so/datachemist/Welcome-Terminators-088fc3d8d62546169bc074e1fe599e4b">Notion</a>
     </div>
-    <div id="id-opt-09" class="tdb-d-cvr tdb-d-cvr-opt" style="top: 585px; left: 734px">
+    <div id="id-opt-09" class="tdb-cvr-d tdb-cvr-d-opt" style="top: 598px; left: 734px; text-align: left;">
         <a class="tdb-k-c" target="_parent" title="Developer reference Guides..." href="#/landing/reference-guides">Reference Guides</a>
     </div>
 </div>
@@ -36,23 +36,23 @@
 
 >> <span class="tdb-cvr-sub-txt">Quick links to get up to speed with TerminusX and TerminusDB</span>
 
-<div id="id-cvr-pgs" class="tdb-img-cvr tdb-img-cvr-sub" onmouseover="tdb_cvrSub(1)" onmouseout="tdb_cvrSub(0)">
-    <div id="id-pgs-01" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: -68px; top: 65px; text-align: right;"> 
-        <a class="tdb-k-c" target="_parent" title="Introduction to TerminusDB..." href="#/overviews/introduction">Introduction to TerminusDB</a>
+<div id="id-cvr-pgs" class="tdb-cvr-img tdb-cvr-img-sub" onmouseover="tdb_cvrSub(1)" onmouseout="tdb_cvrSub(0)">
+    <div id="id-pgs-01" class="tdb-cvr-d tdb-cvr-d-opt-2" style="left: 0px; top: 102px;"> 
+        <a class="tdb-k-c" target="_parent" title="Introduction to TerminusDB..." href="#/terminusx/introduction">Introduction to TerminusX</a>
     </div>
-    <div id="id-pgs-02" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: -68px; top: 274px; text-align: right;"> 
+    <div id="id-pgs-02" class="tdb-cvr-d tdb-cvr-d-opt-2" style="left: 0px; top: 318px;"> 
         <a class="tdb-k-c" target="_parent" title="Detailed installation..." href="#/landing/install">Detailed installation guides</a>
     </div>
-    <div id="id-pgs-03" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: -68px; top: 484px; text-align: right;"> 
-        <a class="tdb-k-c" target="_parent" title="WOQL guides..." href="#/explanation/explanation-woql">Web object Query Language (WOQL)</a>
+    <div id="id-pgs-03" class="tdb-cvr-d tdb-cvr-d-opt-2" style="left: 0px; top: 520px;"> 
+        <a class="tdb-k-c" target="_parent" title="WOQL guides..." href="#/explanation/explanation-woql">Web Object Query Language (WOQL)</a>
     </div>
-    <div id="id-pgs-04" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: 834px; top: 65px;"> 
-        <a class="tdb-k-c" target="_parent" title="Introduction to TerminusX..." href="#/terminusx/introduction">Introduction to TerminusX</a>
+    <div id="id-pgs-04" class="tdb-cvr-d tdb-cvr-d-opt-2" style="left: 778px; top: 102px; text-align: left;"> 
+        <a class="tdb-k-c" target="_parent" title="Introduction to TerminusX..." href="#/overviews/introduction">Introduction to TerminusDB</a>
     </div>
-    <div id="id-pgs-05" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: 834px; top: 274px;"> 
+    <div id="id-pgs-05" class="tdb-cvr-d tdb-cvr-d-opt-2" style="left: 778px; top: 318px; text-align: left;"> 
         <a class="tdb-k-c" target="_parent" title="TerminusDB document types..." href="#/explanation/explanation-documents">TerminusDB document types</a>
     </div>
-    <div id="id-pgs-06" class="tdb-d-cvr tdb-d-cvr-opt-2" style="left: 834px; top: 484px;"> 
+    <div id="id-pgs-06" class="tdb-cvr-d tdb-cvr-d-opt-2" style="left: 778px; top: 550px; text-align: left;"> 
         <a class="tdb-k-c" target="_parent" title="Introduction to TerminusX..." href="#/reference/reference-schema">Schema reference</a>
     </div>
 </div>
@@ -61,19 +61,20 @@
 
 >> <span class="tdb-cvr-sub-txt">Write sophisticated database queries with the TerminusDB query language</span>
 
-<div id="id-cvr-venn" class="tdb-img-cvr tdb-img-cvr-venn" onmouseover="tdb_cvrVenn(1)" onmouseout="tdb_cvrVenn(0)">
-    <div id="id-venn-01" class="tdb-d-cvr tdb-d-cvr-opt-1" style="left: 384px; top: 98px;"> 
+<div id="id-cvr-venn" class="tdb-cvr-img tdb-cvr-img-venn" onmouseover="tdb_cvrVenn(1)" onmouseout="tdb_cvrVenn(0)">
+    <div id="id-venn-01" class="tdb-cvr-d tdb-cvr-d-opt" style="left: 381px; top: 118px; text-align: center;"> 
         <a class="tdb-k-c" target="_parent" title="WOQL and JSON-LD..." href="#/explanation/explanation-woql?id=woql-and-json-ld">WOQL JSON-LD</a>
     </div>
-    <div id="id-venn-02" class="tdb-d-cvr tdb-d-cvr-opt-1" style="left: 182px; top: 402px;"> 
+    <div id="id-venn-02" class="tdb-cvr-d tdb-cvr-d-opt" style="left: 103px; top: 422px;"> 
         <a class="tdb-k-c" target="_parent" title="WOQL variables..." href="#/explanation/explanation-woql?id=woql-variables">Variables</a>
     </div>
-    <div id="id-venn-03" class="tdb-d-cvr tdb-d-cvr-opt-1" style="left: 650px; top: 402px;"> 
+    <div id="id-venn-03" class="tdb-cvr-d tdb-cvr-d-opt" style="left: 658px; top: 422px; text-align: left;"> 
         <a class="tdb-k-c" target="_parent" title="WOQL conjunctions..." href="#/explanation/explanation-woql?id=conjunctions">Conjunctions</a>
     </div>
-    <div id="id-venn-04" class="tdb-d-cvr tdb-d-cvr-opt-1" style="left: 410px; top: 330px;"> 
+    <div id="id-venn-04" class="tdb-cvr-d tdb-cvr-d-opt" style="left: 381px; top: 350px; text-align: center;"> 
         <a class="tdb-k-c" target="_parent" title="Introduction to WOQL..." href="#/explanation/explanation-woql">Introduction</a>
     </div>
 </div>
 
+[Developer Docs](/landing/terminusx "Technical documentation...")
 [Home](https://terminusdb.com/ "TerminusX website...")

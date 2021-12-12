@@ -280,128 +280,6 @@ Examples below of a schema with a TaggedUnion and a concrete [TaggedUnion class 
 }
 ```
 
-#### `@oneOf`
-
-The `TaggedUnion` is a special case and syntactic sugar for the more
-general case of collections of disjoint properties. These more complex
-cases can be represented by inheriting from a number of
-`TaggedUnion`s, but they may also be given explicitly using the
-`@oneof` field, together with a Class.
-
-The value of the `@oneof` field is a set, so can be any number of
-documents all of which have mutually disjoint properties, but which
-can coexist.  Examples with more than one disjoint property are given
-below.
-
-#### Code: An example schema with `@oneOf`
-
-```json
-{
-    "@type"     : "@context",
-    "@base"     : "http://i/",
-    "@schema"   : "http://s#"
-}
-{
-    "@id"       : "IntOrString",
-    "@type"     : "Class",
-    "@oneOf"    :
-    {
-        "integer" : "xsd:integer",
-        "string" : "xsd:string "
-    }
-}
-{
-    "@id"       : "Friend",
-    "@type"     : "Class",
-    "@key"      :
-    {
-        "@type" : "Lexical",
-        "@fields" : ["name"]
-    },
-    "name"      : "xsd:string
-}
-{
-    "@id"       : "Toy",
-    "@type"     : "Class",
-    "@key"      :
-    {
-        "@type" : "Lexical",
-        "@fields" : ["name"]
-    },
-    "name"      : "xsd:string
-}
-{
-    "@id"       : "Pet",
-    "@type"     : "Class",
-    "name"      : "xsd:string
-    "@oneOf"    : [
-        {
-            "cat" : "Toy",
-            "dog" : "Friend"
-        },
-        {
-            "employers" : "xsd:positiveInteger",
-            "unemployed" : "xsd:string"
-        },
-    ]
-}
-```
-
-#### Code: Examples of `@oneOf` class extensions
-
-```json
-{
-    "@type"     : "IntOrString",
-    "integer"   : 0
-}
-```
-
-```json
-{
-    "@type"     : "IntOrString",
-    "string"    : "zero"
-}
-```
-
-```json
-{
-    "@type"     : "Pet",
-    "cat"       : {
-        "@type" : "Toy",
-        "name" : "ball of string"
-    },
-    "employers" : 5
-}
-```
-
-```json
-{
-    "@type"     : "Pet",
-    "dog"       : {
-        "@type" : "Person",
-        "name" : "Jim"
-    },
-    "unemployed" : "A house pet."
-}
-```
-
-```json
-{
-    "@type"     : "Pet",
-    "string"    : "zero"
-}
-```
-
-But not:
-
-```json
-{
-    "@type"     : "IntOrString",
-    "integer"   : 0,
-    "string"    : "zero"
-}
-```
-
 #### Unit
 
 The `Unit` type has a single extension `[]`. This is used when only the presence of the property is interesting, but it has no interesting value. See the `BinaryTree` in the [TaggedUnion class extension](#code-an-example-taggedunion-class-extension) example above.
@@ -535,14 +413,14 @@ Use `Random` as a convenient key type when an object has no important characteri
 #### Code: An example of a Random key
 
 ```json
-{
+{ 
     "@id"                   : "UserDatabase",
     "@type"                 : "Class",
     "@documentation"        : 
     {
         "@comment"          : "A normal user database.",
         "@properties"       : 
-        {
+        { 
             "label"         : "The label name of the database.",
             "comment"       : "A comment associated with the database.",
             "creation_date" : "The time of creation of the database.",
@@ -551,7 +429,7 @@ Use `Random` as a convenient key type when an object has no important characteri
     },
     "@inherits"             : "Database",
     "@key"                  : 
-    {
+    { 
         "@type"             : "Random" 
     },
     "label"                 : "xsd:string",
@@ -563,45 +441,7 @@ Use `Random` as a convenient key type when an object has no important characteri
 
 ### @documentation
 
-Use `@documentation` to add documentation to the class and the property fields or values of the class. The keywords of the `@documentation` object are `@comment` and either `@properties` or `@values` for standard classes or `Enums` respectively. See the [Random key](#code-an-example-random-key) example above, for examples of these keywords.
-
-For `Enum` we can write as follows:
-
-```json
-{
-    "@id": "Pet",
-    "@type": "Enum",
-    "@documentation" : {
-        "@comment" : "What kind of pet?",
-        "@values" : {
-            "dog" : "A doggie",
-            "cat" : "A kitty"
-        }
-    },
-   "@value" : ["dog","cat"]
-}
-```
-
-For a standard `Class` we can write as follows:
-
-```json
-{
-    "@id": "Person",
-    "@type": "Class",
-    "@documentation" : {
-        "@comment" : "Information about people",
-        "@values" : {
-            "name" : "The persons name",
-            "friends" : "The kinds of company someone keeps"
-        }
-    },
-   "name" : "xsd:string",
-   "friends" : {
-       "@type" : "Set",
-       "@class" : "Person"
-   }
-}
-```
+Use `@documentation` to add documentation to the class and the property fields of the class. The keywords of the `@documentation` object are `@comment` and `@properties`. See the [Random key](#code-an-example-random-key) example above, for examples of these keywords.
 
 #### @comment
 

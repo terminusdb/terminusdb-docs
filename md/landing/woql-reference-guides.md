@@ -1,5 +1,3 @@
-<div class="tdb-bgi tdb-landing-bg"></div>
-
 # WOQL Reference
 
 > **On this page:** Developer reference guides to the TerminusDB web object Query Language (WOQL) for querying TerminusDB databases.

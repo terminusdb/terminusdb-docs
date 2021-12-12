@@ -1,5 +1,3 @@
-<div class="tdb-bgi tdb-landing-bg"></div>
-
 # Quick Start
 
 > **On this page:** Links to get started quickly with TerminusX.

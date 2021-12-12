@@ -66,7 +66,7 @@ TerminusDB has many Git-like features including revision-control and distributed
 
 ### Delta-encoding
 
-TerminusDB implements an advanced Git-like model, using [delta encoding](resources/glossary/data-encoding) to store append or delta-only changes to graphs. These deltas are stored in succinct [terminusdb-store](https://github.com/terminusdb/terminusdb-store) data structures. The delta encoding approach enables branch, merge, push, pull, clone, time-travel, and other Git-like operations.  
+TerminusDB implements an advanced Git-like model, using [delta encoding](resources/glossary?id=delta-encoding) to store append or delta-only changes to graphs. These deltas are stored in succinct [terminusdb-store](https://github.com/terminusdb/terminusdb-store) data structures. The delta encoding approach enables branch, merge, push, pull, clone, time-travel, and other Git-like operations.  
 
 #### Diagram: TerminusDB Git-like operations
 
@@ -76,7 +76,7 @@ TerminusDB implements an advanced Git-like model, using [delta encoding](resourc
 
 ### TerminusDB whitepaper
 
-Read our [white paper](https://github.com/terminusdb/terminusdb/blob/main/docs/whitepaper/terminusdb.pdf) on succinct data structures and delta encoding in modern databases.
+Read our [white paper](https://github.com/terminusdb/terminusdb-whitepaper/blob/418005f410cb45227e8eced7204a0d1ef8857431/terminusdb.pdf) on succinct data structures and delta encoding in modern databases.
 
 ### Get started
 

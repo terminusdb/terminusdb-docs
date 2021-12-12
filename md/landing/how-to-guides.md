@@ -1,5 +1,3 @@
-<div class="tdb-bgi tdb-landing-bg"></div>
-
 # How-to Guides
 
 > **On this page:** How-to guides for perform various operations in TerminusDB.

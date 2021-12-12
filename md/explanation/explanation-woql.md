@@ -183,6 +183,7 @@ Internally, TerminusDB uses strict [RDF](glossary?id=rdf) rules to represent all
 
 However, IRIs are difficult to remember and tedious to type. RDF generally solves this problem by allowing prefixed shorthand forms. For example, `"http://obscure.w3c.url/with/embedded/dates#type"` is shortened to `"rdf:type"`. 
 
+<!--
 ### TerminusDB standard prefixes
 
 TerminusDB defines a set of standard prefixes to use, enabling users to extend by adding their own prefix designations to the system. Standard prefixes include: 
@@ -190,6 +191,7 @@ TerminusDB defines a set of standard prefixes to use, enabling users to extend b
 - Basic language elements (rdf, rdfs, owl.) 
 - Datatype elements (xsd, xdd.) 
 - Internal namespaces (ref, repo, system, vio.) 
+-->
 
 ### Prefixes @base and @schema
 

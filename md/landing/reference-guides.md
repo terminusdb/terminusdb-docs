@@ -1,5 +1,3 @@
-<div class="tdb-bgi tdb-landing-bg"></div>
-
 # Reference Guides
 
 > **On this page:** Developer reference guides to the TerminusDB toolkit.
@@ -42,12 +40,12 @@ A library for storing triple data
 
 ## JavaScript Client Reference
 
-JavaScript client and web object Query Language (WOQL) reference guides and tutorials.
+JavaScript client and Web Object Query Language (WOQL) reference guides and tutorials.
 
 [JavaScript Reference](reference/reference-client)
 
 ## Phython Client Reference
 
-Phython client and web object Query Language (WOQL) reference guides and tutorials.
+Phython client and Web Object Query Language (WOQL) reference guides and tutorials.
 
 [Python Reference](reference/reference-client)

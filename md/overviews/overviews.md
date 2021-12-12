@@ -1,7 +1,5 @@
 # Overviews
 
-<div class="tdb-bgi tdb-landing-bg"></div>
-
 > **On this page:** Links to learn more about TerminusDB and an overview of getting started.
 
 ## Introduction to TerminusDB
