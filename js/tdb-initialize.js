@@ -15,6 +15,8 @@ function tdb_checkLocalStore()
 
 function tdb_localStore() 
 {
+    console.log("Checking local store...")
+
     try 
     {
       localStorage.setItem('x', 'x');
