@@ -13,6 +13,12 @@ curl -X POST -u admin:root 'http://localhost:6363/api/db/admin/foo' -H 'Content-
 -d '{ "comment": "Foo DB", "label": "FooDatabase" }'
 ```
 
+### Delete a database called foo
+
+```bash
+curl -X DELETE -u admin:root 'http://localhost:6363/api/db/admin/foo'
+```
+
 ### Submit a new schema, replacing the existing schema
 
 Use a hypothetical JSON file `/tmp/testschema.json` containing a schema.
