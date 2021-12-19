@@ -18,7 +18,7 @@ A list of prerequisite components depending on your operating system. Click on t
 | - | - | - | :-: | :-: | :-: | :-: | :-: |
 | [apt](https://pkgs.org/download/apt) | `Latest` | Install SWI-Prolog.                               |          | &#10004; |          |          | |
 | [clang](https://releases.llvm.org/) | `Latest` | Make the **terminusdb-cli** library.               | &#10004; | &#10004; | &#10004; | | |
-| [git](https://git-scm.com/downloads) | `Latest` | Clone TerminusDB rom GitHub.                      | &#10004; | &#10004; | &#10004; | &#10004; | | 
+| [git](https://git-scm.com/downloads) | `Latest` | Clone TerminusDB from GitHub.                     | &#10004; | &#10004; | &#10004; | &#10004; | | 
 | [GitBash](https://git-scm.com/downloads) | `Latest` | Recommended shell.                            | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
 | [Homebrew](https://brew.sh/) | `Latest` | Install Rust and SWI-Prolog.                              |          |          |          | &#10004; | |
 | [Rust](https://www.rust-lang.org/tools/install) | `Latest` | Compile terminusdb.                    | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
