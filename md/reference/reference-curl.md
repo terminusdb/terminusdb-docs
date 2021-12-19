@@ -6,19 +6,6 @@
 
 Some examples use a hypothetical database `admin/foo` (database named `foo` in organization `admin`.)
 
-### Insert a new database called foo
-
-```bash
-curl -X POST -u admin:root 'http://localhost:6363/api/db/admin/foo' -H 'Content-Type: application/json' \
--d '{ "comment": "Foo DB", "label": "FooDatabase" }'
-```
-
-### Delete a database called foo
-
-```bash
-curl -X DELETE -u admin:root 'http://localhost:6363/api/db/admin/foo'
-```
-
 ### Submit a new schema, replacing the existing schema
 
 Use a hypothetical JSON file `/tmp/testschema.json` containing a schema.

@@ -12,7 +12,7 @@ Log into the user interface dashboard [dashboard.terminusdb.com](https://dashboa
 
 **2. Select your profile**
 
-Select your `Profile` by clicking on <span style="color: white; font-size: 20px;">&#x25BC;</span> at the top-right corner of the screen.
+Select your `Profile` by clicking on <span style="color: goldenrod; font-size: 20px;">&#x25BC;</span> at the top-right corner of the screen.
 
 **3. Generate a Personal Access Token**
 

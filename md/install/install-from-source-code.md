@@ -17,13 +17,14 @@ A list of prerequisite components depending on your operating system. Click on t
 | Component | Version | Required to: | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Arch Linux | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Debian or Ubuntu | ![info](../../img/ico/terminusdb-icon-linux.svg)<br>Fedora or Red Hat | ![info](../../img/ico/terminusdb-icon-apple.svg)<br>macOS<br><br> | ![info](../../img/ico/terminusdb-icon-windows.svg)<br>Windows<br><br> |
 | - | - | - | :-: | :-: | :-: | :-: | :-: |
 | [apt](https://pkgs.org/download/apt) | `Latest` | Install SWI-Prolog.                               |          | &#10004; |          |          | |
+| [clang](https://releases.llvm.org/) | `Latest` | Make the **terminusdb-cli** library.               | &#10004; | &#10004; | &#10004; | | |
 | [git](https://git-scm.com/downloads) | `Latest` | Clone TerminusDB rom GitHub.                      | &#10004; | &#10004; | &#10004; | &#10004; | | 
 | [GitBash](https://git-scm.com/downloads) | `Latest` | Recommended shell.                            | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
 | [Homebrew](https://brew.sh/) | `Latest` | Install Rust and SWI-Prolog.                              |          |          |          | &#10004; | |
 | [Rust](https://www.rust-lang.org/tools/install) | `Latest` | Compile terminusdb.                    | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; |
 | [sudo](https://www.sudo.ws/download.html) | `Latest` | Install SWI-Prolog.                          | &#10004; | &#10004; | &#10004; |          | |
 | [SWI-Prolog](https://www.swi-prolog.org/download/stable) | `Latest` | Install **terminusdb-store**. | &#10004; | &#10004; | &#10004; | &#10004; | |
-| [WSL](https://ubuntu.com/wsl) | `Latest` | Install a Windows Sub-system for Linux.                  | &#10004; | &#10004; | &#10004; | &#10004; | &#10004; | 
+| [WSL](https://ubuntu.com/wsl) | `Latest` | Install a Windows Sub-system for Linux.                  |          | &#10004; |          |          | | 
 
 ## Install steps
 
@@ -51,9 +52,11 @@ Install, build and run TerminusDB from source code with the following steps.
 
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.svg)</i>
 
+Install [Rust](https://www.rust-lang.org/tools/install) by following the Rust installation guide.
+
 **Arch Linux**
 
-Install using [sudo](https://www.sudo.ws/download.html) and [git](https://git-scm.com/downloads).
+Install all dependencies of all the required libraries using [sudo](https://www.sudo.ws/download.html) and [git](https://git-scm.com/downloads).
 
 ```bash
 sudo pacman -S git swi-prolog make automake autoconf libtool zlib pkgconf gcc
@@ -83,10 +86,11 @@ sudo dnf install pl pl-devel
 
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-apple.svg)</i>
 
-Install using [homebrew](https://brew.sh/).
+Install `swi-prolog` and `rust` using [homebrew](https://brew.sh/).
 
 ```bash
 brew install swi-prolog
+brew install rust
 ```
 
 <!-- tabs:end -->
@@ -106,6 +110,8 @@ swipl
 
 pack_install(terminus_store_prolog).
 
+pack_install(tus).
+
 halt.
 ```
 
@@ -117,6 +123,8 @@ halt.
 swipl
 
 pack_install(terminus_store_prolog).
+
+pack_install(tus).
 
 halt.
 ```
@@ -130,16 +138,35 @@ Identical for all operating systems: Clone the `terminusdb` repository from GitH
 git clone https://github.com/terminusdb/terminusdb
 ```
 
-### Make the TerminusDB CLI
+### Make the TerminusDB Command Line Interface
 
-Identical for all operating systems: Run `make` to make the `terminusdb` [Command Line Interface (CLI)](reference/reference-cli) binary. 
+`make` the `terminusdb` [Command Line Interface (CLI)](reference/reference-cli) binary. 
 
+<!-- tabs:start -->
+
+### **Linux**
+
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.svg)</i>
+
+```bash
+sudo apt install clang
+
+cd terminusdb
+
+make
+```
+
+### **macOS**
+
+<i class="tdb-i">![info](../../img/ico/terminusdb-icon-apple.svg)</i>
 
 ```bash
 cd terminusdb
 
 make
 ```
+
+<!-- tabs:end -->
 
 ### Run the TerminusDB system database
 
@@ -152,7 +179,7 @@ make
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-linux.svg)</i>
 
 - Initialize the system database and choose a password for the admin user.
-- Start the server.  
+- Server starts on https://127.0.0.1:6363
 
 ```bash
 ./terminusdb store init --key "my_password_here"
@@ -165,7 +192,7 @@ make
 <i class="tdb-i">![info](../../img/ico/terminusdb-icon-apple.svg)</i>
 
 - Initialize the system database.
-- Start the server on `https://127.0.0.1:6363`.
+- Server starts on https://127.0.0.1:6363
 
 ```bash
 ./terminusdb store init --key root
