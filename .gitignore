@@ -1,9 +1,0 @@
-# Temporary directory for any use
-/tmp/
-
-# Files generated during CI that we don't want to clean.
-/md/reference/reference-cli.md
-/md/reference/reference-ref-schema.md
-/md/reference/reference-repository-schema.md
-/md/reference/reference-system-schema.md
-/md/reference/reference-woql-schema.md
