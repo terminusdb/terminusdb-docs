@@ -1,3 +1,3 @@
-# TerminusDB Documentation (Next)
+# TerminusDB Technical Documentation (gitbook-test)
 
-This is in-progress work on the next phase of TerminusDB documentation.
+A temporary branch to test the import functionality of Gitbook. 
