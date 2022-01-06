@@ -7,6 +7,26 @@ This guide demonstrates the basic use of the **WOQLClient** library to connect t
 * JavaScript: [getting-started.js](../../../terminusx/quick-start/code-examples/start-with-client/getting-started.js)
 * Python: [getting-started.py](../../../terminusx/quick-start/code-examples/start-with-client/getting-started.js)
 
+{% tabs %}
+{% tab title="JavaScript" %}
+Test tab 1
+{% endtab %}
+
+{% tab title="Python" %}
+Test tab 2
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="First Tab" %}
+
+{% endtab %}
+
+{% tab title="Second Tab" %}
+
+{% endtab %}
+{% endtabs %}
+
 ## Install WOQLClient
 
 ### **JavaScript**
@@ -63,8 +83,7 @@ Define and initialize a WOQLClient, and connect to a database using the example 
 
 #### Code: Define and initialize a WOQLClient
 
-\
-
+\\
 
 ### **JavaScript**
 
@@ -118,8 +137,7 @@ Common uses of a WOQLClient include [Connecting to an existing database](start-w
 
 Connect to an existing database using the example below.
 
-\
-
+\\
 
 ### **JavaScript**
 
@@ -141,8 +159,7 @@ client.connect(team=team, user="admin", db="example_db", use_token=True)
 
 Create a new database using the example below.
 
-\
-
+\\
 
 ### **JavaScript**
 
