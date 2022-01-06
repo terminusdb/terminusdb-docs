@@ -18,13 +18,13 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Table: Installation requirements
 
-| Component                                                            | Version  | Required to:                                                 | Linux | <p><img src="../../../img/ico/terminusdb-icon-apple.svg" alt="info"><br>macOS</p> | <p><img src="../../../img/ico/terminusdb-icon-windows.svg" alt="info"><br>Windows</p> |
-| -------------------------------------------------------------------- | -------- | ------------------------------------------------------------ | :---: | :-------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
-| [Git](https://git-scm.com/downloads)                                 | `Latest` | Clone the TerminusDB bootstrap and run the container script. |   ✔   |                                         ✔                                         |                                           ✔                                           |
-| [Git Bash](https://git-scm.com/downloads)                            | `Latest` | Clone the TerminusDB bootstrap and run the container script. |   ✔   |                                         ✔                                         |                                           ✔                                           |
-| [Sudo](https://www.sudo.ws/download.html)                            | `Latest` | Access security.                                             |   ✔   |                                         ✔                                         |                                           ✔                                           |
-| [Docker](https://www.docker.com/products/docker-desktop)             | `Latest` | Use the TerminusDB docker container.                         |       |                                         ✔                                         |                                           ✔                                           |
-| [Package manager](https://www.docker.com/products/container-runtime) | `Latest` | Implement docker for Linux systems.                          |   ✔   |                                                                                   |                                                                                       |
+| Component                                                            | Version  | Required to:                                                 | Linux | macOS | Windows |
+| -------------------------------------------------------------------- | -------- | ------------------------------------------------------------ | :---: | :---: | :-----: |
+| [Git](https://git-scm.com/downloads)                                 | `Latest` | Clone the TerminusDB bootstrap and run the container script. |   ✔   |   ✔   |    ✔    |
+| [Git Bash](https://git-scm.com/downloads)                            | `Latest` | Clone the TerminusDB bootstrap and run the container script. |   ✔   |   ✔   |    ✔    |
+| [Sudo](https://www.sudo.ws/download.html)                            | `Latest` | Access security.                                             |   ✔   |   ✔   |    ✔    |
+| [Docker](https://www.docker.com/products/docker-desktop)             | `Latest` | Use the TerminusDB docker container.                         |       |   ✔   |    ✔    |
+| [Package manager](https://www.docker.com/products/container-runtime) | `Latest` | Implement docker for Linux systems.                          |   ✔   |       |         |
 
 {% hint style="info" %}
 **Docker memory allocation on Windows**\
@@ -81,10 +81,9 @@ This generates the message: `terminusdb-server container started https://127.0.0
 {% endhint %}
 
 ```bash
-TERMINUSDB_TAG=dev ./terminusdb-container stop
-
+TERMINUSDB_TAG=dev 
+./terminusdb-container stop
 ./terminusdb-container rm
-
 ./terminusdb-container run
 ```
 

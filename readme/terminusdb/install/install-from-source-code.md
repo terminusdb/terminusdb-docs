@@ -14,17 +14,17 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Table: Installation requirements
 
-| Component                                                | Version  | Required to:                            | Arch Linux | Debian or Ubuntu | Fedora or Red Hat | macOS | <p><img src="../../../img/ico/terminusdb-icon-windows.svg" alt="info"><br>Windows<br><br></p> |
-| -------------------------------------------------------- | -------- | --------------------------------------- | :--------: | :--------------: | :---------------: | :---: | :-------------------------------------------------------------------------------------------: |
-| [apt](https://pkgs.org/download/apt)                     | `Latest` | Install SWI-Prolog.                     |            |         ✔        |                   |       |                                                                                               |
-| [clang](https://releases.llvm.org)                       | `Latest` | Make the **terminusdb-cli** library.    |      ✔     |         ✔        |         ✔         |       |                                                                                               |
-| [git](https://git-scm.com/downloads)                     | `Latest` | Clone TerminusDB from GitHub.           |      ✔     |         ✔        |         ✔         |   ✔   |                                                                                               |
-| [GitBash](https://git-scm.com/downloads)                 | `Latest` | Recommended shell.                      |      ✔     |         ✔        |         ✔         |   ✔   |                                               ✔                                               |
-| [Homebrew](https://brew.sh)                              | `Latest` | Install Rust and SWI-Prolog.            |            |                  |                   |   ✔   |                                                                                               |
-| [Rust](https://www.rust-lang.org/tools/install)          | `Latest` | Compile terminusdb.                     |      ✔     |         ✔        |         ✔         |   ✔   |                                               ✔                                               |
-| [sudo](https://www.sudo.ws/download.html)                | `Latest` | Install SWI-Prolog.                     |      ✔     |         ✔        |         ✔         |       |                                                                                               |
-| [SWI-Prolog](https://www.swi-prolog.org/download/stable) | `Latest` | Install **terminusdb-store**.           |      ✔     |         ✔        |         ✔         |   ✔   |                                                                                               |
-| [WSL](https://ubuntu.com/wsl)                            | `Latest` | Install a Windows Sub-system for Linux. |            |         ✔        |                   |       |                                                                                               |
+| Component                                                | Version  | Required to:                            | Arch Linux | Debian or Ubuntu | Fedora or Red Hat | macOS | Windows |
+| -------------------------------------------------------- | -------- | --------------------------------------- | :--------: | :--------------: | :---------------: | :---: | :-----: |
+| [apt](https://pkgs.org/download/apt)                     | `Latest` | Install SWI-Prolog.                     |            |         ✔        |                   |       |         |
+| [clang](https://releases.llvm.org)                       | `Latest` | Make the **terminusdb-cli** library.    |      ✔     |         ✔        |         ✔         |       |         |
+| [git](https://git-scm.com/downloads)                     | `Latest` | Clone TerminusDB from GitHub.           |      ✔     |         ✔        |         ✔         |   ✔   |         |
+| [GitBash](https://git-scm.com/downloads)                 | `Latest` | Recommended shell.                      |      ✔     |         ✔        |         ✔         |   ✔   |    ✔    |
+| [Homebrew](https://brew.sh)                              | `Latest` | Install Rust and SWI-Prolog.            |            |                  |                   |   ✔   |         |
+| [Rust](https://www.rust-lang.org/tools/install)          | `Latest` | Compile terminusdb.                     |      ✔     |         ✔        |         ✔         |   ✔   |    ✔    |
+| [sudo](https://www.sudo.ws/download.html)                | `Latest` | Install SWI-Prolog.                     |      ✔     |         ✔        |         ✔         |       |         |
+| [SWI-Prolog](https://www.swi-prolog.org/download/stable) | `Latest` | Install **terminusdb-store**.           |      ✔     |         ✔        |         ✔         |   ✔   |         |
+| [WSL](https://ubuntu.com/wsl)                            | `Latest` | Install a Windows Sub-system for Linux. |            |         ✔        |                   |       |         |
 
 ## Install steps
 
@@ -36,7 +36,8 @@ Install, build and run TerminusDB from source code with the following steps.
 * [Make the TerminusDB Command Line Interface](install-from-source-code.md#make-the-terminusdb-command-line-interface)
 * [Run the TerminusDB system database](install-from-source-code.md#run-the-terminusdb-system-database)
 
-?> ![info](../../../img/ico/terminusdb-icon-windows.svg) **Install from source code on Windows:**\
+{% hint style="info" %}
+**Install from source code on Windows:**\
 \
 Install [WSL](https://ubuntu.com/wsl) and [Ubuntu](https://ubuntu.com/#download)\
 \
@@ -45,16 +46,15 @@ In Ubuntu terminal: `sudo apt install make`\
 In Ubuntu terminal: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`\
 \
 Follow the install steps below for **Debian or Ubuntu**
+{% endhint %}
 
 ### Install SWI-Prolog
 
-\\
-
-### **Linux**
-
-![info](../../../img/ico/terminusdb-icon-linux.svg)
-
+{% tabs %}
+{% tab title="First Tab" %}
 Install [Rust](https://www.rust-lang.org/tools/install) by following the Rust installation guide.
+
+****
 
 **Arch Linux**
 
@@ -64,17 +64,19 @@ Install all dependencies of all the required libraries using [sudo](https://www.
 sudo pacman -S git swi-prolog make automake autoconf libtool zlib pkgconf gcc
 ```
 
+****
+
 **Debian or Ubuntu**
 
 Install using [apt package manager](https://pkgs.org/download/apt) and [sudo](https://www.sudo.ws/download.html).
 
 ```bash
 cat /etc/*release | grep ubuntu > /dev/null && (sudo apt-get install software-properties-common; sudo apt-add-repository ppa:swi-prolog/stable)
-
 sudo apt-get update
-
 sudo apt install swi-prolog
 ```
+
+****
 
 **Fedora or Red Hat**
 
@@ -83,48 +85,25 @@ Install using [sudo](https://www.sudo.ws/download.html).
 ```bash
 sudo dnf install pl pl-devel
 ```
+{% endtab %}
 
-### **macOS**
-
-![info](../../../img/ico/terminusdb-icon-apple.svg)
-
+{% tab title="macOS" %}
 Install `swi-prolog` and `rust` using [homebrew](https://brew.sh).
 
 ```bash
 brew install swi-prolog
 brew install rust
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Run SWI-Prolog
 
-\\
-
-### **Linux**
-
-![info](../../../img/ico/terminusdb-icon-linux.svg)
-
-```bash
-swipl
-
-pack_install(terminus_store_prolog).
-
-pack_install(tus).
-
-halt.
 ```
-
-### **macOS**
-
-![info](../../../img/ico/terminusdb-icon-apple.svg)
-
-```bash
 swipl
-
 pack_install(terminus_store_prolog).
-
 pack_install(tus).
-
-halt.
+halt
 ```
 
 ### Clone the TerminusDB repository
@@ -139,57 +118,48 @@ git clone https://github.com/terminusdb/terminusdb
 
 `make` the `terminusdb` [Command Line Interface (CLI)](../../../terminusdb/install/reference/reference-cli/) binary.
 
-### **Linux**
-
-![info](../../../img/ico/terminusdb-icon-linux.svg)
-
+{% tabs %}
+{% tab title="Linux" %}
 ```bash
 sudo apt install clang
-
 cd terminusdb
-
 make
 ```
+{% endtab %}
 
-### **macOS**
-
-![info](../../../img/ico/terminusdb-icon-apple.svg)
-
-```bash
-cd terminusdb
-
+{% tab title="macOS" %}
+```
+cd  terminusdb
 make
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Run the TerminusDB system database
 
-\\
-
-### **Linux**
-
-![info](../../../img/ico/terminusdb-icon-linux.svg)
-
+{% tabs %}
+{% tab title="Linux" %}
 * Initialize the system database and choose a password for the admin user.
-* Server starts on https://127.0.0.1:6363
+* Server starts on `https://127.0.0.1:6363`
 
-```bash
+```
 ./terminusdb store init --key "my_password_here"
-
 ./terminusdb serve
 ```
+{% endtab %}
 
-### **macOS**
-
-![info](../../../img/ico/terminusdb-icon-apple.svg)
-
+{% tab title="macOS" %}
 * Initialize the system database.
-* Server starts on https://127.0.0.1:6363
+* Server starts on `https://127.0.0.1:6363`
 
-```bash
+```
 ./terminusdb store init --key root
-
 ./terminusdb serve
 ```
+{% endtab %}
+{% endtabs %}
+
+
 
 ## See also
 

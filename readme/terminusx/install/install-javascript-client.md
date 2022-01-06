@@ -14,11 +14,11 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Table: Installation requirements
 
-| Component                                     | Version  | Required to:                                                                                          | <p><img src="../../../img/ico/terminusdb-icon-linux.svg" alt="info"><br>Linux</p> | <p><img src="../../../img/ico/terminusdb-icon-apple.svg" alt="info"><br>macOS</p> | <p><img src="../../../img/ico/terminusdb-icon-windows.svg" alt="info"><br>Windows</p> |
-| --------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
-| [GitBash](https://git-scm.com/downloads)      | `Latest` | Use the `npm` CLI.                                                                                    |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
-| [NodeJS](https://nodejs.org/en/)              | `0.10+`  | Use NodeJS event functionality. Version `0.10` or higher is required, version `8.1.4` is recommended. |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
-| [npm](https://www.npmjs.com/package/download) | `Latest` | Use NodeJS package manager.                                                                           |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
+| Component                                     | Version  | Required to:                                                                                          | Linux | macOS | Windows |
+| --------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------- | :---: | :---: | :-----: |
+| [GitBash](https://git-scm.com/downloads)      | `Latest` | Use the `npm` CLI.                                                                                    |   ✔   |   ✔   |    ✔    |
+| [NodeJS](https://nodejs.org/en/)              | `0.10+`  | Use NodeJS event functionality. Version `0.10` or higher is required, version `8.1.4` is recommended. |   ✔   |   ✔   |    ✔    |
+| [npm](https://www.npmjs.com/package/download) | `Latest` | Use NodeJS package manager.                                                                           |   ✔   |   ✔   |    ✔    |
 
 ## Install steps
 
@@ -56,12 +56,12 @@ Download the minified script from `https://unpkg.com/browse/@terminusdb/terminus
 
 ### Start with a Client API
 
-An example use of the JavaScript client in [Start with a Client API](../../../terminusx/install/terminusx/start-with-a-client).
+An example use of the JavaScript client in [Start with a Client API](../../../terminusx/install/terminusx/start-with-a-client/).
 
 ### Client reference
 
-[JavaScript client reference guides](../../../terminusx/install/reference/reference-client).
+[JavaScript client reference guides](../../../terminusx/install/reference/reference-client/).
 
 ### Tutorials
 
-More [JavaScript and Python client tutorials](../../../terminusx/install/reference/reference-client).
+More [JavaScript and Python client tutorials](../../../terminusx/install/reference/reference-client/).
