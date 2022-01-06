@@ -1,3 +1,3 @@
 # TerminusDB Technical Documentation (gitbook-test)
 
-Temporary branch to test Gitbook import functionality. 
+Find the guides, samples, and references you need to use the database, visualize data, and build applications on the TerminusDB data platform.
