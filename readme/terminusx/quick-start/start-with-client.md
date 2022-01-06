@@ -7,45 +7,25 @@ This guide demonstrates the basic use of the **WOQLClient** library to connect t
 * JavaScript: [getting-started.js](../../../terminusx/quick-start/code-examples/start-with-client/getting-started.js)
 * Python: [getting-started.py](../../../terminusx/quick-start/code-examples/start-with-client/getting-started.js)
 
+## Install WOQLClient
+
 {% tabs %}
 {% tab title="JavaScript" %}
-Test tab 1
+Install the TerminusDB JavaScript client by adding it as a dependency in your Node project.
+
+```
+npm install --save @terminusdb/terminusdb-client
+```
 {% endtab %}
 
 {% tab title="Python" %}
-Test tab 2
-{% endtab %}
-{% endtabs %}
+Install the Python client using `pip`. Using a virtual environment is recommended - see [Python documentation](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
-{% tabs %}
-{% tab title="First Tab" %}
 
-{% endtab %}
-
-{% tab title="Second Tab" %}
-
-{% endtab %}
-{% endtabs %}
-
-## Install WOQLClient
-
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Install the TerminusDB JavaScript client by adding it as a dependency in your Node project.
-
-```bash
-npm install --save @terminusdb/terminusdb-client
-```
-
-### **Python**
-
-![info](../../../img/ico/terminusdb-icon-python.png)Install the Python client using pip.
-
-Using a virtural environment is recommended - see [Python documentation](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
 **Create a new virtual environment named terminusdb-env**
 
-```bash
+```
 python3 -m venv terminusdb-env
 ```
 
@@ -68,6 +48,8 @@ Windows:
 ```bash
 python3 -m pip install terminusdb-client
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Connect with WOQLClient
 
