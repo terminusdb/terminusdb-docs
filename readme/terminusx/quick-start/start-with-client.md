@@ -65,11 +65,9 @@ Define and initialize a WOQLClient, and connect to a database using the example 
 
 #### Code: Define and initialize a WOQLClient
 
-\\
-
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Define and initialize a WOQLClient in JavaScript using the package `@terminusdb/terminusdb-client`
+{% tabs %}
+{% tab title="JavaScript" %}
+Use the package `@terminusdb/terminusdb-client`
 
 ```javascript
 const TerminusDBClient = require("@terminusdb/terminusdb-client");
@@ -97,10 +95,10 @@ const connectToServer = async () => {
 connectToServer();
 ```
 
-### **Python**
+### ****
+{% endtab %}
 
-![info](../../../img/ico/terminusdb-icon-python.png)Define and initialize a WOQLClient in Python.
-
+{% tab title="Python" %}
 ```python
 from terminusdb_client import WOQLClient
 user     = "jimbo"
@@ -110,6 +108,8 @@ client   = WOQLClient(endpoint)
 
 client.connect(user=user, team=team, use_token=True)
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Use a WOQLClient
 
@@ -119,34 +119,26 @@ Common uses of a WOQLClient include [Connecting to an existing database](start-w
 
 Connect to an existing database using the example below.
 
-\\
-
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Connect to a database.
-
+{% tabs %}
+{% tab title="JavaScript" %}
 ```javascript
 client.db('ExampleDatabase');
 ```
+{% endtab %}
 
-### **Python**
-
-![info](../../../img/ico/terminusdb-icon-python.png)Connect to a database.
-
+{% tab title="Python" %}
 ```python
-client.connect(team=team, user="admin", db="example_db", use_token=True)
+connect(team=team, user="admin", db="example_db", use_token=True)
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Code: Create a database
 
 Create a new database using the example below.
 
-\\
-
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Create a database.
-
+{% tabs %}
+{% tab title="JavaScript" %}
 ```javascript
 const createNewDB = async () => {
   try {
@@ -165,16 +157,15 @@ const createNewDB = async () => {
 
 createNewDB();
 ```
+{% endtab %}
 
-### **Python**
-
-![info](../../../img/ico/terminusdb-icon-python.png)Create a database.
-
+{% tab title="Python" %}
 ```python
 client.connect(team=team, user="admin", use_token=True)
-
 client.create_database("example_db")
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Use the document interface
 
@@ -200,10 +191,8 @@ Karen  | Center Forward
 
 Define a schema object with properties `name` and `position`. The object is uniquely identified by `name`.
 
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Define a schema.
-
+{% tabs %}
+{% tab title="JavaScript" %}
 ```javascript
 const schema = { "@type" : "Class",
                  "@id"   : "Player",
@@ -211,11 +200,9 @@ const schema = { "@type" : "Class",
                  name    : "xsd:string",
                  position: "xsd:string" };
 ```
+{% endtab %}
 
-### **Python**
-
-![info](../../../img/ico/terminusdb-icon-python.png)Define a schema.
-
+{% tab title="Python" %}
 ```python
 from terminusdb_client.woqlschema import WOQLSchema, DocumentTemplate, LexicalKey
 
@@ -227,34 +214,38 @@ class Player(DocumentTemplate):
     name: str
     position: str
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Code: Add a schema
 
 Add the schema object to the database.
 
-### **JavaScript**
+{% tabs %}
+{% tab title="JavaScript" %}
+Add the schema object to a document using `addDocument` which returns a Promise.
 
-![info](../../../img/ico/terminusdb-icon-node-js.png)Add the schema object to a document using `addDocument` which returns a Promise.
-
-```javascript
+```
 await client.addDocument(schema, { graph_type: "schema" })
 ```
+{% endtab %}
 
-### **Python**
+{% tab title="Python" %}
+Commit the schema object to the database.
 
-![info](../../../img/ico/terminusdb-icon-python.png)Commit the schema object to the database.
-
-```python
+```
 schema.commit(client, commit_msg = "Adding Player Schema")
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Code: Add documents
 
-Once added, Add documents corresponding to the schema.
+Once a schema is added, add documents corresponding to the schema.
 
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Add documents to the schema using `addDocument` which returns a Promise.
+{% tabs %}
+{% tab title="JavaScript" %}
+Add documents to the schema using `addDocument` which returns a Promise.
 
 ```javascript
 const objects = [
@@ -277,10 +268,10 @@ const objects = [
         
 await client.addDocument(objects);
 ```
+{% endtab %}
 
-### **Python**
-
-![info](../../../img/ico/terminusdb-icon-python.png)Add documents to the schema using `insert_document`.
+{% tab title="Python" %}
+Add documents to the schema using `insert_document`.
 
 ```python
 objects = [
@@ -291,19 +282,21 @@ objects = [
 
 client.insert_document(objects, commit_msg = f"Inserting player data")
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Code: Get documents
 
 Get a list of documents or specific documents added to the schema
 
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below.
+{% tabs %}
+{% tab title="JavaScript" %}
+Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below.
 
 ```javascript
 const getDocs = async () => {
   const documents = await client.getDocument({ as_list: "true" });
-  console.log("All Documents",documents)
+  console.log("All Documents", documents)
 }
 ```
 
@@ -329,10 +322,10 @@ const getDocs = async () => {
   }
 ]
 ```
+{% endtab %}
 
-### **Python**
-
-![info](../../../img/ico/terminusdb-icon-python.png)Get a specific document using `query_document`. Results, stored in `matches`, are shown further below.
+{% tab title="Python" %}
+Get a specific document using `query_document`. Results, stored in `matches`, are shown further below.
 
 ```python
 documents = client.get_all_documents()
@@ -381,13 +374,17 @@ Specific document
   }
 ```
 
+
+{% endtab %}
+{% endtabs %}
+
 #### Code: Query documents
 
 Get a list of documents that matches the query
 
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below.
+{% tabs %}
+{% tab title="JavaScript" %}
+Get a list of documents using `getDocument` `as_list`. Results, stored in `document`, are shown further below.
 
 ```javascript
 const queryDocuments = async () => {
@@ -405,14 +402,14 @@ const queryDocuments = async () => {
   "name" : "Doug",
   "position" : "Full Back"}]
 ```
+{% endtab %}
 
-### **Python**
-
-![info](../../../img/ico/terminusdb-icon-python.png)Get a specific document using `query_document`. Results, stored in `matches`, are shown further below.
+{% tab title="Python" %}
+Get a specific document using `query_document`. Results, stored in `matches`, are shown further below.
 
 ```python
 matches = client.query_document({"@type"   : "Player",
-                                   "position": "Full Back"})
+                                 "position": "Full Back"})
 
 # matches comes back as a iterable that can be convert into a list
 print(list(matches))
@@ -423,14 +420,16 @@ print(list(matches))
   "name" : "Doug",
   "position" : "Full Back"}]
 ```
+{% endtab %}
+{% endtabs %}
 
 #### Code: Query documents using WOQL
 
-Query documents using Web Object Query Language (WOQL) to get same result given by the above example. You can find more about WOQL [here](../../../terminusx/quick-start/explanation/explanation-woql/).
+Query documents using Web Object Query Language (WOQL) to get the same result given by the above example. You can find more about WOQL [here](../../../terminusx/quick-start/explanation/explanation-woql/).
 
-### **JavaScript**
-
-![info](../../../img/ico/terminusdb-icon-node-js.png)Get documents using using `WOQL.triple()` to create a WOQL query then execute that query using `client.query()`. Results, stored in `results`, are shown further below.
+{% tabs %}
+{% tab title="JavaScript" %}
+Get documents using using `WOQL.triple()` to create a WOQL query then execute that query using `client.query()`. Results, stored in `results`, are shown further below
 
 ```javascript
 const queryDocuments = async () => {
@@ -453,10 +452,10 @@ const queryDocuments = async () => {
   }
 ]
 ```
+{% endtab %}
 
-### **Python**
-
-![info](../../../img/ico/terminusdb-icon-python.png)Get documents using `WOQLQuery()` and `WOQLQuery().triple()` to create a WOQL query then execute that query using `client.query()`. Results, stored in `results`, are shown further below.
+{% tab title="Python" %}
+Get documents using `WOQLQuery()` and `WOQLQuery().triple()` to create a WOQL query then execute that query using `client.query()`. Results, stored in `results`, are shown further below.
 
 ```python
 WOQL = WOQLQuery()
@@ -477,6 +476,8 @@ print(results['bindings'])
   }
 ]
 ```
+{% endtab %}
+{% endtabs %}
 
 ## See also
 
