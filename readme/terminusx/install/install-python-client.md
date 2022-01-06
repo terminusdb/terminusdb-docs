@@ -14,12 +14,12 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Installation requirements
 
-| Required                                                                                | Version  | Required to:                                         | <p><img src="../../../img/ico/terminusdb-icon-linux.svg" alt="info"><br>Linux</p> | <p><img src="../../../img/ico/terminusdb-icon-apple.svg" alt="info"><br>macOS</p> | <p><img src="../../../img/ico/terminusdb-icon-windows.svg" alt="info"><br>Windows</p> |
-| --------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------- | :-------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
-| [TerminusDB bootstrap](../../../terminusx/install/install/install-as-docker-container/) | `Latest` | Install the TerminusDB server as a Docker container. |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
-| [Git](https://git-scm.com/downloads)                                                    | `Latest` | Build and install the Python client from source.     |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
-| [GitBash](https://git-scm.com/downloads)                                                | `Latest` | Use the Python CLI (recommended shell.)              |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
-| [Python](https://www.python.org/downloads/)                                             | `3.6+`   | Use the TerminusDB Python client.                    |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
+| Required                                                                                | Version  | Required to:                                         | Linux | macOS | Windows |
+| --------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------- | :---: | :---: | :-----: |
+| [TerminusDB bootstrap](../../../terminusx/install/install/install-as-docker-container/) | `Latest` | Install the TerminusDB server as a Docker container. |   ✔   |   ✔   |    ✔    |
+| [Git](https://git-scm.com/downloads)                                                    | `Latest` | Build and install the Python client from source.     |   ✔   |   ✔   |    ✔    |
+| [GitBash](https://git-scm.com/downloads)                                                | `Latest` | Use the Python CLI (recommended shell.)              |   ✔   |   ✔   |    ✔    |
+| [Python](https://www.python.org/downloads/)                                             | `3.6+`   | Use the TerminusDB Python client.                    |   ✔   |   ✔   |    ✔    |
 
 ## Install steps
 
@@ -37,21 +37,19 @@ Follow the [TerminusDB bootstrap](../../../terminusx/install/install/install-as-
 
 In an **administrator** shell, run the command below to update `pip`, `setuptools`, and `wheel`.
 
-### **Linux/macOS**
-
-![info](../../../img/ico/terminusdb-icon-linux.svg)![info](../../../img/ico/terminusdb-icon-apple.svg)
-
-```bash
+{% tabs %}
+{% tab title="Linux/macOS" %}
+```
 python3 -m pip install --upgrade pip setuptools wheel
 ```
+{% endtab %}
 
-### **Windows**
-
-![info](../../../img/ico/terminusdb-icon-windows.svg)
-
-```bash
+{% tab title="Windows" %}
+```
 py -m pip install --upgrade pip setuptools wheel
 ```
+{% endtab %}
+{% endtabs %}
 
 ### Install the TerminusDB Python client
 
@@ -95,12 +93,12 @@ python -m pip install git+https://github.com/terminusdb/terminusdb-client-python
 
 ### Start with a Client API
 
-An example use of the Python client in [Start with a Client API](../../../terminusx/install/terminusx/start-with-a-client).
+An example use of the Python client in [Start with a Client API](../../../terminusx/install/terminusx/start-with-a-client/).
 
 ### Client reference
 
-[Python client reference guides](../../../terminusx/install/reference/reference-client).
+[Python client reference guides](../../../terminusx/install/reference/reference-client/).
 
 ### Tutorials
 
-More [JavaScript and Python client tutorials](../../../terminusx/install/reference/reference-client).
+More [JavaScript and Python client tutorials](../../../terminusx/install/reference/reference-client/).

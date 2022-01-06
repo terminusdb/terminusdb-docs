@@ -18,19 +18,23 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Table: Installation requirements
 
-| Component                                                            | Version  | Required to:                                                 | <p><img src="../../../img/ico/terminusdb-icon-linux.svg" alt="info"><br>Linux</p> | <p><img src="../../../img/ico/terminusdb-icon-apple.svg" alt="info"><br>macOS</p> | <p><img src="../../../img/ico/terminusdb-icon-windows.svg" alt="info"><br>Windows</p> |
-| -------------------------------------------------------------------- | -------- | ------------------------------------------------------------ | :-------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
-| [Git](https://git-scm.com/downloads)                                 | `Latest` | Clone the TerminusDB bootstrap and run the container script. |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
-| [Git Bash](https://git-scm.com/downloads)                            | `Latest` | Clone the TerminusDB bootstrap and run the container script. |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
-| [Sudo](https://www.sudo.ws/download.html)                            | `Latest` | Access security.                                             |                                         ✔                                         |                                         ✔                                         |                                           ✔                                           |
-| [Docker](https://www.docker.com/products/docker-desktop)             | `Latest` | Use the TerminusDB docker container.                         |                                                                                   |                                         ✔                                         |                                           ✔                                           |
-| [Package manager](https://www.docker.com/products/container-runtime) | `Latest` | Implement docker for Linux systems.                          |                                         ✔                                         |                                                                                   |                                                                                       |
+| Component                                                            | Version  | Required to:                                                 | Linux | <p><img src="../../../img/ico/terminusdb-icon-apple.svg" alt="info"><br>macOS</p> | <p><img src="../../../img/ico/terminusdb-icon-windows.svg" alt="info"><br>Windows</p> |
+| -------------------------------------------------------------------- | -------- | ------------------------------------------------------------ | :---: | :-------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| [Git](https://git-scm.com/downloads)                                 | `Latest` | Clone the TerminusDB bootstrap and run the container script. |   ✔   |                                         ✔                                         |                                           ✔                                           |
+| [Git Bash](https://git-scm.com/downloads)                            | `Latest` | Clone the TerminusDB bootstrap and run the container script. |   ✔   |                                         ✔                                         |                                           ✔                                           |
+| [Sudo](https://www.sudo.ws/download.html)                            | `Latest` | Access security.                                             |   ✔   |                                         ✔                                         |                                           ✔                                           |
+| [Docker](https://www.docker.com/products/docker-desktop)             | `Latest` | Use the TerminusDB docker container.                         |       |                                         ✔                                         |                                           ✔                                           |
+| [Package manager](https://www.docker.com/products/container-runtime) | `Latest` | Implement docker for Linux systems.                          |   ✔   |                                                                                   |                                                                                       |
 
-?>![info](../../../img/ico/terminusdb-icon-windows.svg)**Docker memory allocation on Windows**\
+{% hint style="info" %}
+**Docker memory allocation on Windows**\
 On Windows, the default memory allocated for the Docker is **2GB**. TerminusDB is an in-memory database so it is advised to increase the allocation in Docker desktop settings.
+{% endhint %}
 
-?>![info](../../../img/ico/terminusdb-icon-linux.svg)**Linux package manager**\
+{% hint style="info" %}
+**Linux package manager**\
 On Linux, use your distro's package manager for containerized deployments. Click on the Package manager link in the requirements table above for more information.
+{% endhint %}
 
 ## Install steps
 
@@ -72,7 +76,9 @@ This generates the message: `terminusdb-server container started https://127.0.0
 * Remove previous volumes. Enter `y` to confirm removal when prompted.
 * Rerun the container.
 
-!> **Warning:** Removing previous volumes will erase local data.
+{% hint style="danger" %}
+**Warning:** Removing previous volumes will erase local data.
+{% endhint %}
 
 ```bash
 TERMINUSDB_TAG=dev ./terminusdb-container stop
@@ -214,7 +220,9 @@ TERMINUSDB_DOCKER="podman" ./terminusdb-container [COMMAND]
 
 ## Server deployment
 
-?> The TerminusDB server is deployed to your computer by default.
+{% hint style="info" %}
+The TerminusDB server is deployed to your computer by default.
+{% endhint %}
 
 ### Local computer deployment
 

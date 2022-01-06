@@ -14,17 +14,17 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Table: Installation requirements
 
-| Component                                                | Version  | Required to:                            | <p><img src="../../../img/ico/terminusdb-icon-linux.svg" alt="info"><br>Arch Linux</p> | <p><img src="../../../img/ico/terminusdb-icon-linux.svg" alt="info"><br>Debian or Ubuntu</p> | <p><img src="../../../img/ico/terminusdb-icon-linux.svg" alt="info"><br>Fedora or Red Hat</p> | <p><img src="../../../img/ico/terminusdb-icon-apple.svg" alt="info"><br>macOS<br><br></p> | <p><img src="../../../img/ico/terminusdb-icon-windows.svg" alt="info"><br>Windows<br><br></p> |
-| -------------------------------------------------------- | -------- | --------------------------------------- | :------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------: |
-| [apt](https://pkgs.org/download/apt)                     | `Latest` | Install SWI-Prolog.                     |                                                                                        |                                               ✔                                              |                                                                                               |                                                                                           |                                                                                               |
-| [clang](https://releases.llvm.org)                       | `Latest` | Make the **terminusdb-cli** library.    |                                            ✔                                           |                                               ✔                                              |                                               ✔                                               |                                                                                           |                                                                                               |
-| [git](https://git-scm.com/downloads)                     | `Latest` | Clone TerminusDB from GitHub.           |                                            ✔                                           |                                               ✔                                              |                                               ✔                                               |                                             ✔                                             |                                                                                               |
-| [GitBash](https://git-scm.com/downloads)                 | `Latest` | Recommended shell.                      |                                            ✔                                           |                                               ✔                                              |                                               ✔                                               |                                             ✔                                             |                                               ✔                                               |
-| [Homebrew](https://brew.sh)                              | `Latest` | Install Rust and SWI-Prolog.            |                                                                                        |                                                                                              |                                                                                               |                                             ✔                                             |                                                                                               |
-| [Rust](https://www.rust-lang.org/tools/install)          | `Latest` | Compile terminusdb.                     |                                            ✔                                           |                                               ✔                                              |                                               ✔                                               |                                             ✔                                             |                                               ✔                                               |
-| [sudo](https://www.sudo.ws/download.html)                | `Latest` | Install SWI-Prolog.                     |                                            ✔                                           |                                               ✔                                              |                                               ✔                                               |                                                                                           |                                                                                               |
-| [SWI-Prolog](https://www.swi-prolog.org/download/stable) | `Latest` | Install **terminusdb-store**.           |                                            ✔                                           |                                               ✔                                              |                                               ✔                                               |                                             ✔                                             |                                                                                               |
-| [WSL](https://ubuntu.com/wsl)                            | `Latest` | Install a Windows Sub-system for Linux. |                                                                                        |                                               ✔                                              |                                                                                               |                                                                                           |                                                                                               |
+| Component                                                | Version  | Required to:                            | Arch Linux | Debian or Ubuntu | Fedora or Red Hat | macOS | <p><img src="../../../img/ico/terminusdb-icon-windows.svg" alt="info"><br>Windows<br><br></p> |
+| -------------------------------------------------------- | -------- | --------------------------------------- | :--------: | :--------------: | :---------------: | :---: | :-------------------------------------------------------------------------------------------: |
+| [apt](https://pkgs.org/download/apt)                     | `Latest` | Install SWI-Prolog.                     |            |         ✔        |                   |       |                                                                                               |
+| [clang](https://releases.llvm.org)                       | `Latest` | Make the **terminusdb-cli** library.    |      ✔     |         ✔        |         ✔         |       |                                                                                               |
+| [git](https://git-scm.com/downloads)                     | `Latest` | Clone TerminusDB from GitHub.           |      ✔     |         ✔        |         ✔         |   ✔   |                                                                                               |
+| [GitBash](https://git-scm.com/downloads)                 | `Latest` | Recommended shell.                      |      ✔     |         ✔        |         ✔         |   ✔   |                                               ✔                                               |
+| [Homebrew](https://brew.sh)                              | `Latest` | Install Rust and SWI-Prolog.            |            |                  |                   |   ✔   |                                                                                               |
+| [Rust](https://www.rust-lang.org/tools/install)          | `Latest` | Compile terminusdb.                     |      ✔     |         ✔        |         ✔         |   ✔   |                                               ✔                                               |
+| [sudo](https://www.sudo.ws/download.html)                | `Latest` | Install SWI-Prolog.                     |      ✔     |         ✔        |         ✔         |       |                                                                                               |
+| [SWI-Prolog](https://www.swi-prolog.org/download/stable) | `Latest` | Install **terminusdb-store**.           |      ✔     |         ✔        |         ✔         |   ✔   |                                                                                               |
+| [WSL](https://ubuntu.com/wsl)                            | `Latest` | Install a Windows Sub-system for Linux. |            |         ✔        |                   |       |                                                                                               |
 
 ## Install steps
 
@@ -48,8 +48,7 @@ Follow the install steps below for **Debian or Ubuntu**
 
 ### Install SWI-Prolog
 
-\
-
+\\
 
 ### **Linux**
 
@@ -98,8 +97,7 @@ brew install rust
 
 ### Run SWI-Prolog
 
-\
-
+\\
 
 ### **Linux**
 
@@ -165,8 +163,7 @@ make
 
 ### Run the TerminusDB system database
 
-\
-
+\\
 
 ### **Linux**
 
