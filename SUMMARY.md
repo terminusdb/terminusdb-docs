@@ -1,6 +1,6 @@
 # Table of contents
 
-* [TerminusDB Technical Documentation (gitbook-test)](README.md)
+* [TerminusX and TerminusDB Technical Documentation](README.md)
   * [TerminusX](readme/terminusx/README.md)
     * [Overview](readme/terminusx/overview/README.md)
       * [Introduction to TerminusX](readme/terminusx/overview/introduction.md)
