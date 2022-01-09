@@ -33,6 +33,7 @@
     * [Reference Guides](readme/terminusx-db/reference-guides/README.md)
       * [TerminusDB Command Line Interface (CLI)](readme/terminusx-db/reference-guides/cli.md)
       * [CURL Reference](readme/terminusx-db/reference-guides/curl.md)
+      * [Document Interface](readme/terminusx-db/reference-guides/document-interface.md)
       * [HTTP API Reference](readme/terminusx-db/reference-guides/http-api.md)
       * [Schema Reference](readme/terminusx-db/reference-guides/schema.md)
       * [Terminus Store](readme/terminusx-db/reference-guides/terminus-store.md)
