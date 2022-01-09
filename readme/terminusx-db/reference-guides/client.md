@@ -8,7 +8,7 @@
 
 [Python client reference](client.md#javascript-reference)
 
-## JavaScript client reference
+## JavaScript Client reference
 
 These links open new windows to a site dedicated to JavaScript client references.
 

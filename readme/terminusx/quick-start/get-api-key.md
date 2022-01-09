@@ -8,7 +8,7 @@ An API key is required to use TerminusX. Get this from the user interface using 
 
 **1. Log in**
 
-Log into the user interface dashboard [dashboard.terminusdb.com](https://dashboard.terminusdb.com)
+Log in to the user interface dashboard [dashboard.terminusdb.com](https://dashboard.terminusdb.com)
 
 **2. Select your profile**
 

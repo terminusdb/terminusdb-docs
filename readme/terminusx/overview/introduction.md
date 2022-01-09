@@ -16,7 +16,7 @@ TerminusDB provides a [document API](../../../terminusx/overview/reference/refer
 
 #### Diagram: Some key features of TerminusX
 
-![What is TerminusX](../../../img/diagrams/terminusx-what-is-it.png)
+![](../../../img/diagrams/terminusx-what-is-it.png)
 
 ## Why choose TerminusX?
 

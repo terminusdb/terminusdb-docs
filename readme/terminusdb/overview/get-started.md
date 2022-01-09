@@ -50,7 +50,7 @@ Install as a [Python client](../../../terminusdb/overview/install/install-python
 
 #### Diagram: TerminusDB and TerminusX install options
 
-![TerminusDB installation options](../../../img/diagrams/terminusdb-install-options.png)
+![](../../../img/diagrams/terminusdb-install-options.png)
 
 ## Interfaces overview
 
@@ -64,7 +64,7 @@ The TerminusDB [Command Line Interface](../../../terminusdb/overview/reference/r
 
 ### Dashboard
 
-The TerminusX [dashboard](../../../terminusdb/overview/terminusx/get-started/) providing a visual interaface.
+The TerminusX [dashboard](../../../terminusdb/overview/terminusx/get-started/) provides a visual interface.
 
 ### APIs
 
@@ -76,7 +76,7 @@ The TerminusDB [web object Query Language](../../../terminusdb/overview/explanat
 
 #### Diagram: TerminusDB interfaces
 
-![TerminusDB interfaces](../../../img/diagrams/terminusdb-interfaces.png)
+![](../../../img/diagrams/terminusdb-interfaces.png)
 
 ## See also
 

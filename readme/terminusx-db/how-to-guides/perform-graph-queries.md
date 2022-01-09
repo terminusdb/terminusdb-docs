@@ -1,15 +1,10 @@
-# How to Perform Graph Queries
+# Perform Graph Queries
 
 ## Shortest Path
 
-Shortest path between an object `a` and an object `b` via a
-predicate `p` can achieved with the use of a *path query*.
+Shortest path between an object `a` and an object `b` via a predicate `p` can be achieved with the use of a _path query_.
 
-This example uses the DBPedia database which can be cloned from
-TerminusHub. It gives the shortest path between band members of
-Whitesnake, bands that these members have been in, the members of
-these bands, the bands that these members have been in, etc. until
-finally we arrive at a band which plays Country music (a 6 hop path).
+This example uses the DBPedia database which can be cloned from TerminusHub. It gives the shortest path between band members of Whitesnake, bands that these members have been in, the members of these bands, the bands that these members have been in, etc. until finally, we arrive at a band which plays Country music (a 6 hop path).
 
 In Python:
 
