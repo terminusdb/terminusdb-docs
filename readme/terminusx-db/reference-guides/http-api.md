@@ -238,6 +238,7 @@ POST http://localhost:6363/api/clone/admin/cowid
 JSON payload:
 
 ```jsx
+
 {
    "comment":"information about cows",
    "label" : "cow label"
@@ -270,7 +271,7 @@ The JSON API document is:
 
 The `rebase_from` contains an absolute string descriptor for the reference we are rebasing from. It may be a ref or a branch. Author should be the author of the newly produced commits.
 
-This operation will attempt to construct a new history that has the same contents as that given by "rebase\_from" by repeated application of diverging commits.
+This operation will attempt to construct a new history which has the same contents as that given by "rebase\_from" by repeated application of diverging commits.
 
 ### Example:
 
@@ -479,7 +480,7 @@ This takes a post parameter:
 { "commit_info" : Commit_String }
 ```
 
-This API endpoint allows you to squash a branch to a single commit. If the branch is left unspecified, it defaults to `"local/main"`. The commit created can be attached to an arbitrary branch using \`\`\`reset\`\` (see below).
+This API endpoint allows you to squashes a branch to a single commit. If the branch is left unspecified, it defaults to `"local/main"`. The commit created can be attached to an arbitrary branch using \`\`\`reset\`\` (see below).
 
 It returns a json object of the form
 
@@ -531,7 +532,7 @@ This takes a post parameter:
 { "commit_descriptor" : Ref }
 ```
 
-This API endpoint allows you to set a branch to an arbitrary commit. If the branch is left unspecified, it defaults to `"local/main"`. The commit descriptor has to be a valid one, for example, the return from `squash` above.
+This API endpoint allows you to set a branch to an arbitrary commit. If the branch is left unspecified, it defaults to `"local/main"`. The commit descriptor has to be a valid one, for example the return from `squash` above.
 
 ### Example:
 
@@ -634,7 +635,7 @@ Post argument is a JSON document of the following form
 
 The commit message is a requirement if an update is being made, whereas `query` should be a JSON-LD object.
 
-If `"all_witnesses"` is false, then the end-point will return immediately when a schema violation is encountered with the first witness of failure.
+If `"all_witnesses"` is false, then the end-point will return immediately when an schema violation is encountered with the first witness of failure.
 
 This API call performs a WOQL query and returns an `api:WoqlResponse` result object, which has the form:
 

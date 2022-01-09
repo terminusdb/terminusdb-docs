@@ -36,7 +36,7 @@ Where a schema exists for a TerminusDB database, a transaction will not be compl
 
 ### Partial consistency
 
-When [rebasing](../../../terminusx-db/explanations/to-do/), transactions that complete under certain **read-conditions** can be _replayed_ by reordering their commits. Schema consistency is maintained but not under all conditions.
+When [rebasing](../../../terminusx-db/explanations/to-do/), transactions that completed under certain **read-conditions** can be _replayed_ by reordering their commits. Schema consistency is maintained but not under all conditions.
 
 ## Isolation
 
@@ -44,7 +44,7 @@ The isolation property gives a user the impression of being the sole user of a d
 
 ### Read isolation
 
-TerminusDB uses inherent database [immutability](../../../terminusx-db/explanations/to-do/) to ensure each read query exists at a given [layer](../../../terminusx-db/explanations/to-do/) providing each user with an isolated snapshot of the database.
+TerminusDB uses inherent database [immutability](../../../terminusx-db/explanations/to-do/) to ensure each read query exists at a given [layer](../../../terminusx-db/explanations/to-do/) providing each user an isolated snapshot of the database.
 
 ### Write isolation
 

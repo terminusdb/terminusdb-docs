@@ -447,7 +447,7 @@ Given the [simple document definition](schema.md#code-a-simple-document-defintio
 }
 ```
 
-#### Code: A simple document definition
+#### Code: A simple document defintion
 
 ```json
 { 
@@ -739,7 +739,7 @@ An example of the abstract keyword in a schema, and a concrete instance of the `
 
 This inheritance tree is also available as a `subsumption` relation in the WOQL query language, and provides semantics for **frames** in the **schema API**.
 
-The range of `@inherits` can be a class or a list of classes. For example:
+The range of `@inherits` may be a class or a list of classes. For example:
 
 ```json
 { 
@@ -766,13 +766,13 @@ Or
 }
 ```
 
-#### Multiple inheritance
+#### Multiple inheritence
 
 Multiple inheritance is allowed as long as all inherited properties of the same name have the same range class. If range classes conflict, the schema check fails.
 
 An example of inheritance of properties and an object meeting this specification:
 
-#### Code: An example of inheritance
+#### Code: An example of inheritence
 
 ```json
 { 
@@ -827,7 +827,7 @@ Or
 
 A range class is a concrete base type defined as any of the xsd types (see XSD), or a class defined in the current schema, including the current class.
 
-In the example range class below, `first_name` and `last_name` are strings, `year_of_birth` is a year, and `friend` is any number of `Person` objects, in no particular order and without duplication. Also, see below [an example of a concrete set of documents](../../../terminusx-db/reference-guides/code-an-example-of-a-concrete-set-of-documents/) with this form.
+In the example range class below, `first_name` and `last_name` are strings, `year_of_birth` is a year, and `friend` is any number of `Person` objects, in no particular order and without duplication. Also see below [an example of a concrete set of documents](../../../terminusx-db/reference-guides/code-an-example-of-a-concrete-set-of-documents/) with this form.
 
 #### Code: An example range class
 

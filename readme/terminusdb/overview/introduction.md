@@ -16,7 +16,7 @@ TerminusDB is a powerful, in-memory graph database enabling you to maximize your
 
 #### Diagram: Some key features of TerminusDB
 
-![](../../../img/diagrams/terminusdb-what-is-it.png)
+![What is TerminusDB](../../../img/diagrams/terminusdb-what-is-it.png)
 
 ## Why choose TerminusDB?
 
@@ -56,7 +56,7 @@ TerminusDB is highly configurable with powerful features for rapidly and collabo
 
 #### Diagram: Reasons to choose TerminusDB
 
-![](../../../img/diagrams/terminusdb-why-choose.png)
+![Why choose TerminusDB](../../../img/diagrams/terminusdb-why-choose.png)
 
 ## The TerminusDB Git-like model
 
@@ -64,11 +64,11 @@ TerminusDB has many Git-like features including revision-control and distributed
 
 ### Delta-encoding
 
-TerminusDB implements an advanced Git-like model, using [delta encoding](../../../terminusdb/overview/resources/glossary/) to store append or delta-only changes to graphs. These deltas are stored in succinct [terminusdb-store](https://github.com/terminusdb/terminusdb-store) data structures. The delta encoding approach enables branch, merge, push, pull, clone, time-travel, and other Git-like operations.
+TerminusDB implements an advanced Git-like model, using [delta encoding](../../../terminusdb/overview/resources/glossary) to store append or delta-only changes to graphs. These deltas are stored in succinct [terminusdb-store](https://github.com/terminusdb/terminusdb-store) data structures. The delta encoding approach enables branch, merge, push, pull, clone, time-travel, and other Git-like operations.
 
 #### Diagram: TerminusDB Git-like operations
 
-![](../../../img/diagrams/terminusdb-git-model.png)
+![TerminusDB Git-like operations](../../../img/diagrams/terminusdb-git-model.png)
 
 ## See also
 
@@ -78,7 +78,7 @@ Read our [white paper](https://github.com/terminusdb/terminusdb-whitepaper/blob/
 
 ### Get started
 
-[Get Started](../../../terminusdb/overview/overviews/get-started/) with an overview of the available [Installation Options](../../../terminusdb/overview/overviews/get-started/#installation-overview) and an overview of the [TerminusDB Interfaces](../../../terminusdb/overview/overviews/get-started/#interfaces-overview) and their interconnections.
+[Get Started](../../../terminusdb/overview/overviews/get-started/) with an overview of the available [Installation Options](../../../terminusdb/overview/overviews/get-started/#installation-overview) and an overview of the [TerminusDB Interafces](../../../terminusdb/overview/overviews/get-started/#interfaces-overview) and their interconnections.
 
 ### TerminusX
 

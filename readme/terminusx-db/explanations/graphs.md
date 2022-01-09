@@ -53,7 +53,7 @@ A repository is addressed by specifying its organization and name. For example, 
 
 The identifier `local` is used for specifying local repositories, for example, `admin/foo/local`.
 
-A local repository in the repository instance data has **layer identifiers** that point to associated commit graphs.
+A local repository in the repository instance data has **layer identifiers** which point to associated commit graphs.
 
 ### Remote repositories
 
