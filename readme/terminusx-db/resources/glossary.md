@@ -2,9 +2,13 @@
 
 > **On this page:** A definition of frequently occuring terms and acronyms in this documentation site.
 
-?> **Context:** Unless otherwise stated, the context for all glossary definitions is computer, data, or information science.
+{% hint style="info" %}
+**Context:** Unless otherwise stated, the context for all glossary definitions is computer, data, or information science.
+{% endhint %}
 
-?> **Source:** Unless otherwise stated, the source of all defintions is [Wikipedia](https://en.wikipedia.org/wiki/Main\_Page)
+{% hint style="info" %}
+**Source:** Unless otherwise stated, the source of all defintions is [Wikipedia](https://en.wikipedia.org/wiki/Main\_Page)
+{% endhint %}
 
 ## Graph concepts
 
@@ -135,7 +139,7 @@ The organization of data as a blueprint of how the database is constructed.
 
 ### WOQL
 
-WOQL (**web object Query Language**) is TerminusDB's query language for querying complex data patterns and structures. WOQL is based on three fundamental concepts: WOQL [triples](glossary.md#triples), WOQL **variables** and WOQL **operators**. WOQL is also provides [PCRE](glossary.md#pcre).
+WOQL (**web object Query Language**) is TerminusDB's query language for querying complex data patterns and structures. WOQL is based on three fundamental concepts: WOQL [triples](glossary.md#triples), WOQL **variables** and WOQL **operators**. WOQL also provides [PCRE](glossary.md#pcre).
 
 [Read more](../../../terminusx-db/resources/data-modeling/data-modeling-woql-queries/)
 
@@ -143,7 +147,7 @@ WOQL (**web object Query Language**) is TerminusDB's query language for querying
 
 ### Immutable
 
-In programming, the state of an immutable object is unchangeable, i.e., its state cannot be modified after it is created. In TerminusDB, **immutable data** means an instance of data that cannot be changed after it is created. Newer instances or versions of that data can be created, but the preceeding version is immutable.
+In programming, the state of an immutable object is unchangeable, i.e., its state cannot be modified after it is created. In TerminusDB, **immutable data** means an instance of data that cannot be changed after it is created. Newer instances or versions of that data can be created, but the tat version is immutable.
 
 [Read more](https://en.wikipedia.org/wiki/Immutable\_object)
 
@@ -155,13 +159,13 @@ In contrast to an [immutable](glossary.md#immutable) object, a mutable object is
 
 ### PCRE
 
-**Perl Compatible Regular Expressions** (PCRE) is a library which implements a regular expression engine, inspired by the capabilities of the Perl programming language. PCRE's syntax is more powerful and flexible than many other regular-expression libraries.
+**Perl Compatible Regular Expressions** (PCRE) is a library that implements a regular expression engine, inspired by the capabilities of the Perl programming language. PCRE's syntax is more powerful and flexible than many other regular-expression libraries.
 
 [Read more](https://en.wikipedia.org/wiki/Perl\_Compatible\_Regular\_Expressions)
 
 ### IRI
 
-The **Internationalized Resource Identifier** (IRI) is an internet protocol standard which builds on the Uniform Resource Identifier (URI) protocol by greatly expanding the set of permitted characters. IRIs extend URIs by using the Universal Character Set, where URIs were limited to ASCII, with far fewer characters. IRIs may be represented by a sequence of octets but by definition are defined as a sequence of characters, because IRIs may be spoken or written by hand.
+The **Internationalized Resource Identifier** (IRI) is an internet protocol standard that builds on the Uniform Resource Identifier (URI) protocol by greatly expanding the set of permitted characters. IRIs extend URIs by using the Universal Character Set, where URIs were limited to ASCII, with far fewer characters. IRIs may be represented by a sequence of octets but by definition are defined as a sequence of characters, because IRIs may be spoken or written by hand.
 
 [Read more](https://en.wikipedia.org/wiki/Internationalized\_Resource\_Identifier)
 
