@@ -10,7 +10,7 @@
 
 ## What is TerminusX?
 
-TerminusX is a cloud self-service data platform built on [TerminusDB](../../../terminusx/overview/overviews/introduction/). Use it to collaborate with colleagues to quickly build a vibrant ecosystem of domain data products. TerminusX is in **public beta** and you can [signup now](https://dashboard.terminusdb.com).
+TerminusX is a cloud self-service data platform built on [TerminusDB](../../terminusdb/overview/introduction.md). Use it to collaborate with colleagues to quickly build a vibrant ecosystem of domain data products. TerminusX is in **public beta** and you can [signup now](https://dashboard.terminusdb.com).
 
 TerminusDB provides a [document API](../../../terminusx/overview/reference/reference-document-interface/) for building via the JSON exchange format. The convenience of documents with the power of a knowledge graph.
 
@@ -36,11 +36,11 @@ Empower domain teams to deliver results and products rapidly through collaborati
 
 ### Reduced data discovery time
 
-Unprecedented data transparency enabling you to rapidly discover the value of your data. You have complete visibility and audit of data changes across your entire data ecosystem.
+Unprecedented data transparency enables you to rapidly discover the value of your data. You have complete visibility and audit of data changes across your entire data ecosystem.
 
 ### Greater data quality and innovation
 
-A robust, quality data foundation providing better predictions, insights, and answers, while enabling you to safely experiment with data and schema.
+A robust, quality data foundation provides better predictions, insights, and answers, while enabling you to safely experiment with data and schema.
 
 ### Increased data stability
 
@@ -58,8 +58,8 @@ Read our [white paper](https://landing.terminusdb.com/terminusx-whitepaper).
 
 ### Get started
 
-[Get started](../../../terminusx/overview/terminusx/get-started/) now and be up and running in minutes.
+[Get started](introduction.md#get-started) now and be up and running in minutes.
 
 ### TerminusDB
 
-Find out more about [TerminusDB](../../../terminusx/overview/overviews/introduction/).
+Find out more about [TerminusDB](../../terminusdb/overview/introduction.md).
