@@ -56,12 +56,12 @@ Download the minified script from `https://unpkg.com/browse/@terminusdb/terminus
 
 ### Start with a Client API
 
-An example use of the JavaScript client in [Start with a Client API](../../../terminusx/install/terminusx/start-with-a-client/).
+An example use of the JavaScript client in [Start with a Client API](../quick-start/start-with-client.md).
 
 ### Client reference
 
-[JavaScript client reference guides](../../../terminusx/install/reference/reference-client/).
+[JavaScript Client reference guides](../../terminusx-db/reference-guides/client.md).
 
 ### Tutorials
 
-More [JavaScript and Python client tutorials](../../../terminusx/install/reference/reference-client/).
+More [JavaScript and Python Client tutorials](../../terminusx-db/tutorials/javascript-and-python-tutorials.md).

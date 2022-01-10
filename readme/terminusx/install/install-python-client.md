@@ -93,12 +93,12 @@ python -m pip install git+https://github.com/terminusdb/terminusdb-client-python
 
 ### Start with a Client API
 
-An example use of the Python client in [Start with a Client API](../../../terminusx/install/terminusx/start-with-a-client/).
+An example use of the Python client in [Start with a Client API](../quick-start/start-with-client.md).
 
 ### Client reference
 
-[Python client reference guides](../../../terminusx/install/reference/reference-client/).
+[Python Client reference guides](../../terminusx-db/reference-guides/client.md).
 
 ### Tutorials
 
-More [JavaScript and Python client tutorials](../../../terminusx/install/reference/reference-client/).
+More [JavaScript and Python Client tutorials](../../terminusx-db/tutorials/javascript-and-python-tutorials.md).

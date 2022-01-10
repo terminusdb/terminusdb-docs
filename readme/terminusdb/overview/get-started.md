@@ -38,19 +38,19 @@ Install from the [source code](../../../terminusdb/overview/install/install-from
 
 ### Docker container
 
-Install as a [Docker container](../../../terminusdb/overview/install/install-as-docker-container/) also referred to as the **TerminusDB bootstrap**.
+Install as a [Docker container](../install/install-as-docker-container.md) also referred to as the **TerminusDB bootstrap**.
 
 ### Javascript client
 
-Install as a [Node.js](https://nodejs.org/en/download/)-based [JavaScript client](../../../terminusdb/overview/install/install-javascript-client/).
+Install as a [Node.js](https://nodejs.org/en/download/)-based [JavaScript Client](../../terminusx/install/install-javascript-client.md).
 
 ### Python client
 
-Install as a [Python client](../../../terminusdb/overview/install/install-python-client/). Also requires a [Docker container](../../../terminusdb/overview/install/install-as-docker-container/) installation.
+Install as a [Python Client](../../terminusx/install/install-python-client.md). Also requires a [Docker container](../install/install-as-docker-container.md) installation.
 
 #### Diagram: TerminusDB and TerminusX install options
 
-![TerminusDB installation options](../../../img/diagrams/terminusdb-install-options.png)
+![](../../../img/diagrams/terminusdb-install-options.png)
 
 ## Interfaces overview
 
@@ -60,34 +60,34 @@ Use one or a combination of several TerminusDB interfaces.
 
 ### Command Line Interface
 
-The TerminusDB [Command Line Interface](../../../terminusdb/overview/reference/reference-cli/) (CLI.)
+The TerminusDB [Command Line Interface](../../terminusx-db/reference-guides/cli.md) (CLI.)
 
 ### Dashboard
 
-The TerminusX [dashboard](../../../terminusdb/overview/terminusx/get-started/) providing a visual interaface.
+The TerminusX [dashboard](../../terminusx/quick-start/get-api-key.md#generate-your-api-key) provides a visual interface.
 
 ### APIs
 
-The TerminusDB [Javascript client](../../../terminusdb/overview/install/install-javascript-client/) and [Python client](../../../terminusdb/overview/install/install-python-client/) APIs.
+The TerminusDB [Javascript and Python Client](../../terminusx/quick-start/start-with-client.md) APIs.
 
 ### Query
 
-The TerminusDB [web object Query Language](../../../terminusdb/overview/explanation/explanation-woql/) (WOQL.)
+The TerminusDB [Web Object Query Language](../../terminusx-db/explanations/woql.md) (WOQL.)
 
 #### Diagram: TerminusDB interfaces
 
-![TerminusDB interfaces](../../../img/diagrams/terminusdb-interfaces.png)
+![](../../../img/diagrams/terminusdb-interfaces.png)
 
 ## See also
 
 ### An introduction to TerminusDB
 
-New to TerminusDB? Find out more in an [Introduction to TerminusDB](../../../terminusdb/overview/overviews/introduction/).
+New to TerminusDB? Find out more in an [Introduction to TerminusDB](introduction.md).
 
 ### An introduction to TerminusX
 
-New to TerminusX? Find out more in an [Introduction to TerminusX](../../../terminusdb/overview/terminusx/introduction/).
+New to TerminusX? Find out more in an [Introduction to TerminusX](../../terminusx/overview/introduction.md).
 
 ### Documents
 
-[Documents](../../../terminusdb/overview/explanation/explanation-documents/) in a knowledge graph and how to use them.
+[Documents](../../terminusx-db/explanations/documents.md) in a knowledge graph and how to use them.

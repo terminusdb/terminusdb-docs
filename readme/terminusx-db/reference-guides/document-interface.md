@@ -175,4 +175,4 @@ POST /api/schema/<resource path>
 
 #### Documents
 
-Documents in a knowledge graph and how to use them.
+[Documents](../explanations/documents.md) in a knowledge graph and how to use them.

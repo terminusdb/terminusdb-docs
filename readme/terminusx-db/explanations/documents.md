@@ -294,8 +294,8 @@ With a bit of practice, designing your knowledge graphs in TerminusDB will becom
 
 ### TerminusDB document interface
 
-The TerminusDB [Document Interface Reference](../../../terminusx-db/explanations/reference/reference-document-interface/) guide.
+The TerminusDB [Document Interface Reference](../reference-guides/document-interface.md) guide.
 
 ### TerminusDB schema reference
 
-The TerminusDB [Schema Reference](../../../terminusx-db/explanations/reference/reference-schema.md) guide.
+The TerminusDB [Schema Reference](../reference-guides/schema.md) guide.

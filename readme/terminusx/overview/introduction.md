@@ -12,11 +12,11 @@
 
 TerminusX is a cloud self-service data platform built on [TerminusDB](../../terminusdb/overview/introduction.md). Use it to collaborate with colleagues to quickly build a vibrant ecosystem of domain data products. TerminusX is in **public beta** and you can [signup now](https://dashboard.terminusdb.com).
 
-TerminusDB provides a [document API](../../../terminusx/overview/reference/reference-document-interface/) for building via the JSON exchange format. The convenience of documents with the power of a knowledge graph.
+TerminusDB provides a [document API](../../terminusx-db/reference-guides/document-interface.md#document-interface-reference) for building via the JSON exchange format. The convenience of documents with the power of a knowledge graph.
 
 #### Diagram: Some key features of TerminusX
 
-![What is TerminusX](../../../img/diagrams/terminusx-what-is-it.png)
+![](../../../img/diagrams/terminusx-what-is-it.png)
 
 ## Why choose TerminusX?
 
@@ -58,7 +58,7 @@ Read our [white paper](https://landing.terminusdb.com/terminusx-whitepaper).
 
 ### Get started
 
-[Get started](introduction.md#get-started) now and be up and running in minutes.
+[Get started](../../terminusdb/overview/get-started.md) now and be up and running in minutes.
 
 ### TerminusDB
 

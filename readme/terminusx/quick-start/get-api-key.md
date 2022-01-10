@@ -8,7 +8,7 @@ An API key is required to use TerminusX. Get this from the user interface using 
 
 **1. Log in**
 
-Log into the user interface dashboard [dashboard.terminusdb.com](https://dashboard.terminusdb.com)
+Log in to the user interface dashboard [dashboard.terminusdb.com](https://dashboard.terminusdb.com)
 
 **2. Select your profile**
 
@@ -38,4 +38,4 @@ You are now ready to use your client!
 
 ### Detailed install
 
-Links to [detailed installation](../../../terminusx/quick-start/terminusx/install/) instructions for JavaScript and Python clients.
+Links to [detailed installation](../install/) instructions for JavaScript and Python clients.

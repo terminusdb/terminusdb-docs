@@ -116,7 +116,7 @@ git clone https://github.com/terminusdb/terminusdb
 
 ### Make the TerminusDB Command Line Interface
 
-`make` the `terminusdb` [Command Line Interface (CLI)](../../../terminusdb/install/reference/reference-cli/) binary.
+`make` the `terminusdb` [Command Line Interface (CLI)](../../terminusx-db/reference-guides/cli.md) binary.
 
 {% tabs %}
 {% tab title="Linux" %}
@@ -165,12 +165,12 @@ make
 
 ### The TerminusDB Command Line Interface
 
-[The TerminusDB Command Line Interface](../../../terminusdb/install/reference/reference-cli/)
+[The TerminusDB Command Line Interface](install-from-source-code.md#install-a-javascript-client)
 
 ### Install a JavaScript Client
 
-[Install a JavaScript Client](../../../terminusdb/install/install/install-javascript-client/)
+[Install a JavaScript Client](../../terminusx/install/install-javascript-client.md)
 
 ### Install a Python Client
 
-[Install a Python Client](../../../terminusdb/install/install/install-python-client/)
+[Install a Python Client](../../terminusx/install/install-python-client.md)

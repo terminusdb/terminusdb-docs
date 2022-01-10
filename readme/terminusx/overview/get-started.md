@@ -6,18 +6,18 @@ The TerminusX Documentation interface enables you to interact with TerminusX usi
 
 ## Steps to get started
 
-[Get your API key](../../../terminusx/overview/terminusx/get-your-api-key/) to use TerminusX.
+[Get your API key](../quick-start/get-api-key.md) to use TerminusX.
 
-[Get started with a client API](../../../terminusx/overview/terminusx/start-with-a-client/) to use the document interface with a JavaScript or Python client.
+[Get started with a client API](../quick-start/start-with-client.md) to use the document interface with a JavaScript or Python client.
 
 ## Reference guides
 
-[Schema](../../../terminusx/overview/reference/reference-schema/) for document specification using JSON-based syntax.
+[Schema](../../terminusx-db/reference-guides/schema.md) for document specification using JSON-based syntax.
 
-[CURL](../../../terminusx/overview/reference/reference-curl/) to build your own client or use the document interface from CURL.
+[CURL](../../terminusx-db/reference-guides/curl.md) to build your own client or use the document interface from CURL.
 
-[Document API](../../../terminusx/overview/reference/reference-document-interface/) a detailed document interface API reference.
+[Document API](../../terminusx-db/reference-guides/document-interface.md) a detailed document interface API reference.
 
 ## Explanations
 
-[Documents](../../../terminusx/overview/explanation/explanation-documents/) in a knowledge graph and how to use them.
+[Documents](../../terminusx-db/explanations/documents.md) in a knowledge graph and how to use them.

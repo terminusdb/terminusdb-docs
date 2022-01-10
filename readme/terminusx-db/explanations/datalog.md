@@ -38,7 +38,7 @@ When we search using datalog in WOQL, we implicitly ask for _all_ solutions (thi
 
 Perhaps the most important predicate in WOQL is `triple` which gives results about edges in the current graph.
 
-Our logical variables are represented as strings with the prefix `"v:"`. Our edges are represented by having a position for the _subject_, _predicate_ and _object_ of the edge in the graph. The _predicate_ being the labeled name of the edge, and the _subject_ and _object_ nodes the source, and target respectively.
+Our logical variables are represented as strings with the prefix `"v:"`. Our edges are represented by having a position for the _subject_, _predicate_ and _object_ of the edge in the graph. The _predicate_ is the labeled name of the edge, and the _subject_ and _object_ nodes the source, and target respectively.
 
 ```javascript
 triple("v:Subject", "v:Predicate", "v:Object")
@@ -64,4 +64,4 @@ And here we refer to a specific starting node and search for every two-hop path 
 
 ### Documents
 
-[Documents](../../../terminusx-db/explanations/explanation/explanation-documents/) in a knowledge graph and how to use them.
+[Documents](documents.md) in a knowledge graph and how to use them.

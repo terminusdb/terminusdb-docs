@@ -4,8 +4,10 @@
 
 This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](https://terminusdb.github.io/terminusdb-client-js/) or [TerminusDB Python Client](https://terminusdb.github.io/terminusdb-client-python/) for detailed documentation. The code discussed on this page is also available in full:
 
-* JavaScript: [getting-started.js](../../../terminusx/quick-start/code-examples/start-with-client/getting-started.js)
+* JavaScript: [getting-started.js](https://github.com/terminusdb/terminusdb-docs/blob/3df3c593b4f3d648732fea4e7e5ed3ce9348681f/code-examples/start-with-client/getting-started.js)
 * Python: [getting-started.py](../../../terminusx/quick-start/code-examples/start-with-client/getting-started.js)
+
+JavaScript:&#x20;
 
 ## Install WOQLClient
 
@@ -55,7 +57,7 @@ python3 -m pip install terminusdb-client
 
 A `WOQLClient` object enables connection to TerminusX (or TerminusDB.) To create a client object:
 
-* [Get your API key](../../../terminusx/quick-start/terminusx/get-your-api-key/)
+* [Get your API key](get-api-key.md)
 * Copy the JavaScript code snippet generated in the step above.
 * Provide the URL to a database server.
 
@@ -483,8 +485,8 @@ print(results['bindings'])
 
 ### Client reference
 
-[JavaScript and Python client reference guides](../../../terminusx/quick-start/reference/reference-client/).
+[JavaScript and Python client reference guides](../../terminusx-db/reference-guides/client.md).
 
 ### Tutorials
 
-More [JavaScript and Python client tutorials](../../../terminusx/quick-start/reference/reference-client/).
+More [JavaScript and Python client tutorials](../../terminusx-db/tutorials/javascript-and-python-tutorials.md).
