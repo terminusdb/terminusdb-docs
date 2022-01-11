@@ -169,13 +169,13 @@ client.create_database("example_db")
 
 ### Use the document interface
 
-To use the TerminusX document interface, [create a schema](start-with-client.md#create-a-schema) and [add documents](start-with-client.md#add-documents) to the schema. Refer to [Documents](../../../terminusx/Explanation/DOCUMENTS.md) for an overview of the document interface. After creating or connecting to a database, create a schema to add and retrieve data. A simple player roster is used as an example. Using basic [Player roster](start-with-client.md#data-player-roster) data, the steps below are demonstrated.
+To use the TerminusX document interface, [create a schema](start-with-client.md#code-define-a-schema) and [add documents](start-with-client.md#code-add-documents) to the schema. Refer to [Documents](../../terminusx-db/explanations/documents.md) for an overview of the document interface. After creating or connecting to a database, create a schema to add and retrieve data. A simple player roster is used as an example. Using basic [Player roster](start-with-client.md#data-player-roster) data, the steps below are demonstrated.
 
-* [Define a schema](start-with-client.md#code-define-a-schema)
-* [Add a schema](start-with-client.md#code-add-a-schema)
-* [Add documents](start-with-client.md#code-Add-documents)
-* [Get documents](start-with-client.md#code-get-documents)
-* [Query documents](start-with-client.md#code-query-documents)
+* [Create a schema](start-with-client.md#code-define-a-schema)
+* Add a schema
+* Add documents
+* Get documents
+* Query documents
 
 #### Data: Player roster
 
@@ -187,9 +187,9 @@ Doug   | Full Back
 Karen  | Center Forward
 ```
 
-#### Code: Define a schema
+#### Code: Create a schema
 
-Define a schema object with properties `name` and `position`. The object is uniquely identified by `name`.
+Create a schema object with properties `name` and `position`. The object is uniquely identified by `name`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
