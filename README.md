@@ -14,10 +14,18 @@ Find the guides, samples, and references you need to use the database, visualize
 [quick-start](readme/terminusx/quick-start/)
 {% endcontent-ref %}
 
-{% content-ref url="readme/terminusx/install/install-javascript-client.md" %}
-[install-javascript-client.md](readme/terminusx/install/install-javascript-client.md)
+{% content-ref url="readme/terminusx-db/tutorials/" %}
+[tutorials](readme/terminusx-db/tutorials/)
 {% endcontent-ref %}
 
-{% content-ref url="readme/terminusx/install/install-python-client.md" %}
-[install-python-client.md](readme/terminusx/install/install-python-client.md)
+{% content-ref url="readme/terminusx-db/how-to-guides/" %}
+[how-to-guides](readme/terminusx-db/how-to-guides/)
+{% endcontent-ref %}
+
+{% content-ref url="readme/terminusx-db/reference-guides/" %}
+[reference-guides](readme/terminusx-db/reference-guides/)
+{% endcontent-ref %}
+
+{% content-ref url="readme/terminusx-db/explanations/" %}
+[explanations](readme/terminusx-db/explanations/)
 {% endcontent-ref %}
