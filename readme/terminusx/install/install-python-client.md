@@ -31,7 +31,7 @@ Install and use the TerminusDB Python client with the following steps.
 
 ### Install the TerminusDB bootstrap
 
-Follow the [TerminusDB bootstrap](../../../terminusx/install/install/install-as-docker-container/) instructions to install the TerminusDB server `terminusdb-server` as a Docker container.
+Install the TerminusDB server `terminusdb-server` as a [Docker container](../../terminusdb/install/install-as-docker-container.md).
 
 ### Install the latest Python components
 
