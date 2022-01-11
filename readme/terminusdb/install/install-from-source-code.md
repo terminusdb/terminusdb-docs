@@ -165,7 +165,7 @@ make
 
 ### The TerminusDB Command Line Interface
 
-[The TerminusDB Command Line Interface](install-from-source-code.md#install-a-javascript-client)
+[The TerminusDB Command Line Interface](../../terminusx-db/reference-guides/cli.md)
 
 ### Install a JavaScript Client
 

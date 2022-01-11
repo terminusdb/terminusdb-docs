@@ -1,8 +1,8 @@
-# How to Use Regular Expressions
+# Use Regular Expressions
 
 > **On this page:** A how-to guide to using regular expressions with WOQL and **JavaScript**.
 
-WOQL provides **Pearl Compatible Regular Expressions** ([PCRE](../../../terminusx-db/how-to-guides/resources/glossary)) using the predicate `regexp` with the structure:
+WOQL provides **Pearl Compatible Regular Expressions** ([PCRE](../resources/glossary.md#pcre)) using the predicate `regexp` with the structure:
 
 ```regex
 regexp(pattern, string, match_list)

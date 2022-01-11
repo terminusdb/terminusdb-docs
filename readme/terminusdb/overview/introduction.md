@@ -32,7 +32,7 @@ Maximize your productivity and start realizing the value of your data by having 
 
 ### Feature-rich and Git-like
 
-Numerous unique features and [Git-like](introduction.md#the-terminusDB-git-like-model) operations including clone, branch, merge, control and time-travel. TerminusDB databases are immutable, fully preserving data lineage and change history with built-in revision control, similar to distributed version control systems.
+Numerous unique features and [Git-like](introduction.md#the-terminusdb-git-like-model) operations including clone, branch, merge, control and time-travel. TerminusDB databases are immutable, fully preserving data lineage and change history with built-in revision control, similar to distributed version control systems.
 
 ### Advanced query language
 

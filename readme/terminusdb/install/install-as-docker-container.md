@@ -236,7 +236,7 @@ To deploy the TerminusDB server to a remote machine:
 * [Enable HTTPS](install-as-docker-container.md#enable-https).
 * [Specify a valid SSL certificate](install-as-docker-container.md#specify-a-valid-ssl-certificate).
 * [Enable automatic login](install-as-docker-container.md#enable-automatic-login).
-* [Run the container](install-as-docker-container.md#run-the-container)
+* [Run the container](install-as-docker-container.md#run-the-container-1)
 
 #### Enable HTTPS
 

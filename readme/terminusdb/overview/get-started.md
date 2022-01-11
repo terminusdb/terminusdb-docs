@@ -4,7 +4,7 @@
 
 ## Key topics
 
-[Starting overview](get-started.md#overview)
+[Starting overview](get-started.md#starting-overview)
 
 [Installation overview](get-started.md#installation-overview)
 

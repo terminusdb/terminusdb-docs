@@ -112,7 +112,7 @@ The `@schema` keyword specifies the default URI expansion to use for all element
 
 ### @base
 
-`@base` specifies the default URI expansion used for all elements of instance data. In the previous [schema definition](../../../terminusx-db/reference-guides/code-context-keywords-@schema/), and given the [document in the instance graph](schema.md) example below, the id `NamedQuery_my_query` expands to `terminusdb://woql/data/NamedQuery_my_query`.
+`@base` specifies the default URI expansion used for all elements of instance data. In the previous [schema definition](schema.md#code-context-keyword-schema), and given the [document in the instance graph](schema.md#code-a-document-in-the-instance-graph) example below, the id `NamedQuery_my_query` expands to `terminusdb://woql/data/NamedQuery_my_query`.
 
 #### Code: A document in the instance graph
 
@@ -418,7 +418,7 @@ If the key `@base` is specified in the class, then this is pre-pended to the key
 
 A `Lexical` key specifies a URI name formed from a URI encoded combination of all `@fields` arguments provided, in the order provided. An example is shown below. With this key type (or key strategy) a URI is formed from the combination of `first_name` and `last_name`. If `@base` is specified in the class, this is prepended.
 
-Given the [simple document definition](schema.md#code-a-simple-document-defintion) below, this will either generate (if `@id` is not supplied) or check that the URI `http://example.com/people/Person_Hasdrupal_Barca` is the `@id` element.
+Given the [simple document definition](schema.md#code-a-simple-document-definition) below, this will either generate (if `@id` is not supplied) or check that the URI `http://example.com/people/Person_Hasdrupal_Barca` is the `@id` element.
 
 #### Code: An example Lexical key
 
@@ -447,7 +447,7 @@ Given the [simple document definition](schema.md#code-a-simple-document-defintio
 }
 ```
 
-#### Code: A simple document defintion
+#### Code: A simple document definition
 
 ```json
 { 
@@ -468,9 +468,9 @@ Use this where there:
 * Is no need for the URI to inform the user of the content of the object.
 * Is a requirement that data about the object is not be revealed by the key.
 
-Define a `Hash` in the same way as the [Lexical key strategy](schema.md#code-Lexical-key-strategy) example in the previous section, replacing the `@key` `@type` value from `Lexical` to `Hash`.
+Define a `Hash` in the same way as the [Lexical key strategy](schema.md#code-an-example-lexical-key) example in the previous section, replacing the `@key` `@type` value from `Lexical` to `Hash`.
 
-Given the [simple document definition](schema.md#code-a-simple-document-defintion) in the previous section, the `@id` `Person_5dd7004081e437b3e684075fa3132542f5cd06c1` is generated.
+Given the [simple document definition](schema.md#code-a-simple-document-definition) in the previous section, the `@id` `Person_5dd7004081e437b3e684075fa3132542f5cd06c1` is generated.
 
 #### ValueHash
 
@@ -539,7 +539,7 @@ Use `Random` as a convenient key type when an object has no important characteri
 
 ### @documentation
 
-Use `@documentation` to add documentation to the class and the property fields or values of the class. The keywords of the `@documentation` object are `@comment` and either `@properties` or `@values` for standard classes or `Enums` respectively. See the [Random key](schema.md#code-an-example-random-key) example above, for examples of these keywords.
+Use `@documentation` to add documentation to the class and the property fields or values of the class. The keywords of the `@documentation` object are `@comment` and either `@properties` or `@values` for standard classes or `Enums` respectively. See the [Random key](schema.md#code-an-example-of-a-random-key) example above, for examples of these keywords.
 
 For `Enum` we can write as follows:
 
@@ -737,9 +737,9 @@ An example of the abstract keyword in a schema, and a concrete instance of the `
 
 `@inherits` enables classes to inherit properties (and the `@subdocument` designation) from parent classes. It does **not** inherit key strategies.
 
-This inheritance tree is also available as a `subsumption` relation in the WOQL query language, and provides semantics for **frames** in the **schema API**.
+This inheritance tree is also available as a `subsumption` relation in the WOQL query language and provides semantics for **frames** in the **schema API**.
 
-The range of `@inherits` may be a class or a list of classes. For example:
+The range of `@inherits` can be a class or a list of classes. For example:
 
 ```json
 { 
@@ -766,13 +766,13 @@ Or
 }
 ```
 
-#### Multiple inheritence
+#### Multiple inheritance
 
 Multiple inheritance is allowed as long as all inherited properties of the same name have the same range class. If range classes conflict, the schema check fails.
 
 An example of inheritance of properties and an object meeting this specification:
 
-#### Code: An example of inheritence
+#### Code: An example of inheritance
 
 ```json
 { 
@@ -827,7 +827,7 @@ Or
 
 A range class is a concrete base type defined as any of the xsd types (see XSD), or a class defined in the current schema, including the current class.
 
-In the example range class below, `first_name` and `last_name` are strings, `year_of_birth` is a year, and `friend` is any number of `Person` objects, in no particular order and without duplication. Also see below [an example of a concrete set of documents](../../../terminusx-db/reference-guides/code-an-example-of-a-concrete-set-of-documents/) with this form.
+In the example range class below, `first_name` and `last_name` are strings, `year_of_birth` is a year, and `friend` is any number of `Person` objects, in no particular order and without duplication. Also, see below [an example of a concrete set of documents](schema.md#code-an-example-of-a-concrete-set-of-documents) with this form.
 
 #### Code: An example range class
 
