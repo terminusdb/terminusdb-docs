@@ -4,9 +4,9 @@
 
 ## Key topics
 
-[Graph hierarchy](graphs.md#repository-graph)
+[Graph hierarchy](graphs.md#graph-hierarchy)
 
-[Repository graphs](graphs.md#repository-graph)
+[Repository graphs](graphs.md#repository-graphs)
 
 [Commit graphs](graphs.md#commit-graphs)
 
@@ -87,7 +87,7 @@ The lowest level of the hierarchy is a single graph composed of a sequence of la
 
 ## Transactions in graphs
 
-A transaction in a graph is also a hierarchical operation, ensuring [ACID transactions](../../../terminusx-db/explanations/acid-transaction/). An update transaction has the following stages:
+A transaction in a graph is also a hierarchical operation, ensuring [ACID transactions](acid.md). An update transaction has the following stages:
 
 * The layers of a branch graph are updated, resulting in the addition of new layers.
 * A schema check is performed. If the check succeeds, the layer names of the updated graphs are obtained (an update can affect several graphs simultaneously.)
