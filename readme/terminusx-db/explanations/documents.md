@@ -10,11 +10,11 @@
 
 [Documents with references](documents.md#documents-with-references)
 
-[Subdocuments](documents.md#sub-documents)
+[Subdocuments](documents.md#subdocuments)
 
 ## The TerminusDB document store
 
-TerminusDB is a document store as well as a knowledge graph database. TerminusDB [schemata](../../../terminusx-db/explanations/reference/reference-schema.md) describe how to interpret segments of graphs as self-contained documents.
+TerminusDB is a document store as well as a knowledge graph database. TerminusDB [schemata](../reference-guides/schema.md) describe how to interpret segments of graphs as self-contained documents.
 
 ### TerminusDB storage structure
 
@@ -90,7 +90,7 @@ The following table describes the properties of the JSON document definition abo
 
 ### Unique document @id
 
-It is important to ensure a unique document `@id`. The parameters `@key` and `@base` are available in the class definition, enabling you to use a calculated `@id`. Refer to the [Schema reference](../../../terminusx-db/explanations/reference/reference-schema.md) for more information.
+It is important to ensure a unique document `@id`. The parameters `@key` and `@base` are available in the class definition, enabling you to use a calculated `@id`. Refer to the [Schema reference](../reference-guides/schema.md) for more information.
 
 ## Documents with references
 
@@ -154,7 +154,7 @@ The `Roster` points to the various `Player` documents. When requesting the docum
 
 ## Subdocuments
 
-A subdocument can only be pointed to by its containing document. It is information internal to the identity of a document and not intended to be shared. This designation enables deeply nested JSON documents that are self-contained and retrievable using the TerminusDB [document interface](../../../terminusx-db/explanations/reference/reference-document-interface/).
+A subdocument can only be pointed to by its containing document. It is information internal to the identity of a document and not intended to be shared. This designation enables deeply nested JSON documents that are self-contained and retrievable using the TerminusDB [document interface](../reference-guides/document-interface.md).
 
 ### A subdocument example
 

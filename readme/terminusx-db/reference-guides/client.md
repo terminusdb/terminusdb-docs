@@ -4,9 +4,9 @@
 
 ## Key topics
 
-[JavaScript Client reference](client.md#javascript-reference)
+[JavaScript Client reference](client.md#javascript-client-reference)
 
-[Python Client reference](client.md#javascript-reference)
+[Python Client reference](client.md#python-client-reference)
 
 ## JavaScript Client reference
 

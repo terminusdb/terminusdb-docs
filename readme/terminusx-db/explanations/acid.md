@@ -4,9 +4,9 @@
 
 ## Key topics
 
-[What is ACID?](acid.md#what-is-acidity)
+[What is ACID?](acid.md#what-is-acid)
 
-[Acidity](acid.md#acidity)
+[Atomicity](acid.md#atomicity)
 
 [Consistency](acid.md#consistency)
 
@@ -16,7 +16,7 @@
 
 ## What is ACID?
 
-ACID ([Atomicity](acid.md#what-is-acidity), [Consistency](acid.md#what-is-acidity), [Isolation](acid.md#what-is-acidity), [Durability](acid.md#what-is-acidity)) are properties of database transactions that are generally considered desirable for many applications.
+ACID ([Atomicity](acid.md#atomicity), [Consistency](acid.md#consistency), [Isolation](acid.md#isolation), [Durability](acid.md#durability)) are properties of database transactions that are generally considered desirable for many applications.
 
 ## Atomicity
 
@@ -24,7 +24,7 @@ Atomicity is an all-or-nothing approach to database transactions. If a transacti
 
 ### Atomicity and immutability
 
-TerminusDB combines atomicity with [immutability](../../../terminusx-db/explanations/explanation-immutability.md) to provide atomic transactions.
+TerminusDB combines atomicity with [immutability](immutability.md) to provide atomic transactions.
 
 ## Consistency
 
@@ -36,7 +36,7 @@ Where a schema exists for a TerminusDB database, a transaction will not be compl
 
 ### Partial consistency
 
-When [rebasing](../../../terminusx-db/explanations/to-do/), transactions that complete under certain **read-conditions** can be _replayed_ by reordering their commits. Schema consistency is maintained but not under all conditions.
+When rebasing, transactions that complete under certain **read-conditions** can be _replayed_ by reordering their commits. Schema consistency is maintained but not under all conditions.
 
 ## Isolation
 
@@ -44,11 +44,11 @@ The isolation property gives a user the impression of being the sole user of a d
 
 ### Read isolation
 
-TerminusDB uses inherent database [immutability](../../../terminusx-db/explanations/to-do/) to ensure each read query exists at a given [layer](../../../terminusx-db/explanations/to-do/) providing each user with an isolated snapshot of the database.
+TerminusDB uses inherent database [immutability](immutability.md) to ensure each read query exists at a given layer providing each user with an isolated snapshot of the database.
 
 ### Write isolation
 
-Similar to read isolation, completing write transactions ensures isolation with [optimistic concurrency](../../../terminusx-db/explanations/to-do/), simply restarting any transactions failing mid-run.
+Similar to read isolation, completing write transactions ensures isolation with optimistic concurrency, simply restarting any transactions failing mid-run.
 
 ## Durability
 
