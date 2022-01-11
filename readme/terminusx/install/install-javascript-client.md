@@ -34,7 +34,7 @@ $ npm install --save @terminusdb/terminusdb-client
 
 ### Install client as a minified script
 
-Use the minified script `terminusdb-client.min.js` [in a CDN](install-javascript-client.md#use-in-a-cdn) or [download](install-javascript-client.md#download) it to a location of your choice.
+Use the minified script `terminusdb-client.min.js` [in a CDN](install-javascript-client.md#use-in-a-cdn) or [download](install-javascript-client.md#download-the-script) it to a location of your choice.
 
 #### Use in a CDN
 

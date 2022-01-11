@@ -14,12 +14,12 @@ A list of prerequisite components depending on your operating system. Click on t
 
 #### Installation requirements
 
-| Required                                                                                | Version  | Required to:                                         | Linux | macOS | Windows |
-| --------------------------------------------------------------------------------------- | -------- | ---------------------------------------------------- | :---: | :---: | :-----: |
-| [TerminusDB bootstrap](../../../terminusx/install/install/install-as-docker-container/) | `Latest` | Install the TerminusDB server as a Docker container. |   ✔   |   ✔   |    ✔    |
-| [Git](https://git-scm.com/downloads)                                                    | `Latest` | Build and install the Python client from source.     |   ✔   |   ✔   |    ✔    |
-| [GitBash](https://git-scm.com/downloads)                                                | `Latest` | Use the Python CLI (recommended shell.)              |   ✔   |   ✔   |    ✔    |
-| [Python](https://www.python.org/downloads/)                                             | `3.6+`   | Use the TerminusDB Python client.                    |   ✔   |   ✔   |    ✔    |
+| Required                                                                        | Version  | Required to:                                         | Linux | macOS | Windows |
+| ------------------------------------------------------------------------------- | -------- | ---------------------------------------------------- | :---: | :---: | :-----: |
+| [TerminusDB bootstrap](../../terminusdb/install/install-as-docker-container.md) | `Latest` | Install the TerminusDB server as a Docker container. |   ✔   |   ✔   |    ✔    |
+| [Git](https://git-scm.com/downloads)                                            | `Latest` | Build and install the Python client from source.     |   ✔   |   ✔   |    ✔    |
+| [GitBash](https://git-scm.com/downloads)                                        | `Latest` | Use the Python CLI (recommended shell.)              |   ✔   |   ✔   |    ✔    |
+| [Python](https://www.python.org/downloads/)                                     | `3.6+`   | Use the TerminusDB Python client.                    |   ✔   |   ✔   |    ✔    |
 
 ## Install steps
 
@@ -69,7 +69,7 @@ python -m pip install terminusdb-client
 
 #### Install with dataframe
 
-Install the Python client with the WOQL `dataframe`. The [WOQLDataFrame](https://terminusdb.github.io/terminusdb/#/Intro\_Tutorials/Start\_With\_Python?id=woqldataframe) enables query results to be converted to different formats such as [Pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html).
+Install the Python client with the WOQL `dataframe`. The [WOQLDataFrame](https://terminusdb.github.io/terminusdb-client-python/woqlDataframe.html) enables query results to be converted to different formats such as [Pandas](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html).
 
 ```bash
 python -m pip install terminusdb-client[dataframe]
@@ -97,7 +97,7 @@ An example use of the Python client in [Start with a Client API](../quick-start/
 
 ### Client reference
 
-[Python Client reference guides](../../terminusx-db/reference-guides/client.md).
+[Python Client reference guides](../../terminusx-db/reference-guides/client.md#python-client-reference).
 
 ### Tutorials
 
