@@ -47,7 +47,7 @@ In Ubuntu terminal: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs |
 Follow the install steps below for **Debian or Ubuntu**
 {% endhint %}
 
-### Install SWI-Prolog and clang
+### Install SWI-Prolog, Rust and clang
 
 {% tabs %}
 {% tab title="Linux" %}
