@@ -68,7 +68,7 @@ sudo pacman -S git swi-prolog make automake autoconf libtool zlib pkgconf gcc cl
 
 **Debian or Ubuntu**
 
-Install using [apt package manager](https://pkgs.org/download/apt) and [sudo](https://www.sudo.ws/download.html).
+Install using the apt package manager.
 
 ```bash
 cat /etc/*release | grep ubuntu > /dev/null && (sudo apt-get install software-properties-common; sudo apt-add-repository ppa:swi-prolog/stable)
