@@ -140,7 +140,7 @@ make
 {% tabs %}
 {% tab title="Linux" %}
 * Initialize the system database and choose a password for the admin user.
-* Server starts on `https://127.0.0.1:6363`
+* Server starts on `http://127.0.0.1:6363`
 
 ```
 ./terminusdb store init --key "my_password_here"
@@ -150,7 +150,7 @@ make
 
 {% tab title="macOS" %}
 * Initialize the system database.
-* Server starts on `https://127.0.0.1:6363`
+* Server starts on `http://127.0.0.1:6363`
 
 ```
 ./terminusdb store init --key root
