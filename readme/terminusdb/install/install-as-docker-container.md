@@ -23,7 +23,7 @@ A list of prerequisite components depending on your operating system. Click on t
 | [Git](https://git-scm.com/downloads)                                 | `Latest` | Clone the TerminusDB bootstrap and run the container script. |   ✔   |   ✔   |    ✔    |
 | [Git Bash](https://git-scm.com/downloads)                            | `Latest` | Clone the TerminusDB bootstrap and run the container script. |       |       |    ✔    |
 | [Sudo](https://www.sudo.ws/download.html)                            | `Latest` | Access security.                                             |   ✔   |   ✔   |         |
-| [Docker](https://www.docker.com/products/docker-desktop)             | `Latest` | Use the TerminusDB docker container.                         |       |   ✔   |    ✔    |
+| [Docker](https://www.docker.com/products/docker-desktop)             | `Latest` | Use the TerminusDB docker container.                         |   ✔   |   ✔   |    ✔    |
 | [Package manager](https://www.docker.com/products/container-runtime) | `Latest` | Implement docker for Linux systems.                          |   ✔   |       |         |
 
 {% hint style="info" %}
