@@ -34,7 +34,7 @@ To install a TerminusDB server and use TerminusDB databases programmatically in 
 
 ### Source code
 
-Install from the [source code](../../../terminusdb/overview/install/install-from-source-code/) in [GitHub](https://github.com/terminusdb/terminusdb).
+Install from the [source code](../install/install-from-source-code.md) in [GitHub](https://github.com/terminusdb/terminusdb).
 
 ### Docker container
 
