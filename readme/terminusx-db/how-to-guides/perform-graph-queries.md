@@ -23,7 +23,7 @@ from terminusdb_client import WOQLClient
 from terminusdb_client import WOQLQuery as WOQL
 
 # Connect to the server
-server_url = "https://127.0.0.1:6363"
+server_url = "http://127.0.0.1:6363"
 db = "dbpedia_1"
 user = "admin"
 account = "admin"

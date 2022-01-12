@@ -27,7 +27,7 @@ import datetime
 from   terminusdb_client import WOQLClient
 from   terminusdb_client import WOQLQuery as WOQL
 
-server_url = "https://127.0.0.1:6363"
+server_url = "http://127.0.0.1:6363"
 db         = "seshat"
 user       = "admin"
 account    = "admin"
