@@ -61,10 +61,10 @@ Run the container using script `terminusdb-container`.
 
 #### Running for the first time
 
-Set the runtime environment to the development release `TERMINUSDB_TAG=dev` and run the container with parameter `run`. See [Environment configuration](install-as-docker-container.md#environment-configuration) for further configuration options.
+Run the container with the parameter `run`. See [Environment configuration](install-as-docker-container.md#environment-configuration) for further configuration options.
 
 ```bash
-TERMINUSDB_TAG=dev ./terminusdb-container run
+./terminusdb-container run
 ```
 
 This generates the message: `terminusdb-server container started http://127.0.0.1:6363/`. This is the TerminusDB Server and [Console](install-as-docker-container.md#use-the-console) URL.
@@ -80,7 +80,6 @@ This generates the message: `terminusdb-server container started http://127.0.0.
 {% endhint %}
 
 ```bash
-TERMINUSDB_TAG=dev 
 ./terminusdb-container stop
 ./terminusdb-container rm
 ./terminusdb-container run
