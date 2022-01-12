@@ -68,7 +68,7 @@ Set the runtime environment to the development release `TERMINUSDB_TAG=dev` and 
 TERMINUSDB_TAG=dev ./terminusdb-container run
 ```
 
-This generates the message: `terminusdb-server container started https://127.0.0.1:6363/`. This is the TerminusDB Server and [Console](install-as-docker-container.md#use-the-console) URL.
+This generates the message: `terminusdb-server container started http://127.0.0.1:6363/`. This is the TerminusDB Server and [Console](install-as-docker-container.md#use-the-console) URL.
 
 #### Subsequent runs
 
@@ -100,7 +100,7 @@ Open the TerminusDB console in a web browser using the container [script](instal
 #### URL
 
 ```http
-https://127.0.0.1:6363/
+http://127.0.0.1:6363/
 ```
 
 #### Console commands
@@ -158,12 +158,6 @@ A description of some of the environment variables in `ENV.example` and their de
 | `TERMINUSDB_LOCAL`            | `your-folder-name`                                                                                        | Local folder to mount inside container                     |
 | `TERMINUSDB_SERVER`           | `127.0.0.1`                                                                                               | Server on which TerminusDB runs                            |
 | `TERMINUSDB_PASS`             | `root`                                                                                                    | Password for accessing TerminusDB                          |
-| `TERMINUSDB_AUTOLOGIN`        | `false`                                                                                                   | Automatic login as administration console                  |
-| `TERMINUSDB_CONSOLE`          | [URL of the TerminusDB console](http://127.0.0.1/console)                                                 |                                                            |
-| `TERMINUSDB_CONSOLE_BASE_URL` | [URL of the hosted console](https://unpkg.com/@terminusdb/terminusdb-console@SOME\_VERSION/console/dist/) |                                                            |
-| `TERMINUSDB_HTTPS_ENABLED`    | `false`                                                                                                   | Enable `HTTPS`                                             |
-| `TERMINUSDB_SSL_CERT`         | _A self-signed cert_                                                                                      | Path to SSL cert inside `terminusdb-server` container      |
-| `TERMINUSDB_SSL_CERT_KEY`     | _A self-created private key_                                                                              | Path to private key for SSL cert inside container          |
 
 ### Examples of setting environment variables
 
@@ -225,44 +219,15 @@ The TerminusDB server is deployed to your computer by default.
 
 ### Local computer deployment
 
-HTTPS is disabled by default (`TERMINUSDB_HTTPS_ENABLED=false`) as it is not possible to provide a valid SSL certificate for `localhost`.
-
 By default, the Docker container binds to IP `127.0.0.1`. This prevents insecure deployments and ensures the TerminusDB server is accessible on a local computer only.
 
 ### Remote server deployment
 
 To deploy the TerminusDB server to a remote machine:
 
-* [Enable HTTPS](install-as-docker-container.md#enable-https).
-* [Specify a valid SSL certificate](install-as-docker-container.md#specify-a-valid-ssl-certificate).
-* [Enable automatic login](install-as-docker-container.md#enable-automatic-login).
+* Enable HTTPS with a remote proxy like Nginx
 * [Run the container](install-as-docker-container.md#run-the-container-1)
 
-#### Enable HTTPS
-
-Enable HTTPS and accept any \*\* self-signed cert\*\* warnings issued by the browser.
-
-```bash
-TERMINUSDB_HTTPS_ENABLED=true 
-```
-
-#### Specify a valid SSL certificate
-
-If possible, specify a valid certificate by setting paths to the certificate and certificate key. This also eliminates browser warnings.
-
-```bash
-TERMINUSDB_HTTPS_ENABLED=true
-TERMINUSDB_SSL_CERT=/etc/letsencrypt/live/example.com/fullchain.pem
-TERMINUSDB_SSL_CERT_KEY=/etc/letsencrypt/live/example.com/privkey.pem
-```
-
-#### Enable automatic login
-
-Make your server available across the network by setting `TERMINUSDB_AUTOLOGIN` to `false`.
-
-```bash
-TERMINUSDB_AUTOLOGIN=false
-```
 
 #### Run the container
 
