@@ -64,7 +64,7 @@ The TerminusDB [Command Line Interface](../../terminusx-db/reference-guides/cli.
 
 ### Dashboard
 
-The TerminusX [dashboard](../../terminusx/quick-start/get-api-key.md#generate-your-api-key) provides a visual interface.
+The TerminusX [dashboard](https://dashboard.terminusdb.com) provides a visual interface.
 
 ### APIs
 

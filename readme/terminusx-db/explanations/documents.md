@@ -36,7 +36,7 @@ See the [Subdocuments](documents.md#subdocuments) section for more information.
 
 ## Simple documents
 
-Documents are described by creating a class definition in the [schema](../../../terminusx-db/explanations/reference/reference-schema.md). The simplest document definition contains properties with data elements only.
+Documents are described by creating a class definition in the [schema](../reference-guides/schema.md). The simplest document definition contains properties with data elements only.
 
 ### A simple document example
 
