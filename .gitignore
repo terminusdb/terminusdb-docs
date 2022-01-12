@@ -1,0 +1,5 @@
+# Temporary space for development
+/tmp
+
+# Used by GitHub Action
+/.terminusdb-repo

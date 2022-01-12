@@ -1,0 +1,30 @@
+name: Check generated files
+
+# Certain files are generated from the `generate.sh` script and stored in the
+# repository. This action regenerates those files using the current release
+# TerminusDB and checks that the new files have not changed from the old. If
+# they have changed, we need to regenerated them manually.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+env:
+  # Change this when there is a new TerminusDB release.
+  CURRENT_TERMINUSDB_VERSION_BRANCH: v10.0
+
+jobs:
+  generate-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.1
+
+      - name: Generate files using TerminusDB at the current release branch
+        run: bash $GITHUB_WORKSPACE/.github/generate.sh $CURRENT_TERMINUSDB_VERSION_BRANCH
+
+      - name: Check the generated files for differences
+        run: |
+          echo -e "\033[0;34mI found these unexpected differences:\033[0m"
+          git diff -R --exit-code
