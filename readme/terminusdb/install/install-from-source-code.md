@@ -24,7 +24,7 @@ A list of prerequisite components depending on your operating system. Click on t
 | [Rust](https://www.rust-lang.org/tools/install)          | `Latest` | Compile terminusdb.                     |      ✔     |         ✔        |         ✔         |   ✔   |    ✔    |
 | [sudo](https://www.sudo.ws/download.html)                | `Latest` | Install SWI-Prolog.                     |      ✔     |         ✔        |         ✔         |       |         |
 | [SWI-Prolog](https://www.swi-prolog.org/download/stable) | `Latest` | Install **terminusdb-store**.           |      ✔     |         ✔        |         ✔         |   ✔   |         |
-| [WSL](https://ubuntu.com/wsl)                            | `Latest` | Install a Windows Sub-system for Linux. |            |         ✔        |                   |       |         |
+| [WSL](https://ubuntu.com/wsl)                            | `Latest` | Install a Windows Sub-system for Linux. |            |                  |                   |       |    ✔    |
 
 ## Install steps
 
