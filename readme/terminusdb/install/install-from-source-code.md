@@ -16,7 +16,6 @@ A list of prerequisite components depending on your operating system. Click on t
 
 | Component                                                | Version  | Required to:                            | Arch Linux | Debian or Ubuntu | Fedora or Red Hat | macOS | Windows |
 | -------------------------------------------------------- | -------- | --------------------------------------- | :--------: | :--------------: | :---------------: | :---: | :-----: |
-| [apt](https://pkgs.org/download/apt)                     | `Latest` | Install SWI-Prolog.                     |            |         ✔        |                   |       |         |
 | [clang](https://releases.llvm.org)                       | `Latest` | Make the **terminusdb-store** library.  |      ✔     |         ✔        |         ✔         |       |         |
 | [git](https://git-scm.com/downloads)                     | `Latest` | Clone TerminusDB from GitHub.           |      ✔     |         ✔        |         ✔         |   ✔   |         |
 | [GitBash](https://git-scm.com/downloads)                 | `Latest` | Recommended shell for Windows.          |            |                  |                   |       |    ✔    |
