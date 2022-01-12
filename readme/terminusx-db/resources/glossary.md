@@ -1,13 +1,13 @@
 # Glossary
 
-> **On this page:** A definition of frequently occuring terms and acronyms in this documentation site.
+> **On this page:** A work-in-progress document defining terms and acronyms used in this documentation site.
 
 {% hint style="info" %}
-**Context:** Unless otherwise stated, the context for all glossary definitions is computer, data, or information science.
+**Context:** Unless otherwise stated, the context for all definitions is computer, data, or information science.
 {% endhint %}
 
 {% hint style="info" %}
-**Source:** Unless otherwise stated, the source of all defintions is [Wikipedia](https://en.wikipedia.org/wiki/Main\_Page)
+**Source:** Unless otherwise stated, the source of all definitions is [Wikipedia](https://en.wikipedia.org/wiki/Main\_Page)
 {% endhint %}
 
 ## Graph concepts
@@ -26,7 +26,7 @@ A database that uses [graph structures](glossary.md#graph-structure) for [semant
 
 ### Graph Structure
 
-An abstract data type for implementing the [graph theory](../../../terminusx-db/resources/graph-theory/) concepts of [Undirected](glossary.md#undirected-graph) and [Directed](glossary.md#directed-graph) graphs. The former concept consists of **uordered pairs** of vertices (also called [nodes](glossary.md#node) or points.) The latter consists of **ordered pairs** of vertices.
+An abstract data type for implementing the [graph theory](../../../terminusx-db/resources/graph-theory/) concepts of [Undirected](glossary.md#undirected-graph) and [Directed](glossary.md#directed-graph) graphs. The former concept consists of **unordered pairs** of vertices (also called [nodes](glossary.md#node) or points.) The latter consists of **ordered pairs** of vertices.
 
 A graph data structure consists of a finite set of vertices, together with a set of unordered or ordered pairs of these vertices as defined above. These pairs are known as [edges](glossary.md#edge) (also called links or lines, and sometimes called arrows or arcs for a directed graph.) The vertices may be part of the graph structure, or may be external [entities](glossary.md#entity) represented by integer indices or references.
 
@@ -50,7 +50,7 @@ A way of showing the properties of a subject area and how they are related, by d
 
 ### Semantic Query
 
-Semantic queries allow for queries and analytics of an associative and contextual nature. Semantic queries enable the retrieval of both explicitly and implicitly derived information based on syntactic, semantic and structural information contained in data. They are designed to deliver precise results (possibly the distinctive selection of one single piece of information) or to answer more fuzzy and wide open questions through pattern matching and digital reasoning.
+Semantic queries allow for queries and analytics of an associative and contextual nature. Semantic queries enable the retrieval of both explicitly and implicitly derived information based on syntactic, semantic and structural information contained in data. They are designed to deliver precise results (possibly the distinctive selection of one single piece of information) or to answer more fuzzy and wide-open questions through pattern matching and digital reasoning.
 
 [Read more](https://en.wikipedia.org/wiki/Semantic\_query)
 
@@ -139,7 +139,7 @@ The organization of data as a blueprint of how the database is constructed.
 
 ### WOQL
 
-WOQL (**web object Query Language**) is TerminusDB's query language for querying complex data patterns and structures. WOQL is based on three fundamental concepts: WOQL [triples](glossary.md#triples), WOQL **variables** and WOQL **operators**. WOQL also provides [PCRE](glossary.md#pcre).
+WOQL (**Web Object Query Language**) is TerminusDB's query language for querying complex data patterns and structures. WOQL is based on three fundamental concepts: WOQL [triples](glossary.md#triples), WOQL **variables** and WOQL **operators**. WOQL also provides [PCRE](glossary.md#pcre).
 
 [Read more](../../../terminusx-db/resources/data-modeling/data-modeling-woql-queries/)
 

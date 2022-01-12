@@ -1,6 +1,6 @@
 # WOQL
 
-> **On this page:** A brief explanation of the TerminusDB web object Query Langauge (WOQL.)
+> **On this page:** A brief explanation of the TerminusDB Web Object Query Langauge (WOQL.)
 
 ## Key topics
 
