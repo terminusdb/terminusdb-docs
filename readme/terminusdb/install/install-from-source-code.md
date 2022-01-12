@@ -50,7 +50,7 @@ Follow the install steps below for **Debian or Ubuntu**
 ### Install SWI-Prolog and clang
 
 {% tabs %}
-{% tab title="First Tab" %}
+{% tab title="Linux" %}
 Install [Rust](https://www.rust-lang.org/tools/install) by following the Rust installation guide.
 
 ****
