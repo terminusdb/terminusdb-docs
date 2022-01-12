@@ -17,7 +17,7 @@ A list of prerequisite components depending on your operating system. Click on t
 | Component                                                | Version  | Required to:                            | Arch Linux | Debian or Ubuntu | Fedora or Red Hat | macOS | Windows |
 | -------------------------------------------------------- | -------- | --------------------------------------- | :--------: | :--------------: | :---------------: | :---: | :-----: |
 | [apt](https://pkgs.org/download/apt)                     | `Latest` | Install SWI-Prolog.                     |            |         ✔        |                   |       |         |
-| [clang](https://releases.llvm.org)                       | `Latest` | Make the **terminusdb-cli** library.    |      ✔     |         ✔        |         ✔         |       |         |
+| [clang](https://releases.llvm.org)                       | `Latest` | Make the **terminusdb-store** library.  |      ✔     |         ✔        |         ✔         |       |         |
 | [git](https://git-scm.com/downloads)                     | `Latest` | Clone TerminusDB from GitHub.           |      ✔     |         ✔        |         ✔         |   ✔   |         |
 | [GitBash](https://git-scm.com/downloads)                 | `Latest` | Recommended shell.                      |      ✔     |         ✔        |         ✔         |   ✔   |    ✔    |
 | [Homebrew](https://brew.sh)                              | `Latest` | Install Rust and SWI-Prolog.            |            |                  |                   |   ✔   |         |
@@ -48,7 +48,7 @@ In Ubuntu terminal: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs |
 Follow the install steps below for **Debian or Ubuntu**
 {% endhint %}
 
-### Install SWI-Prolog
+### Install SWI-Prolog and clang
 
 {% tabs %}
 {% tab title="First Tab" %}
@@ -61,7 +61,7 @@ Install [Rust](https://www.rust-lang.org/tools/install) by following the Rust in
 Install all dependencies of all the required libraries using [sudo](https://www.sudo.ws/download.html) and [git](https://git-scm.com/downloads).
 
 ```bash
-sudo pacman -S git swi-prolog make automake autoconf libtool zlib pkgconf gcc
+sudo pacman -S git swi-prolog make automake autoconf libtool zlib pkgconf gcc clang
 ```
 
 ****
@@ -73,7 +73,7 @@ Install using [apt package manager](https://pkgs.org/download/apt) and [sudo](ht
 ```bash
 cat /etc/*release | grep ubuntu > /dev/null && (sudo apt-get install software-properties-common; sudo apt-add-repository ppa:swi-prolog/stable)
 sudo apt-get update
-sudo apt install swi-prolog
+sudo apt install swi-prolog clang
 ```
 
 ****
@@ -83,7 +83,7 @@ sudo apt install swi-prolog
 Install using [sudo](https://www.sudo.ws/download.html).
 
 ```bash
-sudo dnf install pl pl-devel
+sudo dnf install pl pl-devel clang
 ```
 {% endtab %}
 
@@ -121,7 +121,6 @@ git clone https://github.com/terminusdb/terminusdb
 {% tabs %}
 {% tab title="Linux" %}
 ```bash
-sudo apt install clang
 cd terminusdb
 make
 ```
