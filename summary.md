@@ -1,6 +1,6 @@
 # Table of contents
 
-* [TerminusX and TerminusDB Technical Documentation](README.md)
+* [TerminusX and TerminusDB Technical Documentation](index.md)
   * [TerminusX](readme/terminusx/README.md)
     * [Overview](readme/terminusx/overview/README.md)
       * [Introduction to TerminusX](readme/terminusx/overview/introduction.md)
