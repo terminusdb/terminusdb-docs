@@ -32,7 +32,7 @@
       * [Document Interface](readme/terminusx-db/reference-guides/document-interface.md)
       * [HTTP API Reference](readme/terminusx-db/reference-guides/http-api.md)
       * [Schema Reference](readme/terminusx-db/reference-guides/schema.md)
-      * [Terminus Store](readme/terminusx-db/reference-guides/terminus-store.md)
+      * [TerminusDB Store](readme/terminusx-db/reference-guides/terminus-store.md)
       * [Client and WOQL Reference](readme/terminusx-db/reference-guides/client.md)
       * [WOQL Class Reference](readme/terminusx-db/reference-guides/woql-class.md)
     * [Explanations](readme/terminusx-db/explanations/README.md)
