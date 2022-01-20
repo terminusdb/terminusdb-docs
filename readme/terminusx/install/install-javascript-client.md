@@ -46,7 +46,7 @@ Use the minified script in your Content Delivery Network (CDN.)
 
 #### Download the script
 
-Download the minified script from `https://unpkg.com/browse/@terminusdb/terminusdb-client@4.3.1/dist/` and save it to `[your-location]`.
+Download the minified script from [https://unpkg.com/browse/@terminusdb/terminusdb-client/dist/](https://unpkg.com/browse/@terminusdb/terminusdb-client/dist/) and save it to `[your-location]`.
 
 ```html
 <script src="http://[your-location]/terminusdb-client.min.js"></script>
