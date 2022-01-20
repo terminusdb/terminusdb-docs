@@ -253,65 +253,6 @@ Patch the table starting from the current point with the patch table in `@patch`
 
 ### Examples
 
-```
-Diff := {
-          '@id' : ID % ID of object to change.
-          <prop1> : { '@op' : 'SwapValue',
-                      '@before' : Obj_Old                      % Mandatory
-                      '@after' : Obj_New },
-          <prop2> : { '@op' : 'SwapValue',
-                      '@before' : null                         % Add optional
-                      '@after' : Obj_New },
-          <prop2> : { '@op' : 'SwapValue',
-                      '@before' : Obj_Old                      % Drop optional
-                      '@after' : null },
-          <prop3> : { '@id' : ID1,
-                      <prop3_1> :                              % Deep swap [*must* be subdocuments]
-                        { '@id' : ID2,
-                           <prop3_2> : ...
-                           { '@id' : ID3,
-                              <prop3_n> : { '@op' : 'SwapValue',
-                                            '@before' : Obj_Old,
-                                            '@after' : Obj_New }
-                        ... } } },
-          <prop4> : { '@op' : 'CopyList',                      % Replace List
-                      '@to' : 10,
-                      '@rest' : { '@op' : 'SwapList',          % Replace List
-                                  '@before' : [1,2,3],
-                                  '@after' : [4,5,6],
-                                  '@rest' : { '@keep' : "List" } } },
-          <prop4> : { '@op' : "CopyTable"
-                      '@to_row' : 3,
-                      '@to_column' : 3,
-                      '@bottom_left' : { '@keep' : "KeepTable" },
-                      '@top_right' :  { '@keep' : "KeepTable" },
-                      '@bottom_right' : { '@swap' : "SwapTable",
-                                          '@before' : [[1,2,3]],
-                                          '@after' : [[4,5,6]],
-                                          '@bottom_left' : { '@keep' : "KeepTable" },
-                                          '@top_right' : { '@keep' : "KeepTable" },
-                                          '@bottom_right' : { '@keep' : "KeepTable" } }
-                    },
-          <prop5> : { '@op' : "SwapValue",
-                      '@before' : { '@id' : ID },              % Replace element of a set
-                      '@after' : { '@id' : ID }}
-          <prop6> : { '@id' : ID,                            % Deep set replace
-                       <prop6_1> : { '@op' : "SwapValue",
-                                     '@before' : ...,
-                                     '@after' : ... } },
-          <prop6> : [{ '@id' : ID1,                          % Deep set replace 2
-                        <prop6_1> : { '@op' : "SwapValue",
-                                      '@before' : ...,
-                                      '@after' : ... } },
-                     { '@id' : ID2,                          % Deep set replace 2
-                        <prop6_2> : { '@op' : "SwapValue",
-                                      '@before' : ...,
-                                      '@after' : ... } }],
-          <prop6> : { '@op' : 'ForceValue',
-                      '@after' : "Value" }                   % Ignore read state and force value
-        }
-```
-
 Examples of Patch:
 
 ```jsx
@@ -350,8 +291,8 @@ The diff endpoint takes a POST of two JSON documents, _before_, and _after_. Thi
 An example of the payload:
 
 ```json
-{ "before" : { "@id" : "Person/Jane", "@type" : Person", "name" : "Jane"},
-  "after" :  { "@id" : "Person/Jane", "@type" : Person", "name" : "Janine"}}
+{ "before" : { "@id" : "Person/Jane", "@type" : "Person", "name" : "Jane"},
+  "after" :  { "@id" : "Person/Jane", "@type" : "Person", "name" : "Janine"}}
 ```
 
 Which would result in the following patch:
@@ -365,8 +306,10 @@ Some examples using curl are as follows:
 ```shell
 $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d @-
   { "before" : [{ "asdf" : "foo"}], "after" : [{ "asdf" : "bar"}]}
-^D
 [ {"asdf": {"@after":"bar", "@before":"foo", "@op":"SwapValue"}} ]
+```
+
+```bash
 $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d @-
 { "before" : [0,1,2], "after" : [0,1,2,3]}
 {
@@ -379,6 +322,9 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/di
   },
   "@to":3
 }
+```
+
+```bash
 $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d @-
 { "before" : { "asdf" : { "fdsa" : "quux"}}, "after" : { "asdf" : { "fdsa" : "quuz" }}}
 {
@@ -391,14 +337,14 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/di
 Patch takes a POST with a _before_ document and a _patch_ and produces an _after_ document.
 
 ```json
-{ "before" : { "@id" : "Person/Jane", "@type" : Person", "name" : "Jane"}
+{ "before" : { "@id" : "Person/Jane", "@type" : "Person", "name" : "Jane"}
   "patch" : {"name" : { "@op" : "ValueSwap", "@before" : "Jane", "@after": "Janine" }}}
 ```
 
 Resulting in the following document:
 
 ```json
-{ "@id" : "Person/Jane", "@type" : Person", "name" : "Janine"}
+{ "@id" : "Person/Jane", "@type" : "bahPerson", "name" : "Janine"}
 ```
 
 Some examples using curl are as follows:
@@ -409,6 +355,10 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/pa
   "asdf": {"fdsa": {"@after":"quuz", "@before":"quux", "@op":"SwapValue"}}
 }}
 {"alpha":1, "asdf": {"fdsa":"quuz"}}
+
+```
+
+```bash
 $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/patch' -d @-
 { "before" : [0,1,2], "patch" : {
   "@op":"CopyList",
