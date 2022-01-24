@@ -298,7 +298,33 @@ An example of the payload:
 Which would result in the following patch:
 
 ```json
-{ "name" : { "@op" : "SwapValue", "@before" : "Jane", "@after": "Janine" }}
+{ "name" : { "@op" : "SwapValue", "@before" : "Jane", "@after": "Janine" },
+  "@id" : "Person/Jane"}
+```
+
+You may also supply a `"keep"` parameter, which is a JSON object of key-values which should be kept, with a boolean `true` at the leaf of any key one intends to keep. The API defaults to a keep value of `{ "@id" : true, "_id" : true }` (which is why `"@id"` was retained in the above example).
+
+For Example, the following document:
+
+```json
+{ "before" : { "@id" : "Person/Jane", "@type" : "Person", "identifier" : 12, "name" : "Jane"},
+  "after" :  { "@id" : "Person/Jane", "@type" : "Person", "identifier" : 12, "name" : "Janine"}}
+  "keep" : { "identifier" : true } }
+```
+
+Will yield:
+
+```json
+{ "id" : 12, "name" : { "@op" : "SwapValue", "@before" : "Jane", "@after": "Janine" }}
+```
+
+However, if the keep field changes, we yeild an error, for instance,
+the following diff will fail with a 404:
+
+```json
+{ "before" : { "@id" : "Person/Jane", "@type" : "Person", "identifier" : 12, "name" : "Jane"},
+  "after" :  { "@id" : "Person/Jane", "@type" : "Person", "identifier" : 13, "name" : "Janine"}}
+  "keep" : { "identifier" : true } }
 ```
 
 Some examples using curl are as follows:
@@ -344,7 +370,7 @@ Patch takes a POST with a _before_ document and a _patch_ and produces an _after
 Resulting in the following document:
 
 ```json
-{ "@id" : "Person/Jane", "@type" : "bahPerson", "name" : "Janine"}
+{ "@id" : "Person/Jane", "@type" : "Person", "name" : "Janine"}
 ```
 
 Some examples using curl are as follows:
