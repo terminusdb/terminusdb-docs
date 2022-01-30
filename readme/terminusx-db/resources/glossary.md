@@ -1,6 +1,10 @@
-# Glossary
+---
+description: >-
+  A work-in-progress document defining terms and acronyms used in this
+  documentation site
+---
 
-> **On this page:** A work-in-progress document defining terms and acronyms used in this documentation site.
+# Glossary
 
 {% hint style="info" %}
 **Context:** Unless otherwise stated, the context for all definitions is computer, data, or information science.
@@ -131,9 +135,15 @@ The organization of data as a blueprint of how the database is constructed.
 
 ### Attribute
 
+The columns of a table in relational databases. Similar to properties in graph databases.&#x20;
+
 ### Entity
 
+Tables in relational databases. Similar to nodes in graph databases.
+
 ### Relationship
+
+The relationships between two tables in relational databases. In graph databases, relationships are directed and named connections between two nodes.
 
 ## TerminusDB specific
 
