@@ -132,152 +132,54 @@ A "Force Diff" will set the value of a location regardless of the current read-s
 
 ### Table Diff
 
-A Table diff requires swaps at two positions and subdivision of each patch into squares: Top-Left (in which we make the patch) Top-Right, Bottom-Left and Bottom-Right, each of which will be computed with the help of an additional Diff. We use `CopyTable`, `SwapTable` and `KeepTable`. Schematically the diff is a context with a current hole in the upper-right hand corner as follows:
+A Table diff specifies the differences and similarities between two tables. These tables *need not* have the same dimensions. In order to describe these differences we use a `ModifyTable` patch. The `ModifyTable` patch is comprised of `copies`, `deletes`, `inserts` and `moves`.
 
-```jsx
------------------------
-|          |          |
-| Swap /   |   Top    |
-| Copy     |   Right  |
-| instr.   |   Diff   |
-|          |          |
------------------------
-|          |          |
-|  Bttom   |  Bottom  |
-|  Left    |  Right   |
-|  Diff    |  Diff    |
-|          |          |
------------------------
-```
+`copies` give the sections of the table which can be copied verbatim. `deletes` gives all segments which are to be removed from the original. `inserts` gives all segments which are to be inserted into the new table.
 
-We will recursively patch the table by applying the diffs in the various corners.
+`moves` specifies segments that are the same in both tables, but have moved location. This is particularly useful as moving rows and columns is a typical operation in a table (such as a CSV or Excel document).
 
 #### Example Table
 
-This might apply to an object as follows:
+Given the following table:
 
-```jsx
-{ '@id' : "Excel/012" ,
-  'sheets' : [{ '@id' : "Excel/012/sheet/Sheet/1",
-                'cells' :
-                { '@op' : "SwapTable",
-                  '@before' : [[ { 'Value' : "10", ... },
-                                 { 'Value' : "20", ... },
-                                 { 'Value' : "30", ... } ],
-                               [ { 'Value' : "40", ... },
-                                 { 'Value' : "50", ... },
-                                 { 'Value' : "60", ... } ]
-                               [ { 'Value' : "70", ... },
-                                 { 'Value' : "80", ... },
-                                 { 'Value' : "90", ... } ] ],
-                  '@after' : [[ { 'Value' : "1", ... },
-                                { 'Value' : "2", ... },
-                                { 'Value' : "3", ... } ],
-                              [ { 'Value' : "4", ... },
-                                { 'Value' : "5", ... },
-                                { 'Value' : "6", ... } ]
-                              [ { 'Value' : "7", ... },
-                                { 'Value' : "8", ... },
-                                { 'Value' : "9", ... } ] ],
-                  '@after' : { '@op' : "KeepTable" },
-                  '@bottom_left' : { '@op' : "KeepTable" },
-                  '@top_right' : { '@op' : "KeepTable" },
-                  '@bottom_right' : { '@op' : "KeepTable" }
-                }}]}
+```javascript
+[['Job Title','Company','Location','Company Size','Company Industry'],
+ ['Sr. Mgt.','Boeing','USA','Large','Aerospace'],
+ ['Data Architect','Airbus','France','Large','Aerospace'],
+ ['Founder','Ellie Tech','Sweden','Startup','AI'],
+ ['Platform Engineer','Adidas','Germany','Large','Apparel']]
 ```
 
-Application would take a table through the following transformation:
+And a sorted version of the same (sorting on the first column):
 
-```
-| 10 | 20 | 30 | A | B | C |
-| 40 | 50 | 60 | D | E | F |
-| 70 | 80 | 90 | G | H | I |
-| X  | Y  | Z  | O | O | O |
-| X  | Y  | Z  | O | O | O |
-| X  | Y  | Z  | O | O | O |
-=>
-| 1  | 2  | 3  | A | B | C |
-| 4  | 5  | 6  | D | E | F |
-| 7  | 8  | 9  | G | H | I |
-| X  | Y  | Z  | O | O | O |
-| X  | Y  | Z  | O | O | O |
-| X  | Y  | Z  | O | O | O |
+```javascript
+[['Job Title','Company','Location','Company Size','Company Industry'],
+ ['Data Architect','Airbus','France','Large','Aerospace'],
+ ['Founder','Ellie Tech','Sweden','Startup','AI'],
+ ['Platform Engineer','Adidas','Germany','Large','Apparel'],
+ ['Sr. Mgt.','Boeing','USA','Large','Aerospace']]
 ```
 
-#### Copy Table
-
-```jsx
-{ '@op' : "CopyTable"
-  '@to_row' : To_Row,           % integer
-  '@to_column' : To_Column,     % integer
-  '@bottom_left' : Diff_BL,     % A Table Diff
-  '@top_right' : Diff_TR,       % A Table Diff
-  '@bottom_right' : Diff_BR     % A Table Diff
-  }
-```
-
-#### Swap Table
-
-Swap instructions will give a before table as a JSON list of lists for both the before and after. These tables need not have the same dimensions. This operation subsumes extension and drop of rows and columns as well as full replacement.
-
-```jsx
-{ '@op' : "SwapTable",
-  '@before' : Diff_Before,
-  '@after' : Diff_After,
-  '@bottom_left' : Diff_BL,
-  '@top_right' : Diff_TR,
-  '@bottom_right' : DIff_BR
-  }
-```
-
-#### Patch Table
-
-Patch the table starting from the current point with the patch table in `@patch`. The patch must be less than or equal to the length of the list.
-
-```jsx
-{ "@op" : "PatchTable",
-  "@patch" : Patch,
-  '@bottom_left' : Diff_BL,
-  '@top_right' : Diff_TR,
-  '@bottom_right' : DIff_BR
-}
-```
-
-#### Keep Table
-
-`@keep` instructions are degenerate copies.
+We have the following patch resulting from the diff:
 
 ```
-{ '@keep' : "Table" }
-```
-
-### Examples
-
-Examples of Patch:
-
-```jsx
-var Original = {
-        '@id': "EmployeesFromCSV/001",
-        '@type': "EmployeesFromCSV",
-        employee_id: "001",
-        name: "Destiny Norris",
-        team: "Marketing",
-        title: "Marketing Manager"
-      },
-var Diff = {
-        '@id': "EmployeesFromCSV/001",
-        name: { '@op' : 'SwapValue', '@before' : "Destiny Norris", '@after' : "Destiny Morris" },
-      },
-var Final = {
-        '@id': "EmployeesFromCSV/001",
-        '@type': "EmployeesFromCSV",
-        employee_id: "001",
-        name: "Destiny Norris",
-        team: "Marketing",
-        title: "Marketing Manager"
-      },
-patch(Diff,Original,Final).
-=> true
+{'@op':"ModifyTable",
+ dimensions:{'@after':[5,5],'@before':[5,5]},
+ deletes:[],
+ inserts:[],
+ copies:[{'@at':{'@height':1,'@width':5,'@x':0,'@y':0},'@value':[['Job Title','Company','Location','Company Size','Company Industry']]}],
+ moves:[{'@from':{'@height':1,'@width':5,'@x':0,'@y':1},
+         '@to':{'@height':1,'@width':5,'@x':0,'@y':4},
+         '@value':[['Sr. Mgt.','Boeing','USA','Large','Aerospace']]},
+        {'@from':{'@height':1,'@width':5,'@x':0,'@y':2},
+         '@to':{'@height':1,'@width':5,'@x':0,'@y':1},
+         '@value':[['Data Architect','Airbus','France','Large','Aerospace']]},
+        {'@from':{'@height':1,'@width':5,'@x':0,'@y':3},
+         '@to':{'@height':1,'@width':5,'@x':0,'@y':2},
+         '@value':[['Founder','Ellie Tech','Sweden','Startup','AI']]},
+        {'@from':{'@height':1,'@width':5,'@x':0,'@y':4},
+         '@to':{'@height':1,'@width':5,'@x':0,'@y':3},
+         '@value':[['Platform Engineer','Adidas','Germany','Large','Apparel']]}]}
 ```
 
 ## Diff and Patch Endpoints
