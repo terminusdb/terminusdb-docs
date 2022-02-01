@@ -902,7 +902,7 @@ In the example range class below, `first_name` and `last_name` are strings, `yea
 
 ## Type families
 
-Use type families to construct optionality or collections of values. Type families are `List`, `Set`, `Array`, and `Optional`.
+Use type families to construct optionality or collections of values. Type families are `List`, `Set`, `Array`, `Table` and `Optional`.
 
 ### Optional
 
@@ -995,6 +995,101 @@ An example of an object `Task` contained in a `List` of elements known as a `Tas
             "name"  : "Take_Garage_Out" 
         }
     ]
+}
+```
+
+### Array
+
+Use `Array` to specify an ordered collection, with multiplicity, of values of a class or datatype in which you may want random access to the data. `Array` is implemented with intermediate indexed objects, with a `sys:value` and `sys:index` property on each element. However when extracted as JSON they will appear merely as lists, with possible null values representing gaps.
+
+#### Code: An example of type family List
+
+```json
+{ 
+    "@type"      : "@context",
+    "@base"      : "http://i/",
+    "@schema"    : "http://s/" 
+}
+{ 
+    "@id"        : "TaskArray",
+    "@type"      : "Class",
+    "tasks"      : 
+    { 
+        "@type"  : "Array",
+        "@class" : "Task"
+    } 
+}
+{
+    "@id"        : "Task",
+    "@type"      : "Class",
+    "@key"       : "ValueHash",
+    "name"       : "xsd:string" 
+}
+```
+
+An example of an object `Task` contained in a `Array` of elements known as a `TaskArray`. This list is retrieved in the same order that it is inserted. It is also capable of storing duplicates.
+
+```json
+{ 
+    "@id"   : "my_task_list",
+    "@type" : "TaskList",
+    "tasks" : 
+    [
+        {     
+            "@type" : "Task", 
+            "name"  : "Laundry" 
+        },
+        { 
+            "@type" : "Task", 
+            "name"  : "Take_Garage_Out" 
+        }
+    ]
+}
+```
+
+### Table
+
+Use `Table` to specify a uniform matrix of values.  `Table` is implemented as lists of lists using an `rdf:List` type.
+
+#### Code: An example of type family Table
+
+We can construct the GeoJSON type `MultiPoint` as follows:
+
+```json
+{ 
+    "@type"      : "@context",
+    "@base"      : "http://i/",
+    "@schema"    : "http://s/" 
+}
+
+{ 
+    "@type" : "Enum",
+    "@id" : "MultiPoint_Type",
+    "@value" : [ "MultiPoint" ]
+}
+
+{ 
+    "@type": "Class",
+    "@id": "MultiPoint",
+    "type": "MultiPoint_Type",
+    "coordinates" : {
+                        "@type":"Table", 
+                        "@class": "xsd:decimal"
+                    }
+}
+```
+
+An example of a `MultiPoint` object we have the following:
+
+```json
+{ 
+    "@type": "MultiPoint",
+    "@id": "MultiPoint/MyMultiPoint",
+                                 "type": "MultiPoint",
+                                 "coordinates" : [
+                                     [100.0, 0.0],
+                                     [101.0, 1.0]
+                                 ]
 }
 ```
 
