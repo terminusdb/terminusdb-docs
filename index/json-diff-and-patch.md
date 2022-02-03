@@ -132,7 +132,7 @@ A "Force Diff" will set the value of a location regardless of the current read-s
 
 ### Table Diff
 
-A Table diff specifies the differences and similarities between two tables. These tables *need not* have the same dimensions. In order to describe these differences we use a `ModifyTable` patch. The `ModifyTable` patch is comprised of `copies`, `deletes`, `inserts` and `moves`.
+A Table diff specifies the differences and similarities between two tables. These tables _need not_ have the same dimensions. In order to describe these differences we use a `ModifyTable` patch. The `ModifyTable` patch is comprised of `copies`, `deletes`, `inserts` and `moves`.
 
 `copies` give the sections of the table which can be copied verbatim. `deletes` gives all segments which are to be removed from the original. `inserts` gives all segments which are to be inserted into the new table.
 
@@ -257,7 +257,6 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/pa
   "asdf": {"fdsa": {"@after":"quuz", "@before":"quux", "@op":"SwapValue"}}
 }}
 {"alpha":1, "asdf": {"fdsa":"quuz"}}
-
 ```
 
 ```bash
@@ -274,3 +273,9 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/pa
 }}
 [0, 1, 2, 3 ]
 ```
+
+## See Also
+
+### Diff and Patch Client API
+
+Use diff and patch with a [JavaScript or Python Client](https://github.com/terminusdb/terminusdb-tutorials/tree/diff\_patch/diff\_patch).
