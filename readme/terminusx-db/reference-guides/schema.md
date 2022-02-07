@@ -1046,7 +1046,7 @@ An example of an object `Person` that can have 0 to any number of friends. This 
 
 ### Array
 
-Use `Array` to specify an *ordered* set of values arranged as a multidimensional array (including a simple flat array) of classes or datatypes.
+Use `Array` to specify an ordered collection, with multiplicity, of values of a class or datatype in which you may want random access to the data and which may be multi-dimensional. `Array` is implemented with intermediate indexed objects, with a `sys:value` and indexes placed at `sys:index`, `sys:index2`, ... `sys:indexN` for each of the array indices of the multi-dimensional array. However when extracted as JSON they will appear merely as lists (possibly of lists), with possible null values representing gaps in the array.
 
 #### Code: An example of type family Array
 
@@ -1093,5 +1093,3 @@ An example of a polygon object `GeoPolygon` points to a 2D array of coordinates 
     ]
 }
 ```
-
-The multidimensional array type is implemented in RDF as a *Set* of objects with indexes placed at `sys:index`, `sys:index1`, ... `sys:indexN` for each of the array indices, and a `sys:value` which points at the actual object.
