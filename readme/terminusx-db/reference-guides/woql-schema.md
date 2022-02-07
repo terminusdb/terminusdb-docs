@@ -1179,16 +1179,6 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 ---
 
-### Put
-
-<p class="tdb-f">Description pending.</p>
-
-**Class:** `Put`
-
-**Super class:** `Query`
-
----
-
 ### Query
 
 <p class="tdb-f">An abstract class which represents an arbitrary query AST. It is a subdocument</p>
