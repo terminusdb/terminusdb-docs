@@ -1043,3 +1043,53 @@ An example of an object `Person` that can have 0 to any number of friends. This 
     ]
 }
 ```
+
+### Array
+
+Use `Array` to specify an ordered collection, with multiplicity, of values of a class or datatype in which you may want random access to the data and which may be multi-dimensional. `Array` is implemented with intermediate indexed objects, with a `sys:value` and indexes placed at `sys:index`, `sys:index2`, ... `sys:indexN` for each of the array indices of the multi-dimensional array. However when extracted as JSON they will appear merely as lists (possibly of lists), with possible null values representing gaps in the array.
+
+#### Code: An example of type family Array
+
+```json
+{ 
+    "@type"      : "@context",
+    "@base"      : "http://i/",
+    "@schema"    : "http://s/" 
+}
+{ 
+    "@id"        : "GeoPolygon",
+    "@type"      : "Class",
+    "name"       : "xsd:string",
+    "coordinates"    : 
+    { 
+        "@type"  : "Array",
+        "@dimensions" : 2,
+        "@class" : "xsd:decimal" 
+    }
+}
+```
+
+An example of a polygon object `GeoPolygon` points to a 2D array of coordinates which specify a polygon encompassing the Phoneix Park.
+
+```json
+{
+    "@id"           : "PhoenixPark",
+    "@type"         : "GeoPolygon",
+    "name"          : "The Pheonix Park",
+    "coordinates"   :
+    [
+      [
+        -6.3491535,
+        53.3700669
+      ],
+      [
+        -6.3364506,
+        53.3717056
+      ],
+      [
+        -6.349411,
+        53.3699645
+      ]
+    ]
+}
+```
