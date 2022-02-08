@@ -18,15 +18,15 @@ using.
 {% tabs %}
 
 {% tab title="Local" %}
-First, set your user. For a new installation, use `admin`.
+First, set the user. For a new installation, use `admin`.
 
 ```shell
-export TERMINUSDB_USER="my_user"
+export TERMINUSDB_USER="admin"
 ```
 
-Then, set the password for this user. For a new installation, use `root`.
+Then, set the password. For a new installation, use `root`.
 ```shell
-export TERMINUSDB_PASS="my_pass"
+export TERMINUSDB_PASS="root"
 ```
 {% endtab %}
 
@@ -42,24 +42,6 @@ export TERMINUSDB_ACCESS_TOKEN="replace_this_with_your_api_key"
 
 [get_api_key]: readme/terminusx/quick-start/get-api-key.md
 
-{% tabs %}
-
-{% tab title="Local" %}
-```shell
-curl "http://localhost:6363/api/" \
-  -u $TERMINUSDB_USER:$TERMINUSDB_PASS
-```
-{% endtab %}
-
-{% tab title="TerminusX" %}
-```shell
-curl "https://cloud.terminusdb.com/my_team/api/" \
-  -H "API_TOKEN: $TERMINUSDB_ACCESS_TOKEN"
-```
-{% endtab %}
-
-{% endtabs %}
-
 ## Databases
 
 These endpoints support the management of databases.
@@ -73,7 +55,7 @@ These endpoints support the management of databases.
 {% tab title="Local" %}
 ```shell
 curl 'http://localhost:6363/api/' \
--u $TERMINUSDB_USER:$TERMINUSDB_PASS
+  -u $TERMINUSDB_USER:$TERMINUSDB_PASS
 ```
 {% endtab %}
 
