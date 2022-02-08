@@ -25,16 +25,33 @@ export TERMINUSDB_USER="admin"
 ```
 
 Then, set the password. For a new installation, use `root`.
+
 ```shell
 export TERMINUSDB_PASS="root"
+```
+
+Finally, set the organization housing your databases. For a new installation,
+use `admin`.
+
+```shell
+export TERMINUSDB_ORG="admin"
 ```
 {% endtab %}
 
 {% tab title="TerminusX" %}
 For TerminusX, you need an access token (API key). [Get your API
 key][get_api_key] if you don't already have one.
+
 ```shell
 export TERMINUSDB_ACCESS_TOKEN="replace_this_with_your_api_key"
+```
+
+Finally, set the organization housing your databases. On initial sign-up to
+TerminusX, you start with an organization (or team) with the same name as your
+username.
+
+```shell
+export TERMINUSDB_ORG="my_user"
 ```
 {% endtab %}
 
@@ -61,7 +78,7 @@ curl 'http://localhost:6363/api/' \
 
 {% tab title="TerminusX" %}
 ```shell
-curl https://cloud.terminusdb.com/my_team/api/ \
+curl "https://cloud.terminusdb.com/$TERMINUSDB_ORG/api/" \
   -H "API_TOKEN: $TERMINUSDB_ACCESS_TOKEN"
 ```
 {% endtab %}
