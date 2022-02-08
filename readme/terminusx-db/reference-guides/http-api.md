@@ -71,7 +71,7 @@ These endpoints support the management of databases.
 
 {% tab title="Local" %}
 ```shell
-curl 'http://localhost:6363/api/' \
+curl "http://localhost:6363/api/" \
   -u $TERMINUSDB_USER:$TERMINUSDB_PASS
 ```
 {% endtab %}
@@ -88,6 +88,32 @@ curl "https://cloud.terminusdb.com/$TERMINUSDB_ORG/api/" \
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/db/{organization}/{database}" method="post" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
+
+{% tabs %}
+
+{% tab title="Local" %}
+Create a database with the identifier `my_database`:
+
+```shell
+curl "http://localhost:6363/api/db/$TERMINUSDB_ORG/my_database" \
+  -u $TERMINUSDB_USER:$TERMINUSDB_PASS \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"label": "My Database", "comment": "The best database ever"}'
+```
+{% endtab %}
+
+{% tab title="TerminusX" %}
+```shell
+curl "https://cloud.terminusdb.com/$TERMINUSDB_ORG/api/db/$TERMINUSDB_ORG/my_database" \
+  -H "API_TOKEN: $TERMINUSDB_ACCESS_TOKEN" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"label": "My Database", "comment": "The best database ever"}'
+```
+{% endtab %}
+
+{% endtabs %}
 
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/db/{organization}/{database}" method="delete" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
