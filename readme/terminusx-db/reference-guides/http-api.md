@@ -39,8 +39,8 @@ export TERMINUSDB_ORG="admin"
 {% endtab %}
 
 {% tab title="TerminusX" %}
-For TerminusX, you need an access token (API key). [Get your API
-key][get_api_key] if you don't already have one.
+First, you need an access token (API key). [Get an API key][get_api_key] if you
+don't already have one.
 
 ```shell
 export TERMINUSDB_ACCESS_TOKEN="replace_this_with_your_api_key"
