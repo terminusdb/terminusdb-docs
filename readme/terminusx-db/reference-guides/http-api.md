@@ -2,76 +2,76 @@
 
 API definitions for terminusdb.
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/ok" method="get" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/ok" method="get" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/info" method="get" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/info" method="get" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/db/{organization}/{database}" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/db/{organization}/{database}" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/db/{organization}/{database}" method="delete" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/db/{organization}/{database}" method="delete" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/document/{path}" method="get" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/document/{path}" method="get" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/document/{path}" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/document/{path}" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/document/{path}" method="put" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/document/{path}" method="put" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/document/{path}" method="delete" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/document/{path}" method="delete" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/woql" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/woql" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/woql/{path}" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/woql/{path}" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/branch/{path}" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/branch/{path}" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/branch/{path}" method="delete" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/branch/{path}" method="delete" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/squash/{path}" method="get" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/squash/{path}" method="get" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/reset/{path}" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/reset/{path}" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/optimize/{path}" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/optimize/{path}" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/prefixes/{path}" method="get" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/prefixes/{path}" method="get" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/diff" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/diff" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml" path="/patch" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/main/terminusdb.yaml)
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/patch" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
 ### General rule
