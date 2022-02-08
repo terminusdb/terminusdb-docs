@@ -104,6 +104,8 @@ curl "http://localhost:6363/api/db/$TERMINUSDB_ORG/my_database" \
 {% endtab %}
 
 {% tab title="TerminusX" %}
+Create a database with the identifier `my_database`:
+
 ```shell
 curl "https://cloud.terminusdb.com/$TERMINUSDB_ORG/api/db/$TERMINUSDB_ORG/my_database" \
   -H "API_TOKEN: $TERMINUSDB_ACCESS_TOKEN" \
@@ -118,6 +120,31 @@ curl "https://cloud.terminusdb.com/$TERMINUSDB_ORG/api/db/$TERMINUSDB_ORG/my_dat
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/db/{organization}/{database}" method="delete" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
+
+{% tabs %}
+
+{% tab title="Local" %}
+Delete the database with the identifier `my_database`:
+
+```shell
+curl "http://localhost:6363/api/db/$TERMINUSDB_ORG/my_database" \
+  -u $TERMINUSDB_USER:$TERMINUSDB_PASS \
+  -X DELETE
+```
+{% endtab %}
+
+{% tab title="TerminusX" %}
+Delete the database with the identifier `my_database`:
+
+```shell
+curl "https://cloud.terminusdb.com/$TERMINUSDB_ORG/api/db/$TERMINUSDB_ORG/my_database" \
+  -H "API_TOKEN: $TERMINUSDB_ACCESS_TOKEN" \
+  -X DELETE
+```
+{% endtab %}
+
+{% endtabs %}
+
 
 ## Documents
 
