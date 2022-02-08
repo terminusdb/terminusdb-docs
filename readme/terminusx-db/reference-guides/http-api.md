@@ -2,11 +2,11 @@
 
 API definitions for terminusdb.
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/ok" method="get" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
-{% endswagger %}
+## Databases
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/info" method="get" %}
+These endpoints support the management of databases.
+
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/" method="get" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
@@ -17,6 +17,10 @@ API definitions for terminusdb.
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/db/{organization}/{database}" method="delete" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
+
+## Documents
+
+These endpoints support the Document Interface.
 
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/document/{path}" method="get" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
@@ -34,6 +38,22 @@ API definitions for terminusdb.
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
+## JSON Diff & Patch
+
+These endpoints support diff and patch operations on JSON.
+
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/diff" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
+{% endswagger %}
+
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/patch" method="post" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
+{% endswagger %}
+
+## WOQL
+
+These endpoints support the Web Object Query Language (WOQL).
+
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/woql" method="post" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
@@ -41,6 +61,10 @@ API definitions for terminusdb.
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/woql/{path}" method="post" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
+
+## Branch
+
+These endpoints provide branch operations on a database.
 
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/branch/{path}" method="post" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
@@ -58,19 +82,31 @@ API definitions for terminusdb.
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/optimize/{path}" method="post" %}
-[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
-{% endswagger %}
+## Prefixes
+
+These endpoints provide access to prefixes.
 
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/prefixes/{path}" method="get" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/diff" method="post" %}
+## Optimize
+
+These endpoints provide operations to optimize a database.
+
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/optimize/{path}" method="post" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
-{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/patch" method="post" %}
+## Server
+
+These endpoints provide information about the server.
+
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/info" method="get" %}
+[https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
+{% endswagger %}
+
+{% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/ok" method="get" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
 
