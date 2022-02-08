@@ -1,6 +1,64 @@
+---
+description: TerminusDB HTTP API documentation.
+---
+
 # HTTP API Reference
 
-API definitions for terminusdb.
+## Introduction
+
+This page contains documentation on how to use
+[TerminusDB](https://terminusdb.com/) through HTTP API operations.
+
+This page includes examples using [`curl`][curl]. To get started with these,
+first set up some environment variables. These will depend on which host you are
+using.
+
+[curl]: https://curl.se/
+
+{% tabs %}
+
+{% tab title="Local" %}
+First, set your user. For a new installation, use `admin`.
+
+```shell
+export TERMINUSDB_USER="my_user"
+```
+
+Then, set the password for this user. For a new installation, use `root`.
+```shell
+export TERMINUSDB_PASS="my_pass"
+```
+{% endtab %}
+
+{% tab title="TerminusX" %}
+For TerminusX, you need an access token (API key). [Get your API
+key][get_api_key] if you don't already have one.
+```shell
+export TERMINUSDB_ACCESS_TOKEN="replace_this_with_your_api_key"
+```
+{% endtab %}
+
+{% endtabs %}
+
+[get_api_key]: readme/terminusx/quick-start/get-api-key.md
+
+{% tabs %}
+
+{% tab title="Local" %}
+```shell
+curl "http://localhost:6363/api/" \
+  -u $TERMINUSDB_USER:$TERMINUSDB_PASS
+```
+{% endtab %}
+
+{% tab title="TerminusX" %}
+```shell
+curl "https://cloud.terminusdb.com/my_team/api/" \
+  -H "API_TOKEN: $TERMINUSDB_ACCESS_TOKEN"
+```
+{% endtab %}
+
+{% endtabs %}
 
 ## Databases
 
@@ -9,6 +67,24 @@ These endpoints support the management of databases.
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/" method="get" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
 {% endswagger %}
+
+{% tabs %}
+
+{% tab title="Local" %}
+```shell
+curl 'http://localhost:6363/api/' \
+-u $TERMINUSDB_USER:$TERMINUSDB_PASS
+```
+{% endtab %}
+
+{% tab title="TerminusX" %}
+```shell
+curl https://cloud.terminusdb.com/my_team/api/ \
+  -H "API_TOKEN: $TERMINUSDB_ACCESS_TOKEN"
+```
+{% endtab %}
+
+{% endtabs %}
 
 {% swagger src="https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml" path="/db/{organization}/{database}" method="post" %}
 [https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml](https://raw.githubusercontent.com/terminusdb/openapi-specs/various/terminusdb.yaml)
