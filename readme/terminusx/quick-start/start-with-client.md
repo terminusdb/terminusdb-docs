@@ -21,8 +21,6 @@ npm install --save @terminusdb/terminusdb-client
 {% tab title="Python" %}
 Install the Python client using `pip`. Using a virtual environment is recommended - see [Python documentation](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
 
-
-
 **Create a new virtual environment named terminusdb-env**
 
 ```
@@ -95,7 +93,7 @@ const connectToServer = async () => {
 connectToServer();
 ```
 
-### ****
+#### \*\*\*\*
 {% endtab %}
 
 {% tab title="Python" %}
@@ -225,7 +223,7 @@ Add the schema object to the database.
 {% tab title="JavaScript" %}
 Add the schema object to a document using `addDocument` which returns a Promise.
 
-```
+```javascript
 await client.addDocument(schema, { graph_type: "schema" })
 ```
 {% endtab %}
@@ -233,7 +231,7 @@ await client.addDocument(schema, { graph_type: "schema" })
 {% tab title="Python" %}
 Commit the schema object to the database.
 
-```
+```python
 schema.commit(client, commit_msg = "Adding Player Schema")
 ```
 {% endtab %}
@@ -373,8 +371,6 @@ Specific document
     position: 'Full Back'
   }
 ```
-
-
 {% endtab %}
 {% endtabs %}
 
@@ -475,6 +471,138 @@ print(results['bindings'])
     position: { '@type': 'xsd:string', '@value': 'Full Back' }
   }
 ]
+```
+{% endtab %}
+{% endtabs %}
+
+### Create relationships/links between documents
+
+We will create teams with players which we have already created to show how creating relationships/links between documents.
+
+#### Code: Create schema for team
+
+Team will have `name`  and `players` properties.  The object is uniquely identified by `name`. Here `players` properties is a set of Player which creates a link between Team and Player schema.
+
+{% tabs %}
+{% tab title="Javascript" %}
+```javascript
+const team_schema = [
+        {
+            "@type" : "Class",
+            "@id" : "Team",
+            "@key" : { 
+            "@type": "Lexical", 
+            "@fields": ["name"] 
+            },
+            name : "xsd:string",
+            players: { "@type" : "Set",
+                       "@class" : "Player" },
+        }
+];
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+from typing import  Set
+
+class Team(DocumentTemplate):
+    _schema = schema
+    _key = LexicalKey(["name"])
+    name: str
+    players: Set['Player']
+```
+{% endtab %}
+{% endtabs %}
+
+#### Code: Add a schema
+
+Add the schema object to the database.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+Add the schema object to a document using `addDocument` which returns a Promise.
+
+```javascript
+await client.addDocument(team_schema, { graph_type: "schema" })
+```
+{% endtab %}
+
+{% tab title="Python" %}
+Commit the schema object to the database.
+
+```python
+schema.commit(client, commit_msg = "Adding Team Schema")
+```
+{% endtab %}
+{% endtabs %}
+
+#### Code: Add documents
+
+Once a schema is added, add documents corresponding to the team schema.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+```javascript
+const team_instance = [
+        {
+            "@type" : "Team",
+            name    : "Wildcats",
+            players: ["Player/Doug", "Player/Karen"],
+        },
+        {
+            "@type" : "Team",
+            name    : "Donkeys",
+            players: ["Player/George"],
+        }
+    ]
+
+await client.addDocument(team_instance)
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+doug_raw = client.get_document("Player/Doug")
+karen_raw = client.get_document("Player/Karen")
+george_raw = client.get_document("Player/George")
+
+doug = schema.import_objects(doug_raw)
+karen = schema.import_objects(karen_raw)
+george = schema.import_objects(george_raw)
+
+team_objects = [
+    Team(name="Wildcats", position={doug, karen}),
+    Team(name="Donkeys", position={george},
+]
+
+client.insert_document(team_objects, commit_msg = f"Inserting teams data")
+```
+{% endtab %}
+{% endtabs %}
+
+#### Code: Get all the teams
+
+Get a list of team documents.
+
+{% tabs %}
+{% tab title="JavaScript" %}
+```javascript
+const getTeams = async () => {
+  const query = {
+      "type": "Team",
+  };
+  const result = await client.queryDocument(query, {"as_list":true});
+  console.log("Teams ",result)
+}
+```
+{% endtab %}
+
+{% tab title="Python" %}
+```python
+teams = client.query_document({"@type"   : "Team"})
+
+print(list(matches))
 ```
 {% endtab %}
 {% endtabs %}
