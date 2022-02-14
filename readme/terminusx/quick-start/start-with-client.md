@@ -1,6 +1,10 @@
-# Start with a Client API
+---
+description: >-
+  A step-by-step guide with examples to install and get started with a
+  JavaScript or Python client.
+---
 
-> **On this page:** A step-by-step guide with examples to install and get started with a JavaScript or Python client.
+# Start with a Client API
 
 This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](https://terminusdb.github.io/terminusdb-client-js/) or [TerminusDB Python Client](https://terminusdb.github.io/terminusdb-client-python/) for detailed documentation. The code discussed on this page is also available in full:
 
@@ -475,13 +479,13 @@ print(results['bindings'])
 {% endtab %}
 {% endtabs %}
 
-### Create relationships/links between documents
+### Create links between documents
 
-We will create teams with players which we have already created to show how creating relationships/links between documents.
+The following code segments demonstrate creating relationships or links between documents
 
 #### Code: Create schema for team
 
-Team will have `name`  and `players` properties.  The object is uniquely identified by `name`. Here `players` properties is a set of Player which creates a link between Team and Player schema.
+The `Team` object is uniquely identified by the property `name`. The `players` property consists of a set of `Player` classes that create a link between the`Team` and `Player` schema.
 
 {% tabs %}
 {% tab title="Javascript" %}
@@ -521,7 +525,7 @@ Add the schema object to the database.
 
 {% tabs %}
 {% tab title="JavaScript" %}
-Add the schema object to a document using `addDocument` which returns a Promise.
+Add the schema object to a document using `addDocument` that returns a Promise.
 
 ```javascript
 await client.addDocument(team_schema, { graph_type: "schema" })
@@ -539,7 +543,7 @@ schema.commit(client, commit_msg = "Adding Team Schema")
 
 #### Code: Add documents
 
-Once a schema is added, add documents corresponding to the team schema.
+Add documents corresponding to the `Team` schema.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -583,7 +587,7 @@ client.insert_document(team_objects, commit_msg = f"Inserting teams data")
 
 #### Code: Get all the teams
 
-Get a list of team documents.
+Get a list of `Team` documents.
 
 {% tabs %}
 {% tab title="JavaScript" %}
