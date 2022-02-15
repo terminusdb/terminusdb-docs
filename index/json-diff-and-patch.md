@@ -206,14 +206,16 @@ Which would result in the following patch:
 Some examples using curl are as follows:
 
 ```shell
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d @-
-  { "before" : [{ "asdf" : "foo"}], "after" : [{ "asdf" : "bar"}]}
-[ {"asdf": {"@after":"bar", "@before":"foo", "@op":"SwapValue"}} ]
+$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d \
+  '{ "before" : [{ "asdf" : "foo"}], "after" : [{ "asdf" : "bar"}]}'
+# Output: [ {"asdf": {"@after":"bar", "@before":"foo", "@op":"SwapValue"}} ]
 ```
 
 ```bash
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d @-
-{ "before" : [0,1,2], "after" : [0,1,2,3]}
+$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d \
+  '{ "before" : [0,1,2], "after" : [0,1,2,3]}'
+
+# Output:
 {
   "@op":"CopyList",
   "@rest": {
@@ -227,8 +229,10 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/di
 ```
 
 ```bash
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d @-
-{ "before" : { "asdf" : { "fdsa" : "quux"}}, "after" : { "asdf" : { "fdsa" : "quuz" }}}
+$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d \
+  '{ "before" : { "asdf" : { "fdsa" : "quux"}}, "after" : { "asdf" : { "fdsa" : "quuz" }}}'
+
+# Output:
 {
   "asdf": {"fdsa": {"@after":"quuz", "@before":"quux", "@op":"SwapValue"}}
 }
@@ -252,15 +256,15 @@ Resulting in the following document:
 Some examples using curl are as follows:
 
 ```shell
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/patch' -d @-
-{ "before" : { "alpha" : 1, "asdf" : { "fdsa" : "quux"}}, "patch" : {
-  "asdf": {"fdsa": {"@after":"quuz", "@before":"quux", "@op":"SwapValue"}}
-}}
-{"alpha":1, "asdf": {"fdsa":"quuz"}}
+$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/patch' -d \
+   '{ "before" : { "alpha" : 1, "asdf" : { "fdsa" : "quux"}}, "patch" : {
+      "asdf": {"fdsa": {"@after":"quuz", "@before":"quux", "@op":"SwapValue"}}
+}}'
+# Output: {"alpha":1, "asdf": {"fdsa":"quuz"}}
 ```
 
 ```bash
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/patch' -d @-
+$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/patch' -d '
 { "before" : [0,1,2], "patch" : {
   "@op":"CopyList",
   "@rest": {
@@ -270,8 +274,8 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/pa
     "@rest": {"@op":"KeepList"}
   },
   "@to":3
-}}
-[0, 1, 2, 3 ]
+}}'
+#Output: [0, 1, 2, 3 ]
 ```
 
 ## See Also
