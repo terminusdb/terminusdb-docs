@@ -48,9 +48,9 @@ If using **TerminusX with Python**, connect to your TerminusX cloud instance fir
 
 1\. [Create an endpoint](json-diff-and-patch.md#create-an-endpoint)
 
-2\. [Apply a diff to obtain a patch](json-diff-and-patch.md#apply-a-diff)
+2\. [Apply a diff to obtain a patch](json-diff-and-patch.md#apply-a-diff-to-obtain-a-patch)
 
-3\. [Review the patch](json-diff-and-patch.md#review-a-patch)
+3\. [Review the patch](json-diff-and-patch.md#review-the-patch)
 
 4\. [Apply the patch](json-diff-and-patch.md#apply-the-patch)
 

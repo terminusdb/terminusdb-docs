@@ -96,8 +96,6 @@ const connectToServer = async () => {
 
 connectToServer();
 ```
-
-#### \*\*\*\*
 {% endtab %}
 
 {% tab title="Python" %}
