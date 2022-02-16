@@ -8,6 +8,8 @@ description: >-
 
 ## Key topics
 
+[Use public JSON-DP directly](json-diff-and-patch.md#use-public-json-dp-directly)
+
 [Use JSON-DP with a TerminusDB client](json-diff-and-patch.md#use-json-dp-with-a-terminusdb-client)
 
 [JSON-DP operations](json-diff-and-patch.md#json-dp-operations)
@@ -28,17 +30,15 @@ A **diff** takes two JSON objects and presents any differences between them. Dif
 
 A **patch** applies a diff to two objects to obtain a new object with any differences highlighted. A patch is applied individually or in bulk to a patch endpoint that will apply the patch to the specified data product.
 
-
-
 ## Use public JSON-DP directly
 
-We provide a public endpoint for each operation:
+Use our public endpoints for each operation:
 
-JSON Diff: [https://cloud.terminusdb.com/jsondiff](https://cloud.terminusdb.com/jsondiff)
+**JSON diff** - [https://cloud.terminusdb.com/jsondiff](https://cloud.terminusdb.com/jsondiff)
 
-JSON Patch: [https://cloud.terminusdb.com/jsonpatch](https://cloud.terminusdb.com/jsonpatch)
+**JSON patch** - [https://cloud.terminusdb.com/jsonpatch](https://cloud.terminusdb.com/jsonpatch)
 
-See [JSON-DP client tutorials](json-diff-and-patch.md#json-dp-client-tutorials) for use cases, including connectivity with MongoDB.
+See [Diff and Patch Endpoints](json-diff-and-patch.md#diff-and-patch-endpoints) for more information, and examples of [jsondiff](json-diff-and-patch.md#diff-examples-using-curl) and [jsonpatch](json-diff-and-patch.md#patch-examples-using-curl) using curl. &#x20;
 
 ## Use JSON-DP with a TerminusDB client
 
@@ -314,14 +314,11 @@ We have the following patch resulting from the diff:
 
 ## Diff and Patch Endpoints
 
-The Patch and Diff endpoints expose endpoints to obtain diffs or patches of data.
+The Patch and Diff endpoints expose endpoints to obtain diffs or patches of data. Use our public endpoint for each operation:
 
-\
-We provide a public endpoint for each operation:
+**JSON diff** - [https://cloud.terminusdb.com/jsondiff](https://cloud.terminusdb.com/jsondiff)
 
-JSON Diff: [https://cloud.terminusdb.com/jsondiff](https://cloud.terminusdb.com/jsondiff)
-
-JSON Patch: [https://cloud.terminusdb.com/jsonpatch](https://cloud.terminusdb.com/jsonpatch)
+**JSON patch** - [https://cloud.terminusdb.com/jsonpatch](https://cloud.terminusdb.com/jsonpatch)
 
 ### Diff
 
