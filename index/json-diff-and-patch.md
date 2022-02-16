@@ -330,13 +330,13 @@ Which would result in the following patch:
 #### Diff examples using curl
 
 ```shell
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d \
+$ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
   '{ "before" : [{ "asdf" : "foo"}], "after" : [{ "asdf" : "bar"}]}'
 # Output: [ {"asdf": {"@after":"bar", "@before":"foo", "@op":"SwapValue"}} ]
 ```
 
 ```bash
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d \
+$ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
   '{ "before" : [0,1,2], "after" : [0,1,2,3]}'
 
 # Output:
@@ -353,7 +353,7 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/di
 ```
 
 ```bash
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/diff' -d \
+$ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
   '{ "before" : { "asdf" : { "fdsa" : "quux"}}, "after" : { "asdf" : { "fdsa" : "quuz" }}}'
 
 # Output:
@@ -380,7 +380,7 @@ Resulting in the following document:
 #### Patch examples using curl
 
 ```shell
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/patch' -d \
+$ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsonpatch' -d \
    '{ "before" : { "alpha" : 1, "asdf" : { "fdsa" : "quux"}}, "patch" : {
       "asdf": {"fdsa": {"@after":"quuz", "@before":"quux", "@op":"SwapValue"}}
 }}'
@@ -388,7 +388,7 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/pa
 ```
 
 ```bash
-$ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/patch' -d '
+$ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsonpatch' -d '
 { "before" : [0,1,2], "patch" : {
   "@op":"CopyList",
   "@rest": {
