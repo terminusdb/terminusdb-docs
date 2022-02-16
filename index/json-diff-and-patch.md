@@ -28,6 +28,18 @@ A **diff** takes two JSON objects and presents any differences between them. Dif
 
 A **patch** applies a diff to two objects to obtain a new object with any differences highlighted. A patch is applied individually or in bulk to a patch endpoint that will apply the patch to the specified data product.
 
+
+
+## Use public JSON-DP directly
+
+We provide a public endpoint for each operation:
+
+JSON Diff: [https://cloud.terminusdb.com/jsondiff](https://cloud.terminusdb.com/jsondiff)
+
+JSON Patch: [https://cloud.terminusdb.com/jsonpatch](https://cloud.terminusdb.com/jsonpatch)
+
+See [JSON-DP client tutorials](json-diff-and-patch.md#json-dp-client-tutorials) for use cases, including connectivity with MongoDB.
+
 ## Use JSON-DP with a TerminusDB client
 
 Use JSON-DP with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See [JSON-DP client tutorials](json-diff-and-patch.md#json-dp-client-tutorials) for use cases, including connectivity with MongoDB.
@@ -43,7 +55,7 @@ Use JSON-DP with a TerminusDB JavaScript or Python client to find and handle cha
 Get started with the simple steps below.
 
 {% hint style="info" %}
-If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../readme/terminusx/quick-start/start-with-client.md#connect-with-woqlclient) for instructions if required.  &#x20;
+If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../readme/terminusx/quick-start/start-with-client.md#connect-with-woqlclient) for instructions if required.
 {% endhint %}
 
 1\. [Create an endpoint](json-diff-and-patch.md#create-an-endpoint)
@@ -84,8 +96,6 @@ Get the difference/s between two hypothetical documents - `Doc1` and `Doc2`.
 {% tab title="JavaScript" %}
 Use `getDiff`
 
-
-
 ```javascript
 let result_patch = await client.getDiff(Doc1, Doc2)
 ```
@@ -93,8 +103,6 @@ let result_patch = await client.getDiff(Doc1, Doc2)
 
 {% tab title="Python" %}
 Use`diff`
-
-
 
 ```python
 result_patch = client.diff(Doc1, Doc2)
@@ -115,8 +123,6 @@ console.log(result_patch)
 
 {% tab title="Python" %}
 Example uses`pprint` (`from pprint import pprint`)
-
-
 
 ```python
 pprint(result_patch.content)
@@ -142,7 +148,7 @@ after_patch = client.patch(Doc1, result_patch)
 {% endtab %}
 {% endtabs %}
 
-## JSON-DP operations &#x20;
+## JSON-DP operations
 
 The available JSON-DP operations with some examples using `curl`.
 
@@ -308,7 +314,14 @@ We have the following patch resulting from the diff:
 
 ## Diff and Patch Endpoints
 
-The Patch and Diff endpoints expose endpoints for clients to obtain diffs or patches of data.
+The Patch and Diff endpoints expose endpoints to obtain diffs or patches of data.
+
+\
+We provide a public endpoint for each operation:
+
+JSON Diff: [https://cloud.terminusdb.com/jsondiff](https://cloud.terminusdb.com/jsondiff)
+
+JSON Patch: [https://cloud.terminusdb.com/jsonpatch](https://cloud.terminusdb.com/jsonpatch)
 
 ### Diff
 
@@ -404,7 +417,7 @@ $ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com
 
 ## See Also
 
-### JSON-DP client tutorials&#x20;
+### JSON-DP client tutorials
 
 Tutorials for using JSON-DP with a TerminusDB [JavaScript or Python client](https://github.com/terminusdb/terminusdb-tutorials/tree/master/diff\_patch), including the use of JSON-DP with MongoDB.
 
