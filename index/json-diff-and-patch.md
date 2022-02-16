@@ -406,7 +406,7 @@ $ curl -X POST -H "Content-Type: application/json" 'http://127.0.0.1:6363/api/pa
 
 ### JSON-DP client tutorials&#x20;
 
-Tutorials for using JSON-DP with a TerminusDB [JavaScript or Python client](https://github.com/terminusdb/terminusdb-tutorials/tree/diff\_patch/diff\_patch), including the use of JSON-DP with MongoDB.
+Tutorials for using JSON-DP with a TerminusDB [JavaScript or Python client](https://github.com/terminusdb/terminusdb-tutorials/tree/master/diff\_patch), including the use of JSON-DP with MongoDB.
 
 ### JSON-DP JavaScript client reference guide
 
