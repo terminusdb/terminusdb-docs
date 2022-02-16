@@ -24,9 +24,17 @@ A list of prerequisite components depending on your operating system. Click on t
 
 You can install and use the TerminusDB client as a [NodeJS module](install-javascript-client.md#install-client-as-a-nodejs-module) using `npm` or directly as a [minified JavaScript file](install-javascript-client.md#install-client-as-a-minified-script).
 
-### Install client as a NodeJS module
+### Install client as a NodeJS module&#x20;
 
-Install TerminusDB client using `npm`.
+Using npm we can install the package in a new NodeJs project or existing one using following commands:
+
+Go to a NodeJs project folder:
+
+```bash
+$ cd ../projectfolder/
+```
+
+Install the package
 
 ```bash
 $ npm install --save @terminusdb/terminusdb-client
