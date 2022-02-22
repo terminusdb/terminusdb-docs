@@ -34,9 +34,9 @@ A **patch** applies a diff to two objects to obtain a new object with any differ
 
 Use our public endpoints for each operation:
 
-**JSON diff** - [https://cloud.terminusdb.com/jsondiff](https://cloud.terminusdb.com/jsondiff)
+**JSON diff** - `https://cloud.terminusdb.com/jsondiff`
 
-**JSON patch** - [https://cloud.terminusdb.com/jsonpatch](https://cloud.terminusdb.com/jsonpatch)
+**JSON patch** - `https://cloud.terminusdb.com/jsonpatch`
 
 See [Diff and Patch Endpoints](json-diff-and-patch.md#diff-and-patch-endpoints) for more information, and examples of [jsondiff](json-diff-and-patch.md#diff-examples-using-curl) and [jsonpatch](json-diff-and-patch.md#patch-examples-using-curl) using curl. &#x20;
 
@@ -316,9 +316,9 @@ We have the following patch resulting from the diff:
 
 The Patch and Diff endpoints expose endpoints to obtain diffs or patches of data. Use our public endpoint for each operation:
 
-**JSON diff** - [https://cloud.terminusdb.com/jsondiff](https://cloud.terminusdb.com/jsondiff)
+**JSON diff** - `https://cloud.terminusdb.com/jsondiff`
 
-**JSON patch** - [https://cloud.terminusdb.com/jsonpatch](https://cloud.terminusdb.com/jsonpatch)
+**JSON patch** - `https://cloud.terminusdb.com/jsonpatch`
 
 ### Diff
 
