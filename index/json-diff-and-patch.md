@@ -384,7 +384,7 @@ Patch takes a POST with a _before_ document and a _patch_ and produces an _after
 Resulting in the following document:
 
 ```json
-{ "@id" : "Person/Jane", "@type" : "bahPerson", "name" : "Janine"}
+{ "@id" : "Person/Jane", "@type" : "Person", "name" : "Janine"}
 ```
 
 #### Patch examples using curl
