@@ -58,7 +58,7 @@ python3 -m pip install terminusdb-client
 A `WOQLClient` object enables connection to TerminusX (or TerminusDB.) To create a client object:
 
 * [Get your API key](get-api-key.md)
-* Copy the JavaScript code snippet generated in the step above.
+* Copy the JavaScript/Python code snippet generated in the step above.
 * Provide the URL to a database server.
 
 ### Define a WOQLClient
@@ -83,18 +83,6 @@ const client = new TerminusDBClient.WOQLClient(`https://cloud.terminusdb.com/${t
 
 //set the key as an environment variable.
 client.setApiKey(process.env.TERMINUSDB_ACCESS_TOKEN)
-
-const connectToServer = async () => {
-    try {
-        await client.connect();
-    } catch (err) {
-        console.error(err)
-    }
-
-    console.log("Connected to TerminusDB successfully!")
-};
-
-connectToServer();
 ```
 {% endtab %}
 
