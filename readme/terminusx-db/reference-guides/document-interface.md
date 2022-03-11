@@ -131,6 +131,79 @@ As shown above, deleting a single document can be done through query parameters 
 
 In other words, a JSON list of document IDs.
 
+### Capturing IDs while inserting or replacing documents
+When inserting or replacing several documents at once, it may occur that some of these documents need to refer to each other. However, at insertion time, you may not know what the IDs of the new documents are going to be. This is especially the case for document types that generate their identifier randomly, but even for non-random key types, it may be convenient to rely on the server's ID generation algorithm, rather than trying to predict what IDs will get generated. Therefore, in order to support cross-references between newly inserted documents, the document interface allows you to capture newly generated document IDs in a variable, and then refer to that variable later in other documents.
+
+#### Capturing an identifier into a variable
+When inserting or replacing a document that we want to refer to in another document inserted in the same operation, you can use a `@capture` key in the document to associate the newly generated identifier with a variable. For example,
+```jsx
+{ "@type": "Person",
+  "@capture": "Id_Tom",
+  "name": "Tom"
+}
+```
+
+This will store the newly generated ID in a variable called `ID_Tom` for the duration of the document insert/replace operation.
+
+It is allowed to capture an ID and then never actually refer to it.
+
+It is an error to capture the same variable twice. Doing so will result in a `api:CaptureIdAlreadyBound` error with the following shape:
+```jsx
+{"@type": "api:CaptureIdAlreadyBound",
+ "api:capture": "..capture id..",
+ "api:document": {..document where previously captured variable was captured again..}
+```
+
+#### Referring to an identifier using a variable
+When inserting or replacing a document that needs to refer to another document inserted in the same operation, you can use a json dictionary of the form `{"@ref": "..id.."}` in place of an ordinary id. For example,
+```jsx
+{ "@type": "Person",
+  "name": "Jerry",
+  "rival": {"@ref": "Id_Tom"}
+}
+```
+
+It is an error to refer to a variable which is never captured. Doing so will result in a `api:NotAllCapturesFound` error of the following shape:
+```jsx
+{ "@type": "api:NotAllCapturesFound",
+  "api:captures": [..list of capture ids that were referenced but not found..]
+}
+```
+
+#### Ordering of documents
+ID captures and ID references can be done in any order. That means that when you are submitting several documents, you're allowed to refer to a captured ID in an earlier document. This also allows you to do cross-references, where two documents refer to each other:
+```jsx
+{ "@type": "Person",
+  "@capture": "Id_Tom",
+  "name": "Tom",
+  "rival": {"@ref": "Id_Jerry"}
+}
+{ "@type": "Person",
+  "@capture": "Id_Jerry",
+  "name": "Jerry",
+  "rival": {"@ref": "Id_Tom"}
+}
+```
+
+In this example, Tom refers to Jerry, even though at that point in the submitted document stream, Jerry has not yet been processed. This is not a problem - both Tom and Jerry will get inserted referring to each other.
+
+### Self-reference
+Using ID capture, it is possible to create a document that refers to itself:
+```jsx
+{ "@type": "Person",
+  "@capture": "Captured_Id",
+  "name": "Elmo",
+  "friend": {"@ref": "Captured_Id"}
+}
+```
+
+This will make Elmo be his own friend.
+
+#### ID capture only works within a single operation
+It is important to keep in mind that the ID capture mechanism only works within a single call to the document api. It is not possible to capture an ID in one operation, and then refer to it in a second operation. The `@capture` and `@ref` instructions do not get saved into the database. They are processed immediately and are then forgotten.
+
+If you need to refer to a document already in the database, the only way to do so is by referring to its ID.
+
 ## The schema endpoint
 
 The schema endpoint can be used to query information about classes in a resource. These queries happen through a GET on the following endpoint:
