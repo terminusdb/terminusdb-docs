@@ -191,7 +191,7 @@ The `@type` of the object. At the schema level, this is one of: `Enum`, `Class`,
 
 #### Enum
 
-An `Enum` is a non-standard class in which each instance is a simple URI with no additional structure. To be a member of the class, you must be one of the referent URIs. An `Enum` example with an extension `Blue` is s shown below. In the database, the actual URI for an Enum is expanded with the preceding type name, so the `Blue` extension becomes `http://s#PrimaryColour_Blue`
+An `Enum` is a non-standard class in which each instance is a simple URI with no additional structure. To be a member of the class, you must be one of the referent URIs. An `Enum` example with an extension `Blue` is s shown below. In the database, the actual URI for an Enum is expanded with the preceding type name, so the `Blue` extension becomes `http://s#PrimaryColour/Blue`
 
 #### Code: An example of an enum class
 
