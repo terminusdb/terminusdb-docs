@@ -1,28 +1,6 @@
-# Client and WOQL Reference
+# Python Client Reference
 
-> **On this page:** JavaScript and Python client and Web Oobject Query Language (WOQL) reference guides.
-
-## Key topics
-
-[JavaScript Client reference](client.md#javascript-client-reference)
-
-[Python Client reference](client.md#python-client-reference)
-
-## JavaScript Client reference
-
-These links open new windows to a site dedicated to JavaScript client references.
-
-### Client reference
-
-[Javascript Client reference](https://terminusdb.github.io/terminusdb-client-js/)
-
-### WOQL reference
-
-[JavaScript WOQL Client reference](https://terminusdb.github.io/terminusdb-client-js/#/api/woql.js?id=woql)
-
-## Python Client reference
-
-These links open new windows to a site dedicated to Python client references.
+These links open new windows to a site dedicated to Python Client references.
 
 ### Client reference
 
