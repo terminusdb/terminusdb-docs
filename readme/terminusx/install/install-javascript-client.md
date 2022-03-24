@@ -68,7 +68,7 @@ An example use of the JavaScript client in [Start with a Client API](../quick-st
 
 ### Client reference
 
-[JavaScript Client reference guides](../../terminusx-db/reference-guides/client.md).
+[JavaScript Client reference guides](../../../index/terminusx-db/reference-guides/javascript-client-reference/).
 
 ### Tutorials
 

@@ -97,7 +97,7 @@ An example use of the Python client in [Start with a Client API](../quick-start/
 
 ### Client reference
 
-[Python Client reference guides](../../terminusx-db/reference-guides/client.md#python-client-reference).
+[Python Client reference guides](../../terminusx-db/reference-guides/client.md).
 
 ### Tutorials
 

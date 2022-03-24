@@ -38,7 +38,7 @@ Use our public endpoints for each operation:
 
 **JSON patch** - `https://cloud.terminusdb.com/jsonpatch`
 
-See [Diff and Patch Endpoints](json-diff-and-patch.md#diff-and-patch-endpoints) for more information, and examples of [jsondiff](json-diff-and-patch.md#diff-examples-using-curl) and [jsonpatch](json-diff-and-patch.md#patch-examples-using-curl) using curl. &#x20;
+See [Diff and Patch Endpoints](json-diff-and-patch.md#diff-and-patch-endpoints) for more information, and examples of [jsondiff](json-diff-and-patch.md#diff-examples-using-curl) and [jsonpatch](json-diff-and-patch.md#patch-examples-using-curl) using curl.
 
 ## Use JSON-DP with a TerminusDB client
 
@@ -420,7 +420,7 @@ Tutorials for using JSON-DP with a TerminusDB [JavaScript or Python client](http
 
 ### JSON-DP JavaScript client reference guide
 
-JSON-DP functions in the [JavaScript client reference guide](https://terminusdb.github.io/terminusdb-client-js/#/api/woqlClient.js?id=getdiff).
+JSON-DP functions in the [JavaScript client reference guide](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#getdiff).
 
 ### JSON-DP Python client reference guide
 

@@ -601,7 +601,7 @@ print(list(matches))
 
 ### Client reference
 
-[JavaScript and Python client reference guides](../../terminusx-db/reference-guides/client.md).
+[JavaScript](../../../index/terminusx-db/reference-guides/javascript-client-reference/) and [Python](../../terminusx-db/reference-guides/client.md) client reference guides.
 
 ### Tutorials
 

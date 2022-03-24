@@ -8,11 +8,11 @@
 
 ### JavaScript Client reference
 
-[Javascript Client reference](https://terminusdb.github.io/terminusdb-client-js/)
+[Javascript Client reference](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient)
 
 ### JavaScript WOQL Client reference
 
-[JavaScript WOQL Client reference](https://terminusdb.github.io/terminusdb-client-js/#/api/woql.js?id=woql)
+[JavaScript WOQL Client reference](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woql)
 
 ### Python Client reference
 
