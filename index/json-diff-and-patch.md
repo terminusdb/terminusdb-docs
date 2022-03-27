@@ -4,7 +4,7 @@ description: >-
   available operations using TerminusDB JavaScript and Python clients, and curl.
 ---
 
-# JSON Diff and Patch
+# JSON Diff and Patch new 
 
 ## Key topics
 
