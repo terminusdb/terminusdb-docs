@@ -1044,6 +1044,118 @@ An example of an object `Person` that can have 0 to any number of friends. This 
 }
 ```
 
+### Cardinality
+
+Use `Cardinality` to specify an unordered set of values of a class or
+datatype in which the property has a limited number of elements as
+specified by the cardinality constraint properties.
+
+The relevant properties are:
+
+#### `@cardinality`
+
+When specified, the number of elements for the given property must be
+*exactly* the cardinality specified. This is equivalent to specifying
+both `@min_cardinality` and `@max_cardinality` as the same
+cardinality.
+
+#### Code: An example of type family Cardinality with `@cardinality`
+
+```json
+{
+    "@type"      : "@context",
+    "@base"      : "http://i/",
+    "@schema"    : "http://s/"
+}
+{
+    "@id"        : "Person",
+    "@type"      : "Class",
+    "name"       : "xsd:string",
+    "friends"    :
+    {
+        "@type"  : "Set",
+        "@class" : "Person"
+        "@cardinality" : 3
+    }
+}
+```
+
+An example of an object `Person` that can have exactly threefriends. As with `Set` This list has no order and is retrieved from the database in a potentially different order.
+
+```json
+{
+    "@id"           : "Person/Me",
+    "@type"         : "Person",
+    "friends"       :
+    [
+        {
+            "@type" : "Person",
+            "@id"   : "Person/you",
+            "name"  : "You"
+        },
+        {
+            "@type" : "Person",
+            "@id"   : "Person/someone_else",
+            "name"  : "Someone Else"
+        },
+        {
+            "@type" : "Person",
+            "@id"   : "Person/Another",
+            "name"  : "Another"
+        }
+    ]
+}
+```
+#### `@min_cardinality`
+
+When specified, the number of elements for the given property must be
+*at least* the cardinality specified.
+
+```json
+{
+    "@type"      : "@context",
+    "@base"      : "http://i/",
+    "@schema"    : "http://s/"
+}
+{
+    "@id"        : "Person",
+    "@type"      : "Class",
+    "name"       : "xsd:string",
+    "friends"    :
+    {
+        "@type"  : "Set",
+        "@class" : "Person"
+        "@min_cardinality" : 1
+    }
+}
+```
+
+#### `@max_cardinality`
+
+When specified, the number of elements for the given property must be
+*no more than* the cardinality specified.
+
+```json
+{
+    "@type"      : "@context",
+    "@base"      : "http://i/",
+    "@schema"    : "http://s/"
+}
+{
+    "@id"        : "Person",
+    "@type"      : "Class",
+    "name"       : "xsd:string",
+    "friends"    :
+    {
+        "@type"  : "Set",
+        "@class" : "Person"
+        "@min_cardinality" : 1
+    }
+}
+```
+
+When set to 1, this is functionally equivalent to the `Optional` constraint.
+
 ### Array
 
 Use `Array` to specify an ordered collection, with multiplicity, of values of a class or datatype in which you may want random access to the data and which may be multi-dimensional. `Array` is implemented with intermediate indexed objects, with a `sys:value` and indexes placed at `sys:index`, `sys:index2`, ... `sys:indexN` for each of the array indices of the multi-dimensional array. However when extracted as JSON they will appear merely as lists (possibly of lists), with possible null values representing gaps in the array.
