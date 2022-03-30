@@ -1,190 +1,174 @@
+
 # TypeDef
-
-**TypeDef**
-
+## TypeDef
 Type definations
 
+
 ## DocParamsGet
-
-**DocParamsGet: `Object`**
-
+## DocParamsGet:  `  Object`
 the GET document interface query parameters
 
 **Properties**
 
-| Name           | Type        | Description                                                                                                                                  |
-| -------------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| \[graph\_type] | `GraphType` | instance                                                                                                                                     |
-| \[type]        | `string`    | only documents of the given type are returned.                                                                                               |
-| \[id]          | `string`    | only the document with the given ID is returned.                                                                                             |
-| \[prefixed]    | `boolean`   | default is true, return IRIs using a prefixed notation wherever possible. If false, full IRIs are used.                                      |
-| \[minimized]   | `boolean`   | default is false, return the documents with very little whitespace. Each json document will be on its own line.                              |
-| \[unfold]      | `boolean`   | default is false, any subdocuments contained in the returned document are returned too. If false, these are referred to by their ID instead. |
-| \[skip]        | `number`    | default is 0, How many results to skip                                                                                                       |
-| \[count]       | `number`    | count - How many results to return. If this option is absent, all results are returned.                                                      |
-| \[as\_list]    | `boolean`   | default is false, If true, don't return a stream of json objects, but a json list.                                                           |
-| \[graph\_type] | `string`    | instance                                                                                                                                     |
+| Name | Type | Description |
+| --- | --- | --- |
+| [graph_type] | <code>GraphType</code> | instance|schema, default value is instance. Used to switch between getting documents from the instance or the schema graph. |
+| [type] | <code>string</code> | only documents of the given type are returned. |
+| [id] | <code>string</code> | only the document with the given ID is returned. |
+| [prefixed] | <code>boolean</code> | default is true, return IRIs using a prefixed notation wherever possible. If false, full IRIs are used. |
+| [minimized] | <code>boolean</code> | default is false, return the documents with very  little whitespace. Each json document will be on its own line. |
+| [unfold] | <code>boolean</code> | default is false, any subdocuments contained in the returned  document are returned too. If false, these are referred to by their ID instead. |
+| [skip] | <code>number</code> | default is 0, How many results to skip |
+| [count] | <code>number</code> | count - How many results to return. If this option is absent, all  results are returned. |
+| [as_list] | <code>boolean</code> | default is false, If true, don't return a stream of json objects,  but a json list. |
+| [graph_type] | <code>string</code> | instance|schema default value is instance |
+
 
 ## DocParamsPost
-
-**DocParamsPost: `Object`**
-
+## DocParamsPost:  `  Object`
 the POST document interface query parameters
 
 **Properties**
 
-| Name             | Type        | Description                                                                                                                                                                                                              |
-| ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| \[graph\_type]   | `GraphType` | default is instance instance                                                                                                                                                                                             |
-| \[full\_replace] | `boolean`   | default is false, If true, all existing documents are deleted before inserting the posted documents. This allows the full replacement of the contents of a database. This is especially useful for replacing the schema. |
+| Name | Type | Description |
+| --- | --- | --- |
+| [graph_type] | <code>GraphType</code> | default is instance  instance|schema Used to switch between  getting documents from the instance or the schema graph. |
+| [full_replace] | <code>boolean</code> | default is false, If true, all existing documents are deleted  before inserting the posted documents. This allows the full replacement of the contents of a  database. This is especially useful for replacing the schema. |
+
 
 ## DocParamsPut
-
-**DocParamsPut: `Object`**
-
+## DocParamsPut:  `  Object`
 the PUT document interface query parameters
 
 **Properties**
 
-| Name           | Type        | Description                   |
-| -------------- | ----------- | ----------------------------- |
-| \[graph\_type] | `GraphType` | default is instance, instance |
+| Name | Type | Description |
+| --- | --- | --- |
+| [graph_type] | <code>GraphType</code> | default is instance, instance|schema Used to switch between  getting documents from the instance or the schema graph. |
+
 
 ## DocParamsDelete
-
-**DocParamsDelete: `Object`**
-
+## DocParamsDelete:  `  Object`
 the DELETE document interface query parameters
 
 **Properties**
 
-| Name           | Type                | Description                                                                          |
-| -------------- | ------------------- | ------------------------------------------------------------------------------------ |
-| \[graph\_type] | `GraphType`         | default is instance, instance                                                        |
-| id             | `string` \| `array` | a single id or a list of ids to delete.                                              |
-| \[nuke]        | `booleam`           | default is false, If true, delete everything at this resource location (dangerous!). |
+| Name | Type | Description |
+| --- | --- | --- |
+| [graph_type] | <code>GraphType</code> | default is instance, instance|schema Used to switch between  getting documents from the instance or the schema graph. |
+| id | <code>string</code> \| <code>array</code> | a single id or a list of ids to delete. |
+| [nuke] | <code>booleam</code> | default is false, If true, delete everything at this resource  location (dangerous!). |
+
 
 ## GraphRef
-
-**GraphRef: `"schema/main"` | `"instance/main"` | `string`**
+## GraphRef:  `  "schema/main"` |  `  "instance/main" `  |  `  string ` 
 
 ## DataFormatObj
-
-**DataFormatObj: `Object`**
-
+## DataFormatObj:  `  Object`
 (export/import)
 
 **Properties**
 
-| Name              | Type                  | Description        |
-| ----------------- | --------------------- | ------------------ |
-| \[type]           | `"csv"` \| `"turtle"` | the format type    |
-| \[format\_header] | `string`              | header format type |
+| Name | Type | Description |
+| --- | --- | --- |
+| [type] | <code>&quot;csv&quot;</code> \| <code>&quot;turtle&quot;</code> | the format type |
+| [format_header] | <code>string</code> | header format type |
+
 
 ## FuntionType
-
-**FuntionType: `"add_quad"` | `"delete_quad"` | `"add_triple"` | `"delete_triple"` | `"quad"` | `"triple"`**
+## FuntionType:  `  "add_quad"` |  `  "delete_quad" `  |  `  "add_triple" `  |  `  "delete_triple" `  |  `  "quad" `  |  `  "triple" ` 
 
 ## ResourceType
-
-**ResourceType: `"commits"` | `"meta"` | `"branch"` | `"ref"` | `"repo"` | `"db"`**
+## ResourceType:  `  "commits"` |  `  "meta" `  |  `  "branch" `  |  `  "ref" `  |  `  "repo" `  |  `  "db" ` 
 
 ## GraphType
-
-**GraphType: `"instance"` | `"schema"`**
+## GraphType:  `  "instance"` |  `  "schema" ` 
 
 ## CredentialObj
-
-**CredentialObj: `Object`**
-
+## CredentialObj:  `  Object`
 **Properties**
 
-| Name    | Type                  | Description                                        |
-| ------- | --------------------- | -------------------------------------------------- |
-| type    | `'basic'` \| `'jwt'`  | the authorization type of an TerminusDB connection |
-| \[user] | `string` \| `boolean` | the user id                                        |
-| key     | `string`              | the connection key                                 |
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>&#x27;basic&#x27;</code> \| <code>&#x27;jwt&#x27;</code> | the authorization type of an TerminusDB connection |
+| [user] | <code>string</code> \| <code>boolean</code> | the user id | I don't need the user with the jwt token |
+| key | <code>string</code> | the connection key |
+
 
 ## ActionType
-
-**ActionType: `'graph'` | `'db'` | `'clone'` | `'triples'` | `'woql'` | `'fetch'` | `'pull'` | `'rebase'` | `'branch'` | `'reset'` | `'push'` | `'squash'`**
+## ActionType:  `  'graph'` |  `  'db' `  |  `  'clone' `  |  `  'triples' `  |  `  'woql' `  |  `  'fetch' `  |  `  'pull' `  |  `  'rebase' `  |  `  'branch' `  |  `  'reset' `  |  `  'push' `  |  `  'squash' ` 
 
 ## ParamsObj
-
-**ParamsObj: `Object`**
-
+## ParamsObj:  `  Object`
 **Properties**
 
-| Name                   | Type                   | Description                                                                           |
-| ---------------------- | ---------------------- | ------------------------------------------------------------------------------------- |
-| \[key]                 | `string`               | api key for basic auth                                                                |
-| \[jwt]                 | `string`               | jwt token to connect with terminusX server                                            |
-| \[user]                | `string`               | the user id, we use this for basic authentication and for identify the commits author |
-| \[organization]        | `string`               | set organization to this id                                                           |
-| \[db]                  | `string`               | set cursor to this db                                                                 |
-| \[repo]                | `RepoType` \| `string` | set cursor to this repo                                                               |
-| \[branch]              | `string`               | set branch to this id                                                                 |
-| \[ref]                 | `string`               | set commit ref                                                                        |
-| \[default\_branch\_id] | `string`               | set the default branch id                                                             |
+| Name | Type | Description |
+| --- | --- | --- |
+| [key] | <code>string</code> | api key for basic auth |
+| [jwt] | <code>string</code> | jwt token to connect with terminusX server |
+| [user] | <code>string</code> | the user id, we use this for basic authentication and for identify the commits author |
+| [organization] | <code>string</code> | set organization to this id |
+| [db] | <code>string</code> | set cursor to this db |
+| [repo] | <code>RepoType</code> \| <code>string</code> | set cursor to this repo |
+| [branch] | <code>string</code> | set branch to this id |
+| [ref] | <code>string</code> | set commit ref |
+| [default_branch_id] | <code>string</code> | set the default branch id |
+
 
 ## RolesObj
-
-**RolesObj: `Object`**
-
+## RolesObj:  `  Object`
 **Properties**
 
-| Name                  | Type     | Description                         |
-| --------------------- | -------- | ----------------------------------- |
-| agent\_name           | `string` | the Authorization connection's type |
-| \[database\_name]     | `string` | the user id                         |
-| \[organization\_name] | `string` | the connection key                  |
-| \[actions]            | `array`  | list of roles                       |
-| \[invitation]         | `string` | -                                   |
+| Name | Type | Description |
+| --- | --- | --- |
+| agent_name | <code>string</code> | the Authorization connection's type |
+| [database_name] | <code>string</code> | the user id | I don't need the user with the jwt token |
+| [organization_name] | <code>string</code> | the connection key |
+| [actions] | <code>array</code> | list of roles |
+| [invitation] | <code>string</code> | - |
+
 
 ## RepoType
-
-**RepoType: `"local"` | `"remote"`**
+## RepoType:  `  "local"` |  `  "remote" ` 
 
 ## DbDetails
-
-**DbDetails: `Object`**
-
+## DbDetails:  `  Object`
 **Properties**
 
-| Name            | Type      | Description                                                          |
-| --------------- | --------- | -------------------------------------------------------------------- |
-| \[organization] | `string`  | the db organization id                                               |
-| id              | `string`  | The database identification name                                     |
-| label           | `string`  | "Textual DB Name"                                                    |
-| \[comment]      | `string`  | "Text description of DB"                                             |
-| \[public]       | `boolean` |                                                                      |
-| \[icon]         | `string`  | The database's icon                                                  |
-| \[prefixes]     | `object`  | {scm: "http://url.to.use/for/scm", doc: "http://url.to.use/for/doc"} |
-| \[schema]       | `boolean` | if set to true, a schema graph will be created                       |
+| Name | Type | Description |
+| --- | --- | --- |
+| [organization] | <code>string</code> | the db organization id |
+| id | <code>string</code> | The database identification name |
+| label | <code>string</code> | "Textual DB Name" |
+| [comment] | <code>string</code> | "Text description of DB" |
+| [public] | <code>boolean</code> |  |
+| [icon] | <code>string</code> | The database's icon |
+| [prefixes] | <code>object</code> | {scm: "http://url.to.use/for/scm", doc: "http://url.to.use/for/doc"} |
+| [schema] | <code>boolean</code> | if set to true, a schema graph will be created |
+
 
 ## RemoteRepoDetails
-
-**RemoteRepoDetails: `Object`**
-
-{remote: "origin", "remote\_branch": "main", "author": "admin", "message": "message"}
+## RemoteRepoDetails:  `  Object`
+{remote: "origin", "remote_branch": "main", "author":
+ "admin","message": "message"}
 
 **Properties**
 
-| Name           | Type     | Description                                  |
-| -------------- | -------- | -------------------------------------------- |
-| \[remote]      | `string` | remote server url                            |
-| remote\_branch | `string` | remote branch name                           |
-| \[author]      | `string` | if it is undefined it get the current author |
-| \[message]     | `string` | the update commit message                    |
+| Name | Type | Description |
+| --- | --- | --- |
+| [remote] | <code>string</code> | remote server url |
+| remote_branch | <code>string</code> | remote branch name |
+| [author] | <code>string</code> | if it is undefined it get the current author |
+| [message] | <code>string</code> | the update commit message |
+
 
 ## CloneSourceDetails
-
-**CloneSourceDetails: `Object`**
-
+## CloneSourceDetails:  `  Object`
 **Properties**
 
-| Name        | Type     | Description              |
-| ----------- | -------- | ------------------------ |
-| remote\_url | `string` | the remote db source url |
-| \[label]    | `string` |                          |
-| \[comment]  | `string` |                          |
+| Name | Type | Description |
+| --- | --- | --- |
+| remote_url | <code>string</code> | the remote db source url |
+| [label] | <code>string</code> |  |
+| [comment] | <code>string</code> |  |
+
