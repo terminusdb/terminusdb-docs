@@ -102,7 +102,7 @@ brew install rust
 swipl
 pack_install(terminus_store_prolog).
 pack_install(tus).
-halt
+halt.
 ```
 
 ### Clone the TerminusDB repository
