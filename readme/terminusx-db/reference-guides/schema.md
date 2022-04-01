@@ -271,9 +271,9 @@ Examples below of a schema with a TaggedUnion and a concrete [TaggedUnion class 
 
 #### @oneOf
 
-The `TaggedUnion` is a special case and syntactic sugar for the more general case of collections of disjoint properties. These more complex cases can be represented by inheriting from a number of `TaggedUnion`s, but they may also be given explicitly using the `@oneof` field, together with a Class.
+The `TaggedUnion` is a special case and syntactic sugar for the more general case of collections of disjoint properties. These more complex cases can be represented by inheriting from a number of `TaggedUnion`s, but they may also be given explicitly using the `@oneOf` field, together with a Class.
 
-The value of the `@oneof` field is a set, so can be any number of documents all of which have mutually disjoint properties, but which can coexist. Examples with more than one disjoint property are given below.
+The value of the `@oneOf` field is a set, so can be any number of documents all of which have mutually disjoint properties, but which can coexist. Examples with more than one disjoint property are given below.
 
 #### Code: An example schema with @oneOf
 
