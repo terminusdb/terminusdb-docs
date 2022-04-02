@@ -1,17 +1,15 @@
+
 # AccessControl
-
 ## AccessControl
-
-**License**: Apache Version 2
+**License**: Apache Version 2  
 
 ## new AccessControl()
+The AccessControl object has various methods to control the access for users.
+for the credential you can use the JWT token or the API token
 
-The AccessControl object has various methods to control the access for users. for the credential you can use the JWT token or the API token
-
-**Example**
-
+**Example**  
 ```javascript
-//connect with the API token 
+//connect with the API token
 //(to request a token create an account in  https://terminusdb.com/)
 const accessContol = new AccessControl("https://servername.com",
 {organization:"my_team_name",
@@ -20,7 +18,7 @@ accessControl.getOrgUsers().then(result=>{
      console.log(result)
 })
 
-//connect with the jwt token this type of connection is only for the dashboard 
+//connect with the jwt token this type of connection is only for the dashboard
 //or for application integrate with our login workflow
 const accessContol = new AccessControl("https://servername.com",
 {organization:"my_team_name",
@@ -30,75 +28,70 @@ accessControl.getOrgUsers().then(result=>{
 })
 
 //if the jwt is expired you can change it with
-accessControl.setJwtToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkpXUjBIOXYyeTFORUd.......")
+accessControl.setJwtToken("eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkpXUjBIOXYy
+eTFORUd.......")
 ```
 
 ## getDefaultOrganization
-
-**accessControl.getDefaultOrganization(params) ⇒ `string` | `undefined`**
-
+##### accessControl.getDefaultOrganization(params) ⇒ <code>string</code> \| <code>undefined</code>
 Get a organization from parameters.
 
-**Returns**: `string` | `undefined` - - organization
+**Returns**: <code>string</code> \| <code>undefined</code> - - organization  
 
-| Param  | Type     | Description    |
-| ------ | -------- | -------------- |
-| params | `object` | The parameters |
+| Param | Type | Description |
+| --- | --- | --- |
+| params | <code>object</code> | The parameters |
+
 
 ## setJwtToken
-
-**accessControl.setJwtToken(jwt)**
-
+##### accessControl.setJwtToken(jwt)
 Sets the Jwt token for the object
 
-| Param | Type     | Description              |
-| ----- | -------- | ------------------------ |
-| jwt   | `string` | The jwt api token to use |
+
+| Param | Type | Description |
+| --- | --- | --- |
+| jwt | <code>string</code> | The jwt api token to use |
+
 
 ## setApiToken
+##### accessControl.setApiToken(atokenpi)
+Sets the API token for the object, to request a token create an account in  https://terminusdb.com/
 
-**accessControl.setApiToken(atokenpi)**
 
-Sets the API token for the object, to request a token create an account in https://terminusdb.com/
+| Param | Type | Description |
+| --- | --- | --- |
+| atokenpi | <code>string</code> | The API token to use to connect with TerminusX |
 
-| Param    | Type     | Description                                    |
-| -------- | -------- | ---------------------------------------------- |
-| atokenpi | `string` | The API token to use to connect with TerminusX |
 
 ## getAPIUrl
-
-**accessControl.getAPIUrl(cloudAPIUrl) ⇒ `string`**
-
+##### accessControl.getAPIUrl(cloudAPIUrl) ⇒ <code>string</code>
 Get a API url from cloudAPIUrl
 
-**Returns**: `string` - apiUrl
+**Returns**: <code>string</code> - apiUrl  
 
-| Param       | Type     | Description            |
-| ----------- | -------- | ---------------------- |
-| cloudAPIUrl | `string` | The base url for cloud |
+| Param | Type | Description |
+| --- | --- | --- |
+| cloudAPIUrl | <code>string</code> | The base url for cloud |
+
 
 ## getAccessRoles
-
-**accessControl.getAccessRoles() ⇒ `Promise`**
-
+##### accessControl.getAccessRoles() ⇒ <code>Promise</code>
 Get all the system database roles types.
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
 ## createOrganization
+##### accessControl.createOrganization(orgName) ⇒ <code>Promise</code>
+Any user can create their own organization.
+IMPORTANT This does not work with the API-TOKEN.
 
-**accessControl.createOrganization(orgName) ⇒ `Promise`**
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-Any user can create their own organization. IMPORTANT This does not work with the API-TOKEN.
+| Param | Type | Description |
+| --- | --- | --- |
+| orgName | <code>string</code> | The organization name to create |
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
-
-| Param   | Type     | Description                     |
-| ------- | -------- | ------------------------------- |
-| orgName | `string` | The organization name to create |
-
-**Example**
-
+**Example**  
 ```javascript
 accessControl.createOrganization("my_org_name").then(result=>{
      console.log(result)
@@ -106,38 +99,37 @@ accessControl.createOrganization("my_org_name").then(result=>{
 ```
 
 ## ifOrganizationExists
+##### accessControl.ifOrganizationExists(orgName) ⇒ <code>Promise</code>
+Check if the organization exists. it is a Head call .
+IMPORTANT This does not work with the API-TOKEN.
 
-**accessControl.ifOrganizationExists(orgName) ⇒ `Promise`**
+**Returns**: <code>Promise</code> - A promise that returns the call status object,  200: if the organization
+exists and 404: if the organization does not exist  
 
-Check if the organization exists. it is a Head call . IMPORTANT This does not work with the API-TOKEN.
+| Param | Type | Description |
+| --- | --- | --- |
+| orgName | <code>string</code> | The organization name to check if exists. |
 
-**Returns**: `Promise` - A promise that returns the call status object, 200: if the organization exists and 404: if the organization does not exist
-
-| Param   | Type     | Description                               |
-| ------- | -------- | ----------------------------------------- |
-| orgName | `string` | The organization name to check if exists. |
 
 ## getPendingOrgInvites
-
-**accessControl.getPendingOrgInvites(\[orgName]) ⇒ `Promise`**
-
+##### accessControl.getPendingOrgInvites([orgName]) ⇒ <code>Promise</code>
 Get the pending invitations list.
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description            |
-| ---------- | -------- | ---------------------- |
-| \[orgName] | `string` | The organization name. |
+| Param | Type | Description |
+| --- | --- | --- |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Example**
-
+**Example**  
 ```javascript
 const invitationList = accessControl.getPendingOrgInvites().then(result=>{
    console.log(invitationList)
 
 })
 //this will return an array of invitations object like this
-//[{@id: "Organization/my_team_name/invitations/Invitation/7ad0c9eb82b6175bcda9c0dfc2ac51161ef5ba7cb0988d992c4bce82b3fa5d25"
+//[{@id: "Organization/my_team_name/invitations/Invitation/7ad0c9eb82b6175bcda9c0dfc2ac51161ef5ba
+cb0988d992c4bce82b3fa5d25"
 //      @type: "Invitation"
 //      creation_date: "2021-10-22T11:13:28.762Z"
 //      email_to: "new_user@terminusdb.com"
@@ -147,117 +139,109 @@ const invitationList = accessControl.getPendingOrgInvites().then(result=>{
 ```
 
 ## sendOrgInvite
-
-**accessControl.sendOrgInvite(userEmail, role, \[note], \[orgName]) ⇒ `Promise`**
-
+##### accessControl.sendOrgInvite(userEmail, role, [note], [orgName]) ⇒ <code>Promise</code>
 Send a new invitation
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description                                                       |
-| ---------- | -------- | ----------------------------------------------------------------- |
-| userEmail  | `string` | The email of user.                                                |
-| role       | `string` | The role for user. (the document @id role like Role/collaborator) |
-| \[note]    | `string` | The note to send with the invitation.                             |
-| \[orgName] | `string` | The organization name.                                            |
+| Param | Type | Description |
+| --- | --- | --- |
+| userEmail | <code>string</code> | The email of user. |
+| role | <code>string</code> | The role for user. (the document @id role like Role/collaborator) |
+| [note] | <code>string</code> | The note to send with the invitation. |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Example**
-
+**Example**  
 ```javascript
-accessControl.sendOrgInvite("new_user@terminusdb.com","Role/admin","please join my team").then(result=>{
+accessControl.sendOrgInvite("new_user@terminusdb.com","Role/admin",
+"please join myteam").then(result=>{
    console.log(result)
 })
 ```
 
 ## getOrgInvite
-
-**accessControl.getOrgInvite(inviteId, \[orgName]) ⇒ `Promise`**
-
+##### accessControl.getOrgInvite(inviteId, [orgName]) ⇒ <code>Promise</code>
 Get the invitation info
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description                |
-| ---------- | -------- | -------------------------- |
-| inviteId   | `string` | The invite id to retrieve. |
-| \[orgName] | `string` | The organization name.     |
+| Param | Type | Description |
+| --- | --- | --- |
+| inviteId | <code>string</code> | The invite id to retrieve. |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Example**
-
+**Example**  
 ```javascript
-const fullInviteId="Organization/my_team_name/invitations/Invitation/7ad0c9eb82b6175bcda9c0dfc2ac51161ef5ba7cb0988d992c4bce82b3fa5d25"
+const fullInviteId="Organization/my_team_name/invitations/Invitation/7ad0c9eb82b6175bcda9c0dfc
+2ac51161ef5ba7cb0988d992c4bce82b3fa5d25"
 accessControl.getOrgInvite(fullInviteId).then(result=>{
  console.log(result)
 })
 ```
 
 ## deleteOrgInvite
-
-**accessControl.deleteOrgInvite(inviteId, \[orgName]) ⇒ `Promise`**
-
+##### accessControl.deleteOrgInvite(inviteId, [orgName]) ⇒ <code>Promise</code>
 Delete an invitation
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description              |
-| ---------- | -------- | ------------------------ |
-| inviteId   | `string` | The invite id to delete. |
-| \[orgName] | `string` | The organization name.   |
+| Param | Type | Description |
+| --- | --- | --- |
+| inviteId | <code>string</code> | The invite id to delete. |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Example**
-
+**Example**  
 ```javascript
-const fullInviteId="Organization/my_team_name/invitations/Invitation/7ad0c9eb82b6175bcda9c0dfc2ac51161ef5ba7cb0988d992c4bce82b3fa5d25"
+const fullInviteId="Organization/my_team_name/invitations/Invitation/7ad0c9eb82b6175bcda9
+c0dfc2ac51161ef5ba7cb0988d992c4bce82b3fa5d25"
 accessControl.deleteOrgInvite(fullInviteId).then(result=>{
      console.log(result)
 })
 ```
 
 ## updateOrgInviteStatus
+##### accessControl.updateOrgInviteStatus(inviteId, accepted, [orgName]) ⇒ <code>Promise</code>
+Accept /Reject invitation. if the invitation has been accepted we add the current user
+to the organization.
 
-**accessControl.updateOrgInviteStatus(inviteId, accepted, \[orgName]) ⇒ `Promise`**
+the only user that can accept this invitation is the user registered with the invitation email,
+we indentify the user with the jwt token
 
-Accept /Reject invitation. if the invitation has been accepted we add the current user to the organization.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-the only user that can accept this invitation is the user registered with the invitation email, we indentify the user with the jwt token
+| Param | Type | Description |
+| --- | --- | --- |
+| inviteId | <code>string</code> | The invite id to updated. |
+| accepted | <code>boolean</code> | The status of the invitation. |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
-
-| Param      | Type      | Description                   |
-| ---------- | --------- | ----------------------------- |
-| inviteId   | `string`  | The invite id to updated.     |
-| accepted   | `boolean` | The status of the invitation. |
-| \[orgName] | `string`  | The organization name.        |
-
-**Example**
-
+**Example**  
 ```javascript
-const fullInviteId="Organization/my_team_name/invitations/Invitation/7ad0c9eb82b6175bcda9c0dfc2ac51161ef5ba7cb0988d992c4bce82b3fa5d25"
+const fullInviteId="Organization/my_team_name/invitations/Invitation/7ad0c9eb82b6175bcda9
+c0dfc2ac51161ef5ba7cb0988d992c4bce82b3fa5d25"
 accessControl.updateOrgInviteStatus(fullInviteId,true).then(result=>{
   console.log(result)
 })
 ```
 
 ## getOrgUsers
-
-**accessControl.getOrgUsers(\[orgName]) ⇒ `Promise`**
-
+##### accessControl.getOrgUsers([orgName]) ⇒ <code>Promise</code>
 Get all the organization's users and roles
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description            |
-| ---------- | -------- | ---------------------- |
-| \[orgName] | `string` | The organization name. |
+| Param | Type | Description |
+| --- | --- | --- |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Example**
-
+**Example**  
 ```javascript
 accessControl.getOrgUsers().then(result=>{
  console.log(result)
 })
 
 //this function will return an array of capabilities with users and roles
+//response array example
 //[{capability: "Capability/3ea26e1d698821c570afe9cb4fe81a3......"
 //     email: {@type: "xsd:string", @value: "user@terminusdb.com"}
 //     picture: {@type: "xsd:string",…}
@@ -266,21 +250,39 @@ accessControl.getOrgUsers().then(result=>{
 //     user: "User/auth0%7C613f5dnndjdjkTTT"}]
 ```
 
+## getTeamUserRole
+##### accessControl.getTeamUserRole([orgName]) ⇒ <code>Promise</code>
+Get the user role for a given organization or the default organization,
+The user is identified by the jwt or the access token
+
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [orgName] | <code>string</code> | The organization name. |
+
+**Example**  
+```javascript
+accessControl.getTeamUserRole().then(result=>{
+ console.log(result)
+})
+
+//response object example
+{"userRole":"Role/admin"}
+```
+
 ## removeUserFromOrg
-
-**accessControl.removeUserFromOrg(userId, \[orgName]) ⇒ `Promise`**
-
+##### accessControl.removeUserFromOrg(userId, [orgName]) ⇒ <code>Promise</code>
 Remove an user from an organization, only an admin user can remove an user from an organization
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description                                                         |
-| ---------- | -------- | ------------------------------------------------------------------- |
-| userId     | `string` | The id of the user to be removed. (this is the document user's @id) |
-| \[orgName] | `string` | The organization name in which the user is to be removed.           |
+| Param | Type | Description |
+| --- | --- | --- |
+| userId | <code>string</code> | The id of the user to be removed. (this is the document user's @id) |
+| [orgName] | <code>string</code> | The organization name in which the user is to be removed. |
 
-**Example**
-
+**Example**  
 ```javascript
 accessControl.removeUserFromOrg("User/auth0%7C613f5dnndjdjkTTT","my_org_name").then(result=>{
  console.log(result)
@@ -288,89 +290,140 @@ accessControl.removeUserFromOrg("User/auth0%7C613f5dnndjdjkTTT","my_org_name").t
 ```
 
 ## getDatabaseRolesOfUser
-
-**accessControl.getDatabaseRolesOfUser(userId, \[orgName]) ⇒ `Promise`**
-
+##### accessControl.getDatabaseRolesOfUser(userId, [orgName]) ⇒ <code>Promise</code>
 Get the user's role for every databases under the organization
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description            |
-| ---------- | -------- | ---------------------- |
-| userId     | `string` | The user's id.         |
-| \[orgName] | `string` | The organization name. |
+| Param | Type | Description |
+| --- | --- | --- |
+| userId | <code>string</code> | The user's id. |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Example**
-
+**Example**  
 ```javascript
 accessControl.getDatabaseRolesOfUser('User/auth0%7C61790e366377Yu6596a').then(result=>{
      console.log(result)
 })
 
 //this is a capabilities list of databases and roles
-//[ {capability: "Capability/b395e8523d509dec6b33aefc9baed3b2e2bfadbd4c79d4ff9b20dce2b14e2edc" 
+//[ {capability: "Capability/b395e8523d509dec6b33aefc9baed3b2e2bfadbd4c79d4ff9b20dce2b14e2edc"
 //if there is an id we have a user specific capabality for this database
    // name: {@type: "xsd:string", @value: "profiles_test"}
    // role: "Role/dataUpdater"
    // scope: "UserDatabase/7ebdfae5a02bc7e8f6d79sjjjsa4e179b1df9d4576a3b1d2e5ff3b4859"
    // user: "User/auth0%7C61790e11a3966d006906596a"},
 
-//{ capability: null 
-// if the capability id is null the user level of access for this database is the same of the team
+//{ capability: null
+// if the capability id is null the user level of access for this database is the
+same of the team
   //name: {@type: "xsd:string", @value: "Collab002"}
   //role: "Role/dataReader"
   // scope: "UserDatabase/acfcc2db02b83792sssb15239ccdf586fc5b176846ffe4878b1aea6a36c8f"
-  //user: "User/auth0%7C61790e11a3966d006906596a"}]  
+  //user: "User/auth0%7C61790e11a3966d006906596a"}]
 ```
 
 ## createUserRole
-
-**accessControl.createUserRole(userId, scope, role, \[orgName]) ⇒ `Promise`**
-
+##### accessControl.createUserRole(userId, scope, role, [orgName]) ⇒ <code>Promise</code>
 Create a user's a role for a resource (organization/database)
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description                   |
-| ---------- | -------- | ----------------------------- |
-| userId     | `string` | The user's id.                |
-| scope      | `string` | The resource name/id.         |
-| role       | `string` | The user role to be assigned. |
-| \[orgName] | `string` | The organization name.        |
+| Param | Type | Description |
+| --- | --- | --- |
+| userId | <code>string</code> | The user's id. |
+| scope | <code>string</code> | The resource name/id. |
+| role | <code>string</code> | The user role to be assigned. |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Example**
-
+**Example**  
 ```javascript
 const dbId = "UserDatabase/acfcc2db02b83792sssb15239ccdf586fc5b176846ffe4878b1aea6a36c8f"
-accessControl.assignUserRole('User/auth0%7C61790e11a3966d006906596a',dbId,"Role/collaborator").then(result=>{
+accessControl.assignUserRole('User/auth0%7C61790e11a3966d006906596a',dbId,
+"Role/collaborator").then(result=>{
      console.log(result)
 
 })
 ```
 
 ## updateUserRole
-
-**accessControl.updateUserRole(userId, capabilityId, scope, role, \[orgName]) ⇒ `Promise`**
-
+##### accessControl.updateUserRole(userId, capabilityId, scope, role, [orgName]) ⇒ <code>Promise</code>
 Update user's a role for a resource (organization/database)
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param        | Type     | Description                  |
-| ------------ | -------- | ---------------------------- |
-| userId       | `string` | The user's id.               |
-| capabilityId | `string` | The capability id.           |
-| scope        | `string` | The resource name/id.        |
-| role         | `string` | The user role to be updated. |
-| \[orgName]   | `string` | The organization name.       |
+| Param | Type | Description |
+| --- | --- | --- |
+| userId | <code>string</code> | The user's id. |
+| capabilityId | <code>string</code> | The capability id. |
+| scope | <code>string</code> | The resource name/id. |
+| role | <code>string</code> | The user role to be updated. |
+| [orgName] | <code>string</code> | The organization name. |
 
-**Example**
-
+**Example**  
 ```javascript
 const dbId = "UserDatabase/acfcc2db02b83792sssb15239ccdf586fc5b176846ffe4878b1aea6a36c8f"
 const capId= "Capability/b395e8523d509dec6b33aefc9baed3b2e2bfadbd4c79d4ff9b20dce2b14e2edc"
-accessControl.updateUserRole('User/auth0%7C61790e11a3966d006906596a',capId,dbId,"Role/dataUpdater").then(result=>{
+accessControl.updateUserRole('User/auth0%7C61790e11a3966d006906596a',capId,dbId,
+"Role/dataUpdater").then(result=>{
      console.log(result)
 
+})
+```
+
+## accessRequestsList
+##### accessControl.accessRequestsList([orgName]) ⇒ <code>Promise</code>
+Get all the access request list for a specify organization
+
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [orgName] | <code>string</code> | The organization name. |
+
+**Example**  
+```javascript
+accessControl.accessRequestsList().then(result=>{
+ console.log(result)
+})
+```
+
+## sendAccessRequest
+##### accessControl.sendAccessRequest([email], [affiliation], [note], [orgName]) ⇒ <code>Promise</code>
+Get all the access request list for a specify organization
+
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [email] | <code>string</code> | the user email. |
+| [affiliation] | <code>string</code> | the user affiliation, company, university etc.. |
+| [note] | <code>string</code> | the message for the team admin |
+| [orgName] | <code>string</code> | The organization name. |
+
+**Example**  
+```javascript
+accessControl.sendAccessRequest("myemail@terminusdb.com",
+ "my_company",
+ "please add me to your team"
+).then(result=>{
+ console.log(result)
+})
+```
+
+## deleteAccessRequest
+##### accessControl.deleteAccessRequest([orgName]) ⇒ <code>Promise</code>
+Delete an access request to join your team, only an admin user can delete it
+
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [orgName] | <code>string</code> | The organization name. |
+
+**Example**  
+```javascript
+accessControl.deleteAccessRequest("djjdshhsuuwewueueuiHYHYYW.......").then(result=>{
+ console.log(result)
 })
 ```
