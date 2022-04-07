@@ -369,7 +369,6 @@ WOQL.put(WOQL.as("s", s).as("p", p).as("o", o), WOQL.all())
 ##### WOQL.as(source, target, [type]) ⇒ <code>WOQLQuery</code>
 Imports the value identified by Source to a Target variable
 
-**Returns**: <code>WOQLQuery</code> - new  
 
 | Param | Type | Description |
 | --- | --- | --- |
