@@ -10,14 +10,6 @@
 
 [Javascript Client reference](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient)
 
-### JavaScript WOQL Client reference
-
-[JavaScript WOQL Client reference](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woql)
-
 ### Python Client reference
 
-[Python Client reference](https://terminusdb.github.io/terminusdb-client-python/)
-
-### Python WQOL Client reference
-
-[Python WOQL Client reference](https://terminusdb.github.io/terminusdb-client-python/woqlClient.html)
+[Python Client reference](../../../index/terminusx-db/reference-guides/client/)

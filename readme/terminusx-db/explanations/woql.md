@@ -207,7 +207,7 @@ WOQL goes a step beyond supporting prefixes by automatically applying prefixes w
 
 ### WOQL Reference
 
-[JavaScript](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woql) and [Python](../reference-guides/client.md) WOQL Reference guides
+[JavaScript](../../../index/terminusx-db/reference-guides/javascript-client-reference/) and [Python](../../../index/terminusx-db/reference-guides/client/) WOQL Reference guides
 
 ### How-to guides
 

@@ -424,4 +424,4 @@ JSON-DP functions in the [JavaScript client reference guide](https://terminusdb.
 
 ### JSON-DP Python client reference guide
 
-JSON-DP functions in the [Python client reference guide](https://terminusdb.github.io/terminusdb-client-python/woqlClient.html?highlight=diff#terminusdb\_client.WOQLClient.diff).
+JSON-DP functions in the [Python client reference guide](terminusx-db/reference-guides/client/).
