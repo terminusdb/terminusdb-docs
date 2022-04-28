@@ -8,13 +8,13 @@ description: >-
 
 ## Key topics
 
-[Use public JSON-DP directly](json-diff-and-patch.md#use-public-json-dp-directly)
+[Use public JSON-DP directly](./#use-public-json-dp-directly)
 
-[Use JSON-DP with a TerminusDB client](json-diff-and-patch.md#use-json-dp-with-a-terminusdb-client)
+[Use JSON-DP with a TerminusDB client](./#use-json-dp-with-a-terminusdb-client)
 
-[JSON-DP operations](json-diff-and-patch.md#json-dp-operations)
+[JSON-DP operations](./#json-dp-operations)
 
-[JSON-DP examples using curl](json-diff-and-patch.md#diff-examples-using-curl)
+[JSON-DP examples using curl](./#diff-examples-using-curl)
 
 ## The uses of JSON-DP
 
@@ -38,33 +38,33 @@ Use our public endpoints for each operation:
 
 **JSON patch** - `https://cloud.terminusdb.com/jsonpatch`
 
-See [Diff and Patch Endpoints](json-diff-and-patch.md#diff-and-patch-endpoints) for more information, and examples of [jsondiff](json-diff-and-patch.md#diff-examples-using-curl) and [jsonpatch](json-diff-and-patch.md#patch-examples-using-curl) using curl.
+See [Diff and Patch Endpoints](./#diff-and-patch-endpoints) for more information, and examples of [jsondiff](./#diff-examples-using-curl) and [jsonpatch](./#patch-examples-using-curl) using curl.
 
 ## Use JSON-DP with a TerminusDB client
 
-Use JSON-DP with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See [JSON-DP client tutorials](json-diff-and-patch.md#json-dp-client-tutorials) for use cases, including connectivity with MongoDB.
+Use JSON-DP with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See [JSON-DP client tutorials](./#json-dp-client-tutorials) for use cases, including connectivity with MongoDB.
 
 ### Prerequisites
 
-[Install TerminusDB JavaScript client](../readme/terminusx/install/install-javascript-client.md)
+[Install TerminusDB JavaScript client](../../readme/terminusx/install/install-javascript-client.md)
 
-[Install TerminusDB Python client](../readme/terminusx/install/install-python-client.md)
+[Install TerminusDB Python client](../../readme/terminusx/install/install-python-client.md)
 
 ### Get started
 
 Get started with the simple steps below.
 
 {% hint style="info" %}
-If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../readme/terminusx/quick-start/start-with-client.md#connect-with-woqlclient) for instructions if required.
+If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../../readme/terminusx/quick-start/start-with-client.md#connect-with-woqlclient) for instructions if required.
 {% endhint %}
 
-1\. [Create an endpoint](json-diff-and-patch.md#create-an-endpoint)
+1\. [Create an endpoint](./#create-an-endpoint)
 
-2\. [Apply a diff to obtain a patch](json-diff-and-patch.md#apply-a-diff-to-obtain-a-patch)
+2\. [Apply a diff to obtain a patch](./#apply-a-diff-to-obtain-a-patch)
 
-3\. [Review the patch](json-diff-and-patch.md#review-the-patch)
+3\. [Review the patch](./#review-the-patch)
 
-4\. [Apply the patch](json-diff-and-patch.md#apply-the-patch)
+4\. [Apply the patch](./#apply-the-patch)
 
 #### Create an endpoint
 
@@ -424,4 +424,4 @@ JSON-DP functions in the [JavaScript client reference guide](https://terminusdb.
 
 ### JSON-DP Python client reference guide
 
-JSON-DP functions in the [Python client reference guide](terminusx-db/reference-guides/client/).
+JSON-DP functions in the [Python client reference guide](../terminusx-db/reference-guides/client/).

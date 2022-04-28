@@ -1,7 +1,8 @@
 # Table of contents
 
 * [TerminusX and TerminusDB Technical Documentation](index.md)
-  * [JSON Diff and Patch](index/json-diff-and-patch.md)
+  * [JSON Diff and Patch](index/json-diff-and-patch/README.md)
+    * [Diff and Patch Demo](index/json-diff-and-patch/diff-and-patch-demo.md)
   * [TerminusX](readme/terminusx/README.md)
     * [Overview](readme/terminusx/overview/README.md)
       * [Introduction to TerminusX](readme/terminusx/overview/introduction.md)
