@@ -8,13 +8,13 @@ description: >-
 
 ## Key topics
 
-[Use public JSON-DP directly](./#use-public-json-dp-directly)
+[Use public JSON-DP directly](json-diff-and-patch.md#use-public-json-dp-directly)
 
-[Use JSON-DP with a TerminusDB client](./#use-json-dp-with-a-terminusdb-client)
+[Use JSON-DP with a TerminusDB client](json-diff-and-patch.md#use-json-dp-with-a-terminusdb-client)
 
-[JSON-DP operations](./#json-dp-operations)
+[JSON-DP operations](json-diff-and-patch.md#json-dp-operations)
 
-[JSON-DP examples using curl](./#diff-examples-using-curl)
+[JSON-DP examples using curl](json-diff-and-patch.md#diff-examples-using-curl)
 
 ## The uses of JSON-DP
 
@@ -24,7 +24,11 @@ When objects are modified in distributed systems, it is useful to compare versio
 
 ### Diff
 
-A **diff** takes two JSON objects and presents any differences between them. Diff has several uses. A key use is displaying a clear summary of differences between large objects, enhancing the visibility of changes. This enables manual or user-interface assisted action to resolve changes. Actions include retaining the original object, changing to the new (or latest) version of the object, or creating an entirely new version of the object.
+A **diff** takes two JSON objects and presents any differences between them. Diff has several uses. A key use is displaying a clear summary of differences between large objects, enhancing the visibility of changes. This enables manual, user-interface assisted, or client actions to resolve differences. Actions include:
+
+* Retain the original object.
+* Change to the new (or latest) version of the object.
+* Create a new version of the object.
 
 ### Patch
 
@@ -38,33 +42,31 @@ Use our public endpoints for each operation:
 
 **JSON patch** - `https://cloud.terminusdb.com/jsonpatch`
 
-See [Diff and Patch Endpoints](./#diff-and-patch-endpoints) for more information, and examples of [jsondiff](./#diff-examples-using-curl) and [jsonpatch](./#patch-examples-using-curl) using curl.
+See [Diff and Patch Endpoints](json-diff-and-patch.md#diff-and-patch-endpoints) for more information, and examples of [diff](json-diff-and-patch.md#diff-examples-using-curl) and [patch](json-diff-and-patch.md#patch-examples-using-curl) using curl.
 
 ## Use JSON-DP with a TerminusDB client
 
-Use JSON-DP with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See [JSON-DP client tutorials](./#json-dp-client-tutorials) for use cases, including connectivity with MongoDB.
+Use JSON-DP with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See [JSON-DP client tutorials](json-diff-and-patch.md#json-dp-client-tutorials) for use cases, including connectivity with MongoDB.
 
-### Prerequisites
+### Requirements
 
-[Install TerminusDB JavaScript client](../../readme/terminusx/install/install-javascript-client.md)
-
-[Install TerminusDB Python client](../../readme/terminusx/install/install-python-client.md)
+Install a [JavaScript](https://terminusdb.com/docs/index/terminusx/install/install-javascript-client) or [Python](https://terminusdb.com/docs/index/terminusx/install/install-python-client) TerminusDB client.
 
 ### Get started
 
 Get started with the simple steps below.
 
 {% hint style="info" %}
-If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../../readme/terminusx/quick-start/start-with-client.md#connect-with-woqlclient) for instructions if required.
+If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../readme/terminusx/quick-start/start-with-client.md#connect-with-woqlclient) for instructions if required.
 {% endhint %}
 
-1\. [Create an endpoint](./#create-an-endpoint)
+1\. [Create an endpoint](json-diff-and-patch.md#create-an-endpoint)
 
-2\. [Apply a diff to obtain a patch](./#apply-a-diff-to-obtain-a-patch)
+2\. [Apply a diff to obtain a patch](json-diff-and-patch.md#apply-a-diff-to-obtain-a-patch)
 
-3\. [Review the patch](./#review-the-patch)
+3\. [Review the patch](json-diff-and-patch.md#review-the-patch)
 
-4\. [Apply the patch](./#apply-the-patch)
+4\. [Apply the patch](json-diff-and-patch.md#apply-the-patch)
 
 #### Create an endpoint
 
@@ -414,14 +416,12 @@ $ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com
 
 ## See Also
 
-### JSON-DP client tutorials
+### JSON-DP demonstration
 
-Tutorials for using JSON-DP with a TerminusDB [JavaScript or Python client](https://github.com/terminusdb/terminusdb-tutorials/tree/master/diff\_patch), including the use of JSON-DP with MongoDB.
+A [demonstration](json-diff-and-patch/json-diff-and-patch-demonstration.md) of using JSON-DP with a TerminusDB or TerminusX client, including the use of JSON-DP with MongoDB.
 
-### JSON-DP JavaScript client reference guide
+### JSON-DP client functions
 
-JSON-DP functions in the [JavaScript client reference guide](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#getdiff).
+JavaScript client [diff ](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#getdiff)and [patch](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#patch).
 
-### JSON-DP Python client reference guide
-
-JSON-DP functions in the [Python client reference guide](../terminusx-db/reference-guides/client/).
+Python client [diff](https://terminusdb.com/docs/index/terminusx-db/reference-guides/client/woqlclient#diff-before-after) and [patch](https://terminusdb.com/docs/index/terminusx-db/reference-guides/client/woqlclient#patch-before-patch).
