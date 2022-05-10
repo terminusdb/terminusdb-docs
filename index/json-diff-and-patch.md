@@ -1,6 +1,6 @@
 ---
 description: >-
-  Introduction to TerminusDB JSON Diff and Patch (JSON-DP) with examples of the
+  Introduction to TerminusDB JSON Diff and Patch with examples of the
   available operations using TerminusDB JavaScript and Python clients, and curl.
 ---
 
@@ -8,15 +8,15 @@ description: >-
 
 ## Key topics
 
-[Use public JSON-DP directly](json-diff-and-patch.md#use-public-json-dp-directly)
+[Use public JSON Diff and Patch directly](json-diff-and-patch.md#use-public-JSON Diff and Patch-directly)
 
-[Use JSON-DP with a TerminusDB client](json-diff-and-patch.md#use-json-dp-with-a-terminusdb-client)
+[Use JSON Diff and Patch with a TerminusDB client](json-diff-and-patch.md#use-JSON Diff and Patch-with-a-terminusdb-client)
 
-[JSON-DP operations](json-diff-and-patch.md#json-dp-operations)
+[JSON Diff and Patch operations](json-diff-and-patch.md#JSON Diff and Patch-operations)
 
-[JSON-DP examples using curl](json-diff-and-patch.md#diff-examples-using-curl)
+[JSON Diff and Patch examples using curl](json-diff-and-patch.md#diff-examples-using-curl)
 
-## The uses of JSON-DP
+## The uses of JSON Diff and Patch
 
 JSON objects are a common way of representing data for software development. The serialization of JSON is simple and facilitates communication via networks and storage in databases. Almost all modern programming languages support JSON objects natively.
 
@@ -34,19 +34,19 @@ A **diff** takes two JSON objects and presents any differences between them. Dif
 
 A **patch** applies a diff to two objects to obtain a new object with any differences highlighted. A patch is applied individually or in bulk to a patch endpoint that will apply the patch to the specified data product.
 
-## Use public JSON-DP directly
+## Use public JSON Diff and Patch directly
 
 Use our public endpoints for each operation:
 
-**JSON diff** - `https://cloud.terminusdb.com/jsondiff`
+**JSON Diff** - `https://cloud.terminusdb.com/jsondiff`
 
-**JSON patch** - `https://cloud.terminusdb.com/jsonpatch`
+**JSON Patch** - `https://cloud.terminusdb.com/jsonpatch`
 
 See [Diff and Patch Endpoints](json-diff-and-patch.md#diff-and-patch-endpoints) for more information, and examples of [diff](json-diff-and-patch.md#diff-examples-using-curl) and [patch](json-diff-and-patch.md#patch-examples-using-curl) using curl.
 
-## Use JSON-DP with a TerminusDB client
+## Use JSON Diff and Patch with a TerminusDB client
 
-Use JSON-DP with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See [JSON-DP client tutorials](json-diff-and-patch.md#json-dp-client-tutorials) for use cases, including connectivity with MongoDB.
+Use JSON Diff and Patch with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See [JSON Diff and Patch client tutorials](json-diff-and-patch.md#JSON Diff and Patch-client-tutorials) for use cases, including connectivity with MongoDB.
 
 ### Requirements
 
@@ -150,9 +150,9 @@ after_patch = client.patch(Doc1, result_patch)
 {% endtab %}
 {% endtabs %}
 
-## JSON-DP operations
+## JSON Diff and Patch operations
 
-The available JSON-DP operations with some examples using `curl`.
+The available JSON Diff and Patch operations with some examples using `curl`.
 
 ### Copy Diff
 
@@ -318,9 +318,9 @@ We have the following patch resulting from the diff:
 
 The Patch and Diff endpoints expose endpoints to obtain diffs or patches of data. Use our public endpoint for each operation:
 
-**JSON diff** - `https://cloud.terminusdb.com/jsondiff`
+**JSON Diff** - `https://cloud.terminusdb.com/jsondiff`
 
-**JSON patch** - `https://cloud.terminusdb.com/jsonpatch`
+**JSON Patch** - `https://cloud.terminusdb.com/jsonpatch`
 
 ### Diff
 
@@ -416,11 +416,11 @@ $ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com
 
 ## See Also
 
-### JSON-DP demonstration
+### JSON Diff and Patch demonstration
 
-A [demonstration](json-diff-and-patch/json-diff-and-patch-demonstration.md) of using JSON-DP with a TerminusDB or TerminusX client, including the use of JSON-DP with MongoDB.
+A [demonstration](json-diff-and-patch/json-diff-and-patch-demonstration.md) of using JSON Diff and Patch with a TerminusDB or TerminusX client, including the use of JSON Diff and Patch with MongoDB.
 
-### JSON-DP client functions
+### JSON Diff and Patch client functions
 
 JavaScript client [diff ](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#getdiff)and [patch](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#patch).
 
