@@ -1,17 +1,17 @@
 ---
 description: >-
-  A demonstration of using JSON Diff and Patch to monitor changes in
-  TerminusDB schemas and documents, JSON schemas, and other document databases
-  such as MongoDB.
+  A demonstration of using JSON Diff and Patch to monitor changes in TerminusDB
+  schemas and documents, JSON schemas, and other document databases such as
+  MongoDB.
 ---
 
 # JSON Diff and Patch Demonstration
 
 ## Key topics
 
-[Use JSON Diff and Patch with a TerminusDB client](json-diff-and-patch-demonstration.md#use-JSON Diff and Patch-with-a-terminusdb-client)
+[Use JSON Diff and Patch with a TerminusDB client](json-diff-and-patch-demonstration.md#use-json-diff-and-patch-with-a-terminusdb-client)
 
-[Use JSON Diff and Patch with MongoDB](json-diff-and-patch-demonstration.md#use-JSON Diff and Patch-with-mongodb)&#x20;
+[Use JSON Diff and Patch with MongoDB](json-diff-and-patch-demonstration.md#use-json-diff-and-patch-with-mongodb)
 
 ## Requirements
 
@@ -104,9 +104,9 @@ pprint(result_patch.content)
 
 #### After patch
 
-Use the `patch` function to apply `result_patch` to the document `jane`. The object  `after_patch` contains a copy of `jane` after the patch is applied.
+Use the `patch` function to apply `result_patch` to the document `jane`. The object `after_patch` contains a copy of `jane` after the patch is applied.
 
-Use `after_patch` to suit your requirements. The following example compares the modified `jane` document to the original `janine` document.&#x20;
+Use `after_patch` to suit your requirements. The following example compares the modified `jane` document to the original `janine` document.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -141,7 +141,7 @@ If there are differences between the two documents, you may wish to replace one 
 
 An example in four simple steps demonstrating the use JSON Diff and Patch with another JSON-compliant database - MongoDB:
 
-1. [Insert items into a MongoDB database](json-diff-and-patch-demonstration.md#insert-items-into-a-mongodb-database).&#x20;
+1. [Insert items into a MongoDB database](json-diff-and-patch-demonstration.md#insert-items-into-a-mongodb-database).
 2. [Modify an item](json-diff-and-patch-demonstration.md#modify-an-item).
 3. [Compare modified and original items](json-diff-and-patch-demonstration.md#compare-modified-and-original-items).
 4. [Update the original item](json-diff-and-patch-demonstration.md#update-the-original-item).

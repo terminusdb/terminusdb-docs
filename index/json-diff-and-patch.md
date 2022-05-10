@@ -1,18 +1,18 @@
 ---
 description: >-
-  Introduction to TerminusDB JSON Diff and Patch with examples of the
-  available operations using TerminusDB JavaScript and Python clients, and curl.
+  Introduction to TerminusDB JSON Diff and Patch with examples of the available
+  operations using TerminusDB JavaScript and Python clients, and curl.
 ---
 
 # JSON Diff and Patch
 
 ## Key topics
 
-[Use public JSON Diff and Patch directly](json-diff-and-patch.md#use-public-JSON Diff and Patch-directly)
+[Use public JSON Diff and Patch directly](json-diff-and-patch.md#use-public-json-diff-and-patch-directly)
 
-[Use JSON Diff and Patch with a TerminusDB client](json-diff-and-patch.md#use-JSON Diff and Patch-with-a-terminusdb-client)
+[Use JSON Diff and Patch with a TerminusDB client](json-diff-and-patch.md#use-json-diff-and-patch-with-a-terminusdb-client)
 
-[JSON Diff and Patch operations](json-diff-and-patch.md#JSON Diff and Patch-operations)
+[JSON Diff and Patch operations](json-diff-and-patch.md#json-diff-and-patch-operations)
 
 [JSON Diff and Patch examples using curl](json-diff-and-patch.md#diff-examples-using-curl)
 
@@ -46,7 +46,7 @@ See [Diff and Patch Endpoints](json-diff-and-patch.md#diff-and-patch-endpoints) 
 
 ## Use JSON Diff and Patch with a TerminusDB client
 
-Use JSON Diff and Patch with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See [JSON Diff and Patch client tutorials](json-diff-and-patch.md#JSON Diff and Patch-client-tutorials) for use cases, including connectivity with MongoDB.
+Use JSON Diff and Patch with a TerminusDB JavaScript or Python client to find and handle changes in TerminusDB schemas and documents, JSON schemas, and other document databases such as MongoDB. See \[JSON Diff and Patch client tutorials]\(json-diff-and-patch.md#JSON Diff and Patch-client-tutorials) for use cases, including connectivity with MongoDB.
 
 ### Requirements
 
