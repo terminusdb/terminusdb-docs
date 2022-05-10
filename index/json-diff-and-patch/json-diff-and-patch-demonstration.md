@@ -1,6 +1,6 @@
 ---
 description: >-
-  A demonstration of using JSON Diff and Patch (JSON-DP) to monitor changes in
+  A demonstration of using JSON Diff and Patch to monitor changes in
   TerminusDB schemas and documents, JSON schemas, and other document databases
   such as MongoDB.
 ---
@@ -9,9 +9,9 @@ description: >-
 
 ## Key topics
 
-[Use JSON-DP with a TerminusDB client](json-diff-and-patch-demonstration.md#use-json-dp-with-a-terminusdb-client)
+[Use JSON Diff and Patch with a TerminusDB client](json-diff-and-patch-demonstration.md#use-JSON Diff and Patch-with-a-terminusdb-client)
 
-[Use JSON-DP with MongoDB](json-diff-and-patch-demonstration.md#use-json-dp-with-mongodb)&#x20;
+[Use JSON Diff and Patch with MongoDB](json-diff-and-patch-demonstration.md#use-JSON Diff and Patch-with-mongodb)&#x20;
 
 ## Requirements
 
@@ -27,9 +27,9 @@ Install and run the [docker container](https://terminusdb.com/docs/index/terminu
 
 Or to use **TerminusX**, [log into your account or sign-up](https://dashboard.terminusdb.com).
 
-## Use JSON-DP with a TerminusDB client
+## Use JSON Diff and Patch with a TerminusDB client
 
-TerminusDB represents objects such as documents and schemas in JSON-LD format. Use JSON-DP to easily compare these objects to obtain differences between them.     &#x20;
+TerminusDB represents objects such as documents and schemas in JSON-LD format. Use JSON Diff and Patch to easily compare these objects to obtain differences between them.
 
 The **Diff** function returns a **Patch** object containing differences between the objects compared. Use **Patch** to implement manual or programmatic actions to resolve differences. Actions include:
 
@@ -45,7 +45,7 @@ The functionality above is demonstrated in three simple steps:
 
 ### Define documents
 
-For simplicity, this demonstration represents JSON documents as client objects. Two 'document' objects are defined - `jane` and `janine`.&#x20;
+For simplicity, this demonstration represents JSON documents as client objects. Two 'document' objects are defined - `jane` and `janine`.
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -137,9 +137,9 @@ If there are differences between the two documents, you may wish to replace one 
 * `updateDocument` in the [JavaScript client](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#updatedocument).
 * `replace_document` in the [Python client](https://terminusdb.com/docs/index/terminusx-db/reference-guides/client/woqlclient#replace\_document-document-graph\_type-instance-commit\_msg-none-last\_data\_version-none-create-false).
 
-## Use JSON-DP with MongoDB
+## Use JSON Diff and Patch with MongoDB
 
-An example in four simple steps demonstrating the use JSON-DP with another JSON-compliant database - MongoDB:
+An example in four simple steps demonstrating the use JSON Diff and Patch with another JSON-compliant database - MongoDB:
 
 1. [Insert items into a MongoDB database](json-diff-and-patch-demonstration.md#insert-items-into-a-mongodb-database).&#x20;
 2. [Modify an item](json-diff-and-patch-demonstration.md#modify-an-item).
@@ -374,7 +374,7 @@ collection_name.update_one(patch.before, {"$set": patch.update})
 
 ## See also
 
-### JSON-DP client functions
+### JSON Diff and Patch client functions
 
 JavaScript client [diff ](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#getdiff)and [patch](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient#patch).
 
