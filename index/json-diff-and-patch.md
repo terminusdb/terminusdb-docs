@@ -329,7 +329,7 @@ The Patch and Diff endpoints expose endpoints to obtain diffs or patches of data
 
 ### Diff
 
-The diff endpoint takes a POST of two JSON documents, _before_, and _after_. This endpoint then returns a 200 and a patch which takes _before_ to _after_ if applied using the patch interface. 
+The diff endpoint takes a POST of two JSON documents, _before_, and _after_. This endpoint then returns a 200 and a patch which takes _before_ to _after_ if applied using the patch interface.
 
 The payload is structured as a JSON document with one of the following forms: 
 
@@ -337,6 +337,10 @@ The payload is structured as a JSON document with one of the following forms:
 * With `"before_data_version"`, `"after"` and `"document_id"`, specifying the data version or commit ID with which to compare the given *after* document.
 * With `"before_data_version"`, `"after_data_version"` and `"document_id"` specifying the data version or commit ID with which to compare the document given by `"document_id"`
 * With `"before_data_version"`, `"after_data_version"`, meaning that we would like to get a diff for *all* documents between the two specified data versions.
+
+There are also two options:
+* `keep`: A dictionary which has keys which need to be copied
+* `copy_value`: Which specifies that we should make *explicit* which values existed during a list copy.
 
 An example of the payload:
 
@@ -368,6 +372,15 @@ An example of a payload comparing only dataversions:
 ```
 
 #### Diff examples using curl
+
+```shell
+$ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
+  '{ "before" : { "asdf" : "foo", "fdsa" : "bar"}, "after" : { "asdf" : "bar", "fdsa" : "bar"}, "keep" : { "fdsa" : true}}'
+# Output: {
+  "asdf": {"@after":"bar", "@before":"foo", "@op":"SwapValue"},
+  "fdsa":"bar"
+}
+```
 
 ```shell
 $ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
