@@ -154,6 +154,11 @@ after_patch = client.patch(Doc1, result_patch)
 
 The available JSON Diff and Patch operations with some examples using `curl`.
 
+Diff can take the paramters `keep` which specifies a document
+describing which fields *must* be copied in the final object, and a
+`copy_value` boolean flag, which specifies whether to specify the
+exact value in a copy operation.
+
 ### Copy Diff
 
 Copy is implicit. All properties which are not specifically mentioned will be considered part of an implicit copy. This will make patches more compressed and easier to specify by hand.
@@ -324,7 +329,18 @@ The Patch and Diff endpoints expose endpoints to obtain diffs or patches of data
 
 ### Diff
 
-The diff endpoint takes a POST of two JSON documents, _before_, and _after_. This endpoint then returns a 200 and a patch which takes _before_ to _after_ if applied using the patch interface. The payload is structured as a JSON document, with two keys, `"before"` and `"after"`, pointing to the documents you would like to diff.
+The diff endpoint takes a POST of two JSON documents, _before_, and _after_. This endpoint then returns a 200 and a patch which takes _before_ to _after_ if applied using the patch interface.
+
+The payload is structured as a JSON document with one of the following forms: 
+
+* With `"before"` and `"after"`, pointing to the documents you would like to diff.
+* With `"before_data_version"`, `"after"` and `"document_id"`, specifying the data version or commit ID with which to compare the given *after* document.
+* With `"before_data_version"`, `"after_data_version"` and `"document_id"` specifying the data version or commit ID with which to compare the document given by `"document_id"`
+* With `"before_data_version"`, `"after_data_version"`, meaning that we would like to get a diff for *all* documents between the two specified data versions.
+
+There are also two options:
+* `keep`: A dictionary which has keys which need to be copied
+* `copy_value`: Which specifies that we should make *explicit* which values existed during a list copy.
 
 An example of the payload:
 
@@ -339,7 +355,32 @@ Which would result in the following patch:
 { "name" : { "@op" : "SwapValue", "@before" : "Jane", "@after": "Janine" }}
 ```
 
+An example of a payload comparing commits or dataversions:
+
+```json
+{ "before_data_version" : "branch:s7dde27gyj8ezat3itw5nr3peu1lymh"
+  "document_id" : "terminusdb:///data/test/665df8a9c3a58be6db622be4b37a76bea46c3e5e3cd2db923e708e574d1566be",
+  "after" :  { "@id" : "Person/Jane", "@type" : "Person", "name" : "Janine"}}
+```
+
+An example of a payload comparing only dataversions:
+
+```json
+{ "before_data_version" : "branch:s7dde27gyj8ezat3itw5nr3peu1lymh"
+  "after_data_version" : "branch:jb81rgx9lzow35r3pkrsvdf5l75kaq"
+  "document_id" : "terminusdb:///data/test/665df8a9c3a58be6db622be4b37a76bea46c3e5e3cd2db923e708e574d1566be"}
+```
+
 #### Diff examples using curl
+
+```shell
+$ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
+  '{ "before" : { "asdf" : "foo", "fdsa" : "bar"}, "after" : { "asdf" : "bar", "fdsa" : "bar"}, "keep" : { "fdsa" : true}}'
+# Output: {
+  "asdf": {"@after":"bar", "@before":"foo", "@op":"SwapValue"},
+  "fdsa":"bar"
+}
+```
 
 ```shell
 $ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
@@ -363,6 +404,25 @@ $ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com
   "@to":3
 }
 ```
+
+```bash
+$ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
+  '{ "before" : [0,1,2], "after" : [0,1,2,3], "copy_value" : true}'
+
+# Output:
+{
+  "@op":"CopyList",
+  "@rest": {
+    "@after": [3 ],
+    "@before": [],
+    "@op":"SwapList",
+    "@rest": {"@op":"KeepList", "@value": []}
+  },
+  "@to":3,
+  "@value": [0, 1, 2 ]
+}
+```
+
 
 ```bash
 $ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com/jsondiff' -d \
