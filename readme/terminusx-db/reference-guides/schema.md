@@ -900,6 +900,66 @@ In the example range class below, `first_name` and `last_name` are strings, `yea
 }
 ```
 
+### JSON Type
+
+Two special JSON types exist in TerminusDB. One is for use as a
+subdocument, and is called `"sys:JSON"` and the type
+`"sys:JSONDocument"` which is used for type level. Both allow
+un-constrained and untypechecked documents which can be stored or
+retrieved as apparently unmodified JSON, but which are still indexed
+and searchable using WOQL.
+
+Ids for subdocuments of type `"sys:JSON"` are formed from a hash of
+the content, meaning that subdocuments are shared if their content is
+the same.
+
+However, those of type `"sys:JSONDocument"` are assigned a random id,
+such that they can be retrieved, modified etc. Alternatively they can
+be assigned an id by passing in an id of the form `{ "@id" :
+"JSONDocument/my_id_here", ...}` making sure to use the prefix
+`"JSONDocument"` so as not to ensure we do not have any id conflicts
+with other document types.
+
+#### Code: An example of `"sys:JSON"`
+
+```json
+{
+    "@type"      : "@context",
+    "@schema"    : "http://example.com/people#",
+    "@base"      : "http://example.com/people/"
+}
+{
+    "@type"      : "Class",
+    "@id"        : "Person",
+    "name"       : "xsd:string",
+    "metadata"   : "sys:JSON"
+}
+```
+
+We can now have a well typed `"Person"` which contains a metadata
+field of type `"sys:JSON"` which is unconstrained JSON as follows:
+
+```json
+{
+    "@type"      : "Person",
+    "name"       : "John",
+    "metadata"   : { "theme" : "Dark", "last_visit" : "10-01-02" }
+}
+```
+
+#### Code: An example of `"sys:JSONDocument"`
+
+Using the `{ "json" : true }` option to the insert API, or using the
+TerminusDB CLI with the `-j` or `--json=true` flag we can insert an
+arbitrary JSON document.
+
+Using the CLI we can write:
+
+```json
+echo '{ "size" : 12.0, "name" : "Bob" }' | ./terminusdb doc insert admin/example -j
+Document inserted ["terminusdb:///json/JSONDocument/9cb4de0ff0b46b6035149a6b763e087d6c59cba2b417de3eedfd26063bee6bdf"]
+```
+
 ## Type families
 
 Use type families to construct optionality or collections of values. Type families are `List`, `Set`, `Array`, and `Optional`.
