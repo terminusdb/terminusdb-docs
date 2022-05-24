@@ -1205,3 +1205,104 @@ An example of a polygon object `GeoPolygon` points to a 2D array of coordinates 
     ]
 }
 ```
+
+## Inference
+
+TerminusDB is equiped with a type inference engine which allows types
+to be inferred under certain conditions.
+
+The algorithm attempts to find a *unique* type which can successfully
+be ascribed to a document. In the event that no type is found, you
+will get an error that no type applies. If *several* types might
+apply, you will see the list of candidate types in the error. If
+TerminusX is able to find the unique type which applies, it will
+ascribe the type automatically.
+
+Type ascription is perhaps most useful in cases in which abstract
+types are used as ranges of a property, but which there are only
+*sibling* concrete types which might apply. In this case it is easy to
+ensure a unique typing for the range class and improves the
+flexibility of the interface.
+
+It should also be considered that the type being ascribed is based on
+the schema *as it is* when the document is inserted. For this reason,
+in some cases it may be better to tag the document explicitly with the
+`@type` keyword.
+
+### Code: An example of type inference
+
+Given the following schema:
+
+```json
+{
+    "@type"      : "@context",
+    "@base"      : "http://i/",
+    "@schema"    : "http://s/"
+}
+{
+    "@id"        : "Person",
+    "@type"      : "Class",
+    "name"       : "xsd:string",
+    "friends"    :
+    {
+        "@type"  : "Set",
+        "@class" : "Person"
+    }
+}
+```
+We can insert the following document through the document interface:
+
+```json
+{ "name" : "Gavin",
+  "friends" : [ { "name" : "Tim"}, { "name" : "Julie" }] }
+```
+
+This document will be ascribed type `"Person"` and the two documents
+linked will likewise be typed as `"Person"`
+
+### Code: An example of unambiguous inference
+
+In the case of certain well defined JSON documents schemata however,
+such as GeoJSON, there is never a possibility of ambiguity and so the
+type-inferencing helps to make it much more convenient.
+
+```json
+{
+    "@type"      : "@context",
+    "@base"      : "http://i/",
+    "@schema"    : "http://s/"
+}
+{
+    "@type" : "Class",
+    "@id" : "Geometry",
+    "@abstract" : []
+}
+{
+    "@type" : "Enum",
+    "@id" : "Point_Type",
+    "@value" : [ "Point" ]
+}
+{
+    "@type" : "Class",
+    "@id" : "Point",
+    "@inherits" : "Geometry",
+    "type" : "Point_Type",
+    "coordinates" : {
+        "@type" : "Array",
+        "@dimensions" : 1,
+        "@class" : "xsd:decimal"
+    }
+}
+```
+
+This schema provides the `"Point"` type with a singleton enum
+tag. This singleton enum tag will help to uniquely assign the type.
+
+We can then insert a point document which might be written as:
+
+```json
+{
+    "type" : "Point",
+    "coordinates" : [33.2,24.0]
+}
+```
