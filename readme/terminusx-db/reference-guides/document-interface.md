@@ -244,6 +244,32 @@ POST /api/schema/<resource path>
 | message          |         | The commit message                         |
 | schema\_checking |         | Value should be either enabled or disabled |
 
+## The apply endpoint
+
+The schema endpoint can be used to query information about classes in a resource. These queries happen through a GET on the following endpoint:
+
+```
+POST /api/schema/<resource path>
+```
+
+Where resource path is the usual strings like `admin/foo` for database foo, or `admin/foo/local/branch/dev` for the `dev` branch of `admin/foo`.
+
+The purpose of this endpoint is to take the difference between any two commits and apply them to a branch.
+
+### Parameters
+
+| parameter | default | explanation                                                                                   |
+| --------- | ------- | --------------------------------------------------------------------------------------------- |
+| before\_commit |         | The first commit to compare in order to produce a diff |
+| after\_commit  |         | The last commit to compare in order to produce a diff |
+| commit\_info |         | A JSON document with author and message |
+| match\_final\_state | true | Ignores conflicts if the final state would remain the same |
+| type | squash | What type of application to perform - currently can only be squash |
+
+### Result
+
+The result of this POST request is either an updated branch with a successful application of the difference between two commits, or an error giving the reason for an unresolvable conflict.
+
 ### See also
 
 #### Documents
