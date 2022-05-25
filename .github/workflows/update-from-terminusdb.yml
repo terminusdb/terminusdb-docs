@@ -1,6 +1,7 @@
 name: Update files from terminusdb
 
 on:
+  push:
   workflow_dispatch:
   repository_dispatch:
     types:
