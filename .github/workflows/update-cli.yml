@@ -1,0 +1,32 @@
+name: Update cli.md
+
+on:
+  repository_dispatch:
+  workflow_dispatch:
+
+jobs:
+
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out terminusdb-docs
+        uses: actions/checkout@v3
+        with:
+          path: terminusdb-docs
+
+      - name: Check out terminusdb
+        uses: actions/checkout@v3
+        with:
+          path: terminusdb
+          repository: terminusdb/terminusdb
+
+      - run: cp terminusdb/docs/terminusdb.1.ronn terminusdb-docs/readme/terminusx-db/reference-guides/cli.md
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: terminusdb-docs
+          commit_message: Update cli.md from terminusdb
+          file_pattern: >-
+            readme/terminusx-db/reference-guides/cli.md
