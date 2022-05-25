@@ -1,0 +1,51 @@
+name: Update files from terminusdb
+
+on:
+  repository_dispatch:
+    types:
+      - update-from-terminusdb
+
+jobs:
+
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out terminusdb-docs
+        uses: actions/checkout@v3
+        with:
+          path: terminusdb-docs
+
+      - name: Check client_payload
+        run: |
+          if [ "${{ github.event.client_payload.sha }}" == "" ]]; then
+            echo "Missing: github.event.client_payload.sha"
+            exit 1
+          fi
+
+      - name: Check out terminusdb
+        uses: actions/checkout@v3
+        with:
+          path: terminusdb
+          repository: terminusdb/terminusdb
+          ref: ${{ github.event.client_payload.sha }}
+
+      - name: Updates cli.md
+        run: cp terminusdb/docs/terminusdb.1.ronn terminusdb-docs/readme/terminusx-db/reference-guides/cli.md
+
+      - name: Updates schema.md files
+        run: |
+          npm install
+          SRC=$GITHUB_WORKSPACE/terminusdb/src/terminus-schema
+          DST=$GITHUB_WORKSPACE/terminusdb-docs/readme/terminusx-db/reference-guides
+          npm test -- $SRC/woql.json          $DST/woql-schema.md
+          npm test -- $SRC/ref.json           $DST/ref-schema.md
+          npm test -- $SRC/repository.json    $DST/repository-schema.md
+          npm test -- $SRC/system_schema.json $DST/system-schema.md
+        working-directory: terminusdb-docs/.github/jsonToMDConverter
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          repository: terminusdb-docs
+          commit_message: Update from terminusdb@${{ github.event.client_payload.sha }}
