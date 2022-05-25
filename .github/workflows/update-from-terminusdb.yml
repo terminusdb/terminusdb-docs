@@ -1,8 +1,10 @@
 name: Update files from terminusdb
 
 on:
-  repository_dispatch:
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - update-from-terminusdb
 
 jobs:
 
