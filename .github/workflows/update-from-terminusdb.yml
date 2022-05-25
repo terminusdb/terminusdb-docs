@@ -50,5 +50,3 @@ jobs:
         with:
           repository: terminusdb-docs
           commit_message: Update files from terminusdb
-          file_pattern: >-
-            readme/terminusx-db/reference-guides/cli.md
