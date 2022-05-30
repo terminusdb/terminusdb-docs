@@ -48,4 +48,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           repository: terminusdb-docs
-          commit_message: Update from terminusdb@${{ github.event.client_payload.sha }}
+          commit_message: |
+            Update from terminusdb
+
+            https://github.com/terminusdb/terminusdb/commit/${{ github.event.client_payload.sha }}
