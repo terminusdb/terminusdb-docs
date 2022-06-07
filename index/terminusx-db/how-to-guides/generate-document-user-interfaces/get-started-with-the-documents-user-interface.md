@@ -4,13 +4,13 @@ Use the TerminusDB documents User Interface (UI) utility `terminusdb-documents-u
 
 ## Key Topics
 
-[Install and import](broken-reference)
+[Install and import](get-started-with-the-documents-user-interface.md#install-and-import)
 
-[The FrameViewer object](broken-reference)
+[The FrameViewer object](get-started-with-the-documents-user-interface.md#the-frameviewer-object)
 
-[FrameViewer usage step-by-step](broken-reference)
+[FrameViewer usage step-by-step](get-started-with-the-documents-user-interface.md#frameviewer-usage-step-by-step)
 
-[FrameViewer Modes](broken-reference)
+[FrameViewer Modes](get-started-with-the-documents-user-interface.md#frameviewer-modes)
 
 ## Install and import
 
@@ -83,11 +83,11 @@ try {
 
 Use three simple steps - input, configure, and output:
 
-[Step 1. Create frame data](broken-reference)
+[Step 1. Create frame data](get-started-with-the-documents-user-interface.md#step-1.-create-frame-data)
 
-[Step 2. Configure properties and functions](broken-reference)
+[Step 2. Configure properties and functions](get-started-with-the-documents-user-interface.md#step-2.-configure-properties-and-functions)
 
-[Step 3. Generate the form](broken-reference)
+[Step 3. Generate the form](get-started-with-the-documents-user-interface.md#step-3.-generate-the-form)
 
 ### Step 1. Create frame data
 
@@ -165,9 +165,9 @@ return <FrameViewer
 
 The `FrameViewer` object supports three modes:
 
-* [Create](broken-reference)
-* [Edit](broken-reference)
-* [View](broken-reference)
+* [Create](get-started-with-the-documents-user-interface.md#create-mode)
+* [Edit](get-started-with-the-documents-user-interface.md#edit-mode)
+* [View](get-started-with-the-documents-user-interface.md#view-mode)
 
 ### Create mode
 
