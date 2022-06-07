@@ -120,7 +120,7 @@ Import a list of documents in json format to Python objects. The schema of those
 
 ### from\_json\_schema(name, json\_schema, pipe=False, subdoc=False)
 
-Load classe object from json schema ([http://json-schema.org/](http://json-schema.org)) and, if pipe mode is off, add into schema. All referenced object will be treated as subdocuments.
+Load classe object from json schema ([http://json-schema.org/](http://json-schema.org/)) and, if pipe mode is off, add into schema. All referenced object will be treated as subdocuments.
 
 **Parameter/s**
 
@@ -139,7 +139,7 @@ Return the schema in the TerminusDB dictionary format
 
 ### to\_json\_schema(class\_object)
 
-Return the schema in the json schema ([http://json-schema.org/](http://json-schema.org)) format as a dictionary for the class object.
+Return the schema in the json schema ([http://json-schema.org/](http://json-schema.org/)) format as a dictionary for the class object.
 
 **Parameter/s**
 
