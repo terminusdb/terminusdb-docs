@@ -38,6 +38,7 @@
       * [Document Interface](readme/terminusx-db/reference-guides/document-interface.md)
       * [HTTP API Reference](readme/terminusx-db/reference-guides/http-api.md)
       * [Schema Reference](readme/terminusx-db/reference-guides/schema.md)
+      * [TerminusDB Data Types](index/terminusx-db/reference-guides/terminusdb-data-types.md)
       * [TerminusDB Store](readme/terminusx-db/reference-guides/terminus-store.md)
       * [WOQL Class Reference](readme/terminusx-db/reference-guides/woql-class.md)
       * [Python Client Reference](index/terminusx-db/reference-guides/client/README.md)

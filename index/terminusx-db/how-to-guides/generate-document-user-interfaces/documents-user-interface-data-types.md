@@ -344,3 +344,9 @@ The form contains arrows to order entered values.
 In `View` mode the form is displayed in the order it was created.
 
 ![](../../../../.gitbook/assets/documents-ui-data-types-10.png)
+
+## See also
+
+### TerminusDB Data Types
+
+[TerminusDB Data Types](documents-user-interface-data-types.md#terminusdb-data-types)
