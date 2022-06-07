@@ -1104,6 +1104,86 @@ An example of an object `Person` that can have 0 to any number of friends. This 
 }
 ```
 
+
+### Foreign Types
+
+Use `Foreign` to specify types which are to be references to external
+data products. Foreign types are types which are opaque in the
+current data product. This allows us to give them identifiers although
+we don't actually store the objects locally. Foreign types have *no*
+referential integrity checking, and as they refer to opaque
+identifiers, the schema is checked by the data product in which they
+are referred.
+
+A foreign type must be declared explicitly by giving the name of the
+type to be treated as foreign using the `Foreign` designation in the
+schema.
+
+#### Code: An example adding a foreign Person type
+
+For instance, to add a foreign type of type Person, we can write:
+
+```json
+{ "@type" : "Foreign",
+  "@id" : "Person"}
+```
+
+The actual definition of person might be given in its home data
+product as:
+
+```json
+{ "@type" : "Person",
+  "@key" : { "@type" : "Lexical",
+             "@fields" : [ "name " ] },
+  "name" : "xsd:string" }
+```
+
+#### Code: An example creating and referring to a foreign type
+
+From the command line we can see how an HR data product might interact
+with an Events data product.
+
+Create the HR data product:
+
+```shell
+./terminusdb db create admin/hr
+```
+Add the HR schema:
+
+```shell
+echo '{ "@type" : "Class", "@id" : "Person", "@key" : { "@type" : "Lexical", "@fields" : ["name"]}, "name" : "xsd:string" }' | ./terminusdb doc insert admin/hr --graph_type=schema
+```
+
+Create the Events data product:
+
+```shell
+./terminusdb db create admin/events
+```
+
+Add events, and a foreign type designation:
+
+```shell
+echo '{ "@type" : "Foreign", "@id" : "Person"}{ "@type" : "Class", "@id" : "Event", "date" : "xsd:date", "person" : "Person" }' | ./terminusdb doc insert admin/events --graph_type=schema
+```
+
+Add a person to HR:
+
+```shell
+echo '{ "@type" : "Person", "name" : "Gavin" }' | ./terminusdb doc insert admin/hr
+```
+
+Add an event referring to the person:
+
+```shell
+echo '{ "@type" : "Event", "date" : "2022-10-05", "person" : "terminusdb:///data/Person/Gavin"}' | ./terminusdb doc insert admin/events
+```
+
+Recover the event:
+
+```shell
+./terminusdb doc get admin/events --id='Event/9b3c5b174cb1f157dcdcedb692ed57f82ba31193fb81652dc602915732ae94e1'
+```
+
 ### Cardinality
 
 Use `Cardinality` to specify an unordered set of values of a class or
