@@ -151,6 +151,10 @@ The relationships between two tables in relational databases. In graph databases
 
 WOQL (**Web Object Query Language**) is TerminusDB's query language for querying complex data patterns and structures. WOQL is based on three fundamental concepts: WOQL [triples](glossary.md#triples), WOQL **variables** and WOQL **operators**. WOQL also provides [PCRE](glossary.md#pcre).
 
+{% hint style="info" %}
+Note: WOQL does not use the [SPARQL](https://en.wikipedia.org/wiki/SPARQL) protocol.
+{% endhint %}
+
 [Read more](../../../terminusx-db/resources/data-modeling/data-modeling-woql-queries/)
 
 ## Programming
