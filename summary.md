@@ -18,6 +18,7 @@
       * [Introduction to TerminusDB](readme/terminusdb/overview/introduction.md)
       * [Get Started](readme/terminusdb/overview/get-started.md)
     * [Install Options](readme/terminusdb/install/README.md)
+      * [Install from Snap](readme/terminusdb/install/install-from-snap.md)
       * [Install from Source Code](readme/terminusdb/install/install-from-source-code.md)
       * [Install as a Docker Container](readme/terminusdb/install/install-as-docker-container.md)
   * [TerminusX and DB](readme/terminusx-db/README.md)
