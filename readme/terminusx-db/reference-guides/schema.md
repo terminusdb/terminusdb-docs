@@ -955,7 +955,7 @@ arbitrary JSON document.
 
 Using the CLI we can write:
 
-```json
+```shell
 echo '{ "size" : 12.0, "name" : "Bob" }' | terminusdb doc insert admin/example -j
 Document inserted ["terminusdb:///json/JSONDocument/9cb4de0ff0b46b6035149a6b763e087d6c59cba2b417de3eedfd26063bee6bdf"]
 ```
