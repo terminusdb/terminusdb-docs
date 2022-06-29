@@ -956,7 +956,7 @@ arbitrary JSON document.
 Using the CLI we can write:
 
 ```json
-echo '{ "size" : 12.0, "name" : "Bob" }' | ./terminusdb doc insert admin/example -j
+echo '{ "size" : 12.0, "name" : "Bob" }' | terminusdb doc insert admin/example -j
 Document inserted ["terminusdb:///json/JSONDocument/9cb4de0ff0b46b6035149a6b763e087d6c59cba2b417de3eedfd26063bee6bdf"]
 ```
 
@@ -1146,42 +1146,42 @@ with an Events data product.
 Create the HR data product:
 
 ```shell
-./terminusdb db create admin/hr
+terminusdb db create admin/hr
 ```
 Add the HR schema:
 
 ```shell
-echo '{ "@type" : "Class", "@id" : "Person", "@key" : { "@type" : "Lexical", "@fields" : ["name"]}, "name" : "xsd:string" }' | ./terminusdb doc insert admin/hr --graph_type=schema
+echo '{ "@type" : "Class", "@id" : "Person", "@key" : { "@type" : "Lexical", "@fields" : ["name"]}, "name" : "xsd:string" }' | terminusdb doc insert admin/hr --graph_type=schema
 ```
 
 Create the Events data product:
 
 ```shell
-./terminusdb db create admin/events
+terminusdb db create admin/events
 ```
 
 Add events, and a foreign type designation:
 
 ```shell
-echo '{ "@type" : "Foreign", "@id" : "Person"}{ "@type" : "Class", "@id" : "Event", "date" : "xsd:date", "person" : "Person" }' | ./terminusdb doc insert admin/events --graph_type=schema
+echo '{ "@type" : "Foreign", "@id" : "Person"}{ "@type" : "Class", "@id" : "Event", "date" : "xsd:date", "person" : "Person" }' | terminusdb doc insert admin/events --graph_type=schema
 ```
 
 Add a person to HR:
 
 ```shell
-echo '{ "@type" : "Person", "name" : "Gavin" }' | ./terminusdb doc insert admin/hr
+echo '{ "@type" : "Person", "name" : "Gavin" }' | terminusdb doc insert admin/hr
 ```
 
 Add an event referring to the person:
 
 ```shell
-echo '{ "@type" : "Event", "date" : "2022-10-05", "person" : "terminusdb:///data/Person/Gavin"}' | ./terminusdb doc insert admin/events
+echo '{ "@type" : "Event", "date" : "2022-10-05", "person" : "terminusdb:///data/Person/Gavin"}' | terminusdb doc insert admin/events
 ```
 
 Recover the event:
 
 ```shell
-./terminusdb doc get admin/events --id='Event/9b3c5b174cb1f157dcdcedb692ed57f82ba31193fb81652dc602915732ae94e1'
+terminusdb doc get admin/events --id='Event/9b3c5b174cb1f157dcdcedb692ed57f82ba31193fb81652dc602915732ae94e1'
 ```
 
 ### Cardinality
