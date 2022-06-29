@@ -1,6 +1,6 @@
 # Install from Snap
 
-Detailed instructions on the installation can be found at the Snap page: https://snapcraft.io/terminusdb
+Detailed instructions on the installation can be found at the Snap page: [https://snapcraft.io/terminusdb](https://snapcraft.io/terminusdb)
 
 This is the easiest way to try TerminusDB as a developer on various Linux distributions.
 
