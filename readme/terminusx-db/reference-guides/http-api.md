@@ -84,127 +84,140 @@ The delete argument is a JSON document of the following form:
 }
 ```
 
-## Add User to Organization
+## Get All Users
 
 ```
-POST http://localhost:6363/api/organization
+GET http://localhost:6363/api/users
 ```
 
-The post argument is a JSON document of the following form:
+Get a list of all users, and their capabilities.
 
-```jsx
-{ "organization_name" : Organization_Name,
-  "user_name" : User_Name }
-```
-
-This endpoint will add the user `User_Name` to the organization `Organization_Name`.
-
-## Delete Organization
+## Get User
 
 ```
-DELETE http://localhost:6363/api/organization
+GET http://localhost:6363/api/users/<user_name>
 ```
 
-The delete argument is a JSON document of the following form:
-
-```jsx
-{ "organization_name" : Organization_Name }
-```
-
-This endpoint will delete the organization `Organization_Name`.
-
-## Update Organization Name
-
-```
-POST http://localhost:6363/api/organization/<organization_name>
-```
-
-The JSON API post parameter is:
-
-```jsx
-{ "organization_name" : New_Name }
-```
-
-This endpoint will update the name of the organization in the path to `New_Name`.
+Get a user and their capabilities.
 
 ## Add User
 
 ```
-POST http://localhost:6363/api/user
+POST http://localhost:6363/api/users
 ```
 
 The JSON API post parameter is:
 
 ```jsx
-{ "user_identifier" : User_ID,
-  "agent_name" : Agent_Name,
-  "comment" : Comment,
+{ "name" : User_Name,
   <"password" : Password>
 }
 ```
 
-This endpoint adds the user `User_ID` and an organization of the same name to which the user will automatically be added, along with an optional password.
+This endpoint adds the user with an optional password field (for use with basic authentication).
 
 ## Delete User
 
 ```
-DELETE http://localhost:6363/api/user/<user_name>
+DELETE http://localhost:6363/api/users/<user_name>
 ```
 
 This deletes the user named `user_name`.
 
-## Update User
+## Update User Password
 
 ```
-POST http://localhost:6363/api/user/<user_name>
+POST http://localhost:6363/api/users
 ```
 
 The JSON API post parameter is:
 
 ```jsx
-{ <"user_identifier" : User_ID>,
-  <"agent_name" : Agent_Name>,
-  <"comment" : Comment>,
-  <"password" : Passord>
+{ "name" : User_Name,
+  "password" : Password
 }
 ```
 
-This endpoint allows a user to be updated with any of the supplied information in the JSON document.
+This endpoint allows a user password to be updated.
 
-## Get Roles
+## Get All Roles
 
 ```
-GET http://localhost:6363/api/role
+GET http://localhost:6363/api/roles
 ```
 
-The JSON API get parameter is:
+This returns all roles in the system.
 
-```jsx
-{ <"agent_name" : Agent_Name >,
-  <"database_name" : Database_Name >,
-  <"organisation_name" : Organization_Name >
-}
+## Get Role
+
+```
+GET http://localhost:6363/api/roles/<role_name>
 ```
 
-This returns all roles in the system which match the passed parameters.
+Return the role named `role_name`.
 
 ## Update Roles
 
 ```
-POST http://localhost:6363/api/update_role
+POST http://localhost:6363/api/roles
 ```
 
 The JSON API post parameter is:
 
 ```jsx
-{ "agent_names" : Agents,
-  "organization_name" : Organization,
-  "actions" : Actions,
-  <"database_name" : Database_Name >
+{ "name" : Role_Name
+  "action" : Action_List
 }
 ```
 
-This endpoint will update the roles in the database with the associated list of actions for the named agents.
+This endpoint will update the roles in the database with the
+associated list of actions.
+
+## Delete Role
+
+```
+DELETE http://localhost:6363/api/roles/<role_name>
+```
+
+Delete the role named `role_name` from the database.
+
+## Get All Organizations
+
+```
+GET http://localhost:6363/api/organizations
+```
+
+Get all the organizations.
+
+## Get Organization
+
+```
+GET http://localhost:6363/api/organizations/<organization_name>
+```
+
+Get the organization named `organization_name`.
+
+## Delete Organization
+
+```
+DELETE http://locahost:6363/api/organizations/<organization_name>
+```
+Delete the organization named `organization_name`.
+
+## Grant/Revoke Capability
+
+```
+POST http://localhost:6363/api/capabilities
+```
+
+```jsx
+{ "operation" : Operation,
+  "scope" : Resource,
+  "user" : User,
+  "roles: Roles }
+```
+
+Either add or remove the capability for user `User` over resource `Resource` with role `Role`, depending on the `Operation` which is one of `"revoke"` or `"grant"`.
 
 ## Clone
 
