@@ -4,7 +4,7 @@ API definitions for terminusdb.
 
 ### General rule
 
-The TerminusDB Server HTTP API JSON documents have optional elements notated with angle-brackets, for instance:
+TerminusDB Server HTTP API JSON documents have optional elements notated with angle-brackets, for instance:
 
 ```jsx
 {
@@ -21,7 +21,7 @@ The TerminusDB Server HTTP API JSON documents have optional elements notated wit
 GET http://localhost:6363/api/
 ```
 
-The Connect API endpoint returns the `system:User` object associated with the authentication provided. If no authentication is provided, the user will be the predefined `terminusdb:///system/data/anonymous` user.
+The Connect API endpoint returns the `system:User` object associated with the authentication provided. If no authentication is provided, the user will be predefined as `terminusdb:///system/data/anonymous`.
 
 ## Create Database
 
@@ -29,7 +29,7 @@ The Connect API endpoint returns the `system:User` object associated with the au
 POST http://localhost:6363/api/db/<organization>/<dbid>
 ```
 
-The post argument is a JSON document of the following form:
+The post argument is a JSON document like this:
 
 ```jsx
 {
@@ -42,11 +42,11 @@ The post argument is a JSON document of the following form:
 }
 ```
 
-Creates a new database with database ID `dbid` for organization `organization`.
+It creates a new database with database ID `dbid` for organization `organization`.
 
 The default prefixes associated with the document and the schema can be specified.
 
-`label`: display name of thre database
+`label`: display database name
 
 `comment`: database description
 
@@ -58,7 +58,12 @@ The `schema` boolean will determine if this database is created with an empty sc
 
 ### Example:
 
-Create a database with the following: organization: admin dbid: cowid label: label comment "information about cows"
+Create a database with the following: 
+
+- organization: admin 
+- dbid: cowid 
+- label: cow label 
+- comment: information about cows
 
 The payload in this case is:
 
@@ -77,7 +82,7 @@ The payload in this case is:
 DELETE http://localhost:6363/api/db/<organization>/<dbid>
 ```
 
-The delete argument is a JSON document of the following form:
+The delete argument is a JSON document like this:
 
 ```jsx
 { < "force" : Boolean >
@@ -187,7 +192,7 @@ Delete the role named `role_name` from the database.
 GET http://localhost:6363/api/organizations
 ```
 
-Get all the organizations.
+Get all organizations in the database.
 
 ## Get Organization
 
@@ -282,7 +287,7 @@ The JSON API document is:
 }
 ```
 
-The `rebase_from` contains an absolute string descriptor for the reference we are rebasing from. It may be a ref or a branch. Author should be the author of the newly produced commits.
+The `rebase_from` contains an absolute string descriptor for the reference we are rebasing from. It may be a ref or a branch. The author should be the author of the newly produced commits.
 
 This operation will attempt to construct a new history which has the same contents as that given by "rebase\_from" by repeated application of diverging commits.
 
@@ -352,7 +357,7 @@ JSON API document is:
 }
 ```
 
-Fetch layers from `remote`, then attempt a rebase from the remote branch `remote_branch` onto the local branch specified in the URL.
+This fetches layers from `remote`, then attempt a rebase from the remote branch `remote_branch` onto the local branch specified in the URL.
 
 ### Example:
 
@@ -383,7 +388,7 @@ JSON API document is:
 }
 ```
 
-Creates a new branch as specified by the URI, starting from the branch given by `origin` or empty if it is unspecified.
+This creates a new branch as specified by the URI, starting from the branch given by `origin` or empty if it is unspecified.
 
 ### Example:
 
@@ -406,7 +411,7 @@ JSON payload:
 DELETE http://localhost:6363/api/branch/<organization>/<dbid>/<repo>/<branchid>
 ```
 
-Delete argument is a JSON document of the following form
+The delete argument is a JSON document shown here:
 
 ```jsx
 { < "force" : Boolean >
@@ -461,7 +466,7 @@ This takes the following parameter:
 {"commit_info" : { "author" : Author, "message" : Message }}
 ```
 
-Deletes the graph specified by the absolute graph descriptor in the URI. If multiple graphs are created with different commits as above, the graphid needs to be specified.
+This deletes the graph specified by the absolute graph descriptor in the URI. If multiple graphs are created with different commits as above, the graphid needs to be specified.
 
 ### Example:
 
@@ -584,7 +589,7 @@ This call returns a "Turtle" format file representation of the graph specified i
 POST http://localhost:6363/api/triples/<organization>/<dbid>/local/branch/<branchid>/<type>/<name>
 ```
 
-Post argument is a JSON document of the following form
+The Post argument is a JSON document illustrated below:
 
 ```jsx
 { "turtle" : TTL_String,
@@ -638,7 +643,7 @@ POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/branch/<branchi
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/commit/<refid>
 ```
 
-Post argument is a JSON document of the following form
+The post argument is a JSON document like:
 
 ```jsx
 { <"commit_info" : { "author" : Author, "message" : Message } >,
@@ -646,11 +651,11 @@ Post argument is a JSON document of the following form
   "query" : Query }
 ```
 
-The commit message is a requirement if an update is being made, whereas `query` should be a JSON-LD object.
+The commit message is required if an update is being made, whereas `query` should be a JSON-LD object.
 
 If `"all_witnesses"` is false, then the end-point will return immediately when an schema violation is encountered with the first witness of failure.
 
-This API call performs a WOQL query and returns an `api:WoqlResponse` result object, which has the form:
+This API call performs a WOQL query and returns an `api:WoqlResponse` result object like:
 
 ```jsx
 { "@type" : "api:WoqlResponse",
