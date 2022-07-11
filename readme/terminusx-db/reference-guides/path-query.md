@@ -203,21 +203,21 @@ distinct("v:Ancestor",
 #### All those whose parents are nieces or nephews of eachother
 
 The following query finds all distinct ancestors of Charles II whose
-parents have a uncle-niece or aunt-nephew relationship to
-eachother. In this case we only find uncle-niece relationships, but we
-get several of them.
+parents have a uncle-niece relationship to eachother. The query
+specifically asks, is there an ancestor (someone related by
+`(mother|father)*`) who has their father's father, as the father of
+their mother's mother. We walk up the tree to the father's father, and
+down the tree through the mother backwards to arrive at the same individual.
 
 ```javascript
 distinct("v:Ancestor",
   and(
     triple("v:Person", "name", string("Charles II of Spain")),
     path("v:Person", "(mother|father)*", "v:Ancestor"),
-    path("v:Ancestor", "(mother|father),(mother|father),(father,<father,<father|mother,<mother,<mother)", "v:Ancestor"),
+    path("v:Ancestor", "(father,father,<father,<mother,<mother)", "v:Ancestor"),
     triple("v:Ancestor", "name", "v:Name")
   )
 )
 ```
 
-This will yield:
-
-Charles II of Spain, Margarita of Austria and Philip III of Spain.
+This will yield: Charles II of Spain, Margarita of Austria and Philip III of Spain.
