@@ -4,7 +4,7 @@
 
 TerminusDB allows *regular path expressions* as a way to describe
 multihop searches in a concise fashion. When you need to follow a link
-repeatedly for shortest path queries, or to find all linked documents
+repeatedly for shortest path queries or to find all linked documents
 meeting some specification you can often use a *path query*.
 
 The syntax of path expressions, for expressions `A`, `B` and fields `F` is as follows:
@@ -25,7 +25,7 @@ The syntax of path expressions, for expressions `A`, `B` and fields `F` is as fo
 ## Example: Ancestry
 
 To understand the use of Path expressions we will use a family tree to
-exhibit the various operations above and their meaning.
+exhibit the above operations and their meanings.
 
 ### Data Ingestion
 
@@ -200,10 +200,10 @@ distinct("v:Ancestor",
 )
 ```
 
-#### All those whose parents are nieces or nephews of eachother
+#### All those whose parents are nieces or nephews of each other
 
 The following query finds all distinct ancestors of Charles II whose
-parents have a uncle-niece relationship to eachother. The query
+parents have an uncle-niece relationship to each other. The query
 specifically asks, is there an ancestor (someone related by
 `(mother|father)*`) who has their father's father, as the father of
 their mother's mother. We walk up the tree to the father's father, and
@@ -220,4 +220,4 @@ distinct("v:Ancestor",
 )
 ```
 
-This will yield: Charles II of Spain, Margarita of Austria and Philip III of Spain.
+This will yield: Charles II of Spain, Margarita of Austria, and Philip III of Spain.
