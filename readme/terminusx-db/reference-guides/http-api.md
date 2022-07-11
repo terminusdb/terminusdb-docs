@@ -4,7 +4,7 @@ API definitions for terminusdb.
 
 ### General rule
 
-The TerminusDB Server HTTP API JSON documents have optional elements notated with angle-brackets, for instance:
+TerminusDB Server HTTP API JSON documents have optional elements notated with angle-brackets, for instance:
 
 ```jsx
 {
@@ -21,7 +21,7 @@ The TerminusDB Server HTTP API JSON documents have optional elements notated wit
 GET http://localhost:6363/api/
 ```
 
-The Connect API endpoint returns the `system:User` object associated with the authentication provided. If no authentication is provided, the user will be the predefined `terminusdb:///system/data/anonymous` user.
+The Connect API endpoint returns the `system:User` object associated with the authentication provided. If no authentication is provided, the user will be predefined as `terminusdb:///system/data/anonymous`.
 
 ## Create Database
 
@@ -29,7 +29,7 @@ The Connect API endpoint returns the `system:User` object associated with the au
 POST http://localhost:6363/api/db/<organization>/<dbid>
 ```
 
-The post argument is a JSON document of the following form:
+The post argument is a JSON document like this:
 
 ```jsx
 {
@@ -42,11 +42,11 @@ The post argument is a JSON document of the following form:
 }
 ```
 
-Creates a new database with database ID `dbid` for organization `organization`.
+It creates a new database with database ID `dbid` for organization `organization`.
 
 The default prefixes associated with the document and the schema can be specified.
 
-`label`: display name of thre database
+`label`: display database name
 
 `comment`: database description
 
@@ -58,7 +58,12 @@ The `schema` boolean will determine if this database is created with an empty sc
 
 ### Example:
 
-Create a database with the following: organization: admin dbid: cowid label: label comment "information about cows"
+Create a database with the following: 
+
+- organization: admin 
+- dbid: cowid 
+- label: cow label 
+- comment: information about cows
 
 The payload in this case is:
 
@@ -77,134 +82,147 @@ The payload in this case is:
 DELETE http://localhost:6363/api/db/<organization>/<dbid>
 ```
 
-The delete argument is a JSON document of the following form:
+The delete argument is a JSON document like this:
 
 ```jsx
 { < "force" : Boolean >
 }
 ```
 
-## Add User to Organization
+## Get All Users
 
 ```
-POST http://localhost:6363/api/organization
+GET http://localhost:6363/api/users
 ```
 
-The post argument is a JSON document of the following form:
+Get a list of all users, and their capabilities.
 
-```jsx
-{ "organization_name" : Organization_Name,
-  "user_name" : User_Name }
-```
-
-This endpoint will add the user `User_Name` to the organization `Organization_Name`.
-
-## Delete Organization
+## Get User
 
 ```
-DELETE http://localhost:6363/api/organization
+GET http://localhost:6363/api/users/<user_name>
 ```
 
-The delete argument is a JSON document of the following form:
-
-```jsx
-{ "organization_name" : Organization_Name }
-```
-
-This endpoint will delete the organization `Organization_Name`.
-
-## Update Organization Name
-
-```
-POST http://localhost:6363/api/organization/<organization_name>
-```
-
-The JSON API post parameter is:
-
-```jsx
-{ "organization_name" : New_Name }
-```
-
-This endpoint will update the name of the organization in the path to `New_Name`.
+Get a user and their capabilities.
 
 ## Add User
 
 ```
-POST http://localhost:6363/api/user
+POST http://localhost:6363/api/users
 ```
 
 The JSON API post parameter is:
 
 ```jsx
-{ "user_identifier" : User_ID,
-  "agent_name" : Agent_Name,
-  "comment" : Comment,
+{ "name" : User_Name,
   <"password" : Password>
 }
 ```
 
-This endpoint adds the user `User_ID` and an organization of the same name to which the user will automatically be added, along with an optional password.
+This endpoint adds the user with an optional password field (for use with basic authentication).
 
 ## Delete User
 
 ```
-DELETE http://localhost:6363/api/user/<user_name>
+DELETE http://localhost:6363/api/users/<user_name>
 ```
 
 This deletes the user named `user_name`.
 
-## Update User
+## Update User Password
 
 ```
-POST http://localhost:6363/api/user/<user_name>
+POST http://localhost:6363/api/users
 ```
 
 The JSON API post parameter is:
 
 ```jsx
-{ <"user_identifier" : User_ID>,
-  <"agent_name" : Agent_Name>,
-  <"comment" : Comment>,
-  <"password" : Passord>
+{ "name" : User_Name,
+  "password" : Password
 }
 ```
 
-This endpoint allows a user to be updated with any of the supplied information in the JSON document.
+This endpoint allows a user password to be updated.
 
-## Get Roles
+## Get All Roles
 
 ```
-GET http://localhost:6363/api/role
+GET http://localhost:6363/api/roles
 ```
 
-The JSON API get parameter is:
+This returns all roles in the system.
 
-```jsx
-{ <"agent_name" : Agent_Name >,
-  <"database_name" : Database_Name >,
-  <"organisation_name" : Organization_Name >
-}
+## Get Role
+
+```
+GET http://localhost:6363/api/roles/<role_name>
 ```
 
-This returns all roles in the system which match the passed parameters.
+Return the role named `role_name`.
 
 ## Update Roles
 
 ```
-POST http://localhost:6363/api/update_role
+POST http://localhost:6363/api/roles
 ```
 
 The JSON API post parameter is:
 
 ```jsx
-{ "agent_names" : Agents,
-  "organization_name" : Organization,
-  "actions" : Actions,
-  <"database_name" : Database_Name >
+{ "name" : Role_Name
+  "action" : Action_List
 }
 ```
 
-This endpoint will update the roles in the database with the associated list of actions for the named agents.
+This endpoint will update the roles in the database with the
+associated list of actions.
+
+## Delete Role
+
+```
+DELETE http://localhost:6363/api/roles/<role_name>
+```
+
+Delete the role named `role_name` from the database.
+
+## Get All Organizations
+
+```
+GET http://localhost:6363/api/organizations
+```
+
+Get all organizations in the database.
+
+## Get Organization
+
+```
+GET http://localhost:6363/api/organizations/<organization_name>
+```
+
+Get the organization named `organization_name`.
+
+## Delete Organization
+
+```
+DELETE http://locahost:6363/api/organizations/<organization_name>
+```
+Delete the organization named `organization_name`.
+
+## Grant/Revoke Capability
+
+```
+POST http://localhost:6363/api/capabilities
+```
+
+```jsx
+{ "operation" : Operation,
+  "scope" : Resource,
+  "user" : User,
+  "roles: Roles }
+```
+
+Either add or remove the capability for user `User` over resource `Resource` with role `Role`, depending on the `Operation` which is one of `"revoke"` or `"grant"`.
 
 ## Clone
 
@@ -269,7 +287,7 @@ The JSON API document is:
 }
 ```
 
-The `rebase_from` contains an absolute string descriptor for the reference we are rebasing from. It may be a ref or a branch. Author should be the author of the newly produced commits.
+The `rebase_from` contains an absolute string descriptor for the reference we are rebasing from. It may be a ref or a branch. The author should be the author of the newly produced commits.
 
 This operation will attempt to construct a new history which has the same contents as that given by "rebase\_from" by repeated application of diverging commits.
 
@@ -339,7 +357,7 @@ JSON API document is:
 }
 ```
 
-Fetch layers from `remote`, then attempt a rebase from the remote branch `remote_branch` onto the local branch specified in the URL.
+This fetches layers from `remote`, then attempt a rebase from the remote branch `remote_branch` onto the local branch specified in the URL.
 
 ### Example:
 
@@ -370,7 +388,7 @@ JSON API document is:
 }
 ```
 
-Creates a new branch as specified by the URI, starting from the branch given by `origin` or empty if it is unspecified.
+This creates a new branch as specified by the URI, starting from the branch given by `origin` or empty if it is unspecified.
 
 ### Example:
 
@@ -393,7 +411,7 @@ JSON payload:
 DELETE http://localhost:6363/api/branch/<organization>/<dbid>/<repo>/<branchid>
 ```
 
-Delete argument is a JSON document of the following form
+The delete argument is a JSON document shown here:
 
 ```jsx
 { < "force" : Boolean >
@@ -448,7 +466,7 @@ This takes the following parameter:
 {"commit_info" : { "author" : Author, "message" : Message }}
 ```
 
-Deletes the graph specified by the absolute graph descriptor in the URI. If multiple graphs are created with different commits as above, the graphid needs to be specified.
+This deletes the graph specified by the absolute graph descriptor in the URI. If multiple graphs are created with different commits as above, the graphid needs to be specified.
 
 ### Example:
 
@@ -571,7 +589,7 @@ This call returns a "Turtle" format file representation of the graph specified i
 POST http://localhost:6363/api/triples/<organization>/<dbid>/local/branch/<branchid>/<type>/<name>
 ```
 
-Post argument is a JSON document of the following form
+The Post argument is a JSON document illustrated below:
 
 ```jsx
 { "turtle" : TTL_String,
@@ -625,7 +643,7 @@ POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/branch/<branchi
 POST http://localhost:6363/api/woql/<organization>/<dbid>/<repo>/commit/<refid>
 ```
 
-Post argument is a JSON document of the following form
+The post argument is a JSON document like:
 
 ```jsx
 { <"commit_info" : { "author" : Author, "message" : Message } >,
@@ -633,11 +651,11 @@ Post argument is a JSON document of the following form
   "query" : Query }
 ```
 
-The commit message is a requirement if an update is being made, whereas `query` should be a JSON-LD object.
+The commit message is required if an update is being made, whereas `query` should be a JSON-LD object.
 
 If `"all_witnesses"` is false, then the end-point will return immediately when an schema violation is encountered with the first witness of failure.
 
-This API call performs a WOQL query and returns an `api:WoqlResponse` result object, which has the form:
+This API call performs a WOQL query and returns an `api:WoqlResponse` result object like:
 
 ```jsx
 { "@type" : "api:WoqlResponse",
