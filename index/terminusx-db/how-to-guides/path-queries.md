@@ -13,7 +13,7 @@ The syntax of path expressions, for expressions `A`, `B` and fields `F` is as fo
 | Expression | Example       | Name     | Description                                                      |
 | ---------- | ------------- | -------- | ---------------------------------------------------------------- |
 | `A,B`      | `friend,name` | Sequence | First follow expression `A`, then from that node expression `B`  |
-| \`A        | B\`           | \`friend | foe\`                                                            |
+| `A\|B`     | `friend\|foe` | Choice   | Follow expression `A` or expression `B`                          |
 | `F+`       | `friend+`     | Plus     | Follow the field `F` any number of times, but at least once      |
 | `F*`       | `friend*`     | Star     | Follow the field `F` any number of times, including zero         |
 | `.`        | `.`           | Any      | Follow any field `F` regardless of name                          |
