@@ -10,18 +10,18 @@ TerminusDB allows _regular path expressions_ as a way to describe multihop searc
 
 The syntax of path expressions, for expressions `A`, `B` and fields `F` is as follows:
 
-| Expression | Example       | Name     | Description                                                      |
-| ---------- | ------------- | -------- | ---------------------------------------------------------------- |
-| `A,B`      | `friend,name` | Sequence | First follow expression `A`, then from that node expression `B`  |
-| `A\|B`     | `friend\|foe` | Choice   | Follow expression `A` or expression `B`                          |
-| `F+`       | `friend+`     | Plus     | Follow the field `F` any number of times, but at least once      |
-| `F*`       | `friend*`     | Star     | Follow the field `F` any number of times, including zero         |
-| `.`        | `.`           | Any      | Follow any field `F` regardless of name                          |
-| `F`        | `friend`      | Field    | Follow the field `F`                                             |
-| `F{n,m}`   | `friend{1,3}` | Times    | Follow the field `F` between `n` and `m` times                   |
-| `(A)`      | \`(friend     | foe)\`   | Group                                                            |
-| `F>`       | `friend>`     | Forward  | Follow the field `F` forward. This is the same as `F`.           |
-| `<F`       | `<friend`     | Backward | Follow the field `F` backward (who is linked to this node by `F` |
+| Expression | Example         | Name     | Description                                                      |
+| ---------- | --------------- | -------- | ---------------------------------------------------------------- |
+| `A,B`      | `friend,name`   | Sequence | First follow expression `A`, then from that node expression `B`  |
+| `A\|B`     | `friend\|foe`   | Choice   | Follow expression `A` or expression `B`                          |
+| `F+`       | `friend+`       | Plus     | Follow the field `F` any number of times, but at least once      |
+| `F*`       | `friend*`       | Star     | Follow the field `F` any number of times, including zero         |
+| `.`        | `.`             | Any      | Follow any field `F` regardless of name                          |
+| `F`        | `friend`        | Field    | Follow the field `F`                                             |
+| `F{n,m}`   | `friend{1,3}`   | Times    | Follow the field `F` between `n` and `m` times                   |
+| `(A)`      | `(friend\|foe)` | Group    | Group the expression for inclusion in a larger expression        |
+| `F>`       | `friend>`       | Forward  | Follow the field `F` forward. This is the same as `F`.           |
+| `<F`       | `<friend`       | Backward | Follow the field `F` backward (who is linked to this node by `F` |
 
 ### Example: Ancestry
 
