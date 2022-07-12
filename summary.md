@@ -25,6 +25,7 @@
     * [Tutorials](readme/terminusx-db/tutorials/README.md)
       * [JavaScript and Python Tutorials](readme/terminusx-db/tutorials/javascript-and-python-tutorials.md)
     * [How-to Guides](readme/terminusx-db/how-to-guides/README.md)
+      * [Path Queries](index/terminusx-db/how-to-guides/path-queries.md)
       * [Find an Object State](readme/terminusx-db/how-to-guides/find-object-state.md)
       * [Perform Graph Queries](readme/terminusx-db/how-to-guides/perform-graph-queries.md)
       * [Use Regular Expressions](readme/terminusx-db/how-to-guides/use-regex.md)
