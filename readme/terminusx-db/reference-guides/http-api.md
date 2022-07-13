@@ -161,7 +161,7 @@ GET http://localhost:6363/api/roles/<role_name>
 
 Return the role named `role_name`.
 
-## Update Roles
+## Create Roles
 
 ```
 POST http://localhost:6363/api/roles
@@ -171,12 +171,27 @@ The JSON API post parameter is:
 
 ```jsx
 { "name" : Role_Name
-  "action" : Action_List
+  "action" : ["instance_read_access","instance_write_access","commit_write_access"]
 }
 ```
-
-This endpoint will update the roles in the database with the
-associated list of actions.
+Create a new role with the listed actions. Actions may be any of:
+* '"create_database"'
+* '"delete_database"' 
+* '"class_frame"'
+* '"clone"'
+* '"fetch"'
+* '"push"'
+* '"branch"' 
+* '"rebase"' 
+* '"instance_read_access"' 
+* '"instance_write_access"'
+* '"schema_read_access"' 
+* '"schema_write_access"' 
+* '"meta_read_access"'
+* '"meta_write_access"' 
+* '"commit_read_access"' 
+* '"commit_write_access"'
+* '"manage_capabilities"'
 
 ## Delete Role
 
