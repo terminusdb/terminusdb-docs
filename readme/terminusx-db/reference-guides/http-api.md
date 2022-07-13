@@ -58,12 +58,12 @@ The `schema` boolean will determine if this database is created with an empty sc
 
 ### Example:
 
-Create a database with the following: 
+Create a database with the following:
 
-- organization: admin 
-- dbid: cowid 
-- label: cow label 
-- comment: information about cows
+* organization: admin
+* dbid: cowid
+* label: cow label
+* comment: information about cows
 
 The payload in this case is:
 
@@ -174,24 +174,26 @@ The JSON API post parameter is:
   "action" : ["instance_read_access","instance_write_access","commit_write_access"]
 }
 ```
+
 Create a new role with the listed actions. Actions may be any of:
-* '"create_database"'
-* '"delete_database"' 
-* '"class_frame"'
-* '"clone"'
-* '"fetch"'
-* '"push"'
-* '"branch"' 
-* '"rebase"' 
-* '"instance_read_access"' 
-* '"instance_write_access"'
-* '"schema_read_access"' 
-* '"schema_write_access"' 
-* '"meta_read_access"'
-* '"meta_write_access"' 
-* '"commit_read_access"' 
-* '"commit_write_access"'
-* '"manage_capabilities"'
+
+* `"create_database"`
+* `"delete_database"`
+* `"class_frame"`
+* `"clone"`
+* `"fetch"`
+* `"push"`
+* `"branch"`
+* `"rebase"`
+* `"instance_read_access"`
+* `"instance_write_access"`
+* `"schema_read_access"`
+* `"schema_write_access"`
+* `"meta_read_access"`
+* `"meta_write_access"`
+* `"commit_read_access"`
+* `"commit_write_access"`
+* `"manage_capabilities"`
 
 ## Delete Role
 
@@ -222,6 +224,7 @@ Get the organization named `organization_name`.
 ```
 DELETE http://locahost:6363/api/organizations/<organization_name>
 ```
+
 Delete the organization named `organization_name`.
 
 ## Grant/Revoke Capability
