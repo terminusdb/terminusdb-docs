@@ -237,7 +237,7 @@ POST http://localhost:6363/api/capabilities
 { "operation" : Operation,
   "scope" : Resource,
   "user" : User,
-  "roles: Roles }
+  "roles" : Roles }
 ```
 
 Either add or remove the capability for user `User` over resource `Resource` with role `Role`, depending on the `Operation` which is one of `"revoke"` or `"grant"`.
