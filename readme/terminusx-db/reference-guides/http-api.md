@@ -235,9 +235,17 @@ POST http://localhost:6363/api/capabilities
 
 ```jsx
 { "operation" : Operation,
-  "scope" : Resource,
-  "user" : User,
-  "roles" : Roles }
+  "scope" : ResourceId,
+  "user" : UserId,
+  "roles" : [RolesId] }
+```
+
+See the example below
+```jsx
+{ "operation" : "grant",
+  "scope" : "Organization/myteam",
+  "user" : "User/myUser",
+  "roles" : ["Role/reader"] }
 ```
 
 Either add or remove the capability for user `User` over resource `Resource` with role `Role`, depending on the `Operation` which is one of `"revoke"` or `"grant"`.
