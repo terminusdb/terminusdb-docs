@@ -72,6 +72,7 @@ The documents to be submitted are given as post data. Multiple documents can be 
 | message       |          | The commit message                                                                                                                                                                                     |
 | graph\_type   | instance | either instance or schema. Used to switch between submitting to the instance or the schema graph.                                                                                                      |
 | full\_replace | false    | If true, all existing documents are deleted before inserting the posted documents. This allows the full replacement of the contents of a database. This is especially useful for replacing the schema. |
+| raw\_json     | false    | If true, the input documents are treated as raw JSON , inserted as type `sys:JSONDocument` and are not subject to schema restrictions.                                                                 |
 
 #### Result
 
@@ -91,12 +92,13 @@ The documents to be submitted are given as post data. Multiple documents can be 
 
 #### Parameters
 
-| parameter   | default  | explanation                                                                                       |
-| ----------- | -------- | ------------------------------------------------------------------------------------------------- |
-| author      |          | The commit author                                                                                 |
-| message     |          | The commit message                                                                                |
-| graph\_type | instance | either instance or schema. Used to switch between submitting to the instance or the schema graph. |
-| create      | false    | insert if the document was not already in the database.                                           |
+| parameter   | default  | explanation                                                                                                                                                             |
+| ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| author      |          | The commit author                                                                                                                                                       |
+| message     |          | The commit message                                                                                                                                                      |
+| graph\_type | instance | either instance or schema. Used to switch between submitting to the instance or the schema graph.                                                                       |
+| create      | false    | insert if the document was not already in the database.                                                                                                                 |
+| raw\_json   | false    | If true, the replaced documents are treated as raw JSON , they must be replacing a document of type `sys:JSONDocument` and they are not subject to schema restrictions. |
 
 ### Deleting documents
 
@@ -132,10 +134,13 @@ As shown above, deleting a single document can be done through query parameters 
 In other words, a JSON list of document IDs.
 
 ### Capturing IDs while inserting or replacing documents
+
 When inserting or replacing several documents at once, it may occur that some of these documents need to refer to each other. However, at insertion time, you may not know what the IDs of the new documents are going to be. This is especially the case for document types that generate their identifier randomly, but even for non-random key types, it may be convenient to rely on the server's ID generation algorithm, rather than trying to predict what IDs will get generated. Therefore, in order to support cross-references between newly inserted documents, the document interface allows you to capture newly generated document IDs in a variable, and then refer to that variable later in other documents.
 
 #### Capturing an identifier into a variable
+
 When inserting or replacing a document that we want to refer to in another document inserted in the same operation, you can use a `@capture` key in the document to associate the newly generated identifier with a variable. For example,
+
 ```jsx
 { "@type": "Person",
   "@capture": "Id_Tom",
@@ -148,6 +153,7 @@ This will store the newly generated ID in a variable called `ID_Tom` for the dur
 It is allowed to capture an ID and then never actually refer to it.
 
 It is an error to capture the same variable twice. Doing so will result in a `api:CaptureIdAlreadyBound` error with the following shape:
+
 ```jsx
 {"@type": "api:CaptureIdAlreadyBound",
  "api:capture": "..capture id..",
@@ -155,7 +161,9 @@ It is an error to capture the same variable twice. Doing so will result in a `ap
 ```
 
 #### Referring to an identifier using a variable
+
 When inserting or replacing a document that needs to refer to another document inserted in the same operation, you can use a json dictionary of the form `{"@ref": "..id.."}` in place of an ordinary id. For example,
+
 ```jsx
 { "@type": "Person",
   "name": "Jerry",
@@ -164,6 +172,7 @@ When inserting or replacing a document that needs to refer to another document i
 ```
 
 It is an error to refer to a variable which is never captured. Doing so will result in a `api:NotAllCapturesFound` error of the following shape:
+
 ```jsx
 { "@type": "api:NotAllCapturesFound",
   "api:captures": [..list of capture ids that were referenced but not found..]
@@ -171,7 +180,9 @@ It is an error to refer to a variable which is never captured. Doing so will res
 ```
 
 #### Ordering of documents
+
 ID captures and ID references can be done in any order. That means that when you are submitting several documents, you're allowed to refer to a captured ID in an earlier document. This also allows you to do cross-references, where two documents refer to each other:
+
 ```jsx
 { "@type": "Person",
   "@capture": "Id_Tom",
@@ -188,7 +199,9 @@ ID captures and ID references can be done in any order. That means that when you
 In this example, Tom refers to Jerry, even though at that point in the submitted document stream, Jerry has not yet been processed. This is not a problem - both Tom and Jerry will get inserted referring to each other.
 
 ### Self-reference
+
 Using ID capture, it is possible to create a document that refers to itself:
+
 ```jsx
 { "@type": "Person",
   "@capture": "Captured_Id",
@@ -200,6 +213,7 @@ Using ID capture, it is possible to create a document that refers to itself:
 This will make Elmo be his own friend.
 
 #### ID capture only works within a single operation
+
 It is important to keep in mind that the ID capture mechanism only works within a single call to the document api. It is not possible to capture an ID in one operation, and then refer to it in a second operation. The `@capture` and `@ref` instructions do not get saved into the database. They are processed immediately and are then forgotten.
 
 If you need to refer to a document already in the database, the only way to do so is by referring to its ID.
@@ -258,13 +272,13 @@ The purpose of this endpoint is to take the difference between any two commits a
 
 ### Parameters
 
-| parameter | default | explanation                                                                                   |
-| --------- | ------- | --------------------------------------------------------------------------------------------- |
-| before\_commit |         | The first commit to compare in order to produce a diff |
-| after\_commit  |         | The last commit to compare in order to produce a diff |
-| commit\_info |         | A JSON document with author and message |
-| match\_final\_state | true | Ignores conflicts if the final state would remain the same |
-| type | squash | What type of application to perform - currently can only be squash |
+| parameter           | default | explanation                                                        |
+| ------------------- | ------- | ------------------------------------------------------------------ |
+| before\_commit      |         | The first commit to compare in order to produce a diff             |
+| after\_commit       |         | The last commit to compare in order to produce a diff              |
+| commit\_info        |         | A JSON document with author and message                            |
+| match\_final\_state | true    | Ignores conflicts if the final state would remain the same         |
+| type                | squash  | What type of application to perform - currently can only be squash |
 
 ### Result
 
