@@ -227,6 +227,14 @@ DELETE http://locahost:6363/api/organizations/<organization_name>
 
 Delete the organization named `organization_name`.
 
+## Create Organization
+
+```
+POST http://localhost:6363/api/organizations/<organization_name>
+```
+
+Create an organization with the name `organization_name`.
+
 ## Grant/Revoke Capability
 
 ```
@@ -241,6 +249,7 @@ POST http://localhost:6363/api/capabilities
 ```
 
 See the example below
+
 ```jsx
 { "operation" : "grant",
   "scope" : "Organization/myteam",
@@ -282,7 +291,6 @@ POST http://localhost:6363/api/clone/admin/cowid
 JSON payload:
 
 ```jsx
-
 {
    "comment":"information about cows",
    "label" : "cow label"
