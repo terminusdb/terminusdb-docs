@@ -44,6 +44,9 @@ jobs:
           npm test -- $SRC/system_schema.json $DST/system-schema.md
         working-directory: terminusdb-docs/.github/jsonToMDConverter
 
+      - name: Update GitBook files
+        run: python3 terminusdb-docs/.github/convert_gitbook.py terminusdb/docs/openapi.yaml "${{ github.event.client_payload.sha }}" > terminusdb-docs/readme/terminusx-db/reference-guides/openapi.md
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
