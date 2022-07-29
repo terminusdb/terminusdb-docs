@@ -39,6 +39,7 @@
       * [CURL Reference](readme/terminusx-db/reference-guides/curl.md)
       * [Document Interface](readme/terminusx-db/reference-guides/document-interface.md)
       * [HTTP API Reference](readme/terminusx-db/reference-guides/http-api.md)
+      * [OpenAPI Reference](readme/terminusx-db/reference-guides/openapi.md)
       * [Schema Reference](readme/terminusx-db/reference-guides/schema.md)
       * [TerminusDB Store](readme/terminusx-db/reference-guides/terminus-store.md)
       * [TerminusDB Data Types](index/terminusx-db/reference-guides/terminusdb-data-types.md)
