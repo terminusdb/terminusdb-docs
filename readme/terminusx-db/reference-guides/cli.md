@@ -56,17 +56,20 @@ Run the TerminusDB server.
 
 `terminusdb list OPTIONS`
 
-List databases.
+List available databases. [DEPRECATED]
 
   * `-h`, `--help`=[value]:
   print help for the `list` command
+
+  * `-b`, `--branches`=[value]:
+  also describe the available branches
 
   * `-j`, `--json`=[value]:
   Return a JSON as the result of the `list` command
 
 ### optimize
 
-`terminusdb optimize OPTIONS`
+`terminusdb optimize DB_SPEC OPTIONS`
 
 Optimize a database (including _system and _meta).
 
@@ -161,7 +164,7 @@ Pull a branch from a database.
   print help for the `pull` command
 
   * `-e`, `--remote-branch`=[value]:
-  set the branch on the remote for push
+  set the branch on the remote for pull
 
   * `-r`, `--remote`=[value]:
   the name of the remote to use
@@ -177,7 +180,7 @@ Pull a branch from a database.
 
 ### fetch
 
-`terminusdb fetch BRANCH_SPEC`
+`terminusdb fetch DB_SPEC`
 
 fetch data from a remote.
 
@@ -264,10 +267,10 @@ or two commits (path required).
   document id to use for comparisons
 
   * `-p`, `--before_commit`, `--before-commit`=[value]:
-  Commit of the *before* document(s)
+  Commit or branch of the *before* document(s)
 
   * `-s`, `--after_commit`, `--after-commit`=[value]:
-  Commit of the *after* document(s)
+  Commit or branch of the *after* document(s)
 
 ### apply
 
@@ -311,6 +314,15 @@ Get the log for a branch given by DB_SPEC.
   * `-j`, `--json`=[value]:
   return log as JSON
 
+### reset
+
+`terminusdb reset BRANCH_SPEC COMMIT_OR_COMMIT_SPEC`
+
+Reset the branch at BRANCH_SPEC to the COMMIT_OR_COMMIT_SPEC
+
+  * `-h`, `--help`=[value]:
+  print help for the `reset` command
+
 ### branch create
 
 `terminusdb branch create BRANCH_SPEC OPTIONS`
@@ -321,7 +333,7 @@ Create a branch.
   print help for the `branch create` sub command
 
   * `-o`, `--origin`=[value]:
-  the origin branch to use
+  the origin branch to use (false for none)
 
 ### branch delete
 
@@ -331,6 +343,24 @@ Delete a branch.
 
   * `-h`, `--help`=[value]:
   print help for the `branch delete` sub command
+
+### db list
+
+`terminusdb list DB_SPEC [.. DB_SPECN] OPTIONS`
+
+List available databases.
+
+  * `-h`, `--help`=[value]:
+  print help for the `list` command
+
+  * `-b`, `--branches`=[value]:
+  also describe the available branches
+
+  * `-v`, `--verbose`=[value]:
+  return lots of metadata
+
+  * `-j`, `--json`=[value]:
+  Return a JSON as the result of the `list` command
 
 ### db create
 
@@ -356,10 +386,10 @@ Create a database.
   * `-k`, `--schema`=[value]:
   whether to use a schema
 
-  * `-d`, `--data-prefix`=[value]:
+  * `-d`, `--data_prefix`, `--data-prefix`=[value]:
   uri prefix to use for data
 
-  * `-s`, `--schema-prefix`=[value]:
+  * `-s`, `--schema_prefix`, `--schema-prefix`=[value]:
   uri prefix to use for schema
 
   * `-x`, `--prefixes`=[value]:
@@ -379,6 +409,30 @@ Delete a database.
 
   * `-f`, `--force`=[value]:
   force the deletion of the database (unsafe)
+
+### db update
+
+`terminusdb db update DATABASE_SPEC OPTIONS`
+
+Update a database setting the OPTIONS in an existing database.
+
+  * `-h`, `--help`=[value]:
+  print help for the `db update` sub command
+
+  * `-l`, `--label`=[value]:
+  label to use for this database
+
+  * `-c`, `--comment`=[value]:
+  long description of this database
+
+  * `-p`, `--public`=[value]:
+  whether this database is to be public
+
+  * `-k`, `--schema`=[value]:
+  whether to use a schema
+
+  * `-x`, `--prefixes`=[value]:
+  Explicitly defined prefix set (in JSON)
 
 ### doc insert
 
@@ -455,6 +509,9 @@ Replace documents.
   * `-d`, `--data`=[value]:
   document data
 
+  * `-j`, `--raw_json`, `--raw-json`=[value]:
+  replace as raw json
+
   * `-c`, `--create`=[value]:
   create document if it does not exist
 
@@ -467,7 +524,7 @@ Query documents.
   * `-h`, `--help`=[value]:
   print help for the `doc get` sub command
 
-  * `-g`, `--graph_type`=[value]:
+  * `-g`, `--graph_type`, `--graph-type`=[value]:
   graph type (instance or schema)
 
   * `-s`, `--skip`=[value]:
@@ -496,6 +553,180 @@ Query documents.
 
   * `-q`, `--query`=[value]:
   document query search template
+
+### role create
+
+`terminusdb role create ROLE_NAME ACTION_1 .. ACTION_N OPTIONS`
+
+Create a new role with the listed actions. Actions may be any of:
+ "create_database", "delete_database", "class_frame",
+ "clone", "fetch", "push",
+ "branch", "rebase", "instance_read_access", "instance_write_access",
+ "schema_read_access", "schema_write_access", "meta_read_access",
+ "meta_write_access", "commit_read_access", "commit_write_access",
+ "manage_capabilities"
+
+  * `-h`, `--help`=[value]:
+  print help for the `role create` sub command
+
+### role delete
+
+`terminusdb role create ROLE_ID_OR_ROLE_NAME`
+
+Delete a role from the system database
+
+  * `-h`, `--help`=[value]:
+  print help for the `role delete` sub command
+
+  * `-i`, `--id`=[value]:
+  Interpret argument as a role Id rather than a name.
+
+### role update
+
+`terminusdb role update ROLE_ID_OR_ROLE_NAME ACTIONS OPTIONS`
+
+Update a role from the system database
+
+  * `-h`, `--help`=[value]:
+  print help for the `role update` sub command
+
+  * `-i`, `--id`=[value]:
+  Interpret argument as a role Id rather than a name.
+
+### role get
+
+`terminusdb role get <ROLE_ID_OR_ROLE_NAME>`
+
+Get a role description from name or id, or all roles if unspecified.
+
+  * `-h`, `--help`=[value]:
+  print help for the `role get` sub command
+
+  * `-i`, `--id`=[value]:
+  Interpret argument as a role id rather than a name.
+
+  * `-j`, `--json`=[value]:
+  Return answer as a JSON document
+
+### organization create
+
+`terminusdb organization create ORGANIZATION_NAME`
+
+Create an organization with a given name.
+
+  * `-h`, `--help`=[value]:
+  print help for the `organization create` sub command
+
+### organization delete
+
+`terminusdb organization delete ORGANIZATION_NAME_OR_ID`
+
+Create an organization with a given name or id.
+
+  * `-h`, `--help`=[value]:
+  print help for the `organization delete` sub command
+
+  * `-i`, `--id`=[value]:
+  Interpret argument as an organization id rather than a name.
+
+### organization get
+
+`terminusdb organization get <ORGANIZATION_NAME_OR_ID>`
+
+Get an organization from its name or id, or list all if unspecified.
+
+  * `-h`, `--help`=[value]:
+  print help for the `organization get` sub command
+
+  * `-i`, `--id`=[value]:
+  Interpret argument as an organization id rather than a name.
+
+  * `-j`, `--json`=[value]:
+  Return answer as a JSON document
+
+### user create
+
+`terminusdb user create USER`
+
+Create a user with a given name USER
+
+  * `-h`, `--help`=[value]:
+  print help for the `user create` sub command
+
+  * `-p`, `--password`=[value]:
+  Specify the password to use for the user
+
+### user delete
+
+`terminusdb organization delete USER`
+
+Delete a user with a given name or ID.
+
+  * `-h`, `--help`=[value]:
+  print help for the `user delete` sub command
+
+  * `-i`, `--id`=[value]:
+  Interpret argument as an organization id rather than a name.
+
+### user get
+
+`terminusdb user get <USER_NAME_OR_ID>`
+
+Get a user from its name or id, or list all if unspecified.
+
+  * `-h`, `--help`=[value]:
+  print help for the `organization get` sub command
+
+  * `-i`, `--id`=[value]:
+  Interpret argument as an organization id rather than a name.
+
+  * `-c`, `--capability`=[value]:
+  Report on all capabilities of this user.
+
+  * `-j`, `--json`=[value]:
+  Return answer as a JSON document
+
+### user password
+
+`terminusdb user password USER`
+
+Change passowrd for user USER
+
+  * `-h`, `--help`=[value]:
+  print help for the `user create` sub command
+
+  * `-p`, `--password`=[value]:
+  Specify the password to use for the user
+
+### capability grant
+
+`terminusdb capability grant USER SCOPE ROLE1 <...ROLEN>`
+
+Grant ROLE1 ... ROLEN over SCOPE to USER
+
+  * `-h`, `--help`=[value]:
+  print help for the `store init` sub command
+
+  * `-i`, `--ids`=[value]:
+  Should the User, Scope and Role be treated as IDs or names
+
+  * `-s`, `--scope_type`, `--scope-type`=[value]:
+  Should the scope be interpreted as a `database` (default) or an `organization`
+
+### capability revoke
+
+`terminusdb capability revoke USER SCOPE ROLE1 <...ROLEN>`
+
+Revoke ROLE1 ... ROLEN over SCOPE from USER
+
+  * `-h`, `--help`=[value]:
+  print help for the `store init` sub command
+
+  * `-i`, `--ids`=[value]:
+  Should the User, Scope and Role be treated as IDs or names
+
+  * `-s`, `--scope_type`, `--scope-type`=[value]:
+  Should the scope be interpreted as a `database` (default) or an `organization`
 
 ### store init
 
@@ -612,7 +843,8 @@ List remotes.
 
 The designation of databases, repositories, the associated commit
 graph of a database, and various graphs as used in the above command
-requires the use of an appropriate descriptor path.
+requires the use of an appropriate descriptor path which is referred to
+as the DB_SPEC.
 
   * `_system`:
   This is the system meta-data, which contains the user information,
@@ -643,6 +875,17 @@ requires the use of an appropriate descriptor path.
   * `<organization>/<database>/<repository>/commit/<commit>`:
   The descriptor which allows an individual commit to be addressed
   directly.
+
+For commands that refer to a GRAPH_SPEC, it should be a DB_SPEC
+(specifying the precise branch if a database) followed by one of:
+
+ * `DB_SPEC/instance`
+
+ * `DB_SPEC/schema`
+
+For example:
+
+`terminusdb triples dump admin/people/local/branch/main/schema`
 
 ## ENVIRONMENT
 
