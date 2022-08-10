@@ -24,7 +24,7 @@ def process_yaml(yaml_file, version):
                     tags[tag] = [generated_entry]
                 else:
                     tags[tag].append(generated_entry)
-    print_all(tags)
+    print_all(tags, version)
 
 def generate_gitbook(path, method, version):
     url = f'https://raw.githubusercontent.com/terminusdb/terminusdb/{version}/docs/openapi.yaml'
@@ -36,8 +36,10 @@ def generate_gitbook(path, method, version):
 '''
 
 
-def print_all(tags):
+def print_all(tags, version):
     print("# HTTP API\n")
+    swagger_url = f"https://editor.swagger.io/?url=https://raw.githubusercontent.com/terminusdb/terminusdb/{version}/docs/openapi.yaml"
+    print(f"View the HTTP API docs on the [Swagger editor interface]({swagger_url}) as well. It has a better UI\n")
     for tag, values in tags.items():
         print(f"## {tag}")
         for entry in values:
