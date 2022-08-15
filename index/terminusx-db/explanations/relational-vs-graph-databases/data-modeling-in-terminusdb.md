@@ -12,7 +12,7 @@ description: An introduction to building data models using the TerminusDB dashbo
 
 ## Visual data modeling using the dashboard
 
-Use the **Data Product Model** view of the [TerminusDB dashboard](https://dashboard.terminusdb.com/product\_models) to visually build simple or complex data models. The diagrams further below illustrate two possible implementations of the organization model introduced in the previous section. In addition to visually building models, the dashboard enables:
+Use the **Data Product Model** view of the [TerminusDB dashboard](https://dashboard.terminusdb.com/product\_models) to visually build simple or complex data models. The diagrams further below illustrate two possible implementations of the organization model introduced in the [previous section](data-modeling-basics.md). In addition to visually building models, the dashboard enables:
 
 * Flexible relationships between elements such as documents and sub-documents, and classes and sub-classes.
 * Enumeration objects related to document elements.

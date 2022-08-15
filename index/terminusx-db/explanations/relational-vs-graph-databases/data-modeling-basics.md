@@ -18,7 +18,7 @@ The correct organization of data and the correct definition of the underlying da
 
 ## Modeling an organization
 
-Using a small organization as an example, use the step below to model and define a schema for the `organization` and its **elements** - `team`, `project`, `task`, and `employee`.
+Using a small organization as an example, use the steps below to model and define a schema for the `organization` and its **elements** - `team`, `project`, `task`, and `employee`.
 
 **Data modeling steps**
 
