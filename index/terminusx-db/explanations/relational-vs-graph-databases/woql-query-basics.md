@@ -34,11 +34,11 @@ In TerminusDB, every particle or piece of information, including objects and doc
 
 #### Table: Examples of triples
 
-| Example# | Object-id | Property        | Value         | Interpretation                               |
-| -------- | --------- | --------------- | ------------- | -------------------------------------------- |
-| 1        | `jake`    | `date-of-birth` | `01-jan-1935` | Jake's date of birth is 01-jan-1935          |
-| 2        | `jake`    | `parent`        | `mary`        | Jake's mother is Mary                        |
-| 3        | `mary`    | `date-of-birth` | `01-jan-1900` | Jake's mother's date of birth is 01-jan-1900 |
+| Example# | Object-id | Property        | Value        | Interpretation                               |
+| -------- | --------- | --------------- | ------------ | -------------------------------------------- |
+| 1        | `jake`    | `date-of-birth` | `1935-01-01` | Jake's date of birth is 01-jan-1935          |
+| 2        | `jake`    | `parent`        | `mary`       | Jake's mother is Mary                        |
+| 3        | `mary`    | `date-of-birth` | `1935-01-01` | Jake's mother's date of birth is 01-jan-1900 |
 
 ### Triple interpretation
 
@@ -72,7 +72,7 @@ Select every `object-id` into `v:person-id` where `property` `date-of-birth` has
 
 **Interpretation:**&#x20;
 
-Select every person born on `01-jan-1935`.
+Select every person born on `1935-01-01`.
 
 ```javascript
 // triple-slot-1: object-id | triple-slot-2: value | triple-slot-3: property
