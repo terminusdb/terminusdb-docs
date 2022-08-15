@@ -1,6 +1,8 @@
-# JavaScript and Python Tutorials
+---
+description: Link to JavaScript and Python Client tutorials on GitHub.
+---
 
-> **On this page:** Link to JavaScript and Python Client tutorials on GitHub.
+# JavaScript and Python Tutorials
 
 [JavasScript and Python Client tutorials](https://github.com/terminusdb/terminusdb-tutorials)
 
@@ -8,8 +10,8 @@
 
 ### JavaScript Client reference
 
-[Javascript Client reference](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference/woqlclient)
+[JavaScript Client reference](https://terminusdb.com/docs/index/terminusx-db/reference-guides/javascript-client-reference)
 
 ### Python Client reference
 
-[Python Client reference](../../../index/terminusx-db/reference-guides/client/)
+[Python Client reference](https://terminusdb.com/docs/index/terminusx-db/reference-guides/client)

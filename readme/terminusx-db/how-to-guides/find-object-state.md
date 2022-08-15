@@ -1,6 +1,8 @@
-# Find an Object State
+---
+description: Find an object state at a given time in Python.
+---
 
-> **On this page:** A how-to guide to find an object state at a given time in Python.
+# Find an Object State
 
 ## Steps
 
@@ -16,7 +18,7 @@
 
 ### Step 1. Connect to a database <a href="#step-1-connect-to-a-database" id="step-1-connect-to-a-database"></a>
 
-Connect to an existing database with multiple commit activities.&#x20;
+Connect to an existing database with multiple commit activities.
 
 #### Code: Connect to an existing database
 

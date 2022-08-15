@@ -1,18 +1,22 @@
+---
+description: The JSON-LD definition of the WOQL language.
+---
+
 # WOQL Class Reference
 
-> **On this page:** The JSON-LD definition of the WOQL language.
+## WOQL Class Reference
 
-# WOQL Schema
+## WOQL Schema
 
 This is the WOQL schema. It gives a complete specification of the syntax of the WOQL query language. This allows WOQL queries to be checked for syntactic correctness, helps to prevent errors and detect conflicts in merge of queries, and allows the storage and retrieval of queries so that queries can be associated with data products.
 
 **Authored by:** Gavin Mendel-Gleason
 
----
+***
 
-### AddData
+#### AddData
 
-<p class="tdb-k-h1">Add a (terminal) edge with a data value.</p>
+Add a (terminal) edge with a data value.
 
 **Class:** `AddData`
 
@@ -20,18 +24,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `DataValue` | A datatype or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                      |
+| ----------- | ------------ | ------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.       |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `object`    | `DataValue`  | A datatype or variable which is the target or object of the graph edge.   |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                         |
 
----
+***
 
-### AddLink
+#### AddLink
 
-<p class="tdb-k-h1">Add an edge which links between nodes in the graph.</p>
+Add an edge which links between nodes in the graph.
 
 **Class:** `AddLink`
 
@@ -39,18 +43,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                      |
+| ----------- | ------------ | ------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.       |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `object`    | `NodeValue`  | A URI or variable which is the target or object of the graph edge.        |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                         |
 
----
+***
 
-### AddTriple
+#### AddTriple
 
-<p class="tdb-k-h1">Specify an edge to add to the graph.</p>
+Specify an edge to add to the graph.
 
 **Class:** `AddTriple`
 
@@ -58,18 +62,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                         |
+| ----------- | ------------ | ---------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.          |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge.    |
+| `object`    | `Value`      | A URI, datatype or variable which is the target or object of the graph edge. |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                            |
 
----
+***
 
-### AddedData
+#### AddedData
 
-<p class="tdb-k-h1">Specify an edge pattern with data value which was added in *this* commit*.</p>
+Specify an edge pattern with data value which was added in \*this\* commit\*.
 
 **Class:** `AddedData`
 
@@ -77,18 +81,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `DataValue` | A datatype or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                      |
+| ----------- | ------------ | ------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.       |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `object`    | `DataValue`  | A datatype or variable which is the target or object of the graph edge.   |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                         |
 
----
+***
 
-### AddedLink
+#### AddedLink
 
-<p class="tdb-k-h1">Specify an edge pattern which links between nodes at *this* commit.</p>
+Specify an edge pattern which links between nodes at \*this\* commit.
 
 **Class:** `AddedLink`
 
@@ -96,18 +100,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                      |
+| ----------- | ------------ | ------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.       |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `object`    | `NodeValue`  | A URI or variable which is the target or object of the graph edge.        |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                         |
 
----
+***
 
-### AddedTriple
+#### AddedTriple
 
-<p class="tdb-k-h1">Specify an edge pattern which was *added* at *this commit*.</p>
+Specify an edge pattern which was \*added\* at \*this commit\*.
 
 **Class:** `AddedTriple`
 
@@ -115,18 +119,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                         |
+| ----------- | ------------ | ---------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.          |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge.    |
+| `object`    | `Value`      | A URI, datatype or variable which is the target or object of the graph edge. |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                            |
 
----
+***
 
-### And
+#### And
 
-<p class="tdb-k-h1">A conjunction of queries which must all have a solution.</p>
+A conjunction of queries which must all have a solution.
 
 **Class:** `And`
 
@@ -134,23 +138,23 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `and` | `Query` | List of queries which must hold. |
+| Property | Range   | Desc                             |
+| -------- | ------- | -------------------------------- |
+| `and`    | `Query` | List of queries which must hold. |
 
----
+***
 
-### ArithmeticExpression
+#### ArithmeticExpression
 
-<p class="tdb-k-h1">An abstract class specifying the AST super-class of all arithemtic expressions. It is a subdocument</p>
+An abstract class specifying the AST super-class of all arithemtic expressions. It is a subdocument
 
 **Class:** `ArithmeticExpression`
 
----
+***
 
-### ArithmeticValue
+#### ArithmeticValue
 
-<p class="tdb-k-h1">A variable or node. It is a subdocument</p>
+A variable or node. It is a subdocument
 
 **Class:** `ArithmeticValue`
 
@@ -158,24 +162,24 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `data` | `xsd:anySimpleType` | An xsd data type value. |
-| `variable` | `xsd:string` | A variable. |
+| Property   | Range               | Desc                    |
+| ---------- | ------------------- | ----------------------- |
+| `data`     | `xsd:anySimpleType` | An xsd data type value. |
+| `variable` | `xsd:string`        | A variable.             |
 
----
+***
 
-### Column
+#### Column
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `Column`
 
----
+***
 
-### Concatenate
+#### Concatenate
 
-<p class="tdb-k-h1">Concatenate a list of strings.</p>
+Concatenate a list of strings.
 
 **Class:** `Concatenate`
 
@@ -183,16 +187,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `list` | `DataValue` | The list to concatenate. |
-| `result` | `DataValue` | The result string. |
+| Property | Range       | Desc                     |
+| -------- | ----------- | ------------------------ |
+| `list`   | `DataValue` | The list to concatenate. |
+| `result` | `DataValue` | The result string.       |
 
----
+***
 
-### Count
+#### Count
 
-<p class="tdb-k-h1">Counts the number of solutions of a query.</p>
+Counts the number of solutions of a query.
 
 **Class:** `Count`
 
@@ -200,16 +204,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The query from which to obtain the count. |
-| `count` | `DataValue` | The count of the number of solutions. |
+| Property | Range       | Desc                                      |
+| -------- | ----------- | ----------------------------------------- |
+| `query`  | `Query`     | The query from which to obtain the count. |
+| `count`  | `DataValue` | The count of the number of solutions.     |
 
----
+***
 
-### Data
+#### Data
 
-<p class="tdb-k-h1">Specify an edge pattern which is terminal, and provides a data value association.</p>
+Specify an edge pattern which is terminal, and provides a data value association.
 
 **Class:** `Data`
 
@@ -217,34 +221,34 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `DataValue` | A data type or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                      |
+| ----------- | ------------ | ------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.       |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `object`    | `DataValue`  | A data type or variable which is the target or object of the graph edge.  |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                         |
 
----
+***
 
-### DataValue
+#### DataValue
 
-<p class="tdb-k-h1">A variable or node. It is a subdocument</p>
+A variable or node. It is a subdocument
 
 **Class:** `DataValue`
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `data` | `xsd:anySimpleType` | An xsd data type value. |
-| `variable` | `xsd:string` | A variable. |
-| `list` | `DataValue` | A list of datavalues |
+| Property   | Range               | Desc                    |
+| ---------- | ------------------- | ----------------------- |
+| `data`     | `xsd:anySimpleType` | An xsd data type value. |
+| `variable` | `xsd:string`        | A variable.             |
+| `list`     | `DataValue`         | A list of datavalues    |
 
----
+***
 
-### DeleteDocument
+#### DeleteDocument
 
-<p class="tdb-k-h1">Delete a document from the graph.</p>
+Delete a document from the graph.
 
 **Class:** `DeleteDocument`
 
@@ -252,15 +256,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property     | Range       | Desc                                                           |
+| ------------ | ----------- | -------------------------------------------------------------- |
 | `identifier` | `NodeValue` | An identifier specifying the documentation location to delete. |
 
----
+***
 
-### DeleteLink
+#### DeleteLink
 
-<p class="tdb-k-h1">Delete an edge linking nodes.</p>
+Delete an edge linking nodes.
 
 **Class:** `DeleteLink`
 
@@ -268,18 +272,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. The variable must be bound. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. The variable must be bound. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. The variable must be bound. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                                                  |
+| ----------- | ------------ | ----------------------------------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge. The variable must be bound.       |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge. The variable must be bound. |
+| `object`    | `NodeValue`  | A URI or variable which is the target or object of the graph edge. The variable must be bound.        |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                                                     |
 
----
+***
 
-### DeleteTriple
+#### DeleteTriple
 
-<p class="tdb-k-h1">Specify an edge pattern to remove from the graph.</p>
+Specify an edge pattern to remove from the graph.
 
 **Class:** `DeleteTriple`
 
@@ -287,18 +291,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                         |
+| ----------- | ------------ | ---------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.          |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge.    |
+| `object`    | `Value`      | A URI, datatype or variable which is the target or object of the graph edge. |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                            |
 
----
+***
 
-### DeletedLink
+#### DeletedLink
 
-<p class="tdb-k-h1">An edge pattern specifying a link beween nodes deleted *at this commit*.</p>
+An edge pattern specifying a link beween nodes deleted \*at this commit\*.
 
 **Class:** `DeletedLink`
 
@@ -306,18 +310,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                      |
+| ----------- | ------------ | ------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.       |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `object`    | `NodeValue`  | A URI or variable which is the target or object of the graph edge.        |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                         |
 
----
+***
 
-### DeletedTriple
+#### DeletedTriple
 
-<p class="tdb-k-h1">Specify an edge pattern which was *deleted* at *this commit*.</p>
+Specify an edge pattern which was \*deleted\* at \*this commit\*.
 
 **Class:** `DeletedTriple`
 
@@ -325,18 +329,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                         |
+| ----------- | ------------ | ---------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.          |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge.    |
+| `object`    | `Value`      | A URI, datatype or variable which is the target or object of the graph edge. |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                            |
 
----
+***
 
-### Distinct
+#### Distinct
 
-<p class="tdb-k-h1">Ensure variables listed result in distinct solutions.</p>
+Ensure variables listed result in distinct solutions.
 
 **Class:** `Distinct`
 
@@ -344,16 +348,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property    | Range        | Desc                                                 |
+| ----------- | ------------ | ---------------------------------------------------- |
 | `variables` | `xsd:string` | The variables which must be distinct from the query. |
-| `query` | `Query` | The query which will be run prior to selection. |
+| `query`     | `Query`      | The query which will be run prior to selection.      |
 
----
+***
 
-### Div
+#### Div
 
-<p class="tdb-k-h1">Integer divide two numbers.</p>
+Integer divide two numbers.
 
 **Class:** `Div`
 
@@ -361,16 +365,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `left` | `ArithmeticExpression` | First operand of div. |
-| `right` | `ArithmeticExpression` | Second operand of div. |
+| Property | Range                  | Desc                   |
+| -------- | ---------------------- | ---------------------- |
+| `left`   | `ArithmeticExpression` | First operand of div.  |
+| `right`  | `ArithmeticExpression` | Second operand of div. |
 
----
+***
 
-### Divide
+#### Divide
 
-<p class="tdb-k-h1">Divide two numbers.</p>
+Divide two numbers.
 
 **Class:** `Divide`
 
@@ -378,16 +382,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `left` | `ArithmeticExpression` | First operand of divide. |
-| `right` | `ArithmeticExpression` | Second operand of divide. |
+| Property | Range                  | Desc                      |
+| -------- | ---------------------- | ------------------------- |
+| `left`   | `ArithmeticExpression` | First operand of divide.  |
+| `right`  | `ArithmeticExpression` | Second operand of divide. |
 
----
+***
 
-### Dot
+#### Dot
 
-<p class="tdb-k-h1">Extract the value of a key in a bound document.</p>
+Extract the value of a key in a bound document.
 
 **Class:** `Dot`
 
@@ -395,15 +399,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `star` | `undefined` | A path patterns. |
+| Property | Range       | Desc             |
+| -------- | ----------- | ---------------- |
+| `star`   | `undefined` | A path patterns. |
 
----
+***
 
-### Equals
+#### Equals
 
-<p class="tdb-k-h1">True whenever 'left' is the same as 'right'. Performs unification.</p>
+True whenever 'left' is the same as 'right'. Performs unification.
 
 **Class:** `Equals`
 
@@ -411,16 +415,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `child` | `undefined` | A URI, data value or variable. |
+| Property | Range       | Desc                           |
+| -------- | ----------- | ------------------------------ |
+| `child`  | `undefined` | A URI, data value or variable. |
 | `parent` | `undefined` | A URI, data value or variable. |
 
----
+***
 
-### Eval
+#### Eval
 
-<p class="tdb-k-h1">Evaluate an arithmetic expression to obtain a result.</p>
+Evaluate an arithmetic expression to obtain a result.
 
 **Class:** `Eval`
 
@@ -428,16 +432,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property     | Range                  | Desc                            |
+| ------------ | ---------------------- | ------------------------------- |
 | `expression` | `ArithmeticExpression` | The expression to be evaluated. |
-| `result` | `ArithmeticValue` | The numeric result. |
+| `result`     | `ArithmeticValue`      | The numeric result.             |
 
----
+***
 
-### Exp
+#### Exp
 
-<p class="tdb-k-h1">Exponentiate a number.</p>
+Exponentiate a number.
 
 **Class:** `Exp`
 
@@ -445,16 +449,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `left` | `ArithmeticExpression` | The base. |
-| `right` | `ArithmeticExpression` | The exponent. |
+| Property | Range                  | Desc          |
+| -------- | ---------------------- | ------------- |
+| `left`   | `ArithmeticExpression` | The base.     |
+| `right`  | `ArithmeticExpression` | The exponent. |
 
----
+***
 
-### Floor
+#### Floor
 
-<p class="tdb-k-h1">Find the integral part of a number.</p>
+Find the integral part of a number.
 
 **Class:** `Floor`
 
@@ -462,23 +466,23 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property   | Range                  | Desc                 |
+| ---------- | ---------------------- | -------------------- |
 | `argument` | `ArithmeticExpression` | The number to floor. |
 
----
+***
 
-### FormatType
+#### FormatType
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `FormatType`
 
----
+***
 
-### From
+#### From
 
-<p class="tdb-k-h1">Change the default read graph (between instance/schema).</p>
+Change the default read graph (between instance/schema).
 
 **Class:** `From`
 
@@ -486,26 +490,26 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The subquery with a new default graph. |
-| `graph_filter` | `xsd:string` | The graph filter: 'schema' or 'instance' or '*'. |
+| Property       | Range        | Desc                                              |
+| -------------- | ------------ | ------------------------------------------------- |
+| `query`        | `Query`      | The subquery with a new default graph.            |
+| `graph_filter` | `xsd:string` | The graph filter: 'schema' or 'instance' or '\*'. |
 
----
+***
 
-### Get
+#### Get
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `Get`
 
 **Super class:** `Query`
 
----
+***
 
-### Greater
+#### Greater
 
-<p class="tdb-k-h1">Predicate determining if one thing is greater than another according to natural ordering.</p>
+Predicate determining if one thing is greater than another according to natural ordering.
 
 **Class:** `Greater`
 
@@ -513,16 +517,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `left` | `DataValue` | The greater element. |
-| `right` | `DataValue` | The lesser element. |
+| Property | Range       | Desc                 |
+| -------- | ----------- | -------------------- |
+| `left`   | `DataValue` | The greater element. |
+| `right`  | `DataValue` | The lesser element.  |
 
----
+***
 
-### GroupBy
+#### GroupBy
 
-<p class="tdb-k-h1">Group a query into a list with each element of the list specified by 'template' using a given variable set for the group.</p>
+Group a query into a list with each element of the list specified by 'template' using a given variable set for the group.
 
 **Class:** `GroupBy`
 
@@ -530,18 +534,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `template` | `xsd:string` | The template of elements in the result list. |
+| Property   | Range        | Desc                                                       |
+| ---------- | ------------ | ---------------------------------------------------------- |
+| `template` | `xsd:string` | The template of elements in the result list.               |
 | `group_by` | `xsd:string` | The variables which should be grouped into like solutions. |
-| `query` | `Query` | The subquery providing the solutions for the grouping. |
-| `grouped` | `Value` | The final list of templated solutions. |
+| `query`    | `Query`      | The subquery providing the solutions for the grouping.     |
+| `grouped`  | `Value`      | The final list of templated solutions.                     |
 
----
+***
 
-### HashKey
+#### HashKey
 
-<p class="tdb-k-h1">Generates a key identical to those generated automatically by 'HashKey' specifications.</p>
+Generates a key identical to those generated automatically by 'HashKey' specifications.
 
 **Class:** `HashKey`
 
@@ -549,17 +553,17 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `base` | `DataValue` | The URI base to the left of the key. |
+| Property   | Range       | Desc                                                |
+| ---------- | ----------- | --------------------------------------------------- |
+| `base`     | `DataValue` | The URI base to the left of the key.                |
 | `key_list` | `DataValue` | List of data elements required to generate the key. |
-| `uri` | `NodeValue` | The resulting URI. |
+| `uri`      | `NodeValue` | The resulting URI.                                  |
 
----
+***
 
-### If
+#### If
 
-<p class="tdb-k-h1">A conditional which runs the then clause for every success from the test clause, otherwise runs the else clause.</p>
+A conditional which runs the then clause for every success from the test clause, otherwise runs the else clause.
 
 **Class:** `If`
 
@@ -567,17 +571,17 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `test` | `Query` | A query which will provide bindings for the then clause. |
-| `then` | `Query` | A query which will run for every solution of test with associated bindings. |
-| `else` | `Query` | A query which runs whenever test fails. |
+| Property | Range   | Desc                                                                        |
+| -------- | ------- | --------------------------------------------------------------------------- |
+| `test`   | `Query` | A query which will provide bindings for the then clause.                    |
+| `then`   | `Query` | A query which will run for every solution of test with associated bindings. |
+| `else`   | `Query` | A query which runs whenever test fails.                                     |
 
----
+***
 
-### Immediately
+#### Immediately
 
-<p class="tdb-k-h1">Attempts to perform all side-effecting operations immediately. Can have strange non-backtracking effects but can also increase performance. Use at your own risk.</p>
+Attempts to perform all side-effecting operations immediately. Can have strange non-backtracking effects but can also increase performance. Use at your own risk.
 
 **Class:** `Immediately`
 
@@ -585,23 +589,23 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The query from which to obtain the side-effects. |
+| Property | Range   | Desc                                             |
+| -------- | ------- | ------------------------------------------------ |
+| `query`  | `Query` | The query from which to obtain the side-effects. |
 
----
+***
 
-### Indicator
+#### Indicator
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `Indicator`
 
----
+***
 
-### Into
+#### Into
 
-<p class="tdb-k-h1">Change the default write graph (between instance/schema).</p>
+Change the default write graph (between instance/schema).
 
 **Class:** `Into`
 
@@ -609,16 +613,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The subquery with a new default write graph. |
-| `graph` | `xsd:string` | The graph filter: schema or instance. |
+| Property | Range        | Desc                                         |
+| -------- | ------------ | -------------------------------------------- |
+| `query`  | `Query`      | The subquery with a new default write graph. |
+| `graph`  | `xsd:string` | The graph filter: schema or instance.        |
 
----
+***
 
-### InversePathPredicate
+#### InversePathPredicate
 
-<p class="tdb-k-h1">A predicate to traverse *backwards*.</p>
+A predicate to traverse \*backwards\*.
 
 **Class:** `InversePathPredicate`
 
@@ -626,15 +630,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property    | Range        | Desc                                                                |
+| ----------- | ------------ | ------------------------------------------------------------------- |
 | `predicate` | `xsd:string` | The predicate to use in reverse direction in the pattern traversal. |
 
----
+***
 
-### IsA
+#### IsA
 
-<p class="tdb-k-h1">Test (or generate) the type of an element.</p>
+Test (or generate) the type of an element.
 
 **Class:** `IsA`
 
@@ -642,16 +646,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `element` | `NodeValue` | The element to test. |
-| `type` | `NodeValue` | The type of the element. |
+| Property  | Range       | Desc                     |
+| --------- | ----------- | ------------------------ |
+| `element` | `NodeValue` | The element to test.     |
+| `type`    | `NodeValue` | The type of the element. |
 
----
+***
 
-### Join
+#### Join
 
-<p class="tdb-k-h1">Join a list of strings using 'separator'.</p>
+Join a list of strings using 'separator'.
 
 **Class:** `Join`
 
@@ -659,17 +663,17 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `list` | `DataValue` | The list to concatenate. |
+| Property    | Range       | Desc                                     |
+| ----------- | ----------- | ---------------------------------------- |
+| `list`      | `DataValue` | The list to concatenate.                 |
 | `separator` | `DataValue` | The separator between each joined string |
-| `result` | `DataValue` | The result string. |
+| `result`    | `DataValue` | The result string.                       |
 
----
+***
 
-### Length
+#### Length
 
-<p class="tdb-k-h1">The length of a list.</p>
+The length of a list.
 
 **Class:** `Length`
 
@@ -677,16 +681,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `list` | `DataValue` | The list of which to find the length. |
-| `length` | `DataValue` | The length of the list. |
+| Property | Range       | Desc                                  |
+| -------- | ----------- | ------------------------------------- |
+| `list`   | `DataValue` | The list of which to find the length. |
+| `length` | `DataValue` | The length of the list.               |
 
----
+***
 
-### Less
+#### Less
 
-<p class="tdb-k-h1">Predicate determining if one thing is less than another according to natural ordering.</p>
+Predicate determining if one thing is less than another according to natural ordering.
 
 **Class:** `Less`
 
@@ -694,16 +698,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `left` | `DataValue` | The lesser element. |
-| `right` | `DataValue` | The greater element. |
+| Property | Range       | Desc                 |
+| -------- | ----------- | -------------------- |
+| `left`   | `DataValue` | The lesser element.  |
+| `right`  | `DataValue` | The greater element. |
 
----
+***
 
-### LexicalKey
+#### LexicalKey
 
-<p class="tdb-k-h1">Generates a key identical to those generated automatically by 'LexicalKey' specifications.</p>
+Generates a key identical to those generated automatically by 'LexicalKey' specifications.
 
 **Class:** `LexicalKey`
 
@@ -711,17 +715,17 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `base` | `DataValue` | The URI base to the left of the key. |
+| Property   | Range       | Desc                                                |
+| ---------- | ----------- | --------------------------------------------------- |
+| `base`     | `DataValue` | The URI base to the left of the key.                |
 | `key_list` | `DataValue` | List of data elements required to generate the key. |
-| `uri` | `NodeValue` | The resulting URI. |
+| `uri`      | `NodeValue` | The resulting URI.                                  |
 
----
+***
 
-### Like
+#### Like
 
-<p class="tdb-k-h1">Distance between strings, similar to a Levenstein distance.</p>
+Distance between strings, similar to a Levenstein distance.
 
 **Class:** `Like`
 
@@ -729,17 +733,17 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `left` | `DataValue` | The first string. |
-| `right` | `DataValue` | The second string. |
+| Property     | Range       | Desc                                                        |
+| ------------ | ----------- | ----------------------------------------------------------- |
+| `left`       | `DataValue` | The first string.                                           |
+| `right`      | `DataValue` | The second string.                                          |
 | `similarity` | `DataValue` | Number between -1 and 1 which gives a scale for similarity. |
 
----
+***
 
-### Limit
+#### Limit
 
-<p class="tdb-k-h1">Limit a query to a particular maximum number of solutions specified by 'limit'. Can be used with start to perform paging.</p>
+Limit a query to a particular maximum number of solutions specified by 'limit'. Can be used with start to perform paging.
 
 **Class:** `Limit`
 
@@ -747,16 +751,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The query to perform. |
-| `limit` | `xsd:nonNegativeInteger` | Maximum number of solutions. |
+| Property | Range                    | Desc                         |
+| -------- | ------------------------ | ---------------------------- |
+| `query`  | `Query`                  | The query to perform.        |
+| `limit`  | `xsd:nonNegativeInteger` | Maximum number of solutions. |
 
----
+***
 
-### Link
+#### Link
 
-<p class="tdb-k-h1">Specify an edge pattern which is not terminal, but a link between objects.</p>
+Specify an edge pattern which is not terminal, but a link between objects.
 
 **Class:** `Link`
 
@@ -764,18 +768,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                      |
+| ----------- | ------------ | ------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.       |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `object`    | `NodeValue`  | A URI or variable which is the target or object of the graph edge.        |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                         |
 
----
+***
 
-### Lower
+#### Lower
 
-<p class="tdb-k-h1">Lowercase a string.</p>
+Lowercase a string.
 
 **Class:** `Lower`
 
@@ -783,16 +787,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `mixed` | `DataValue` | The mixed case string. |
+| Property | Range       | Desc                   |
+| -------- | ----------- | ---------------------- |
+| `mixed`  | `DataValue` | The mixed case string. |
 | `uppser` | `undefined` | The lower case string. |
 
----
+***
 
-### Member
+#### Member
 
-<p class="tdb-k-h1">Generate or test every element of a list.</p>
+Generate or test every element of a list.
 
 **Class:** `Member`
 
@@ -800,16 +804,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property | Range       | Desc                                                          |
+| -------- | ----------- | ------------------------------------------------------------- |
 | `member` | `DataValue` | The element to test for membership or to supply as generated. |
-| `list` | `DataValue` | The list of elements against which to generate or test. |
+| `list`   | `DataValue` | The list of elements against which to generate or test.       |
 
----
+***
 
-### Minus
+#### Minus
 
-<p class="tdb-k-h1">Subtract two numbers.</p>
+Subtract two numbers.
 
 **Class:** `Minus`
 
@@ -817,62 +821,62 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `left` | `ArithmeticExpression` | First operand of minus. |
-| `right` | `ArithmeticExpression` | Second operand of minus. |
+| Property | Range                  | Desc                     |
+| -------- | ---------------------- | ------------------------ |
+| `left`   | `ArithmeticExpression` | First operand of minus.  |
+| `right`  | `ArithmeticExpression` | Second operand of minus. |
 
----
+***
 
-### NamedParametricQuery
+#### NamedParametricQuery
 
-<p class="tdb-k-h1">A named parametric query which names a specific query for later retrieval and re-use and allows the specification of bindings for a specific set of variables in the query.</p>
+A named parametric query which names a specific query for later retrieval and re-use and allows the specification of bindings for a specific set of variables in the query.
 
 **Class:** `NamedParametricQuery`
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `name` | `xsd:string` | The name of the NamedParametricQuery to be retrieved. |
-| `parameters` | `xsd:string` | Variable name list for auxilliary bindings. |
-| `query` | `Query` | The query AST as WOQL JSON. |
+| Property     | Range        | Desc                                                  |
+| ------------ | ------------ | ----------------------------------------------------- |
+| `name`       | `xsd:string` | The name of the NamedParametricQuery to be retrieved. |
+| `parameters` | `xsd:string` | Variable name list for auxilliary bindings.           |
+| `query`      | `Query`      | The query AST as WOQL JSON.                           |
 
----
+***
 
-### NamedQuery
+#### NamedQuery
 
-<p class="tdb-k-h1">A named query names a specific query for later retrieval and re-use.</p>
+A named query names a specific query for later retrieval and re-use.
 
 **Class:** `NamedQuery`
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `name` | `xsd:string` | The name of the NamedQuery to be retrieved |
-| `query` | `Query` | The query AST as WOQL JSON |
+| Property | Range        | Desc                                       |
+| -------- | ------------ | ------------------------------------------ |
+| `name`   | `xsd:string` | The name of the NamedQuery to be retrieved |
+| `query`  | `Query`      | The query AST as WOQL JSON                 |
 
----
+***
 
-### NodeValue
+#### NodeValue
 
-<p class="tdb-k-h1">A variable or node. It is a subdocument</p>
+A variable or node. It is a subdocument
 
 **Class:** `NodeValue`
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `node` | `xsd:string` | A URI representing a resource. |
-| `variable` | `xsd:string` | A variable. |
+| Property   | Range        | Desc                           |
+| ---------- | ------------ | ------------------------------ |
+| `node`     | `xsd:string` | A URI representing a resource. |
+| `variable` | `xsd:string` | A variable.                    |
 
----
+***
 
-### Not
+#### Not
 
-<p class="tdb-k-h1">The negation of a query. Provides no solution bindings, but will succeed if its sub-query fails.</p>
+The negation of a query. Provides no solution bindings, but will succeed if its sub-query fails.
 
 **Class:** `Not`
 
@@ -880,15 +884,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The query which must not hold. |
+| Property | Range   | Desc                           |
+| -------- | ------- | ------------------------------ |
+| `query`  | `Query` | The query which must not hold. |
 
----
+***
 
-### Once
+#### Once
 
-<p class="tdb-k-h1">Obtains exactly one solution from a query. Simliar to a limit of 1.</p>
+Obtains exactly one solution from a query. Simliar to a limit of 1.
 
 **Class:** `Once`
 
@@ -896,15 +900,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The query from which to obtain a solution. |
+| Property | Range   | Desc                                       |
+| -------- | ------- | ------------------------------------------ |
+| `query`  | `Query` | The query from which to obtain a solution. |
 
----
+***
 
-### Optional
+#### Optional
 
-<p class="tdb-k-h1">A query which will succeed (without bindings) even in the case of failure.</p>
+A query which will succeed (without bindings) even in the case of failure.
 
 **Class:** `Optional`
 
@@ -912,15 +916,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The query to run. |
+| Property | Range   | Desc              |
+| -------- | ------- | ----------------- |
+| `query`  | `Query` | The query to run. |
 
----
+***
 
-### Or
+#### Or
 
-<p class="tdb-k-h1">A disjunction of queries any of which can provide a solution.</p>
+A disjunction of queries any of which can provide a solution.
 
 **Class:** `Or`
 
@@ -928,23 +932,23 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `or` | `Query` | List of queries which may hold. |
+| Property | Range   | Desc                            |
+| -------- | ------- | ------------------------------- |
+| `or`     | `Query` | List of queries which may hold. |
 
----
+***
 
-### Order
+#### Order
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `Order`
 
----
+***
 
-### OrderBy
+#### OrderBy
 
-<p class="tdb-k-h1">Orders query results according to an ordering specification.</p>
+Orders query results according to an ordering specification.
 
 **Class:** `OrderBy`
 
@@ -952,31 +956,31 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The base query giving the solutions to order. |
+| Property   | Range           | Desc                                          |
+| ---------- | --------------- | --------------------------------------------- |
+| `query`    | `Query`         | The base query giving the solutions to order. |
 | `ordering` | `OrderTemplate` | A specification of the ordering of solutions. |
 
----
+***
 
-### OrderTemplate
+#### OrderTemplate
 
-<p class="tdb-k-h1">The order template, consisting of the variable and ordering direction. It is a subdocument</p>
+The order template, consisting of the variable and ordering direction. It is a subdocument
 
 **Class:** `OrderTemplate`
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `order` | `Order` | An enum either 'asc' or 'desc'. |
-| `variable` | `xsd:string` | The variable to order. |
+| Property   | Range        | Desc                            |
+| ---------- | ------------ | ------------------------------- |
+| `order`    | `Order`      | An enum either 'asc' or 'desc'. |
+| `variable` | `xsd:string` | The variable to order.          |
 
----
+***
 
-### Pad
+#### Pad
 
-<p class="tdb-k-h1">Pad a string.</p>
+Pad a string.
 
 **Class:** `Pad`
 
@@ -984,18 +988,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `string` | `DataValue` | The starting string. |
-| `char` | `DataValue` | The padding character. |
-| `times` | `DataValue` | The number of times to repeat the padding character. |
-| `result` | `DataValue` | The result of the padding as a string. |
+| Property | Range       | Desc                                                 |
+| -------- | ----------- | ---------------------------------------------------- |
+| `string` | `DataValue` | The starting string.                                 |
+| `char`   | `DataValue` | The padding character.                               |
+| `times`  | `DataValue` | The number of times to repeat the padding character. |
+| `result` | `DataValue` | The result of the padding as a string.               |
 
----
+***
 
-### Path
+#### Path
 
-<p class="tdb-k-h1">Find a path through the graph according to 'pattern'. This 'pattern' is a regular graph expression which avoids cycles.</p>
+Find a path through the graph according to 'pattern'. This 'pattern' is a regular graph expression which avoids cycles.
 
 **Class:** `Path`
 
@@ -1003,18 +1007,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `Value` | The starting node. |
+| Property  | Range         | Desc                                               |
+| --------- | ------------- | -------------------------------------------------- |
+| `subject` | `Value`       | The starting node.                                 |
 | `pattern` | `PathPattern` | The pattern which describes how to traverse edges. |
-| `object` | `Value` | The ending node. |
-| `path` | `Value` | An optional list of edges traversed. |
+| `object`  | `Value`       | The ending node.                                   |
+| `path`    | `Value`       | An optional list of edges traversed.               |
 
----
+***
 
-### PathOr
+#### PathOr
 
-<p class="tdb-k-h1">A set of patterns in which each of the patterns can result in objects starting from our current subject set.</p>
+A set of patterns in which each of the patterns can result in objects starting from our current subject set.
 
 **Class:** `PathOr`
 
@@ -1022,23 +1026,23 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `or` | `PathPattern` | A disjunction of path patterns. |
+| Property | Range         | Desc                            |
+| -------- | ------------- | ------------------------------- |
+| `or`     | `PathPattern` | A disjunction of path patterns. |
 
----
+***
 
-### PathPattern
+#### PathPattern
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `PathPattern`
 
----
+***
 
-### PathPlus
+#### PathPlus
 
-<p class="tdb-k-h1">The path pattern specified by 'plus' must hold one or more times in succession.</p>
+The path pattern specified by 'plus' must hold one or more times in succession.
 
 **Class:** `PathPlus`
 
@@ -1046,15 +1050,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `plus` | `PathPattern` | A path patterns. |
+| Property | Range         | Desc             |
+| -------- | ------------- | ---------------- |
+| `plus`   | `PathPattern` | A path patterns. |
 
----
+***
 
-### PathPredicate
+#### PathPredicate
 
-<p class="tdb-k-h1">A predicate to traverse.</p>
+A predicate to traverse.
 
 **Class:** `PathPredicate`
 
@@ -1062,15 +1066,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property    | Range        | Desc                                           |
+| ----------- | ------------ | ---------------------------------------------- |
 | `predicate` | `xsd:string` | The predicate to use in the pattern traversal. |
 
----
+***
 
-### PathSequence
+#### PathSequence
 
-<p class="tdb-k-h1">A sequence of patterns in which each of the patterns in the list must result in objects which are subjects of the next pattern in the list.</p>
+A sequence of patterns in which each of the patterns in the list must result in objects which are subjects of the next pattern in the list.
 
 **Class:** `PathSequence`
 
@@ -1078,15 +1082,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property   | Range         | Desc                         |
+| ---------- | ------------- | ---------------------------- |
 | `sequence` | `PathPattern` | A sequence of path patterns. |
 
----
+***
 
-### PathStar
+#### PathStar
 
-<p class="tdb-k-h1">The path pattern specified by 'star' may hold zero or more times in succession.</p>
+The path pattern specified by 'star' may hold zero or more times in succession.
 
 **Class:** `PathStar`
 
@@ -1094,15 +1098,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `star` | `PathPattern` | A path patterns. |
+| Property | Range         | Desc             |
+| -------- | ------------- | ---------------- |
+| `star`   | `PathPattern` | A path patterns. |
 
----
+***
 
-### PathTimes
+#### PathTimes
 
-<p class="tdb-k-h1">The path pattern specified by 'times' may hold 'from' to 'to' times in succession.</p>
+The path pattern specified by 'times' may hold 'from' to 'to' times in succession.
 
 **Class:** `PathTimes`
 
@@ -1110,15 +1114,15 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `star` | `undefined` | A path patterns. |
+| Property | Range       | Desc             |
+| -------- | ----------- | ---------------- |
+| `star`   | `undefined` | A path patterns. |
 
----
+***
 
-### Plus
+#### Plus
 
-<p class="tdb-k-h1">Add two numbers.</p>
+Add two numbers.
 
 **Class:** `Plus`
 
@@ -1126,42 +1130,42 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `left` | `ArithmeticExpression` | First operand of add. |
-| `right` | `ArithmeticExpression` | Second operand of add. |
+| Property | Range                  | Desc                   |
+| -------- | ---------------------- | ---------------------- |
+| `left`   | `ArithmeticExpression` | First operand of add.  |
+| `right`  | `ArithmeticExpression` | Second operand of add. |
 
----
+***
 
-### Put
+#### Put
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `Put`
 
 **Super class:** `Query`
 
----
+***
 
-### Query
+#### Query
 
-<p class="tdb-k-h1">An abstract class which represents an arbitrary query AST. It is a subdocument</p>
+An abstract class which represents an arbitrary query AST. It is a subdocument
 
 **Class:** `Query`
 
----
+***
 
-### QueryResource
+#### QueryResource
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `QueryResource`
 
----
+***
 
-### RandomKey
+#### RandomKey
 
-<p class="tdb-k-h1">Generates a key identical to those generated automatically by 'RandomKey' specifications.</p>
+Generates a key identical to those generated automatically by 'RandomKey' specifications.
 
 **Class:** `RandomKey`
 
@@ -1169,16 +1173,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `base` | `DataValue` | The URI base to the left of the key. |
-| `uri` | `NodeValue` | The resulting URI. |
+| Property | Range       | Desc                                 |
+| -------- | ----------- | ------------------------------------ |
+| `base`   | `DataValue` | The URI base to the left of the key. |
+| `uri`    | `NodeValue` | The resulting URI.                   |
 
----
+***
 
-### ReadDocument
+#### ReadDocument
 
-<p class="tdb-k-h1">Read a full document from an identifier.</p>
+Read a full document from an identifier.
 
 **Class:** `ReadDocument`
 
@@ -1186,16 +1190,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `document` | `DataValue` | Variable which will be bound to the document. |
-| `identifier` | `NodeValue` | The URI of the document to load. |
+| Property     | Range       | Desc                                          |
+| ------------ | ----------- | --------------------------------------------- |
+| `document`   | `DataValue` | Variable which will be bound to the document. |
+| `identifier` | `NodeValue` | The URI of the document to load.              |
 
----
+***
 
-### Regexp
+#### Regexp
 
-<p class="tdb-k-h1">Test a string against a PCRE style regex pattern.</p>
+Test a string against a PCRE style regex pattern.
 
 **Class:** `Regexp`
 
@@ -1203,17 +1207,17 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `pattern` | `DataValue` | The PCRE style pattern. |
-| `string` | `DataValue` | The string to test. |
-| `result` | `DataValue` | An optional result list of matches. |
+| Property  | Range       | Desc                                |
+| --------- | ----------- | ----------------------------------- |
+| `pattern` | `DataValue` | The PCRE style pattern.             |
+| `string`  | `DataValue` | The string to test.                 |
+| `result`  | `DataValue` | An optional result list of matches. |
 
----
+***
 
-### Select
+#### Select
 
-<p class="tdb-k-h1">Select specific variables from a query to return.</p>
+Select specific variables from a query to return.
 
 **Class:** `Select`
 
@@ -1221,16 +1225,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `variables` | `xsd:string` | The variables to select from the query. |
-| `query` | `Query` | The query which will be run prior to selection. |
+| Property    | Range        | Desc                                            |
+| ----------- | ------------ | ----------------------------------------------- |
+| `variables` | `xsd:string` | The variables to select from the query.         |
+| `query`     | `Query`      | The query which will be run prior to selection. |
 
----
+***
 
-### Size
+#### Size
 
-<p class="tdb-k-h1">Size of a database in magic units (bytes?).</p>
+Size of a database in magic units (bytes?).
 
 **Class:** `Size`
 
@@ -1238,24 +1242,24 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property   | Range        | Desc                                |
+| ---------- | ------------ | ----------------------------------- |
 | `resource` | `xsd:string` | The resource to obtain the size of. |
-| `size` | `DataValue` | The size. |
+| `size`     | `DataValue`  | The size.                           |
 
----
+***
 
-### Source
+#### Source
 
-<p class="tdb-k-h1">Description pending.</p>
+Description pending.
 
 **Class:** `Source`
 
----
+***
 
-### Split
+#### Split
 
-<p class="tdb-k-h1">Split a string.</p>
+Split a string.
 
 **Class:** `Split`
 
@@ -1263,17 +1267,17 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `string` | `DataValue` | The starting string. |
-| `pattern` | `DataValue` | The splitting pattern. |
-| `list` | `DataValue` | The result list of strings. |
+| Property  | Range       | Desc                        |
+| --------- | ----------- | --------------------------- |
+| `string`  | `DataValue` | The starting string.        |
+| `pattern` | `DataValue` | The splitting pattern.      |
+| `list`    | `DataValue` | The result list of strings. |
 
----
+***
 
-### Start
+#### Start
 
-<p class="tdb-k-h1">Start a query at the nth solution specified by 'start'. Allows resumption and paging of queries.</p>
+Start a query at the nth solution specified by 'start'. Allows resumption and paging of queries.
 
 **Class:** `Start`
 
@@ -1281,16 +1285,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `query` | `Query` | The query to perform. |
-| `start` | `xsd:nonNegativeInteger` | The numbered solution to start at. |
+| Property | Range                    | Desc                               |
+| -------- | ------------------------ | ---------------------------------- |
+| `query`  | `Query`                  | The query to perform.              |
+| `start`  | `xsd:nonNegativeInteger` | The numbered solution to start at. |
 
----
+***
 
-### Substring
+#### Substring
 
-<p class="tdb-k-h1">Finds the boundaries of a substring in a string.</p>
+Finds the boundaries of a substring in a string.
 
 **Class:** `Substring`
 
@@ -1298,19 +1302,19 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `string` | `DataValue` | The super-string as data or variable. |
-| `substring` | `DataValue` | The super-string as data or variable. |
-| `length` | `DataValue` | The length of the string as an integer or variable. |
-| `before` | `DataValue` | The count of characters before substring as an integer or variable. |
-| `after` | `DataValue` | The count of characters after substring as an integer or variable. |
+| Property    | Range       | Desc                                                                |
+| ----------- | ----------- | ------------------------------------------------------------------- |
+| `string`    | `DataValue` | The super-string as data or variable.                               |
+| `substring` | `DataValue` | The super-string as data or variable.                               |
+| `length`    | `DataValue` | The length of the string as an integer or variable.                 |
+| `before`    | `DataValue` | The count of characters before substring as an integer or variable. |
+| `after`     | `DataValue` | The count of characters after substring as an integer or variable.  |
 
----
+***
 
-### Subsumption
+#### Subsumption
 
-<p class="tdb-k-h1">Provides class subsumption (the inheritance model) according to the schema design. True whenver 'child' is a child of 'parent'. Can be used as a generator or a check.</p>
+Provides class subsumption (the inheritance model) according to the schema design. True whenver 'child' is a child of 'parent'. Can be used as a generator or a check.
 
 **Class:** `Subsumption`
 
@@ -1318,16 +1322,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `child` | `NodeValue` | The child class as a URI or variable. |
+| Property | Range       | Desc                                  |
+| -------- | ----------- | ------------------------------------- |
+| `child`  | `NodeValue` | The child class as a URI or variable. |
 | `parent` | `NodeValue` | The parent class as a URI or variable |
 
----
+***
 
-### Sum
+#### Sum
 
-<p class="tdb-k-h1">Sum a list of strings.</p>
+Sum a list of strings.
 
 **Class:** `Sum`
 
@@ -1335,16 +1339,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `list` | `DataValue` | The list of numbers to sum. |
+| Property | Range       | Desc                               |
+| -------- | ----------- | ---------------------------------- |
+| `list`   | `DataValue` | The list of numbers to sum.        |
 | `result` | `DataValue` | The result of the sum as a number. |
 
----
+***
 
-### Trim
+#### Trim
 
-<p class="tdb-k-h1">Trims whitespace from 'untrimmed'.</p>
+Trims whitespace from 'untrimmed'.
 
 **Class:** `Trim`
 
@@ -1352,16 +1356,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `untrimmed` | `DataValue` | The untrimmed string. |
-| `trimmed` | `DataValue` | The string to be trimmed. |
+| Property    | Range       | Desc                      |
+| ----------- | ----------- | ------------------------- |
+| `untrimmed` | `DataValue` | The untrimmed string.     |
+| `trimmed`   | `DataValue` | The string to be trimmed. |
 
----
+***
 
-### Triple
+#### Triple
 
-<p class="tdb-k-h1">Specify an edge pattern in the graph.</p>
+Specify an edge pattern in the graph.
 
 **Class:** `Triple`
 
@@ -1369,18 +1373,18 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
-| `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| Property    | Range        | Desc                                                                         |
+| ----------- | ------------ | ---------------------------------------------------------------------------- |
+| `subject`   | `NodeValue`  | A URI or variable which is the source or subject of the graph edge.          |
+| `predicate` | `NodeValue`  | A URI or variable which is the edge-label or predicate of the graph edge.    |
+| `object`    | `Value`      | A URI, datatype or variable which is the target or object of the graph edge. |
+| `graph`     | `xsd:string` | An optional graph (either 'instance' or 'schema')                            |
 
----
+***
 
-### TripleCount
+#### TripleCount
 
-<p class="tdb-k-h1">The number of edges in a database.</p>
+The number of edges in a database.
 
 **Class:** `TripleCount`
 
@@ -1388,26 +1392,26 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
+| Property   | Range        | Desc                                   |
+| ---------- | ------------ | -------------------------------------- |
 | `resource` | `xsd:string` | The resource to obtain the edges from. |
-| `count` | `DataValue` | The count of edges. |
+| `count`    | `DataValue`  | The count of edges.                    |
 
----
+***
 
-### True
+#### True
 
-<p class="tdb-k-h1">The query which is always true.</p>
+The query which is always true.
 
 **Class:** `True`
 
 **Super class:** `Query`
 
----
+***
 
-### Typecast
+#### Typecast
 
-<p class="tdb-k-h1">Casts one type as another if possible.</p>
+Casts one type as another if possible.
 
 **Class:** `Typecast`
 
@@ -1415,17 +1419,17 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `value` | `Value` | The value to cast. |
-| `type` | `NodeValue` | The type to which to cast. |
-| `result` | `Value` | The resulting value after cast. |
+| Property | Range       | Desc                            |
+| -------- | ----------- | ------------------------------- |
+| `value`  | `Value`     | The value to cast.              |
+| `type`   | `NodeValue` | The type to which to cast.      |
+| `result` | `Value`     | The resulting value after cast. |
 
----
+***
 
-### UpdateDocument
+#### UpdateDocument
 
-<p class="tdb-k-h1">Update a document in the graph.</p>
+Update a document in the graph.
 
 **Class:** `UpdateDocument`
 
@@ -1433,16 +1437,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `document` | `DataValue` | The document to update. Must either have an '@id' or have a class specified key. |
-| `identifier` | `NodeValue` | An optional returned identifier specifying the documentation location. |
+| Property     | Range       | Desc                                                                             |
+| ------------ | ----------- | -------------------------------------------------------------------------------- |
+| `document`   | `DataValue` | The document to update. Must either have an '@id' or have a class specified key. |
+| `identifier` | `NodeValue` | An optional returned identifier specifying the documentation location.           |
 
----
+***
 
-### Upper
+#### Upper
 
-<p class="tdb-k-h1">Uppercase a string.</p>
+Uppercase a string.
 
 **Class:** `Upper`
 
@@ -1450,16 +1454,16 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `mixed` | `DataValue` | The mixed case string. |
+| Property | Range       | Desc                   |
+| -------- | ----------- | ---------------------- |
+| `mixed`  | `DataValue` | The mixed case string. |
 | `uppser` | `undefined` | The upper case string. |
 
----
+***
 
-### Using
+#### Using
 
-<p class="tdb-k-h1">Select a specific collection for query.</p>
+Select a specific collection for query.
 
 **Class:** `Using`
 
@@ -1467,24 +1471,24 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `collection` | `xsd:string` | The resource over which to run the query. |
-| `query` | `Query` | The query which will be run on the selected collection. |
+| Property     | Range        | Desc                                                    |
+| ------------ | ------------ | ------------------------------------------------------- |
+| `collection` | `xsd:string` | The resource over which to run the query.               |
+| `query`      | `Query`      | The query which will be run on the selected collection. |
 
----
+***
 
-### Value
+#### Value
 
-<p class="tdb-k-h1">A variable, node or data point. It is a subdocument</p>
+A variable, node or data point. It is a subdocument
 
 **Class:** `Value`
 
 **Properties:**
 
-| Property | Range  | Desc |
-| -------- | ------ | ---- |
-| `node` | `xsd:string` | A URI representing a resource. |
-| `variable` | `xsd:string` | A variable. |
-| `list` | `Value` | A list of datavalues |
-| `data` | `xsd:anySimpleType` | An xsd data type value. |
+| Property   | Range               | Desc                           |
+| ---------- | ------------------- | ------------------------------ |
+| `node`     | `xsd:string`        | A URI representing a resource. |
+| `variable` | `xsd:string`        | A variable.                    |
+| `list`     | `Value`             | A list of datavalues           |
+| `data`     | `xsd:anySimpleType` | An xsd data type value.        |

@@ -1,6 +1,8 @@
-# Schema Reference
+---
+description: TerminusDB schema language based on simple JSON syntax.
+---
 
-> **On this page:** A reference guide to the TerminusDB schema language based on simple JSON syntax.
+# Schema Reference
 
 The TerminusDB schema language enables documents and their relationships to be specified using simple JSON syntax. This syntax makes it as easy as possible to specify a JSON object to automatically convert to a graph. This approach enables data to be viewed as collections of documents or as knowledge graphs of interconnected objects.
 
@@ -902,23 +904,11 @@ In the example range class below, `first_name` and `last_name` are strings, `yea
 
 ### JSON Type
 
-Two special JSON types exist in TerminusDB. One is for use as a
-subdocument, and is called `"sys:JSON"` and the type
-`"sys:JSONDocument"` which is used for type level. Both allow
-un-constrained and untypechecked documents which can be stored or
-retrieved as apparently unmodified JSON, but which are still indexed
-and searchable using WOQL.
+Two special JSON types exist in TerminusDB. One is for use as a subdocument, and is called `"sys:JSON"` and the type `"sys:JSONDocument"` which is used for type level. Both allow un-constrained and untypechecked documents which can be stored or retrieved as apparently unmodified JSON, but which are still indexed and searchable using WOQL.
 
-Ids for subdocuments of type `"sys:JSON"` are formed from a hash of
-the content, meaning that subdocuments are shared if their content is
-the same.
+Ids for subdocuments of type `"sys:JSON"` are formed from a hash of the content, meaning that subdocuments are shared if their content is the same.
 
-However, those of type `"sys:JSONDocument"` are assigned a random id,
-such that they can be retrieved, modified etc. Alternatively they can
-be assigned an id by passing in an id of the form `{ "@id" :
-"JSONDocument/my_id_here", ...}` making sure to use the prefix
-`"JSONDocument"` so as not to ensure we do not have any id conflicts
-with other document types.
+However, those of type `"sys:JSONDocument"` are assigned a random id, such that they can be retrieved, modified etc. Alternatively they can be assigned an id by passing in an id of the form `{ "@id" : "JSONDocument/my_id_here", ...}` making sure to use the prefix `"JSONDocument"` so as not to ensure we do not have any id conflicts with other document types.
 
 #### Code: An example of `"sys:JSON"`
 
@@ -936,8 +926,7 @@ with other document types.
 }
 ```
 
-We can now have a well typed `"Person"` which contains a metadata
-field of type `"sys:JSON"` which is unconstrained JSON as follows:
+We can now have a well typed `"Person"` which contains a metadata field of type `"sys:JSON"` which is unconstrained JSON as follows:
 
 ```json
 {
@@ -949,9 +938,7 @@ field of type `"sys:JSON"` which is unconstrained JSON as follows:
 
 #### Code: An example of `"sys:JSONDocument"`
 
-Using the `{ "json" : true }` option to the insert API, or using the
-TerminusDB CLI with the `-j` or `--json=true` flag we can insert an
-arbitrary JSON document.
+Using the `{ "json" : true }` option to the insert API, or using the TerminusDB CLI with the `-j` or `--json=true` flag we can insert an arbitrary JSON document.
 
 Using the CLI we can write:
 
@@ -1104,20 +1091,11 @@ An example of an object `Person` that can have 0 to any number of friends. This 
 }
 ```
 
-
 ### Foreign Types
 
-Use `Foreign` to specify types which are to be references to external
-data products. Foreign types are types which are opaque in the
-current data product. This allows us to give them identifiers although
-we don't actually store the objects locally. Foreign types have *no*
-referential integrity checking, and as they refer to opaque
-identifiers, the schema is checked by the data product in which they
-are referred.
+Use `Foreign` to specify types which are to be references to external data products. Foreign types are types which are opaque in the current data product. This allows us to give them identifiers although we don't actually store the objects locally. Foreign types have _no_ referential integrity checking, and as they refer to opaque identifiers, the schema is checked by the data product in which they are referred.
 
-A foreign type must be declared explicitly by giving the name of the
-type to be treated as foreign using the `Foreign` designation in the
-schema.
+A foreign type must be declared explicitly by giving the name of the type to be treated as foreign using the `Foreign` designation in the schema.
 
 #### Code: An example adding a foreign Person type
 
@@ -1128,8 +1106,7 @@ For instance, to add a foreign type of type Person, we can write:
   "@id" : "Person"}
 ```
 
-The actual definition of person might be given in its home data
-product as:
+The actual definition of person might be given in its home data product as:
 
 ```json
 { "@type" : "Person",
@@ -1140,14 +1117,14 @@ product as:
 
 #### Code: An example creating and referring to a foreign type
 
-From the command line we can see how an HR data product might interact
-with an Events data product.
+From the command line we can see how an HR data product might interact with an Events data product.
 
 Create the HR data product:
 
 ```shell
 terminusdb db create admin/hr
 ```
+
 Add the HR schema:
 
 ```shell
@@ -1186,18 +1163,13 @@ terminusdb doc get admin/events --id='Event/9b3c5b174cb1f157dcdcedb692ed57f82ba3
 
 ### Cardinality
 
-Use `Cardinality` to specify an unordered set of values of a class or
-datatype in which the property has a limited number of elements as
-specified by the cardinality constraint properties.
+Use `Cardinality` to specify an unordered set of values of a class or datatype in which the property has a limited number of elements as specified by the cardinality constraint properties.
 
 The relevant properties are:
 
 #### `@cardinality`
 
-When specified, the number of elements for the given property must be
-*exactly* the cardinality specified. This is equivalent to specifying
-both `@min_cardinality` and `@max_cardinality` as the same
-cardinality.
+When specified, the number of elements for the given property must be _exactly_ the cardinality specified. This is equivalent to specifying both `@min_cardinality` and `@max_cardinality` as the same cardinality.
 
 #### Code: An example of type family Cardinality with `@cardinality`
 
@@ -1246,10 +1218,10 @@ An example of an object `Person` that can have exactly threefriends. As with `Se
     ]
 }
 ```
+
 #### `@min_cardinality`
 
-When specified, the number of elements for the given property must be
-*at least* the cardinality specified.
+When specified, the number of elements for the given property must be _at least_ the cardinality specified.
 
 ```json
 {
@@ -1272,8 +1244,7 @@ When specified, the number of elements for the given property must be
 
 #### `@max_cardinality`
 
-When specified, the number of elements for the given property must be
-*no more than* the cardinality specified.
+When specified, the number of elements for the given property must be _no more than_ the cardinality specified.
 
 ```json
 {
@@ -1348,26 +1319,13 @@ An example of a polygon object `GeoPolygon` points to a 2D array of coordinates 
 
 ## Inference
 
-TerminusDB is equiped with a type inference engine which allows types
-to be inferred under certain conditions.
+TerminusDB is equiped with a type inference engine which allows types to be inferred under certain conditions.
 
-The algorithm attempts to find a *unique* type which can successfully
-be ascribed to a document. In the event that no type is found, you
-will get an error that no type applies. If *several* types might
-apply, you will see the list of candidate types in the error. If
-TerminusX is able to find the unique type which applies, it will
-ascribe the type automatically.
+The algorithm attempts to find a _unique_ type which can successfully be ascribed to a document. In the event that no type is found, you will get an error that no type applies. If _several_ types might apply, you will see the list of candidate types in the error. If TerminusX is able to find the unique type which applies, it will ascribe the type automatically.
 
-Type ascription is perhaps most useful in cases in which abstract
-types are used as ranges of a property, but which there are only
-*sibling* concrete types which might apply. In this case it is easy to
-ensure a unique typing for the range class and improves the
-flexibility of the interface.
+Type ascription is perhaps most useful in cases in which abstract types are used as ranges of a property, but which there are only _sibling_ concrete types which might apply. In this case it is easy to ensure a unique typing for the range class and improves the flexibility of the interface.
 
-It should also be considered that the type being ascribed is based on
-the schema *as it is* when the document is inserted. For this reason,
-in some cases it may be better to tag the document explicitly with the
-`@type` keyword.
+It should also be considered that the type being ascribed is based on the schema _as it is_ when the document is inserted. For this reason, in some cases it may be better to tag the document explicitly with the `@type` keyword.
 
 ### Code: An example of type inference
 
@@ -1390,6 +1348,7 @@ Given the following schema:
     }
 }
 ```
+
 We can insert the following document through the document interface:
 
 ```json
@@ -1397,14 +1356,11 @@ We can insert the following document through the document interface:
   "friends" : [ { "name" : "Tim"}, { "name" : "Julie" }] }
 ```
 
-This document will be ascribed type `"Person"` and the two documents
-linked will likewise be typed as `"Person"`
+This document will be ascribed type `"Person"` and the two documents linked will likewise be typed as `"Person"`
 
 ### Code: An example of unambiguous inference
 
-In the case of certain well defined JSON documents schemata however,
-such as GeoJSON, there is never a possibility of ambiguity and so the
-type-inferencing helps to make it much more convenient.
+In the case of certain well defined JSON documents schemata however, such as GeoJSON, there is never a possibility of ambiguity and so the type-inferencing helps to make it much more convenient.
 
 ```json
 {
@@ -1435,8 +1391,7 @@ type-inferencing helps to make it much more convenient.
 }
 ```
 
-This schema provides the `"Point"` type with a singleton enum
-tag. This singleton enum tag will help to uniquely assign the type.
+This schema provides the `"Point"` type with a singleton enum tag. This singleton enum tag will help to uniquely assign the type.
 
 We can then insert a point document which might be written as:
 

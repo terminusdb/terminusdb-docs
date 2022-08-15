@@ -1,6 +1,8 @@
-# CURL Reference
+---
+description: Document interface examples using CURL.
+---
 
-> **On this page:** Document interface examples using CURL.
+# CURL Reference
 
 ## Examples
 
@@ -18,8 +20,6 @@ cat /tmp/testschema.json | \
 
 ### Submit data into the instance graph
 
-<!-- Removed: How to make a closed captions bot -->
-
 ```shell
 cat /tmp/testdata.json | \
     curl -X POST 'http://localhost:6363/api/document/admin/foo?author=me&message=hallo' \
@@ -28,7 +28,7 @@ cat /tmp/testdata.json | \
 
 ### Get a list of instance documents
 
-Note the `graph_type` is not specified in the first example. Explicitly requesting the `graph_type` instance, in the second example, provides the same result.  
+Note the `graph_type` is not specified in the first example. Explicitly requesting the `graph_type` instance, in the second example, provides the same result.
 
 ```shell
 curl 'http://localhost:6363/api/document/admin/foo'

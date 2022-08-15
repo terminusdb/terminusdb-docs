@@ -1,6 +1,8 @@
-# Use Regular Expressions
+---
+description: Use regular expressions with WOQL and JavaScript.
+---
 
-> **On this page:** A how-to guide to using regular expressions with WOQL and **JavaScript**.
+# Use Regular Expressions
 
 WOQL provides **Pearl Compatible Regular Expressions** ([PCRE](../resources/glossary.md#pcre)) using the predicate `regexp` with the structure:
 

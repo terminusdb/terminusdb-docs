@@ -1,10 +1,8 @@
 ---
-description: How to traverse edges with path regular expressions in WOQL
+description: Traverse edges with path regular expressions in WOQL
 ---
 
 # Path Queries
-
-> **On this page:** A reference guide to the path queries in TerminusDB
 
 TerminusDB allows _regular path expressions_ as a way to describe multihop searches in a concise fashion. When you need to follow a link repeatedly for shortest path queries or to find all linked documents meeting some specification you can often use a _path query_.
 
