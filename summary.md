@@ -50,7 +50,7 @@
         * [WOQLLibrary](index/terminusx-db/reference-guides/javascript-client-reference/woqllibrary.md)
         * [AccessControl](index/terminusx-db/reference-guides/javascript-client-reference/accesscontrol.md)
         * [TypeDef](index/terminusx-db/reference-guides/javascript-client-reference/typedef.md)
-      * [Python Client Reference](index/terminusx-db/reference-guides/client/README.md)
+      * [Python Client Reference](index/terminusx-db/reference-guides/python-client-reference/index.md)
         * [WOQLClient](index/terminusx-db/reference-guides/client/woqlclient.md)
         * [WOQLQuery](index/terminusx-db/reference-guides/client/woqlquery.md)
         * [WOQLSchema](index/terminusx-db/reference-guides/client/woqlschema.md)
