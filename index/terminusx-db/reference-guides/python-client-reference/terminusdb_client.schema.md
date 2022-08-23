@@ -5,186 +5,188 @@
 ## terminusdb_client.schema.schema module
 
 
-### _class_ terminusdb_client.schema.schema.TerminusKey(keys=None)
-Bases: `object`
+## class terminusdb_client.schema.schema.TerminusKey(keys=None)
+**Bases:** `object`
 
 
-#### \__init__(keys=None)
+### __init__(keys=None)
 
-### _class_ terminusdb_client.schema.schema.HashKey(keys=None)
-Bases: `TerminusKey`
+## class terminusdb_client.schema.schema.HashKey(keys=None)
+**Bases:** `TerminusKey`
 
 Generating ID with SHA256 using provided keys
 
 
-#### at_type(_ = 'Hash_ )
+### at_type(_ = 'Hash'
 
-### _class_ terminusdb_client.schema.schema.LexicalKey(keys=None)
-Bases: `TerminusKey`
+## class terminusdb_client.schema.schema.LexicalKey(keys=None)
+**Bases:** `TerminusKey`
 
 Generating ID with urllib.parse.quote using provided keys
 
 
-#### at_type(_ = 'Lexical_ )
+### at_type(_ = 'Lexical'
 
-### _class_ terminusdb_client.schema.schema.ValueHashKey(keys=None)
-Bases: `TerminusKey`
+## class terminusdb_client.schema.schema.ValueHashKey(keys=None)
+**Bases:** `TerminusKey`
 
 Generating ID with SHA256
 
 
-#### at_type(_ = 'ValueHash_ )
+### at_type(_ = 'ValueHash'
 
-### _class_ terminusdb_client.schema.schema.RandomKey(keys=None)
-Bases: `TerminusKey`
+## class terminusdb_client.schema.schema.RandomKey(keys=None)
+**Bases:** `TerminusKey`
 
 Generating ID with UUID4
 
 
-#### at_type(_ = 'Random_ )
+### at_type(_ = 'Random'
 
-### _class_ terminusdb_client.schema.schema.TerminusClass(name, bases, nmspc)
-Bases: `type`
-
-
-#### \__init__(name, bases, nmspc)
-
-#### get_instances()
-
-### _class_ terminusdb_client.schema.schema.DocumentTemplate(\*args, \*\*kwargs)
-Bases: `object`
+## class terminusdb_client.schema.schema.TerminusClass(name, bases, nmspc)
+**Bases:** `type`
 
 
-#### \__init__(\*args, \*\*kwargs)
+### __init__(name, bases, nmspc)
 
-### _class_ terminusdb_client.schema.schema.EnumMetaTemplate(cls, bases, classdict, \*, boundary=None, _simple=False, \*\*kwds)
-Bases: `EnumMeta`
+### get_instances()
+
+## class terminusdb_client.schema.schema.DocumentTemplate(\*args, \*\*kwargs)
+**Bases:** `object`
 
 
-### _class_ terminusdb_client.schema.schema.EnumTemplate(value)
-Bases: `Enum`
+### __init__(\*args, \*\*kwargs)
+
+## class terminusdb_client.schema.schema.EnumMetaTemplate(cls, bases, classdict, \*, boundary=None, _simple=False, \*\*kwds)
+**Bases:** `EnumMeta`
+
+
+## class terminusdb_client.schema.schema.EnumTemplate(value)
+**Bases:** `Enum`
 
 An enumeration.
 
 
-#### \__init__(value=None)
+### __init__(value=None)
 
-### _class_ terminusdb_client.schema.schema.TaggedUnion(\*args, \*\*kwargs)
-Bases: `DocumentTemplate`
-
-
-#### \__init__(\*args, \*\*kwargs)
-
-### _class_ terminusdb_client.schema.schema.Schema(title=None, description=None, authors=None, schema_ref=None, base_ref=None)
-Bases: `object`
+## class terminusdb_client.schema.schema.TaggedUnion(\*args, \*\*kwargs)
+**Bases:** `DocumentTemplate`
 
 
-#### \__init__(title=None, description=None, authors=None, schema_ref=None, base_ref=None)
+### __init__(\*args, \*\*kwargs)
 
-#### _property_ context()
+## class terminusdb_client.schema.schema.Schema(title=None, description=None, authors=None, schema_ref=None, base_ref=None)
+**Bases:** `object`
 
-#### add_enum_class(class_name, class_values)
+
+### __init__(title=None, description=None, authors=None, schema_ref=None, base_ref=None)
+
+
+> **Property:**  context()
+
+### add_enum_class(class_name, class_values)
 Construct a TerminusDB Enum class by provideing class name and member values then add into the schema.
 
 
-* **Parameters**
-
-    
-    * **class_name** (*str*) – Name of the class object constructed.
+**Parameter/s**
 
 
-    * **class_values** (*list*) – A list of values in this Enum.
+* **class_name** (``str``) – Name of the class object constructed.
 
 
-
-* **Returns**
-
-    A Enum object with the sepcified name and members
+* **class_values** (*list*) – A list of values in this Enum.
 
 
 
-* **Return type**
+**Returns**
 
-    EnumMetaTemplate
+A Enum object with the sepcified name and members
 
 
 
-#### commit(client, commit_msg=None, full_replace=False)
+**Return type/s**
+
+EnumMetaTemplate
+
+
+
+### commit(client, commit_msg=None, full_replace=False)
 Commit the schema to database
 
 
-* **Parameters**
-
-    
-    * **client** ([*Client*](terminusdb_client.client.md#terminusdb_client.client.Client.Client)) – A client that is connected to a database.
+**Parameter/s**
 
 
-    * **commit_msg** (*str*) – Commit message.
+* **client** ([*Client*](terminusdb_client.client.md#terminusdb_client.client.Client.Client)) – A client that is connected to a database.
 
 
-    * **full_replace** (*bool*) – Does the commit fully wiped out the old shcema graph. Default to be False.
+* **commit_msg** (``str``) – Commit message.
+
+
+* **full_replace** (`bool`) – Does the commit fully wiped out the old shcema graph. Default to be False.
 
 
 
-#### from_db(client, select=None)
+### from_db(client, select=None)
 Load classes in the database schema into schema
 
 
-* **Parameters**
-
-    
-    * **client** ([*Client*](terminusdb_client.client.md#terminusdb_client.client.Client.Client)) – Client that is connected to the database
+**Parameter/s**
 
 
-    * **select** (*list of str**, **optional*) – The classes (and depended classes) that will be imported, default to None which will import all classes
+* **client** ([*Client*](terminusdb_client.client.md#terminusdb_client.client.Client.Client)) – Client that is connected to the database
+
+
+* **select** (*list of `str`*, `optional`) – The classes (and depended classes) that will be imported, default to None which will import all classes
 
 
 
-#### import_objects(obj_dict)
+### import_objects(obj_dict)
 Import a list of documents in json format to Python objects. The schema of those documents need to be in this schema.
 
 
-#### from_json_schema(name, json_schema, pipe=False, subdoc=False)
+### from_json_schema(name, json_schema, pipe=False, subdoc=False)
 Load class object from json schema ([http://json-schema.org/](http://json-schema.org/)) and, if pipe mode is off, add into schema. All referenced object will be treated as subdocuments.
 
 
-* **Parameters**
-
-    
-    * **name** (*str*) – Name of the class object.
+**Parameter/s**
 
 
-    * **json_schema** (*dict** or **str** or **StringIO*) – Json Schema in dictionary or jsonisable string format or json file stream.
+* **name** (``str``) – Name of the class object.
 
 
-    * **pipe** (*bool*) – Pipe mode, if True will return the schema in TerminusDB dictionary format (just like calling to_dict) WITHOUT loading the schema into the schema object. Default to False.
+* **json_schema** (*dict** or *``str``* or **StringIO*) – Json Schema in dictionary or jsonisable string format or json file stream.
 
 
-    * **subdoc** (*bool*) – If not in pipe mode, the class object will be added as a subdocument class.
+* **pipe** (`bool`) – Pipe mode, if True will return the schema in TerminusDB dictionary format (just like calling to_dict) WITHOUT loading the schema into the schema object. Default to False.
+
+
+* **subdoc** (`bool`) – If not in pipe mode, the class object will be added as a subdocument class.
 
 
 
-#### add_obj(name, obj)
+### add_obj(name, obj)
 
-#### all_obj()
+### all_obj()
 
-#### to_dict()
+### to_dict()
 Return the schema in the TerminusDB dictionary format
 
 
-#### to_json_schema(class_object)
+### to_json_schema(class_object)
 Return the schema in the json schema ([http://json-schema.org/](http://json-schema.org/)) format as a dictionary for the class object.
 
 
-* **Parameters**
+**Parameter/s**
 
-    **object** (*class*) – Name of the class object or the class object represented as dictionary.
+**object** (*class*) – Name of the class object or the class object represented as dictionary.
 
 
 
-#### copy()
+### copy()
 
 ### terminusdb_client.schema.schema.WOQLSchema()
 alias of `Schema`
 
 ## Module contents
+

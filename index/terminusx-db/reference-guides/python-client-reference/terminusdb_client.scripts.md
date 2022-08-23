@@ -9,127 +9,128 @@ Description: Example to show how schema works
 Authors: TerminusDB, Cheuk
 
 
-### _class_ terminusdb_client.scripts.schema_template.Country(\*args, \*\*kwargs)
-Bases: [`DocumentTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.DocumentTemplate)
+## class terminusdb_client.scripts.schema_template.Country(\*args, \*\*kwargs)
+**Bases:** [`DocumentTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.DocumentTemplate)
 
 This is Country.
 
 Country is a class object in the schema. It’s class attributes will be the properties of the object. Therefore, a Country object will have a name which is string and a list of alias names that is called ‘also_know_as’
 
 
-#### name(_: st_ )
+### name(_: st'
 
-#### also_know_as(_: List[str_ )
+### also_know_as(_: List[str'
 
-#### \__init__(\*args, \*\*kwargs)
+### __init__(\*args, \*\*kwargs)
 
-### _class_ terminusdb_client.scripts.schema_template.Address(\*args, \*\*kwargs)
-Bases: [`DocumentTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.DocumentTemplate)
+## class terminusdb_client.scripts.schema_template.Address(\*args, \*\*kwargs)
+**Bases:** [`DocumentTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.DocumentTemplate)
 
 This is address
 
 
-#### street(_: st_ )
+### street(_: st'
 
-#### postal_code(_: st_ )
+### postal_code(_: st'
 
-#### country(_: Countr_ )
+### country(_: Countr'
 
-#### \__init__(\*args, \*\*kwargs)
+### __init__(\*args, \*\*kwargs)
 
-### _class_ terminusdb_client.scripts.schema_template.Person(\*args, \*\*kwargs)
-Bases: [`DocumentTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.DocumentTemplate)
+## class terminusdb_client.scripts.schema_template.Person(\*args, \*\*kwargs)
+**Bases:** [`DocumentTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.DocumentTemplate)
 
 This is a person
 
 Can store the explanation to the attributes in the docstring. Docstrings needs to be in numpydoc format.
 
 
-#### name()
+### name()
 Name of the person.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### age()
+### age()
 Age of the person.
 
 
-* **Type**
+**Type**
 
-    int
+int
 
 
 
-#### name(_: st_ )
+### name(_: st'
 
-#### age(_: in_ )
+### age(_: in'
 
-#### friend_of(_: Set[Person_ )
+### friend_of(_: Set[Person'
 
-#### \__init__(\*args, \*\*kwargs)
+### __init__(\*args, \*\*kwargs)
 
-### _class_ terminusdb_client.scripts.schema_template.Employee(\*args, \*\*kwargs)
-Bases: `Person`
+## class terminusdb_client.scripts.schema_template.Employee(\*args, \*\*kwargs)
+**Bases:** `Person`
 
 Employee will inherits the attributes from Person
 
 
-#### address_of(_: Addres_ )
+### address_of(_: Addres'
 
-#### contact_number(_: Optional[str_ )
+### contact_number(_: Optional[str'
 
-#### managed_by(_: Employe_ )
+### managed_by(_: Employe'
 
-#### \__init__(\*args, \*\*kwargs)
+### __init__(\*args, \*\*kwargs)
 
-### _class_ terminusdb_client.scripts.schema_template.Coordinate(\*args, \*\*kwargs)
-Bases: [`DocumentTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.DocumentTemplate)
+## class terminusdb_client.scripts.schema_template.Coordinate(\*args, \*\*kwargs)
+**Bases:** [`DocumentTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.DocumentTemplate)
 
 
-#### x(_: floa_ )
+### x(_: floa'
 
-#### y(_: floa_ )
+### y(_: floa'
 
-#### \__init__(\*args, \*\*kwargs)
+### __init__(\*args, \*\*kwargs)
 
-### _class_ terminusdb_client.scripts.schema_template.Location(\*args, \*\*kwargs)
-Bases: `Address`, `Coordinate`
+## class terminusdb_client.scripts.schema_template.Location(\*args, \*\*kwargs)
+**Bases:** `Address`, `Coordinate`
 
 Location is inherits from Address and Coordinate
 
 Class can have multiple inheritance. It will inherits both the attibutes from Address and Coordinate.
 
 
-#### name(_: st_ )
+### name(_: st'
 
-#### \__init__(\*args, \*\*kwargs)
+### __init__(\*args, \*\*kwargs)
 
-### _class_ terminusdb_client.scripts.schema_template.Team(value)
-Bases: [`EnumTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.EnumTemplate)
+## class terminusdb_client.scripts.schema_template.Team(value)
+**Bases:** [`EnumTemplate`](terminusdb_client.schema.md#terminusdb_client.schema.schema.EnumTemplate)
 
 This is an example for Enum, if a value is not provided, the name of the Enum (e.g. Marketing) will be used as the value.
 
 
-#### IT(_ = 'Information Technology_ )
+### IT(_ = 'Information Technology'
 
-#### Marketing(_ = 'Marketing_ )
+### Marketing(_ = 'Marketing'
 
-### _class_ terminusdb_client.scripts.schema_template.Contact(\*args, \*\*kwargs)
-Bases: [`TaggedUnion`](terminusdb_client.schema.md#terminusdb_client.schema.schema.TaggedUnion)
+## class terminusdb_client.scripts.schema_template.Contact(\*args, \*\*kwargs)
+**Bases:** [`TaggedUnion`](terminusdb_client.schema.md#terminusdb_client.schema.schema.TaggedUnion)
 
 TaggedUnion allow options for types
 
 
-#### local_number(_: in_ )
+### local_number(_: in'
 
-#### international(_: st_ )
+### international(_: st'
 
-#### \__init__(\*args, \*\*kwargs)
+### __init__(\*args, \*\*kwargs)
 ## terminusdb_client.scripts.scripts module
 
 ## Module contents
+
