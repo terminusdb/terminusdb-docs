@@ -7,647 +7,647 @@
 ## terminusdb_client.woqlquery.woql_query module
 
 
-### _class_ terminusdb_client.woqlquery.woql_query.Var(name)
-Bases: `object`
+## class terminusdb_client.woqlquery.woql_query.Var(name)
+**Bases:** `object`
 
 
-#### \__init__(name)
+### __init__(name)
 
-### _class_ terminusdb_client.woqlquery.woql_query.Doc(dictionary)
-Bases: `object`
-
-
-#### \__init__(dictionary)
-
-### _class_ terminusdb_client.woqlquery.woql_query.WOQLQuery(query=None, graph='schema')
-Bases: `object`
+## class terminusdb_client.woqlquery.woql_query.Doc(dictionary)
+**Bases:** `object`
 
 
-#### \__init__(query=None, graph='schema')
+### __init__(dictionary)
+
+## class terminusdb_client.woqlquery.woql_query.WOQLQuery(query=None, graph='schema')
+**Bases:** `object`
+
+
+### __init__(query=None, graph='schema')
 defines the internal functions of the woql query object - the language API is defined in WOQLQuery
 
 
-* **Parameters**
-
-    
-    * **query** (*dict*) – json-ld query for initialisation
+**Parameter/s**
 
 
-    * **graph** (*str*) – graph that this query is appled to, default to be schema/main
+* **query** (*dict*) – json-ld query for initialisation
+
+
+* **graph** (``str``) – graph that this query is appled to, default to be schema/main
 
 
 
-#### execute(client, commit_msg=None, file_dict=None)
+### execute(client, commit_msg=None, file_dict=None)
 Executes the query using the passed client to connect to a server
 
 
-* **Parameters**
-
-    
-    * **client** (*Client object*) – client that provide connection to the database for the query to execute.
+**Parameter/s**
 
 
-    * **commit_msg** (*str*) – optional, commit message for this query. Recommended for query that carrries an update.
+* **client** (*Client object*) – client that provide connection to the database for the query to execute.
 
 
-    * **file_dict** – File dictionary to be associated with post name => filename, for multipart POST
+* **commit_msg** (``str``) – optional, commit message for this query. Recommended for query that carrries an update.
+
+
+* **file_dict** – File dictionary to be associated with post name => filename, for multipart POST
 
 
 
-#### to_json()
+### to_json()
 Dumps the JSON-LD format of the query in a json string
 
 
-#### from_json(input_json)
+### from_json(input_json)
 Set a query from a JSON-LD json string
 
 
-#### to_dict()
+### to_dict()
 Give the dictionary that represents the query in JSON-LD format.
 
 
-#### from_dict(dictdata)
+### from_dict(dictdata)
 Set a query from a dictionary that represents the query in JSON-LD format.
 
 
-#### load_vocabulary(client)
+### load_vocabulary(client)
 Queries the schema graph and loads all the ids found there as vocabulary that can be used without prefixes
 ignoring blank node ids
 
 
-#### using(collection, subq=None)
+### using(collection, subq=None)
 
-#### comment(comment, subq=None)
+### comment(comment, subq=None)
 Adds a text comment to a query - can also be used to wrap any part of a query to turn it off
 
 
-* **Parameters**
+**Parameter/s**
 
-    **comment** (*str*) – text comment
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**comment** (``str``) – text comment
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### select(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### select(\*args)
 Filters the query so that only the variables included in [V1…Vn] are returned in the bindings
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** – only these variables are returned
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** – only these variables are returned
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### distinct(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### distinct(\*args)
 Ensures that the solutions for the variables [V1…Vn] are distinct
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** – The variables to make distinct with the final argument being a query.
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** – The variables to make distinct with the final argument being a query.
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Example
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 To load a local csv file:
->>> x,y = WOQLQUery().vars(“X”,”Y”)
->>> WOQLQuery().distinct(x).triple(x,’foo’,y)
+x,y = WOQLQUery().vars(“X”,”Y”)
+WOQLQuery().distinct(x).triple(x,’foo’,y)
 See Also
 
 
-#### woql_and(\*args)
+### woql_and(\*args)
 Creates a logical AND of the arguments
 Commonly used to combine WOQLQueries.
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** (*WOQLQuery objects*) – 
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** (*WOQLQuery objects*) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### woql_or(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### woql_or(\*args)
 Creates a logical OR of the arguments
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** (*WOQLQuery objects*) – 
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** (*WOQLQuery objects*) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### woql_from(graph, query=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### woql_from(graph, query=None)
 Specifies the database URL that will be the default database for the enclosed query
 
 
-* **Parameters**
-
-    
-    * **graph** (*str*) – url of the database
+**Parameter/s**
 
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+* **graph** (``str``) – url of the database
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **query** (*WOQLQuery object*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### into(graph_descriptor, query)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### into(graph_descriptor, query)
 Sets the current output graph for writing output to.
 
 
-* **Parameters**
-
-    
-    * **graph_descriptor** (*str*) – output graph
+**Parameter/s**
 
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+* **graph_descriptor** (``str``) – output graph
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **query** (*WOQLQuery object*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### triple(sub, pred, obj, opt=False)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### triple(sub, pred, obj, opt=False)
 Creates a triple pattern matching rule for the triple [S, P, O] (Subject, Predicate, Object)
 
 
-* **Parameters**
-
-    
-    * **sub** (*str*) – Subject, has to be a node (URI)
+**Parameter/s**
 
 
-    * **pred** (*str*) – Predicate, can be variable (prefix with “v:”) or node
+* **sub** (``str``) – Subject, has to be a node (URI)
 
 
-    * **obj** (*str*) – Object, can be variable or node or value
+* **pred** (``str``) – Predicate, can be variable (prefix with “v:”) or node
 
 
-    * **opt** (*bool*) – weather or not this triple is optional, default to be False
+* **obj** (``str``) – Object, can be variable or node or value
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **opt** (`bool`) – weather or not this triple is optional, default to be False
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### added_triple(sub, pred, obj, opt=False)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### added_triple(sub, pred, obj, opt=False)
 Creates a triple pattern matching rule for the triple [S, P, O] (Subject, Predicate, Object) added to the current commit.
 
 
-* **Parameters**
-
-    
-    * **sub** (*str*) – Subject
+**Parameter/s**
 
 
-    * **pred** (*str*) – Predicate
+* **sub** (``str``) – Subject
 
 
-    * **obj** (*str*) – Object
+* **pred** (``str``) – Predicate
 
 
-    * **opt** (*bool*) – weather or not this triple is optional, default to be False
+* **obj** (``str``) – Object
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **opt** (`bool`) – weather or not this triple is optional, default to be False
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### removed_triple(sub, pred, obj, opt=False)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### removed_triple(sub, pred, obj, opt=False)
 Creates a triple pattern matching rule for the triple [S, P, O] (Subject, Predicate, Object) added to the current commit.
 
 
-* **Parameters**
-
-    
-    * **sub** (*str*) – Subject
+**Parameter/s**
 
 
-    * **pred** (*str*) – Predicate
+* **sub** (``str``) – Subject
 
 
-    * **obj** (*str*) – Object
+* **pred** (``str``) – Predicate
 
 
-    * **opt** (*bool*) – weather or not this triple is optional, default to be False
+* **obj** (``str``) – Object
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **opt** (`bool`) – weather or not this triple is optional, default to be False
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### quad(sub, pred, obj, graph, opt=False)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### quad(sub, pred, obj, graph, opt=False)
 Creates a pattern matching rule for the quad [S, P, O, G] (Subject, Predicate, Object, Graph)
 
 
-* **Parameters**
-
-    
-    * **sub** (*str*) – Subject
+**Parameter/s**
 
 
-    * **pre** (*str*) – Predicate
+* **sub** (``str``) – Subject
 
 
-    * **obj** (*str*) – Object
+* **pre** (``str``) – Predicate
 
 
-    * **gra** (*str*) – Graph
+* **obj** (``str``) – Object
 
 
-    * **opt** (*bool*) – weather or not this quad is optional, default to be False
+* **gra** (``str``) – Graph
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **opt** (`bool`) – weather or not this quad is optional, default to be False
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### added_quad(sub, pred, obj, graph, opt=False)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### added_quad(sub, pred, obj, graph, opt=False)
 Creates a pattern matching rule for the quad [S, P, O, G] (Subject, Predicate, Object, Graph) added to the current commit.
 
 
-* **Parameters**
-
-    
-    * **sub** (*str*) – Subject
+**Parameter/s**
 
 
-    * **pre** (*str*) – Predicate
+* **sub** (``str``) – Subject
 
 
-    * **obj** (*str*) – Object
+* **pre** (``str``) – Predicate
 
 
-    * **gra** (*str*) – Graph
+* **obj** (``str``) – Object
 
 
-    * **opt** (*bool*) – weather or not this quad is optional, default to be False
+* **gra** (``str``) – Graph
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **opt** (`bool`) – weather or not this quad is optional, default to be False
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### removed_quad(sub, pred, obj, graph, opt=False)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### removed_quad(sub, pred, obj, graph, opt=False)
 Creates a pattern matching rule for the quad [S, P, O, G] (Subject, Predicate, Object, Graph) added to the current commit.
 
 
-* **Parameters**
-
-    
-    * **sub** (*str*) – Subject
+**Parameter/s**
 
 
-    * **pre** (*str*) – Predicate
+* **sub** (``str``) – Subject
 
 
-    * **obj** (*str*) – Object
+* **pre** (``str``) – Predicate
 
 
-    * **gra** (*str*) – Graph
+* **obj** (``str``) – Object
 
 
-    * **opt** (*bool*) – weather or not this quad is optional, default to be False
+* **gra** (``str``) – Graph
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **opt** (`bool`) – weather or not this quad is optional, default to be False
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### string(input_str)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### string(input_str)
 Transforms the given string into the proper json-ld form
 
 
-* **Parameters**
+**Parameter/s**
 
-    **input_str** (*str*) – the given input string
-
-
-
-* **Return type**
-
-    dict
+**input_str** (``str``) – the given input string
 
 
 
-#### boolean(input_bool)
+**Return type/s**
+
+dict
+
+
+
+### boolean(input_bool)
 Transforms the given bool object into the proper json-ld form
 
 
-* **Parameters**
+**Parameter/s**
 
-    **input_bool** (*bool*) – the given input string
-
-
-
-* **Return type**
-
-    dict
+**input_bool** (`bool`) – the given input string
 
 
 
-#### datetime(input_obj)
+**Return type/s**
+
+dict
+
+
+
+### datetime(input_obj)
 Transforms the given datetime object into the proper json-ld form
 
 
-* **Parameters**
+**Parameter/s**
 
-    **input_obj** (*str*) – the given input dateTime object
-
-
-
-* **Return type**
-
-    dict
+**input_obj** (``str``) – the given input dateTime object
 
 
 
-#### literal(input_val, input_type)
+**Return type/s**
 
-#### iri(varname)
+dict
 
-#### sub(parent, child)
+
+
+### literal(input_val, input_type)
+
+### iri(varname)
+
+### sub(parent, child)
 Returns true if child is a sub-class of parent, according to the current DB schema
 
 
-* **Parameters**
-
-    
-    * **parent** (*str*) – the parent class to be checked
+**Parameter/s**
 
 
-    * **child** (*str**, **optional*) – the child class to be checked
+* **parent** (``str``) – the parent class to be checked
 
 
-
-* **Return type**
-
-    bool
+* **child** (``str``, `optional`) – the child class to be checked
 
 
 
-#### eq(left, right)
+**Return type/s**
+
+bool
+
+
+
+### eq(left, right)
 Matches if a is equal to b
 :param left: object in the graph
-:type left: str
+:type left: `str`
 :param right: object in the graph
-:type right: str
+:type right: `str`
 
 
-* **Returns**
+**Returns**
 
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### substr(string, length, substring, before=0, after=0)
+**Return type/s**
 
-#### update_object(docjson)
+WOQLQuery object
 
-#### update_document(docjson, json_or_iri=None)
 
-#### insert_document(docjson, json_or_iri=None)
 
-#### delete_object(json_or_iri)
+### substr(string, length, substring, before=0, after=0)
 
-#### delete_document(json_or_iri)
+### update_object(docjson)
 
-#### read_object(iri, output_var)
+### update_document(docjson, json_or_iri=None)
 
-#### read_document(iri, output_var)
+### insert_document(docjson, json_or_iri=None)
 
-#### get(as_vars, query_resource=None)
+### delete_object(json_or_iri)
+
+### delete_document(json_or_iri)
+
+### read_object(iri, output_var)
+
+### read_document(iri, output_var)
+
+### get(as_vars, query_resource=None)
 Takes an as structure
 
 
-#### put(as_vars, query, query_resource=None)
+### put(as_vars, query, query_resource=None)
 Takes an array of variables, an optional array of column names
 
 
-#### woql_as(\*args)
+### woql_as(\*args)
 
-#### file(fpath, opts=None)
+### file(fpath, opts=None)
 Provides details of a file source in a JSON format that includes a URL property
 
 
-* **Parameters**
-
-    
-    * **fpath** (*dict*) – file data source in a JSON format
+**Parameter/s**
 
 
-    * **opts** (*input options*) – optional
+* **fpath** (*dict*) – file data source in a JSON format
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **opts** (*input options*) – optional
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Example
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 To load a local csv file:
->>> WOQLQuery().file(“/app/local_files/my.csv”)
+WOQLQuery().file(“/app/local_files/my.csv”)
 
 
-#### once(query=None)
+### once(query=None)
 Obtains only one result from subquery
 
 
-* **Parameters**
+**Parameter/s**
 
-    **query** (*WOQLQuery object**, **optional*) – 
-
-
-
-* **Returns**
-
-    query object that can be chained and/or executed
+**query** (*WOQLQuery object*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or executed
 
 
 
-#### remote(uri, opts=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### remote(uri, opts=None)
 Provides details of a remote data source in a JSON format that includes a URL property
 
 
-* **Parameters**
-
-    
-    * **uri** (*str*) – remote data source
+**Parameter/s**
 
 
-    * **opts** (*input options*) – optional
+* **uri** (``str``) – remote data source
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **opts** (*input options*) – optional
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Examples
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 ```python
->>> csv = WOQLQuery().get(
+csv = WOQLQuery().get(
 ...     WOQLQuery().woql_as("Start station", "v:Start_Station").
 ...     woql_as("End station", "v:End_Station").
 ...     woql_as("Start date", "v:Start_Time").
@@ -661,472 +661,472 @@ Provides details of a remote data source in a JSON format that includes a URL pr
 ```
 
 
-#### post(fpath, opts=None)
+### post(fpath, opts=None)
 
-#### delete_triple(subject, predicate, object_or_literal)
+### delete_triple(subject, predicate, object_or_literal)
 Deletes any triples that match the rule [subject, predicate, object]
 
 
-* **Parameters**
-
-    
-    * **subject** (*str*) – Subject
+**Parameter/s**
 
 
-    * **predicate** (*str*) – Predicate
+* **subject** (``str``) – Subject
 
 
-    * **object_or_literal** (*str*) – Object or Literal
+* **predicate** (``str``) – Predicate
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **object_or_literal** (``str``) – Object or Literal
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Examples
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 This example deletes the comment triple of a particular value from the document
 identified by doc:X:
->>> update = WOQLQuery().delete_triple(“doc:X”, “comment”, “my comment”)
->>> qry = WOQLQuery().when(True, update)
->>> client.update(qry.json(), ‘MyDatabaseId’)
+update = WOQLQuery().delete_triple(“doc:X”, “comment”, “my comment”)
+qry = WOQLQuery().when(True, update)
+client.update(qry.json(), ‘MyDatabaseId’)
 Note that only triples matching the particular object value will be deleted.
 To delete all triples matching this predicate, (regardless of value) we use a
 when clause, and introduce a variable `v:any` which will bind to any value
 for this subject and predicate combination:
->>> when = WOQLQuery().triple(‘doc:X’, ‘comment’, ‘v:any’)
->>> update = WOQLQuery().delete_triple(‘doc:X’, ‘comment’, ‘v:any’)
->>> qry = WOQLQuery().when(when, update)
->>> client.update(qry.json(), ‘MyDatabaseId’)
+when = WOQLQuery().triple(‘doc:X’, ‘comment’, ‘v:any’)
+update = WOQLQuery().delete_triple(‘doc:X’, ‘comment’, ‘v:any’)
+qry = WOQLQuery().when(when, update)
+client.update(qry.json(), ‘MyDatabaseId’)
 
 
-#### add_triple(subject, predicate, object_or_literal)
+### add_triple(subject, predicate, object_or_literal)
 Adds triples according to the the pattern [subject, predicate, object]
 
 
-* **Parameters**
-
-    
-    * **subject** (*str*) – Subject
+**Parameter/s**
 
 
-    * **predicate** (*str*) – Predicate
+* **subject** (``str``) – Subject
 
 
-    * **object_or_literal** (*str*) – Object or Literal
+* **predicate** (``str``) – Predicate
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **object_or_literal** (``str``) – Object or Literal
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Examples
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 This example adds a triple for a comment predicate and a certain value to the document identified by doc:X:
->>> update = WOQLQuery().add_triple(“doc:X”, “comment”, “my comment”)
->>> qry = WOQLQuery().when(True, update)
->>> client.update(qry.json(), ‘MyDatabaseId’)
+update = WOQLQuery().add_triple(“doc:X”, “comment”, “my comment”)
+qry = WOQLQuery().when(True, update)
+client.update(qry.json(), ‘MyDatabaseId’)
 
-### Notes
+**Notes**
 
 To update an existing triple, it is not just a case of calling add_triple again.
 One needs to delete the previous triple first.
 Otherwise two triples with the same predicate but different object values will be present.
 
 
-#### update_triple(subject, predicate, new_object)
+### update_triple(subject, predicate, new_object)
 
-#### delete_quad(subject, predicate, object_or_literal, graph=None)
+### delete_quad(subject, predicate, object_or_literal, graph=None)
 Deletes any quads that match the rule [subject, predicate, object, graph]
 
 
-* **Parameters**
-
-    
-    * **subject** (*str*) – Subject
+**Parameter/s**
 
 
-    * **predicate** (*str*) – Predicate
+* **subject** (``str``) – Subject
 
 
-    * **object_or_literal** (*str*) – Object or Literal
+* **predicate** (``str``) – Predicate
 
 
-    * **graph** (*str*) – Graph
+* **object_or_literal** (``str``) – Object or Literal
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **graph** (``str``) – Graph
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### add_quad(subject, predicate, object_or_literal, graph)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### add_quad(subject, predicate, object_or_literal, graph)
 Adds quads according to the pattern [subject, predicate, object, graph]
 
 
-* **Parameters**
-
-    
-    * **subject** (*str*) – Subject
+**Parameter/s**
 
 
-    * **predicate** (*str*) – Predicate
+* **subject** (``str``) – Subject
 
 
-    * **object_or_literal** (*str*) – Object or Literal
+* **predicate** (``str``) – Predicate
 
 
-    * **graph** (*str*) – Graph
+* **object_or_literal** (``str``) – Object or Literal
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **graph** (``str``) – Graph
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### update_quad(subject, predicate, new_object, graph)
+**Return type/s**
 
-#### trim(untrimmed, trimmed)
+WOQLQuery object
+
+
+
+### update_quad(subject, predicate, new_object, graph)
+
+### trim(untrimmed, trimmed)
 A trimmed version of untrimmed (with leading and trailing whitespace removed) is copied into trimmed
 
 
-* **Parameters**
-
-    
-    * **untrimmed** (*str*) – original string
+**Parameter/s**
 
 
-    * **trimmed** (*str*) – WOQL varible storing the result string
+* **untrimmed** (``str``) – original string
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **trimmed** (``str``) – WOQL varible storing the result string
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### eval(arith, res)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### eval(arith, res)
 Evaluates the Arithmetic Expression Arith and copies the output to variable V
 
 
-* **Parameters**
-
-    
-    * **arith** (*WOQLQuery** or **dict*) – query or JSON-LD representing the query
+**Parameter/s**
 
 
-    * **res** (*str*) – output variable
+* **arith** (*WOQLQuery** or **dict*) – query or JSON-LD representing the query
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **res** (``str``) – output variable
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### plus(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### plus(\*args)
 Adds numbers N1…Nn together
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** (*int** or **float*) – numbers to add together
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** (`int`* or **float*) – numbers to add together
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### minus(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### minus(\*args)
 Adds numbers N1…Nn together
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** (*int** or **float*) – numbers to add together
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** (`int`* or **float*) – numbers to add together
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### times(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### times(\*args)
 Multiplies numbers N1…Nn together
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** (*int** or **float*) – numbers to be multiplied
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** (`int`* or **float*) – numbers to be multiplied
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### divide(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### divide(\*args)
 Divides numbers N1…Nn by each other left, to right precedence
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** (*int** or **float*) – numbers to be divided
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** (`int`* or **float*) – numbers to be divided
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### div(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### div(\*args)
 Division - integer division - args are divided left to right
 
 
-* **Parameters**
+**Parameter/s**
 
-    **args** (*int** or **float*) – numbers for division
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**args** (`int`* or **float*) – numbers for division
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery
+query object that can be chained and/or execute
 
 
 
-#### exp(first, second)
+**Return type/s**
+
+WOQLQuery
+
+
+
+### exp(first, second)
 Raises A to the power of B
 
 
-* **Parameters**
-
-    
-    * **first** (*int** or **float*) – base number
+**Parameter/s**
 
 
-    * **second** (*int** or **float*) – power of
+* **first** (`int`* or **float*) – base number
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **second** (`int`* or **float*) – power of
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### floor(user_input)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### floor(user_input)
 The floor function of a real number x denotes the greatest integer less than or equal to x.
 
 
-* **Parameters**
+**Parameter/s**
 
-    **user_input** (*int** or **float*) – number whose floor needs to be calculated
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**user_input** (`int`* or **float*) – number whose floor needs to be calculated
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### isa(element, of_type)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### isa(element, of_type)
 Matches if element is a member of a certain type, according to the current state of the DB
 
 
-* **Parameters**
-
-    
-    * **element** (*str*) – element to be checked
+**Parameter/s**
 
 
-    * **of_type** (*str*) – type to be checked
+* **element** (``str``) – element to be checked
 
 
-
-* **Return type**
-
-    bool
+* **of_type** (``str``) – type to be checked
 
 
 
-#### like(left, right, dist)
+**Return type/s**
 
-#### less(left, right)
+bool
+
+
+
+### like(left, right, dist)
+
+### less(left, right)
 Compares the value of v1 against v2 and returns true if v1 is less than v2
 
 
-* **Parameters**
-
-    
-    * **left** (*str*) – first variable to compare
+**Parameter/s**
 
 
-    * **right** (*str*) – second variable to compare
+* **left** (``str``) – first variable to compare
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **right** (``str``) – second variable to compare
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### greater(left, right)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### greater(left, right)
 Compares the value of v1 against v2 and returns true if v1 is greater than v2
 
 
-* **Parameters**
-
-    
-    * **left** (*str*) – first variable to compare
+**Parameter/s**
 
 
-    * **right** (*str*) – second variable to compare
+* **left** (``str``) – first variable to compare
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **right** (``str``) – second variable to compare
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### opt(query=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### opt(query=None)
 The Query in the Optional argument is specified as optional
 
 
-* **Parameters**
+**Parameter/s**
 
-    **query** (*WOQLQuery object*) – 
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
+**query** (*WOQLQuery object*) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Examples
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 ```python
->>> WOQLQuery().woql_and(WOQLQuery().
+WOQLQuery().woql_and(WOQLQuery().
 ... triple('v:MandatorySubject','v:MandatoryObject', 'v:MandatoryValue'),
 ... WOQLQuery.opt(WOQLQuery().triple('v:OptionalS', 'v:OptionalObject',
 ... 'v:OptionalValue'))
@@ -1134,835 +1134,836 @@ The Query in the Optional argument is specified as optional
 ```
 
 
-#### unique(prefix, key_list, uri)
+### unique(prefix, key_list, uri)
 Generates an ID for a node as a function of the passed VariableList with a specific prefix (URL base)(A.K.A Hashing) If the values of the passed variables are the same, the output will be the same
 
 
-* **Parameters**
-
-    
-    * **prefix** (*str*) – prefix for the id
+**Parameter/s**
 
 
-    * **key_list** (*str*) – variable to generate id for
+* **prefix** (``str``) – prefix for the id
 
 
-    * **uri** (*str*) – the variable to hold the id
+* **key_list** (``str``) – variable to generate id for
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **uri** (``str``) – the variable to hold the id
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Examples
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 ```python
->>> WOQLQuery().unique("https://base.url",["page","1"],"v:obj_id").execute(client)
+WOQLQuery().unique("https://base.url",["page","1"],"v:obj_id").execute(client)
 {'@type': 'api:WoqlResponse', 'api:status': 'api:success', 'api:variable_names': ['obj_id'], 'bindings': [{'obj_id': 'https://base.urlacd150a6885f609532931d89844070b1'}], 'deletes': 0, 'inserts': 0, 'transaction_retry_count': 0}
 ```
 
 
-#### idgen(prefix, input_var_list, output_var)
+### idgen(prefix, input_var_list, output_var)
 Generates an ID for a node as a function of the passed VariableList with a specific prefix (URL base). If the values of the passed variables are the same, the output will be the same
 
 
-* **Parameters**
-
-    
-    * **prefix** (*str*) – prefix for the id
+**Parameter/s**
 
 
-    * **input_var_list** (*str** or **list*) – variable to generate id for
+* **prefix** (``str``) – prefix for the id
 
 
-    * **output_var** (*str*) – the variable to hold the id
+* **input_var_list** (``str``* or **list*) – variable to generate id for
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **output_var** (``str``) – the variable to hold the id
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Examples
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 ```python
->>> WOQLQuery().idgen("https://base.url",["page","1"],"v:obj_id").execute(client)
+WOQLQuery().idgen("https://base.url",["page","1"],"v:obj_id").execute(client)
 {'@type': 'api:WoqlResponse', 'api:status': 'api:success', 'api:variable_names': ['obj_id'], 'bindings': [{'obj_id': 'https://base.url_page_1'}], 'deletes': 0, 'inserts': 0, 'transaction_retry_count': 0}
 ```
 
 
-#### random_idgen(prefix, key_list, uri)
+### random_idgen(prefix, key_list, uri)
 Randomly generates an ID and appends to the end of the key_list.
 
 
-* **Parameters**
-
-    
-    * **prefix** (*str*) – prefix for the id
+**Parameter/s**
 
 
-    * **key_list** (*str*) – variable to generate id for
+* **prefix** (``str``) – prefix for the id
 
 
-    * **uri** (*str*) – the variable to hold the id
+* **key_list** (``str``) – variable to generate id for
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **uri** (``str``) – the variable to hold the id
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Examples
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 ```python
->>> WOQLQuery().random_idgen("https://base.url",["page","1"],"v:obj_id").execute(client)
+WOQLQuery().random_idgen("https://base.url",["page","1"],"v:obj_id").execute(client)
 {'@type': 'api:WoqlResponse', 'api:status': 'api:success', 'api:variable_names': ['obj_id'], 'bindings': [{'obj_id': 'http://base.url_page_1_rv1mfa59ekisdutnxx6zdt2fkockgah'}], 'deletes': 0, 'inserts': 0, 'transaction_retry_count': 0}
 ```
 
 
-#### upper(left, right)
+### upper(left, right)
 
-#### lower(left, right)
+### lower(left, right)
 Changes a string to lower-case - input is in u, output in l
 
 
-* **Parameters**
-
-    
-    * **left** (*str*) – input string
+**Parameter/s**
 
 
-    * **right** (*str*) – stores output
+* **left** (``str``) – input string
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **right** (``str``) – stores output
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### pad(user_input, pad, length, output)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### pad(user_input, pad, length, output)
 Pads out the string input to be exactly len long by appending the pad character pad to form output
 
 
-* **Parameters**
-
-    
-    * **user_input** (*str*) – input string
+**Parameter/s**
 
 
-    * **pad** (*str*) – padding character(s)
+* **user_input** (``str``) – input string
 
 
-    * **length** (*int*) – length to pad
+* **pad** (``str``) – padding character(s)
 
 
-    * **output** (*str*) – stores output
+* **length** (`int`) – length to pad
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **output** (``str``) – stores output
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### split(user_input, glue, output)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### split(user_input, glue, output)
 Splits a variable apart (input) into a list of variables (output) by separating the strings together with separator
 
 
-* **Parameters**
-
-    
-    * **user_input** (*str*) – input string or WOQL variable “v:”
+**Parameter/s**
 
 
-    * **glue** (*str*) – character string to separate string into list
+* **user_input** (``str``) – input string or WOQL variable “v:”
 
 
-    * **output** (*str*) – WOQL variable that stores output list
+* **glue** (``str``) – character string to separate string into list
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **output** (``str``) – WOQL variable that stores output list
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### dot(document, field, value)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### dot(document, field, value)
 Iterates through a list and returns a value for each member
 
 
-* **Parameters**
-
-    
-    * **dictionary** – a WOQL dictionary or variable representing a dictionary
+**Parameter/s**
 
 
-    * **field** (*str*) – a string representing the field or key to access the dictionary
+* **dictionary** – a WOQL dictionary or variable representing a dictionary
 
 
-    * **value** – a WOQL value representing the result
+* **field** (``str``) – a string representing the field or key to access the dictionary
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **value** – a WOQL value representing the result
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### member(member, mem_list)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### member(member, mem_list)
 Iterates through a list and returns a value for each member
 
 
-* **Parameters**
-
-    
-    * **member** (*str*) – a WOQL variable representing an element of the list
+**Parameter/s**
 
 
-    * **mem_list** (*str*) – a WOQL list variable
+* **member** (``str``) – a WOQL variable representing an element of the list
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **mem_list** (``str``) – a WOQL list variable
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### concat(concat_list, result)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### concat(concat_list, result)
 Concatenates the list of variables into a string and saves the result in v
 
 
-* **Parameters**
-
-    
-    * **concat_list** (*list*) – list of variables to concatenate
+**Parameter/s**
 
 
-    * **result** (*str*) – saves the results
+* **concat_list** (*list*) – list of variables to concatenate
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **result** (``str``) – saves the results
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### join(user_input, glue, output)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### join(user_input, glue, output)
 Joins a list variable together (input) into a string variable (output) by glueing the strings together with glue
 
 
-* **Parameters**
-
-    
-    * **user_input** (*list*) – a list of variables
+**Parameter/s**
 
 
-    * **glue** (*str*) – jioining character(s)
+* **user_input** (*list*) – a list of variables
 
 
-    * **output** (*str*) – variable that sotres output
+* **glue** (``str``) – jioining character(s)
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **output** (``str``) – variable that sotres output
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### sum(user_input, output)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### sum(user_input, output)
 Joins a list variable containing numbers together (input) into a single number
 containing the sum.
 
 
-* **Parameters**
-
-    
-    * **user_input** (*list*) – a variable containing a list of numbers
+**Parameter/s**
 
 
-    * **output** (*str*) – a variable that stores the output
+* **user_input** (*list*) – a variable containing a list of numbers
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **output** (``str``) – a variable that stores the output
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### start(start, query=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### start(start, query=None)
 Specifies that the start of the query returned
 
 
-* **Parameters**
-
-    
-    * **start** (*int*) – index of the frist result got returned
+**Parameter/s**
 
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+* **start** (`int`) – index of the frist result got returned
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **query** (*WOQLQuery object*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### limit(limit, query=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### limit(limit, query=None)
 Specifies that only the first Number of rows will be returned
 
 
-* **Parameters**
-
-    
-    * **limit** (*int*) – number of maximum results returned
+**Parameter/s**
 
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+* **limit** (`int`) – number of maximum results returned
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **query** (*WOQLQuery object*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### re(pattern, reg_str, reg_list)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### re(pattern, reg_str, reg_list)
 Regular Expression Call
 p is a regex pattern (.\*) using normal regular expression syntax, the only unusual thing is that special characters have to be escaped twice, s is the string to be matched and m is a list of matches:
 e.g. WOQL.re(“(.).\*”, “hello”, [“v:All”, “v:Sub”])
 
 
-* **Parameters**
-
-    
-    * **pattern** (*str*) – regex pattern
+**Parameter/s**
 
 
-    * **reg_str** (*str*) – string to be matched
+* **pattern** (``str``) – regex pattern
 
 
-    * **reg_list** (*str** or **list** or **dict*) – store list of matches
+* **reg_str** (``str``) – string to be matched
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **reg_list** (``str``* or **list** or **dict*) – store list of matches
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### length(var_list, var_len)
+**Return type/s**
 
-#### woql_not(query=None)
+WOQLQuery object
+
+
+
+### length(var_list, var_len)
+
+### woql_not(query=None)
 Creates a logical NOT of the arguments
 
 
-* **Parameters**
+**Parameter/s**
 
-    **query** (*WOQLQuery object**, **optional*) – 
-
-
-
-* **Returns**
-
-    query object that can be chained and/or executed
+**query** (*WOQLQuery object*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or executed
 
 
 
-#### immediately(query=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### immediately(query=None)
 Immediately runs side-effects without backtracking
 
 
-* **Parameters**
+**Parameter/s**
 
-    **query** (*WOQLQuery object**, **optional*) – 
-
-
-
-* **Returns**
-
-    query object that can be chained and/or executed
+**query** (*WOQLQuery object*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or executed
 
 
 
-#### count(countvar, query=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### count(countvar, query=None)
 Counds the number of solutions in the given query
 
 
-* **Parameters**
-
-    
-    * **result** (*A variable** or **non-negative integer with the count*) – 
+**Parameter/s**
 
 
-    * **query** (*The query from which to count the number of results*) – 
+* **result** (*A variable** or **non-negative integer with the count*) – 
 
 
-
-* **Returns**
-
-    query object that can be chained and/or executed
+* **query** (*The query from which to count the number of results*) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or executed
 
 
 
-#### cast(val, user_type, result, literal_type=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### cast(val, user_type, result, literal_type=None)
 Changes the type of va to type and saves the return in vb
 
 
-* **Parameters**
-
-    
-    * **val** (*str*) – original variable
+**Parameter/s**
 
 
-    * **user_type** (*str*) – type to be changed
+* **val** (``str``) – original variable
 
 
-    * **result** (*str*) – save the return variable
+* **user_type** (``str``) – type to be changed
 
 
-    * **literal_type** (*str**, **optional*) – literal type of\`val\`, can be used to treat val as a literal rather than an object or variable in the WOQL query.
-    If literal type is “owl:Thing” or “node”, val will be treated as object in the graph
+* **result** (``str``) – save the return variable
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **literal_type** (``str``, `optional`) – literal type of\`val\`, can be used to treat val as a literal rather than an object or variable in the WOQL query.
+If literal type is “owl:Thing” or “node”, val will be treated as object in the graph
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### type_of(value, vtype)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### type_of(value, vtype)
 Sets the given value and type for cursor.
 
 
-* **Parameters**
-
-    
-    * **value** (*str*) – Value which needs to be set
+**Parameter/s**
 
 
-    * **vtype** (*type*) – Type which needs to be set
+* **value** (``str``) – Value which needs to be set
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **vtype** (*type*) – Type which needs to be set
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### order_by(\*args, order='asc')
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### order_by(\*args, order='asc')
 Orders the results by the list of variables including in gvarlist, asc_or_desc is a WOQL.asc or WOQ.desc list of variables
 
 
-* **Parameters**
-
-    
-    * **gvarlist** (*list** or **dict of WOQLQuery**(**)**.asc** or **WOQLQuery**(**)**.desc objects*) – 
+**Parameter/s**
 
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+* **gvarlist** (*list** or **dict of WOQLQuery**(**)**.asc** or **WOQLQuery**(**)**.desc objects*) – 
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **query** (*WOQLQuery object*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
-### Examples
+
+**Return type/s**
+
+WOQLQuery object
+
+
+**Example/s**
 
 Examples of 3 different usage patterns of order argument
 
-    ```python
-    >>> test1 = WOQLQuery().select("v:Time").using("_commits").woql_and(
-    ...        WOQLQuery().order_by("v:Time", order="asc").triple("v:A", "ref:commit_timestamp", "v:Time")
-    ... )
-    >>> test2 = WOQLQuery().select("v:Time", "v:Message").using("_commits").woql_and(
-    ...     WOQLQuery().order_by("v:Time", "v:Message", order={"v:Time": "desc", "v:Message": "asc"}).woql_and(
-    ...         WOQLQuery().triple("v:A", "ref:commit_timestamp", "v:Time"),
-    ...         WOQLQuery().triple("v:A", "ref:commit_message", "v:Message")
-    ...     )
-    ... )
-    >>> test3 = WOQLQuery().select("v:Time", "v:Message").using("_commits").woql_and(
-    ...     WOQLQuery().order_by("v:Time", "v:Message", order=["desc", "asc"]).woql_and(
-    ...         WOQLQuery().triple("v:A", "ref:commit_timestamp", "v:Time"),
-    ...         WOQLQuery().triple("v:A", "ref:commit_message", "v:Message")
-    ...     )
-    ... )
-    ```
+```python
+test1 = WOQLQuery().select("v:Time").using("_commits").woql_and(
+...        WOQLQuery().order_by("v:Time", order="asc").triple("v:A", "ref:commit_timestamp", "v:Time")
+... )
+test2 = WOQLQuery().select("v:Time", "v:Message").using("_commits").woql_and(
+...     WOQLQuery().order_by("v:Time", "v:Message", order={"v:Time": "desc", "v:Message": "asc"}).woql_and(
+...         WOQLQuery().triple("v:A", "ref:commit_timestamp", "v:Time"),
+...         WOQLQuery().triple("v:A", "ref:commit_message", "v:Message")
+...     )
+... )
+test3 = WOQLQuery().select("v:Time", "v:Message").using("_commits").woql_and(
+...     WOQLQuery().order_by("v:Time", "v:Message", order=["desc", "asc"]).woql_and(
+...         WOQLQuery().triple("v:A", "ref:commit_timestamp", "v:Time"),
+...         WOQLQuery().triple("v:A", "ref:commit_message", "v:Message")
+...     )
+... )
+```
 
 
-#### group_by(group_vars, template, output, groupquery=None)
+### group_by(group_vars, template, output, groupquery=None)
 Groups the results of groupquery together by the list of variables group_vars, using the variable template as a grouping and saves the result into variable output.
 
 
-* **Parameters**
-
-    
-    * **group_vars** (*list** or **str** or **Var object*) – list of variables to group
+**Parameter/s**
 
 
-    * **template** (*dict** or **list** or **str*) – template of data to group with free variable(s)
+* **group_vars** (*list** or *``str``* or **Var object*) – list of variables to group
 
 
-    * **output** (*str**, **optional*) – output variable
+* **template** (*dict** or **list** or *``str``) – template of data to group with free variable(s)
 
 
-    * **groupquery** (*dict**, **optional*) – 
+* **output** (``str``, `optional`) – output variable
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **groupquery** (*dict*, `optional`) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### true()
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### true()
 Sets true for cursor type.
 
 
-* **Returns**
+**Returns**
 
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### path(subject, pattern, obj, path=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### path(subject, pattern, obj, path=None)
 Create a path object constructed by the rules specified with pattern.
 
 
-* **Parameters**
-
-    
-    * **subject** (*str*) – a woql subject, the node that the path started
+**Parameter/s**
 
 
-    * **pattern** (*str*) – a pattern which specified the edges the path is consisted of.
-    It uses pattern construction syntax such as:
-    \* ‘(scm:edge1, scm:edge2)+’ for repeated pattern,
-    \* ‘scm:edge1|scm:edge2’ for ‘or’ pattern,
-    \* ‘<scm:edge’ for reverse pattern, and
-    \* ‘(scm:edge1)[n,m] for pattern between n and m times’
+* **subject** (``str``) – a woql subject, the node that the path started
 
 
-    * **obj** (*str*) – a woql object, the node that the path ended
+* **pattern** (``str``) – a pattern which specified the edges the path is consisted of.
+It uses pattern construction syntax such as:
+\* ‘(scm:edge1, scm:edge2)+’ for repeated pattern,
+\* ‘scm:edge1|scm:edge2’ for ‘or’ pattern,
+\* ‘<scm:edge’ for reverse pattern, and
+\* ‘(scm:edge1)[n,m] for pattern between n and m times’
 
 
-    * **path** (*str*) – output variable
+* **obj** (``str``) – a woql object, the node that the path ended
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **path** (``str``) – output variable
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### size(graph, size)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### size(graph, size)
 Sets the given graph and size for cursor.
 
 
-* **Parameters**
-
-    
-    * **graph** (*Graph which needs to be set as resource*) – 
+**Parameter/s**
 
 
-    * **size** (*Size which needs to be set*) – 
+* **graph** (*Graph which needs to be set as resource*) – 
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **size** (*Size which needs to be set*) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### triple_count(graph, triple_count)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### triple_count(graph, triple_count)
 Sets the given triple count and size for cursor.
 
 
-* **Parameters**
-
-    
-    * **graph** (*Graph which needs to be set as resource*) – 
+**Parameter/s**
 
 
-    * **triple_count** (*Triple count which needs to be set*) – 
+* **graph** (*Graph which needs to be set as resource*) – 
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **triple_count** (*Triple count which needs to be set*) – 
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### star(graph=None, subj=None, pred=None, obj=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### star(graph=None, subj=None, pred=None, obj=None)
 Selects everything as triples in the graph identified by GraphIRI into variables Subj, Pred, Obj - by default they are “v:Subject”, “v:Predicate”, “v:Object”
 
 
-* **Parameters**
-
-    
-    * **GraphIRI** (*str*) – graphIRI
+**Parameter/s**
 
 
-    * **Subj** (*str**, **optional*) – target subject
+* **GraphIRI** (``str``) – graphIRI
 
 
-    * **Pred** (*str**, **optional*) – target predicate
+* **Subj** (``str``, `optional`) – target subject
 
 
-    * **Obj** (*str**, **optional*) – target object
+* **Pred** (``str``, `optional`) – target predicate
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **Obj** (``str``, `optional`) – target object
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### all(subj=None, pred=None, obj=None, graph=None)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### all(subj=None, pred=None, obj=None, graph=None)
 Calls the star method and returns the result of the same.
 
 
-* **Parameters**
-
-    
-    * **subj** (*str**, **optional*) – target subject
+**Parameter/s**
 
 
-    * **pred** (*str**, **optional*) – target predicate
+* **subj** (``str``, `optional`) – target subject
 
 
-    * **obj** (*str**, **optional*) – target object
+* **pred** (``str``, `optional`) – target predicate
 
 
-    * **graph** (*str*) – graphIRI
+* **obj** (``str``, `optional`) – target object
 
 
-
-* **Returns**
-
-    query object that can be chained and/or execute
+* **graph** (``str``) – graphIRI
 
 
 
-* **Return type**
+**Returns**
 
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### graph(g)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### graph(g)
 Used to specify that the rest of the query should use the graph g in calls to add_quad, quad, etc
 :param g: target graph
-:type g: str
+:type g: `str`
 
 
-* **Returns**
+**Returns**
 
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
+query object that can be chained and/or execute
 
 
 
-#### vars(\*args)
+**Return type/s**
+
+WOQLQuery object
+
+
+
+### vars(\*args)
 Generate variables to be used in WOQLQueries
 :param args: string arguments
 
 
-* **Returns**
+**Returns**
 
-    args prefixed with “v:”
+args prefixed with “v:”
 
 
 
-* **Return type**
+**Return type/s**
 
-    tuple/string
+tuple/string
 
 
 ## Module contents
+

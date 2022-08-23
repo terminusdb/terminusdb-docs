@@ -6,238 +6,238 @@
 * [terminusdb_client.client package](terminusdb_client.client.md)
 
 
-    * [Submodules](terminusdb_client.client.md#submodules)
+* [Submodules](terminusdb_client.client.md#submodules)
 
 
-    * [terminusdb_client.client.Client module](terminusdb_client.client.md#module-terminusdb_client.client.Client)
+* [terminusdb_client.client.Client module](terminusdb_client.client.md#module-terminusdb_client.client.Client)
 
 
-    * [Module contents](terminusdb_client.client.md#module-terminusdb_client.client)
+* [Module contents](terminusdb_client.client.md#module-terminusdb_client.client)
 
 
 * [terminusdb_client.schema package](terminusdb_client.schema.md)
 
 
-    * [Submodules](terminusdb_client.schema.md#submodules)
+* [Submodules](terminusdb_client.schema.md#submodules)
 
 
-    * [terminusdb_client.schema.schema module](terminusdb_client.schema.md#module-terminusdb_client.schema.schema)
+* [terminusdb_client.schema.schema module](terminusdb_client.schema.md#module-terminusdb_client.schema.schema)
 
 
-    * [Module contents](terminusdb_client.schema.md#module-terminusdb_client.schema)
+* [Module contents](terminusdb_client.schema.md#module-terminusdb_client.schema)
 
 
 * [terminusdb_client.scripts package](terminusdb_client.scripts.md)
 
 
-    * [Submodules](terminusdb_client.scripts.md#submodules)
+* [Submodules](terminusdb_client.scripts.md#submodules)
 
 
-    * [terminusdb_client.scripts.schema_template module](terminusdb_client.scripts.md#module-terminusdb_client.scripts.schema_template)
+* [terminusdb_client.scripts.schema_template module](terminusdb_client.scripts.md#module-terminusdb_client.scripts.schema_template)
 
 
-    * [terminusdb_client.scripts.scripts module](terminusdb_client.scripts.md#module-terminusdb_client.scripts.scripts)
+* [terminusdb_client.scripts.scripts module](terminusdb_client.scripts.md#module-terminusdb_client.scripts.scripts)
 
 
-    * [Module contents](terminusdb_client.scripts.md#module-terminusdb_client.scripts)
+* [Module contents](terminusdb_client.scripts.md#module-terminusdb_client.scripts)
 
 
 * [terminusdb_client.tests package](terminusdb_client.tests.md)
 
 
-    * [Subpackages](terminusdb_client.tests.md#subpackages)
+* [Subpackages](terminusdb_client.tests.md#subpackages)
 
 
-        * [terminusdb_client.tests.integration_tests package](terminusdb_client.tests.integration_tests.md)
+* [terminusdb_client.tests.integration_tests package](terminusdb_client.tests.integration_tests.md)
 
 
-            * [Submodules](terminusdb_client.tests.integration_tests.md#submodules)
+* [Submodules](terminusdb_client.tests.integration_tests.md#submodules)
 
 
-            * [terminusdb_client.tests.integration_tests.conftest module](terminusdb_client.tests.integration_tests.md#terminusdb-client-tests-integration-tests-conftest-module)
+* [terminusdb_client.tests.integration_tests.conftest module](terminusdb_client.tests.integration_tests.md#terminusdb-client-tests-integration-tests-conftest-module)
 
 
-            * [terminusdb_client.tests.integration_tests.mock_jsons module](terminusdb_client.tests.integration_tests.md#module-terminusdb_client.tests.integration_tests.mock_jsons)
+* [terminusdb_client.tests.integration_tests.mock_jsons module](terminusdb_client.tests.integration_tests.md#module-terminusdb_client.tests.integration_tests.mock_jsons)
 
 
-            * [terminusdb_client.tests.integration_tests.test_client module](terminusdb_client.tests.integration_tests.md#terminusdb-client-tests-integration-tests-test-client-module)
+* [terminusdb_client.tests.integration_tests.test_client module](terminusdb_client.tests.integration_tests.md#terminusdb-client-tests-integration-tests-test-client-module)
 
 
-            * [terminusdb_client.tests.integration_tests.test_schema module](terminusdb_client.tests.integration_tests.md#terminusdb-client-tests-integration-tests-test-schema-module)
+* [terminusdb_client.tests.integration_tests.test_schema module](terminusdb_client.tests.integration_tests.md#terminusdb-client-tests-integration-tests-test-schema-module)
 
 
-            * [terminusdb_client.tests.integration_tests.test_scripts module](terminusdb_client.tests.integration_tests.md#terminusdb-client-tests-integration-tests-test-scripts-module)
+* [terminusdb_client.tests.integration_tests.test_scripts module](terminusdb_client.tests.integration_tests.md#terminusdb-client-tests-integration-tests-test-scripts-module)
 
 
-            * [Module contents](terminusdb_client.tests.integration_tests.md#module-terminusdb_client.tests.integration_tests)
+* [Module contents](terminusdb_client.tests.integration_tests.md#module-terminusdb_client.tests.integration_tests)
 
 
-        * [terminusdb_client.tests.woqljson package](terminusdb_client.tests.woqljson.md)
+* [terminusdb_client.tests.woqljson package](terminusdb_client.tests.woqljson.md)
 
 
-            * [Submodules](terminusdb_client.tests.woqljson.md#submodules)
+* [Submodules](terminusdb_client.tests.woqljson.md#submodules)
 
 
-            * [terminusdb_client.tests.woqljson.woqlAndJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlAndJson)
+* [terminusdb_client.tests.woqljson.woqlAndJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlAndJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlCastJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlCastJson)
+* [terminusdb_client.tests.woqljson.woqlCastJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlCastJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlConcatJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlConcatJson)
+* [terminusdb_client.tests.woqljson.woqlConcatJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlConcatJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlDeleteJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlDeleteJson)
+* [terminusdb_client.tests.woqljson.woqlDeleteJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlDeleteJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlDoctypeJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlDoctypeJson)
+* [terminusdb_client.tests.woqljson.woqlDoctypeJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlDoctypeJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlExtraJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlExtraJson)
+* [terminusdb_client.tests.woqljson.woqlExtraJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlExtraJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlIdgenJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlIdgenJson)
+* [terminusdb_client.tests.woqljson.woqlIdgenJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlIdgenJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlJoinSplitJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlJoinSplitJson)
+* [terminusdb_client.tests.woqljson.woqlJoinSplitJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlJoinSplitJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlJson)
+* [terminusdb_client.tests.woqljson.woqlJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlLimitStar module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlLimitStar)
+* [terminusdb_client.tests.woqljson.woqlLimitStar module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlLimitStar)
 
 
-            * [terminusdb_client.tests.woqljson.woqlMathJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlMathJson)
+* [terminusdb_client.tests.woqljson.woqlMathJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlMathJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlOptJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlOptJson)
+* [terminusdb_client.tests.woqljson.woqlOptJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlOptJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlOrJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlOrJson)
+* [terminusdb_client.tests.woqljson.woqlOrJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlOrJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlReJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlReJson)
+* [terminusdb_client.tests.woqljson.woqlReJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlReJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlSelectJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlSelectJson)
+* [terminusdb_client.tests.woqljson.woqlSelectJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlSelectJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlStarJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlStarJson)
+* [terminusdb_client.tests.woqljson.woqlStarJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlStarJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlTrimJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlTrimJson)
+* [terminusdb_client.tests.woqljson.woqlTrimJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlTrimJson)
 
 
-            * [terminusdb_client.tests.woqljson.woqlWhenJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlWhenJson)
+* [terminusdb_client.tests.woqljson.woqlWhenJson module](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson.woqlWhenJson)
 
 
-            * [Module contents](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson)
+* [Module contents](terminusdb_client.tests.woqljson.md#module-terminusdb_client.tests.woqljson)
 
 
-    * [Submodules](terminusdb_client.tests.md#submodules)
+* [Submodules](terminusdb_client.tests.md#submodules)
 
 
-    * [terminusdb_client.tests.AllServerRecords module](terminusdb_client.tests.md#module-terminusdb_client.tests.AllServerRecords)
+* [terminusdb_client.tests.AllServerRecords module](terminusdb_client.tests.md#module-terminusdb_client.tests.AllServerRecords)
 
 
-    * [terminusdb_client.tests.DBRecord module](terminusdb_client.tests.md#module-terminusdb_client.tests.DBRecord)
+* [terminusdb_client.tests.DBRecord module](terminusdb_client.tests.md#module-terminusdb_client.tests.DBRecord)
 
 
-    * [terminusdb_client.tests.ans_cardinality module](terminusdb_client.tests.md#terminusdb-client-tests-ans-cardinality-module)
+* [terminusdb_client.tests.ans_cardinality module](terminusdb_client.tests.md#terminusdb-client-tests-ans-cardinality-module)
 
 
-    * [terminusdb_client.tests.ans_doctype module](terminusdb_client.tests.md#terminusdb-client-tests-ans-doctype-module)
+* [terminusdb_client.tests.ans_doctype module](terminusdb_client.tests.md#terminusdb-client-tests-ans-doctype-module)
 
 
-    * [terminusdb_client.tests.ans_insert module](terminusdb_client.tests.md#terminusdb-client-tests-ans-insert-module)
+* [terminusdb_client.tests.ans_insert module](terminusdb_client.tests.md#terminusdb-client-tests-ans-insert-module)
 
 
-    * [terminusdb_client.tests.ans_property module](terminusdb_client.tests.md#module-terminusdb_client.tests.ans_property)
+* [terminusdb_client.tests.ans_property module](terminusdb_client.tests.md#module-terminusdb_client.tests.ans_property)
 
 
-    * [terminusdb_client.tests.ans_triple_quad module](terminusdb_client.tests.md#terminusdb-client-tests-ans-triple-quad-module)
+* [terminusdb_client.tests.ans_triple_quad module](terminusdb_client.tests.md#terminusdb-client-tests-ans-triple-quad-module)
 
 
-    * [terminusdb_client.tests.conftest module](terminusdb_client.tests.md#terminusdb-client-tests-conftest-module)
+* [terminusdb_client.tests.conftest module](terminusdb_client.tests.md#terminusdb-client-tests-conftest-module)
 
 
-    * [terminusdb_client.tests.connectCapabilitiesResponse module](terminusdb_client.tests.md#module-terminusdb_client.tests.connectCapabilitiesResponse)
+* [terminusdb_client.tests.connectCapabilitiesResponse module](terminusdb_client.tests.md#module-terminusdb_client.tests.connectCapabilitiesResponse)
 
 
-    * [terminusdb_client.tests.connectionObjDump module](terminusdb_client.tests.md#module-terminusdb_client.tests.connectionObjDump)
+* [terminusdb_client.tests.connectionObjDump module](terminusdb_client.tests.md#module-terminusdb_client.tests.connectionObjDump)
 
 
-    * [terminusdb_client.tests.getSchemaTurtleResponse module](terminusdb_client.tests.md#module-terminusdb_client.tests.getSchemaTurtleResponse)
+* [terminusdb_client.tests.getSchemaTurtleResponse module](terminusdb_client.tests.md#module-terminusdb_client.tests.getSchemaTurtleResponse)
 
 
-    * [terminusdb_client.tests.mockResponse module](terminusdb_client.tests.md#module-terminusdb_client.tests.mockResponse)
+* [terminusdb_client.tests.mockResponse module](terminusdb_client.tests.md#module-terminusdb_client.tests.mockResponse)
 
 
-    * [terminusdb_client.tests.serverRecordsFromCap module](terminusdb_client.tests.md#module-terminusdb_client.tests.serverRecordsFromCap)
+* [terminusdb_client.tests.serverRecordsFromCap module](terminusdb_client.tests.md#module-terminusdb_client.tests.serverRecordsFromCap)
 
 
-    * [terminusdb_client.tests.test_Client module](terminusdb_client.tests.md#terminusdb-client-tests-test-client-module)
+* [terminusdb_client.tests.test_Client module](terminusdb_client.tests.md#terminusdb-client-tests-test-client-module)
 
 
-    * [terminusdb_client.tests.test_Schema module](terminusdb_client.tests.md#terminusdb-client-tests-test-schema-module)
+* [terminusdb_client.tests.test_Schema module](terminusdb_client.tests.md#terminusdb-client-tests-test-schema-module)
 
 
-    * [terminusdb_client.tests.test_backwardsCompat module](terminusdb_client.tests.md#terminusdb-client-tests-test-backwardscompat-module)
+* [terminusdb_client.tests.test_backwardsCompat module](terminusdb_client.tests.md#terminusdb-client-tests-test-backwardscompat-module)
 
 
-    * [terminusdb_client.tests.test_scripts module](terminusdb_client.tests.md#module-terminusdb_client.tests.test_scripts)
+* [terminusdb_client.tests.test_scripts module](terminusdb_client.tests.md#module-terminusdb_client.tests.test_scripts)
 
 
-    * [terminusdb_client.tests.test_woqlCore module](terminusdb_client.tests.md#module-terminusdb_client.tests.test_woqlCore)
+* [terminusdb_client.tests.test_woqlCore module](terminusdb_client.tests.md#module-terminusdb_client.tests.test_woqlCore)
 
 
-    * [terminusdb_client.tests.test_woqlExtra module](terminusdb_client.tests.md#module-terminusdb_client.tests.test_woqlExtra)
+* [terminusdb_client.tests.test_woqlExtra module](terminusdb_client.tests.md#module-terminusdb_client.tests.test_woqlExtra)
 
 
-    * [terminusdb_client.tests.test_woqlQuery module](terminusdb_client.tests.md#terminusdb-client-tests-test-woqlquery-module)
+* [terminusdb_client.tests.test_woqlQuery module](terminusdb_client.tests.md#terminusdb-client-tests-test-woqlquery-module)
 
 
-    * [Module contents](terminusdb_client.tests.md#module-terminusdb_client.tests)
+* [Module contents](terminusdb_client.tests.md#module-terminusdb_client.tests)
 
 
 * [terminusdb_client.woqlclient package](terminusdb_client.woqlclient.md)
 
 
-    * [Module contents](terminusdb_client.woqlclient.md#module-terminusdb_client.woqlclient)
+* [Module contents](terminusdb_client.woqlclient.md#module-terminusdb_client.woqlclient)
 
 
 * [terminusdb_client.woqldataframe package](terminusdb_client.woqldataframe.md)
 
 
-    * [Submodules](terminusdb_client.woqldataframe.md#submodules)
+* [Submodules](terminusdb_client.woqldataframe.md#submodules)
 
 
-    * [terminusdb_client.woqldataframe.woqlDataframe module](terminusdb_client.woqldataframe.md#module-terminusdb_client.woqldataframe.woqlDataframe)
+* [terminusdb_client.woqldataframe.woqlDataframe module](terminusdb_client.woqldataframe.md#module-terminusdb_client.woqldataframe.woqlDataframe)
 
 
-    * [Module contents](terminusdb_client.woqldataframe.md#module-terminusdb_client.woqldataframe)
+* [Module contents](terminusdb_client.woqldataframe.md#module-terminusdb_client.woqldataframe)
 
 
 * [terminusdb_client.woqlquery package](terminusdb_client.woqlquery.md)
 
 
-    * [Submodules](terminusdb_client.woqlquery.md#submodules)
+* [Submodules](terminusdb_client.woqlquery.md#submodules)
 
 
-    * [terminusdb_client.woqlquery.woql_core module](terminusdb_client.woqlquery.md#module-terminusdb_client.woqlquery.woql_core)
+* [terminusdb_client.woqlquery.woql_core module](terminusdb_client.woqlquery.md#module-terminusdb_client.woqlquery.woql_core)
 
 
-    * [terminusdb_client.woqlquery.woql_query module](terminusdb_client.woqlquery.md#module-terminusdb_client.woqlquery.woql_query)
+* [terminusdb_client.woqlquery.woql_query module](terminusdb_client.woqlquery.md#module-terminusdb_client.woqlquery.woql_query)
 
 
-    * [Module contents](terminusdb_client.woqlquery.md#module-terminusdb_client.woqlquery)
+* [Module contents](terminusdb_client.woqlquery.md#module-terminusdb_client.woqlquery)
 
 
 * [terminusdb_client.woqlschema package](terminusdb_client.woqlschema.md)
 
 
-    * [Module contents](terminusdb_client.woqlschema.md#module-terminusdb_client.woqlschema)
+* [Module contents](terminusdb_client.woqlschema.md#module-terminusdb_client.woqlschema)
 
 
 ## Submodules
@@ -246,155 +246,155 @@
 
 
 ### _exception_ terminusdb_client.errors.Error()
-Bases: `Exception`
+**Bases:** `Exception`
 
 Exception that is base class for all other error exceptions.
 
 
-#### \__init__()
+### __init__()
 
 ### _exception_ terminusdb_client.errors.InterfaceError(message)
-Bases: `Error`
+**Bases:** `Error`
 
 Exception raised for errors that are related to the database interface rather than the database itself.
 
 
-#### message()
+### message()
 Error message.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### \__init__(message)
+### __init__(message)
 
 ### _exception_ terminusdb_client.errors.DatabaseError(response=None)
-Bases: `Error`
+**Bases:** `Error`
 
 Exception for errors related to the database.
 
 
-#### message()
+### message()
 Error message.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### error_obj()
+### error_obj()
 Whole error object in json format
 
 
-* **Type**
+**Type**
 
-    dict
+dict
 
 
 
-#### status_code()
+### status_code()
 status_code from the request.Response
 
 
-* **Type**
+**Type**
 
-    int
+int
 
 
 
-#### \__init__(response=None)
+### __init__(response=None)
 Exception for errors related to the database.
 
 
-* **Parameters**
+**Parameter/s**
 
-    **response** (*request.Response*) – response from the api call
+**response** (*request.Response*) – response from the api call
 
 
 
 ### _exception_ terminusdb_client.errors.OperationalError(response=None)
-Bases: `DatabaseError`
+**Bases:** `DatabaseError`
 
 Exception for operational errors related to the database.
 
 
 ### _exception_ terminusdb_client.errors.AccessDeniedError(response=None)
-Bases: `DatabaseError`
+**Bases:** `DatabaseError`
 
 
 ### _exception_ terminusdb_client.errors.APIError(message=None, url=None, err_obj=None, status_code=None)
-Bases: `DatabaseError`
+**Bases:** `DatabaseError`
 
 Exceptions to do with return messages from HTTP
 
 
-#### message()
+### message()
 Error message.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### error_obj()
+### error_obj()
 Whole error object in json format
 
 
-* **Type**
+**Type**
 
-    dict
+dict
 
 
 
-#### status_code()
+### status_code()
 status_code from the request.Response
 
 
-* **Type**
+**Type**
 
-    int
+int
 
 
 
-#### url()
+### url()
 url causeing the Error
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### \__init__(message=None, url=None, err_obj=None, status_code=None)
+### __init__(message=None, url=None, err_obj=None, status_code=None)
 Exceptions to do with return messages from HTTP
 
 
-* **Parameters**
-
-    
-    * **message** (*str*) – Error message.
+**Parameter/s**
 
 
-    * **error_obj** (*dict*) – Whole error object in json format
+* **message** (``str``) – Error message.
 
 
-    * **status_code** (*int*) – status_code from the request.Response
+* **error_obj** (*dict*) – Whole error object in json format
 
 
-    * **url** (*str*) – url causeing the Error
+* **status_code** (`int`) – status_code from the request.Response
+
+
+* **url** (``str``) – url causeing the Error
 
 
 
 ### _exception_ terminusdb_client.errors.InvalidURIError()
-Bases: `Error`
+**Bases:** `Error`
 
 ## terminusdb_client.woql_type module
 
@@ -405,16 +405,16 @@ Bases: `Error`
 Converting the TerminusDB datatypes into Python types, it will not detect self define types (i.e. object properties) so if converting object properties, skip_convert_error need to be True.
 
 
-* **Parameters**
-
-    
-    * **input_type** (*str** or **dict*) – TerminusDB datatypes to be converted.
+**Parameter/s**
 
 
-    * **skip_convert_error** (*bool*) – Will an error be raised if the datatype given cannot be convert to Python types. If set to True (and as_type set to False) and type cannot be converted, the type will be returned back without convertion.
+* **input_type** (``str``* or **dict*) – TerminusDB datatypes to be converted.
 
 
-    * **as_str** (*bool*) – Will convert the type and present it as string (e.g. used in constructing scripts). It will always skip convert error if set to True.
+* **skip_convert_error** (`bool`) – Will an error be raised if the datatype given cannot be convert to Python types. If set to True (and as_type set to False) and type cannot be converted, the type will be returned back without convertion.
+
+
+* **as_str** (`bool`) – Will convert the type and present it as string (e.g. used in constructing scripts). It will always skip convert error if set to True.
 
 
 
@@ -424,7 +424,7 @@ Do nothing and return the object as it if it is not one of the supported datetim
 
 
 ### terminusdb_client.woql_type.datetime_from_woql(dt_str, woql_type)
-Convert woql datetime objects (str format) to datetime object.
+Convert woql datetime objects (`str` format) to datetime object.
 Raise ValueError if cannot be converted.
 
 ## terminusdb_client.woql_utils module
@@ -434,15 +434,15 @@ Raise ValueError if cannot be converted.
 Encode a URI.
 
 
-* **Parameters**
+**Parameter/s**
 
-    **value** (*Value which needs to be encoded*) – 
+**value** (*Value which needs to be encoded*) – 
 
 
 
-* **Return type**
+**Return type/s**
 
-    Encoded Value
+Encoded Value
 
 
 
@@ -450,15 +450,15 @@ Encode a URI.
 Encode the given payload
 
 
-* **Parameters**
+**Parameter/s**
 
-    **payload** (*dict*) – 
+**payload** (*dict*) – 
 
 
 
-* **Return type**
+**Return type/s**
 
-    Encoded payload array
+Encoded payload array
 
 
 
@@ -466,19 +466,19 @@ Encode the given payload
 Add params / payload to given url
 
 
-* **Parameters**
-
-    
-    * **url** (*str*) – 
+**Parameter/s**
 
 
-    * **payload** (*dict*) – 
+* **url** (``str``) – 
+
+
+* **payload** (*dict*) – 
 
 
 
-* **Return type**
+**Return type/s**
 
-    Url with payload appended
+Url with payload appended
 
 
 
@@ -486,15 +486,15 @@ Add params / payload to given url
 Adds namespace to given variable
 
 
-* **Parameters**
+**Parameter/s**
 
-    **var** (*str*) – Variable
+**var** (``str``) – Variable
 
 
 
-* **Return type**
+**Return type/s**
 
-    Variable attached with namespace
+Variable attached with namespace
 
 
 
@@ -502,15 +502,15 @@ Adds namespace to given variable
 Adds namespace to given variables
 
 
-* **Parameters**
+**Parameter/s**
 
-    **variables** (*list** [**str**]*) – 
+**variables** (*list** [*``str``*]*) – 
 
 
 
-* **Return type**
+**Return type/s**
 
-    Variables attached with namespace
+Variables attached with namespace
 
 
 
@@ -526,19 +526,19 @@ Adds namespace to given variables
 Get shortened url
 
 
-* **Parameters**
-
-    
-    * **url** (*str*) – 
+**Parameter/s**
 
 
-    * **prefixes** (*dict*) – 
+* **url** (``str``) – 
+
+
+* **prefixes** (*dict*) – 
 
 
 
-* **Return type**
+**Return type/s**
 
-    Url with prefixes added and shortened
+Url with prefixes added and shortened
 
 
 
@@ -546,15 +546,15 @@ Get shortened url
 Checks if the given type is a datatype or not
 
 
-* **Parameters**
+**Parameter/s**
 
-    **stype** (*str*) – 
+**stype** (``str``) – 
 
 
 
-* **Return type**
+**Return type/s**
 
-    bool
+bool
 
 
 
@@ -562,15 +562,15 @@ Checks if the given type is a datatype or not
 Checks if the given url is valid
 
 
-* **Parameters**
+**Parameter/s**
 
-    **string** (*str*) – Url which needs to be validated
+**string** (``str``) – Url which needs to be validated
 
 
 
-* **Return type**
+**Return type/s**
 
-    bool
+bool
 
 
 
@@ -578,21 +578,21 @@ Checks if the given url is valid
 Gets the url fragment
 
 
-* **Parameters**
+**Parameter/s**
 
-    **url** (*str*) – 
-
-
-
-* **Returns**
-
-    url fragment
+**url** (``str``) – 
 
 
 
-* **Return type**
+**Returns**
 
-    str
+url fragment
+
+
+
+**Return type/s**
+
+`str`
 
 
 
@@ -600,21 +600,22 @@ Gets the url fragment
 Get the label from url
 
 
-* **Parameters**
+**Parameter/s**
 
-    **url** (*str*) – 
-
-
-
-* **Returns**
-
-    Label
+**url** (``str``) – 
 
 
 
-* **Return type**
+**Returns**
 
-    str
+Label
+
+
+
+**Return type/s**
+
+`str`
 
 
 ## Module contents
+

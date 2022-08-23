@@ -8,254 +8,262 @@ Client.py
 Client is the Python public API for TerminusDB
 
 
-### _class_ terminusdb_client.client.Client.JWTAuth(token)
-Bases: `AuthBase`
+## class terminusdb_client.client.Client.JWTAuth(token)
+**Bases:** `AuthBase`
 
 Class for JWT Authentication in requests
 
 
-#### \__init__(token)
+### __init__(token)
 
-### _class_ terminusdb_client.client.Client.APITokenAuth(token)
-Bases: `AuthBase`
+## class terminusdb_client.client.Client.APITokenAuth(token)
+**Bases:** `AuthBase`
 
 Class for API Token Authentication in requests
 
 
-#### \__init__(token)
+### __init__(token)
 
-### _class_ terminusdb_client.client.Client.ResourceType(value)
-Bases: `Enum`
+## class terminusdb_client.client.Client.ResourceType(value)
+**Bases:** `Enum`
 
 Enum for the different TerminusDB resources
 
 
-#### DB(_ = _ )
+### DB(_ = '
 
-#### META(_ = _ )
+### META(_ = '
 
-#### REPO(_ = _ )
+### REPO(_ = '
 
-#### COMMITS(_ = _ )
+### COMMITS(_ = '
 
-#### REF(_ = _ )
+### REF(_ = '
 
-#### BRANCH(_ = _ )
+### BRANCH(_ = '
 
-### _class_ terminusdb_client.client.Client.Patch(json=None)
-Bases: `object`
+## class terminusdb_client.client.Client.Patch(json=None)
+**Bases:** `object`
 
 
-#### \__init__(json=None)
+### __init__(json=None)
 
-#### _property_ update()
 
-#### _property_ before()
+> **Property:**  update()
 
-#### from_json(json_str)
 
-#### to_json()
+> **Property:**  before()
 
-#### copy()
+### from_json(json_str)
 
-### _class_ terminusdb_client.client.Client.Client(server_url, user_agent='terminusdb-client-python/10.1.4', \*\*kwargs)
-Bases: `object`
+### to_json()
+
+### copy()
+
+## class terminusdb_client.client.Client.Client(server_url, user_agent='terminusdb-client-python/10.1.4', \*\*kwargs)
+**Bases:** `object`
 
 Client for TerminusDB server.
 
 
-#### server_url()
+### server_url()
 URL of the server that this client connected.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### api()
+### api()
 API endpoint for this client.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### team()
+### team()
 Team that this client is using. “admin” for local dbs.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### db()
+### db()
 Database that this client is connected to.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### user()
+### user()
 TerminiusDB user that this client is using. “admin” for local dbs.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### branch()
+### branch()
 Branch of the database that this client is connected to. Default to “main”.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### ref()
+### ref()
 Ref setting for the client. Default to None.
 
 
-* **Type**
+**Type**
 
-    str, None
+`str`, None
 
 
 
-#### repo()
+### repo()
 Repo identifier of the database that this client is connected to. Default to “local”.
 
 
-* **Type**
+**Type**
 
-    str
+`str`
 
 
 
-#### from_json(json_str)
+### from_json(json_str)
 
-#### to_json()
+### to_json()
 
-#### \__init__(server_url, user_agent='terminusdb-client-python/10.1.4', \*\*kwargs)
+### __init__(server_url, user_agent='terminusdb-client-python/10.1.4', \*\*kwargs)
 The WOQLClient constructor.
 
 
-* **Parameters**
-
-    
-    * **server_url** (*str*) – URL of the server that this client will connect to.
+**Parameter/s**
 
 
-    * **user_agent** (*optional**, **str*) – User agent header when making requests. Defaults to terminusdb-client-python with the version appended.
+* **server_url** (``str``) – URL of the server that this client will connect to.
 
 
-    * **\*\*kwargs** – Extra configuration options
+* **user_agent** (`optional`, ``str``) – User agent header when making requests. Defaults to terminusdb-client-python with the version appended.
+
+
+* **\*\*kwargs** – Extra configuration options
 
 
 
-#### _property_ team()
 
-#### _property_ db()
+> **Property:**  team()
 
-#### _property_ user()
 
-#### _property_ branch()
+> **Property:**  db()
 
-#### _property_ repo()
 
-#### _property_ ref()
+> **Property:**  user()
 
-#### connect(team='admin', db=None, remote_auth=None, use_token=False, jwt_token=None, api_token=None, key='root', user='admin', branch='main', ref=None, repo='local', \*\*kwargs)
+
+> **Property:**  branch()
+
+
+> **Property:**  repo()
+
+
+> **Property:**  ref()
+
+### connect(team='admin', db=None, remote_auth=None, use_token=False, jwt_token=None, api_token=None, key='root', user='admin', branch='main', ref=None, repo='local', \*\*kwargs)
 Connect to a Terminus server at the given URI with an API key.
 
 Stores the connection settings and necessary meta-data for the connected server. You need to connect before most database operations.
 
 
-* **Parameters**
-
-    
-    * **team** (*str*) – Name of the team, default to be “admin”
+**Parameter/s**
 
 
-    * **db** (*optional**, **str*) – Name of the database connected
+* **team** (``str``) – Name of the team, default to be “admin”
 
 
-    * **remote_auth** (*optional**, **str*) – Remote Auth setting
+* **db** (`optional`, ``str``) – Name of the database connected
 
 
-    * **key** (*optional**, **str*) – API key for connecting, default to be “root”
+* **remote_auth** (`optional`, ``str``) – Remote Auth setting
 
 
-    * **user** (*optional**, **str*) – Name of the user, default to be “admin”
+* **key** (`optional`, ``str``) – API key for connecting, default to be “root”
 
 
-    * **use_token** (*bool*) – Use token to connect. If both jwt_token and api_token is not provided (None), then it will use the ENV variable TERMINUSDB_ACCESS_TOKEN to connect as the API token
+* **user** (`optional`, ``str``) – Name of the user, default to be “admin”
 
 
-    * **jwt_token** (*optional**, **str*) – The Bearer JWT token to connect. Default to be None.
+* **use_token** (`bool`) – Use token to connect. If both jwt_token and api_token is not provided (None), then it will use the ENV variable TERMINUSDB_ACCESS_TOKEN to connect as the API token
 
 
-    * **api_token** (*optional**, **strs*) – The API token to connect. Default to be None.
+* **jwt_token** (`optional`, ``str``) – The Bearer JWT token to connect. Default to be None.
 
 
-    * **branch** (*optional**, **str*) – Branch to be connected, default to be “main”
+* **api_token** (`optional`, `strs`) – The API token to connect. Default to be None.
 
 
-    * **ref** (*optional**, **str*) – Ref setting
+* **branch** (`optional`, ``str``) – Branch to be connected, default to be “main”
 
 
-    * **repo** (*optional**, **str*) – Local or remote repo, default to be “local”
+* **ref** (`optional`, ``str``) – Ref setting
 
 
-    * **\*\*kwargs** – Extra configuration options.
+* **repo** (`optional`, ``str``) – Local or remote repo, default to be “local”
 
 
-### Examples
+* **\*\*kwargs** – Extra configuration options.
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363")
->>> client.connect(key="root", team="admin", user="admin", db="example_db")
+client = Client("http://127.0.0.1:6363")
+client.connect(key="root", team="admin", user="admin", db="example_db")
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    `None`
+`None`
 
 
 
-#### close()
+### close()
 Undo connect and close the connection.
 
 The connection will be unusable from this point forward; an Error (or subclass) exception will be raised if any operation is attempted with the connection, unless connect is call again.
 
 
-* **Return type**
+**Return type/s**
 
-    `None`
+`None`
 
 
 
-#### log(team=None, db=None, start=0, count=-1)
+### log(team=None, db=None, start=0, count=-1)
 Get commit history of a database
-:type team: `Optional`[`str`]
+:type team: `Optional`[``str``]
 :param team: The team from which the database is. Defaults to the class property.
-:type team: str, optional
-:type db: `Optional`[`str`]
+:type team: `str`, optional
+:type db: `Optional`[``str``]
 :param db: The database. Defaults to the class property.
-:type db: str, optional
+:type db: `str`, optional
 :type start: `int`
 :param start: Commit index to start from. Defaults to 0.
 :type start: int, optional
@@ -264,32 +272,32 @@ Get commit history of a database
 :type count: int, optional
 
 
-* **Returns**
+**Returns**
 
-    List of the following commit objects:
+List of the following commit objects:
 
-        {
+{
 
-            “@id”:”InitialCommit/hpl18q42dbnab4vzq8me4bg1xn8p2a0”,
-            “@type”:”InitialCommit”,
-            “author”:”system”,
-            “identifier”:”hpl18q42dbnab4vzq8me4bg1xn8p2a0”,
-            “message”:”create initial schema”,
-            “schema”:”layer_data:Layer_4234adfe377fa9563a17ad764ac37f5dcb14de13668ea725ef0748248229a91b”,
-            “timestamp”:1660919664.9129035
+“@id”:”InitialCommit/hpl18q42dbnab4vzq8me4bg1xn8p2a0”,
+“@type”:”InitialCommit”,
+“author”:”system”,
+“identifier”:”hpl18q42dbnab4vzq8me4bg1xn8p2a0”,
+“message”:”create initial schema”,
+“schema”:”layer_data:Layer_4234adfe377fa9563a17ad764ac37f5dcb14de13668ea725ef0748248229a91b”,
+“timestamp”:1660919664.9129035
 
-        }
-
-
-
-
-* **Return type**
-
-    list
+}
 
 
 
-#### get_commit_history(max_history=500)
+
+**Return type/s**
+
+list
+
+
+
+### get_commit_history(max_history=500)
 Get the whole commit history.
 Commit history - Commit id, author of the commit, commit message and the commit time, in the current branch from the current commit, ordered backwards in time, will be returned in a dictionary in the follow format:
 {“commit_id”:
@@ -299,1102 +307,1102 @@ Commit history - Commit id, author of the commit, commit message and the commit 
 }
 
 
-* **Parameters**
+**Parameter/s**
 
-    **max_history** (*int**, **optional*) – maximum number of commit that would return, counting backwards from your current commit. Default is set to 500. It needs to be nop-negative, if input is 0 it will still give the last commit.
+**max_history** (`int`, `optional`) – maximum number of commit that would return, counting backwards from your current commit. Default is set to 500. It needs to be nop-negative, if input is 0 it will still give the last commit.
 
 
-### Example
+**Example/s**
 
 ```python
->>> from terminusdb_client import Client
->>> client = Client("http://127.0.0.1:6363"
->>> client.connect(db="bank_balance_example")
->>> client.get_commit_history()
+from terminusdb_client import Client
+client = Client("http://127.0.0.1:6363"
+client.connect(db="bank_balance_example")
+client.get_commit_history()
 [{'commit': 's90wike9v5xibmrb661emxjs8k7ynwc', 'author': 'admin', 'message': 'Adding Jane', 'timestamp': datetime.da
 tetime(2020, 9, 3, 15, 29, 34)}, {'commit': '1qhge8qlodajx93ovj67kvkrkxsw3pg', 'author': 'gavin@terminusdb.com', 'm
 essage': 'Adding Jim', 'timestamp': datetime.datetime(2020, 9, 3, 15, 29, 33)}, {'commit': 'rciy1rfu5foj67ch00ow6f6n
 njjxe3i', 'author': 'gavin@terminusdb.com', 'message': 'Update mike', 'timestamp': datetime.datetime(2020, 9, 3, 15,
- 29, 33)}, {'commit': 'n4d86u8juzx852r2ekrega5hl838ovh', 'author': 'gavin@terminusdb.com', 'message': 'Add mike', '
+29, 33)}, {'commit': 'n4d86u8juzx852r2ekrega5hl838ovh', 'author': 'gavin@terminusdb.com', 'message': 'Add mike', '
 timestamp': datetime.datetime(2020, 9, 3, 15, 29, 33)}, {'commit': '1vk2i8k8xce26p9jpi4zmq1h5vdqyuj', 'author': 'gav
 in@terminusdb.com', 'message': 'Label for balance was wrong', 'timestamp': datetime.datetime(2020, 9, 3, 15, 29, 33)
 }, {'commit': '9si4na9zv2qol9b189y92fia7ac3hbg', 'author': 'gavin@terminusdb.com', 'message': 'Adding bank account
 object to schema', 'timestamp': datetime.datetime(2020, 9, 3, 15, 29, 33)}, {'commit': '9egc4h0m36l5rbq1alr1fki6jbfu
 kuv', 'author': 'TerminusDB', 'message': 'internal system operation', 'timstamp': datetime.datetime(2020, 9, 3, 15,
- 29, 33)}]
+29, 33)}]
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    list
+list
 
 
 
-#### get_all_branches(get_data_version=False)
+### get_all_branches(get_data_version=False)
 Get all the branches available in the database.
 
 
-#### rollback(steps=1)
+### rollback(steps=1)
 Curently not implementated. Please check back later.
 
 
-* **Raises**
+**Raises**
 
-    **NotImplementedError** – Since TerminusDB currently does not support open transactions. This method is not applicable to it’s usage. To reset commit head, use Client.reset
-
-
-
-* **Return type**
-
-    `None`
+**NotImplementedError** – Since TerminusDB currently does not support open transactions. This method is not applicable to it’s usage. To reset commit head, use Client.reset
 
 
 
-#### copy()
+**Return type/s**
+
+`None`
+
+
+
+### copy()
 Create a deep copy of this client.
 
 
-* **Returns**
+**Returns**
 
-    The copied client instance.
-
-
-
-* **Return type**
-
-    Client
+The copied client instance.
 
 
-### Examples
+
+**Return type/s**
+
+Client
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> clone = client.copy()
->>> assert client is not clone
+client = Client("http://127.0.0.1:6363/")
+clone = client.copy()
+assert client is not clone
 ```
 
 
-#### set_db(dbid, team=None)
+### set_db(dbid, team=None)
 Set the connection to another database. This will reset the connection.
 
 
-* **Parameters**
-
-    
-    * **dbid** (*str*) – Database identifer to set in the config.
+**Parameter/s**
 
 
-    * **team** (*str*) – Team identifer to set in the config. If not passed in, it will use the current one.
+* **dbid** (``str``) – Database identifer to set in the config.
 
 
-
-* **Returns**
-
-    The current database identifier.
+* **team** (``str``) – Team identifer to set in the config. If not passed in, it will use the current one.
 
 
 
-* **Return type**
+**Returns**
 
-    str
+The current database identifier.
 
 
-### Examples
+
+**Return type/s**
+
+`str`
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363")
->>> client.set_db("database1")
+client = Client("http://127.0.0.1:6363")
+client.set_db("database1")
 'database1'
 ```
 
 
-#### resource(ttype, val=None)
+### resource(ttype, val=None)
 Create a resource identifier string based on the current config.
 
 
-* **Parameters**
-
-    
-    * **ttype** (*ResourceType*) – Type of resource.
+**Parameter/s**
 
 
-    * **val** (*str**, **optional*) – Branch or commit identifier.
+* **ttype** (*ResourceType*) – Type of resource.
 
 
-
-* **Returns**
-
-    The constructed resource string.
+* **val** (``str``, `optional`) – Branch or commit identifier.
 
 
 
-* **Return type**
+**Returns**
 
-    str
+The constructed resource string.
 
 
-### Examples
+
+**Return type/s**
+
+`str`
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363")
->>> client.resource(ResourceType.DB)
+client = Client("http://127.0.0.1:6363")
+client.resource(ResourceType.DB)
 '<team>/<db>/'
->>> client.resource(ResourceType.META)
+client.resource(ResourceType.META)
 '<team>/<db>/_meta'
->>> client.resource(ResourceType.COMMITS)
+client.resource(ResourceType.COMMITS)
 '<team>/<db>/<repo>/_commits'
->>> client.resource(ResourceType.REF, "<reference>")
+client.resource(ResourceType.REF, "<reference>")
 '<team>/<db>/<repo>/commit/<reference>'
->>> client.resource(ResourceType.BRANCH, "<branch>")
+client.resource(ResourceType.BRANCH, "<branch>")
 '<team>/<db>/<repo>/branch/<branch>'
 ```
 
 
-#### create_database(dbid, team=None, label=None, description=None, prefixes=None, include_schema=True)
+### create_database(dbid, team=None, label=None, description=None, prefixes=None, include_schema=True)
 Create a TerminusDB database by posting
 a terminus:Database document to the Terminus Server.
 
 
-* **Parameters**
-
-    
-    * **dbid** (*str*) – Unique identifier of the database.
+**Parameter/s**
 
 
-    * **team** (*str**, **optional*) – ID of the Team in which to create the DB (defaults to ‘admin’)
+* **dbid** (``str``) – Unique identifier of the database.
 
 
-    * **label** (*str**, **optional*) – Database name.
+* **team** (``str``, `optional`) – ID of the Team in which to create the DB (defaults to ‘admin’)
 
 
-    * **description** (*str**, **optional*) – Database description.
+* **label** (``str``, `optional`) – Database name.
 
 
-    * **prefixes** (*dict**, **optional*) – Optional dict containing `"@base"` and `"@schema"` keys.
-
-    @base (str)
-
-        IRI to use when `doc:` prefixes are expanded. Defaults to `terminusdb:///data`.
-
-    @schema (str)
-
-        IRI to use when `scm:` prefixes are expanded. Defaults to `terminusdb:///schema`.
+* **description** (``str``, `optional`) – Database description.
 
 
+* **prefixes** (*dict*, `optional`) – Optional dict containing `"@base"` and `"@schema"` keys.
 
-    * **include_schema** (*bool*) – If `True`, a main schema graph will be created, otherwise only a main instance graph will be created.
+@base (`str`)
+
+IRI to use when `doc:` prefixes are expanded. Defaults to `terminusdb:///data`.
+
+@schema (`str`)
+
+IRI to use when `scm:` prefixes are expanded. Defaults to `terminusdb:///schema`.
 
 
 
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+* **include_schema** (`bool`) – If `True`, a main schema graph will be created, otherwise only a main instance graph will be created.
 
 
-### Examples
+
+**Raises**
+
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> client.create_database("someDB", "admin", "Database Label", "My Description")
+client = Client("http://127.0.0.1:6363/")
+client.create_database("someDB", "admin", "Database Label", "My Description")
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    `None`
+`None`
 
 
 
-#### delete_database(dbid=None, team=None, force=False)
+### delete_database(dbid=None, team=None, force=False)
 Delete a TerminusDB database.
 
 If `team` is provided, then the team in the config will be updated
 and the new value will be used in future requests to the server.
 
 
-* **Parameters**
-
-    
-    * **dbid** (*str*) – ID of the database to delete
+**Parameter/s**
 
 
-    * **team** (*str**, **optional*) – the team in which the database resides (defaults to “admin”)
+* **dbid** (``str``) – ID of the database to delete
 
 
-    * **force** (*bool*) – 
+* **team** (``str``, `optional`) – the team in which the database resides (defaults to “admin”)
+
+
+* **force** (`bool`) – 
 
 
 
-* **Raises**
-
-    
-    * **UserWarning** – If the value of dbid is None.
+**Raises**
 
 
-    * [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server.
+* **UserWarning** – If the value of dbid is None.
 
 
-### Examples
+* [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server.
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> client.delete_database("<database>", "<team>")
+client = Client("http://127.0.0.1:6363/")
+client.delete_database("<database>", "<team>")
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    `None`
+`None`
 
 
 
-#### get_triples(graph_type)
+### get_triples(graph_type)
 Retrieves the contents of the specified graph as triples encoded in turtle format
 
 
-* **Parameters**
+**Parameter/s**
 
-    **graph_type** (*str*) – Graph type, either “instance” or “schema”.
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+**graph_type** (``str``) – Graph type, either “instance” or “schema”.
 
 
 
-* **Return type**
+**Raises**
 
-    str
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### update_triples(graph_type, turtle, commit_msg)
+**Return type/s**
+
+`str`
+
+
+
+### update_triples(graph_type, turtle, commit_msg)
 Updates the contents of the specified graph with the triples encoded in turtle format Replaces the entire graph contents
 
 
-* **Parameters**
-
-    
-    * **graph_type** (*str*) – Graph type, either “instance” or “schema”.
+**Parameter/s**
 
 
-    * **turtle** – Valid set of triples in Turtle format.
+* **graph_type** (``str``) – Graph type, either “instance” or “schema”.
 
 
-    * **commit_msg** (*str*) – Commit message.
+* **turtle** – Valid set of triples in Turtle format.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **commit_msg** (``str``) – Commit message.
 
 
 
-* **Return type**
+**Raises**
 
-    `None`
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### insert_triples(graph_type, turtle, commit_msg=None)
+**Return type/s**
+
+`None`
+
+
+
+### insert_triples(graph_type, turtle, commit_msg=None)
 Inserts into the specified graph with the triples encoded in turtle format.
 
 
-* **Parameters**
-
-    
-    * **graph_type** (*str*) – Graph type, either “instance” or “schema”.
+**Parameter/s**
 
 
-    * **turtle** – Valid set of triples in Turtle format.
+* **graph_type** (``str``) – Graph type, either “instance” or “schema”.
 
 
-    * **commit_msg** (*str*) – Commit message.
+* **turtle** – Valid set of triples in Turtle format.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **commit_msg** (``str``) – Commit message.
 
 
 
-* **Return type**
+**Raises**
 
-    `None`
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### query_document(document_template, graph_type='instance', skip=0, count=None, as_list=False, get_data_version=False, \*\*kwargs)
+**Return type/s**
+
+`None`
+
+
+
+### query_document(document_template, graph_type='instance', skip=0, count=None, as_list=False, get_data_version=False, \*\*kwargs)
 Retrieves all documents that match a given document template
 
 
-* **Parameters**
-
-    
-    * **document_template** (*dict*) – Template for the document that is being retrived
+**Parameter/s**
 
 
-    * **graph_type** (*str**, **optional*) – Graph type, either “instance” or “schema”.
+* **document_template** (*dict*) – Template for the document that is being retrived
 
 
-    * **as_list** (*bool*) – If the result returned as list rather than an iterator.
+* **graph_type** (``str``, `optional`) – Graph type, either “instance” or “schema”.
 
 
-    * **get_data_version** (*bool*) – If the data version of the document(s) should be obtained. If True, the method return the result and the version as a tuple.
+* **as_list** (`bool`) – If the result returned as list rather than an iterator.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **get_data_version** (`bool`) – If the data version of the document(s) should be obtained. If True, the method return the result and the version as a tuple.
 
 
 
-* **Return type**
+**Raises**
 
-    Iterable
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### get_document(iri_id, graph_type='instance', get_data_version=False, \*\*kwargs)
+**Return type/s**
+
+Iterable
+
+
+
+### get_document(iri_id, graph_type='instance', get_data_version=False, \*\*kwargs)
 Retrieves the document of the iri_id
 
 
-* **Parameters**
-
-    
-    * **iri_id** (*str*) – Iri id for the docuemnt that is retriving
+**Parameter/s**
 
 
-    * **graph_type** (*str**, **optional*) – Graph type, either “instance” or “schema”.
+* **iri_id** (``str``) – Iri id for the docuemnt that is retriving
 
 
-    * **get_data_version** (*bool*) – If the data version of the document(s) should be obtained. If True, the method return the result and the version as a tuple.
+* **graph_type** (``str``, `optional`) – Graph type, either “instance” or “schema”.
 
 
-    * **kwargs** – Additional boolean flags for retriving. Currently avaliable: “prefixed”, “minimized”, “unfold”
+* **get_data_version** (`bool`) – If the data version of the document(s) should be obtained. If True, the method return the result and the version as a tuple.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **kwargs** – Additional boolean flags for retriving. Currently avaliable: “prefixed”, “minimized”, “unfold”
 
 
 
-* **Return type**
+**Raises**
 
-    dict
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### get_documents_by_type(doc_type, graph_type='instance', skip=0, count=None, as_list=False, get_data_version=False, \*\*kwargs)
+**Return type/s**
+
+dict
+
+
+
+### get_documents_by_type(doc_type, graph_type='instance', skip=0, count=None, as_list=False, get_data_version=False, \*\*kwargs)
 Retrieves the documents by type
 
 
-* **Parameters**
-
-    
-    * **doc_type** (*str*) – Specific type for the docuemnts that is retriving
+**Parameter/s**
 
 
-    * **graph_type** (*str**, **optional*) – Graph type, either “instance” or “schema”.
+* **doc_type** (``str``) – Specific type for the docuemnts that is retriving
 
 
-    * **skip** (*int*) – The starting posiion of the returning results, default to be 0
+* **graph_type** (``str``, `optional`) – Graph type, either “instance” or “schema”.
 
 
-    * **count** (*int** or **None*) – The maximum number of returned result, if None (default) it will return all of the avalible result.
+* **skip** (`int`) – The starting posiion of the returning results, default to be 0
 
 
-    * **as_list** (*bool*) – If the result returned as list rather than an iterator.
+* **count** (`int`* or *`none`) – The maximum number of returned result, if None (default) it will return all of the avalible result.
 
 
-    * **get_data_version** (*bool*) – If the version of the document(s) should be obtained. If True, the method return the result and the version as a tuple.
+* **as_list** (`bool`) – If the result returned as list rather than an iterator.
 
 
-    * **kwargs** – Additional boolean flags for retriving. Currently avaliable: “prefixed”, “unfold”
+* **get_data_version** (`bool`) – If the version of the document(s) should be obtained. If True, the method return the result and the version as a tuple.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **kwargs** – Additional boolean flags for retriving. Currently avaliable: “prefixed”, “unfold”
 
 
 
-* **Returns**
+**Raises**
 
-    Stream of dictionaries
-
-
-
-* **Return type**
-
-    iterable
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### get_all_documents(graph_type='instance', skip=0, count=None, as_list=False, get_data_version=False, \*\*kwargs)
+**Returns**
+
+Stream of dictionaries
+
+
+
+**Return type/s**
+
+iterable
+
+
+
+### get_all_documents(graph_type='instance', skip=0, count=None, as_list=False, get_data_version=False, \*\*kwargs)
 Retrieves all avalibale the documents
 
 
-* **Parameters**
-
-    
-    * **graph_type** (*str**, **optional*) – Graph type, either “instance” or “schema”.
+**Parameter/s**
 
 
-    * **skip** (*int*) – The starting posiion of the returning results, default to be 0
+* **graph_type** (``str``, `optional`) – Graph type, either “instance” or “schema”.
 
 
-    * **count** (*int** or **None*) – The maximum number of returned result, if None (default) it will return all of the avalible result.
+* **skip** (`int`) – The starting posiion of the returning results, default to be 0
 
 
-    * **as_list** (*bool*) – If the result returned as list rather than an iterator.
+* **count** (`int`* or *`none`) – The maximum number of returned result, if None (default) it will return all of the avalible result.
 
 
-    * **get_data_version** (*bool*) – If the version of the document(s) should be obtained. If True, the method return the result and the version as a tuple.
+* **as_list** (`bool`) – If the result returned as list rather than an iterator.
 
 
-    * **kwargs** – Additional boolean flags for retriving. Currently avaliable: “prefixed”, “unfold”
+* **get_data_version** (`bool`) – If the version of the document(s) should be obtained. If True, the method return the result and the version as a tuple.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **kwargs** – Additional boolean flags for retriving. Currently avaliable: “prefixed”, “unfold”
 
 
 
-* **Returns**
+**Raises**
 
-    Stream of dictionaries
-
-
-
-* **Return type**
-
-    iterable
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### get_existing_classes()
+**Returns**
+
+Stream of dictionaries
+
+
+
+**Return type/s**
+
+iterable
+
+
+
+### get_existing_classes()
 Get all the existing classes (only ids) in a database.
 
 
-#### insert_document(document, graph_type='instance', full_replace=False, commit_msg=None, last_data_version=None, compress=1024, raw_json=False)
+### insert_document(document, graph_type='instance', full_replace=False, commit_msg=None, last_data_version=None, compress=1024, raw_json=False)
 Inserts the specified document(s)
 
 
-* **Parameters**
-
-    
-    * **document** (*dict** or **list of dict*) – Document(s) to be inserted.
+**Parameter/s**
 
 
-    * **graph_type** (*str*) – Graph type, either “inference”, “instance” or “schema”.
+* **document** (*dict** or **list of dict*) – Document(s) to be inserted.
 
 
-    * **full_replace:** – bool: If True then the whole graph will be replaced. WARNING: you should also supply the context object as the first element in the list of documents  if using this option.
+* **graph_type** (``str``) – Graph type, either “inference”, “instance” or “schema”.
 
 
-    * **commit_msg** (*str*) – Commit message.
+* **full_replace:** – bool: If True then the whole graph will be replaced. WARNING: you should also supply the context object as the first element in the list of documents  if using this option.
 
 
-    * **last_data_version** (*str*) – Last version before the update, used to check if the document has been changed unknowingly
+* **commit_msg** (``str``) – Commit message.
 
 
-    * **compress** (*str** or **int*) – If it is an integer, size of the data larger than this (in bytes) will be compress with gzip in the request (assume encoding as UTF-8, 0 = always compress). If it is never it will never compress the data.
+* **last_data_version** (``str``) – Last version before the update, used to check if the document has been changed unknowingly
 
 
-    * **raw_json** (*bool*) – Update as raw json
+* **compress** (``str``* or *`int`) – If it is an integer, size of the data larger than this (in bytes) will be compress with gzip in the request (assume encoding as UTF-8, 0 = always compress). If it is never it will never compress the data.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **raw_json** (`bool`) – Update as raw json
 
 
 
-* **Returns**
+**Raises**
 
-    list of ids of the inseted docuemnts
-
-
-
-* **Return type**
-
-    list
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### replace_document(document, graph_type='instance', commit_msg=None, last_data_version=None, compress=1024, create=False, raw_json=False)
+**Returns**
+
+list of ids of the inseted docuemnts
+
+
+
+**Return type/s**
+
+list
+
+
+
+### replace_document(document, graph_type='instance', commit_msg=None, last_data_version=None, compress=1024, create=False, raw_json=False)
 Updates the specified document(s)
 
 
-* **Parameters**
-
-    
-    * **document** (*dict** or **list of dict*) – Document(s) to be updated.
+**Parameter/s**
 
 
-    * **graph_type** (*str*) – Graph type, either “instance” or “schema”.
+* **document** (*dict** or **list of dict*) – Document(s) to be updated.
 
 
-    * **commit_msg** (*str*) – Commit message.
+* **graph_type** (``str``) – Graph type, either “instance” or “schema”.
 
 
-    * **last_data_version** (*str*) – Last version before the update, used to check if the document has been changed unknowingly
+* **commit_msg** (``str``) – Commit message.
 
 
-    * **compress** (*str** or **int*) – If it is an integer, size of the data larger than this (in bytes) will be compress with gzip in the request (assume encoding as UTF-8, 0 = always compress). If it is never it will never compress the data.
+* **last_data_version** (``str``) – Last version before the update, used to check if the document has been changed unknowingly
 
 
-    * **create** (*bool*) – Create the document if it does not yet exist.
+* **compress** (``str``* or *`int`) – If it is an integer, size of the data larger than this (in bytes) will be compress with gzip in the request (assume encoding as UTF-8, 0 = always compress). If it is never it will never compress the data.
 
 
-    * **raw_json** (*bool*) – Update as raw json
+* **create** (`bool`) – Create the document if it does not yet exist.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **raw_json** (`bool`) – Update as raw json
 
 
 
-* **Return type**
+**Raises**
 
-    `None`
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### update_document(document, graph_type='instance', commit_msg=None, last_data_version=None, compress=1024)
+**Return type/s**
+
+`None`
+
+
+
+### update_document(document, graph_type='instance', commit_msg=None, last_data_version=None, compress=1024)
 Updates the specified document(s). Add the document if not existed.
 
 
-* **Parameters**
-
-    
-    * **document** (*dict** or **list of dict*) – Document(s) to be updated.
+**Parameter/s**
 
 
-    * **graph_type** (*str*) – Graph type, either “instance” or “schema”.
+* **document** (*dict** or **list of dict*) – Document(s) to be updated.
 
 
-    * **commit_msg** (*str*) – Commit message.
+* **graph_type** (``str``) – Graph type, either “instance” or “schema”.
 
 
-    * **last_data_version** (*str*) – Last version before the update, used to check if the document has been changed unknowingly
+* **commit_msg** (``str``) – Commit message.
 
 
-    * **compress** (*str** or **int*) – If it is an integer, size of the data larger than this (in bytes) will be compress with gzip in the request (assume encoding as UTF-8, 0 = always compress). If it is never it will never compress the data.
+* **last_data_version** (``str``) – Last version before the update, used to check if the document has been changed unknowingly
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **compress** (``str``* or *`int`) – If it is an integer, size of the data larger than this (in bytes) will be compress with gzip in the request (assume encoding as UTF-8, 0 = always compress). If it is never it will never compress the data.
 
 
 
-* **Return type**
+**Raises**
 
-    `None`
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### delete_document(document, graph_type='instance', commit_msg=None, last_data_version=None)
+**Return type/s**
+
+`None`
+
+
+
+### delete_document(document, graph_type='instance', commit_msg=None, last_data_version=None)
 Delete the specified document(s)
 
 
-* **Parameters**
-
-    
-    * **document** (*str** or **list of str*) – Document(s) (as dictionary or DocumentTemplate objects) or id(s) of document(s) to be updated.
+**Parameter/s**
 
 
-    * **graph_type** (*str*) – Graph type, either “instance” or “schema”.
+* **document** (``str``* or **list of `str`*) – Document(s) (as dictionary or DocumentTemplate objects) or id(s) of document(s) to be updated.
 
 
-    * **commit_msg** (*str*) – Commit message.
+* **graph_type** (``str``) – Graph type, either “instance” or “schema”.
 
 
-    * **last_data_version** (*str*) – Last version before the update, used to check if the document has been changed unknowingly
+* **commit_msg** (``str``) – Commit message.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **last_data_version** (``str``) – Last version before the update, used to check if the document has been changed unknowingly
 
 
 
-* **Return type**
+**Raises**
 
-    `None`
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### has_doc(doc_id, graph_type='instance')
+**Return type/s**
+
+`None`
+
+
+
+### has_doc(doc_id, graph_type='instance')
 Check if a certain document exist in a database
 
 
-* **Parameters**
-
-    
-    * **doc_id** (*str*) – Id of document to be checked.
+**Parameter/s**
 
 
-    * **graph_type** (*str*) – Graph type, either “instance” or “schema”.
+* **doc_id** (``str``) – Id of document to be checked.
 
 
-
-* **Returns**
-
-    if the document exist
+* **graph_type** (``str``) – Graph type, either “instance” or “schema”.
 
 
 
-* **Return type**
+**Returns**
 
-    Bool
+if the document exist
 
 
 
-#### get_class_frame(class_name)
+**Return type/s**
+
+Bool
+
+
+
+### get_class_frame(class_name)
 Get the frame of the class of class_name. Provide information about all the avaliable properties of that class.
 
 
-* **Parameters**
+**Parameter/s**
 
-    **class_name** (*str*) – Name of the class
-
-
-
-* **Returns**
-
-    Dictionary containing information
+**class_name** (``str``) – Name of the class
 
 
 
-* **Return type**
+**Returns**
 
-    dict
+Dictionary containing information
 
 
 
-#### commit()
+**Return type/s**
+
+dict
+
+
+
+### commit()
 Not implementated: open transactions currently not suportted. Please check back later.
 
 
-#### query(woql_query, commit_msg=None, get_data_version=False, last_data_version=None)
+### query(woql_query, commit_msg=None, get_data_version=False, last_data_version=None)
 Updates the contents of the specified graph with the triples encoded in turtle format Replaces the entire graph contents
 
 
-* **Parameters**
-
-    
-    * **woql_query** (*dict** or **WOQLQuery object*) – A woql query as an object or dict
+**Parameter/s**
 
 
-    * **commit_mg** (*str*) – A message that will be written to the commit log to describe the change
+* **woql_query** (*dict** or **WOQLQuery object*) – A woql query as an object or dict
 
 
-    * **get_data_version** (*bool*) – If the data version of the query result(s) should be obtained. If True, the method return the result and the version as a tuple.
+* **commit_mg** (``str``) – A message that will be written to the commit log to describe the change
 
 
-    * **last_data_version** (*str*) – Last version before the update, used to check if the document has been changed unknowingly
+* **get_data_version** (`bool`) – If the data version of the query result(s) should be obtained. If True, the method return the result and the version as a tuple.
 
 
-    * **file_dict** (**deprecated**) – File dictionary to be associated with post name => filename, for multipart POST
+* **last_data_version** (``str``) – Last version before the update, used to check if the document has been changed unknowingly
+
+
+* **file_dict** (**deprecated**) – File dictionary to be associated with post name => filename, for multipart POST
 
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
-### Examples
+**Example/s**
 
 ```python
->>> Client(server="http://localhost:6363").query(woql, "updating graph")
+Client(server="http://localhost:6363").query(woql, "updating graph")
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    dict
+dict
 
 
 
-#### create_branch(new_branch_id, empty=False)
+### create_branch(new_branch_id, empty=False)
 Create a branch starting from the current branch.
 
 
-* **Parameters**
-
-    
-    * **new_branch_id** (*str*) – New branch identifier.
+**Parameter/s**
 
 
-    * **empty** (*bool*) – Create an empty branch if true (no starting commit)
+* **new_branch_id** (``str``) – New branch identifier.
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **empty** (`bool`) – Create an empty branch if true (no starting commit)
 
 
 
-* **Return type**
+**Raises**
 
-    `None`
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### delete_branch(branch_id)
+**Return type/s**
+
+`None`
+
+
+
+### delete_branch(branch_id)
 Delete a branch
 
 
-* **Parameters**
+**Parameter/s**
 
-    **branch_id** (*str*) – Branch to delete
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+**branch_id** (``str``) – Branch to delete
 
 
 
-* **Return type**
+**Raises**
 
-    `None`
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### pull(remote='origin', remote_branch=None, message=None, author=None)
+**Return type/s**
+
+`None`
+
+
+
+### pull(remote='origin', remote_branch=None, message=None, author=None)
 Pull updates from a remote repository to the current database.
 
 
-* **Parameters**
-
-    
-    * **remote** (*str*) – remote to pull from, default “origin”
+**Parameter/s**
 
 
-    * **remote_branch** (*str**, **optional*) – remote branch to pull from, default to be your current barnch
+* **remote** (``str``) – remote to pull from, default “origin”
 
 
-    * **message** (*str**, **optional*) – optional commit message
+* **remote_branch** (``str``, `optional`) – remote branch to pull from, default to be your current barnch
 
 
-    * **author** (*str**, **optional*) – option to overide the author of the operation
+* **message** (``str``, `optional`) – optional commit message
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **author** (``str``, `optional`) – option to overide the author of the operation
 
 
 
-* **Return type**
+**Raises**
 
-    dict
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
-### Examples
+
+**Return type/s**
+
+dict
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> client.pull()
+client = Client("http://127.0.0.1:6363/")
+client.pull()
 ```
 
 
-#### fetch(remote_id)
+### fetch(remote_id)
 Fatch the brach from a remote
 
 
-* **Parameters**
+**Parameter/s**
 
-    **remote_id** (*str*) – id of the remote
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+**remote_id** (``str``) – id of the remote
 
 
 
-* **Return type**
+**Raises**
 
-    `dict`
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
 
-#### push(remote='origin', remote_branch=None, message=None, author=None)
+**Return type/s**
+
+`dict`
+
+
+
+### push(remote='origin', remote_branch=None, message=None, author=None)
 Push changes from a branch to a remote repo
 
 
-* **Parameters**
-
-    
-    * **remote** (*str*) – remote to push to, default “origin”
+**Parameter/s**
 
 
-    * **remote_branch** (*str**, **optional*) – remote branch to push to, default to be your current barnch
+* **remote** (``str``) – remote to push to, default “origin”
 
 
-    * **message** (*str**, **optional*) – optional commit message
+* **remote_branch** (``str``, `optional`) – remote branch to push to, default to be your current barnch
 
 
-    * **author** (*str**, **optional*) – option to overide the author of the operation
+* **message** (``str``, `optional`) – optional commit message
+
+
+* **author** (``str``, `optional`) – option to overide the author of the operation
 
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
-### Examples
+**Example/s**
 
 ```python
->>> Client(server="http://localhost:6363").push(remote="origin", remote_branch = "main", author = "admin", message = "commit message"})
+Client(server="http://localhost:6363").push(remote="origin", remote_branch = "main", author = "admin", message = "commit message"})
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    dict
+dict
 
 
 
-#### rebase(branch=None, commit=None, rebase_source=None, message=None, author=None)
+### rebase(branch=None, commit=None, rebase_source=None, message=None, author=None)
 Rebase the current branch onto the specified remote branch. Need to specify one of ‘branch’,’commit’ or the ‘rebase_source’.
 
-### Notes
+**Notes**
 
 The “remote” repo can live in the local database.
 
 
-* **Parameters**
-
-    
-    * **branch** (*str**, **optional*) – the branch for the rebase
+**Parameter/s**
 
 
-    * **rebase_source** (*str**, **optional*) – the source branch for the rebase
+* **branch** (``str``, `optional`) – the branch for the rebase
 
 
-    * **message** (*str**, **optional*) – the commit message
+* **rebase_source** (``str``, `optional`) – the source branch for the rebase
 
 
-    * **author** (*str**, **optional*) – the commit author
+* **message** (``str``, `optional`) – the commit message
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+* **author** (``str``, `optional`) – the commit author
 
 
 
-* **Return type**
+**Raises**
 
-    dict
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
-### Examples
+
+**Return type/s**
+
+dict
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> client.rebase("the_branch")
+client = Client("http://127.0.0.1:6363/")
+client.rebase("the_branch")
 ```
 
 
-#### reset(commit=None, soft=False, use_path=False)
+### reset(commit=None, soft=False, use_path=False)
 Reset the current branch HEAD to the specified commit path. If soft is not True, it will be a hard reset, meaning reset to that commit in the backend and newer commit will be wipped out. If soft is True, the client will only reference to that commit and can be reset to the newest commit when done.
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
-### Notes
+**Notes**
 
 The “remote” repo can live in the local database.
 
 
-* **Parameters**
-
-    
-    * **commit** (*string*) – Commit id or path to the commit (if use_path is True), for instance ‘234980523ffaf93’ or ‘admin/database/local/commit/234980523ffaf93’. If not provided, it will reset to the newest commit (useful when need to go back after a soft reset).
+**Parameter/s**
 
 
-    * **soft** (*bool*) – Flag indicating if the reset if soft, that is referencing to a previous commit instead of resetting to a previous commit in the backend and wipping newer commits.
+* **commit** (*string*) – Commit id or path to the commit (if use_path is True), for instance ‘234980523ffaf93’ or ‘admin/database/local/commit/234980523ffaf93’. If not provided, it will reset to the newest commit (useful when need to go back after a soft reset).
 
 
-    * **use_path** (*bool*) – Wheather or not the commit given is an id or path. Default using id and use_path is False.
+* **soft** (`bool`) – Flag indicating if the reset if soft, that is referencing to a previous commit instead of resetting to a previous commit in the backend and wipping newer commits.
 
 
-### Examples
+* **use_path** (`bool`) – Wheather or not the commit given is an id or path. Default using id and use_path is False.
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> client.reset('234980523ffaf93')
->>> client.reset('admin/database/local/commit/234980523ffaf93', use_path=True)
+client = Client("http://127.0.0.1:6363/")
+client.reset('234980523ffaf93')
+client.reset('admin/database/local/commit/234980523ffaf93', use_path=True)
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    `None`
+`None`
 
 
 
-#### optimize(path)
+### optimize(path)
 Optimize the specified path.
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
-### Notes
+**Notes**
 
 The “remote” repo can live in the local database.
 
 
-* **Parameters**
+**Parameter/s**
 
-    **path** (*string*) – Path to optimize, for instance admin/database/_meta for the repo graph.
+**path** (*string*) – Path to optimize, for instance admin/database/_meta for the repo graph.
 
 
-### Examples
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> client.optimize('admin/database') # optimise database branch (here main)
->>> client.optimize('admin/database/_meta') # optimise the repository graph (actually creates a squashed flat layer)
->>> client.optimize('admin/database/local/_commits') # commit graph is optimised
+client = Client("http://127.0.0.1:6363/")
+client.optimize('admin/database') # optimise database branch (here main)
+client.optimize('admin/database/_meta') # optimise the repository graph (actually creates a squashed flat layer)
+client.optimize('admin/database/local/_commits') # commit graph is optimised
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    `None`
+`None`
 
 
 
-#### squash(message=None, author=None, reset=False)
+### squash(message=None, author=None, reset=False)
 Squash the current branch HEAD into a commit
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
-### Notes
+**Notes**
 
 The “remote” repo can live in the local database.
 
 
-* **Parameters**
-
-    
-    * **message** (*string*) – Message for the newly created squash commit
+**Parameter/s**
 
 
-    * **author** (*string*) – Author of the commit
+* **message** (*string*) – Message for the newly created squash commit
 
 
-    * **reset** (*bool*) – Perform reset after squash
+* **author** (*string*) – Author of the commit
 
 
-
-* **Returns**
-
-    commit id to be reset
+* **reset** (`bool`) – Perform reset after squash
 
 
 
-* **Return type**
+**Returns**
 
-    str
+commit id to be reset
 
 
-### Examples
+
+**Return type/s**
+
+`str`
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> client.connect(user="admin", key="root", team="admin", db="some_db")
->>> client.squash('This is a squash commit message!')
+client = Client("http://127.0.0.1:6363/")
+client.connect(user="admin", key="root", team="admin", db="some_db")
+client.squash('This is a squash commit message!')
 ```
 
 
-#### apply(before_version, after_version, branch=None, message=None, author=None)
+### apply(before_version, after_version, branch=None, message=None, author=None)
 Diff two different commits and apply changes on branch
 
 
-* **Parameters**
-
-    
-    * **before_version** (*string*) – Before branch/commit to compare
+**Parameter/s**
 
 
-    * **after_object** (*string*) – After branch/commit to compare
+* **before_version** (*string*) – Before branch/commit to compare
 
 
-    * **branch** (*string*) – Branch to apply to. Optional.
+* **after_object** (*string*) – After branch/commit to compare
+
+
+* **branch** (*string*) – Branch to apply to. Optional.
 
 
 
-#### diff_object(before_object, after_object)
+### diff_object(before_object, after_object)
 Diff two different objects.
 
 
-* **Parameters**
-
-    
-    * **before_object** (*string*) – Before object to compare
+**Parameter/s**
 
 
-    * **after_object** (*string*) – After object to compare
+* **before_object** (*string*) – Before object to compare
+
+
+* **after_object** (*string*) – After object to compare
 
 
 
-#### diff_version(before_version, after_version)
+### diff_version(before_version, after_version)
 Diff two different versions. Can either be a branch or a commit
 
 
-* **Parameters**
-
-    
-    * **before_version** (*string*) – Commit or branch of the before version to compare
+**Parameter/s**
 
 
-    * **after_version** (*string*) – Commit or branch of the after version to compare
+* **before_version** (*string*) – Commit or branch of the before version to compare
+
+
+* **after_version** (*string*) – Commit or branch of the after version to compare
 
 
 
-#### diff(before, after, document_id=None)
+### diff(before, after, document_id=None)
 DEPRECATED
 
 Perform diff on 2 set of document(s), result in a Patch object.
@@ -1402,569 +1410,570 @@ Perform diff on 2 set of document(s), result in a Patch object.
 Do not connect when using public API.
 
 
-* **Returns**
+**Returns**
 
-    Patch object
-
-
-
-* **Return type**
-
-    obj
+Patch object
 
 
-### Examples
+
+**Return type/s**
+
+obj
+
+
+**Example/s**
 
 ```python
->>> client = WOQLClient("http://127.0.0.1:6363/")
->>> client.connect(user="admin", key="root", team="admin", db="some_db")
->>> result = client.diff({ "@id" : "Person/Jane", "@type" : "Person", "name" : "Jane"}, { "@id" : "Person/Jane", "@type" : "Person", "name" : "Janine"})
->>> result.to_json = '{ "name" : { "@op" : "SwapValue", "@before" : "Jane", "@after": "Janine" }}'
+client = WOQLClient("http://127.0.0.1:6363/")
+client.connect(user="admin", key="root", team="admin", db="some_db")
+result = client.diff({ "@id" : "Person/Jane", "@type" : "Person", "name" : "Jane"}, { "@id" : "Person/Jane", "@type" : "Person", "name" : "Janine"})
+result.to_json = '{ "name" : { "@op" : "SwapValue", "@before" : "Jane", "@after": "Janine" }}'
 ```
 
 
-#### patch(before, patch)
+### patch(before, patch)
 Apply the patch object to the before object and return an after object. Note that this change does not commit changes to the graph.
 
 Do not connect when using public API.
 
 
-* **Returns**
+**Returns**
 
-    After object
-
-
-
-* **Return type**
-
-    dict
+After object
 
 
-### Examples
+
+**Return type/s**
+
+dict
+
+
+**Example/s**
 
 ```python
->>> client = WOQLClient("http://127.0.0.1:6363/")
->>> client.connect(user="admin", key="root", team="admin", db="some_db")
->>> patch_obj = Patch(json='{"name" : { "@op" : "ValueSwap", "@before" : "Jane", "@after": "Janine" }}')
->>> result = client.patch({ "@id" : "Person/Jane", "@type" : Person", "name" : "Jane"}, patch_obj)
->>> print(result)
+client = WOQLClient("http://127.0.0.1:6363/")
+client.connect(user="admin", key="root", team="admin", db="some_db")
+patch_obj = Patch(json='{"name" : { "@op" : "ValueSwap", "@before" : "Jane", "@after": "Janine" }}')
+result = client.patch({ "@id" : "Person/Jane", "@type" : Person", "name" : "Jane"}, patch_obj)
+print(result)
 '{ "@id" : "Person/Jane", "@type" : Person", "name" : "Janine"}'
 ```
 
 
-#### clonedb(clone_source, newid, description=None)
+### clonedb(clone_source, newid, description=None)
 Clone a remote repository and create a local copy.
 
 
-* **Parameters**
-
-    
-    * **clone_source** (*str*) – The source url of the repo to be cloned.
+**Parameter/s**
 
 
-    * **newid** (*str*) – Identifier of the new repository to create.
+* **clone_source** (``str``) – The source url of the repo to be cloned.
 
 
-    * **Description** (*str**, **optional*) – Optional description about the cloned database.
+* **newid** (``str``) – Identifier of the new repository to create.
+
+
+* **Description** (``str``, `optional`) – Optional description about the cloned database.
 
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a database
 
 
-### Examples
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363/")
->>> client.clonedb("http://terminusdb.com/some_user/test_db", "my_test_db")
+client = Client("http://127.0.0.1:6363/")
+client.clonedb("http://terminusdb.com/some_user/test_db", "my_test_db")
 ```
 
 
-* **Return type**
+**Return type/s**
 
-    `None`
+`None`
 
 
 
-#### create_organization(org)
+### create_organization(org)
 Add a new organization
 
 
-* **Parameters**
+**Parameter/s**
 
-    **org** (*str*) – The id of the organization
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+**org** (``str``) – The id of the organization
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_organization_users(org)
+**Return type/s**
+
+dict or None if failed
+
+
+
+### get_organization_users(org)
 Returns a list of users in an organization.
 
 
-* **Parameters**
+**Parameter/s**
 
-    **org** (*str*) – 
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+**org** (``str``) – 
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if not found
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_organization_user(org, username)
+**Return type/s**
+
+dict or None if not found
+
+
+
+### get_organization_user(org, username)
 Returns user info related to an organization.
 
 
-* **Parameters**
-
-    
-    * **org** (*str*) – 
+**Parameter/s**
 
 
-    * **username** (*str*) – 
+* **org** (``str``) – 
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+* **username** (``str``) – 
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if not found
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_organization_user_databases(org, username)
+**Return type/s**
+
+dict or None if not found
+
+
+
+### get_organization_user_databases(org, username)
 Returns the databases available to a user which are inside an organization
 
 
-* **Parameters**
-
-    
-    * **org** (*str*) – 
+**Parameter/s**
 
 
-    * **username** (*str*) – 
+* **org** (``str``) – 
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+* **username** (``str``) – 
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if not found
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_organizations()
+**Return type/s**
+
+dict or None if not found
+
+
+
+### get_organizations()
 Returns a list of organizations in the database.
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
-
-
-
-* **Return type**
-
-    dict or None if not found
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_organization(org)
+**Return type/s**
+
+dict or None if not found
+
+
+
+### get_organization(org)
 Returns a specific organization
 
 
-* **Parameters**
+**Parameter/s**
 
-    **org** (*str*) – The id of the organization
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+**org** (``str``) – The id of the organization
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if not found
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### delete_organization(org)
+**Return type/s**
+
+dict or None if not found
+
+
+
+### delete_organization(org)
 Deletes a specific organization
 
 
-* **Parameters**
+**Parameter/s**
 
-    **org** (*str*) – The id of the organization
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+**org** (``str``) – The id of the organization
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if request failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### change_capabilities(capability_change)
+**Return type/s**
+
+dict or None if request failed
+
+
+
+### change_capabilities(capability_change)
 Change the capabilities of a certain user
 
 
-* **Parameters**
+**Parameter/s**
 
-    **capability_change** (*dict*) – Dict for the capability change request.
+**capability_change** (*dict*) – Dict for the capability change request.
 
-    Example:
-    {
+Example:
+{
 
-    > ”operation”: “revoke”,
-    > “scope”: “UserDatabase/f5a0ef94469b32e1aee321678436c7dfd5a96d9c476672b3282ae89a45b5200e”,
-    > “user”: “User/admin”,
-    > “roles”: [
+> ”operation”: “revoke”,
+> “scope”: “UserDatabase/f5a0ef94469b32e1aee321678436c7dfd5a96d9c476672b3282ae89a45b5200e”,
+> “user”: “User/admin”,
+> “roles”: [
 
-    > > > ”Role/consumer”,
-    > > > “Role/admin”
+> > > ”Role/consumer”,
+> > > “Role/admin”
 
-    > > ]
+> > ]
 
-    }
-
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+}
 
 
 
-* **Return type**
 
-    dict or None if request failed
+**Raises**
+
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### add_role(role)
+**Return type/s**
+
+dict or None if request failed
+
+
+
+### add_role(role)
 Add a new role
 
 
-* **Parameters**
+**Parameter/s**
 
-    **role** (*dict*) – The role dict
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+**role** (*dict*) – The role dict
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
-### Examples
+
+**Return type/s**
+
+dict or None if failed
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363")
->>> client.connect(key="root", team="admin", user="admin", db="example_db")
->>> role = {
-    "name": "Grand Pubah",
-    "action": [
-        "branch",
-        "class_frame",
-        "clone",
-        "commit_read_access",
-        "commit_write_access",
-        "create_database",
-        "delete_database",
-        "fetch",
-        "instance_read_access",
-        "instance_write_access",
-        "manage_capabilities",
-        "meta_read_access",
-        "meta_write_access",
-        "push",
-        "rebase",
-        "schema_read_access",
-        "schema_write_access"
-      ]
-  }
->>> client.add_role(role)
+client = Client("http://127.0.0.1:6363")
+client.connect(key="root", team="admin", user="admin", db="example_db")
+role = {
+"name": "Grand Pubah",
+"action": [
+"branch",
+"class_frame",
+"clone",
+"commit_read_access",
+"commit_write_access",
+"create_database",
+"delete_database",
+"fetch",
+"instance_read_access",
+"instance_write_access",
+"manage_capabilities",
+"meta_read_access",
+"meta_write_access",
+"push",
+"rebase",
+"schema_read_access",
+"schema_write_access"
+]
+}
+client.add_role(role)
 ```
 
 
-#### change_role(role)
+### change_role(role)
 Change role actions for a particular role
 
 
-* **Parameters**
+**Parameter/s**
 
-    **role** (*dict*) – Role dict
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+**role** (*dict*) – Role dict
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
-### Examples
+
+**Return type/s**
+
+dict or None if failed
+
+
+**Example/s**
 
 ```python
->>> client = Client("http://127.0.0.1:6363")
->>> client.connect(key="root", team="admin", user="admin", db="example_db")
->>> role = {
-    "name": "Grand Pubah",
-    "action": [
-        "branch",
-        "class_frame",
-        "clone",
-        "commit_read_access",
-        "commit_write_access",
-        "create_database",
-        "delete_database",
-        "fetch",
-        "instance_read_access",
-        "instance_write_access",
-        "manage_capabilities",
-        "meta_read_access",
-        "meta_write_access",
-        "push",
-        "rebase",
-        "schema_read_access",
-        "schema_write_access"
-      ]
-  }
->>> client.change_role(role)
+client = Client("http://127.0.0.1:6363")
+client.connect(key="root", team="admin", user="admin", db="example_db")
+role = {
+"name": "Grand Pubah",
+"action": [
+"branch",
+"class_frame",
+"clone",
+"commit_read_access",
+"commit_write_access",
+"create_database",
+"delete_database",
+"fetch",
+"instance_read_access",
+"instance_write_access",
+"manage_capabilities",
+"meta_read_access",
+"meta_write_access",
+"push",
+"rebase",
+"schema_read_access",
+"schema_write_access"
+]
+}
+client.change_role(role)
 ```
 
 
-#### get_available_roles()
+### get_available_roles()
 Get the available roles for the current authenticated user
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
-
-
-
-* **Return type**
-
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### add_user(username, password)
+**Return type/s**
+
+dict or None if failed
+
+
+
+### add_user(username, password)
 Add a new user
 
 
-* **Parameters**
-
-    
-    * **username** (*str*) – The username of the user
+**Parameter/s**
 
 
-    * **password** (*str*) – The user’s password
+* **username** (``str``) – The username of the user
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+* **password** (``str``) – The user’s password
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_user(username)
+**Return type/s**
+
+dict or None if failed
+
+
+
+### get_user(username)
 Get a user
 
 
-* **Parameters**
+**Parameter/s**
 
-    **username** (*str*) – The username of the user
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+**username** (``str``) – The username of the user
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_users()
+**Return type/s**
+
+dict or None if failed
+
+
+
+### get_users()
 Get all users
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
-
-
-
-* **Return type**
-
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### delete_user(username)
+**Return type/s**
+
+dict or None if failed
+
+
+
+### delete_user(username)
 Delete a user
 
 
-* **Parameters**
+**Parameter/s**
 
-    **username** (*str*) – The username of the user
-
-
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+**username** (``str``) – The username of the user
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### change_user_password(username, password)
+**Return type/s**
+
+dict or None if failed
+
+
+
+### change_user_password(username, password)
 Change user’s password
 
 
-* **Parameters**
-
-    
-    * **username** (*str*) – The username of the user
+**Parameter/s**
 
 
-    * **password** (*str*) – The new password
+* **username** (``str``) – The username of the user
 
 
-
-* **Raises**
-
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+* **password** (``str``) – The new password
 
 
 
-* **Return type**
+**Raises**
 
-    dict or None if failed
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_database(dbid, team=None)
+**Return type/s**
+
+dict or None if failed
+
+
+
+### get_database(dbid, team=None)
 Returns metadata (id, organization, label, comment) about the requested database
-:type dbid: `str`
+:type dbid: ``str``
 :param dbid: The id of the database
-:type dbid: str
-:type team: `Optional`[`str`]
+:type dbid: `str`
+:type team: `Optional`[``str``]
 :param team: The organization of the database (default self.team)
-:type team: str
+:type team: `str`
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
-
-
-
-* **Return type**
-
-    dict or None if not found
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### get_databases()
+**Return type/s**
+
+dict or None if not found
+
+
+
+### get_databases()
 Returns a list of database metadata records for all databases the user has access to
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
-
-
-
-* **Return type**
-
-    list of dicts
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-#### list_databases()
+**Return type/s**
+
+list of dicts
+
+
+
+### list_databases()
 Returns a list of database ids for all databases the user has access to
 
 
-* **Raises**
+**Raises**
 
-    [**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
+[**InterfaceError**](terminusdb_client.md#terminusdb_client.errors.InterfaceError) – if the client does not connect to a server
 
 
 
-* **Return type**
+**Return type/s**
 
-    list of dicts
+list of dicts
 
 
 ## Module contents
+
