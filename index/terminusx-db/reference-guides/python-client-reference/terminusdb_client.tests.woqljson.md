@@ -39,4 +39,3 @@
 ## terminusdb_client.tests.woqljson.woqlWhenJson module
 
 ## Module contents
-

@@ -13,4 +13,3 @@
 ## terminusdb_client.tests.integration_tests.test_scripts module
 
 ## Module contents
-
