@@ -1,1968 +1,1672 @@
-# terminusdb_client.woqlquery package
+<a id="terminusdb_client.woqlquery"></a>
 
-## Submodules
+# terminusdb\_client.woqlquery
 
-## terminusdb_client.woqlquery.woql_core module
+<a id="terminusdb_client.woqlquery.woql_core"></a>
 
-## terminusdb_client.woqlquery.woql_query module
+# terminusdb\_client.woqlquery.woql\_core
 
+<a id="terminusdb_client.woqlquery.woql_query"></a>
 
-### _class_ terminusdb_client.woqlquery.woql_query.Var(name)
-Bases: `object`
+# terminusdb\_client.woqlquery.woql\_query
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery"></a>
 
-#### \__init__(name)
+## WOQLQuery Objects
 
-### _class_ terminusdb_client.woqlquery.woql_query.Doc(dictionary)
-Bases: `object`
+```python
+class WOQLQuery()
+```
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.__init__"></a>
 
-#### \__init__(dictionary)
+#### \_\_init\_\_
 
-### _class_ terminusdb_client.woqlquery.woql_query.WOQLQuery(query=None, graph='schema')
-Bases: `object`
+```python
+def __init__(query=None, graph="schema")
+```
 
-
-#### \__init__(query=None, graph='schema')
 defines the internal functions of the woql query object - the language API is defined in WOQLQuery
 
+**Arguments**:
 
-* **Parameters**
+- `query` (`dict`): json-ld query for initialisation
+- `graph` (`str`): graph that this query is appled to, default to be schema/main
 
-    
-    * **query** (*dict*) – json-ld query for initialisation
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.__add__"></a>
 
+#### \_\_add\_\_
 
-    * **graph** (*str*) – graph that this query is appled to, default to be schema/main
+```python
+def __add__(other)
+```
 
+Creates a logical AND with the argument passed, for WOQLQueries.
 
+**Arguments**:
 
-#### execute(client, commit_msg=None, file_dict=None)
+- `other` (`WOQLQuery object`): None
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.__and__"></a>
+
+#### \_\_and\_\_
+
+```python
+def __and__(other)
+```
+
+Creates a logical AND with the argument passed, for WOQLQueries.
+
+**Arguments**:
+
+- `other` (`WOQLQuery object`): None
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.__or__"></a>
+
+#### \_\_or\_\_
+
+```python
+def __or__(other)
+```
+
+Creates a logical OR with the argument passed, for WOQLQueries.
+
+**Arguments**:
+
+- `other` (`WOQLQuery object`): None
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.__invert__"></a>
+
+#### \_\_invert\_\_
+
+```python
+def __invert__()
+```
+
+Creates a logical Not with the argument passed, for WOQLQueries.
+
+**Arguments**:
+
+- `other` (`WOQLQuery object`): None
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.execute"></a>
+
+#### execute
+
+```python
+def execute(client, commit_msg=None, file_dict=None)
+```
+
 Executes the query using the passed client to connect to a server
 
+**Arguments**:
 
-* **Parameters**
+- `client` (`Client object`): client that provide connection to the database for the query to execute.
+- `commit_msg` (`str`): optional, commit message for this query. Recommended for query that carrries an update.
+- `file_dict` (``): File dictionary to be associated with post name => filename, for multipart POST
 
-    
-    * **client** (*Client object*) – client that provide connection to the database for the query to execute.
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.to_json"></a>
 
+#### to\_json
 
-    * **commit_msg** (*str*) – optional, commit message for this query. Recommended for query that carrries an update.
+```python
+def to_json()
+```
 
-
-    * **file_dict** – File dictionary to be associated with post name => filename, for multipart POST
-
-
-
-#### to_json()
 Dumps the JSON-LD format of the query in a json string
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.from_json"></a>
 
-#### from_json(input_json)
+#### from\_json
+
+```python
+def from_json(input_json)
+```
+
 Set a query from a JSON-LD json string
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.to_dict"></a>
 
-#### to_dict()
+#### to\_dict
+
+```python
+def to_dict()
+```
+
 Give the dictionary that represents the query in JSON-LD format.
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.from_dict"></a>
 
-#### from_dict(dictdata)
+#### from\_dict
+
+```python
+def from_dict(dictdata)
+```
+
 Set a query from a dictionary that represents the query in JSON-LD format.
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.load_vocabulary"></a>
 
-#### load_vocabulary(client)
+#### load\_vocabulary
+
+```python
+def load_vocabulary(client)
+```
+
 Queries the schema graph and loads all the ids found there as vocabulary that can be used without prefixes
 ignoring blank node ids
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.using"></a>
 
-#### using(collection, subq=None)
+#### using
 
-#### comment(comment, subq=None)
+```python
+def using(collection, subq=None)
+```
+
+Use a specific data product for the enclosed query
+
+**Arguments**:
+
+- `collection` (`str`): the name of the data product
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.comment"></a>
+
+#### comment
+
+```python
+def comment(comment, subq=None)
+```
+
 Adds a text comment to a query - can also be used to wrap any part of a query to turn it off
 
+**Arguments**:
 
-* **Parameters**
+- `comment` (`str`): text comment
 
-    **comment** (*str*) – text comment
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.select"></a>
 
-* **Returns**
+#### select
 
-    query object that can be chained and/or execute
+```python
+def select(*args)
+```
 
+Filters the query so that only the variables included in [V1...Vn] are returned in the bindings
 
+**Arguments**:
 
-* **Return type**
+- `args`: only these variables are returned
 
-    WOQLQuery object
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.distinct"></a>
 
-#### select(\*args)
-Filters the query so that only the variables included in [V1…Vn] are returned in the bindings
+#### distinct
 
+```python
+def distinct(*args)
+```
 
-* **Parameters**
+Ensures that the solutions for the variables [V1...Vn] are distinct
 
-    **args** – only these variables are returned
+**Arguments**:
 
+- `args`: The variables to make distinct with the final argument being a query.
 
+**Returns**:
 
-* **Returns**
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    query object that can be chained and/or execute
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.woql_and"></a>
 
+#### woql\_and
 
+```python
+def woql_and(*args)
+```
 
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### distinct(\*args)
-Ensures that the solutions for the variables [V1…Vn] are distinct
-
-
-* **Parameters**
-
-    **args** – The variables to make distinct with the final argument being a query.
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Example
-
-To load a local csv file:
->>> x,y = WOQLQUery().vars(“X”,”Y”)
->>> WOQLQuery().distinct(x).triple(x,’foo’,y)
-See Also
-
-
-#### woql_and(\*args)
 Creates a logical AND of the arguments
+
 Commonly used to combine WOQLQueries.
 
+**Arguments**:
 
-* **Parameters**
+- `args` (`WOQLQuery objects`): None
 
-    **args** (*WOQLQuery objects*) – 
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.woql_or"></a>
 
-* **Returns**
+#### woql\_or
 
-    query object that can be chained and/or execute
+```python
+def woql_or(*args)
+```
 
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### woql_or(\*args)
 Creates a logical OR of the arguments
 
+**Arguments**:
 
-* **Parameters**
+- `args` (`WOQLQuery objects`): None
 
-    **args** (*WOQLQuery objects*) – 
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.woql_from"></a>
 
-* **Returns**
+#### woql\_from
 
-    query object that can be chained and/or execute
+```python
+def woql_from(graph, query=None)
+```
 
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### woql_from(graph, query=None)
 Specifies the database URL that will be the default database for the enclosed query
 
+**Arguments**:
 
-* **Parameters**
+- `graph` (`str`): url of the database
+- `query` (`WOQLQuery object`): None
 
-    
-    * **graph** (*str*) – url of the database
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.into"></a>
 
+#### into
 
+```python
+def into(graph_descriptor, query)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### into(graph_descriptor, query)
 Sets the current output graph for writing output to.
 
+**Arguments**:
 
-* **Parameters**
+- `graph_descriptor` (`str`): output graph
+- `query` (`WOQLQuery object`): None
 
-    
-    * **graph_descriptor** (*str*) – output graph
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.triple"></a>
 
+#### triple
 
+```python
+def triple(sub, pred, obj, opt=False)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### triple(sub, pred, obj, opt=False)
 Creates a triple pattern matching rule for the triple [S, P, O] (Subject, Predicate, Object)
 
+**Arguments**:
 
-* **Parameters**
+- `sub` (`str`): Subject, has to be a node (URI)
+- `pred` (`str`): Predicate, can be variable (prefix with "v:") or node
+- `obj` (`str`): Object, can be variable or node or value
+- `opt` (`bool`): weather or not this triple is optional, default to be False
 
-    
-    * **sub** (*str*) – Subject, has to be a node (URI)
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pred** (*str*) – Predicate, can be variable (prefix with “v:”) or node
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.added_triple"></a>
 
+#### added\_triple
 
-    * **obj** (*str*) – Object, can be variable or node or value
+```python
+def added_triple(sub, pred, obj, opt=False)
+```
 
-
-    * **opt** (*bool*) – weather or not this triple is optional, default to be False
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### added_triple(sub, pred, obj, opt=False)
 Creates a triple pattern matching rule for the triple [S, P, O] (Subject, Predicate, Object) added to the current commit.
 
+**Arguments**:
 
-* **Parameters**
+- `sub` (`str`): Subject
+- `pred` (`str`): Predicate
+- `obj` (`str`): Object
+- `opt` (`bool`): weather or not this triple is optional, default to be False
 
-    
-    * **sub** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pred** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.removed_triple"></a>
 
+#### removed\_triple
 
-    * **obj** (*str*) – Object
+```python
+def removed_triple(sub, pred, obj, opt=False)
+```
 
-
-    * **opt** (*bool*) – weather or not this triple is optional, default to be False
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### removed_triple(sub, pred, obj, opt=False)
 Creates a triple pattern matching rule for the triple [S, P, O] (Subject, Predicate, Object) added to the current commit.
 
+**Arguments**:
 
-* **Parameters**
+- `sub` (`str`): Subject
+- `pred` (`str`): Predicate
+- `obj` (`str`): Object
+- `opt` (`bool`): weather or not this triple is optional, default to be False
 
-    
-    * **sub** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pred** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.quad"></a>
 
+#### quad
 
-    * **obj** (*str*) – Object
+```python
+def quad(sub, pred, obj, graph, opt=False)
+```
 
-
-    * **opt** (*bool*) – weather or not this triple is optional, default to be False
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### quad(sub, pred, obj, graph, opt=False)
 Creates a pattern matching rule for the quad [S, P, O, G] (Subject, Predicate, Object, Graph)
 
+**Arguments**:
 
-* **Parameters**
+- `sub` (`str`): Subject
+- `pre` (`str`): Predicate
+- `obj` (`str`): Object
+- `gra` (`str`): Graph
+- `opt` (`bool`): weather or not this quad is optional, default to be False
 
-    
-    * **sub** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pre** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.added_quad"></a>
 
+#### added\_quad
 
-    * **obj** (*str*) – Object
+```python
+def added_quad(sub, pred, obj, graph, opt=False)
+```
 
-
-    * **gra** (*str*) – Graph
-
-
-    * **opt** (*bool*) – weather or not this quad is optional, default to be False
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### added_quad(sub, pred, obj, graph, opt=False)
 Creates a pattern matching rule for the quad [S, P, O, G] (Subject, Predicate, Object, Graph) added to the current commit.
 
+**Arguments**:
 
-* **Parameters**
+- `sub` (`str`): Subject
+- `pre` (`str`): Predicate
+- `obj` (`str`): Object
+- `gra` (`str`): Graph
+- `opt` (`bool`): weather or not this quad is optional, default to be False
 
-    
-    * **sub** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pre** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.removed_quad"></a>
 
+#### removed\_quad
 
-    * **obj** (*str*) – Object
+```python
+def removed_quad(sub, pred, obj, graph, opt=False)
+```
 
-
-    * **gra** (*str*) – Graph
-
-
-    * **opt** (*bool*) – weather or not this quad is optional, default to be False
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### removed_quad(sub, pred, obj, graph, opt=False)
 Creates a pattern matching rule for the quad [S, P, O, G] (Subject, Predicate, Object, Graph) added to the current commit.
 
+**Arguments**:
 
-* **Parameters**
+- `sub` (`str`): Subject
+- `pre` (`str`): Predicate
+- `obj` (`str`): Object
+- `gra` (`str`): Graph
+- `opt` (`bool`): weather or not this quad is optional, default to be False
 
-    
-    * **sub** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pre** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.string"></a>
 
+#### string
 
-    * **obj** (*str*) – Object
+```python
+def string(input_str)
+```
 
-
-    * **gra** (*str*) – Graph
-
-
-    * **opt** (*bool*) – weather or not this quad is optional, default to be False
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### string(input_str)
 Transforms the given string into the proper json-ld form
 
+**Arguments**:
 
-* **Parameters**
+- `input_str` (`str`): the given input string
 
-    **input_str** (*str*) – the given input string
+**Returns**:
 
+`dict`: 
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.boolean"></a>
 
-* **Return type**
+#### boolean
 
-    dict
+```python
+def boolean(input_bool)
+```
 
-
-
-#### boolean(input_bool)
 Transforms the given bool object into the proper json-ld form
 
+**Arguments**:
 
-* **Parameters**
+- `input_bool` (`bool`): the given input string
 
-    **input_bool** (*bool*) – the given input string
+**Returns**:
 
+`dict`: 
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.datetime"></a>
 
-* **Return type**
+#### datetime
 
-    dict
+```python
+def datetime(input_obj)
+```
 
-
-
-#### datetime(input_obj)
 Transforms the given datetime object into the proper json-ld form
 
+**Arguments**:
 
-* **Parameters**
+- `input_obj` (`str`): the given input dateTime object
 
-    **input_obj** (*str*) – the given input dateTime object
+**Returns**:
 
+`dict`: 
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.sub"></a>
 
-* **Return type**
+#### sub
 
-    dict
+```python
+def sub(parent, child)
+```
 
-
-
-#### literal(input_val, input_type)
-
-#### iri(varname)
-
-#### sub(parent, child)
 Returns true if child is a sub-class of parent, according to the current DB schema
 
+**Arguments**:
 
-* **Parameters**
+- `parent` (`str`): the parent class to be checked
+- `child` (`str`): the child class to be checked
 
-    
-    * **parent** (*str*) – the parent class to be checked
+**Returns**:
 
+`bool`: 
 
-    * **child** (*str**, **optional*) – the child class to be checked
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.eq"></a>
 
+#### eq
 
+```python
+def eq(left, right)
+```
 
-* **Return type**
-
-    bool
-
-
-
-#### eq(left, right)
 Matches if a is equal to b
-:param left: object in the graph
-:type left: str
-:param right: object in the graph
-:type right: str
 
+**Arguments**:
 
-* **Returns**
+- `left` (`str`): object in the graph
+- `right` (`str`): object in the graph
 
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.update_document"></a>
+
+#### update\_document
+
+```python
+def update_document(docjson, json_or_iri=None)
+```
+
+Update a document in the database
+
+**Arguments**:
+
+- `docjson` (`JSON`): object to be updated
+- `json_or_iri` (`str`): the output ID, or a JSON to compare the ID against
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.insert_document"></a>
+
+#### insert\_document
+
+```python
+def insert_document(docjson, json_or_iri=None)
+```
+
+Insert a document into the database
+
+**Arguments**:
+
+- `docjson` (`JSON`): object to be inserted
+- `json_or_iri` (`str`): the output ID, or a JSON to compare the ID against
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.delete_document"></a>
+
+#### delete\_document
+
+```python
+def delete_document(json_or_iri)
+```
+
+Delete a document into the database
+
+**Arguments**:
+
+- `docjson` (`JSON`): object to be deleted
+- `json_or_iri` (`str`): the output ID, or a JSON to compare the ID against
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.read_document"></a>
+
+#### read\_document
+
+```python
+def read_document(iri, output_var)
+```
+
+Read a document from the database
+
+Parameters
+----------
+iri : str
+    object to be deleted
+output_var : str
+    the document as JSON
+Returns
+-------
+WOQLQuery object
     query object that can be chained and/or execute
+Example
+-------
+>>> query = (WOQLQuery().triple('v:TermId', 'rdf:type', '@schema:Term') &
+             WOQLQuery().triple('v:TermCountId','term','v:TermId') &
+             WOQLQuery().triple('v:DocumentId', 'terms', 'v:TermCountId') &
+             WOQLQuery().read_document('v:TermId','v:TermDoc'))
 
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.get"></a>
 
-* **Return type**
+#### get
 
-    WOQLQuery object
+```python
+def get(as_vars, query_resource=None)
+```
 
-
-
-#### substr(string, length, substring, before=0, after=0)
-
-#### update_object(docjson)
-
-#### update_document(docjson, json_or_iri=None)
-
-#### insert_document(docjson, json_or_iri=None)
-
-#### delete_object(json_or_iri)
-
-#### delete_document(json_or_iri)
-
-#### read_object(iri, output_var)
-
-#### read_document(iri, output_var)
-
-#### get(as_vars, query_resource=None)
 Takes an as structure
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.put"></a>
 
-#### put(as_vars, query, query_resource=None)
+#### put
+
+```python
+def put(as_vars, query, query_resource=None)
+```
+
 Takes an array of variables, an optional array of column names
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.file"></a>
 
-#### woql_as(\*args)
+#### file
 
-#### file(fpath, opts=None)
+```python
+def file(fpath, opts=None)
+```
+
 Provides details of a file source in a JSON format that includes a URL property
 
+**Arguments**:
 
-* **Parameters**
+- `fpath` (`dict`): file data source in a JSON format
+- `opts` (`input options`): optional
 
-    
-    * **fpath** (*dict*) – file data source in a JSON format
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **opts** (*input options*) – optional
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.once"></a>
 
+#### once
 
+```python
+def once(query=None)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Example
-
-To load a local csv file:
->>> WOQLQuery().file(“/app/local_files/my.csv”)
-
-
-#### once(query=None)
 Obtains only one result from subquery
 
+**Arguments**:
 
-* **Parameters**
+- `query` (`WOQLQuery object`): None
+- `Returns`: None
+- `----------`: None
+- `WOQLQuery object`: query object that can be chained and/or executed
 
-    **query** (*WOQLQuery object**, **optional*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.remote"></a>
 
+#### remote
 
+```python
+def remote(uri, opts=None)
+```
 
-* **Returns**
-
-    query object that can be chained and/or executed
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### remote(uri, opts=None)
 Provides details of a remote data source in a JSON format that includes a URL property
 
+**Arguments**:
 
-* **Parameters**
+- `uri` (`str`): remote data source
+- `opts` (`input options`): optional
 
-    
-    * **uri** (*str*) – remote data source
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **opts** (*input options*) – optional
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.delete_triple"></a>
 
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Examples
+#### delete\_triple
 
 ```python
->>> csv = WOQLQuery().get(
-...     WOQLQuery().woql_as("Start station", "v:Start_Station").
-...     woql_as("End station", "v:End_Station").
-...     woql_as("Start date", "v:Start_Time").
-...     woql_as("End date", "v:End_Time").
-...     woql_as("Duration", "v:Duration").
-...     woql_as("Start station number", "v:Start_ID").
-...     woql_as("End station number", "v:End_ID").
-...     woql_as("Bike number", "v:Bike").
-...     woql_as("Member type", "v:Member_Type")
-... ).remote("https://terminusdb.com/t/data/bike_tutorial.csv")
+def delete_triple(subject, predicate, object_or_literal)
 ```
 
-
-#### post(fpath, opts=None)
-
-#### delete_triple(subject, predicate, object_or_literal)
 Deletes any triples that match the rule [subject, predicate, object]
 
+**Arguments**:
 
-* **Parameters**
+- `subject` (`str`): Subject
+- `predicate` (`str`): Predicate
+- `object_or_literal` (`str`): Object or Literal
 
-    
-    * **subject** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **predicate** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.add_triple"></a>
 
+#### add\_triple
 
-    * **object_or_literal** (*str*) – Object or Literal
+```python
+def add_triple(subject, predicate, object_or_literal)
+```
 
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Examples
-
-This example deletes the comment triple of a particular value from the document
-identified by doc:X:
->>> update = WOQLQuery().delete_triple(“doc:X”, “comment”, “my comment”)
->>> qry = WOQLQuery().when(True, update)
->>> client.update(qry.json(), ‘MyDatabaseId’)
-Note that only triples matching the particular object value will be deleted.
-To delete all triples matching this predicate, (regardless of value) we use a
-when clause, and introduce a variable `v:any` which will bind to any value
-for this subject and predicate combination:
->>> when = WOQLQuery().triple(‘doc:X’, ‘comment’, ‘v:any’)
->>> update = WOQLQuery().delete_triple(‘doc:X’, ‘comment’, ‘v:any’)
->>> qry = WOQLQuery().when(when, update)
->>> client.update(qry.json(), ‘MyDatabaseId’)
-
-
-#### add_triple(subject, predicate, object_or_literal)
 Adds triples according to the the pattern [subject, predicate, object]
 
+**Arguments**:
 
-* **Parameters**
+- `subject` (`str`): Subject
+- `predicate` (`str`): Predicate
+- `object_or_literal` (`str`): Object or Literal
 
-    
-    * **subject** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **predicate** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.delete_quad"></a>
 
+#### delete\_quad
 
-    * **object_or_literal** (*str*) – Object or Literal
+```python
+def delete_quad(subject, predicate, object_or_literal, graph=None)
+```
 
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Examples
-
-This example adds a triple for a comment predicate and a certain value to the document identified by doc:X:
->>> update = WOQLQuery().add_triple(“doc:X”, “comment”, “my comment”)
->>> qry = WOQLQuery().when(True, update)
->>> client.update(qry.json(), ‘MyDatabaseId’)
-
-### Notes
-
-To update an existing triple, it is not just a case of calling add_triple again.
-One needs to delete the previous triple first.
-Otherwise two triples with the same predicate but different object values will be present.
-
-
-#### update_triple(subject, predicate, new_object)
-
-#### delete_quad(subject, predicate, object_or_literal, graph=None)
 Deletes any quads that match the rule [subject, predicate, object, graph]
 
+**Arguments**:
 
-* **Parameters**
+- `subject` (`str`): Subject
+- `predicate` (`str`): Predicate
+- `object_or_literal` (`str`): Object or Literal
+- `graph` (`str`): Graph
 
-    
-    * **subject** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **predicate** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.add_quad"></a>
 
+#### add\_quad
 
-    * **object_or_literal** (*str*) – Object or Literal
+```python
+def add_quad(subject, predicate, object_or_literal, graph)
+```
 
-
-    * **graph** (*str*) – Graph
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### add_quad(subject, predicate, object_or_literal, graph)
 Adds quads according to the pattern [subject, predicate, object, graph]
 
+**Arguments**:
 
-* **Parameters**
+- `subject` (`str`): Subject
+- `predicate` (`str`): Predicate
+- `object_or_literal` (`str`): Object or Literal
+- `graph` (`str`): Graph
 
-    
-    * **subject** (*str*) – Subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **predicate** (*str*) – Predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.trim"></a>
 
+#### trim
 
-    * **object_or_literal** (*str*) – Object or Literal
+```python
+def trim(untrimmed, trimmed)
+```
 
-
-    * **graph** (*str*) – Graph
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### update_quad(subject, predicate, new_object, graph)
-
-#### trim(untrimmed, trimmed)
 A trimmed version of untrimmed (with leading and trailing whitespace removed) is copied into trimmed
 
+**Arguments**:
 
-* **Parameters**
+- `untrimmed` (`str`): original string
+- `trimmed` (`str`): WOQL varible storing the result string
 
-    
-    * **untrimmed** (*str*) – original string
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **trimmed** (*str*) – WOQL varible storing the result string
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.eval"></a>
 
+#### eval
 
+```python
+def eval(arith, res)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### eval(arith, res)
 Evaluates the Arithmetic Expression Arith and copies the output to variable V
 
+**Arguments**:
 
-* **Parameters**
+- `arith` (`WOQLQuery or dict`): query or JSON-LD representing the query
+- `res` (`str`): output variable
 
-    
-    * **arith** (*WOQLQuery** or **dict*) – query or JSON-LD representing the query
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **res** (*str*) – output variable
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.plus"></a>
 
+#### plus
 
+```python
+def plus(*args)
+```
 
-* **Returns**
+Adds numbers N1...Nn together
 
-    query object that can be chained and/or execute
+**Arguments**:
 
+- `args` (`int or float`): numbers to add together
 
+**Returns**:
 
-* **Return type**
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    WOQLQuery object
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.minus"></a>
 
+#### minus
 
+```python
+def minus(*args)
+```
 
-#### plus(\*args)
-Adds numbers N1…Nn together
+Adds numbers N1...Nn together
 
+**Arguments**:
 
-* **Parameters**
+- `args` (`int or float`): numbers to add together
 
-    **args** (*int** or **float*) – numbers to add together
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.times"></a>
 
-* **Returns**
+#### times
 
-    query object that can be chained and/or execute
+```python
+def times(*args)
+```
 
+Multiplies numbers N1...Nn together
 
+**Arguments**:
 
-* **Return type**
+- `args` (`int or float`): numbers to be multiplied
 
-    WOQLQuery object
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.divide"></a>
 
-#### minus(\*args)
-Adds numbers N1…Nn together
+#### divide
 
+```python
+def divide(*args)
+```
 
-* **Parameters**
+Divides numbers N1...Nn by each other left, to right precedence
 
-    **args** (*int** or **float*) – numbers to add together
+**Arguments**:
 
+- `args` (`int or float`): numbers to be divided
 
+**Returns**:
 
-* **Returns**
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    query object that can be chained and/or execute
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.div"></a>
 
+#### div
 
+```python
+def div(*args)
+```
 
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### times(\*args)
-Multiplies numbers N1…Nn together
-
-
-* **Parameters**
-
-    **args** (*int** or **float*) – numbers to be multiplied
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### divide(\*args)
-Divides numbers N1…Nn by each other left, to right precedence
-
-
-* **Parameters**
-
-    **args** (*int** or **float*) – numbers to be divided
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### div(\*args)
 Division - integer division - args are divided left to right
 
+**Arguments**:
 
-* **Parameters**
+- `args` (`int or float`): numbers for division
 
-    **args** (*int** or **float*) – numbers for division
+**Returns**:
 
+`WOQLQuery`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.exp"></a>
 
-* **Returns**
+#### exp
 
-    query object that can be chained and/or execute
+```python
+def exp(first, second)
+```
 
-
-
-* **Return type**
-
-    WOQLQuery
-
-
-
-#### exp(first, second)
 Raises A to the power of B
 
+**Arguments**:
 
-* **Parameters**
+- `first` (`int or float`): base number
+- `second` (`int or float`): power of
 
-    
-    * **first** (*int** or **float*) – base number
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **second** (*int** or **float*) – power of
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.floor"></a>
 
+#### floor
 
+```python
+def floor(user_input)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### floor(user_input)
 The floor function of a real number x denotes the greatest integer less than or equal to x.
 
+**Arguments**:
 
-* **Parameters**
+- `user_input` (`int or float`): number whose floor needs to be calculated
 
-    **user_input** (*int** or **float*) – number whose floor needs to be calculated
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.isa"></a>
 
-* **Returns**
+#### isa
 
-    query object that can be chained and/or execute
+```python
+def isa(element, of_type)
+```
 
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### isa(element, of_type)
 Matches if element is a member of a certain type, according to the current state of the DB
 
+**Arguments**:
 
-* **Parameters**
+- `element` (`str`): element to be checked
+- `of_type` (`str`): type to be checked
 
-    
-    * **element** (*str*) – element to be checked
+**Returns**:
 
+`bool`: 
 
-    * **of_type** (*str*) – type to be checked
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.like"></a>
 
+#### like
 
+```python
+def like(left, right, dist)
+```
 
-* **Return type**
+Matches left string to right string with a distance
 
-    bool
+**Arguments**:
 
+- `left` (`str`): first string to compare
+- `right` (`str`): second string to compare
+- `dist` (`str`): Hamming distance between left and right
 
+**Returns**:
 
-#### like(left, right, dist)
+`WOQLQuery object`: query object that can be chained and/or execute
 
-#### less(left, right)
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.less"></a>
+
+#### less
+
+```python
+def less(left, right)
+```
+
 Compares the value of v1 against v2 and returns true if v1 is less than v2
 
+**Arguments**:
 
-* **Parameters**
+- `left` (`str`): first variable to compare
+- `right` (`str`): second variable to compare
 
-    
-    * **left** (*str*) – first variable to compare
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **right** (*str*) – second variable to compare
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.greater"></a>
 
+#### greater
 
+```python
+def greater(left, right)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### greater(left, right)
 Compares the value of v1 against v2 and returns true if v1 is greater than v2
 
+**Arguments**:
 
-* **Parameters**
+- `left` (`str`): first variable to compare
+- `right` (`str`): second variable to compare
 
-    
-    * **left** (*str*) – first variable to compare
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **right** (*str*) – second variable to compare
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.opt"></a>
 
+#### opt
 
+```python
+def opt(query=None)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### opt(query=None)
 The Query in the Optional argument is specified as optional
 
+**Arguments**:
 
-* **Parameters**
+- `query` (`WOQLQuery object`): None
 
-    **query** (*WOQLQuery object*) – 
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.unique"></a>
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Examples
+#### unique
 
 ```python
->>> WOQLQuery().woql_and(WOQLQuery().
-... triple('v:MandatorySubject','v:MandatoryObject', 'v:MandatoryValue'),
-... WOQLQuery.opt(WOQLQuery().triple('v:OptionalS', 'v:OptionalObject',
-... 'v:OptionalValue'))
-... )
+def unique(prefix, key_list, uri)
 ```
 
-
-#### unique(prefix, key_list, uri)
 Generates an ID for a node as a function of the passed VariableList with a specific prefix (URL base)(A.K.A Hashing) If the values of the passed variables are the same, the output will be the same
 
+**Arguments**:
 
-* **Parameters**
+- `prefix` (`str`): prefix for the id
+- `key_list` (`str`): variable to generate id for
+- `uri` (`str`): the variable to hold the id
 
-    
-    * **prefix** (*str*) – prefix for the id
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **key_list** (*str*) – variable to generate id for
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.idgen"></a>
 
-
-    * **uri** (*str*) – the variable to hold the id
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Examples
+#### idgen
 
 ```python
->>> WOQLQuery().unique("https://base.url",["page","1"],"v:obj_id").execute(client)
-{'@type': 'api:WoqlResponse', 'api:status': 'api:success', 'api:variable_names': ['obj_id'], 'bindings': [{'obj_id': 'https://base.urlacd150a6885f609532931d89844070b1'}], 'deletes': 0, 'inserts': 0, 'transaction_retry_count': 0}
+def idgen(prefix, input_var_list, output_var)
 ```
 
-
-#### idgen(prefix, input_var_list, output_var)
 Generates an ID for a node as a function of the passed VariableList with a specific prefix (URL base). If the values of the passed variables are the same, the output will be the same
 
+**Arguments**:
 
-* **Parameters**
+- `prefix` (`str`): prefix for the id
+- `input_var_list` (`str or list`): variable to generate id for
+- `output_var` (`str`): the variable to hold the id
 
-    
-    * **prefix** (*str*) – prefix for the id
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **input_var_list** (*str** or **list*) – variable to generate id for
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.random_idgen"></a>
 
-
-    * **output_var** (*str*) – the variable to hold the id
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Examples
+#### random\_idgen
 
 ```python
->>> WOQLQuery().idgen("https://base.url",["page","1"],"v:obj_id").execute(client)
-{'@type': 'api:WoqlResponse', 'api:status': 'api:success', 'api:variable_names': ['obj_id'], 'bindings': [{'obj_id': 'https://base.url_page_1'}], 'deletes': 0, 'inserts': 0, 'transaction_retry_count': 0}
+def random_idgen(prefix, key_list, uri)
 ```
 
-
-#### random_idgen(prefix, key_list, uri)
 Randomly generates an ID and appends to the end of the key_list.
 
+**Arguments**:
 
-* **Parameters**
+- `prefix` (`str`): prefix for the id
+- `key_list` (`str`): variable to generate id for
+- `uri` (`str`): the variable to hold the id
 
-    
-    * **prefix** (*str*) – prefix for the id
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **key_list** (*str*) – variable to generate id for
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.upper"></a>
 
-
-    * **uri** (*str*) – the variable to hold the id
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Examples
+#### upper
 
 ```python
->>> WOQLQuery().random_idgen("https://base.url",["page","1"],"v:obj_id").execute(client)
-{'@type': 'api:WoqlResponse', 'api:status': 'api:success', 'api:variable_names': ['obj_id'], 'bindings': [{'obj_id': 'http://base.url_page_1_rv1mfa59ekisdutnxx6zdt2fkockgah'}], 'deletes': 0, 'inserts': 0, 'transaction_retry_count': 0}
+def upper(left, right)
 ```
 
+Changes a string to upper-case - input is in left, output in right
 
-#### upper(left, right)
+**Arguments**:
 
-#### lower(left, right)
+- `left` (`str`): input string
+- `right` (`str`): stores output
+
+**Returns**:
+
+`WOQLQuery object`: query object that can be chained and/or execute
+
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.lower"></a>
+
+#### lower
+
+```python
+def lower(left, right)
+```
+
 Changes a string to lower-case - input is in u, output in l
 
+**Arguments**:
 
-* **Parameters**
+- `left` (`str`): input string
+- `right` (`str`): stores output
 
-    
-    * **left** (*str*) – input string
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **right** (*str*) – stores output
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.pad"></a>
 
+#### pad
 
+```python
+def pad(user_input, pad, length, output)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### pad(user_input, pad, length, output)
 Pads out the string input to be exactly len long by appending the pad character pad to form output
 
+**Arguments**:
 
-* **Parameters**
+- `user_input` (`str`): input string
+- `pad` (`str`): padding character(s)
+- `length` (`int`): length to pad
+- `output` (`str`): stores output
 
-    
-    * **user_input** (*str*) – input string
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pad** (*str*) – padding character(s)
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.split"></a>
 
+#### split
 
-    * **length** (*int*) – length to pad
+```python
+def split(user_input, glue, output)
+```
 
-
-    * **output** (*str*) – stores output
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### split(user_input, glue, output)
 Splits a variable apart (input) into a list of variables (output) by separating the strings together with separator
 
+**Arguments**:
 
-* **Parameters**
+- `user_input` (`str`): input string or WOQL variable "v:"
+- `glue` (`str`): character string to separate string into list
+- `output` (`str`): WOQL variable that stores output list
 
-    
-    * **user_input** (*str*) – input string or WOQL variable “v:”
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **glue** (*str*) – character string to separate string into list
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.dot"></a>
 
+#### dot
 
-    * **output** (*str*) – WOQL variable that stores output list
+```python
+def dot(document, field, value)
+```
 
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### dot(document, field, value)
 Iterates through a list and returns a value for each member
 
+**Arguments**:
 
-* **Parameters**
+- `dictionary`: a WOQL dictionary or variable representing a dictionary
+- `field` (`str`): a string representing the field or key to access the dictionary
+- `value`: a WOQL value representing the result
 
-    
-    * **dictionary** – a WOQL dictionary or variable representing a dictionary
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **field** (*str*) – a string representing the field or key to access the dictionary
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.member"></a>
 
+#### member
 
-    * **value** – a WOQL value representing the result
+```python
+def member(member, mem_list)
+```
 
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### member(member, mem_list)
 Iterates through a list and returns a value for each member
 
+**Arguments**:
 
-* **Parameters**
+- `member` (`str`): a WOQL variable representing an element of the list
+- `mem_list` (`str`): a WOQL list variable
 
-    
-    * **member** (*str*) – a WOQL variable representing an element of the list
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **mem_list** (*str*) – a WOQL list variable
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.concat"></a>
 
+#### concat
 
+```python
+def concat(concat_list, result)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### concat(concat_list, result)
 Concatenates the list of variables into a string and saves the result in v
 
+**Arguments**:
 
-* **Parameters**
+- `concat_list` (`list`): list of variables to concatenate
+- `result` (`str`): saves the results
 
-    
-    * **concat_list** (*list*) – list of variables to concatenate
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **result** (*str*) – saves the results
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.join"></a>
 
+#### join
 
+```python
+def join(user_input, glue, output)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### join(user_input, glue, output)
 Joins a list variable together (input) into a string variable (output) by glueing the strings together with glue
 
+**Arguments**:
 
-* **Parameters**
+- `user_input` (`list`): a list of variables
+- `glue` (`str`): jioining character(s)
+- `output` (`str`): variable that sotres output
 
-    
-    * **user_input** (*list*) – a list of variables
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **glue** (*str*) – jioining character(s)
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.sum"></a>
 
+#### sum
 
-    * **output** (*str*) – variable that sotres output
+```python
+def sum(user_input, output)
+```
 
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### sum(user_input, output)
 Joins a list variable containing numbers together (input) into a single number
+
 containing the sum.
 
+**Arguments**:
 
-* **Parameters**
+- `user_input` (`list`): a variable containing a list of numbers
+- `output` (`str`): a variable that stores the output
 
-    
-    * **user_input** (*list*) – a variable containing a list of numbers
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **output** (*str*) – a variable that stores the output
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.start"></a>
 
+#### start
 
+```python
+def start(start, query=None)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### start(start, query=None)
 Specifies that the start of the query returned
 
+**Arguments**:
 
-* **Parameters**
+- `start` (`int`): index of the frist result got returned
+- `query` (`WOQLQuery object`): None
 
-    
-    * **start** (*int*) – index of the frist result got returned
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.limit"></a>
 
+#### limit
 
+```python
+def limit(limit, query=None)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### limit(limit, query=None)
 Specifies that only the first Number of rows will be returned
 
+**Arguments**:
 
-* **Parameters**
+- `limit` (`int`): number of maximum results returned
+- `query` (`WOQLQuery object`): None
 
-    
-    * **limit** (*int*) – number of maximum results returned
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.regexp"></a>
 
+#### regexp
 
+```python
+def regexp(pattern, reg_str, reg_list)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### re(pattern, reg_str, reg_list)
 Regular Expression Call
-p is a regex pattern (.\*) using normal regular expression syntax, the only unusual thing is that special characters have to be escaped twice, s is the string to be matched and m is a list of matches:
-e.g. WOQL.re(“(.).\*”, “hello”, [“v:All”, “v:Sub”])
 
+pattern is a regex pattern (.*) using normal regular expression syntax, the only unusual thing is that special characters have to be escaped twice, s is the string to be matched and m is a list of matches:
+e.g. WOQLQuery().regexp("(.).*", "hello", ["v:All", "v:Sub"])
 
-* **Parameters**
+**Arguments**:
 
-    
-    * **pattern** (*str*) – regex pattern
+- `pattern` (`str`): regex pattern
+- `reg_str` (`str`): string to be matched
+- `reg_list` (`str or list or dict`): store list of matches
 
+**Returns**:
 
-    * **reg_str** (*str*) – string to be matched
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.length"></a>
 
-    * **reg_list** (*str** or **list** or **dict*) – store list of matches
+#### length
 
+```python
+def length(var_list, var_len)
+```
 
+Length
 
-* **Returns**
+Calculates the length of a list
 
-    query object that can be chained and/or execute
+**Arguments**:
 
+- `var_list` (`list`): list of elements
+- `var_len` (`num`): number of eleemnts
 
+**Returns**:
 
-* **Return type**
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    WOQLQuery object
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.woql_not"></a>
 
+#### woql\_not
 
+```python
+def woql_not(query=None)
+```
 
-#### length(var_list, var_len)
-
-#### woql_not(query=None)
 Creates a logical NOT of the arguments
 
+**Arguments**:
 
-* **Parameters**
+- `query` (`WOQLQuery object`): None
+- `Returns`: None
+- `----------`: None
+- `WOQLQuery object`: query object that can be chained and/or executed
 
-    **query** (*WOQLQuery object**, **optional*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.immediately"></a>
 
+#### immediately
 
+```python
+def immediately(query=None)
+```
 
-* **Returns**
-
-    query object that can be chained and/or executed
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### immediately(query=None)
 Immediately runs side-effects without backtracking
 
+**Arguments**:
 
-* **Parameters**
+- `query` (`WOQLQuery object`): None
+- `Returns`: None
+- `----------`: None
+- `WOQLQuery object`: query object that can be chained and/or executed
 
-    **query** (*WOQLQuery object**, **optional*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.count"></a>
 
+#### count
 
+```python
+def count(countvar, query=None)
+```
 
-* **Returns**
-
-    query object that can be chained and/or executed
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### count(countvar, query=None)
 Counds the number of solutions in the given query
 
+**Arguments**:
 
-* **Parameters**
+- `result` (`A variable or non-negative integer with the count`): None
+- `query` (`The query from which to count the number of results`): None
+- `Returns`: None
+- `----------`: None
+- `WOQLQuery object`: query object that can be chained and/or executed
 
-    
-    * **result** (*A variable** or **non-negative integer with the count*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.cast"></a>
 
+#### cast
 
-    * **query** (*The query from which to count the number of results*) – 
+```python
+def cast(val, user_type, result, literal_type=None)
+```
 
-
-
-* **Returns**
-
-    query object that can be chained and/or executed
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### cast(val, user_type, result, literal_type=None)
 Changes the type of va to type and saves the return in vb
 
+**Arguments**:
 
-* **Parameters**
+- `val` (`str`): original variable
+- `user_type` (`str`): type to be changed
+- `result` (`str`): save the return variable
+- `literal_type` (`str`): literal type of`val`, can be used to treat `val` as a literal rather than an object or variable in the WOQL query.
+If literal type is "owl:Thing" or "node", `val` will be treated as object in the graph
 
-    
-    * **val** (*str*) – original variable
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **user_type** (*str*) – type to be changed
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.type_of"></a>
 
+#### type\_of
 
-    * **result** (*str*) – save the return variable
+```python
+def type_of(value, vtype)
+```
 
-
-    * **literal_type** (*str**, **optional*) – literal type of\`val\`, can be used to treat val as a literal rather than an object or variable in the WOQL query.
-    If literal type is “owl:Thing” or “node”, val will be treated as object in the graph
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### type_of(value, vtype)
 Sets the given value and type for cursor.
 
+**Arguments**:
 
-* **Parameters**
+- `value` (`str`): Value which needs to be set
+- `vtype` (`type`): Type which needs to be set
 
-    
-    * **value** (*str*) – Value which needs to be set
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **vtype** (*type*) – Type which needs to be set
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.order_by"></a>
 
+#### order\_by
 
+```python
+def order_by(*args, order="asc")
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### order_by(\*args, order='asc')
 Orders the results by the list of variables including in gvarlist, asc_or_desc is a WOQL.asc or WOQ.desc list of variables
 
+**Arguments**:
 
-* **Parameters**
+- `gvarlist` (`list or dict of WOQLQuery().asc or WOQLQuery().desc objects`): None
+- `query` (`WOQLQuery object`): None
 
-    
-    * **gvarlist** (*list** or **dict of WOQLQuery**(**)**.asc** or **WOQLQuery**(**)**.desc objects*) – 
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **query** (*WOQLQuery object**, **optional*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.group_by"></a>
 
+#### group\_by
 
+```python
+def group_by(group_vars, template, output, groupquery=None)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-### Examples
-
-Examples of 3 different usage patterns of order argument
-
-    ```python
-    >>> test1 = WOQLQuery().select("v:Time").using("_commits").woql_and(
-    ...        WOQLQuery().order_by("v:Time", order="asc").triple("v:A", "ref:commit_timestamp", "v:Time")
-    ... )
-    >>> test2 = WOQLQuery().select("v:Time", "v:Message").using("_commits").woql_and(
-    ...     WOQLQuery().order_by("v:Time", "v:Message", order={"v:Time": "desc", "v:Message": "asc"}).woql_and(
-    ...         WOQLQuery().triple("v:A", "ref:commit_timestamp", "v:Time"),
-    ...         WOQLQuery().triple("v:A", "ref:commit_message", "v:Message")
-    ...     )
-    ... )
-    >>> test3 = WOQLQuery().select("v:Time", "v:Message").using("_commits").woql_and(
-    ...     WOQLQuery().order_by("v:Time", "v:Message", order=["desc", "asc"]).woql_and(
-    ...         WOQLQuery().triple("v:A", "ref:commit_timestamp", "v:Time"),
-    ...         WOQLQuery().triple("v:A", "ref:commit_message", "v:Message")
-    ...     )
-    ... )
-    ```
-
-
-#### group_by(group_vars, template, output, groupquery=None)
 Groups the results of groupquery together by the list of variables group_vars, using the variable template as a grouping and saves the result into variable output.
 
+**Arguments**:
 
-* **Parameters**
+- `group_vars` (`list or str or Var object`): list of variables to group
+- `template` (`dict or list or str`): template of data to group with free variable(s)
+- `output` (`str`): output variable
+- `groupquery` (`dict`): None
 
-    
-    * **group_vars** (*list** or **str** or **Var object*) – list of variables to group
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **template** (*dict** or **list** or **str*) – template of data to group with free variable(s)
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.true"></a>
 
+#### true
 
-    * **output** (*str**, **optional*) – output variable
+```python
+def true()
+```
 
-
-    * **groupquery** (*dict**, **optional*) – 
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### true()
 Sets true for cursor type.
 
+**Returns**:
 
-* **Returns**
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    query object that can be chained and/or execute
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.path"></a>
 
+#### path
 
+```python
+def path(subject, pattern, obj, path=None)
+```
 
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### path(subject, pattern, obj, path=None)
 Create a path object constructed by the rules specified with pattern.
 
+**Arguments**:
 
-* **Parameters**
+- `subject` (`str`): a woql subject, the node that the path started
+- `pattern` (`str`): a pattern which specified the edges the path is consisted of.
+It uses pattern construction syntax such as:
+* '(scm:edge1, scm:edge2)+' for repeated pattern,
+* 'scm:edge1|scm:edge2' for 'or' pattern,
+* '<scm:edge' for reverse pattern, and
+* '(scm:edge1)[n,m] for pattern between n and m times'
+- `obj` (`str`): a woql object, the node that the path ended
+- `path` (`str`): output variable
 
-    
-    * **subject** (*str*) – a woql subject, the node that the path started
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pattern** (*str*) – a pattern which specified the edges the path is consisted of.
-    It uses pattern construction syntax such as:
-    \* ‘(scm:edge1, scm:edge2)+’ for repeated pattern,
-    \* ‘scm:edge1|scm:edge2’ for ‘or’ pattern,
-    \* ‘<scm:edge’ for reverse pattern, and
-    \* ‘(scm:edge1)[n,m] for pattern between n and m times’
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.size"></a>
 
+#### size
 
-    * **obj** (*str*) – a woql object, the node that the path ended
+```python
+def size(graph, size)
+```
 
-
-    * **path** (*str*) – output variable
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### size(graph, size)
 Sets the given graph and size for cursor.
 
+**Arguments**:
 
-* **Parameters**
+- `graph` (`Graph which needs to be set as resource`): None
+- `size` (`Size which needs to be set`): None
 
-    
-    * **graph** (*Graph which needs to be set as resource*) – 
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **size** (*Size which needs to be set*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.triple_count"></a>
 
+#### triple\_count
 
+```python
+def triple_count(graph, triple_count)
+```
 
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### triple_count(graph, triple_count)
 Sets the given triple count and size for cursor.
 
+**Arguments**:
 
-* **Parameters**
+- `graph` (`Graph which needs to be set as resource`): None
+- `triple_count` (`Triple count which needs to be set`): None
 
-    
-    * **graph** (*Graph which needs to be set as resource*) – 
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **triple_count** (*Triple count which needs to be set*) – 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.star"></a>
 
+#### star
 
+```python
+def star(graph=None, subj=None, pred=None, obj=None)
+```
 
-* **Returns**
+Selects everything as triples in the graph identified by GraphIRI into variables Subj, Pred, Obj - by default they are "v:Subject", "v:Predicate", "v:Object"
 
-    query object that can be chained and/or execute
+**Arguments**:
 
+- `GraphIRI` (`str`): graphIRI
+- `Subj` (`str`): target subject
+- `Pred` (`str`): target predicate
+- `Obj` (`str`): target object
 
+**Returns**:
 
-* **Return type**
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    WOQLQuery object
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.all"></a>
 
+#### all
 
+```python
+def all(subj=None, pred=None, obj=None, graph=None)
+```
 
-#### star(graph=None, subj=None, pred=None, obj=None)
-Selects everything as triples in the graph identified by GraphIRI into variables Subj, Pred, Obj - by default they are “v:Subject”, “v:Predicate”, “v:Object”
-
-
-* **Parameters**
-
-    
-    * **GraphIRI** (*str*) – graphIRI
-
-
-    * **Subj** (*str**, **optional*) – target subject
-
-
-    * **Pred** (*str**, **optional*) – target predicate
-
-
-    * **Obj** (*str**, **optional*) – target object
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### all(subj=None, pred=None, obj=None, graph=None)
 Calls the star method and returns the result of the same.
 
+**Arguments**:
 
-* **Parameters**
+- `subj` (`str`): target subject
+- `pred` (`str`): target predicate
+- `obj` (`str`): target object
+- `graph` (`str`): graphIRI
 
-    
-    * **subj** (*str**, **optional*) – target subject
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
-    * **pred** (*str**, **optional*) – target predicate
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.graph"></a>
 
+#### graph
 
-    * **obj** (*str**, **optional*) – target object
+```python
+def graph(g)
+```
 
-
-    * **graph** (*str*) – graphIRI
-
-
-
-* **Returns**
-
-    query object that can be chained and/or execute
-
-
-
-* **Return type**
-
-    WOQLQuery object
-
-
-
-#### graph(g)
 Used to specify that the rest of the query should use the graph g in calls to add_quad, quad, etc
-:param g: target graph
-:type g: str
 
+**Arguments**:
 
-* **Returns**
+- `g` (`str`): target graph
 
-    query object that can be chained and/or execute
+**Returns**:
 
+`WOQLQuery object`: query object that can be chained and/or execute
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.vars"></a>
 
-* **Return type**
+#### vars
 
-    WOQLQuery object
+```python
+def vars(*args)
+```
 
-
-
-#### vars(\*args)
 Generate variables to be used in WOQLQueries
-:param args: string arguments
 
+**Arguments**:
 
-* **Returns**
+- `args`: string arguments
 
-    args prefixed with “v:”
+**Returns**:
 
+`tuple/string`: args prefixed with "v:"
 
+<a id="terminusdb_client.woqlquery.woql_query.WOQLQuery.variables"></a>
 
-* **Return type**
+#### variables
 
-    tuple/string
+```python
+def variables(*args)
+```
 
+Generate variables to be used in WOQLQueries
 
-## Module contents
+**Arguments**:
+
+- `args`: string arguments
+
+**Returns**:
+
+`tuple/string`: args prefixed with "v:"
+

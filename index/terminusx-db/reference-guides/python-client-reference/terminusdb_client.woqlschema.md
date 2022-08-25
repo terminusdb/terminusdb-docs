@@ -1,3 +1,4 @@
-# terminusdb_client.woqlschema package
+<a id="terminusdb_client.woqlschema"></a>
 
-## Module contents
+# terminusdb\_client.woqlschema
+
