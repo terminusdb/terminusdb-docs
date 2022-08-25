@@ -29,7 +29,7 @@
     * [Shortest Path Queries](guides/how-to-guides/query-data/perform-graph-queries.md)
     * [Use Regular Expressions](guides/how-to-guides/query-data/use-regex.md)
     * [Find an Object State](guides/how-to-guides/query-data/find-object-state.md)
-  * [Use the Document UI SDK](guides/how-to-guides/get-started-with-the-documents-user-interface.md)
+  * [Use the Document UI SDK](guides/how-to-guides/use-the-document-ui-sdk.md)
 * [Reference Guides](guides/reference-guides/README.md)
   * [AccessControl](guides/reference-guides/accesscontrol.md)
   * [Document Interface](guides/reference-guides/document-interface.md)

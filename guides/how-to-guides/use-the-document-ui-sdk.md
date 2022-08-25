@@ -77,11 +77,11 @@ try {
 
 Use three simple steps - input, configure, and output:
 
-[Step 1. Create frame data](get-started-with-the-documents-user-interface.md#step-1.-create-frame-data)
+[Step 1. Create frame data](use-the-document-ui-sdk.md#step-1.-create-frame-data)
 
-[Step 2. Configure properties and functions](get-started-with-the-documents-user-interface.md#step-2.-configure-properties-and-functions)
+[Step 2. Configure properties and functions](use-the-document-ui-sdk.md#step-2.-configure-properties-and-functions)
 
-[Step 3. Generate the form](get-started-with-the-documents-user-interface.md#step-3.-generate-the-form)
+[Step 3. Generate the form](use-the-document-ui-sdk.md#step-3.-generate-the-form)
 
 #### Step 1. Create frame data
 
@@ -159,9 +159,9 @@ return <FrameViewer
 
 The `FrameViewer` object supports three modes:
 
-* [Create](get-started-with-the-documents-user-interface.md#create-mode)
-* [Edit](get-started-with-the-documents-user-interface.md#edit-mode)
-* [View](get-started-with-the-documents-user-interface.md#view-mode)
+* [Create](use-the-document-ui-sdk.md#create-mode)
+* [Edit](use-the-document-ui-sdk.md#edit-mode)
+* [View](use-the-document-ui-sdk.md#view-mode)
 
 #### Create mode
 
