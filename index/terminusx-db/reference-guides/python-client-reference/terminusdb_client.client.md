@@ -65,7 +65,7 @@ Client for TerminusDB server.
 ## close
 
 ```python
-def close() -> None
+def close(self) -> None
 ```
 
 Undo connect and close the connection.
@@ -77,7 +77,8 @@ The connection will be unusable from this point forward; an Error (or subclass) 
 ## log
 
 ```python
-def log(team: Optional[str] = None,
+def log(self,
+        team: Optional[str] = None,
         db: Optional[str] = None,
         start: int = 0,
         count: int = -1)
@@ -112,7 +113,7 @@ Get commit history of a database
 ## get\_commit\_history
 
 ```python
-def get_commit_history(max_history: int = 500) -> list
+def get_commit_history(self, max_history: int = 500) -> list
 ```
 
 Get the whole commit history.
@@ -149,7 +150,7 @@ Commit history - Commit id, author of the commit, commit message and the commit 
 ## get\_all\_branches
 
 ```python
-def get_all_branches(get_data_version=False)
+def get_all_branches(self, get_data_version=False)
 ```
 
 Get all the branches available in the database.
@@ -159,7 +160,7 @@ Get all the branches available in the database.
 ## rollback
 
 ```python
-def rollback(steps=1) -> None
+def rollback(self, steps=1) -> None
 ```
 
 Curently not implementated. Please check back later.
@@ -174,7 +175,7 @@ NotImplementedError
 ## copy
 
 ```python
-def copy() -> "Client"
+def copy(self) -> "Client"
 ```
 
 Create a deep copy of this client.
@@ -196,7 +197,7 @@ Create a deep copy of this client.
 ## set\_db
 
 ```python
-def set_db(dbid: str, team: Optional[str] = None) -> str
+def set_db(self, dbid: str, team: Optional[str] = None) -> str
 ```
 
 Set the connection to another database. This will reset the connection.
@@ -222,7 +223,7 @@ Set the connection to another database. This will reset the connection.
 ## resource
 
 ```python
-def resource(ttype: ResourceType, val: Optional[str] = None) -> str
+def resource(self, ttype: ResourceType, val: Optional[str] = None) -> str
 ```
 
 Create a resource identifier string based on the current config.
@@ -260,7 +261,8 @@ Create a resource identifier string based on the current config.
 ## create\_database
 
 ```python
-def create_database(dbid: str,
+def create_database(self,
+                    dbid: str,
                     team: Optional[str] = None,
                     label: Optional[str] = None,
                     description: Optional[str] = None,
@@ -302,7 +304,8 @@ a terminus:Database document to the Terminus Server.
 ## delete\_database
 
 ```python
-def delete_database(dbid: Optional[str] = None,
+def delete_database(self,
+                    dbid: Optional[str] = None,
                     team: Optional[str] = None,
                     force: bool = False) -> None
 ```
@@ -335,7 +338,7 @@ and the new value will be used in future requests to the server.
 ## get\_triples
 
 ```python
-def get_triples(graph_type: str) -> str
+def get_triples(self, graph_type: str) -> str
 ```
 
 Retrieves the contents of the specified graph as triples encoded in turtle format
@@ -357,7 +360,7 @@ Retrieves the contents of the specified graph as triples encoded in turtle forma
 ## update\_triples
 
 ```python
-def update_triples(graph_type: str, turtle, commit_msg: str) -> None
+def update_triples(self, graph_type: str, turtle, commit_msg: str) -> None
 ```
 
 Updates the contents of the specified graph with the triples encoded in turtle format Replaces the entire graph contents
@@ -377,7 +380,8 @@ Updates the contents of the specified graph with the triples encoded in turtle f
 ## insert\_triples
 
 ```python
-def insert_triples(graph_type: str,
+def insert_triples(self,
+                   graph_type: str,
                    turtle,
                    commit_msg: Optional[str] = None) -> None
 ```
@@ -399,7 +403,8 @@ Inserts into the specified graph with the triples encoded in turtle format.
 ## query\_document
 
 ```python
-def query_document(document_template: dict,
+def query_document(self,
+                   document_template: dict,
                    graph_type: str = "instance",
                    skip: int = 0,
                    count: Optional[int] = None,
@@ -430,7 +435,8 @@ Retrieves all documents that match a given document template
 ## get\_document
 
 ```python
-def get_document(iri_id: str,
+def get_document(self,
+                 iri_id: str,
                  graph_type: str = "instance",
                  get_data_version: bool = False,
                  **kwargs) -> dict
@@ -458,7 +464,8 @@ Retrieves the document of the iri_id
 ## get\_documents\_by\_type
 
 ```python
-def get_documents_by_type(doc_type: str,
+def get_documents_by_type(self,
+                          doc_type: str,
                           graph_type: str = "instance",
                           skip: int = 0,
                           count: Optional[int] = None,
@@ -492,7 +499,8 @@ Retrieves the documents by type
 ## get\_all\_documents
 
 ```python
-def get_all_documents(graph_type: str = "instance",
+def get_all_documents(self,
+                      graph_type: str = "instance",
                       skip: int = 0,
                       count: Optional[int] = None,
                       as_list: bool = False,
@@ -524,7 +532,7 @@ Retrieves all avalibale the documents
 ## get\_existing\_classes
 
 ```python
-def get_existing_classes()
+def get_existing_classes(self)
 ```
 
 Get all the existing classes (only ids) in a database.
@@ -535,6 +543,7 @@ Get all the existing classes (only ids) in a database.
 
 ```python
 def insert_document(
+        self,
         document: Union[dict, List[dict], "Schema",  # noqa:F821
                         "DocumentTemplate",  # noqa:F821
                         List["DocumentTemplate"],  # noqa:F821
@@ -573,6 +582,7 @@ Inserts the specified document(s)
 
 ```python
 def replace_document(
+        self,
         document: Union[dict, List[dict], "Schema",  # noqa:F821
                         "DocumentTemplate",  # noqa:F821
                         List["DocumentTemplate"],  # noqa:F821
@@ -607,6 +617,7 @@ Updates the specified document(s)
 
 ```python
 def update_document(
+        self,
         document: Union[dict, List[dict], "Schema",  # noqa:F821
                         "DocumentTemplate",  # noqa:F821
                         List["DocumentTemplate"],  # noqa:F821
@@ -636,7 +647,8 @@ Updates the specified document(s). Add the document if not existed.
 ## delete\_document
 
 ```python
-def delete_document(document: Union[str, list, dict, Iterable],
+def delete_document(self,
+                    document: Union[str, list, dict, Iterable],
                     graph_type: str = "instance",
                     commit_msg: Optional[str] = None,
                     last_data_version: Optional[str] = None) -> None
@@ -660,7 +672,7 @@ Delete the specified document(s)
 ## has\_doc
 
 ```python
-def has_doc(doc_id: str, graph_type: str = "instance") -> bool
+def has_doc(self, doc_id: str, graph_type: str = "instance") -> bool
 ```
 
 Check if a certain document exist in a database
@@ -678,7 +690,7 @@ Check if a certain document exist in a database
 ## get\_class\_frame
 
 ```python
-def get_class_frame(class_name)
+def get_class_frame(self, class_name)
 ```
 
 Get the frame of the class of class_name. Provide information about all the avaliable properties of that class.
@@ -695,7 +707,7 @@ Get the frame of the class of class_name. Provide information about all the aval
 ## commit
 
 ```python
-def commit()
+def commit(self)
 ```
 
 Not implementated: open transactions currently not suportted. Please check back later.
@@ -705,7 +717,8 @@ Not implementated: open transactions currently not suportted. Please check back 
 ## query
 
 ```python
-def query(woql_query: Union[dict, WOQLQuery],
+def query(self,
+          woql_query: Union[dict, WOQLQuery],
           commit_msg: Optional[str] = None,
           get_data_version: bool = False,
           last_data_version: Optional[str] = None) -> Union[dict, str]
@@ -740,7 +753,7 @@ Updates the contents of the specified graph with the triples encoded in turtle f
 ## create\_branch
 
 ```python
-def create_branch(new_branch_id: str, empty: bool = False) -> None
+def create_branch(self, new_branch_id: str, empty: bool = False) -> None
 ```
 
 Create a branch starting from the current branch.
@@ -759,7 +772,7 @@ Create a branch starting from the current branch.
 ## delete\_branch
 
 ```python
-def delete_branch(branch_id: str) -> None
+def delete_branch(self, branch_id: str) -> None
 ```
 
 Delete a branch
@@ -777,7 +790,8 @@ Delete a branch
 ## pull
 
 ```python
-def pull(remote: str = "origin",
+def pull(self,
+         remote: str = "origin",
          remote_branch: Optional[str] = None,
          message: Optional[str] = None,
          author: Optional[str] = None) -> dict
@@ -812,7 +826,7 @@ Pull updates from a remote repository to the current database.
 ## fetch
 
 ```python
-def fetch(remote_id: str) -> dict
+def fetch(self, remote_id: str) -> dict
 ```
 
 Fatch the brach from a remote
@@ -830,7 +844,8 @@ Fatch the brach from a remote
 ## push
 
 ```python
-def push(remote: str = "origin",
+def push(self,
+         remote: str = "origin",
          remote_branch: Optional[str] = None,
          message: Optional[str] = None,
          author: Optional[str] = None) -> dict
@@ -864,7 +879,8 @@ Push changes from a branch to a remote repo
 ## rebase
 
 ```python
-def rebase(branch: Optional[str] = None,
+def rebase(self,
+           branch: Optional[str] = None,
            commit: Optional[str] = None,
            rebase_source: Optional[str] = None,
            message: Optional[str] = None,
@@ -900,7 +916,8 @@ Rebase the current branch onto the specified remote branch. Need to specify one 
 ## reset
 
 ```python
-def reset(commit: Optional[str] = None,
+def reset(self,
+          commit: Optional[str] = None,
           soft: bool = False,
           use_path: bool = False) -> None
 ```
@@ -930,7 +947,7 @@ Reset the current branch HEAD to the specified commit path. If `soft` is not Tru
 ## optimize
 
 ```python
-def optimize(path: str) -> None
+def optimize(self, path: str) -> None
 ```
 
 Optimize the specified path.
@@ -957,7 +974,8 @@ Optimize the specified path.
 ## squash
 
 ```python
-def squash(message: Optional[str] = None,
+def squash(self,
+           message: Optional[str] = None,
            author: Optional[str] = None,
            reset: bool = False) -> str
 ```
@@ -991,7 +1009,8 @@ Squash the current branch HEAD into a commit
 ## apply
 
 ```python
-def apply(before_version,
+def apply(self,
+          before_version,
           after_version,
           branch=None,
           message=None,
@@ -1011,7 +1030,7 @@ Diff two different commits and apply changes on branch
 ## diff\_object
 
 ```python
-def diff_object(before_object, after_object)
+def diff_object(self, before_object, after_object)
 ```
 
 Diff two different objects.
@@ -1026,7 +1045,7 @@ Diff two different objects.
 ## diff\_version
 
 ```python
-def diff_version(before_version, after_version)
+def diff_version(self, before_version, after_version)
 ```
 
 Diff two different versions. Can either be a branch or a commit
@@ -1042,6 +1061,7 @@ Diff two different versions. Can either be a branch or a commit
 
 ```python
 def diff(
+        self,
         before: Union[str, dict, List[dict], "Schema",  # noqa:F821
                       "DocumentTemplate",  # noqa:F821
                       List["DocumentTemplate"],  # noqa:F821
@@ -1078,6 +1098,7 @@ Do not connect when using public API.
 
 ```python
 def patch(
+        self,
         before: Union[dict, List[dict], "Schema",  # noqa:F821
                       "DocumentTemplate",  # noqa:F821
                       List["DocumentTemplate"],  # noqa:F821
@@ -1108,7 +1129,8 @@ Do not connect when using public API.
 ## clonedb
 
 ```python
-def clonedb(clone_source: str,
+def clonedb(self,
+            clone_source: str,
             newid: str,
             description: Optional[str] = None) -> None
 ```
@@ -1137,7 +1159,7 @@ Clone a remote repository and create a local copy.
 ## create\_organization
 
 ```python
-def create_organization(org: str) -> Optional[dict]
+def create_organization(self, org: str) -> Optional[dict]
 ```
 
 Add a new organization
@@ -1159,7 +1181,7 @@ Add a new organization
 ## get\_organization\_users
 
 ```python
-def get_organization_users(org: str) -> Optional[dict]
+def get_organization_users(self, org: str) -> Optional[dict]
 ```
 
 Returns a list of users in an organization.
@@ -1181,7 +1203,7 @@ Returns a list of users in an organization.
 ## get\_organization\_user
 
 ```python
-def get_organization_user(org: str, username: str) -> Optional[dict]
+def get_organization_user(self, org: str, username: str) -> Optional[dict]
 ```
 
 Returns user info related to an organization.
@@ -1204,7 +1226,8 @@ Returns user info related to an organization.
 ## get\_organization\_user\_databases
 
 ```python
-def get_organization_user_databases(org: str, username: str) -> Optional[dict]
+def get_organization_user_databases(self, org: str,
+                                    username: str) -> Optional[dict]
 ```
 
 Returns the databases available to a user which are inside an organization
@@ -1227,7 +1250,7 @@ Returns the databases available to a user which are inside an organization
 ## get\_organizations
 
 ```python
-def get_organizations() -> Optional[dict]
+def get_organizations(self) -> Optional[dict]
 ```
 
 Returns a list of organizations in the database.
@@ -1245,7 +1268,7 @@ Returns a list of organizations in the database.
 ## get\_organization
 
 ```python
-def get_organization(org: str) -> Optional[dict]
+def get_organization(self, org: str) -> Optional[dict]
 ```
 
 Returns a specific organization
@@ -1267,7 +1290,7 @@ Returns a specific organization
 ## delete\_organization
 
 ```python
-def delete_organization(org: str) -> Optional[dict]
+def delete_organization(self, org: str) -> Optional[dict]
 ```
 
 Deletes a specific organization
@@ -1289,7 +1312,7 @@ Deletes a specific organization
 ## change\_capabilities
 
 ```python
-def change_capabilities(capability_change: dict) -> Optional[dict]
+def change_capabilities(self, capability_change: dict) -> Optional[dict]
 ```
 
 Change the capabilities of a certain user
@@ -1325,7 +1348,7 @@ Dict for the capability change request.
 ## add\_role
 
 ```python
-def add_role(role: dict) -> Optional[dict]
+def add_role(self, role: dict) -> Optional[dict]
 ```
 
 Add a new role
@@ -1358,7 +1381,7 @@ Add a new role
 ## change\_role
 
 ```python
-def change_role(role: dict) -> Optional[dict]
+def change_role(self, role: dict) -> Optional[dict]
 ```
 
 Change role actions for a particular role
@@ -1391,7 +1414,7 @@ Change role actions for a particular role
 ## get\_available\_roles
 
 ```python
-def get_available_roles() -> Optional[dict]
+def get_available_roles(self) -> Optional[dict]
 ```
 
 Get the available roles for the current authenticated user
@@ -1409,7 +1432,7 @@ Get the available roles for the current authenticated user
 ## add\_user
 
 ```python
-def add_user(username: str, password: str) -> Optional[dict]
+def add_user(self, username: str, password: str) -> Optional[dict]
 ```
 
 Add a new user
@@ -1432,7 +1455,7 @@ Add a new user
 ## get\_user
 
 ```python
-def get_user(username: str) -> Optional[dict]
+def get_user(self, username: str) -> Optional[dict]
 ```
 
 Get a user
@@ -1454,7 +1477,7 @@ Get a user
 ## get\_users
 
 ```python
-def get_users() -> Optional[dict]
+def get_users(self) -> Optional[dict]
 ```
 
 Get all users
@@ -1472,7 +1495,7 @@ Get all users
 ## delete\_user
 
 ```python
-def delete_user(username: str) -> Optional[dict]
+def delete_user(self, username: str) -> Optional[dict]
 ```
 
 Delete a user
@@ -1494,7 +1517,7 @@ Delete a user
 ## change\_user\_password
 
 ```python
-def change_user_password(username: str, password: str) -> Optional[dict]
+def change_user_password(self, username: str, password: str) -> Optional[dict]
 ```
 
 Change user's password
@@ -1517,7 +1540,9 @@ Change user's password
 ## get\_database
 
 ```python
-def get_database(dbid: str, team: Optional[str] = None) -> Optional[dict]
+def get_database(self,
+                 dbid: str,
+                 team: Optional[str] = None) -> Optional[dict]
 ```
 
 Returns metadata (id, organization, label, comment) about the requested database
@@ -1541,7 +1566,7 @@ Returns metadata (id, organization, label, comment) about the requested database
 ## has\_database
 
 ```python
-def has_database(dbid: str, team: Optional[str] = None) -> bool
+def has_database(self, dbid: str, team: Optional[str] = None) -> bool
 ```
 
 Check whether a database exists
@@ -1564,7 +1589,7 @@ Check whether a database exists
 ## get\_databases
 
 ```python
-def get_databases() -> List[dict]
+def get_databases(self) -> List[dict]
 ```
 
 Returns a list of database metadata records for all databases the user has access to
@@ -1582,7 +1607,7 @@ Returns a list of database metadata records for all databases the user has acces
 ## list\_databases
 
 ```python
-def list_databases() -> List[Dict]
+def list_databases(self) -> List[Dict]
 ```
 
 Returns a list of database ids for all databases the user has access to
