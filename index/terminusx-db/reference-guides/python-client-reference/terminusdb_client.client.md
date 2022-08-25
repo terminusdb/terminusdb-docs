@@ -95,6 +95,7 @@ Get commit history of a database
 **Returns**:
 
 `list`: List of the following commit objects:
+```
   {
    "@id":"InitialCommit/hpl18q42dbnab4vzq8me4bg1xn8p2a0",
    "@type":"InitialCommit",
@@ -104,6 +105,7 @@ Get commit history of a database
    "schema":"layer_data:Layer_4234adfe377fa9563a17ad764ac37f5dcb14de13668ea725ef0748248229a91b",
    "timestamp":1660919664.9129035
   }
+```
 
 <a id="terminusdb_client.client.Client.Client.get_commit_history"></a>
 
