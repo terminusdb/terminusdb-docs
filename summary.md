@@ -53,7 +53,7 @@
       * [Python Client Reference](index/terminusx-db/reference-guides/python-client-reference/README.md)
         * [Client](index/terminusx-db/reference-guides/python-client-reference/terminusdb_client.client.md)
         * [WOQLQuery](index/terminusx-db/reference-guides/python-client-reference/terminusdb_client.woqlquery.md)
-        * [WOQLSchema](index/terminusx-db/reference-guides/python-client-reference/terminusdb_client.woqlschema.md)
+        * [Schema](index/terminusx-db/reference-guides/python-client-reference/terminusdb_client.schema.md)
         * [woqlDataframe](index/terminusx-db/reference-guides/python-client-reference/terminusdb_client.woqldataframe.md)
         * [Scaffolding CLI Tool](index/terminusx-db/reference-guides/python-client-reference/scaffolding-cli-tool.md)
     * [Explanations](readme/terminusx-db/explanations/README.md)
