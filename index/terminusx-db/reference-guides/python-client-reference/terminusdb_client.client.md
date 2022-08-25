@@ -131,6 +131,15 @@ Commit history - Commit id, author of the commit, commit message and the commit 
 
 - `max_history` (`int`): maximum number of commit that would return, counting backwards from your current commit. Default is set to 500. It needs to be nop-negative, if input is 0 it will still give the last commit.
 
+**Examples**:
+
+```
+>>> from terminusdb_client import Client
+>>> client = Client("http://127.0.0.1:6363"
+>>> client.connect(db="bank_balance_example")
+>>> client.get_commit_history()
+```
+
 **Returns**:
 
 `list`: 
@@ -170,6 +179,14 @@ def copy() -> "Client"
 
 Create a deep copy of this client.
 
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> clone = client.copy()
+>>> assert client is not clone
+```
+
 **Returns**:
 
 `Client`: The copied client instance.
@@ -189,6 +206,13 @@ Set the connection to another database. This will reset the connection.
 - `dbid` (`str`): Database identifer to set in the config.
 - `team` (`str`): Team identifer to set in the config. If not passed in, it will use the current one.
 
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363")
+>>> client.set_db("database1")
+```
+
 **Returns**:
 
 `str`: The current database identifier.
@@ -207,6 +231,25 @@ Create a resource identifier string based on the current config.
 
 - `ttype` (`ResourceType`): Type of resource.
 - `val` (`str`): Branch or commit identifier.
+
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363")
+>>> client.resource(ResourceType.DB)
+```
+```
+>>> client.resource(ResourceType.META)
+```
+```
+>>> client.resource(ResourceType.COMMITS)
+```
+```
+>>> client.resource(ResourceType.REF, "<reference>")
+```
+```
+>>> client.resource(ResourceType.BRANCH, "<branch>")
+```
 
 **Returns**:
 
@@ -247,6 +290,13 @@ a terminus:Database document to the Terminus Server.
 
 - `InterfaceError`: if the client does not connect to a server
 
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> client.create_database("someDB", "admin", "Database Label", "My Description")
+```
+
 <a id="terminusdb_client.client.Client.Client.delete_database"></a>
 
 ## delete\_database
@@ -272,10 +322,13 @@ and the new value will be used in future requests to the server.
 
 - `UserWarning`: If the value of dbid is None.
 - `InterfaceError`: if the client does not connect to a server.
-- `Examples`: None
-- `-------`: None
-- `>>> client = Client("http://127.0.0.1:6363/")`: None
-- `>>> client.delete_database("<database>", "<team>")`: None
+
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> client.delete_database("<database>", "<team>")
+```
 
 <a id="terminusdb_client.client.Client.Client.get_triples"></a>
 
@@ -671,9 +724,12 @@ Updates the contents of the specified graph with the triples encoded in turtle f
 **Raises**:
 
 - `InterfaceError`: if the client does not connect to a database
-- `Examples`: None
-- `-------`: None
-- `>>> Client(server="http://localhost:6363").query(woql, "updating graph")`: None
+
+**Examples**:
+
+```
+>>> Client(server="http://localhost:6363").query(woql, "updating graph")
+```
 
 **Returns**:
 
@@ -740,6 +796,13 @@ Pull updates from a remote repository to the current database.
 
 - `InterfaceError`: if the client does not connect to a database
 
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> client.pull()
+```
+
 **Returns**:
 
 `dict`: 
@@ -785,9 +848,12 @@ Push changes from a branch to a remote repo
 **Raises**:
 
 - `InterfaceError`: if the client does not connect to a database
-- `Examples`: None
-- `-------`: None
-- `>>> Client(server="http://localhost:6363").push(remote="origin", remote_branch = "main", author = "admin", message = "commit message"})`: None
+
+**Examples**:
+
+```
+>>> Client(server="http://localhost:6363").push(remote="origin", remote_branch = "main", author = "admin", message = "commit message"})
+```
 
 **Returns**:
 
@@ -818,6 +884,13 @@ Rebase the current branch onto the specified remote branch. Need to specify one 
 
 - `InterfaceError`: if the client does not connect to a database
 
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> client.rebase("the_branch")
+```
+
 **Returns**:
 
 `dict`: 
@@ -844,6 +917,14 @@ Reset the current branch HEAD to the specified commit path. If `soft` is not Tru
 
 - `InterfaceError`: if the client does not connect to a database
 
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> client.reset('234980523ffaf93')
+>>> client.reset('admin/database/local/commit/234980523ffaf93', use_path=True)
+```
+
 <a id="terminusdb_client.client.Client.Client.optimize"></a>
 
 ## optimize
@@ -861,6 +942,15 @@ Optimize the specified path.
 **Raises**:
 
 - `InterfaceError`: if the client does not connect to a database
+
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> client.optimize('admin/database') # optimise database branch (here main)
+>>> client.optimize('admin/database/_meta') # optimise the repository graph (actually creates a squashed flat layer)
+>>> client.optimize('admin/database/local/_commits') # commit graph is optimised
+```
 
 <a id="terminusdb_client.client.Client.Client.squash"></a>
 
@@ -883,6 +973,14 @@ Squash the current branch HEAD into a commit
 **Raises**:
 
 - `InterfaceError`: if the client does not connect to a database
+
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> client.connect(user="admin", key="root", team="admin", db="some_db")
+>>> client.squash('This is a squash commit message!')
+```
 
 **Returns**:
 
@@ -961,6 +1059,15 @@ Perform diff on 2 set of document(s), result in a Patch object.
 
 Do not connect when using public API.
 
+**Examples**:
+
+```
+>>> client = WOQLClient("http://127.0.0.1:6363/")
+>>> client.connect(user="admin", key="root", team="admin", db="some_db")
+>>> result = client.diff({ "@id" : "Person/Jane", "@type" : "Person", "name" : "Jane"}, { "@id" : "Person/Jane", "@type" : "Person", "name" : "Janine"})
+>>> result.to_json = '{ "name" : { "@op" : "SwapValue", "@before" : "Jane", "@after": "Janine" }}'
+```
+
 **Returns**:
 
 `obj`: Patch object
@@ -981,6 +1088,16 @@ def patch(
 Apply the patch object to the before object and return an after object. Note that this change does not commit changes to the graph.
 
 Do not connect when using public API.
+
+**Examples**:
+
+```
+>>> client = WOQLClient("http://127.0.0.1:6363/")
+>>> client.connect(user="admin", key="root", team="admin", db="some_db")
+>>> patch_obj = Patch(json='{"name" : { "@op" : "ValueSwap", "@before" : "Jane", "@after": "Janine" }}')
+>>> result = client.patch({ "@id" : "Person/Jane", "@type" : Person", "name" : "Jane"}, patch_obj)
+>>> print(result)
+```
 
 **Returns**:
 
@@ -1007,6 +1124,13 @@ Clone a remote repository and create a local copy.
 **Raises**:
 
 - `InterfaceError`: if the client does not connect to a database
+
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363/")
+>>> client.clonedb("http://terminusdb.com/some_user/test_db", "my_test_db")
+```
 
 <a id="terminusdb_client.client.Client.Client.create_organization"></a>
 
@@ -1214,6 +1338,17 @@ Add a new role
 
 - `InterfaceError`: if the client does not connect to a server
 
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363")
+>>> client.connect(key="root", team="admin", user="admin", db="example_db")
+>>> role = {
+```
+```
+>>> client.add_role(role)
+```
+
 **Returns**:
 
 `dict or None if failed`: 
@@ -1235,6 +1370,17 @@ Change role actions for a particular role
 **Raises**:
 
 - `InterfaceError`: if the client does not connect to a server
+
+**Examples**:
+
+```
+>>> client = Client("http://127.0.0.1:6363")
+>>> client.connect(key="root", team="admin", user="admin", db="example_db")
+>>> role = {
+```
+```
+>>> client.change_role(role)
+```
 
 **Returns**:
 
