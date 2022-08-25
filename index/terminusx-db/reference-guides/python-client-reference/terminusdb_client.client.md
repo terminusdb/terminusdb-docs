@@ -133,7 +133,7 @@ Commit history - Commit id, author of the commit, commit message and the commit 
 
 **Examples**:
 
-```
+```python
 >>> from terminusdb_client import Client
 >>> client = Client("http://127.0.0.1:6363"
 >>> client.connect(db="bank_balance_example")
@@ -181,7 +181,7 @@ Create a deep copy of this client.
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> clone = client.copy()
 >>> assert client is not clone
@@ -208,7 +208,7 @@ Set the connection to another database. This will reset the connection.
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363")
 >>> client.set_db("database1")
 ```
@@ -234,20 +234,20 @@ Create a resource identifier string based on the current config.
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363")
 >>> client.resource(ResourceType.DB)
 ```
-```
+```python
 >>> client.resource(ResourceType.META)
 ```
-```
+```python
 >>> client.resource(ResourceType.COMMITS)
 ```
-```
+```python
 >>> client.resource(ResourceType.REF, "<reference>")
 ```
-```
+```python
 >>> client.resource(ResourceType.BRANCH, "<branch>")
 ```
 
@@ -292,7 +292,7 @@ a terminus:Database document to the Terminus Server.
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> client.create_database("someDB", "admin", "Database Label", "My Description")
 ```
@@ -325,7 +325,7 @@ and the new value will be used in future requests to the server.
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> client.delete_database("<database>", "<team>")
 ```
@@ -727,7 +727,7 @@ Updates the contents of the specified graph with the triples encoded in turtle f
 
 **Examples**:
 
-```
+```python
 >>> Client(server="http://localhost:6363").query(woql, "updating graph")
 ```
 
@@ -798,7 +798,7 @@ Pull updates from a remote repository to the current database.
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> client.pull()
 ```
@@ -851,7 +851,7 @@ Push changes from a branch to a remote repo
 
 **Examples**:
 
-```
+```python
 >>> Client(server="http://localhost:6363").push(remote="origin", remote_branch = "main", author = "admin", message = "commit message"})
 ```
 
@@ -886,7 +886,7 @@ Rebase the current branch onto the specified remote branch. Need to specify one 
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> client.rebase("the_branch")
 ```
@@ -919,7 +919,7 @@ Reset the current branch HEAD to the specified commit path. If `soft` is not Tru
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> client.reset('234980523ffaf93')
 >>> client.reset('admin/database/local/commit/234980523ffaf93', use_path=True)
@@ -945,7 +945,7 @@ Optimize the specified path.
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> client.optimize('admin/database') # optimise database branch (here main)
 >>> client.optimize('admin/database/_meta') # optimise the repository graph (actually creates a squashed flat layer)
@@ -976,7 +976,7 @@ Squash the current branch HEAD into a commit
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> client.connect(user="admin", key="root", team="admin", db="some_db")
 >>> client.squash('This is a squash commit message!')
@@ -1061,7 +1061,7 @@ Do not connect when using public API.
 
 **Examples**:
 
-```
+```python
 >>> client = WOQLClient("http://127.0.0.1:6363/")
 >>> client.connect(user="admin", key="root", team="admin", db="some_db")
 >>> result = client.diff({ "@id" : "Person/Jane", "@type" : "Person", "name" : "Jane"}, { "@id" : "Person/Jane", "@type" : "Person", "name" : "Janine"})
@@ -1091,7 +1091,7 @@ Do not connect when using public API.
 
 **Examples**:
 
-```
+```python
 >>> client = WOQLClient("http://127.0.0.1:6363/")
 >>> client.connect(user="admin", key="root", team="admin", db="some_db")
 >>> patch_obj = Patch(json='{"name" : { "@op" : "ValueSwap", "@before" : "Jane", "@after": "Janine" }}')
@@ -1127,7 +1127,7 @@ Clone a remote repository and create a local copy.
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363/")
 >>> client.clonedb("http://terminusdb.com/some_user/test_db", "my_test_db")
 ```
@@ -1340,12 +1340,12 @@ Add a new role
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363")
 >>> client.connect(key="root", team="admin", user="admin", db="example_db")
 >>> role = {
 ```
-```
+```python
 >>> client.add_role(role)
 ```
 
@@ -1373,12 +1373,12 @@ Change role actions for a particular role
 
 **Examples**:
 
-```
+```python
 >>> client = Client("http://127.0.0.1:6363")
 >>> client.connect(key="root", team="admin", user="admin", db="example_db")
 >>> role = {
 ```
-```
+```python
 >>> client.change_role(role)
 ```
 
