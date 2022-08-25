@@ -1,2 +1,0 @@
-# Generate Document User Interfaces
-
