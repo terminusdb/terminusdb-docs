@@ -55,7 +55,7 @@
         * [WOQLQuery](index/terminusx-db/reference-guides/python-client-reference/terminusdb_client.woqlquery.md)
         * [Schema](index/terminusx-db/reference-guides/python-client-reference/terminusdb_client.schema.md)
         * [woqlDataframe](index/terminusx-db/reference-guides/python-client-reference/terminusdb_client.woqldataframe.md)
-        * [Scaffolding CLI Tool](index/terminusx-db/reference-guides/python-client-reference/scaffolding-cli-tool.md)
+        * [Scaffolding CLI Tool](index/terminusx-db/reference-guides/python-client-reference/scaffolding_cli_tool.md)
     * [Explanations](readme/terminusx-db/explanations/README.md)
       * [Relational vs Graph Databases](index/terminusx-db/explanations/relational-vs-graph-databases/README.md)
         * [Terminology Cheat Sheet](index/terminusx-db/explanations/relational-vs-graph-databases/terminology-cheat-sheet.md)
