@@ -11,7 +11,7 @@ Client is the Python public API for TerminusDB
 
 <a id="terminusdb_client.client.Client.JWTAuth"></a>
 
-## JWTAuth Objects
+# JWTAuth Objects
 
 ```python
 class JWTAuth(requests.auth.AuthBase)
@@ -21,7 +21,7 @@ Class for JWT Authentication in requests
 
 <a id="terminusdb_client.client.Client.APITokenAuth"></a>
 
-## APITokenAuth Objects
+# APITokenAuth Objects
 
 ```python
 class APITokenAuth(requests.auth.AuthBase)
@@ -31,7 +31,7 @@ Class for API Token Authentication in requests
 
 <a id="terminusdb_client.client.Client.ResourceType"></a>
 
-## ResourceType Objects
+# ResourceType Objects
 
 ```python
 class ResourceType(Enum)
@@ -41,7 +41,7 @@ Enum for the different TerminusDB resources
 
 <a id="terminusdb_client.client.Client.Client"></a>
 
-## Client Objects
+# Client Objects
 
 ```python
 class Client()
@@ -62,7 +62,7 @@ Client for TerminusDB server.
 
 <a id="terminusdb_client.client.Client.Client.close"></a>
 
-#### close
+## close
 
 ```python
 def close() -> None
@@ -74,7 +74,7 @@ The connection will be unusable from this point forward; an Error (or subclass) 
 
 <a id="terminusdb_client.client.Client.Client.log"></a>
 
-#### log
+## log
 
 ```python
 def log(team: Optional[str] = None,
@@ -109,7 +109,7 @@ Get commit history of a database
 
 <a id="terminusdb_client.client.Client.Client.get_commit_history"></a>
 
-#### get\_commit\_history
+## get\_commit\_history
 
 ```python
 def get_commit_history(max_history: int = 500) -> list
@@ -118,11 +118,14 @@ def get_commit_history(max_history: int = 500) -> list
 Get the whole commit history.
 
 Commit history - Commit id, author of the commit, commit message and the commit time, in the current branch from the current commit, ordered backwards in time, will be returned in a dictionary in the follow format:
-{"commit_id":
-{"author": "commit_author",
-"message": "commit_message",
-"timestamp: <datetime object of the timestamp>" }
+```
+{ "commit_id":
+     { "author": "commit_author",
+       "message": "commit_message",
+       "timestamp: <datetime object of the timestamp>"
+     }
 }
+```
 
 **Arguments**:
 
@@ -134,7 +137,7 @@ Commit history - Commit id, author of the commit, commit message and the commit 
 
 <a id="terminusdb_client.client.Client.Client.get_all_branches"></a>
 
-#### get\_all\_branches
+## get\_all\_branches
 
 ```python
 def get_all_branches(get_data_version=False)
@@ -144,7 +147,7 @@ Get all the branches available in the database.
 
 <a id="terminusdb_client.client.Client.Client.rollback"></a>
 
-#### rollback
+## rollback
 
 ```python
 def rollback(steps=1) -> None
@@ -159,7 +162,7 @@ NotImplementedError
 
 <a id="terminusdb_client.client.Client.Client.copy"></a>
 
-#### copy
+## copy
 
 ```python
 def copy() -> "Client"
@@ -173,7 +176,7 @@ Create a deep copy of this client.
 
 <a id="terminusdb_client.client.Client.Client.set_db"></a>
 
-#### set\_db
+## set\_db
 
 ```python
 def set_db(dbid: str, team: Optional[str] = None) -> str
@@ -192,7 +195,7 @@ Set the connection to another database. This will reset the connection.
 
 <a id="terminusdb_client.client.Client.Client.resource"></a>
 
-#### resource
+## resource
 
 ```python
 def resource(ttype: ResourceType, val: Optional[str] = None) -> str
@@ -211,7 +214,7 @@ Create a resource identifier string based on the current config.
 
 <a id="terminusdb_client.client.Client.Client.create_database"></a>
 
-#### create\_database
+## create\_database
 
 ```python
 def create_database(dbid: str,
@@ -246,7 +249,7 @@ a terminus:Database document to the Terminus Server.
 
 <a id="terminusdb_client.client.Client.Client.delete_database"></a>
 
-#### delete\_database
+## delete\_database
 
 ```python
 def delete_database(dbid: Optional[str] = None,
@@ -276,7 +279,7 @@ and the new value will be used in future requests to the server.
 
 <a id="terminusdb_client.client.Client.Client.get_triples"></a>
 
-#### get\_triples
+## get\_triples
 
 ```python
 def get_triples(graph_type: str) -> str
@@ -298,7 +301,7 @@ Retrieves the contents of the specified graph as triples encoded in turtle forma
 
 <a id="terminusdb_client.client.Client.Client.update_triples"></a>
 
-#### update\_triples
+## update\_triples
 
 ```python
 def update_triples(graph_type: str, turtle, commit_msg: str) -> None
@@ -318,7 +321,7 @@ Updates the contents of the specified graph with the triples encoded in turtle f
 
 <a id="terminusdb_client.client.Client.Client.insert_triples"></a>
 
-#### insert\_triples
+## insert\_triples
 
 ```python
 def insert_triples(graph_type: str,
@@ -340,7 +343,7 @@ Inserts into the specified graph with the triples encoded in turtle format.
 
 <a id="terminusdb_client.client.Client.Client.query_document"></a>
 
-#### query\_document
+## query\_document
 
 ```python
 def query_document(document_template: dict,
@@ -371,7 +374,7 @@ Retrieves all documents that match a given document template
 
 <a id="terminusdb_client.client.Client.Client.get_document"></a>
 
-#### get\_document
+## get\_document
 
 ```python
 def get_document(iri_id: str,
@@ -399,7 +402,7 @@ Retrieves the document of the iri_id
 
 <a id="terminusdb_client.client.Client.Client.get_documents_by_type"></a>
 
-#### get\_documents\_by\_type
+## get\_documents\_by\_type
 
 ```python
 def get_documents_by_type(doc_type: str,
@@ -433,7 +436,7 @@ Retrieves the documents by type
 
 <a id="terminusdb_client.client.Client.Client.get_all_documents"></a>
 
-#### get\_all\_documents
+## get\_all\_documents
 
 ```python
 def get_all_documents(graph_type: str = "instance",
@@ -465,7 +468,7 @@ Retrieves all avalibale the documents
 
 <a id="terminusdb_client.client.Client.Client.get_existing_classes"></a>
 
-#### get\_existing\_classes
+## get\_existing\_classes
 
 ```python
 def get_existing_classes()
@@ -475,7 +478,7 @@ Get all the existing classes (only ids) in a database.
 
 <a id="terminusdb_client.client.Client.Client.insert_document"></a>
 
-#### insert\_document
+## insert\_document
 
 ```python
 def insert_document(
@@ -513,7 +516,7 @@ Inserts the specified document(s)
 
 <a id="terminusdb_client.client.Client.Client.replace_document"></a>
 
-#### replace\_document
+## replace\_document
 
 ```python
 def replace_document(
@@ -547,7 +550,7 @@ Updates the specified document(s)
 
 <a id="terminusdb_client.client.Client.Client.update_document"></a>
 
-#### update\_document
+## update\_document
 
 ```python
 def update_document(
@@ -577,7 +580,7 @@ Updates the specified document(s). Add the document if not existed.
 
 <a id="terminusdb_client.client.Client.Client.delete_document"></a>
 
-#### delete\_document
+## delete\_document
 
 ```python
 def delete_document(document: Union[str, list, dict, Iterable],
@@ -601,7 +604,7 @@ Delete the specified document(s)
 
 <a id="terminusdb_client.client.Client.Client.has_doc"></a>
 
-#### has\_doc
+## has\_doc
 
 ```python
 def has_doc(doc_id: str, graph_type: str = "instance") -> bool
@@ -619,7 +622,7 @@ Check if a certain document exist in a database
 
 <a id="terminusdb_client.client.Client.Client.get_class_frame"></a>
 
-#### get\_class\_frame
+## get\_class\_frame
 
 ```python
 def get_class_frame(class_name)
@@ -636,7 +639,7 @@ Get the frame of the class of class_name. Provide information about all the aval
 
 <a id="terminusdb_client.client.Client.Client.commit"></a>
 
-#### commit
+## commit
 
 ```python
 def commit()
@@ -646,7 +649,7 @@ Not implementated: open transactions currently not suportted. Please check back 
 
 <a id="terminusdb_client.client.Client.Client.query"></a>
 
-#### query
+## query
 
 ```python
 def query(woql_query: Union[dict, WOQLQuery],
@@ -678,7 +681,7 @@ Updates the contents of the specified graph with the triples encoded in turtle f
 
 <a id="terminusdb_client.client.Client.Client.create_branch"></a>
 
-#### create\_branch
+## create\_branch
 
 ```python
 def create_branch(new_branch_id: str, empty: bool = False) -> None
@@ -697,7 +700,7 @@ Create a branch starting from the current branch.
 
 <a id="terminusdb_client.client.Client.Client.delete_branch"></a>
 
-#### delete\_branch
+## delete\_branch
 
 ```python
 def delete_branch(branch_id: str) -> None
@@ -715,7 +718,7 @@ Delete a branch
 
 <a id="terminusdb_client.client.Client.Client.pull"></a>
 
-#### pull
+## pull
 
 ```python
 def pull(remote: str = "origin",
@@ -743,7 +746,7 @@ Pull updates from a remote repository to the current database.
 
 <a id="terminusdb_client.client.Client.Client.fetch"></a>
 
-#### fetch
+## fetch
 
 ```python
 def fetch(remote_id: str) -> dict
@@ -761,7 +764,7 @@ Fatch the brach from a remote
 
 <a id="terminusdb_client.client.Client.Client.push"></a>
 
-#### push
+## push
 
 ```python
 def push(remote: str = "origin",
@@ -792,7 +795,7 @@ Push changes from a branch to a remote repo
 
 <a id="terminusdb_client.client.Client.Client.rebase"></a>
 
-#### rebase
+## rebase
 
 ```python
 def rebase(branch: Optional[str] = None,
@@ -821,7 +824,7 @@ Rebase the current branch onto the specified remote branch. Need to specify one 
 
 <a id="terminusdb_client.client.Client.Client.reset"></a>
 
-#### reset
+## reset
 
 ```python
 def reset(commit: Optional[str] = None,
@@ -843,7 +846,7 @@ Reset the current branch HEAD to the specified commit path. If `soft` is not Tru
 
 <a id="terminusdb_client.client.Client.Client.optimize"></a>
 
-#### optimize
+## optimize
 
 ```python
 def optimize(path: str) -> None
@@ -861,7 +864,7 @@ Optimize the specified path.
 
 <a id="terminusdb_client.client.Client.Client.squash"></a>
 
-#### squash
+## squash
 
 ```python
 def squash(message: Optional[str] = None,
@@ -887,7 +890,7 @@ Squash the current branch HEAD into a commit
 
 <a id="terminusdb_client.client.Client.Client.apply"></a>
 
-#### apply
+## apply
 
 ```python
 def apply(before_version,
@@ -907,7 +910,7 @@ Diff two different commits and apply changes on branch
 
 <a id="terminusdb_client.client.Client.Client.diff_object"></a>
 
-#### diff\_object
+## diff\_object
 
 ```python
 def diff_object(before_object, after_object)
@@ -922,7 +925,7 @@ Diff two different objects.
 
 <a id="terminusdb_client.client.Client.Client.diff_version"></a>
 
-#### diff\_version
+## diff\_version
 
 ```python
 def diff_version(before_version, after_version)
@@ -937,7 +940,7 @@ Diff two different versions. Can either be a branch or a commit
 
 <a id="terminusdb_client.client.Client.Client.diff"></a>
 
-#### diff
+## diff
 
 ```python
 def diff(
@@ -964,7 +967,7 @@ Do not connect when using public API.
 
 <a id="terminusdb_client.client.Client.Client.patch"></a>
 
-#### patch
+## patch
 
 ```python
 def patch(
@@ -985,7 +988,7 @@ Do not connect when using public API.
 
 <a id="terminusdb_client.client.Client.Client.clonedb"></a>
 
-#### clonedb
+## clonedb
 
 ```python
 def clonedb(clone_source: str,
@@ -1007,7 +1010,7 @@ Clone a remote repository and create a local copy.
 
 <a id="terminusdb_client.client.Client.Client.create_organization"></a>
 
-#### create\_organization
+## create\_organization
 
 ```python
 def create_organization(org: str) -> Optional[dict]
@@ -1029,7 +1032,7 @@ Add a new organization
 
 <a id="terminusdb_client.client.Client.Client.get_organization_users"></a>
 
-#### get\_organization\_users
+## get\_organization\_users
 
 ```python
 def get_organization_users(org: str) -> Optional[dict]
@@ -1051,7 +1054,7 @@ Returns a list of users in an organization.
 
 <a id="terminusdb_client.client.Client.Client.get_organization_user"></a>
 
-#### get\_organization\_user
+## get\_organization\_user
 
 ```python
 def get_organization_user(org: str, username: str) -> Optional[dict]
@@ -1074,7 +1077,7 @@ Returns user info related to an organization.
 
 <a id="terminusdb_client.client.Client.Client.get_organization_user_databases"></a>
 
-#### get\_organization\_user\_databases
+## get\_organization\_user\_databases
 
 ```python
 def get_organization_user_databases(org: str, username: str) -> Optional[dict]
@@ -1097,7 +1100,7 @@ Returns the databases available to a user which are inside an organization
 
 <a id="terminusdb_client.client.Client.Client.get_organizations"></a>
 
-#### get\_organizations
+## get\_organizations
 
 ```python
 def get_organizations() -> Optional[dict]
@@ -1115,7 +1118,7 @@ Returns a list of organizations in the database.
 
 <a id="terminusdb_client.client.Client.Client.get_organization"></a>
 
-#### get\_organization
+## get\_organization
 
 ```python
 def get_organization(org: str) -> Optional[dict]
@@ -1137,7 +1140,7 @@ Returns a specific organization
 
 <a id="terminusdb_client.client.Client.Client.delete_organization"></a>
 
-#### delete\_organization
+## delete\_organization
 
 ```python
 def delete_organization(org: str) -> Optional[dict]
@@ -1159,7 +1162,7 @@ Deletes a specific organization
 
 <a id="terminusdb_client.client.Client.Client.change_capabilities"></a>
 
-#### change\_capabilities
+## change\_capabilities
 
 ```python
 def change_capabilities(capability_change: dict) -> Optional[dict]
@@ -1195,7 +1198,7 @@ Dict for the capability change request.
 
 <a id="terminusdb_client.client.Client.Client.add_role"></a>
 
-#### add\_role
+## add\_role
 
 ```python
 def add_role(role: dict) -> Optional[dict]
@@ -1217,7 +1220,7 @@ Add a new role
 
 <a id="terminusdb_client.client.Client.Client.change_role"></a>
 
-#### change\_role
+## change\_role
 
 ```python
 def change_role(role: dict) -> Optional[dict]
@@ -1239,7 +1242,7 @@ Change role actions for a particular role
 
 <a id="terminusdb_client.client.Client.Client.get_available_roles"></a>
 
-#### get\_available\_roles
+## get\_available\_roles
 
 ```python
 def get_available_roles() -> Optional[dict]
@@ -1257,7 +1260,7 @@ Get the available roles for the current authenticated user
 
 <a id="terminusdb_client.client.Client.Client.add_user"></a>
 
-#### add\_user
+## add\_user
 
 ```python
 def add_user(username: str, password: str) -> Optional[dict]
@@ -1280,7 +1283,7 @@ Add a new user
 
 <a id="terminusdb_client.client.Client.Client.get_user"></a>
 
-#### get\_user
+## get\_user
 
 ```python
 def get_user(username: str) -> Optional[dict]
@@ -1302,7 +1305,7 @@ Get a user
 
 <a id="terminusdb_client.client.Client.Client.get_users"></a>
 
-#### get\_users
+## get\_users
 
 ```python
 def get_users() -> Optional[dict]
@@ -1320,7 +1323,7 @@ Get all users
 
 <a id="terminusdb_client.client.Client.Client.delete_user"></a>
 
-#### delete\_user
+## delete\_user
 
 ```python
 def delete_user(username: str) -> Optional[dict]
@@ -1342,7 +1345,7 @@ Delete a user
 
 <a id="terminusdb_client.client.Client.Client.change_user_password"></a>
 
-#### change\_user\_password
+## change\_user\_password
 
 ```python
 def change_user_password(username: str, password: str) -> Optional[dict]
@@ -1365,7 +1368,7 @@ Change user's password
 
 <a id="terminusdb_client.client.Client.Client.get_database"></a>
 
-#### get\_database
+## get\_database
 
 ```python
 def get_database(dbid: str, team: Optional[str] = None) -> Optional[dict]
@@ -1375,23 +1378,21 @@ Returns metadata (id, organization, label, comment) about the requested database
 
 **Arguments**:
 
-- `dbid` _str_ - The id of the database
-- `team` _str_ - The organization of the database (default self.team)
-  
+- `dbid` (`str`): The id of the database
+- `team` (`str`): The organization of the database (default self.team)
 
 **Raises**:
 
-- `InterfaceError` - if the client does not connect to a server
-- `DatabaseError` - if the database can't be found
-  
+- `InterfaceError`: if the client does not connect to a server
+- `DatabaseError`: if the database can't be found
 
 **Returns**:
 
-  dict
+`dict`: 
 
 <a id="terminusdb_client.client.Client.Client.has_database"></a>
 
-#### has\_database
+## has\_database
 
 ```python
 def has_database(dbid: str, team: Optional[str] = None) -> bool
@@ -1414,7 +1415,7 @@ Check whether a database exists
 
 <a id="terminusdb_client.client.Client.Client.get_databases"></a>
 
-#### get\_databases
+## get\_databases
 
 ```python
 def get_databases() -> List[dict]
@@ -1432,7 +1433,7 @@ Returns a list of database metadata records for all databases the user has acces
 
 <a id="terminusdb_client.client.Client.Client.list_databases"></a>
 
-#### list\_databases
+## list\_databases
 
 ```python
 def list_databases() -> List[Dict]
