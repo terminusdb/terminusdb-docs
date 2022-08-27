@@ -4,7 +4,7 @@ WOQL is a powerful query language that enables you to concisely query complex da
 
 #### Diagram: The three core WOQL concepts
 
-![](../../../.gitbook/assets/terminusdb-woql-concepts.png)
+![](../../../img/diagrams/terminusdb-woql-concepts.png)
 
 ## WOQL triples
 

@@ -1,251 +1,303 @@
 ---
-description: Example code for setting up and managing access control permissions.
+description: Managing access control with the TerminusDB local dashboard
 ---
 
 # Manage Access Control
 
-## Install Terminusdb Access control <a href="#install-terminusdb-access-control" id="install-terminusdb-access-control"></a>
+This article is a beginner's guide to managing organizations/teams and users with the TerminusDB dashboard.
 
-Please [clone and install TerminusDB](https://github.com/terminusdb/terminusdb-bootstrap) and have it running.
+In this article, we’ll do the following:
 
-Then clone the access control tutorial &#x20;
+* Install the local TerminusDB dashboard&#x20;
+* Provide an overview of the default admin login and screens&#x20;
+* Go through the administration and access control mechanisms to create new roles, users, and teams and connect them to data products.
 
-```bash
-git clone https://github.com/terminusdb/terminusdb-access-control.git
-cd terminusdb-access-control
-$ npm install
-```
+### Install the Dashboard
 
-Now run the example.
+[Install and run TerminusDB as a Docker container](../../get-started/install/install-as-docker-container.md), also referred to as TerminusDB bootstrap.
 
-```bash
-$ npm run start
-```
+When installed, TerminusDB creates by default, an **admin user** and **admin team**. The admin user has the privileges to manage data products, and create teams and users. The admin default password is **root**.
 
-## Access Control Examples
+Go to [**http://localhost:6363/dashboard**](http://localhost:6363/dashboard) **and start to build your teams, users, and data products.**
 
-The following code uses the AccessControl class to manage users' access control to organizations and databases.
+**Admin Password Change**
 
-```javascript
-/* Import terminusdb-client */
-const TerminusClient = require("@terminusdb/terminusdb-client")
-const AccessControl = require("./AccessControl")
+{% hint style="danger" %}
+If you change the admin user password, the dashboard will display this error: _"Incorrect authentication information, please enter your username and password again"_
+{% endhint %}
 
-/*Import the list of allowed actions */
-const {ACTIONS} = require("./documentTemplate")
+<figure><img src="../../.gitbook/assets/01-terminusdb-access-control-admin-password.png" alt=""><figcaption></figcaption></figure>
 
-/*We are using TerminusDB for Authorization 
-so we'll create all the Users with a NO_KEY*/
-const NO_KEY = "NO_KEY"
+Simply log **** in again with the new password to continue working.
 
-/*TerminusDB server host url*/
-const serverHost ="http://localhost:6363"
-```
+1. Select the "Login to TerminusDB" button&#x20;
+2. A pop-up window will appear&#x20;
+3. Fill the form with the user (admin) and new password, you can omit the organization field&#x20;
+4. Press "Connect with the User"&#x20;
+5. You'll be redirected to the home page
 
-Initialize the Terminusdb Client with the admin's credentials. Only the global admin can create Organizations and Users
+### **Dashboard Home Page**
 
-```javascript
-const client = new TerminusClient.WOQLClient(serverHost, {user:"admin",key:"root"})
-const accessControl = new AccessControl(client)
+On the home page, you'll find a list of teams (referred to as Organizations in the TerminusDB System Database)
 
-/*
-* roles name
-*/
-const adminRole = "Role/admin"
-const customRole =  "Role/reader"
+Select an existing team or create a new one. If no team is created or selected, some of the dashboard functionalities are disabled.
 
-```
+The "Create a new Team" button is enabled only for the admin user.
 
-Roles are actions (permissions) that you can use to grant or restrict access to specific resources and operations. Only the global admin can create Roles.
+Admin can create a new personal team where they are the admin and can also create additional Teams and Users and configure user roles using the administrator interface.
 
-```javascript
-async function createCustomRole(){
-    const label = "reader Role"
-    try{
-        const actions = [ACTIONS.SCHEMA_READ_ACCESS,
-                         ACTIONS.COMMIT_READ_ACCESS,
-                         ACTIONS.CLASS_FRAME,
-                         ACTIONS.META_READ_ACCESS]
-        const result = await accessControl.createRole(customRole,label,actions)
-    }catch(err){
-        const errorType = err.data && err.data["api:error"] ? err.data["api:error"]["@type"] : null
-        if(errorType !== 'api:DocumentIdAlreadyExists'){
-            throw err
-        }
-        console.log(`The Document ${customRole} already exists`)
+<figure><img src="../../.gitbook/assets/02-terminusdb-access-control-admin-change-password.png" alt=""><figcaption></figcaption></figure>
+
+### **Creating a new team for the admin user**
+
+1. Click the button Create a new Team&#x20;
+2. The Create new team window will pop **** up&#x20;
+3. Insert the team name in the input field (the team name must be unique)&#x20;
+4. Click Create Team button&#x20;
+5. You will be redirected to the Team home page
+
+<figure><img src="../../.gitbook/assets/03-terminusdb-access-control-admin-home.png" alt=""><figcaption></figcaption></figure>
+
+#### **Team Home Page**
+
+The top bar from right to left displays:
+
+* The user role&#x20;
+* The user name&#x20;
+* The team name
+
+#### **Create a New Data Product**
+
+* Select the 'New Data Product' button&#x20;
+* Enter the Data Product ID and name&#x20;
+* Click Create Data Product button
+
+<figure><img src="../../.gitbook/assets/06-terminusdb-access-control-new-dataproduct (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/07-terminusdb-access-control-new-dataproduct.png" alt=""><figcaption></figcaption></figure>
+
+## **Administration and Access Control**
+
+The administrator interface provides a visual console to easily administer TerminusDB teams and data products. In order to create roles, users, and teams, you need to be logged in as the admin.&#x20;
+
+Access the User Management section from the top bar.
+
+<figure><img src="../../.gitbook/assets/08-terminusdb-access-control-user-management.png" alt=""><figcaption></figcaption></figure>
+
+[Full documentation and all the definitions can be found here](https://github.com/terminusdb/terminusdb-access-control)
+
+<figure><img src="../../.gitbook/assets/09-terminusdb-access-control-user-diagram.png" alt=""><figcaption><p>This diagram illustrates the roles we'll create in this how-to guide.</p></figcaption></figure>
+
+### Create a new Role
+
+We are going to create four different roles: _appAdmin_, _reader_, _writer,_ and _schema\_writer_.
+
+* Navigate to the User Management section
+* Select the Roles tab&#x20;
+* Select create a new Role and a pop-up window will appear&#x20;
+* Insert the role name and select the role permissions
+* Click 'Create Role' button and a new role will be created
+
+<figure><img src="../../.gitbook/assets/10-terminusdb-access-control-user-role-selection.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/11-terminusdb-access-control-user-roles.png" alt=""><figcaption></figcaption></figure>
+
+### Create New Users
+
+We are going to create three new Users:&#x20;
+
+User\_01, User\_02, and User\_03 , all with the default password "NO\_KEY"
+
+* Select the Users tab
+* Select Create New User and a pop-up window will appear&#x20;
+* Insert the user name and NO\_KEY as the password
+* Click Create User Button and a new User will be created
+
+Repeat these steps for the three users.
+
+<figure><img src="../../.gitbook/assets/12-terminusdb-access-control-new-user.png" alt=""><figcaption></figcaption></figure>
+
+The new users are currently unrelated to any teams.
+
+<figure><img src="../../.gitbook/assets/13-terminusdb-access-control-users-teams.png" alt=""><figcaption></figcaption></figure>
+
+Next, we’ll get your teams up and running.
+
+### Create a New Team
+
+We are going to create three new teams: _team\_01_, _team\_02_, and _team\_03_
+
+* Select the Teams' tab&#x20;
+* Select ‘Create New Team’ and a pop-up window will appear&#x20;
+* Insert the team name&#x20;
+* Click the ‘Create Team’ button and a new Team will be created
+* Repeat these steps for the other two teams.&#x20;
+
+<figure><img src="../../.gitbook/assets/14-terminusdb-access-control-new-team.png" alt=""><figcaption></figcaption></figure>
+
+The new teams are not currently linked with any users.
+
+<figure><img src="../../.gitbook/assets/15-terminusdb-access-control-users-teams.png" alt=""><figcaption></figcaption></figure>
+
+### Add Users to Team\_01&#x20;
+
+We are going to add users to team\_01, assigning them roles:
+
+* Choose the Teams tab
+* In the team\_01 row, Select the "Show Team Users" icon&#x20;
+* Select add Users to team\_01 Team&#x20;
+* From the drop-down list, select User\_01 and check the appAdmin role
+* Click 'Create User Button' and a new User will be created
+
+<figure><img src="../../.gitbook/assets/16-terminusdb-access-control-users-assign-roles.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/17-terminusdb-access-control-users-assign-roles.png" alt=""><figcaption></figcaption></figure>
+
+Repeat the same steps for the other users:&#x20;
+
+User\_01 -> role -> reader&#x20;
+
+User\_02 -> role -> reader /writer
+
+Then do the following:
+
+* Connect team\_03 with User\_01 with a role as appAdmin&#x20;
+* Connect team\_02 with User\_02 with a role as appAdmin
+
+### Log in with the User\_01
+
+Now we are going to log in with User\_01:
+
+* From the top bar, select **Change User**&#x20;
+* A pop-up window will appear&#x20;
+* Add the user name and password - User\_01 and NO\_KEY&#x20;
+* Press the "Connect with the User" button
+
+<figure><img src="../../.gitbook/assets/17-terminusdb-access-control-change-user.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/17-terminusdb-access-control-user-login.png" alt=""><figcaption></figcaption></figure>
+
+#### User\_01 teams Homepage
+
+When you first sign in, you will see a list of the teams associated with this user, select team\_01.
+
+<figure><img src="../../.gitbook/assets/18-terminusdb-access-control-user1-home.png" alt=""><figcaption></figcaption></figure>
+
+There are no data products associated with the team, so first we’ll create two new data products.
+
+* Press the "New Data Product" button and name it dataproduct\_01&#x20;
+* Repeat the process and name this one dataproduct\_02
+
+On the top bar, you will see from right to left:
+
+* the user team role/s "appAdmin",&#x20;
+* the user name, User\_01&#x20;
+* the selected team name team\_01
+
+<figure><img src="../../.gitbook/assets/19-terminusdb-access-control-user-roles-bar.png" alt=""><figcaption></figcaption></figure>
+
+User\_01 has the access privileges to create new data products and manage them.
+
+#### Create a Schema
+
+* Select the "Data Product Model" icon from the icons menu on the left
+* Select "JsonView" on the Data Product Model page and copy the following schema&#x20;
+* Select the save icon
+
+```json
+[
+    {
+        "@base": "terminusdb:///data/",
+        "@schema": "terminusdb:///schema#",
+        "@type": "@context"
+    },
+    {
+        "@id": "Person",
+        "@key": {
+            "@fields": [
+                "name"
+            ],
+            "@type": "Lexical"
+        },
+        "@type": "Class",
+        "name": "xsd:string"
     }
-}
-
+]
 ```
 
-Databases are created under an Organization. By linking a User to an Organization (capability), the User has access to all the Databases under this Organization
+<figure><img src="../../.gitbook/assets/20-terminusdb-access-control-schema.png" alt=""><figcaption></figcaption></figure>
 
-Here is a list of all the users, organizations, and databases we will create:
+User\_01 has ‘appAdmin’ privileges, so if navigating around the dashboard you can see that they can perform all the actions. For example, select the "document explorer" button on the left and insert a new Person Document.
 
-```javascript
-const user__01 = "User__01"
-const team__01 = "Team__01"
+<figure><img src="../../.gitbook/assets/21-terminusdb-access-control-new-doc.png" alt=""><figcaption></figcaption></figure>
 
-const user__02 = "User__02"
-const user__03 = "User__03"
+### Connect with User\_02
 
-const team__02 = "Team__02"
-const team__03 = "Team__03"
+* Select change user for the upper user menu&#x20;
+* Insert the credentials - User\_02, password NO\_KEY and team\_01 (in the team field)&#x20;
+* You'll arrive on the team\_01 main page&#x20;
+* From the left menu, Select dataproduct\_01
 
-const db__01 = "Database__01"
-const db__02 = "Database__02"
+On the top bar from right to left you can see the user role "**reader**", the user name **User\_02**, and the team name team\_01
 
-```
+The user does not have permission to create databases within team\_01 so the "New Data Product" button is hidden.
 
-The database administrator (admin) can create capability-roles to give another user access to a specific resource
+<figure><img src="../../.gitbook/assets/22-terminusdb-access-control-dataproduct_01.png" alt=""><figcaption></figcaption></figure>
 
-A capability is a connection between Role and Resource (organizations or databases)
+The user has schema\_read permission level, from the "Data Product Model" section, they can see the schema graph in view mode.
 
-{% code overflow="wrap" %}
-```javascript
-async function createUsersAndTeams(){
-        /*
-        *Create the new Organization Team__01 and the User User__01 with Role/admin to access this Organization
-        *The user has admin level of access to this Organization and the databases controlled by the organization.
-        *We are creating the User with NO_KEY, 
-        *we are using TerminusDB for authorization.
-        */
-        await accessControl.createUserAndOrganization(team__01,user__01,adminRole)
-        
-        /*Create another Organization for the User User__01 with Role/admin*/
-        await accessControl.createOrganization(team__03,user__01,adminRole)
+<figure><img src="../../.gitbook/assets/23-terminusdb-access-control-data-model.png" alt=""><figcaption></figcaption></figure>
 
-        /*Add a new User user__02, assign the custom role Role/reader to access the Organization resource Team__01*/
-        await accessControl.addNewUserToOrganization(team__01,user__02,customRole)
-       
-        /*Create the new Organization Team__02 and the User User__03 with Role/admin to access this Organization*/
-        await accessControl.createUserAndOrganization(team__02,user__03,adminRole)
+### Data product level permissions.
 
-        /*assign the custom role (Role/reader) to the User User__03 over the Organization Team__01*/
-        await accessControl.addExistsUserToOrganization(team__01,user__03,customRole)
+Login with the admin user again (the admin user is the only one that can manage teams, user roles, and capabilities)
 
-        
+* Select change user from the top menu bar,&#x20;
+* Insert admin and your admin password (default is root)&#x20;
+* Select "User Management" from the top user menu to navigate to the access control management interface&#x20;
+* From the team list table, select the green icon in the team\_01 row
 
-}
+<figure><img src="../../.gitbook/assets/24-terminusdb-access-control-db-permissions.png" alt=""><figcaption></figcaption></figure>
 
-```
-{% endcode %}
+* From the "team\_01 -- Team Users Roles" table list, select the green icon in the User\_02 row
 
-Create a new TerminusDB client instance for User\_\_01 with NO\_KEY setting. We will assume that the User is already logged in to the system so the identity of the User is verified and we don't need to verify this again in TerminusDB. The User can create a database under an Organization only if they have a role that allows to "create\_database"
+<figure><img src="../../.gitbook/assets/25-terminusdb-access-control-db-permissions.png" alt=""><figcaption></figcaption></figure>
 
-```javascript
-async function createDB(){
-          const clientTeam01 = new TerminusClient.WOQLClient(serverHost, {user:user__01,key:NO_KEY,organization:team__01})
-          await clientTeam01.createDatabase(db__01, {label: db__01 , comment: "add db", schema: true}) 
-          await clientTeam01.createDatabase(db__02, {label: db__02 , comment: "add db", schema: true}) 
-}
+The user has no specific permissions at thr data product level, but each data product inherits the team access level, in this instance a **reader** role.
 
+In the User\_02 Dataproducts Roles table list, in the dataproduct\_02 row:
 
-async function deleteDatabase (db){
-    try{
-        const clientTeam01 = new TerminusClient.WOQLClient(serverHost, {user:user__01,key:NO_KEY,organization:team__01})
-        await clientTeam01.deleteDatabase(db)
-    }catch(err){
-        console.log(`the database ${db} doesn't exists`)
-    }
-}
-/*
-* this is only for test purpose
-* You must be very careful when you remove database, Organization/team and users
-* the Organization have to be not related with nothing or you can not delete it.
-* you have to remove all the databases before and all the users access Roles
-*/
-async function deleteUsersAndTeamsIfExists(){
-    try{
-        /*With this operation the Userstill exists is only not related with the Organization any more*/
-        await accessControl.deleteUserFromOrg(team__01,user__02)
-        await accessControl.deleteUserFromOrg(team__01,user__03)
+* Select the green "Add database user roles" icon&#x20;
+* The Add Database new\_data\_product\_02 roles window displays&#x20;
+* Select schema\_writer and writer roles for the list&#x20;
+* Click send
 
-        /*Important delete the databases before the Admin User 
-        If no Admin user is related with the Organization 
-        you can not remove the databases (you'll get an incorrect authorization error)*/
-        await deleteDatabase(db__01)
-        
-        /*if a capability connect an user with an database,
-        you have to remove the capability before the database*/
-        await accessControl.deleteDatabaseRole(team__01,user__03,db__02)
-        await deleteDatabase(db__02)       
-        
-        /*I remove the relationship between the Team__01 and the User__01*/
-        await accessControl.deleteUserFromOrg(team__01,user__01)
-        /*Now that the Organization is not related with nothing I can delete it*/
-        await accessControl.deleteOrganization(team__01)
+<figure><img src="../../.gitbook/assets/26-terminusdb-access-control-db-user-permissions.png" alt=""><figcaption></figcaption></figure>
 
-        await accessControl.deleteUserFromOrg(team__03,user__01)
-        await accessControl.deleteOrganization(team__03)
+<figure><img src="../../.gitbook/assets/27-terminusdb-access-control-db-product-role.png" alt=""><figcaption></figcaption></figure>
 
-        await accessControl.deleteUserFromOrg(team__02,user__03)
-        await accessControl.deleteOrganization(team__02)
+#### Check the new User\_02 Permission
 
-        /*The user has NO capability on any resource, so you can remove it*/
-        await accessControl.deleteUser(user__01)
-        await accessControl.deleteUser(user__02)
-        await accessControl.deleteUser(user__03)
-    }catch(err){
-        console.log(err.message)
-    }
-}
+Login with User\_02, NO\_KEY, team\_01
+
+* On the team\_01 home page, select the dataproduct\_02 from the data products pane&#x20;
+* On the top bar, from right to left you will see:&#x20;
+  * User roles - reader + schema\_writer + writer&#x20;
+  * The user name User\_02&#x20;
+  * The selected Team team\_01
+
+As you can see, User\_02 can now edit the schema in dataproduct\_02.
+
+<figure><img src="../../.gitbook/assets/28-terminusdb-access-control-user2.png" alt=""><figcaption></figcaption></figure>
+
+Now select dataproduct\_01, you will see that the user’s role is reader, so User\_02 can only view the schema for this data product.
+
+<figure><img src="../../.gitbook/assets/29-terminusdb-access-control-user2-dp1.png" alt=""><figcaption></figcaption></figure>
 
 
-async function run (){
-    /*create a custom role*/
-    try{
-        await createCustomRole()
-        console.log("Created the custom role reader ......")
-        console.log("...............")
-        /*create all the users and teams*/
-        await createUsersAndTeams()
-        console.log("Created Organizations and Users ......")
-        console.log("................")
 
-        await createDB()
-        console.log("Created Databases ......")
-        console.log("................")
+## Further Reading
 
-        /*see the Team's Users Role*/
-        const teamCapabilities = await accessControl.getListUserRoles(team__01)
-        console.log("the Team__01 Users Role")
-        console.log( JSON.stringify(teamCapabilities,null,4))
-        console.log(".....................")
+[**Access Control Documentation**](https://terminusdb.github.io/terminusdb-access-control/#/)****
 
-        /*get all the database under this Organization*/
-        const dbList = await accessControl.getDatabaseList(team__01)
-        console.log("Team__01 databases")
-        console.log(JSON.stringify(dbList,null,4))
-        console.log(".....................")
-        
-```
-
-Users have role access levels for an Organization and all of the databases under it. The system administrator (admin) can assign a User with a different role for a specific database. Database-specific levels only work if it is a higher role than the Organization level
-
-```javascript
-        await accessControl.createDatabaseRole(team__01,user__03,db__02,adminRole)
-        /*return the User roles at database level if setted*/
-        const databaseCap= await accessControl.getUserDatabasesRoles(user__03)
-        console.log("The User__03 database Roles")
-        console.log(JSON.stringify(databaseCap,null,4))
-
-    }catch(err){
-        const data = err.data || {}
-        console.log(err.message)
-        if(data.message)console.log(data.message)
-    }
-}
-
-/*if you need to delete a User or an Organization look at this function*/
-async function deleteall(){
-    await deleteUsersAndTeamsIfExists()
-}
-run()
-
-
-```
-
-### Further Reading
-
-****[**Access Control Reference Guide**](../reference-guides/accesscontrol.md)****
+****[**Access Control JavaScript Reference Guide**](../reference-guides/javascript-client-reference/accesscontrol.md)****
