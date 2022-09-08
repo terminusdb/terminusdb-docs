@@ -18,6 +18,7 @@
   * [CLI](guides/interface-guides/cli.md)
   * [JavaScript Client](guides/interface-guides/javascript-client.md)
   * [Python Client](guides/interface-guides/python-client.md)
+  * [Dashboard](guides/interface-guides/dashboard.md)
 * [How-to Guides](guides/how-to-guides/README.md)
   * [Administer the Database](guides/how-to-guides/administer-the-database.md)
   * [Data Modeling in TerminusDB](guides/how-to-guides/data-modeling-in-terminusdb.md)
