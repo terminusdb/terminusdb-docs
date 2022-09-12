@@ -65,8 +65,8 @@
 ## Explanations
 
 * [Document Graph DB](explanations/document-graph-db/README.md)
-  * [Introduction to TerminusDB](explanations/document-graph-db/introduction.md)
-  * [Introduction to TerminusX](explanations/document-graph-db/introduction-1.md)
+  * [Introduction to TerminusDB](explanations/document-graph-db/terminusdb-intro.md)
+  * [Introduction to TerminusX](explanations/document-graph-db/terminusx-intro.md)
   * [ACID Transactions](explanations/document-graph-db/acid.md)
   * [Datalog](explanations/document-graph-db/datalog.md)
   * [Documents](explanations/document-graph-db/documents.md)

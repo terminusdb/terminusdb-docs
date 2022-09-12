@@ -50,8 +50,8 @@ TerminusX stores data as documents in a JSON-like format - the most natural way 
 
 ### Further Reading
 
-#### [TerminusX whitepaper](https://terminusdb.com/blog/terminusx-whitepaper/)
+#### [TerminusX whitepaper](https://terminusdb.com/terminusx-whitepaper/)
 
 #### [Get started with TerminusX](../../terminusx/get-started.md)
 
-#### [Read more about TerminusDB](introduction.md)
+#### [Read more about TerminusDB](terminusdb-intro.md)

@@ -8,7 +8,7 @@ description: >-
 
 ### What is TerminusDB?
 
-TerminusDB is a powerful, in-memory graph database enabling you to maximize your productivity and the value of your data. TerminusDB has numerous features and several interfaces enabling you to create data-intensive, immutable, and synchronized databases with built-in version control and other [Git-like](introduction.md#git-like-model) operations.
+TerminusDB is a powerful, in-memory graph database enabling you to maximize your productivity and the value of your data. TerminusDB has numerous features and several interfaces enabling you to create data-intensive, immutable, and synchronized databases with built-in version control and other [Git-like](terminusdb-intro.md#git-like-model) operations.
 
 #### Diagram: Some key features of TerminusDB
 
@@ -28,7 +28,7 @@ Maximize your productivity and start realizing the value of your data by having 
 
 #### Feature-rich and Git-like
 
-Numerous unique features and [Git-like](introduction.md#git-like-model) operations including clone, branch, merge, control and time-travel. TerminusDB databases are immutable, fully preserving data lineage and change history with built-in revision control, similar to distributed version control systems.
+Numerous unique features and [Git-like](terminusdb-intro.md#git-like-model) operations including clone, branch, merge, control and time-travel. TerminusDB databases are immutable, fully preserving data lineage and change history with built-in revision control, similar to distributed version control systems.
 
 #### Advanced query language
 
@@ -78,7 +78,7 @@ Read our [white paper on succinct data structures and delta encoding in modern d
 
 #### TerminusX
 
-An [Introduction to TerminusX](introduction-1.md) the cloud infrastructure underpinning TerminusDB.
+An [Introduction to TerminusX](terminusx-intro.md) the cloud infrastructure underpinning TerminusDB.
 
 #### Documents
 

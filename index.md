@@ -74,8 +74,8 @@ The TerminusDB [Web Object Query Language](explanations/document-graph-db/woql.m
 
 ### Further Reading
 
-#### [An introduction to TerminusDB](explanations/document-graph-db/introduction.md)
+#### [An introduction to TerminusDB](explanations/document-graph-db/terminusdb-intro.md)
 
-#### [An introduction to TerminusX](explanations/document-graph-db/introduction-1.md)
+#### [An introduction to TerminusX](explanations/document-graph-db/terminusx-intro.md)
 
 #### [Documents in a knowledge graph and how to use them](explanations/document-graph-db/documents.md)
