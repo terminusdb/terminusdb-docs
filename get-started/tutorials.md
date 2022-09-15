@@ -24,6 +24,7 @@ description: Quick links to tutorials to help you learn
   * [Lesson 7 - Logical query using triple and WOQL](https://github.com/terminusdb/terminusdb-tutorials/blob/master/getting\_started/python-client/lesson\_7.md)
 * [**90-second video explaining how to create a data product with the dashboard**](https://youtu.be/LDvEqx9Y7oA)****
 * ****[**90-second video showing how to model data with the dashboard**](https://youtu.be/YQaiRJkmKW8)
+* ****[**CLI basics video in under 3 minutes** ](https://terminusdb.com/blog/command-line-interface-demo/)
 {% endtab %}
 
 {% tab title="Importing & Exporting Data" %}
@@ -40,6 +41,8 @@ description: Quick links to tutorials to help you learn
 
 
 * [**OAuth2 Configuration for TerminusDB to allow for SSO**](https://terminusdb.com/blog/oauth2-configuration-for-sso/)****
+* ****[**Managing Access Control with the Dashboard**](../guides/how-to-guides/manage-access-control.md)****
+* ****[**Managing Access Control with the JS Client**](https://terminusdb.github.io/terminusdb-access-control/#/README)****
 * ****[**Nuclear reactor data product - 3-part tutorial**](https://github.com/terminusdb/terminusdb-tutorials/tree/master/nuclear) ****&#x20;
   * [Lesson 1 - Build a knowledge graph of nuclear reactors](https://github.com/terminusdb/terminusdb-tutorials/blob/master/nuclear/nuclear.md)
   * [Lesson 2 - Data product enrichment](https://github.com/terminusdb/terminusdb-tutorials/blob/master/nuclear/enrichment.md)

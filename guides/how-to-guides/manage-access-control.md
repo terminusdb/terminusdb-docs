@@ -2,7 +2,7 @@
 description: Managing access control with the TerminusDB local dashboard
 ---
 
-# Manage Access Control
+# Manage Access Control with Dashboard
 
 This article is a beginner's guide to managing organizations/teams and users with the TerminusDB dashboard.
 
@@ -305,3 +305,5 @@ Now select _**dataproduct\_01**_, you will see that the user’s role is reader,
 [**Access Control Documentation**](https://terminusdb.github.io/terminusdb-access-control/#/)****
 
 ****[**Access Control JavaScript Reference Guide**](../reference-guides/javascript-client-reference/accesscontrol.md)****
+
+****[**Manage Access Control with the JavaScript Client**](https://terminusdb.github.io/terminusdb-access-control/#/README)****
