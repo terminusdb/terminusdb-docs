@@ -541,7 +541,35 @@ Use `Random` as a convenient key type when an object has no important characteri
 
 ### @documentation
 
-Use `@documentation` to add documentation to the class and the property fields or values of the class. The keywords of the `@documentation` object are `@comment` and either `@properties` or `@values` for standard classes or `Enums` respectively. See the [Random key](schema.md#code-an-example-of-a-random-key) example above, for examples of these keywords.
+Use `@documentation` to add documentation to the class and the property fields or values of the class. The `@documentation` can either be an object, or a list of objects with specified languages (and at most one default unspecified). An example using multiple languages might be:
+
+```json
+{ "@id" : "Example",
+  "@type" : "Class",
+  "@documentation" : [
+     {
+       "@label" : "Example",
+       "@comment" : "An example class",
+       "@properties" : { "name" : { "@label" : "name",
+                                    "@comment" : "The name of the example object" },
+                         "choice" : { "@label" : "choice",
+                                      "@comment" : "A thing to choose" }}
+     },
+     {
+        "@language" : "ka",
+        "@label" : "მაგალითი",
+        "@comment" : "მაგალითი კლასი",
+        "@properties" : { "name" : { "@label" : "სახელი",
+                                     "@comment" : "მაგალითის ობიექტის სახელი" },
+                          "choice" : { "@label" : "არჩევანი",
+                                       "@comment" : "რაც უნდა აირჩიოთ" }}
+     }
+  ],
+  "name" : "xsd:string"
+}
+```
+
+The keywords of the `@documentation` object are `@comment` and either `@properties` or `@values` for standard classes or `Enums` respectively.  Each of the `@properties` or  `@values` can likewise have either a simple label, or an object with `@label` and `@comment (as above)`.
 
 For `Enum` we can write as follows:
 
@@ -560,7 +588,7 @@ For `Enum` we can write as follows:
 }
 ```
 
-For a standard `Class` we can write as follows:
+For a standard `Class` with one default language, we can write as follows:
 
 ```json
 {
@@ -590,12 +618,24 @@ The `@comment` is the class description.
 The `@properties` keyword is a JSON object with pairs of the form:
 
 ```json
-{ 
+{on 
     "property_1" : "description_1",
     
     ...
 
     "property_n" : "description_n" 
+}
+```
+
+or with properties pointingn to JSON objects, as:
+
+```json
+{ 
+    "property_1" : { "@label" : "description_1", "@comment" : "comment_1" },
+    
+    ...
+
+    "property_n" : { "@label" : "description_2", "@comment" : "comment_2" }
 }
 ```
 
