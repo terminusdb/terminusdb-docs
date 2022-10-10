@@ -8,7 +8,7 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 ### AddData
 
-<p class="tdb-f">Add a (terminal) edge with a data value.</p>
+<p class="tdb-f">Add an edge with a data value.</p>
 
 **Class:** `AddData`
 
@@ -18,9 +18,9 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `DataValue` | A datatype or variable which is the target or object of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. The variable must be bound. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. The variable must be bound. |
+| `object` | `DataValue` | A data value or variable which is the target or object of the graph edge. The variable must be bound. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
 
 ---
