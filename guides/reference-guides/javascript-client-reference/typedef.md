@@ -12,6 +12,7 @@ the GET document interface query parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
+| [query] | <code>object</code> | object that descrive the document query |
 | [graph_type] | <code>GraphType</code> | instance|schema, default value is instance. Used to switch between getting documents from the instance or the schema graph. |
 | [type] | <code>string</code> | only documents of the given type are returned. |
 | [id] | <code>string</code> | only the document with the given ID is returned. |
@@ -92,7 +93,7 @@ the DELETE document interface query parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
-| type | <code>&#x27;basic&#x27;</code> \| <code>&#x27;jwt&#x27;</code> | the authorization type of an TerminusDB connection |
+| type | <code>&#x27;basic&#x27;</code> \| <code>&#x27;jwt&#x27;</code> \| <code>&#x27;apikey&#x27;</code> | the authorization type of an TerminusDB connection |
 | [user] | <code>string</code> \| <code>boolean</code> | the user id | I don't need the user with the jwt token |
 | key | <code>string</code> | the connection key |
 
@@ -131,6 +132,9 @@ the DELETE document interface query parameters
 | [invitation] | <code>string</code> | - |
 
 
+## ResourceType
+##### ResourceType:  `  "database"` |  `  "organization" ` 
+
 ## RepoType
 ##### RepoType:  `  "local"` |  `  "remote" ` 
 
@@ -140,13 +144,9 @@ the DELETE document interface query parameters
 
 | Name | Type | Description |
 | --- | --- | --- |
-| [organization] | <code>string</code> | the db organization id |
-| id | <code>string</code> | The database identification name |
 | label | <code>string</code> | "Textual DB Name" |
 | [comment] | <code>string</code> | "Text description of DB" |
 | [public] | <code>boolean</code> |  |
-| [icon] | <code>string</code> | The database's icon |
-| [prefixes] | <code>object</code> | {scm: "http://url.to.use/for/scm", doc: "http://url.to.use/for/doc"} |
 | [schema] | <code>boolean</code> | if set to true, a schema graph will be created |
 
 
