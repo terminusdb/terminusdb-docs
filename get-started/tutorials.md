@@ -33,12 +33,12 @@ description: Quick links to tutorials to help you learn
 * [**OAuth2 Configuration for TerminusDB to allow for SSO**](https://terminusdb.com/blog/oauth2-configuration-for-sso/)****
 * ****[**Managing Access Control with the Dashboard**](../guides/how-to-guides/manage-access-control.md)****
 * ****[**Managing Access Control with the JS Client**](https://terminusdb.github.io/terminusdb-access-control/#/README)****
-* ****[**Nuclear reactor data product - 3-part tutorial**](https://github.com/terminusdb/terminusdb-tutorials/tree/master/nuclear) ****&#x20;
+* ****[**Nuclear reactor data product - 3-part tutorial for TerminusX**](https://github.com/terminusdb/terminusdb-tutorials/tree/master/nuclear)
   * [Lesson 1 - Build a knowledge graph of nuclear reactors](https://github.com/terminusdb/terminusdb-tutorials/blob/master/nuclear/nuclear.md)
   * [Lesson 2 - Data product enrichment](https://github.com/terminusdb/terminusdb-tutorials/blob/master/nuclear/enrichment.md)
   * [Lesson 3 - Scraping and validating data](https://github.com/terminusdb/terminusdb-tutorials/blob/master/nuclear/scraping.md)
-* ****[**Use TerminusDB as the backend for a React application**](https://github.com/terminusdb/terminusdb-tutorials/tree/master/react-example)****
 * ****[**Playing about with Netflix data in TerminusDB**](https://github.com/terminusdb/terminusdb-tutorials/blob/master/netflix/Netflix%20Tutorial.ipynb)
+* [**Stock Index CSV Import using Python Client**](https://github.com/terminusdb/terminusdb-tutorials/tree/master/stock\_index)****
 {% endtab %}
 
 {% tab title="Diff & Patch" %}
