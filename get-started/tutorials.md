@@ -27,16 +27,6 @@ description: Quick links to tutorials to help you learn
 * ****[**CLI basics video in under 3 minutes** ](https://terminusdb.com/blog/command-line-interface-demo/)
 {% endtab %}
 
-{% tab title="Importing & Exporting Data" %}
-
-
-* [**Exporting Data to Google Sheets with Singer.io**](https://github.com/terminusdb/terminusdb-tutorials/blob/master/google\_sheets/README.md)****
-* ****[**Importing data from GitHub using Singer.io**](https://github.com/terminusdb/terminusdb-tutorials/blob/master/github\_data/README.md)****
-* ****[**Importing Covid19 data into TerminusDB using Singer.io**](https://github.com/terminusdb/terminusdb-tutorials/blob/master/covid\_data/README.md)****
-* ****[**Importing CSV data using the JavaScript client**](https://github.com/terminusdb/terminusdb-tutorials/blob/master/getting\_started/javascript-client/lesson\_2.md)****
-* ****[**Importing CSV data using the Python client**](https://github.com/terminusdb/terminusdb-tutorials/blob/master/getting\_started/python-client/lesson\_2.md)
-{% endtab %}
-
 {% tab title="Practical" %}
 
 
