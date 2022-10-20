@@ -104,6 +104,18 @@ add extra headers to your request
 | customHeaders | <code>object</code> | 
 
 
+## getOrganization
+##### accessControl.getOrganization(organization) ⇒ <code>object</code>
+-- TerminusDB API ---
+Get an organization from the TerminusDB API.
+
+**Returns**: <code>object</code> - - organization  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| organization | <code>string</code> | The organization |
+
+
 ## getAllOrganizations
 ##### accessControl.getAllOrganizations() ⇒ <code>Promise</code>
 -- TerminusDB API ---
@@ -242,7 +254,7 @@ accessControl.deleteUser(userId).then(result=>{
 ```
 
 ## manageCapability
-##### accessControl.manageCapability(userId, resourceId, rolesArr, operation) ⇒ <code>Promise</code>
+##### accessControl.manageCapability(userName, resourceName, rolesArr, operation, scopeType) ⇒ <code>Promise</code>
 -- TerminusdDB API ---
 Grant/Revoke Capability
 
@@ -250,17 +262,25 @@ Grant/Revoke Capability
 
 | Param | Type | Description |
 | --- | --- | --- |
-| userId | <code>string</code> | the document user id |
-| resourceId | <code>string</code> | the resource id (database or team) |
-| rolesArr | <code>array</code> | the roles list |
+| userName | <code>string</code> | the document user id |
+| resourceName | <code>string</code> | the name of a (database or team) |
+| rolesArr | <code>array</code> | the roles name list |
 | operation | <code>typedef.CapabilityCommand</code> | grant/revoke operation |
+| scopeType | <code>typedef.ScopeType</code> | the resource type (database or organization) |
 
 **Example**  
 ```javascript
-{ "operation" : "grant",
-  "scope" : "Organization/myteam",
-  "user" : "User/myUser",
-  "roles" : ["Role/reader"] }
+//we add an user to an organization and manage users' access
+//the user myUser can  access the Organization and all the database under the organization with "reader" Role
+client.manageCapability(myUser,myteam,[reader],"grant","organization").then(result=>{
+ consol.log(result)
+})
+
+//the user myUser can  access the database db__001 under the organization myteam
+//with "writer" Role
+client.manageCapability(myUser,myteam/db__001,[writer],"grant","database").then(result=>{
+ consol.log(result)
+})
 ```
 
 ## getAccessRoles
@@ -364,6 +384,25 @@ exists and 404: if the organization does not exist
 | --- | --- | --- |
 | orgName | <code>string</code> | The organization name to check if exists. |
 
+
+## createOrganizationRemote
+##### accessControl.createOrganizationRemote(orgName) ⇒ <code>Promise</code>
+-- TerminusX API ---
+IMPORTANT This does not work with the API-TOKEN.
+Create an organization
+
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| orgName | <code>string</code> | The organization name to create |
+
+**Example**  
+```javascript
+accessControl.createOrganization("my_org_name").then(result=>{
+     console.log(result)
+})
+```
 
 ## getPendingOrgInvites
 ##### accessControl.getPendingOrgInvites([orgName]) ⇒ <code>Promise</code>
