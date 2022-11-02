@@ -26,7 +26,6 @@ A list of prerequisite components depending on your operating system. Click on t
 Install, build and run TerminusDB from source code with the following steps.
 
 * [Install SWI-Prolog](install-from-source-code.md#install-swi-prolog)
-* [Run SWI-Prolog](install-from-source-code.md#run-swi-prolog)
 * [Clone the TerminusDB repository](install-from-source-code.md#clone-the-terminusdb-repository)
 * [Make the TerminusDB Command Line Interface](install-from-source-code.md#make-the-terminusdb-command-line-interface)
 * [Run the TerminusDB system database](install-from-source-code.md#run-the-terminusdb-system-database)
@@ -92,15 +91,6 @@ brew install rust
 {% endtab %}
 {% endtabs %}
 
-### Run SWI-Prolog
-
-```
-swipl
-pack_install(terminus_store_prolog).
-pack_install(tus).
-halt.
-```
-
 ### Clone the TerminusDB repository
 
 Identical for all operating systems: Clone the `terminusdb` repository from GitHub.
@@ -117,14 +107,18 @@ git clone https://github.com/terminusdb/terminusdb
 {% tab title="Linux" %}
 ```bash
 cd terminusdb
+make install-tus
 make
+make install-dashboard
 ```
 {% endtab %}
 
 {% tab title="macOS" %}
 ```
 cd  terminusdb
+make install-tus
 make
+make install-dashboard
 ```
 {% endtab %}
 {% endtabs %}
