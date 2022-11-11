@@ -370,7 +370,7 @@ query {
 }
 ```
 
-### _or
+### `_or`
 
 The `_or` filter combinator allows us to make choices of
 contraints. It takes two filter objects relevant at the current
@@ -391,7 +391,7 @@ query {
 }
 ```
 
-### _not
+### `_not`
 
 The `_not` operator allows us to combine other constraints with
 *dis-constraints*, which remove any elements which match its
