@@ -350,6 +350,3 @@ query {
    }
 }
 ```
-
-
-## Type comparisons
