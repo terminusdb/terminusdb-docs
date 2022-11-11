@@ -2,16 +2,20 @@
 
 GraphQL queries are composed of:
 
+* Queries
 * Fields
 * Arguments
 
-Each Class in TerminusDB automatically generates a top level query
-field, with the name of the class [subject to name
-mapping](naming.md), along with a field for each of its properties. In
-turn, each property which is an edge leading to a new object of a
-class, will have its own field with arguments. Each concrete data
-query will be terminal.
+Each Class in TerminusDB automatically generates a top level Query. Each property of the class automatically generates both arguments and fields.
 
+The names of the types of arguments and fields are generated
+automatically [subject to name mapping](naming.md).
+
+In turn, each property which is an edge leading to a new object of a
+class, will have its own field with arguments.
+
+Each concrete data query will be terminal, and will generate a
+specific field parameter for search.
 
 ## Example
 
@@ -28,6 +32,22 @@ For example, using the following TerminusDB schema:
 TerminusDB will generate the following GraphQL class.
 
 ```graphql
+type Query {
+  Person(
+    id: ID
+
+    """skip N elements"""
+    offset: Int
+
+    """limit results to N elements"""
+    limit: Int
+    filter: Person_Filter
+
+    """order by the given fields"""
+    orderBy: Person_Ordering
+  ): [Person!]!
+}
+
 type Person {
   dob: DateTime!
   friend(
@@ -48,7 +68,18 @@ type Person {
 }
 ```
 
-And one can then query this using the [GraphQL endpoint](connecting_to_graphql.md).
+The `Person` query, allows you to query for a person at the top level,
+along with a number of arguments, including: a `filter` (for search),
+a `limit` for reducing to a define length of results, an `offset`, for
+obtaining results starting from some offset (for use in *paging*) and
+an `orderBy` to obtain the results in a defined order.
+
+In addition, we have the various *fields* of a `Person` object, each
+of which may themselves have arguments if they are objects, or simple
+data types for terminal fields.
+
+One can use such a query by using the [GraphQL
+endpoint](connecting_to_graphql.md).
 
 ## Arguments
 
@@ -56,7 +87,7 @@ Arguments are restrictions or meta-fields about the query. These can
 be used to limit results, or filter to specific results, as well as
 perform ordering.
 
-### id
+### `id`
 
 The id of an object can be directly supplied, in order to ensure that
 we only obtain the specific object of interest.
@@ -70,7 +101,7 @@ query Person(id:$id){
 }
 ```
 
-### offset
+### `offset`
 
 GraphQL will retrieve all objects in the database for a given class
 type, unless `offset` and `limit` are supplied. `offset` will start a
@@ -80,12 +111,25 @@ results.
 ```graphql
 query Person(limit: 3 offset: 3){
   name
+    Person(
+    id: ID
+
+    """skip N elements"""
+    offset: Int
+
+    """limit results to N elements"""
+    limit: Int
+    filter: Person_Filter
+
+    """order by the given fields"""
+    orderBy: Person_Ordering
+  ): [Person!]!
 }
 ```
 
 This query retrieves the second page of a 3 object page of persons.
 
-### limit
+### `limit`
 
 GraphQL will retrieve all objects in the database for a given class
 type, unless `offset` and `limit` are supplied. `limit` will only find
@@ -100,14 +144,14 @@ query Person(limit: 3 offset: 3){
 
 This query retrieves the second page of a 3 object page of persons.
 
-### orderBy
+### `orderBy`
 
 The orderBy filter allows the user to order results according to some
 data in the object. For instance, to create an ordering on people, we
 might write:
 
 ```
-query Person(limit: 3 offset: 3, orderBy: { dob: DESC, name: ASC){
+query Person(limit: 3 offset: 3, orderBy: { dob: DESC, name: ASC}){
   name
   dob
 }
@@ -116,7 +160,7 @@ query Person(limit: 3 offset: 3, orderBy: { dob: DESC, name: ASC){
 This will yield Persons from youngest to oldest, ordering by name in
 the event of a "tie" on date of birth.
 
-## filter
+## `filter`
 
 Filters allow you to restrict to specific results by reducing the set
 to those objects which match the filter fields.
@@ -168,7 +212,22 @@ birth), which can be restricted using a time comparison, or they can
 be filters on linked objects, such as the `Person_Collection_Filter`
 which allows us to compare with our friends.
 
-In GraphQL we might write:
+In GraphQL we might write a simple query over people as:
+
+```
+query Person(orderBy: { name: ASC},
+             filter: { name : {regex "(Joe|Joseph)"},
+                       _and : [{friend :
+                                 {someHave :
+                                    {name : {regex : "(Jim|James)"}}}}]}){
+  name
+  dob
+}
+```
+
+This finds name and date of birth of all people who have a name which
+contains "Joe" or "Joesph" and who are friends with someone named
+"Jim" or "James", in order of ascending name.
 
 ## Filter Builtin Types
 
