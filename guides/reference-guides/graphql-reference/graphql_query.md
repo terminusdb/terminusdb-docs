@@ -216,10 +216,10 @@ In GraphQL we might write a simple query over people as:
 
 ```graphql
 query Person(orderBy: { name: ASC},
-             filter: { name : {regex "(Joe|Joseph)"},
-                       _and : [{friend :
-                                 {someHave :
-                                    {name : {regex : "(Jim|James)"}}}}]}){
+             filter: { name: {regex: "(Joe|Joseph)"},
+                       _and: [{friend:
+                                 {someHave:
+                                    {name: {regex: "(Jim|James)"}}}}]}){
   name
   dob
 }
