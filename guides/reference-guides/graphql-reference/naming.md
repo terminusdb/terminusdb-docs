@@ -37,3 +37,34 @@ Should a collision arise, TerminusDB should give a GraphQL error on
 retreival of the schema.  In future we will allow this check to occur
 at schema submission time, and will also allow explicit renaming in
 TerminusDB classes.
+
+For instance, the TerminusDB class defined as:
+
+```json
+{ "@type" : "Class",
+  "@id" : "Galactic-Civilisation",
+  "name" : "xsd:string",
+  "kardashev-scale" : "xsd:integer" }
+```
+
+will be translated to:
+
+```graphql
+type Query {
+  Galatic_Civilisation(
+    id: ID
+
+    """skip N elements"""
+    offset: Int
+
+    """limit results to N elements"""
+    limit: Int
+    filter: Galactic_Civilisation_Filter
+
+    """order by the given fields"""
+    orderBy: Galactic_Civilisation_Ordering
+    ): [GalaticCivilsiation!]!
+    name : String!
+    kardashev_scale: BigInt!
+}
+```
