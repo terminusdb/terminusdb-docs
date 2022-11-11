@@ -58,11 +58,63 @@ perform ordering.
 
 ### id
 
+The id of an object can be directly supplied, in order to ensure that
+we only obtain the specific object of interest.
+
+A person might be retrieved by supplying the id as a variable in the
+following way:
+
+```graphql
+query Person(id:$id){
+  name
+}
+```
+
 ### offset
+
+GraphQL will retrieve all objects in the database for a given class
+type, unless `offset` and `limit` are supplied. `offset` will start a
+query from a given result offset, allowing the query user to *page*
+results.
+
+```graphql
+query Person(limit: 3 offset: 3){
+  name
+}
+```
+
+This query retrieves the second page of a 3 object page of persons.
 
 ### limit
 
+GraphQL will retrieve all objects in the database for a given class
+type, unless `offset` and `limit` are supplied. `limit` will only find
+the limit-number of results, allowing the query user to *page*
+results.
+
+```graphql
+query Person(limit: 3 offset: 3){
+  name
+}
+```
+
+This query retrieves the second page of a 3 object page of persons.
+
 ### orderBy
+
+The orderBy filter allows the user to order results according to some
+data in the object. For instance, to create an ordering on people, we
+might write:
+
+```
+query Person(limit: 3 offset: 3, orderBy: { dob: DESC, name: ASC){
+  name
+  dob
+}
+```
+
+This will yield Persons from youngest to oldest, ordering by name in
+the event of a "tie" on date of birth.
 
 ## filter
 
