@@ -150,7 +150,7 @@ The orderBy filter allows the user to order results according to some
 data in the object. For instance, to create an ordering on people, we
 might write:
 
-```
+```graphql
 query Person(limit: 3 offset: 3, orderBy: { dob: DESC, name: ASC}){
   name
   dob
