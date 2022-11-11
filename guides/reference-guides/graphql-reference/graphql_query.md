@@ -118,6 +118,12 @@ which allows us to compare with our friends.
 
 In GraphQL we might write:
 
+## Filter Builtin Types
+
+Filters have to work with all of the GraphQL basetypes, along with the
+extensions which TerminusDB currently supports (`DateTime`, and
+`BigInt`).
+
 ### DateTimeFilterInputObject
 
 ### StringFilterInputObject
