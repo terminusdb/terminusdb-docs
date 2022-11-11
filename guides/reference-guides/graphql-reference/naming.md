@@ -25,4 +25,15 @@ defined automatically by TerminusDB in the associated GraphQL schema.
 
 ## Translation
 
-All names of GraphQL classes TerminusDB
+All names of GraphQL classes in TerminusDB and all properties of
+TerminusDB classes, as well as all enums are translated to viable
+GraphQL names. This is done by replacing each non-representable
+character with an `_`.  In addition, underscores at the beginning of a
+class name or property are disallowed. This is to ensure there are no
+collisions with TerminusDB's own auto-generated properties and
+classes.
+
+Should a collision arise, TerminusDB should give a GraphQL error on
+retreival of the schema.  In future we will allow this check to occur
+at schema submission time, and will also allow explicit renaming in
+TerminusDB classes.
