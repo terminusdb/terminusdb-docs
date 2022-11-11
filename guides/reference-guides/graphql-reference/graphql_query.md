@@ -169,7 +169,7 @@ Each filter is an input object, defined for the specific class and
 generated automatically by TerminusDB. The `Person` object defined
 above gets the input objects:
 
-```
+```graphql
 input Person_Filter {
   dob: DateTimeFilterInputObject
   friend: Person_Collection_Filter
@@ -214,7 +214,7 @@ which allows us to compare with our friends.
 
 In GraphQL we might write a simple query over people as:
 
-```
+```graphql
 query Person(orderBy: { name: ASC},
              filter: { name : {regex "(Joe|Joseph)"},
                        _and : [{friend :
