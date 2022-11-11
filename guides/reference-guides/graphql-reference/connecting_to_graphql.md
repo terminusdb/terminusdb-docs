@@ -13,7 +13,14 @@ installed TerminusDB, you can query it at:
 http://127.0.0.1:6363/api/graphql/admin/people
 ```
 
-For TerminusX, simply XXXXXXXXXXXXXXXX Robin?
+For TerminuX (TO BE RELEASED) you can use the following URL:
+
+```
+https://cloud.terminusdb.com/ORG/api/graphql/ORG/DATA_PRODUCT
+```
+
+Where `ORG` is your organization, and `DATA_PRODUCT` is the name of your
+data product.
 
 ## Authentication
 
