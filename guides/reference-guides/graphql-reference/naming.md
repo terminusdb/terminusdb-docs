@@ -23,6 +23,14 @@ represent GraphQL features.
 For each class in TerminusDB, there are a range of classes which are
 defined automatically by TerminusDB in the associated GraphQL schema.
 
+## Underscore as reserved
+
+When names are likely to create conflicts with user defined names,
+TerminusDB will typically use an `_` at the beginning to avoid naming
+conflicts. This is done on filter fields which share the same object
+level with user defined properties for instance: `_and`, `_or` and
+`_not`.
+
 ## Translation
 
 All names of GraphQL classes in TerminusDB and all properties of
