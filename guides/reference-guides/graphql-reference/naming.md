@@ -15,8 +15,7 @@ classes and properties. While we have endevoured to do so in a way
 that is unlikely to create naming collisions, these are never-the-less
 possible.
 
-TerminusDB generates [GraphQL schema](graph_ql_schema.md)
-automatically as a mapping from TerminusDB. TerminusDB's definition
+TerminusDB generates GraphQL schema automatically as a mapping from TerminusDB. TerminusDB's definition
 language is a strict super-set of GraphQL and so is able to faithfully
 represent GraphQL features.
 
