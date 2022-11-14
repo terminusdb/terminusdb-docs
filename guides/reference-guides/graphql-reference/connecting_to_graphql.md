@@ -35,7 +35,7 @@ TerminusDB's, you can supply the Authorization header, with your basic
 auth. (To generate a Basic Auth string, see [Basic Auth Generator](https://www.blitter.se/utils/basic-authentication-header-generator/)).
 
 For example, if you would like to connect to `admin/people` with the
-apollo clien tto download the assocated GraphQL schema, simply use:
+apollo client to download the associated GraphQL schema, simply use:
 
 ```shell
 npx apollo client:download-schema --endpoint=http://127.0.0.1:6363/api/graphql/admin/people schema.graphql --header='Authorization: Basic YWRtaW46cm9vdA=='
