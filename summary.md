@@ -26,7 +26,6 @@
   * [Manage Access Control with Dashboard](guides/how-to-guides/manage-access-control.md)
   * [Manage Access Control with JS Client](https://terminusdb.github.io/terminusdb-access-control/#/README)
   * [Query Data](guides/how-to-guides/query-data/README.md)
-    * [GraphQL Query](guides/reference-guides/graphql-reference/graphql_query.md)
     * [WOQL Query Basics](guides/how-to-guides/query-data/woql-query-basics.md)
     * [Path Queries](guides/how-to-guides/query-data/path-queries.md)
     * [Shortest Path Queries](guides/how-to-guides/query-data/perform-graph-queries.md)
