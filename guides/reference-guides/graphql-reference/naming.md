@@ -28,7 +28,10 @@ When names are likely to create conflicts with user defined names,
 TerminusDB will typically use an `_` at the beginning to avoid naming
 conflicts. This is done on filter fields which share the same object
 level with user defined properties for instance: `_and`, `_or` and
-`_not`.
+`_not`. 
+
+The *id* of an object will be in the `_id` field, again so as not to
+cause potential conflicts.
 
 ## Translation
 
@@ -59,7 +62,7 @@ will be translated to:
 ```graphql
 type Query {
   Galatic_Civilisation(
-    id: ID
+    _id: ID
 
     """skip N elements"""
     offset: Int
