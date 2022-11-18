@@ -35,7 +35,7 @@ Install, build and run TerminusDB from source code with the following steps.
 \
 Install [WSL](https://ubuntu.com/wsl) and [Ubuntu](https://ubuntu.com/#download)\
 \
-In Ubuntu terminal: `sudo apt install make`\
+In Ubuntu terminal: `sudo apt install make libgmp-dev`\
 \
 In Ubuntu terminal: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`\
 \
@@ -55,7 +55,7 @@ Install [Rust](https://www.rust-lang.org/tools/install) by following the Rust in
 Install all dependencies of all the required libraries using [sudo](https://www.sudo.ws/download.html) and [git](https://git-scm.com/downloads).
 
 ```bash
-sudo pacman -S git swi-prolog make automake autoconf libtool zlib pkgconf gcc clang
+sudo pacman -S git swi-prolog make automake autoconf libtool zlib pkgconf gcc clang gmp
 ```
 
 ***
@@ -67,7 +67,7 @@ Install using the apt package manager.
 ```bash
 cat /etc/*release | grep ubuntu > /dev/null && (sudo apt-get install software-properties-common; sudo apt-add-repository ppa:swi-prolog/stable)
 sudo apt-get update
-sudo apt install swi-prolog clang
+sudo apt install swi-prolog clang libgmp-dev
 ```
 
 ***
@@ -77,7 +77,7 @@ sudo apt install swi-prolog clang
 Install using [sudo](https://www.sudo.ws/download.html).
 
 ```bash
-sudo dnf install pl pl-devel clang
+sudo dnf install pl pl-devel clang gmp-devel
 ```
 {% endtab %}
 
@@ -85,6 +85,7 @@ sudo dnf install pl pl-devel clang
 Install `swi-prolog` and `rust` using [homebrew](https://brew.sh).
 
 ```bash
+brew install gmp
 brew install swi-prolog
 brew install rust
 ```
