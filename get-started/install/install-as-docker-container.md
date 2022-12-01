@@ -28,7 +28,7 @@ On Windows, the default memory allocated for the Docker is **2GB**. TerminusDB i
 
 {% hint style="info" %}
 **Linux package manager**\
-On Linux, use your distro's package manager for containerized deployments or find more information here: [https://www.docker.com/products/container-runtime](https://www.docker.com/products/container-runtime)&#x20;
+On Linux, use your distro's package manager for containerized deployments or find more information here: [https://www.docker.com/products/container-runtime](https://www.docker.com/products/container-runtime)
 {% endhint %}
 
 ## Install steps
@@ -83,7 +83,7 @@ This generates the message: `terminusdb-server container started http://127.0.0.
 
 ### Use the console
 
-Open the TerminusDB console in a web browser using the [URL](install-as-docker-container.md#URL).
+Open the TerminusDB console in a web browser using the URL.
 
 ```http
 http://127.0.0.1:6363/dashboard
@@ -114,7 +114,7 @@ USAGE:
 
 ### Use the Dashboard
 
-The TerminusDB local dashboard is included within terminusdb-bootstrap. The dashboard is a UI to create and manage data products, model data, and test queries.  To use the dashboard visit:
+The TerminusDB local dashboard is included within terminusdb-bootstrap. The dashboard is a UI to create and manage data products, model data, and test queries. To use the dashboard visit:
 
 ```
 localhost:6363/dashboard/ 
