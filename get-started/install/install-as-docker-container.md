@@ -81,18 +81,10 @@ This generates the message: `terminusdb-server container started http://127.0.0.
 
 ### Use the console
 
-Open the TerminusDB console in a web browser using the container [script](install-as-docker-container.md#script) or the [URL](install-as-docker-container.md#URL).
-
-#### Script
-
-```bash
-./terminusdb-container console
-```
-
-#### URL
+Open the TerminusDB console in a web browser using the [URL](install-as-docker-container.md#URL).
 
 ```http
-http://127.0.0.1:6363/
+http://127.0.0.1:6363/dashboard
 ```
 
 #### Console commands
