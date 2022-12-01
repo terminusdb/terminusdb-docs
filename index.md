@@ -4,9 +4,13 @@ description: An overview of the ways to get started with TerminusDB.
 
 # Get Started
 
+TerminusDB is an open-source document graph database with a collaboration model providing Git-like features. It stores documents as [JSON documents](explanations/document-graph-db/documents.md) and the schema language connects these into a [graph](explanations/document-graph-db/graphs.md). It comes with [GraphQL](guides/reference-guides/graphql-reference/graphql\_query.md), [User Interface](guides/interface-guides/dashboard.md), [CLI](guides/interface-guides/cli.md), [JavaScript](guides/reference-guides/javascript-client-reference/), and [Python Clients](guides/reference-guides/python-client-reference/). TerminusX is TerminusDB as a Service and is free to use to build your Betas and experiment with the product.
+
+_**Links:**_ [TerminusDB introduction](explanations/document-graph-db/terminusdb-intro.md). [TerminusX introduction](explanations/document-graph-db/terminusx-intro.md).
+
 ### Starting overview
 
-Get started in minutes on Windows, Apple, or Linux with the steps below.
+Get started in minutes on Windows, macOS, or Linux with the steps below.
 
 #### Install
 
@@ -34,7 +38,11 @@ Install from the [source code](get-started/install/install-from-source-code.md) 
 
 Install as a [Docker container](get-started/install/install-as-docker-container.md) also referred to as the **TerminusDB bootstrap**.
 
-#### Javascript client
+### GraphQL
+
+TerminusDB comes with GraphQL for more information visit the [GraphQL reference guide](guides/reference-guides/graphql-reference/graphql\_query.md).
+
+### Javascript client
 
 Install as a [Node.js](https://nodejs.org/en/download/)-based [JavaScript Client](get-started/install-client/install-javascript-client.md).
 
@@ -51,6 +59,10 @@ Install as a [Python Client](get-started/install-client/install-python-client.md
 TerminusDB provides several interfaces for creating, querying, and maintaining your databases. Depending on the component/s you choose to install, you can interact with TerminusDB using one or more of the available interfaces listed below.
 
 Use one or a combination of several TerminusDB interfaces.
+
+#### GraphQL
+
+TerminusDB automatically generates GraphQL schema to query data. Read the [GraphQL reference](guides/reference-guides/graphql-reference/graphql\_query.md) guide for more information.
 
 #### Command Line Interface
 

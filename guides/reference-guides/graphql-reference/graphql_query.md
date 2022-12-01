@@ -1,4 +1,4 @@
-# Querying GraphQL in TerminusDB
+# GraphQL Reference
 
 GraphQL queries are composed of:
 
@@ -6,16 +6,13 @@ GraphQL queries are composed of:
 * Fields
 * Arguments
 
-Each Class in TerminusDB automatically generates a top level Query. Each property of the class automatically generates both arguments and fields.
+Each Class in TerminusDB automatically generates a top-level Query. Each property of the class automatically generates both arguments and fields.
 
-The names of the types of arguments and fields are generated
-automatically [subject to name mapping](naming.md).
+The names of the types of arguments and fields are generated automatically [subject to name mapping](naming.md).
 
-In turn, each property which is an edge leading to a new object of a
-class, will have its own field with arguments.
+In turn, each property which is an edge leading to a new object of a class will have its own field with arguments.
 
-Each concrete data query will be terminal, and will generate a
-specific field parameter for search.
+Each concrete data query will be terminal and will generate a specific field parameter for search.
 
 ## Example
 
@@ -68,32 +65,21 @@ type Person {
 }
 ```
 
-The `Person` query, allows you to query for a person at the top level,
-along with a number of arguments, including: a `filter` (for search),
-a `limit` for reducing to a define length of results, an `offset`, for
-obtaining results starting from some offset (for use in *paging*) and
-an `orderBy` to obtain the results in a defined order.
+The `Person` query, allows you to query for a person at the top level, along with a number of arguments, including: a `filter` (for search), a `limit` for reducing to a defined length of results, an `offset`, for obtaining results starting from some offset (for use in _paging_) and an `orderBy` to obtain the results in a defined order.
 
-In addition, we have the various *fields* of a `Person` object, each
-of which may themselves have arguments if they are objects, or simple
-data types for terminal fields.
+In addition, we have the various _fields_ of a `Person` object, each of which may have arguments if they are objects or simple data types for terminal fields.
 
-One can use such a query by using the [GraphQL
-endpoint](connecting_to_graphql.md).
+One can use such a query by using the [GraphQL endpoint](connecting\_to\_graphql.md).
 
 ## Arguments
 
-Arguments are restrictions or meta-fields about the query. These can
-be used to limit results, or filter to specific results, as well as
-perform ordering.
+Arguments are restrictions or meta-fields about the query. These can be used to limit results, or filter to specific results, as well as perform ordering.
 
 ### `id`
 
-The id of an object can be directly supplied, in order to ensure that
-we only obtain the specific object of interest.
+The id of an object can be directly supplied, in order to ensure that we only obtain the specific object of interest.
 
-A person might be retrieved by supplying the id as a variable in the
-following way:
+A person might be retrieved by supplying the id as a variable in the following way:
 
 ```graphql
 query Person(id:$id){
@@ -103,10 +89,7 @@ query Person(id:$id){
 
 ### `offset`
 
-GraphQL will retrieve all objects in the database for a given class
-type, unless `offset` and `limit` are supplied. `offset` will start a
-query from a given result offset, allowing the query user to *page*
-results.
+GraphQL will retrieve all objects in the database for a given class type, unless `offset` and `limit` are supplied. `offset` will start a query from a given result offset, allowing the query user to _page_ results.
 
 ```graphql
 query Person(limit: 3 offset: 3){
@@ -127,14 +110,11 @@ query Person(limit: 3 offset: 3){
 }
 ```
 
-This query retrieves the second page of a 3 object page of persons.
+This query retrieves the second page of a 3-object page of persons.
 
 ### `limit`
 
-GraphQL will retrieve all objects in the database for a given class
-type, unless `offset` and `limit` are supplied. `limit` will only find
-the limit-number of results, allowing the query user to *page*
-results.
+GraphQL will retrieve all objects in the database for a given class type, unless `offset` and `limit` are supplied. `limit` will only find the limit-number of results, allowing the query user to _page_ results.
 
 ```graphql
 query Person(limit: 3 offset: 3){
@@ -142,13 +122,11 @@ query Person(limit: 3 offset: 3){
 }
 ```
 
-This query retrieves the second page of a 3 object page of persons.
+This query retrieves the second page of a 3-object page of persons.
 
 ### `orderBy`
 
-The orderBy filter allows the user to order results according to some
-data in the object. For instance, to create an ordering on people, we
-might write:
+The orderBy filter allows the user to order results according to some data in the object. For instance, to create an ordering on people, we might write:
 
 ```graphql
 query Person(limit: 3 offset: 3, orderBy: { dob: DESC, name: ASC}){
@@ -157,17 +135,13 @@ query Person(limit: 3 offset: 3, orderBy: { dob: DESC, name: ASC}){
 }
 ```
 
-This will yield Persons from youngest to oldest, ordering by name in
-the event of a "tie" on date of birth.
+This will yield Persons from youngest to oldest, ordering by name in the event of a "tie" on date of birth.
 
 ## `filter`
 
-Filters allow you to restrict to specific results by reducing the set
-to those objects which match the filter fields.
+Filters allow you to restrict to specific results by reducing the set to those objects which match the filter fields.
 
-Each filter is an input object, defined for the specific class and
-generated automatically by TerminusDB. The `Person` object defined
-above gets the input objects:
+Each filter is an input object, defined for the specific class and generated automatically by TerminusDB. The `Person` object defined above gets the input objects:
 
 ```graphql
 input Person_Filter {
@@ -207,10 +181,7 @@ input DateTimeFilterInputObject {
 }
 ```
 
-Filters can apply to immediate values, such as the `dob` (date of
-birth), which can be restricted using a time comparison, or they can
-be filters on linked objects, such as the `Person_Collection_Filter`
-which allows us to compare with our friends.
+Filters can apply to immediate values, such as the `dob` (date of birth), which can be restricted using a time comparison, or they can be filters on linked objects, such as the `Person_Collection_Filter` which allows us to compare with our friends.
 
 In GraphQL we might write a simple query over people as:
 
@@ -225,20 +196,15 @@ query Person(orderBy: { name: ASC},
 }
 ```
 
-This finds name and date of birth of all people who have a name which
-contains "Joe" or "Joesph" and who are friends with someone named
-"Jim" or "James", in order of ascending name.
+This finds name and date of birth of all people who have a name which contains "Joe" or "Joesph" and who are friends with someone named "Jim" or "James", in order of ascending name.
 
 ## Filter Builtin Types
 
-Filters have to work with all of the GraphQL basetypes, along with the
-extensions which TerminusDB currently supports (`DateTime`, and
-`BigInt`).
+Filters have to work with all of the GraphQL base types, along with the extensions which TerminusDB currently supports (`DateTime`, and `BigInt`).
 
 ### BigIntFilterInputObject
 
-Big integers use the widely available `BigInt` type extension to
-GraphQL.
+Big integers use the widely available `BigInt` type extension to GraphQL.
 
 The Filters available for BigInt are:
 
@@ -249,8 +215,7 @@ The Filters available for BigInt are:
 * `gt`: Greater than
 * `ge`: Greater than or equal
 
-When a field of an object refers to a `BigInt`, we can filter it by
-writing a query along the following lines:
+When a field of an object refers to a `BigInt`, we can filter it by writing a query along the following lines:
 
 ```graphql
 query {
@@ -263,8 +228,7 @@ query {
 
 ### DateTimeFilterInputObject
 
-Date time objects are use the widely available `DateTime` type extension to
-GraphQL.
+Date time objects use the widely available `DateTime` type extension to GraphQL.
 
 The Filters available for BigInt are:
 
@@ -274,7 +238,6 @@ The Filters available for BigInt are:
 * `le`: Less than or equal
 * `gt`: Greater than
 * `ge`: Greater than or equal
-
 
 ```graphql
 query {
@@ -287,8 +250,7 @@ query {
 
 ### StringFilterInputObject
 
-Strings are native GraphQL types. TerminusDB exposes the following
-filter options for strings:
+Strings are native GraphQL types. TerminusDB exposes the following filter options for strings:
 
 * `eq`: Equality
 * `ne`: Disequality
@@ -313,8 +275,7 @@ query {
 
 ### BooleanFilterInputObject
 
-Booleans are native GraphQL types. TerminusDB exposes the following
-filter options:
+Booleans are native GraphQL types. TerminusDB exposes the following filter options:
 
 * `eq`: Equality
 * `ne`: Disequality
@@ -331,8 +292,7 @@ query {
 
 ### SmallIntegerFilterInputObject
 
-Integers (signed, 32 bit integers) are native GraphQL
-types. TerminusDB exposes the following filter options:
+Integers (signed, 32-bit integers) are native GraphQL types. TerminusDB exposes the following filter options:
 
 * `eq`: Equality
 * `ne`: disequality
@@ -340,7 +300,6 @@ types. TerminusDB exposes the following filter options:
 * `le`: Less than or equal
 * `gt`: Greater than
 * `ge`: Greater than or equal
-
 
 A query filter using booleans could be written as follows:
 
@@ -355,8 +314,7 @@ query {
 
 ### `_and`
 
-The `_and` filter combinator allows us to chain contraints. It takes
-two filter objects relevant at the current level.
+The `_and` filter combinator allows us to chain constraints. It takes two filter objects relevant at the current level.
 
 We can find all civilizations of a high Kardashev scale using a query such as:
 
@@ -372,13 +330,9 @@ query {
 
 ### `_or`
 
-The `_or` filter combinator allows us to make choices of
-contraints. It takes two filter objects relevant at the current
-level. It is implicitly combined as if with `_and`, with any filters
-at the current level.
+The `_or` filter combinator allows us to make choices of constraints. It takes two filter objects relevant at the current level. It is implicitly combined as if with `_and`, with any filters at the current level.
 
-We can find all civilizations of a high Kardashev scale, which is also
-a galactic civilisation using a query such as:
+We can find all civilizations of a high Kardashev scale, which is also a galactic civilisation using a query such as:
 
 ```graphql
 query {
@@ -393,12 +347,9 @@ query {
 
 ### `_not`
 
-The `_not` operator allows us to combine other constraints with
-*dis-constraints*, which remove any elements which match its
-sub-filter.
+The `_not` operator allows us to combine other constraints with _dis-constraints_, which remove any elements which match its sub-filter.
 
-We can ask for galatic civilisations which have not mastered energy
-aquisition at level 3 on the Kardashev scale.
+We can ask for galactic civilizations which have not mastered energy acquisition at level 3 on the Kardashev scale.
 
 ```graphql
 query {

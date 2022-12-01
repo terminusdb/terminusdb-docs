@@ -8,16 +8,18 @@ description: >-
 
 ### Requirements
 
+The container script is distributed via GitHub, so you will need Git to clone and update the TerminusDB bootstrap repo. You will also need Docker running.
+
 A list of prerequisite components depending on your operating system. Click on the required component to download it from the provider's website.
 
 #### Table: Installation requirements
 
-| Component                                                | Version  | Required to:                                                 | Linux | macOS | Windows |
-| -------------------------------------------------------- | -------- | ------------------------------------------------------------ | :---: | :---: | :-----: |
-| [Git](https://git-scm.com/downloads)                     | `Latest` | Clone the TerminusDB bootstrap and run the container script. |   ✔   |   ✔   |    ✔    |
-| [Git Bash](https://git-scm.com/downloads)                | `Latest` | Clone the TerminusDB bootstrap and run the container script. |       |       |    ✔    |
-| [Sudo](https://www.sudo.ws/download.html)                | `Latest` | Access security.                                             |   ✔   |   ✔   |         |
-| [Docker](https://www.docker.com/products/docker-desktop) | `Latest` | Use the TerminusDB docker container.                         |   ✔   |   ✔   |    ✔    |
+| Component                                                | Version  | Required to:                                                                                                                                | Linux | macOS | Windows |
+| -------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- | :---: | :---: | :-----: |
+| [Git](https://git-scm.com/downloads)                     | `Latest` | Clone the TerminusDB bootstrap and run the container script.                                                                                |   ✔   |   ✔   |    ✔    |
+| [Git Bash](https://git-scm.com/downloads)                | `Latest` | Windows users should use the application "Git Bash" for all terminal commands described below, this application comes with Git for Windows. |       |       |    ✔    |
+| [Sudo](https://www.sudo.ws/download.html)                | `Latest` | Access security (optional).                                                                                                                 |   ✔   |   ✔   |         |
+| [Docker](https://www.docker.com/products/docker-desktop) | `Latest` | Use the TerminusDB docker container.                                                                                                        |   ✔   |   ✔   |    ✔    |
 
 {% hint style="info" %}
 **Docker memory allocation on Windows**\
@@ -26,7 +28,7 @@ On Windows, the default memory allocated for the Docker is **2GB**. TerminusDB i
 
 {% hint style="info" %}
 **Linux package manager**\
-On Linux, use your distro's package manager for containerized deployments. Click on the Package manager link in the requirements table above for more information.
+On Linux, use your distro's package manager for containerized deployments or find more information here: [https://www.docker.com/products/container-runtime](https://www.docker.com/products/container-runtime)&#x20;
 {% endhint %}
 
 ## Install steps
@@ -51,7 +53,7 @@ cd terminusdb-bootstrap
 
 ### Run the container
 
-Run the container using script `terminusdb-container`.
+Run the container using `terminusdb-container` script.
 
 #### Running for the first time
 
@@ -124,6 +126,38 @@ The TerminusDB local dashboard is included within terminusdb-bootstrap. The dash
 
 ```
 localhost:6363/dashboard/ 
+```
+
+### Use GraphQL
+
+TerminusDB hosts a GraphQL endpoint at:
+
+```
+SERVERNAME/api/graphql/ORG/DATAPRODUCT
+```
+
+For instance, with a data product named `admin/people`, and a locally installed TerminusDB, you can query it at:
+
+```
+http://127.0.0.1:6363/api/graphql/admin/people
+```
+
+TerminusDB ships with a GraphiQL graphical GraphQL query interface and schema browser. This is a quick way to get acquainted with GraphQL in TerminusDB.
+
+You can reach this browser at:
+
+```
+http://127.0.0.1:6363/api/graphiql/admin/people
+```
+
+You will need to set your Authorization header in the Header dialog box at the bottom center.
+
+For instance, in the default install, as:
+
+```json
+{
+  "Authorization": "Basic YWRtaW46cm9vdA=="
+}
 ```
 
 ## Environment configuration

@@ -5,8 +5,13 @@ description: Quick links to tutorials to help you learn
 # Tutorials
 
 {% tabs %}
-{% tab title="Getting Started" %}
+{% tab title="GraphQL" %}
+* ****[**Build a Blog-Focused CMS using TerminusDB and GraphQL**](https://github.com/terminusdb/terminusdb-tutorials/blob/master/terminusBlog)****
+* ****[**Import RDF into TerminusDB and query the data using GraphQL** ](https://github.com/terminusdb/terminusdb-tutorials/blob/master/star-wars)****
+{% endtab %}
 
+{% tab title="Getting Started" %}
+****
 
 * ****[**Getting Started with the JavaScript client - 5-part tutorial**](https://github.com/terminusdb/terminusdb-tutorials/tree/master/getting\_started/javascript-client)****
   * [Lesson 1 - Install, start project, and create an empty database with schema](https://github.com/terminusdb/terminusdb-tutorials/blob/master/getting\_started/javascript-client/lesson\_1.md)
