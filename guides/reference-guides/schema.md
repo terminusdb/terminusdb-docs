@@ -154,6 +154,17 @@ A class definition includes several properties, and the keywords, prefixed `@`, 
 
 The `@type` of the object. At the schema level, this is one of: `Enum`, `Class`, `TaggedUnion` and `Unit`.
 
+### @metadata
+
+If you would like to add arbitrary JSON structured metadata to a class, you can place it in the `@metadata` field of the class. This can be used to direct various approaches to display of the class, or associated information for backend or front-ends which may have different requirements. It is generally good practice to keep important metadata one level deeper in a JSON object so as to leave space for other kinds of metadata. For instance:
+
+```json
+{ "@type" : "Class",
+  "@id" : "MyClass",
+  "@metadata" : { "display_format" : { "colour" : "Blue", "size" : [100,400]}},
+  "name" : "xsd:string" }
+```
+
 #### Class
 
 `Class` designates a standard class document. It contains the definition of several properties and keywords describing various class attributes. An example of a class, and an instance of the class:
