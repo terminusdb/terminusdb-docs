@@ -146,6 +146,18 @@ A long-form `@description` of the purpose of the schema, the type of documents c
 
 A list of strings of `@authors` involved in writing the schema.
 
+#### @metadata
+
+If you would like to add arbitrary JSON structured metadata to a schema, you can place it in the `@metadata` field of the context object. This can be used to store data product-wide information in a structured format. For instance:
+
+```json
+{ "@type" : "@context",
+  "@base" : "http://my_stuff/",
+  "@schema" : "http://my_schema#",
+  "@metadata" : { "configuration" : { "frob" : 29 } }
+}
+```
+
 ## Class keywords
 
 A class definition includes several properties, and the keywords, prefixed `@`, describing class behavior.
