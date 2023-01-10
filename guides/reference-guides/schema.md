@@ -132,7 +132,9 @@ The `@schema` keyword specifies the default URI expansion to use for all element
 
 ### @documentation
 
-`@documentation` specifies documentation global to the entire schema. See the `@documentation` section in the previous [context object](schema.md#code-the-context-object) example. The documentation section contains the keywords:
+`@documentation` specifies documentation global to the entire schema. See the `@documentation` section in the previous [context object](schema.md#code-the-context-object) example. The `@documentation` tag can be a single value, or it can be a list with each element having an additional `@langugage` tag. The `@language` tag must have an IANA language code, and this will be used to select appropriate descriptions when internationalising the schema.
+
+The documentation section contains the keywords:
 
 #### @title
 
@@ -158,9 +160,35 @@ If you would like to add arbitrary JSON structured metadata to a schema, you can
 }
 ```
 
-## Class keywords
+#### @language
 
-A class definition includes several properties, and the keywords, prefixed `@`, describing class behavior.
+If you use the `@language` code, specific documentation results can appear in different circumstances depending on the users language preferences.
+
+An example of the `@language` tag for a context is as follows:
+
+```json
+{ "@base": "terminusdb:///data/",
+  "@schema": "terminusdb:///schema#",
+  "@type": "@context",
+  "@documentation" : [{
+      "@language" : "en",
+      "@title" : "Example Schema",
+      "@description" : "This is an example schema. We are using it to demonstrate the ability to display information in multiple languages about the same semantic content.",
+      "@authors" : ["Gavin Mendel-Gleason"]
+   },
+   {  "@language" : "ka",
+      "@title" : "მაგალითი სქემა",
+      "@description" : "ეს არის მაგალითის სქემა. ჩვენ ვიყენებთ მას, რათა ვაჩვენოთ ინფორმაციის მრავალ ენაზე ჩვენების შესაძლებლობა ერთი და იმავე სემანტიკური შინაარსის შესახებ.",
+      "@authors" : ["გავინ მენდელ-გლისონი"]
+   }
+  ],
+  "xsd" : "http://www.w3.org/2001/XMLSchema#"
+}
+```
+
+## Document definition keywords
+
+A document definition includes several properties, and the keywords, prefixed `@`, describing class behavior.
 
 ### @type
 
@@ -176,6 +204,8 @@ If you would like to add arbitrary JSON structured metadata to a class, you can 
   "@metadata" : { "display_format" : { "colour" : "Blue", "size" : [100,400]}},
   "name" : "xsd:string" }
 ```
+
+The three varieties of document are described below:
 
 #### Class
 
@@ -641,21 +671,21 @@ The `@comment` is the class description.
 The `@properties` keyword is a JSON object with pairs of the form:
 
 ```json
-{on 
+{
     "property_1" : "description_1",
-    
+
     ...
 
-    "property_n" : "description_n" 
+    "property_n" : "description_n"
 }
 ```
 
 or with properties pointingn to JSON objects, as:
 
 ```json
-{ 
+{
     "property_1" : { "@label" : "description_1", "@comment" : "comment_1" },
-    
+
     ...
 
     "property_n" : { "@label" : "description_2", "@comment" : "comment_2" }
@@ -671,13 +701,13 @@ or with properties pointingn to JSON objects, as:
 ```json
 { 
     "@type"            : "@context",
-    "@documentation"   : 
+    "@documentation"   :
     {
         "@title"       : "The Ref schema",
         "@description" : "This is the Ref schema. It gives a specification for storage of references, branches and commits in our commit graph.",
-        "@authors"     : 
+        "@authors"     :
         [
-            "Gavin Mendel-Gleason", 
+            "Gavin Mendel-Gleason",
             "Matthijs van Otterdijk"
         ]
     },
@@ -685,25 +715,25 @@ or with properties pointingn to JSON objects, as:
     "@schema"          : "http://terminusdb.com/schema/ref#",
     "layer"            : "http://terminusdb.com/schema/layer#",
     "layer_data"       : "terminusdb://layer/data/",
-    "xsd"              : "http://www.w3.org/2001/XMLSchema#" 
+    "xsd"              : "http://www.w3.org/2001/XMLSchema#"
 }
-{ 
+{
     "@id"              : "layer:Layer",
     "@type"            : "Class",
-    "@documentation"   : 
+    "@documentation"   :
     {
         "@comment"     : "A layer object which has the identifier used in storage.",
-        "@properties"  : 
-        { 
-            "layer:identifier" : "The layer identifier." 
+        "@properties"  :
+        {
+            "layer:identifier" : "The layer identifier."
         }
     },
     "@base"            : "layer_data:Layer_",
-    "@key"             : 
-    { 
-        "@type"        : "ValueHash" 
+    "@key"             :
+    {
+        "@type"        : "ValueHash"
     },
-    "layer:identifier" : "xsd:string" 
+    "layer:identifier" : "xsd:string"
 }
 ```
 
