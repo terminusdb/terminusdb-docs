@@ -3,8 +3,8 @@
 GraphQL queries are composed of:
 
 * Queries
-* Fields
 * Arguments
+* Fields
 
 Each Class in TerminusDB automatically generates a top-level Query. Each property of the class automatically generates both arguments and fields.
 
@@ -360,3 +360,101 @@ query {
    }
 }
 ```
+
+## Fields
+
+Each TerminusDB class has associated with it, some number of
+fields. These fields include each field which is defined on the class.
+
+For instance, given the TerminusDB class:
+
+```json
+{ "@type" : "Class",
+  "@id" : "Person",
+  "name" : "xsd:string",
+  "dob" : "xsd:dateTime",
+  "friend" : {"@type" : "Set", "@class" : "Person" }}
+```
+
+We have a query field for each of `name`, `dob` and `friend`. However
+we also have the following specially defined fields:
+
+### `_id`
+
+This returns the fully qualified URI of the given instance of the
+`Person` class being returned.
+
+### `_type`
+
+This returns the class at which this instance is instantiated. This is
+useful when a super-class is queried, as we can obtain what concrete
+subclass it corresponds to.
+
+### Backlinks: `_PROPERTY_of_CLASS`
+
+The *backlink* is a way to find all instances which *point* to a given
+class. The backlink is generated automatically for every edge which
+terminates at the current class.
+
+For example, with the Person class:
+
+```json
+{ "@type" : "Class",
+  "@id" : "Person",
+  "name" : "xsd:string",
+  "dob" : "xsd:dateTime",
+  "friend" : {"@type" : "Set", "@class" : "Person" }}
+```
+
+We automatically get the backlink `_friend_of_Person` which says which
+people view us as their friends.
+
+For instance, we can construct the following query:
+
+```graphql
+{
+  Person{
+    name
+    _friend_of_Person{
+      name
+    }
+  }
+}
+```
+
+Which will find the name of every person who views the top level
+`Person` us as their friend (i.e. has a `friend` link to the current
+person).
+
+### Path Queries: `_path_to_CLASS`
+
+A path query allows us to use regular graph expressions to follow
+links from the current object to another object of class `CLASS`.
+
+Using the `Person` example:
+
+```json
+{ "@type" : "Class",
+  "@id" : "Person",
+  "name" : "xsd:string",
+  "dob" : "xsd:dateTime",
+  "friend" : {"@type" : "Set", "@class" : "Person" }}
+```
+
+We can find everyone within 2-degrees of separation with the following
+path query:
+
+```json
+{
+  Person{
+    name
+    _path_to_Person(path: "friend{1,3}"){
+      name
+    }
+  }
+}
+```
+
+See the [complete syntax for path
+queries](../../../guides/how-to-guides/query-data/path-queries.md) for
+more details on the semantics of the path argument.
