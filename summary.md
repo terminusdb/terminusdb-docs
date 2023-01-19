@@ -40,6 +40,7 @@
     * [Documents UI SDK Maps](guides/reference-guides/document-ui-sdk/documents-user-interface-geographic-maps.md)
   * [GraphQL Reference](guides/reference-guides/graphql-reference/graphql_query.md)
     * [Connecting to GraphQL](guides/reference-guides/graphql-reference/connecting_to_graphql.md)
+    * [GraphQL Queries](guides/reference-guides/graphql-reference/graphql_query.md)
     * [GraphQL Naming Conventions](guides/reference-guides/graphql-reference/naming.md)
     * [System Graph Inferface to GraphQL](guides/reference-guides/graphql-reference/system_graph.md)
   * [HTTP API](guides/reference-guides/openapi.md)
