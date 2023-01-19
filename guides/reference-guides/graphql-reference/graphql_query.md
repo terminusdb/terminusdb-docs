@@ -364,7 +364,7 @@ query {
 ## Fields
 
 Each TerminusDB class has associated with it, some number of
-fields. These fields include each field which is defined on the class.
+fields. These fields include each field that is defined in the class.
 
 For instance, given the TerminusDB class:
 
@@ -392,7 +392,7 @@ subclass it corresponds to.
 
 ### Backlinks: `_PROPERTY_of_CLASS`
 
-The *backlink* is a way to find all instances which *point* to a given
+The *backlink* is a way to find all instances that *point* to a given
 class. The backlink is generated automatically for every edge which
 terminates at the current class.
 
@@ -406,7 +406,7 @@ For example, with the Person class:
   "friend" : {"@type" : "Set", "@class" : "Person" }}
 ```
 
-We automatically get the backlink `_friend_of_Person` which says which
+We automatically get the backlink `_friend_of_Person` that says which
 people view us as their friends.
 
 For instance, we can construct the following query:
@@ -422,14 +422,14 @@ For instance, we can construct the following query:
 }
 ```
 
-Which will find the name of every person who views the top level
+This will find the name of every person who views the top level
 `Person` us as their friend (i.e. has a `friend` link to the current
 person).
 
 ### Path Queries: `_path_to_CLASS`
 
 A path query allows us to use regular graph expressions to follow
-links from the current object to another object of class `CLASS`.
+links from the current object to another object of `CLASS`.
 
 Using the `Person` example:
 
