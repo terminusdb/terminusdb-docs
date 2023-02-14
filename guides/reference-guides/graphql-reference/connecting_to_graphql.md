@@ -12,7 +12,7 @@ For instance, with a data product named `admin/people`, and a locally installed 
 http://127.0.0.1:6363/api/graphql/admin/people
 ```
 
-For TerminuX (TO BE RELEASED) you can use the following URL:
+For TerminusCMS (TO BE RELEASED) you can use the following URL:
 
 ```
 https://cloud.terminusdb.com/ORG/api/graphql/ORG/DATA_PRODUCT

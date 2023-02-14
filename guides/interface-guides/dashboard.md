@@ -8,7 +8,7 @@ The TerminusDB and TerminusX dashboard is the perfect place to model data, manag
 
 ### Install/Sign Up&#x20;
 
-The TerminusDB local dashboard is included when you [install TerminusDB as a Docker container](../../get-started/install/install-as-docker-container.md). To use the dashboard visit:
+The TerminusDB local dashboard is included when you [install TerminusDB as a Docker container](../../terminusdb/install/install-as-docker-container.md). To use the dashboard visit:
 
 ```
 http://localhost:6363/dashboard/
@@ -217,7 +217,7 @@ You can only set permissions higher than the team permissions, so if you want to
 
 ### Further Reading
 
-[TerminusX - Start with a Client API](../../terminusx/start-with-client.md)
+[TerminusX - Start with a Client API](../../terminuscms/start-with-client.md)
 
 [CLI Interface Guide](cli.md)
 

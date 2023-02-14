@@ -12,7 +12,7 @@ This guide demonstrates the basic use of the **WOQLClient** library to connect t
 
 Common uses of a WOQLClient include Connecting to an existing database and creating a new database.
 
-[Install Python client](../../get-started/install-client/install-python-client.md)
+[Install Python client](../../terminusdb/install-client/install-python-client.md)
 
 ### **Connect to a database**
 

@@ -6,7 +6,7 @@ description: Modeling data with the dashboard and JSON
 
 ## Visual data modeling using the dashboard
 
-Use the **Data Product Model** view in [TerminusX](https://dashboard.terminusdb.com) or the local TerminusDB dashboard ([including in bootstrap install](../../get-started/install/install-as-docker-container.md)) to visually build simple or complex data models. The diagrams further below illustrate two possible implementations of the organization model introduced in the previous section. In addition to visually building models, the dashboard enables:
+Use the **Data Product Model** view in [TerminusX](https://dashboard.terminusdb.com) or the local TerminusDB dashboard ([including in bootstrap install](../../terminusdb/install/install-as-docker-container.md)) to visually build simple or complex data models. The diagrams further below illustrate two possible implementations of the organization model introduced in the previous section. In addition to visually building models, the dashboard enables:
 
 * Flexible relationships between elements such as documents and sub-documents, and classes and sub-classes.
 * Enumeration objects related to document elements.

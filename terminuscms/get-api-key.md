@@ -1,12 +1,12 @@
 ---
-description: Get your API key and configure your enviroment to use the your client.
+description: How to get your API key and configure your environment to use with a client.
 ---
 
 # Get your API key
 
 ### Generate your API key
 
-An API key is required to use TerminusX. Get this from the user interface using the steps below.
+To use the Python or JavaScropt client with TerminusCMS, an API key is required. The API key is obtained in the TerminusCMS dashboard by using the steps below.
 
 **1. Log in**
 
@@ -26,7 +26,7 @@ Select the `Python` or `JavaScript` tab then copy the code snippet.
 
 ### Set up your environment
 
-Assign your token to the environment variable `TERMINUSDB_ACCESS_TOKEN` in your code snippet. An example in `bash` below.
+Assign your token to the environment variable `TERMINUSDB_ACCESS_TOKEN` in your code snippet. The example below is in `bash`.
 
 #### Code: API key environment configuration
 

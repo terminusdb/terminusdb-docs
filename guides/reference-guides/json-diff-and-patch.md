@@ -34,14 +34,14 @@ Use JSON Diff and Patch with a TerminusDB JavaScript or Python client to find an
 
 #### Requirements
 
-Install a [JavaScript](../../get-started/install-client/install-javascript-client.md) or [Python](../../get-started/install-client/install-python-client.md) TerminusDB client.
+Install a [JavaScript](../../terminusdb/install-client/install-javascript-client.md) or [Python](../../terminusdb/install-client/install-python-client.md) TerminusDB client.
 
 ### Get started
 
 Get started with the simple steps below.
 
 {% hint style="info" %}
-If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../../terminusx/start-with-client.md#connect-with-woqlclient) for instructions if required.
+If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../../terminuscms/start-with-client.md#connect-with-woqlclient) for instructions if required.
 {% endhint %}
 
 1\. [Create an endpoint](json-diff-and-patch.md#create-an-endpoint)

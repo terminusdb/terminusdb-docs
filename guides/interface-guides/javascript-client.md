@@ -12,7 +12,7 @@ This guide demonstrates the basic use of the **WOQLClient** library to connect t
 
 Common uses of a WOQLClient include connecting to an existing database and creating a new database.
 
-[Install JavaScript Client](../../get-started/install-client/install-javascript-client.md)
+[Install JavaScript Client](../../terminusdb/install-client/install-javascript-client.md)
 
 ### **Connect to a database**
 

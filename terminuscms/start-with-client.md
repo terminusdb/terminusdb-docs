@@ -6,7 +6,7 @@ description: >-
 
 # Start with a Client API
 
-This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusX with a JavaScript or Python client. Refer to [TerminusDB JavaScript Client](../guides/reference-guides/javascript-client-reference/woqlclient.md) or [TerminusDB Python Client](../guides/reference-guides/python-client-reference/terminusdb\_client.client.md) for detailed documentation. The code discussed on this page is also available in full:
+This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusCMS with a JavaScript or Python client. Refer to the [JavaScript Client](../guides/reference-guides/javascript-client-reference/woqlclient.md) or [Python Client](../guides/reference-guides/python-client-reference/terminusdb\_client.client.md) references guides for detailed documentation. The code discussed on this page is also available in full:
 
 * JavaScript: [getting-started.js](https://github.com/terminusdb/terminusdb-docs/blob/3df3c593b4f3d648732fea4e7e5ed3ce9348681f/code-examples/start-with-client/getting-started.js)
 * Python: [getting-started.py](https://github.com/terminusdb/terminusdb-docs/blob/3df3c593b4f3d648732fea4e7e5ed3ce9348681f/code-examples/start-with-client/getting-started.py)
@@ -55,7 +55,7 @@ python3 -m pip install terminusdb-client
 
 ### Connect with WOQLClient
 
-A `WOQLClient` object enables connection to TerminusX (or TerminusDB.) To create a client object:
+A `WOQLClient` object enables connection to TerminusCMS (or TerminusDB.) To create a client object:
 
 * [Get your API key](get-api-key.md)
 * Copy the JavaScript/Python code snippet generated in the step above.
@@ -157,7 +157,7 @@ client.create_database("example_db")
 
 ### Use the document interface
 
-To use the TerminusX document interface, [create a schema](start-with-client.md#code-define-a-schema) and [add documents](start-with-client.md#code-add-documents) to the schema. Refer to [Documents](../explanations/document-graph-db/documents.md) for an overview of the document interface. After creating or connecting to a database, create a schema to add and retrieve data. A simple player roster is used as an example. Using basic [Player roster](start-with-client.md#data-player-roster) data, the steps below are demonstrated.
+To use the TerminusCMS document interface, [create a schema](start-with-client.md#code-define-a-schema) and [add documents](start-with-client.md#code-add-documents) to the schema. Refer to [Documents](../explanations/document-graph-db/documents.md) for an overview of the document interface. After creating or connecting to a database, create a schema to add and retrieve data. A simple player roster is used as an example. Using basic [Player roster](start-with-client.md#data-player-roster) data, the steps below are demonstrated.
 
 * [Create a schema](start-with-client.md#code-define-a-schema)
 * [Add a schema](start-with-client.md#code-add-a-schema)
@@ -411,7 +411,7 @@ print(list(matches))
 
 #### Code: Query documents using WOQL
 
-Query documents using Web Object Query Language (WOQL) to get the same result given by the above example. You can find more about WOQL [here](quick-start/explanation/explanation-woql/).
+Query documents using Web Object Query Language (WOQL) to get the same result given by the above example. You can find more about WOQL [here](../terminusx/quick-start/explanation/explanation-woql/).
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -605,4 +605,4 @@ print(list(matches))
 
 ### Tutorials
 
-More [JavaScript and Python client tutorials](../get-started/tutorials.md).
+More [JavaScript and Python client tutorials](../terminusdb/tutorials.md).

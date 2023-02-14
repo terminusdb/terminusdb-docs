@@ -10,11 +10,11 @@ description: >-
 
 #### Install a client
 
-Install a [JavaScript](../../get-started/install-client/install-javascript-client.md) or [Python](../../get-started/install-client/install-python-client.md) TerminusDB client.
+Install a [JavaScript](../../terminusdb/install-client/install-javascript-client.md) or [Python](../../terminusdb/install-client/install-python-client.md) TerminusDB client.
 
 #### Use the client with TerminusDB
 
-Install and run the [docker container](../../get-started/install/install-as-docker-container.md) on `localhost`
+Install and run the [docker container](../../terminusdb/install/install-as-docker-container.md) on `localhost`
 
 #### Use the client with TerminusX
 

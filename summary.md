@@ -1,16 +1,28 @@
 # Table of contents
 
-## Get Started
+## TerminusCMS
 
 * [Get Started](index.md)
-* [Install Options](get-started/install/README.md)
-  * [Install from Snap](get-started/install/install-from-snap.md)
-  * [Install from Source Code](get-started/install/install-from-source-code.md)
-  * [Install as a Docker Container](get-started/install/install-as-docker-container.md)
-* [Install Client](get-started/install-client/README.md)
-  * [Install JavaScript Client](get-started/install-client/install-javascript-client.md)
-  * [Install Python Client](get-started/install-client/install-python-client.md)
-* [Tutorials](get-started/tutorials.md)
+* [Get your API key](terminuscms/get-api-key.md)
+* [Start with a Client API](terminuscms/start-with-client.md)
+* [Product Tour](terminuscms/product-tour/README.md)
+  * [Projects/Data Products](terminuscms/product-tour/projects-data-products.md)
+  * [Content & Data Curation](terminuscms/product-tour/content-and-data-curation.md)
+  * [Change Request Workflows](terminuscms/product-tour/change-request-workflows.md)
+  * [Manage Teams & Users](terminuscms/product-tour/manage-teams-and-users.md)
+  * [GraphQL & WOQL Playgrounds](terminuscms/product-tour/graphql-and-woql-playgrounds.md)
+
+## TerminusDB
+
+* [Get Started](terminusdb/index.md)
+* [Install Options](terminusdb/install/README.md)
+  * [Install from Snap](terminusdb/install/install-from-snap.md)
+  * [Install from Source Code](terminusdb/install/install-from-source-code.md)
+  * [Install as a Docker Container](terminusdb/install/install-as-docker-container.md)
+* [Install Client](terminusdb/install-client/README.md)
+  * [Install JavaScript Client](terminusdb/install-client/install-javascript-client.md)
+  * [Install Python Client](terminusdb/install-client/install-python-client.md)
+* [Tutorials](terminusdb/tutorials.md)
 
 ## GUIDES
 
@@ -39,10 +51,10 @@
     * [Documents UI SDK Customization](guides/reference-guides/document-ui-sdk/documents-user-interface-customization.md)
     * [Documents UI SDK Maps](guides/reference-guides/document-ui-sdk/documents-user-interface-geographic-maps.md)
   * [GraphQL Reference](guides/reference-guides/graphql-reference/README.md)
-    * [GraphQL Queries](guides/reference-guides/graphql-reference/graphql_query.md)
-    * [Connecting to GraphQL](guides/reference-guides/graphql-reference/connecting_to_graphql.md)
+    * [GraphQL Queries](guides/reference-guides/graphql-reference/graphql\_query.md)
+    * [Connecting to GraphQL](guides/reference-guides/graphql-reference/connecting\_to\_graphql.md)
     * [GraphQL Naming Conventions](guides/reference-guides/graphql-reference/naming.md)
-    * [System Graph Inferface to GraphQL](guides/reference-guides/graphql-reference/system_graph.md)
+    * [System Graph Inferface to GraphQL](guides/reference-guides/graphql-reference/system\_graph.md)
   * [HTTP API](guides/reference-guides/openapi.md)
   * [JavaScript Client](guides/reference-guides/javascript-client-reference/README.md)
     * [WOQLClient](guides/reference-guides/javascript-client-reference/woqlclient.md)
@@ -61,12 +73,6 @@
   * [TerminusDB Data Types](guides/reference-guides/terminusdb-data-types.md)
   * [TerminusDB Store](https://docs.rs/terminus-store/latest/terminus\_store/#/terminus\_store/)
   * [WOQL Class Reference](guides/reference-guides/woql-class.md)
-
-## TerminusX
-
-* [Get Started](terminusx/get-started.md)
-* [Get your API key](terminusx/get-api-key.md)
-* [Start with a Client API](terminusx/start-with-client.md)
 
 ## Explanations
 

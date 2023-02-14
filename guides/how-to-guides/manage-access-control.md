@@ -14,7 +14,7 @@ In this article, we’ll do the following:
 
 ### Install the Dashboard
 
-[Install and run TerminusDB as a Docker container](../../get-started/install/install-as-docker-container.md), also referred to as TerminusDB bootstrap.
+[Install and run TerminusDB as a Docker container](../../terminusdb/install/install-as-docker-container.md), also referred to as TerminusDB bootstrap.
 
 When installed, TerminusDB creates by default, an **admin user** and **admin team**. The admin user has the privileges to manage data products, and create teams and users.&#x20;
 
