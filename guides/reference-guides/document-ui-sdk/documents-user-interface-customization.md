@@ -6,7 +6,7 @@ description: Details for customizing your user interfaces using the Document UI 
 
 Customize the look and feel of your forms with styles, widgets, and additional information.
 
-[**To get started read the Document UI SDK how-to guide**](../../how-to-guides/use-the-document-ui-sdk.md)****
+[**To get started read the Document UI SDK how-to guide**](use-the-document-ui-sdk.md)****
 
 ## The uiFrames parameter
 
@@ -259,7 +259,7 @@ return <FrameViewer
 
 ## Further Reading
 
-****[**Get started with the Document UI SDK**](../../how-to-guides/use-the-document-ui-sdk.md)****
+****[**Get started with the Document UI SDK**](use-the-document-ui-sdk.md)****
 
 ****[**Document UI SDK Data Types**](documents-user-interface-data-types.md)****
 

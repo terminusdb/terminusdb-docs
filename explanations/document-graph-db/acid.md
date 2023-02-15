@@ -1,5 +1,7 @@
 ---
-description: An overview of ACID database transactions and implementation in TerminusDB.
+description: >-
+  An overview of ACID database transactions and implementation in TerminusDB and
+  TerminusCMS.
 ---
 
 # ACID Transactions

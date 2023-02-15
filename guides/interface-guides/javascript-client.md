@@ -41,7 +41,7 @@ const createNewDB = async () => {
           comment: "Created new ExampleDatabase",
       });
 
-      console.log("Database created Successfully!")
+      console.log("Database created Successfully!")c
 
   } catch (err) {
       console.error(err)
@@ -321,7 +321,7 @@ const getTeams = async () => {
 
 ### See also
 
-#### [JavaScript Client reference](../reference-guides/javascript-client-reference/woqlclient.md)
+#### [JavaScript Client Reference Guide](../reference-guides/javascript-client-reference/woqlclient.md)
 
 #### [Getting Started with the JavaScript Client Tutorials](https://github.com/terminusdb/terminusdb-tutorials/blob/master/getting\_started/javascript-client/lesson\_1.md)
 

@@ -4,7 +4,11 @@ description: Traverse edges with path regular expressions in WOQL
 
 # Path Queries
 
-TerminusDB allows _regular path expressions_ as a way to describe multihop searches in a concise fashion. When you need to follow a link repeatedly for shortest path queries or to find all linked documents meeting some specification you can often use a _path query_.
+TerminusDB & TerminusCMS allows _regular path expressions_ as a way to describe multi-hop searches in a concise fashion. When you need to follow a link repeatedly for shortest path queries or to find all linked documents meeting some specification you can often use a _path query_.
+
+{% hint style="info" %}
+For guidance on back-links and path queries using GraphQL visit the [GraphQL reference guide](../../reference-guides/graphql-reference/graphql\_query.md#backlinks-\_property\_of\_class)
+{% endhint %}
 
 The syntax of path expressions, for expressions `A`, `B` and fields `F` is as follows:
 
@@ -50,7 +54,7 @@ echo '{ "@type" : "Class",
   "father" : {"@type" : "Optional", "@class" : "Person" }}' | terminusdb doc insert admin/ancestor -g schema
 ```
 
-Next we need to add some people. The following three generations of family tree is enough to be illustrative. We will add it to a file named `family.json` and import it on the command line.
+Next, we need to add some people. The following three generations of family tree is enough to be illustrative. We will add it to a file named `family.json` and import it on the command line.
 
 ```json
 { "@capture" : "Charles II of Spain",

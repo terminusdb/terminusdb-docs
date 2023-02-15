@@ -1,7 +1,7 @@
 ---
 description: >-
-  An introduction to the hierarchy and system of graphs used by TerminusDB for
-  collaboration and revision control.
+  An introduction to the hierarchy and system of graphs used by TerminusDB and
+  TerminusCMSfor collaboration and revision control.
 ---
 
 # Graphs

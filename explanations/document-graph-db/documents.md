@@ -1,7 +1,7 @@
 ---
 description: >-
-  The types of documents available in TerminusDB with examples of their
-  definitions and interactions.
+  The types of documents available in TerminusDB and TerminusCMS with examples
+  of their definitions and interactions.
 ---
 
 # Documents

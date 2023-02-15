@@ -1,12 +1,14 @@
 ---
-description: Modeling data with the dashboard and JSON
+description: >-
+  Modeling data and content within TerminusDB and TerminusCMS using the UI and
+  JSON
 ---
 
-# Data Modeling in TerminusDB
+# Model Data
 
 ## Visual data modeling using the dashboard
 
-Use the **Data Product Model** view in [TerminusX](https://dashboard.terminusdb.com) or the local TerminusDB dashboard ([including in bootstrap install](../../terminusdb/install/install-as-docker-container.md)) to visually build simple or complex data models. The diagrams further below illustrate two possible implementations of the organization model introduced in the previous section. In addition to visually building models, the dashboard enables:
+Use the **Data Product Model** view in [TerminusCMS](https://dashboard.terminusdb.com) or the local TerminusDB dashboard ([including in bootstrap install](../../terminusdb/install/install-as-docker-container.md)) to visually build simple or complex data models. The diagrams further below illustrate two possible implementations of the organization model introduced in the previous section. In addition to visually building models, the dashboard enables:
 
 * Flexible relationships between elements such as documents and sub-documents, and classes and sub-classes.
 * Enumeration objects related to document elements.
@@ -27,7 +29,7 @@ The diagram below illustrates an implementation of the organization model using 
 
 ### A class-based document model
 
-The diagram below illustrates a more intuitive implementation of the organization model using documents and sub-documents, or classes or sub-classes. This approach enables sub-documents to inherit the properties of the parent document - similar to inheritance in Object-Oriented Programming. See Data modeling using JSON for more information.
+The diagram below illustrates a more intuitive implementation of the organization model using documents and sub-documents, or classes or sub-classes. This approach enables sub-documents to inherit the properties of the parent document - similar to inheritance in Object-Oriented Programming.&#x20;
 
 #### Diagram: The organization model using classes and sub-classes
 

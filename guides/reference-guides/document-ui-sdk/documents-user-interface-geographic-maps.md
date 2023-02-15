@@ -274,7 +274,7 @@ return <MapViewer
 
 ## Further Reading
 
-****[**Get started with the Document UI SDK**](../../how-to-guides/use-the-document-ui-sdk.md)****
+****[**Get started with the Document UI SDK**](use-the-document-ui-sdk.md)****
 
 ****[**Document UI SDK Customization**](documents-user-interface-customization.md)****
 

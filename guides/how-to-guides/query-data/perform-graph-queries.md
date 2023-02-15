@@ -1,5 +1,5 @@
 ---
-description: Python shortest path queries
+description: How to do shortest path queries using the Python client
 ---
 
 # Shortest Path Queries

@@ -16,10 +16,6 @@ Install a [JavaScript](../../terminusdb/install-client/install-javascript-client
 
 Install and run the [docker container](../../terminusdb/install/install-as-docker-container.md) on `localhost`
 
-#### Use the client with TerminusX
-
-Or to use **TerminusX**, [log into your account or sign-up](https://dashboard.terminusdb.com).
-
 ### Diff & Patch with Client
 
 TerminusDB represents objects such as documents and schemas in JSON-LD format. Use JSON Diff and Patch to easily compare these objects to obtain differences between them.

@@ -76,9 +76,9 @@ Read our [white paper on succinct data structures and delta encoding in modern d
 
 [Get Started](../../terminusdb/index.md) with an overview of the available [Installation Options](../../terminusdb/install/) and an overview of the [TerminusDB Interfaces](../../guides/interface-guides/) and their interconnections.
 
-#### TerminusX
+#### TerminusCMS
 
-An [Introduction to TerminusX](terminusx-intro.md) the cloud infrastructure underpinning TerminusDB.
+Take a look at the [product tour of TerminusCMS](../../terminuscms/product-tour/) for information about the headless content management system.
 
 #### Documents
 

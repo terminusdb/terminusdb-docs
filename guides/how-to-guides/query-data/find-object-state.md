@@ -1,5 +1,5 @@
 ---
-description: Find an object state at a given time in Python.
+description: Find an object state at a given time using the Python client.
 ---
 
 # Find an Object State

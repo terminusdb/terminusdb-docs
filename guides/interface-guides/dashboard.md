@@ -1,10 +1,10 @@
 ---
-description: An overview of the essential features of the TerminusDB & TerminusX dashboard
+description: An overview of the essential features of the local TerminusDB dashboard
 ---
 
 # Dashboard
 
-The TerminusDB and TerminusX dashboard is the perfect place to model data, manage access control, and build queries. This page provides an overview of the dashboard's features.
+The local TerminusDB dashboard is the perfect place to model data, manage access control, and build queries. This page provides an overview of the dashboard's features.
 
 ### Install/Sign Up&#x20;
 
@@ -14,11 +14,9 @@ The TerminusDB local dashboard is included when you [install TerminusDB as a Doc
 http://localhost:6363/dashboard/
 ```
 
-For the TerminusX dashboard, sign up for TerminusX, and when verified login to the dashboard at [https://dashboard.terminusdb.com](https://dashboard.terminusdb.com).
-
 #### Initial teams and users&#x20;
 
-The main difference between the TerminusX and TerminusDB dashboards is how teams and users are managed. [Visit here for guidance](../how-to-guides/manage-access-control.md) on managing access control with the local TerminusDB dashboard. TerminusX access control is [included on this page](dashboard.md#terminusx-access-control).
+[Visit here for guidance](../how-to-guides/manage-access-control.md) on managing access control with the local TerminusDB dashboard.&#x20;
 
 A team and admin user are automatically created with both dashboards.
 
@@ -26,7 +24,6 @@ A team and admin user are automatically created with both dashboards.
   * Team: admin
   * User: admin
   * Password: root.
-* TerminusX - A team name generated from your registration credentials.
 
 ### **Basic layout**
 
@@ -43,7 +40,7 @@ When you select a team, the layout looks like:
 1. **Top Menu** - From left to right:&#x20;
    * Create a new data product&#x20;
    * Team - use the dropdown menu to toggle between teams&#x20;
-   * User management & profile - Manage access control to teams and data products. In TerminusDB, log in as different users, in TerminusX view your profile and set up your API token.&#x20;
+   * User management & profile - Manage access control to teams and data products. In TerminusDB, and log in as different users.
    * Role - see your role for the team or data product.&#x20;
 2. **Data Products** - A team can have one or many data products. Data products within a team are shown in this pane.&#x20;
 3. **Data Product Tools** - Tools are only available when a data product is selected. From top to bottom:&#x20;
@@ -115,7 +112,7 @@ Your schema should now display in the graph view.
 
 ### Exploring documents&#x20;
 
-Once you have created your schema you can explore the documents you created. TerminusDB creates document frames based upon your schema and you can see what data is in the database, add data, and check out the document structure visually.
+Once you have created your schema you can explore the documents you created. TerminusDB creates document frames based on your schema and you can see what data is in the database, add data, and check out the document structure visually.
 
 <figure><img src="../../.gitbook/assets/06-dashboard-doc-explorer.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -129,7 +126,7 @@ Once you have created your schema you can explore the documents you created. Ter
 
 <figure><img src="../../.gitbook/assets/07-dashboard-add-doc.jpg" alt=""><figcaption></figcaption></figure>
 
-### **Query Builder**
+### **GraphQL & WOQL Query Builder**
 
 Use the query builder to build and test queries against your data products.
 
@@ -143,7 +140,7 @@ You can add several query panes and use the document selector on the left to bui
 
 ### Creating and managing branches
 
-You can create branches of your data product within the TerminusX dashboard, to do this follow these instructions:
+You can create branches of your data product within the local dashboard, to do this follow these instructions:
 
 <figure><img src="../../.gitbook/assets/09-dashboard-branch.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -154,73 +151,3 @@ You can create branches of your data product within the TerminusX dashboard, to 
 <figure><img src="../../.gitbook/assets/10-dashboard-branch-options.jpg" alt=""><figcaption></figcaption></figure>
 
 You can now switch between main and your branches by selecting the ellipsis menu where you can also reset to a specific commit, or squash the branch.
-
-### **TerminusX access control**
-
-#### Create a new team
-
-To create a new team:
-
-1. Click the arrow next to your profile icon in the top right corner.&#x20;
-2. Select profile.&#x20;
-3. From the resulting window, select ‘Create a new team’&#x20;
-4. Name your team - note that no two team names can be the same.
-
-#### Invite users to a team&#x20;
-
-To invite team members and manage the team, do the following:
-
-1. Click the arrow next to your profile icon in the top right corner.&#x20;
-2. Select invite member.&#x20;
-3. In the pop-up window, enter the user’s email address and select one of the following access permissions - _this will be applied to team-level permissions so will apply to all data products within your team. If you want to only give read-write access to a specific data product, it makes sense to give the user low-level permissions and assign higher permissions for that data product only - we will explain this next_.&#x20;
-   * Admin - can add and remove users and permissions and has total access to data products.&#x20;
-   * Collaborator - Able to access data products.&#x20;
-   * Data Updater - Read and write access to data products.&#x20;
-   * Data Reader - Read-only access to data products. Info Reader -&#x20;
-   * Schema-level access but not data-level access.&#x20;
-4. The user will be sent an email with a link they need to click (if they don’t receive it, tell them to check their spam folder).&#x20;
-5. When the user has accepted the invitation, you will be able to see that team member within the Team Members section (you may need to refresh the page).
-
-<figure><img src="../../.gitbook/assets/12-dashboard-invite-team-memeber.jpg" alt=""><figcaption></figcaption></figure>
-
-#### **Editing and removing users from the team**
-
-To edit the role you have given a user:
-
-1. Navigate to the Team Members section from the profile dropdown.&#x20;
-2. Find the user you want to change from the list and click on the second icon.&#x20;
-3. From the pop-up window, select the new role you wish to give them.
-
-<figure><img src="../../.gitbook/assets/13-dashboard-edit-user.jpg" alt=""><figcaption></figcaption></figure>
-
-To delete a user from your team, do the same as above, but select the third icon in red.
-
-{% hint style="info" %}
-Hover over the icons for information about what they do.
-{% endhint %}
-
-#### **Setting granular permissions for data products**
-
-You may want to grant different permissions for different data products. To do this do the following:
-
-1. Navigate to the Team Members section from the profile dropdown.&#x20;
-2. Find the user you want to add specific data product permissions for and click on the first icon.&#x20;
-3. The resulting table below will list all of the data products in your team.&#x20;
-4. Choose the data product you want to change the user’s role for by clicking on the edit permissions icon.&#x20;
-5. Choose from the list of permissions
-
-<figure><img src="../../.gitbook/assets/14-dashboard-granualar-access.jpg" alt=""><figcaption></figcaption></figure>
-
-{% hint style="info" %}
-You can only set permissions higher than the team permissions, so if you want to give someone read/write permissions for only one data product, ensure that you set the team permissions to a lower level.
-{% endhint %}
-
-### Further Reading
-
-[TerminusX - Start with a Client API](../../terminuscms/start-with-client.md)
-
-[CLI Interface Guide](cli.md)
-
-[JavaScript Client Interface Guide](javascript-client.md)
-
-[Python Client Interface Guide](python-client.md)

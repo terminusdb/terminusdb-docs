@@ -8,25 +8,21 @@ WOQL is a powerful query language that enables you to concisely query complex da
 
 ## WOQL triples
 
-In TerminusDB, every particle or piece of information, including objects and documents, is stored and accessed as collections of triples. All objects are broken down deterministically, or reliably, into a precise set of triples. Also, TerminusDB adheres to the **RDF** standard, ensuring triples have a standardized structure and interpretation. This means you can write queries based on the data patterns you are interested in, without requiring knowledge of low-level data structures such as tables and columns.
+In TerminusDB and TerminusCMS, every particle or piece of information, including objects and documents, is stored and accessed as collections of triples. All objects are broken down deterministically, or reliably, into a precise set of triples. Also, Terminus products adhere to the **RDF** standard, ensuring triples have a standardized structure and interpretation. This means you can write queries based on the data patterns you are interested in, without requiring knowledge of low-level data structures such as tables and columns.
 
 ### The structure of a triple
 
-* A triple is a simple data structure with three positions, often rendered as *subject*, *predicate*, *object*.
-* You can assign any meaning/definition/terminology to each position,
-  however, all positions can be *nodes* represented by an
-  [IRI](https://de.wikipedia.org/wiki/Internationalized_Resource_Identifier),
-  but the value position can also be a data type.
-* In TerminusDB terminology, slots are defined as: `subject-id`,
-  `property`, followed by `objectid` or `value`.
+* A triple is a simple data structure with three positions, often rendered as _subject_, _predicate_, _object_.
+* You can assign any meaning/definition/terminology to each position, however, all positions can be _nodes_ represented by an [IRI](https://de.wikipedia.org/wiki/Internationalized\_Resource\_Identifier), but the value position can also be a data type.
+* In TerminusDB terminology, slots are defined as: `subject-id`, `property`, followed by `objectid` or `value`.
 
 #### Table: Examples of triples
 
 | Example | Object-id | Property        | Value        | Interpretation                               |
-| -------- | --------- | --------------- | ------------ | -------------------------------------------- |
-| 1        | `jake`    | `date-of-birth` | `1935-01-01` | Jake's date of birth is 01-jan-1935          |
-| 2        | `jake`    | `parent`        | `mary`       | Jake's mother is Mary                        |
-| 3        | `mary`    | `date-of-birth` | `1935-01-01` | Jake's mother's date of birth is 01-jan-1900 |
+| ------- | --------- | --------------- | ------------ | -------------------------------------------- |
+| 1       | `jake`    | `date-of-birth` | `1935-01-01` | Jake's date of birth is 01-jan-1935          |
+| 2       | `jake`    | `parent`        | `mary`       | Jake's mother is Mary                        |
+| 3       | `mary`    | `date-of-birth` | `1935-01-01` | Jake's mother's date of birth is 01-jan-1900 |
 
 ### Triple interpretation
 
@@ -54,11 +50,11 @@ Examples of a single WOQL variable in a triple slot.
 
 #### Code: WOQL var in triple slot 1.
 
-**Description:**&#x20;
+**Description:**
 
 Select every `subject-id` into `v:person-id` where the `property` `date-of-birth` has the `value` `1935-01-01`
 
-**Interpretation:**&#x20;
+**Interpretation:**
 
 Select every person born on `1935-01-01`.
 
@@ -147,7 +143,7 @@ triple(v.x,v.y,v.z)
 
 ## WOQL operators
 
-Query expressions using single triple pattern matching only are simple but limited. WOQL provides logical operators enabling you to combine multiple patterns into sophisticated queries with simple syntax **** using various operators.
+Query expressions using single triple pattern matching only are simple but limited. WOQL provides logical operators enabling you to combine multiple patterns into sophisticated queries with simple syntax \*\*\*\* using various operators.
 
 We will demonstrate these operators with the following schema and database.
 
@@ -190,11 +186,10 @@ select(v.name1,
        triple(v.person2, 'name', string('Jane'))))
 ```
 
-This query connects `person1` with `person2` via the `friend`
-relationship. We recover the name of the original person:
+This query connects `person1` with `person2` via the `friend` relationship. We recover the name of the original person:
 
 | name1 |
-|-------|
+| ----- |
 | Kim   |
 
 Notice, we use the `select` to limit our results to only the variable of interest.
@@ -212,9 +207,7 @@ select(v.name1,
       triple(v.person1, 'name', v.name1)))
 ```
 
-The `or` operator allows you to combine results form multiple multiple
-paths. Notice, that we looked up the two people `Jane` and `Kim`
-first, and then recover the person of interests afterwords. Logically this can also be done in the reverse order:
+The `or` operator allows you to combine results form multiple multiple paths. Notice, that we looked up the two people `Jane` and `Kim` first, and then recover the person of interests afterwords. Logically this can also be done in the reverse order:
 
 ```javascript
 let v = Vars('person1', 'name1', 'person2');
@@ -225,8 +218,7 @@ select(v.name1,
           triple(v.person2, 'name', string('Kim')))))
 ```
 
-However, the former query will likely be faster since we are starting
-with only two possibilities.
+However, the former query will likely be faster since we are starting with only two possibilities.
 
 ### WOQL `order_by`
 
@@ -240,8 +232,7 @@ select(v.name, v.dob,
            triple(v.person, 'dob', v.dob))))
 ```
 
-The results will be a table of name and date of birth, with ascending
-order for the date of birth. To sort in the reverse order:
+The results will be a table of name and date of birth, with ascending order for the date of birth. To sort in the reverse order:
 
 ```javascript
 let v = Vars('name', 'person', 'dob');
@@ -310,11 +301,10 @@ jsonld = WOQLQuery().dict()
 
 ## Further Reading
 
-[**JavaScript WOQL Query**](../../reference-guides/javascript-client-reference/woql.md)****
+[**JavaScript WOQL Query**](../../reference-guides/javascript-client-reference/woql.md)
 
-****[**Python WOQL Query**](../../reference-guides/python-client-reference/terminusdb\_client.woqlquery.md)****
+[**Python WOQL Query**](../../reference-guides/python-client-reference/terminusdb\_client.woqlquery.md)
 
-****[**WOQL Class Reference**](../../reference-guides/woql-class.md)****
+[**WOQL Class Reference**](../../reference-guides/woql-class.md)
 
-****[**WOQL Explanation**](../../../explanations/document-graph-db/woql.md)****
-
+[**WOQL Explanation**](../../../explanations/document-graph-db/woql.md)

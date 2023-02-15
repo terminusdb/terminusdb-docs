@@ -1,7 +1,7 @@
 ---
 description: >-
-  An explanation of how TerminusDB implements immutability, and handles deleted
-  and new data.
+  An explanation of how TerminusDB & TerminusCMS implements immutability, and
+  handles deleted and new data.
 ---
 
 # Immutability

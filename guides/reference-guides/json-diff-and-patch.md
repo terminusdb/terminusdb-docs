@@ -41,7 +41,7 @@ Install a [JavaScript](../../terminusdb/install-client/install-javascript-client
 Get started with the simple steps below.
 
 {% hint style="info" %}
-If using **TerminusX with Python**, connect to your TerminusX cloud instance first - see [Connect with WOQLClient](../../terminuscms/start-with-client.md#connect-with-woqlclient) for instructions if required.
+If using **TerminusCMS with Python**, connect to your TerminusCMS cloud instance first - see [Connect with WOQLClient](../../terminuscms/start-with-client.md#connect-with-woqlclient) for instructions if required.
 {% endhint %}
 
 1\. [Create an endpoint](json-diff-and-patch.md#create-an-endpoint)
@@ -459,7 +459,7 @@ $ curl -X POST -H "Content-Type: application/json" 'https://cloud.terminusdb.com
 
 #### [JSON Diff and Patch How-to Guide](../how-to-guides/json-diff-and-patch-demonstration.md)
 
-A demonstration of using JSON Diff and Patch with a TerminusDB or TerminusX client, including the use of JSON Diff and Patch with MongoDB.
+A demonstration of using JSON Diff and Patch with a client, including the use of JSON Diff and Patch with MongoDB.
 
 #### JSON Diff and Patch client functions
 

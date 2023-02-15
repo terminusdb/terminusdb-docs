@@ -4,9 +4,7 @@ description: An overview of the ways to get started with TerminusDB.
 
 # Get Started
 
-TerminusDB is an open-source document graph database with a collaboration model providing Git-like features. It stores documents as [JSON documents](../explanations/document-graph-db/documents.md) and the schema language connects these into a [graph](../explanations/document-graph-db/graphs.md). It comes with [GraphQL](../guides/reference-guides/graphql-reference/graphql\_query.md), [User Interface](../guides/interface-guides/dashboard.md), [CLI](../guides/interface-guides/cli.md), [JavaScript](../guides/reference-guides/javascript-client-reference/), and [Python Clients](../guides/reference-guides/python-client-reference/). TerminusX is TerminusDB as a Service and is free to use to build your Betas and experiment with the product.
-
-_**Links:**_ [TerminusDB introduction](../explanations/document-graph-db/terminusdb-intro.md). [TerminusX introduction](../explanations/document-graph-db/terminusx-intro.md).
+TerminusDB is an open-source document graph database with a collaboration model providing Git-like features. It stores documents as [JSON documents](../explanations/document-graph-db/documents.md) and the schema language connects these into a [graph](../explanations/document-graph-db/graphs.md). It comes with [GraphQL](../guides/reference-guides/graphql-reference/graphql\_query.md), [User Interface](../guides/interface-guides/dashboard.md), [CLI](../guides/reference-guides/cli.md), [JavaScript](../guides/reference-guides/javascript-client-reference/), and [Python Clients](../guides/reference-guides/python-client-reference/). TerminusX is TerminusDB as a Service and is free to use to build your Betas and experiment with the product.
 
 ### Starting overview
 
@@ -66,11 +64,11 @@ TerminusDB automatically generates GraphQL schema to query data. Read the [Graph
 
 #### Command Line Interface
 
-The TerminusDB [Command Line Interface](../guides/interface-guides/cli.md) (CLI.)
+The TerminusDB [Command Line Interface](../guides/reference-guides/cli.md) (CLI.)
 
 #### Dashboard
 
-The TerminusX [dashboard](https://dashboard.terminusdb.com) provides a visual interface.
+The TerminusDB [dashboard](https://dashboard.terminusdb.com) provides a visual interface.
 
 #### APIs
 
@@ -83,11 +81,3 @@ The TerminusDB [Web Object Query Language](../explanations/document-graph-db/woq
 #### Diagram: TerminusDB interfaces
 
 ![](../img/diagrams/terminusdb-interfaces.png)
-
-### Further Reading
-
-#### [An introduction to TerminusDB](../explanations/document-graph-db/terminusdb-intro.md)
-
-#### [An introduction to TerminusX](../explanations/document-graph-db/terminusx-intro.md)
-
-#### [Documents in a knowledge graph and how to use them](../explanations/document-graph-db/documents.md)

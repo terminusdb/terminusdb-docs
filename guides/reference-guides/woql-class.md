@@ -10,7 +10,9 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 **Authored by:** Gavin Mendel-Gleason
 
-***
+{% hint style="info" %}
+Syntax is listed in alphabetical order.
+{% endhint %}
 
 #### AddData
 
