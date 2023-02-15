@@ -6,6 +6,7 @@
 * [Get your API key](terminuscms/get-api-key.md)
 * [Start with a Client API](terminuscms/start-with-client.md)
 * [Product Tour](terminuscms/product-tour/README.md)
+  * [TerminusCMS Demo](terminuscms/product-tour/terminuscms-demo.md)
   * [Projects/Data Products](terminuscms/product-tour/projects-data-products.md)
   * [Content & Data Curation](terminuscms/product-tour/content-and-data-curation.md)
   * [Change Request Workflows](terminuscms/product-tour/change-request-workflows.md)
