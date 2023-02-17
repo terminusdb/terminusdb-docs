@@ -16,7 +16,7 @@ graph all through a simple document API.
 [terminusdb-docs]: https://terminusdb.com/docs/
 [terminusdb-repo]: https://github.com/terminusdb/terminusdb
 
-**TerminusCMS** is a headless content and knowledge management system for complex environments. Build an organization-wide knowledge graph for data and content that is can be curated by machines and humans. [Sign up a clone a demo to play with today][dashboard].
+**TerminusCMS** is a headless content and knowledge management system for complex environments. Build an organization-wide knowledge graph for data and content that can be curated by machines and humans. [Sign up a clone a demo to play with today][dashboard].
 
 [dashboard]: https://dashboard.terminusdb.com/
 
