@@ -16,8 +16,7 @@ graph all through a simple document API.
 [terminusdb-docs]: https://terminusdb.com/docs/
 [terminusdb-repo]: https://github.com/terminusdb/terminusdb
 
-**TerminusX** is TerminusDB as a service. It is a self-service data platform that allows you to build, deploy,
-execute, monitor, and share versioned data products. [Sign up now][dashboard].
+**TerminusCMS** is a headless content and knowledge management system for complex environments. Build an organization-wide knowledge graph for data and content that is can be curated by machines and humans. [Sign up a clone a demo to play with today][dashboard].
 
 [dashboard]: https://dashboard.terminusdb.com/
 
