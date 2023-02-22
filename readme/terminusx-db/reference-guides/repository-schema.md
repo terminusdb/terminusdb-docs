@@ -28,7 +28,22 @@ This is the Repo schema. It is a specification for repository metadata managemen
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `remote_url` | `xsd:string` | The url of the remote repository. |
+| `remote_url` | `undefined` | The url of the remote repository. |
+
+---
+
+### RemotePath
+
+<p class="tdb-f">A remote repository path (sharing local storage). It is a subdocument</p>
+
+**Class:** `RemotePath`
+
+**Properties:**
+
+| Property | Range  | Desc |
+| -------- | ------ | ---- |
+| `database` | `xsd:string` | The database name of the remote repository. |
+| `organization` | `xsd:string` | The organization for this remote. |
 
 ---
 
