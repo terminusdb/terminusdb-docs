@@ -203,7 +203,7 @@ WOQL goes a step beyond supporting prefixes by automatically applying prefixes w
 
 #### How-to guides
 
-See the [How-to Guides](../../guides/how-to-guides/query-data/) for further examples of using WOQL.
+See the [How-to Guides](broken-reference) for further examples of using WOQL.
 
 #### Documents
 

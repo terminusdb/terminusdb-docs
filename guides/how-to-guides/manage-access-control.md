@@ -24,7 +24,7 @@ Go to [**http://localhost:6363/dashboard**](http://localhost:6363/dashboard) **a
 
 Login to the TerminusDB Dashboard using your admin credentials. if you did not change it, the default admin password is root.
 
-<figure><img src="../../.gitbook/assets/login (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/login.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -70,7 +70,7 @@ The top bar from right to left displays:
 * Enter the Data Product ID and name&#x20;
 * Click _**Create Data Product**_ button
 
-<figure><img src="../../.gitbook/assets/06-terminusdb-access-control-new-dataproduct.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/06-terminusdb-access-control-new-dataproduct (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../.gitbook/assets/07-terminusdb-access-control-new-dataproduct.png" alt=""><figcaption></figcaption></figure>
 

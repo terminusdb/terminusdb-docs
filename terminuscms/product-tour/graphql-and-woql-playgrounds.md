@@ -37,7 +37,7 @@ The playground enables users to build WOQL queries to experiment and test. Users
 
 Please see these other resources for understanding and using WOQL -
 
-* [WOQL Basics](../../guides/how-to-guides/query-data/woql-query-basics.md)
+* [WOQL Basics](../../explanations/relational-vs-graph-databases/woql-query-basics.md)
 * [JavaScript Client WOQL reference guide](../../guides/reference-guides/javascript-client-reference/)
 * [Python Client WOQL reference guide](../../guides/reference-guides/python-client-reference/)
 
