@@ -27,7 +27,7 @@ On Windows, the default memory allocated for the Docker is **2GB**. TerminusDB i
 {% endhint %}
 
 {% hint style="success" %}
-**Docker on Windows** **Guide**
+**Install TerminusDB on Windows with Docker Guide**
 
 For a comprehensive guide to installing on Windows, our friends at DFRNT put this blog together - [Run TerminusDB on Windows with Docker](https://dfrnt.com/blog/2023-02-25-run-terminusdb-on-windows-with-docker/)
 {% endhint %}
