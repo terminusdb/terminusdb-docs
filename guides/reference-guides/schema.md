@@ -923,7 +923,6 @@ The purpose of `@unfoldable` is to be able to be able to treat linked (top-level
 {
     "@type"        : "Class",
     "@id"          : "Person",
-    "age"          : "xsd:integer",
     "name"         : "xsd:string",
     "address"      : "Address"
 }
