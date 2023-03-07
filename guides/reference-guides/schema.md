@@ -904,6 +904,91 @@ An example of inheritance of properties and an object meeting this specification
 }
 ```
 
+## @unfoldable
+The `@unfoldable` key is present with the value `[]` or it is not present.
+
+In the document API, when retrieving documents, the default behavior is for any linked document to be returned as an IRI, while subdocuments are fully unfolded and returned as a nested document. With the `@unfoldable` option set, linked documents will behave just like subdocuments, and will also be unfolded on retrieval.
+
+The `@unfoldable` option can only be set on a class which does not directly or indirectly link to itself. This prevents a self-referencing document from being unfolded infinitely.
+
+The purpose of `@unfoldable` is to be able to be able to treat linked (top-level) documents as subdocuments in representation. Subdocuments can only be linked by one document, its owner, whereas normal documents can be linked by any number of otrher documents. If the desired result is to have a document linked by several other documents, but still have it fully unfolded on retrieval like a subdocument, use this option.
+
+### Code: An example unfoldable
+```
+{
+    "@type"        : "@context",
+    "@base"        : "terminusdb://i/",
+    "@schema"      : "terminusdb://s#"
+}
+{
+    "@type"        : "Class",
+    "@id"          : "Person",
+    "age"          : "xsd:integer",
+    "name"         : "xsd:string",
+    "address"      : "Address"
+}
+{
+    "@type"        : "Class",
+    "@id"          : "Address",
+    "@unfoldable"  : [],
+    "country"      : "xsd:string",
+    "postal_code"  : "xsd:string",
+    "street"       : "xsd:string"
+}
+```
+
+#### Code: an example set of documents
+```
+{
+    "@type"        : "Address",
+    "@id"          : "Address/1",
+    "country"      : "Neverlandistan",
+    "postal_code"  : "3",
+    "street"       : "Cool Harbour lane"
+}
+
+{
+   "@type"         : "Person",
+   "@id"           : "Person/doug",
+   "name"          : "Doug A. Trench",
+   "address"       : "Address/1"
+}
+
+{
+   "@type"         : "Person",
+   "@id"           : "Person/phil",
+   "name"          : "Phil A. Trench",
+   "address"       : "Address/1"
+}
+```
+
+The above example shows both Doug and Phil using the same address document. On retrieval of all Persons, the document API returns these documents:
+
+```
+{
+    "@type"        : "Person",
+    "@id"          : "Person/doug",
+    "name"         : "Doug A. Trench",
+    "address"      : { "@type"       : "Address",
+                       "@id"         : "Address/1",
+                       "country"     : "Neverlandistan",
+                       "postal_code" : "3",
+                       "street"      : "Cool Hasrbour lane" }
+}
+{
+    "@type"        : "Person",
+    "@id"          : "Person/phil",
+    "name"         : "Phil A. Trench",
+    "address"      : { "@type"       : "Address",
+                       "@id"         : "Address/1",
+                       "country"     : "Neverlandistan",
+                       "postal_code" : "3",
+                       "street"      : "Cool Hasrbour lane" }
+}
+```
+
+The address is fully unfolded in both documents despite not being a subdocument.
+
 ## Class properties
 
 All non-keywords are treated as properties of the class, with the form:
