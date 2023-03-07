@@ -44,6 +44,8 @@
     * [Filter with GraphQL](guides/how-to-guides/query-using-graphql/filter-with-graphql.md)
     * [Advanced Filtering with GraphQL](guides/how-to-guides/query-using-graphql/advanced-filtering-with-graphql.md)
     * [Order By in GraphQL](guides/how-to-guides/query-using-graphql/order-by-in-graphql.md)
+    * [Limit results in GraphQL](guides/how-to-guides/query-using-graphql/limit-results-in-graphql.md)
+    * [Offset to provide paging](guides/how-to-guides/query-using-graphql/offset-to-provide-paging.md)
     * [Back Links in GraphQL](guides/how-to-guides/query-using-graphql/back-links-in-graphql.md)
     * [Path Queries in GraphQL](guides/how-to-guides/query-using-graphql/path-queries-in-graphql.md)
   * [Query using WOQL](guides/how-to-guides/query-using-woql/README.md)
