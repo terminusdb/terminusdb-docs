@@ -911,7 +911,7 @@ In the document API, when retrieving documents, the default behavior is for any 
 
 The `@unfoldable` option can only be set on a class which does not directly or indirectly link to itself. This prevents a self-referencing document from being unfolded infinitely.
 
-The purpose of `@unfoldable` is to be able to be able to treat linked (top-level) documents as subdocuments in representation. Subdocuments can only be linked by one document, its owner, whereas normal documents can be linked by any number of otrher documents. If the desired result is to have a document linked by several other documents, but still have it fully unfolded on retrieval like a subdocument, use this option.
+The purpose of `@unfoldable` is to be able to treat linked (top-level) documents as subdocuments in representation. Subdocuments can only be linked by one document, its owner, whereas normal documents can be linked by any number of other documents. If the desired result is to have a document linked by several other documents, but still have it fully unfolded on retrieval like a subdocument, use this option.
 
 ### Code: An example unfoldable
 ```
