@@ -74,7 +74,7 @@ Read our [white paper on succinct data structures and delta encoding in modern d
 
 #### Get started
 
-[Get Started](../../terminusdb/index.md) with an overview of the available [Installation Options](../../terminusdb/install/) and an overview of the [TerminusDB Interfaces](../../guides/interface-guides/) and their interconnections.
+[Get Started](../../terminusdb/index.md) with an overview of the available [Installation Options](../../terminusdb/install/) and an overview of the [TerminusDB Interfaces](broken-reference) and their interconnections.
 
 #### TerminusCMS
 

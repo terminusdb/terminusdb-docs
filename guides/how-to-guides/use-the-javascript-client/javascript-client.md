@@ -1,18 +1,24 @@
 ---
-description: A guide to provide the basic mechanics of the JavaScript client.
+description: >-
+  A very quick tutorial combining the individual elements of the JavaScript
+  how-to guides to get you started.
 ---
 
-# JavaScript Client
+# JavaScript Client Tutorial
 
-This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusDB with the JavaScript client. Refer to [TerminusDB JavaScript Client](../reference-guides/javascript-client-reference/woqlclient.md) for detailed documentation. The code discussed on this page is also available in full:
+This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusDB with the JavaScript Client. Refer to [TerminusDB JavaScript Client Reference Guide ](../../reference-guides/javascript-client-reference/woqlclient.md)for detailed documentation.&#x20;
 
-* JavaScript: [getting-started.js](https://github.com/terminusdb/terminusdb-docs/blob/3df3c593b4f3d648732fea4e7e5ed3ce9348681f/code-examples/start-with-client/getting-started.js)
+{% hint style="info" %}
+The code discussed on this page is also available in full on GitHub - [getting-started.js](https://github.com/terminusdb/terminusdb-docs/blob/3df3c593b4f3d648732fea4e7e5ed3ce9348681f/code-examples/start-with-client/getting-started.js)
+{% endhint %}
+
+You can also find a comprehensive getting-started guide on GitHub: [5-Part JS Client Getting Started Guide](https://github.com/terminusdb/terminusdb-tutorials/blob/main/getting\_started/javascript-client/lesson\_1.md).
 
 ### Use a WOQLClient
 
 Common uses of a WOQLClient include connecting to an existing database and creating a new database.
 
-[Install JavaScript Client](../../terminusdb/install-client/install-javascript-client.md)
+[Install JavaScript Client](../../../terminusdb/install-client/install-javascript-client.md)
 
 ### **Connect to a database**
 
@@ -55,7 +61,7 @@ createNewDB();
 
 ### Basic Commands
 
-Create a schema and add documents to the schema by using the document interface. Refer to the [Document Interface Reference Guide](../reference-guides/document-interface.md) for more detail. After creating or connecting to a database, create a schema to add and retrieve data. A simple player roster is used as an example. Using Player roster data, the steps below are demonstrated.
+Create a schema and add documents to the schema by using the document interface. Refer to the [Document Interface Reference Guide](../../reference-guides/document-interface.md) for more detail. After creating or connecting to a database, create a schema to add and retrieve data. A simple player roster is used as an example. Using Player roster data, the steps below are demonstrated.
 
 * Create a schema
 * Add a schema
@@ -321,7 +327,7 @@ const getTeams = async () => {
 
 ### See also
 
-#### [JavaScript Client Reference Guide](../reference-guides/javascript-client-reference/woqlclient.md)
+#### [JavaScript Client Reference Guide](../../reference-guides/javascript-client-reference/woqlclient.md)
 
 #### [Getting Started with the JavaScript Client Tutorials](https://github.com/terminusdb/terminusdb-tutorials/blob/master/getting\_started/javascript-client/lesson\_1.md)
 

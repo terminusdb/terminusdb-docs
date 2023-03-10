@@ -60,7 +60,7 @@ Download the minified script from [https://unpkg.com/browse/@terminusdb/terminus
 
 ### Further reading
 
-#### [JavaScript Client API Basics](../../guides/interface-guides/javascript-client.md)
+#### [JavaScript Client API Basics](../../guides/how-to-guides/use-the-javascript-client/javascript-client.md)
 
 #### [JavaScript Client Reference Guide](../../guides/reference-guides/javascript-client-reference/woqlclient.md)
 

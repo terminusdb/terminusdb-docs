@@ -36,7 +36,7 @@ description: Quick links to tutorials to help you learn
 
 
 * [**OAuth2 Configuration for TerminusDB to allow for SSO**](https://terminusdb.com/blog/oauth2-configuration-for-sso/)****
-* ****[**Managing Access Control with the Dashboard**](../guides/how-to-guides/manage-access-control.md)****
+* ****[**Managing Access Control with the Dashboard**](../guides/how-to-guides/use-the-terminusdb-local-dashboard/manage-access-control.md)****
 * ****[**Managing Access Control with the JS Client**](https://terminusdb.github.io/terminusdb-access-control/#/README)****
 * ****[**Nuclear reactor data product - 3-part tutorial for TerminusX**](https://github.com/terminusdb/terminusdb-tutorials/tree/master/nuclear)
   * [Lesson 1 - Build a knowledge graph of nuclear reactors](https://github.com/terminusdb/terminusdb-tutorials/blob/master/nuclear/nuclear.md)

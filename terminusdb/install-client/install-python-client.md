@@ -87,7 +87,7 @@ python -m pip install git+https://github.com/terminusdb/terminusdb-client-python
 
 ### Further reading
 
-#### [Python Client API Basics](../../guides/interface-guides/python-client.md)
+#### [Python Client API Basics](../../guides/how-to-guides/use-the-python-client/)
 
 #### [Python Client Reference Guide](../../guides/reference-guides/python-client-reference/terminusdb\_client.client.md)
 

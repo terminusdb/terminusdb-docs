@@ -24,7 +24,7 @@ Next, we add the `limit` word, to limit to 10 entries.
 
 Then we complete the query with a `triple` word, using the `source` variable, the `label` field, and the `destination` variable.
 
-```
+```javascript
 let v = Vars("source", "destination");
 limit(10).triple(v.source, 'label', v.destination)
 ```

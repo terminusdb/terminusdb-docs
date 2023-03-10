@@ -26,7 +26,7 @@ async function getSchema() {
 //The client has an internal state which defines what
 //organization / database / repository / branch / ref it is currently attached to
 
-//to connect with your TerminusDB Cloud Instance
+//to connect with your TerminusCMS Cloud Instance
 const client = new TerminusClient.WOQLClient('SERVER_CLOUD_URL/mycloudTeam',
                      {user:"myemail@something.com", organization:'mycloudTeam'})
 

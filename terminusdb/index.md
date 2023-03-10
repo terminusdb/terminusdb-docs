@@ -4,7 +4,7 @@ description: An overview of the ways to get started with TerminusDB.
 
 # Get Started
 
-TerminusDB is an open-source document graph database with a collaboration model providing Git-like features. It stores documents as [JSON documents](../explanations/document-graph-db/documents.md) and the schema language connects these into a [graph](../explanations/document-graph-db/graphs.md). It comes with [GraphQL](../guides/reference-guides/graphql-reference/graphql\_query.md), [User Interface](../guides/interface-guides/dashboard.md), [CLI](../guides/reference-guides/cli.md), [JavaScript](../guides/reference-guides/javascript-client-reference/), and [Python Clients](../guides/reference-guides/python-client-reference/). TerminusX is TerminusDB as a Service and is free to use to build your Betas and experiment with the product.
+TerminusDB is an open-source document graph database with a collaboration model providing Git-like features. It stores documents as [JSON documents](../explanations/document-graph-db/documents.md) and the schema language connects these into a [graph](../explanations/document-graph-db/graphs.md). It comes with [GraphQL](../guides/reference-guides/graphql-reference/graphql\_query.md), [User Interface](broken-reference), [CLI](../guides/reference-guides/cli.md), [JavaScript](../guides/reference-guides/javascript-client-reference/), and [Python Clients](../guides/reference-guides/python-client-reference/). TerminusX is TerminusDB as a Service and is free to use to build your Betas and experiment with the product.
 
 ### Starting overview
 
@@ -72,7 +72,7 @@ The TerminusDB [dashboard](https://dashboard.terminusdb.com) provides a visual i
 
 #### APIs
 
-The TerminusDB [Javascript](../guides/interface-guides/javascript-client.md) and [Python Client](../guides/interface-guides/python-client.md) APIs.
+The TerminusDB [Javascript](../guides/how-to-guides/use-the-javascript-client/javascript-client.md) and [Python Client](broken-reference) APIs.
 
 #### Query
 
