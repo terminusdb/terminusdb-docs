@@ -18,7 +18,7 @@ const TerminusClient = require("@terminusdb/terminusdb-client");
 
 ### TerminusCMS
 
-The TerminusCMS endpoint has the form [https://cloud.terminusdb.com/TEAM/](https://cloud.terminusdb.com/TEAM/) where TEAM is the name of the team you are using in TerminusCMS for the data products you want to access. In order to connect to this team, you will need to [get your API key](../../../terminuscms/get-api-key.md) after selecting the team you want to use. To create a client use the following code within your script, ensuring to use your credentials.
+The TerminusCMS endpoint has the form https://cloud.terminusdb.com/TEAM/ where TEAM is the name of the team you are using in TerminusCMS for the data products you want to access. In order to connect to this team, you will need to [get your API key](../../../terminuscms/get-api-key.md) after selecting the team you want to use. To create a client use the following code within your script, ensuring to use your credentials.
 
 ```javascript
 const client = new TerminusClient.WOQLClient('https://cloud.terminusdb.com/Team',
