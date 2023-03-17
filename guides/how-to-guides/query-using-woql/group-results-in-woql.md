@@ -4,15 +4,15 @@ description: >-
   and TerminusCMS
 ---
 
-# Group results in WOQL
+# Group Results in WOQL
 
 {% hint style="info" %}
 To use this How-To, first [clone the Star Wars demo](../cloning-a-demo-project.md) into your team on TerminusCMS. You will then have full access to the data needed for this tutorial
 {% endhint %}
 
-### How to use `GroupBy`
+### How to use `group_by`
 
-If we need to group variables according to some criteria, we can create an aggregate of solutions using `groupBy`.
+If we need to group variables according to some criteria, we can create an aggregate of solutions using `group_by`.
 
 A group by is composed of a _focus_, a _template_, and a _group_ together with a query.
 
