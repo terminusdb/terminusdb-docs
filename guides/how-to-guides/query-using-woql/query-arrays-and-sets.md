@@ -4,10 +4,6 @@ description: A how-to guide for querying arrays and Sets with WOQL
 
 # Query Arrays and Sets
 
-{% hint style="info" %}
-To use this How-To, first [clone the Star Wars demo](../cloning-a-demo-project.md) into your team on TerminusCMS. You will then have full access to the data needed for this tutorial
-{% endhint %}
-
 In TerminusDB there are a number of collection types, including `List`, `Set`, and `Array`.
 
 While these all generate JSON lists through the document interface, they have different semantics due to their different realisation in the graph.
