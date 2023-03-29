@@ -91,7 +91,7 @@ client.setApiKey(process.env.TERMINUSDB_ACCESS_TOKEN)
 from terminusdb_client import WOQLClient
 user     = "jimbo"
 team     = "logicistics" # My team name.
-endpoint = f"https://cloud.terminusdb.com/{team}/"
+endpoint = "https://cloud.terminusdb.com/{team}/"
 client   = WOQLClient(endpoint)
 
 client.connect(user=user, team=team, use_token=True)

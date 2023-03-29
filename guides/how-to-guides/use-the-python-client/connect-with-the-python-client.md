@@ -28,11 +28,16 @@ You should put your access token in your environment, using the environment vari
 export TERMINUSDB_ACCESS_TOKEN="..."
 ```
 
-At this point you can connect with the API key using the code:
+At this point you can create the client with this code:
 
 ```python
-team="MyTeam"
-client.connect(team=team, use_token=True)
+from terminusdb_client import WOQLClient
+user     = "user@email.com"
+team     = "Team_Name" 
+endpoint = "https://cloud.terminusdb.com/{team}/"
+client   = WOQLClient(endpoint)
+
+client.connect(user=user, team=team, use_token=True)
 ```
 
 ### Connecting to a TerminusDB installation
