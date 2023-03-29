@@ -6,7 +6,7 @@ description: Details for customizing your user interfaces using the Document UI 
 
 Customize the look and feel of your forms with styles, widgets, and additional information.
 
-[**To get started read the Document UI SDK how-to guide**](../../how-to-guides/use-the-document-ui-sdk.md)****
+[**To get started read the Document UI SDK how-to guide**](./)****
 
 ## The uiFrames parameter
 
@@ -60,7 +60,7 @@ return <FrameViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-customize-01.png)
+![](../../.gitbook/assets/documents-ui-customize-01.png)
 
 ## uiFrames ui: prefixed properties
 
@@ -167,7 +167,7 @@ return <FrameViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-customize-02.png)
+![](../../.gitbook/assets/documents-ui-customize-02.png)
 
 ## Customize sets and lists
 
@@ -255,11 +255,11 @@ return <FrameViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-customize-03.png)
+![](../../.gitbook/assets/documents-ui-customize-03.png)
 
 ## Further Reading
 
-****[**Get started with the Document UI SDK**](../../how-to-guides/use-the-document-ui-sdk.md)****
+****[**Get started with the Document UI SDK**](./)****
 
 ****[**Document UI SDK Data Types**](documents-user-interface-data-types.md)****
 

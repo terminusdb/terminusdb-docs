@@ -2,9 +2,9 @@
 description: How-to time travel to a specific commit
 ---
 
-# Time Travel to Previous Commits
+# Time Travel
 
-Assuming you have [connected with the JavaScript Client](connect-with-the-javascript-client.md), created a database, and made a few commits, you can time travel to inspect them to see what they looked like.
+Assuming you have [connected with the JavaScript Client](../../use-the-javascript-client/connect-with-the-javascript-client.md), created a database, and made a few commits, you can time travel to inspect them to see what they looked like.
 
 ### Get the branch commits list
 

@@ -6,7 +6,7 @@ description: Understand the different data types to build data driven user inter
 
 The TerminusDB documents User Interface generates forms representing the properties or fields of document/s in your schema. For data entry, each field is one of several data types and is mandatory by default. Schema definitions enable the linking of documents and the specification of sets.
 
-[**To get started read the Document UI SDK how-to guide**](../../how-to-guides/use-the-document-ui-sdk.md)****
+[**To get started read the Document UI SDK how-to guide**](./)****
 
 ## Data types
 
@@ -135,7 +135,7 @@ return <FrameViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-data-types-01.png)
+![](../../.gitbook/assets/documents-ui-data-types-01.png)
 
 ## Set properties
 
@@ -178,11 +178,11 @@ return <FrameViewer
 
 Click  `+Add nickName` to add a **set** of `nickName` properties.
 
-![](../../../.gitbook/assets/documents-ui-data-types-02.png)
+![](../../.gitbook/assets/documents-ui-data-types-02.png)
 
 Populate multiple `nickName`fields.
 
-![](../../../.gitbook/assets/documents-ui-data-types-03.png)
+![](../../.gitbook/assets/documents-ui-data-types-03.png)
 
 ### Document class set example
 
@@ -226,11 +226,11 @@ return <FrameViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-data-types-04.png)
+![](../../.gitbook/assets/documents-ui-data-types-04.png)
 
 Populate multiple `Jobs` as shown below
 
-![](../../../.gitbook/assets/documents-ui-data-types-05.png)
+![](../../.gitbook/assets/documents-ui-data-types-05.png)
 
 ### Subdocument class set example
 
@@ -280,15 +280,15 @@ return <FrameViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-data-types-06.png)
+![](../../.gitbook/assets/documents-ui-data-types-06.png)
 
 Click the `lived` card to expand the subdocument.
 
-![](../../../.gitbook/assets/documents-ui-data-types-07.png)
+![](../../.gitbook/assets/documents-ui-data-types-07.png)
 
 Fill in the fields for the subdocument.
 
-![](../../../.gitbook/assets/documents-ui-data-types-08.png)
+![](../../.gitbook/assets/documents-ui-data-types-08.png)
 
 ## List properties
 
@@ -345,15 +345,15 @@ return <FrameViewer
 
 The form contains arrows to order entered values.
 
-![](../../../.gitbook/assets/documents-ui-data-types-09.png)
+![](../../.gitbook/assets/documents-ui-data-types-09.png)
 
 In `View` mode the form is displayed in the order it was created.
 
-![](../../../.gitbook/assets/documents-ui-data-types-10.png)
+![](../../.gitbook/assets/documents-ui-data-types-10.png)
 
 ## Further Reading
 
-****[**Get started with the Document UI SDK**](../../how-to-guides/use-the-document-ui-sdk.md)****
+****[**Get started with the Document UI SDK**](./)****
 
 ****[**Document UI SDK Customization**](documents-user-interface-customization.md)****
 

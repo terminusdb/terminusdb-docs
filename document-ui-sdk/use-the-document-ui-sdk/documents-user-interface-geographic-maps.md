@@ -91,7 +91,7 @@ return <FrameViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-maps-00-min.png)
+![](../../.gitbook/assets/documents-ui-maps-00-min.png)
 
 ### View the map
 
@@ -131,7 +131,7 @@ return <FrameViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-maps-01-min.png)
+![](../../.gitbook/assets/documents-ui-maps-01-min.png)
 
 ## Display maps using MapViewer
 
@@ -270,11 +270,11 @@ return <MapViewer
 
 **Screen-print/s of the output:**
 
-![](../../../.gitbook/assets/documents-ui-maps-02-min.png)
+![](../../.gitbook/assets/documents-ui-maps-02-min.png)
 
 ## Further Reading
 
-****[**Get started with the Document UI SDK**](../../how-to-guides/use-the-document-ui-sdk.md)****
+****[**Get started with the Document UI SDK**](./)****
 
 ****[**Document UI SDK Customization**](documents-user-interface-customization.md)****
 

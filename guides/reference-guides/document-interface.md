@@ -288,4 +288,4 @@ The result of this POST request is either an updated branch with a successful ap
 
 ## Further Reading
 
-****[**Documents in a knowledge graph and how to use them**](../../explanations/document-graph-db/documents.md).
+****[**Documents in a knowledge graph and how to use them**](../../explanations/documents.md).

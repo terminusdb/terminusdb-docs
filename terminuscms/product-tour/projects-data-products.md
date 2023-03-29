@@ -86,7 +86,7 @@ On this page, you can -
 * Branch the project - along with reset and squash.
 * Time travel to any previous commit to inspect the project in the past.
 
-<figure><img src="../../.gitbook/assets/time-travel2.png" alt="Time travel to a previous commit"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/time-travel2 (1).png" alt="Time travel to a previous commit"><figcaption></figcaption></figure>
 
 ### Branch Projects
 
@@ -98,7 +98,7 @@ Each project can have one or more branches, the default is called main. Each bra
 
 Users can reset a branch to a specific commit or can delete the commit history by squashing it. They do this by selecting the ellipsis symbol next to the branch and then following the prompts.&#x20;
 
-<figure><img src="../../.gitbook/assets/branch-options.png" alt="Branch Options"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/branch-options (1).png" alt="Branch Options"><figcaption></figcaption></figure>
 
 ### Reset Project
 

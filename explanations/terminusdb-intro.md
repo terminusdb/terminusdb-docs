@@ -12,7 +12,7 @@ TerminusDB is a powerful, in-memory graph database enabling you to maximize your
 
 #### Diagram: Some key features of TerminusDB
 
-![](../../img/diagrams/terminusdb-what-is-it.png)
+![](../img/diagrams/terminusdb-what-is-it.png)
 
 ### Why choose TerminusDB?
 
@@ -52,19 +52,19 @@ TerminusDB is highly configurable with powerful features for rapidly and collabo
 
 #### Diagram: Reasons to choose TerminusDB
 
-![](../../img/diagrams/terminusdb-why-choose.png)
+![](../img/diagrams/terminusdb-why-choose.png)
 
 ### Git-like model
 
-TerminusDB has many Git-like features including revision-control and distributed collaboration. Similar to Git, TerminusDB is open source, model-driven, and uses the **Resource Description Framework** ([RDF](../glossary.md#rdf)) specification for collaboration.
+TerminusDB has many Git-like features including revision-control and distributed collaboration. Similar to Git, TerminusDB is open source, model-driven, and uses the **Resource Description Framework** ([RDF](glossary.md#rdf)) specification for collaboration.
 
 #### Delta-encoding
 
-TerminusDB implements an advanced Git-like model, using [delta encoding](../glossary.md#delta-encoding) to store append or delta-only changes to graphs. These deltas are stored in succinct [terminusdb-store](https://github.com/terminusdb/terminusdb-store) data structures. The delta encoding approach enables branch, merge, push, pull, clone, time-travel, and other Git-like operations.
+TerminusDB implements an advanced Git-like model, using [delta encoding](glossary.md#delta-encoding) to store append or delta-only changes to graphs. These deltas are stored in succinct [terminusdb-store](https://github.com/terminusdb/terminusdb-store) data structures. The delta encoding approach enables branch, merge, push, pull, clone, time-travel, and other Git-like operations.
 
 #### Diagram: TerminusDB Git-like operations
 
-![](../../img/diagrams/terminusdb-git-model.png)
+![](../img/diagrams/terminusdb-git-model.png)
 
 ### Further Reading
 
@@ -74,11 +74,11 @@ Read our [white paper on succinct data structures and delta encoding in modern d
 
 #### Get started
 
-[Get Started](../../terminusdb/index.md) with an overview of the available [Installation Options](../../terminusdb/install/) and an overview of the [TerminusDB Interfaces](broken-reference) and their interconnections.
+[Get Started](../terminusdb/index.md) with an overview of the available [Installation Options](../terminusdb/install/) and then check out the [how-to guides](../guides/how-to-guides/) for step-by-step help.
 
 #### TerminusCMS
 
-Take a look at the [product tour of TerminusCMS](../../terminuscms/product-tour/) for information about the headless content management system.
+Take a look at the [product tour of TerminusCMS](../terminuscms/product-tour/) for information about the headless content management system.
 
 #### Documents
 

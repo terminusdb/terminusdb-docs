@@ -1,12 +1,12 @@
 ---
 description: >-
-  How-to create a new branch in TerminusDB and TerminusCMS using the JavaScript
+  How-to create a new branch in TerminusDB and TerminusCMS using the Python
   Client
 ---
 
 # Branch a Project
 
-Assuming you have [connected with the JavaScript Client](connect-with-the-javascript-client.md) and [created a database](create-a-database.md) you can then create a branch of your project.
+Assuming you have [connected with the Python Client](../../use-the-python-client/connect-with-the-python-client.md) and [created a database](../../use-the-python-client/create-a-database.md) you can then create a branch of your project.
 
 Creating a branch is the same for TerminusDB and TerminusCMS. By default in TerminusDB or TerminusCMS you are working in the main branch.
 
@@ -14,36 +14,31 @@ Creating a branch is the same for TerminusDB and TerminusCMS. By default in Term
 
 Use this code to create a new branch starting from branch main head.
 
-```javascript
-const createBranch = async () => {
-  await client.branch("mybranch");
-  client.checkout("mybranch")
-}   
+```python
+client.create_branch("mybranch")
+client.branch("mybranch")
 ```
+
+If you add documents to the `mybranch`, they won't end up in the `main` branch unless you merge them.
 
 ### Create a new branch from mybranch branch
 
 Now you are in the branch called `mybranch`.
 
-You can create a new branch starting from the `mybranch` head
+You can create a new branch starting from the `mybranch` head. Since we are checked out on the "mybranch" already, we can just create a new branch from there. It will have `mybranch` as its parent.
 
-```javascript
-const createBranchFromMyBranch = async () => {
-  await client.branch("branch_from_mybranch","mybranch");
-  client.checkout("branch_from_mybranch")
-}   
+```python
+client.create_branch("branch_from_mybranch")
+client.branch("branch_from_mybranch")
 ```
 
 ### Get a branch list
 
-Get all of the database's branches in a list using a [WOQL](../../reference-guides/javascript-client-reference/woqlclient.md) library method
+Get all of the data product's branches in a list using a method
 
-```javascript
-const getBranchList = async () => {
-  const branchList = await TerminusClient.WOQL.lib().branches()
-  console.log("ExampleDatabase branch list", JSON.stringify(branchList.bindings,null,4))
-  
-}   
+```python
+branches = client.get_all_branches()
+print(branches)
 ```
 
 Response example
@@ -98,5 +93,5 @@ Response example
             "@value":"prh0yvftqmsrgctn8gqvdxv7gc4i8p8"
          }
       }
-   ]s
+   ]
 ```

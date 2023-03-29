@@ -103,7 +103,7 @@ and(
 
 ### WOQL and JSON-LD
 
-WOQL uses JSON-LD and a formally specified [ontology](../glossary.md#ontology) to define the language and transmit queries.
+WOQL uses JSON-LD and a formally specified [ontology](glossary.md#ontology) to define the language and transmit queries.
 
 JSON-LD is sometimes tedious for us to read and write. Therefore, WOQL.js is designed to be as easy as possible for developers to write. All WOQL.js queries are translated into the equivalent JSON-LD format for transmission over networks.
 
@@ -138,7 +138,7 @@ WOQL allows variables or constants to be substituted for any argument to all its
 
 #### Unification
 
-WOQL uses the formal-logical approach to variables known as [unification](../glossary.md#unification) borrowed from the Prolog engine that implements WOQL within TerminusDB.
+WOQL uses the formal-logical approach to variables known as [unification](glossary.md#unification) borrowed from the Prolog engine that implements WOQL within TerminusDB.
 
 #### Unification in variables
 
@@ -167,7 +167,7 @@ triple('v:a', 'v:b', 'v:c')
 
 ### WOQL prefixes
 
-Internally, TerminusDB uses strict [RDF](../glossary.md#rdf) rules to represent all data. This means all identifiers and properties are represented by [IRIs](../glossary.md#iri) (a superset of URLs.)
+Internally, TerminusDB uses strict [RDF](glossary.md#rdf) rules to represent all data. This means all identifiers and properties are represented by [IRIs](glossary.md#iri) (a superset of URLs.)
 
 #### Shorthand prefixes
 
@@ -199,7 +199,7 @@ WOQL goes a step beyond supporting prefixes by automatically applying prefixes w
 
 #### WOQL Reference
 
-[JavaScript](../../guides/reference-guides/javascript-client-reference/) and [Python](../../guides/reference-guides/python-client-reference/terminusdb\_client.client.md) WOQL Reference guides
+[JavaScript](../guides/reference-guides/javascript-client-reference/) and [Python](../guides/reference-guides/python-client-reference/terminusdb\_client.client.md) WOQL Reference guides
 
 #### How-to guides
 

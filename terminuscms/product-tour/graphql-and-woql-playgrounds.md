@@ -4,7 +4,7 @@ description: An overview of the GraphQL and WOQL playgrounds in the TerminusCMS 
 
 # GraphQL & WOQL Playgrounds
 
-TerminusCMS features a query playground for [GraphQL](../../guides/reference-guides/graphql-reference/graphql\_query.md) and [WOQL](../../explanations/document-graph-db/woql.md).
+TerminusCMS features a query playground for [GraphQL](../../guides/reference-guides/graphql-reference/graphql\_query.md) and [WOQL](../../explanations/woql.md).
 
 ### GraphQL Playground
 

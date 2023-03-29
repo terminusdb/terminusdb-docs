@@ -157,7 +157,7 @@ client.create_database("example_db")
 
 ### Use the document interface
 
-To use the TerminusCMS document interface, [create a schema](start-with-client.md#code-define-a-schema) and [add documents](start-with-client.md#code-add-documents) to the schema. Refer to [Documents](../explanations/document-graph-db/documents.md) for an overview of the document interface. After creating or connecting to a database, create a schema to add and retrieve data. A simple player roster is used as an example. Using basic [Player roster](start-with-client.md#data-player-roster) data, the steps below are demonstrated.
+To use the TerminusCMS document interface, [create a schema](start-with-client.md#code-define-a-schema) and [add documents](start-with-client.md#code-add-documents) to the schema. Refer to [Documents](../explanations/documents.md) for an overview of the document interface. After creating or connecting to a database, create a schema to add and retrieve data. A simple player roster is used as an example. Using basic [Player roster](start-with-client.md#data-player-roster) data, the steps below are demonstrated.
 
 * [Create a schema](start-with-client.md#code-define-a-schema)
 * [Add a schema](start-with-client.md#code-add-a-schema)

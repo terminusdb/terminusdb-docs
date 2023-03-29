@@ -50,7 +50,7 @@ Use the `FrameViewer` object of `terminusdb-documents-ui` to configure, customiz
 A common use of `terminusdb-documents-ui` is as follows:
 
 1. Set **** up a Webpack.
-2. Use the [TerminusDB JavaScript client](../reference-guides/javascript-client-reference/woqlclient.md).
+2. Use the [TerminusDB JavaScript client](../../guides/reference-guides/javascript-client-reference/woqlclient.md).
 3. Use the client function `getSchemaFrame` to retrieve frame data from a TerminusDB database.
 4. Set custom values and behaviour for `FrameViewer` parameters and functions as required.
 5. Call `FrameViewer` to display frame data in the specified form.
@@ -77,11 +77,11 @@ try {
 
 Use three simple steps - input, configure, and output:
 
-[Step 1. Create frame data](use-the-document-ui-sdk.md#step-1.-create-frame-data)
+[Step 1. Create frame data](./#step-1.-create-frame-data)
 
-[Step 2. Configure properties and functions](use-the-document-ui-sdk.md#step-2.-configure-properties-and-functions)
+[Step 2. Configure properties and functions](./#step-2.-configure-properties-and-functions)
 
-[Step 3. Generate the form](use-the-document-ui-sdk.md#step-3.-generate-the-form)
+[Step 3. Generate the form](./#step-3.-generate-the-form)
 
 #### Step 1. Create frame data
 
@@ -159,9 +159,9 @@ return <FrameViewer
 
 The `FrameViewer` object supports three modes:
 
-* [Create](use-the-document-ui-sdk.md#create-mode)
-* [Edit](use-the-document-ui-sdk.md#edit-mode)
-* [View](use-the-document-ui-sdk.md#view-mode)
+* [Create](./#create-mode)
+* [Edit](./#edit-mode)
+* [View](./#view-mode)
 
 #### Create mode
 
@@ -255,10 +255,10 @@ return <FrameViewer
 
 The Document UI SDK reference guide:
 
-****[**Documents UI SDK data types**](../reference-guides/document-ui-sdk/documents-user-interface-data-types.md).
+****[**Documents UI SDK data types**](documents-user-interface-data-types.md).
 
-****[**Documents UI SDK customization**](../reference-guides/document-ui-sdk/documents-user-interface-customization.md)**.**
+****[**Documents UI SDK customization**](documents-user-interface-customization.md)**.**
 
-****[**Documents UI SDK Geographic Maps**](../reference-guides/document-ui-sdk/documents-user-interface-geographic-maps.md)**.**
+****[**Documents UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)**.**
 
-****[**TerminusDB JavaScript client reference guide**](../reference-guides/javascript-client-reference/woqlclient.md)**.**
+****[**TerminusDB JavaScript client reference guide**](../../guides/reference-guides/javascript-client-reference/woqlclient.md)**.**

@@ -18,6 +18,6 @@ TerminusCMS is free to get started. When you sign up, you are assigned the commu
 
 ### Demo Projects
 
-There are several demo projects available to clone and experiment with. Sign up and visit your team home page to clone these projects.
+There are several [demo projects](guides/how-to-guides/use-collaboration-features/with-the-javascript-client/clone-a-project.md) available to clone and experiment with. Sign up and visit your team home page to clone these projects.
 
 <figure><img src=".gitbook/assets/terminuscms-demos.png" alt=""><figcaption><p>Your team home page features a number of demo projects to clone and experiment with.</p></figcaption></figure>

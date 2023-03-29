@@ -4,7 +4,7 @@ WOQL is a powerful query language that enables you to concisely query complex da
 
 #### Diagram: The three core WOQL concepts
 
-![](../../.gitbook/assets/terminusdb-woql-concepts.png)
+![](../../img/diagrams/terminusdb-woql-concepts.png)
 
 ## WOQL triples
 
@@ -307,4 +307,4 @@ jsonld = WOQLQuery().dict()
 
 [**WOQL Class Reference**](../../guides/reference-guides/woql-class.md)
 
-[**WOQL Explanation**](../document-graph-db/woql.md)
+[**WOQL Explanation**](../woql.md)
