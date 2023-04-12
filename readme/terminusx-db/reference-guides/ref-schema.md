@@ -38,6 +38,7 @@ This is the Ref schema. It gives a specification for storage of references, bran
 | `identifier` | `xsd:string` | The identifier of the commit. |
 | `timestamp` | `xsd:decimal` | The timestamp for the commit. |
 | `parent` | `Commit` | The previous commit (if one exists). |
+| `migration` | `xsd:string` | The schema migration script (if one exists). |
 
 ---
 
