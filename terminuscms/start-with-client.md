@@ -90,7 +90,7 @@ client.setApiKey(process.env.TERMINUSDB_ACCESS_TOKEN)
 ```python
 from terminusdb_client import Client
 
-team     = "logicistics" # My team name.
+team     = "logistics" # My team name.
 endpoint = f"https://cloud.terminusdb.com/{team}/"
 client   = Client(endpoint)
 
