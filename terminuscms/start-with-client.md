@@ -592,7 +592,7 @@ const getTeams = async () => {
 ```python
 teams = client.query_document({"@type"   : "Team"})
 
-print(list(matches))
+print(list(teams))
 ```
 {% endtab %}
 {% endtabs %}
