@@ -502,7 +502,7 @@ const team_schema = [
 
 {% tab title="Python" %}
 ```python
-from typing import  Set
+from typing import Set
 
 class Team(DocumentTemplate):
     _schema = schema
@@ -598,7 +598,7 @@ const getTeams = async () => {
 
 {% tab title="Python" %}
 ```python
-teams = client.query_document({"@type"   : "Team"})
+teams = client.query_document({"@type": "Team"})
 
 print(list(teams))
 ```
