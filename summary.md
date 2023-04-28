@@ -29,6 +29,7 @@
 
 * [How-to Guides](guides/how-to-guides/README.md)
   * [Clone a Demo Project](guides/how-to-guides/cloning-a-demo-project.md)
+  * [Push a Data Product Using the CLI](guides/how-to-guides/push-a-data-product-using-the-cli.md)
   * [Use the JavaScript Client](guides/how-to-guides/use-the-javascript-client/README.md)
     * [Connect with the JavaScript Client](guides/how-to-guides/use-the-javascript-client/connect-with-the-javascript-client.md)
     * [Create a Database](guides/how-to-guides/use-the-javascript-client/create-a-database.md)
