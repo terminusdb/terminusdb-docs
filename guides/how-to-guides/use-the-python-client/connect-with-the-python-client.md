@@ -31,11 +31,11 @@ export TERMINUSDB_ACCESS_TOKEN="..."
 At this point you can create the client with this code:
 
 ```python
-from terminusdb_client import WOQLClient
+from terminusdb_client import Client
 user     = "user@email.com"
 team     = "Team_Name" 
-endpoint = "https://cloud.terminusdb.com/{team}/"
-client   = WOQLClient(endpoint)
+endpoint = f"https://cloud.terminusdb.com/{team}/"
+client   = Client(endpoint)
 
 client.connect(user=user, team=team, use_token=True)
 ```
