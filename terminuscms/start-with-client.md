@@ -6,12 +6,12 @@ description: >-
 
 # Start with a Client API
 
-This guide demonstrates the basic use of the **WOQLClient** library to connect to TerminusCMS with a JavaScript or Python client. Refer to the [JavaScript Client](../guides/reference-guides/javascript-client-reference/woqlclient.md) or [Python Client](../guides/reference-guides/python-client-reference/terminusdb\_client.client.md) references guides for detailed documentation. The code discussed on this page is also available in full:
+This guide demonstrates the basic use of the **Client** library to connect to TerminusCMS with a JavaScript or Python client. Refer to the [JavaScript Client](../guides/reference-guides/javascript-client-reference/woqlclient.md) or [Python Client](../guides/reference-guides/python-client-reference/terminusdb\_client.client.md) references guides for detailed documentation. The code discussed on this page is also available in full:
 
 * JavaScript: [getting-started.js](https://github.com/terminusdb/terminusdb-docs/blob/3df3c593b4f3d648732fea4e7e5ed3ce9348681f/code-examples/start-with-client/getting-started.js)
 * Python: [getting-started.py](https://github.com/terminusdb/terminusdb-docs/blob/3df3c593b4f3d648732fea4e7e5ed3ce9348681f/code-examples/start-with-client/getting-started.py)
 
-### Install WOQLClient
+### Install Client
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -53,19 +53,19 @@ python3 -m pip install terminusdb-client
 {% endtab %}
 {% endtabs %}
 
-### Connect with WOQLClient
+### Connect with Client
 
-A `WOQLClient` object enables connection to TerminusCMS (or TerminusDB.) To create a client object:
+A `Client` object enables connection to TerminusCMS (or TerminusDB.) To create a client object:
 
 * [Get your API key](get-api-key.md)
 * Copy the JavaScript/Python code snippet generated in the step above.
 * Provide the URL to a database server.
 
-#### Define a WOQLClient
+#### Define a Client
 
-Define and initialize a WOQLClient, and connect to a database using the example below.
+Define and initialize a Client, and connect to a database using the example below.
 
-_**Code: Define and initialize a WOQLClient**_
+_**Code: Define and initialize a Client**_
 
 {% tabs %}
 {% tab title="JavaScript" %}
@@ -88,20 +88,22 @@ client.setApiKey(process.env.TERMINUSDB_ACCESS_TOKEN)
 
 {% tab title="Python" %}
 ```python
-from terminusdb_client import WOQLClient
-user     = "jimbo"
-team     = "logicistics" # My team name.
-endpoint = "https://cloud.terminusdb.com/{team}/"
-client   = WOQLClient(endpoint)
+from terminusdb_client import Client
 
-client.connect(user=user, team=team, use_token=True)
+team     = "logicistics" # My team name.
+endpoint = f"https://cloud.terminusdb.com/{team}/"
+client   = Client(endpoint)
+
+# Set the key as an environment variable called:
+# TERMINUSDB_ACCESS_TOKEN in your shell first
+client.connect(team=team, use_token=True)
 ```
 {% endtab %}
 {% endtabs %}
 
-#### Use a WOQLClient
+#### Use a Client
 
-Common uses of a WOQLClient include [Connecting to an existing database](start-with-client.md#code-connect-to-a-database) and [creating a new database](start-with-client.md#code-create-a-database).
+Common uses of a Client include [Connecting to an existing database](start-with-client.md#code-connect-to-a-database) and [creating a new database](start-with-client.md#code-create-a-database).
 
 _**Code: Connect to a database**_
 
@@ -109,14 +111,18 @@ Connect to an existing database using the example below.
 
 {% tabs %}
 {% tab title="JavaScript" %}
+Change `ExampleDatabase` with a database that you created.
+
 ```javascript
 client.db('ExampleDatabase');
 ```
 {% endtab %}
 
 {% tab title="Python" %}
+Change `example_db` with a database that you created.
+
 ```python
-connect(team=team, user="admin", db="example_db", use_token=True)
+client.connect(team=team, user="admin", db="example_db", use_token=True)
 ```
 {% endtab %}
 {% endtabs %}
@@ -149,7 +155,7 @@ createNewDB();
 
 {% tab title="Python" %}
 ```python
-client.connect(team=team, user="admin", use_token=True)
+client.connect(team=team, use_token=True)
 client.create_database("example_db")
 ```
 {% endtab %}
@@ -192,9 +198,9 @@ const schema = { "@type" : "Class",
 
 {% tab title="Python" %}
 ```python
-from terminusdb_client.woqlschema import WOQLSchema, DocumentTemplate, LexicalKey
+from terminusdb_client.schema import Schema, DocumentTemplate, LexicalKey
 
-schema = WOQLSchema()
+schema = Schema()
 
 class Player(DocumentTemplate):
     _schema = schema
@@ -247,13 +253,13 @@ const objects = [
         name    : "Doug",
         position: "Full Back",
     },
-    { 
-        "@type" : "Player", 
-        name    : "Karen", 
-        position: "Center Forward" 
+    {
+        "@type" : "Player",
+        name    : "Karen",
+        position: "Center Forward",
     }
 ];
-        
+
 await client.addDocument(objects);
 ```
 {% endtab %}
@@ -265,7 +271,7 @@ Add documents to the schema using `insert_document`.
 objects = [
     Player(name="George", position="Centre Back"),
     Player(name="Doug", position="Full Back"),
-    Player(name="Karen", position="Centre Forward")
+    Player(name="Karen", position="Centre Forward"),
     ]
 
 client.insert_document(objects, commit_msg = f"Inserting player data")
@@ -444,8 +450,10 @@ const queryDocuments = async () => {
 Get documents using `WOQLQuery()` and `WOQLQuery().triple()` to create a WOQL query then execute that query using `client.query()`. Results, stored in `results`, are shown further below.
 
 ```python
-WOQL = WOQLQuery()
-query = WOQL.triple("v:Player", "position", WOQL.string("Full Back")).triple(
+from terminusdb_client import WOQLQuery
+from terminusdb_client.query_syntax import *
+
+query = triple("v:Player", "position", string("Full Back")).triple(
     "v:Player", "position", "v:position"
 )
 results = client.query(query)
@@ -494,7 +502,7 @@ const team_schema = [
 
 {% tab title="Python" %}
 ```python
-from typing import  Set
+from typing import Set
 
 class Team(DocumentTemplate):
     _schema = schema
@@ -563,7 +571,7 @@ george = schema.import_objects(george_raw)
 
 team_objects = [
     Team(name="Wildcats", position={doug, karen}),
-    Team(name="Donkeys", position={george},
+    Team(name="Donkeys", position={george}),
 ]
 
 client.insert_document(team_objects, commit_msg = f"Inserting teams data")
@@ -590,9 +598,9 @@ const getTeams = async () => {
 
 {% tab title="Python" %}
 ```python
-teams = client.query_document({"@type"   : "Team"})
+teams = client.query_document({"@type": "Team"})
 
-print(list(matches))
+print(list(teams))
 ```
 {% endtab %}
 {% endtabs %}
