@@ -1,20 +1,24 @@
+
 # WOQLClient
-
 ## WOQLClient
+The core functionality of the TerminusDB javascript client is
+defined in the WOQLClient class - in the woqlClient.js file. This class provides
+methods which allow you to directly get and set all of the configuration and API
+endpoints of the client. The other parts of the WOQL core - connectionConfig.js
+and connectionCapabilities.js - are used by the client to store internal state - they
+should never have to be accessed directly. For situations where you want to communicate
+with a TerminusDB server API, the WOQLClient class is all you will need.
 
-The core functionality of the TerminusDB javascript client is defined in the WOQLClient class - in the woqlClient.js file. This class provides methods which allow you to directly get and set all of the configuration and API endpoints of the client. The other parts of the WOQL core - connectionConfig.js and connectionCapabilities.js - are used by the client to store internal state - they should never have to be accessed directly. For situations where you want to communicate with a TerminusDB server API, the WOQLClient class is all you will need.
+**License**: Apache Version 2  
 
-**License**: Apache Version 2
+## new WOQLClient(serverUrl, [params])
 
-## new WOQLClient(serverUrl, \[params])
+| Param | Type | Description |
+| --- | --- | --- |
+| serverUrl | <code>string</code> | the terminusdb server url |
+| [params] | <code>typedef.ParamsObj</code> | an object with the connection parameters |
 
-| Param     | Type                | Description                              |
-| --------- | ------------------- | ---------------------------------------- |
-| serverUrl | `string`            | the terminusdb server url                |
-| \[params] | `typedef.ParamsObj` | an object with the connection parameters |
-
-**Example**
-
+**Example**  
 ```javascript
 //to connect with your local terminusDB
 const client = new TerminusClient.WOQLClient(SERVER_URL,{user:"admin",key:"myKey"})
@@ -26,7 +30,7 @@ async function getSchema() {
 //The client has an internal state which defines what
 //organization / database / repository / branch / ref it is currently attached to
 
-//to connect with your TerminusCMS Cloud Instance
+//to connect with your TerminusDB Cloud Instance
 const client = new TerminusClient.WOQLClient('SERVER_CLOUD_URL/mycloudTeam',
                      {user:"myemail@something.com", organization:'mycloudTeam'})
 
@@ -48,179 +52,160 @@ async function getSchema() {
 ## TerminusDB Client API
 
 ## Connect
+##### ~~woqlClient.connect([params]) ⇒ <code>Promise</code>~~
+***Deprecated***
 
-~~**woqlClient.connect(\[params]) ⇒**** ****`Promise`**~~
+You can call this to get the server info or override the start params
+configuration, this.connectionConfig.server will be used if present,
+or the promise will be rejected.
 
-_**Deprecated**_
+**Returns**: <code>Promise</code> - the connection capabilities response object or an error object  
 
-Connect to a Terminus server at the given URI with an API key Stores the system:ServerCapability document returned in the connection register which stores, the url, key, capabilities, and database meta-data for the connected server this.connectionConfig.server will be used if present, or the promise will be rejected.
+| Param | Type | Description |
+| --- | --- | --- |
+| [params] | <code>typedef.ParamsObj</code> | TerminusDB Server connection parameters |
 
-**Returns**: `Promise` - the connection capabilities response object or an error object
-
-| Param     | Type                | Description                             |
-| --------- | ------------------- | --------------------------------------- |
-| \[params] | `typedef.ParamsObj` | TerminusDB Server connection parameters |
-
-**Example**
-
+**Example**  
 ```javascript
 client.connect()
 ```
 
 ## Create Database
-
-**woqlClient.createDatabase(dbId, dbDetails, \[orgId]) ⇒ `Promise`**
-
+##### woqlClient.createDatabase(dbId, dbDetails, [orgId]) ⇒ <code>Promise</code>
 Creates a new database in TerminusDB server
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param     | Type                | Description                                                                |
-| --------- | ------------------- | -------------------------------------------------------------------------- |
-| dbId      | `string`            | The id of the new database to be created                                   |
-| dbDetails | `typedef.DbDetails` | object containing details about the database to be created                 |
-| \[orgId]  | `string`            | optional organization id - if absent default local organization id is used |
+| Param | Type | Description |
+| --- | --- | --- |
+| dbId | <code>string</code> | The id of the new database to be created |
+| dbDetails | <code>typedef.DbDetails</code> | object containing details about the database to be created |
+| [orgId] | <code>string</code> | optional organization id - if absent default local organization id is used |
 
-**Example**
-
+**Example**  
 ```javascript
 //remember set schema:true if you need to add a schema graph
 client.createDatabase("mydb", {label: "My Database", comment: "Testing", schema: true})
 ```
 
 ## Delete Database
-
-**woqlClient.deleteDatabase(dbId, \[orgId], \[force]) ⇒ `Promise`**
-
+##### woqlClient.deleteDatabase(dbId, [orgId], [force]) ⇒ <code>Promise</code>
 Deletes a database from a TerminusDB server
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param    | Type      | Description                                                                                            |
-| -------- | --------- | ------------------------------------------------------------------------------------------------------ |
-| dbId     | `string`  | The id of the database to be deleted                                                                   |
-| \[orgId] | `string`  | the id of the organization to which the database belongs (in desktop use, this will always be “admin”) |
-| \[force] | `boolean` |                                                                                                        |
+| Param | Type | Description |
+| --- | --- | --- |
+| dbId | <code>string</code> | The id of the database to be deleted |
+| [orgId] | <code>string</code> | the id of the organization to which the database belongs (in desktop use, this will always be “admin”) |
+| [force] | <code>boolean</code> |  |
 
-**Example**
-
+**Example**  
 ```javascript
 client.deleteDatabase("mydb")
 ```
 
 ## Get Triples
+##### woqlClient.getTriples(graphType) ⇒ <code>Promise</code>
+Retrieve the contents of a graph within a TerminusDB as triples, encoded in
+the turtle (ttl) format
 
-**woqlClient.getTriples(graphType) ⇒ `Promise`**
+**Returns**: <code>Promise</code> - A promise that returns the call response object (with
+the contents being a string representing a set of triples in turtle (ttl) format),
+or an Error if rejected.  
 
-Retrieve the contents of a graph within a TerminusDB as triples, encoded in the turtle (ttl) format
+| Param | Type | Description |
+| --- | --- | --- |
+| graphType | <code>typedef.GraphType</code> | type of graph to get triples from, either “instance” or  “schema” |
 
-**Returns**: `Promise` - A promise that returns the call response object (with the contents being a string representing a set of triples in turtle (ttl) format), or an Error if rejected.
-
-| Param     | Type                | Description                                                      |
-| --------- | ------------------- | ---------------------------------------------------------------- |
-| graphType | `typedef.GraphType` | type of graph to get triples from, either “instance” or “schema” |
-
-**Example**
-
+**Example**  
 ```javascript
 const turtle = await client.getTriples("schema", "alt")
 ```
 
 ## Update Triples
+##### woqlClient.updateTriples(graphType, turtle, commitMsg) ⇒ <code>Promise</code>
+Replace the contents of the specified graph with the passed triples encoded
+in the turtle (ttl) format
 
-**woqlClient.updateTriples(graphType, turtle, commitMsg) ⇒ `Promise`**
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-Replace the contents of the specified graph with the passed triples encoded in the turtle (ttl) format
+| Param | Type | Description |
+| --- | --- | --- |
+| graphType | <code>string</code> | type of graph  |instance|schema|inference| |
+| turtle | <code>string</code> | string encoding triples in turtle (ttl) format |
+| commitMsg | <code>string</code> | Textual message describing the reason for the update |
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
-
-| Param     | Type     | Description                                          |
-| --------- | -------- | ---------------------------------------------------- |
-| graphType | `string` | type of graph                                        |
-| turtle    | `string` | string encoding triples in turtle (ttl) format       |
-| commitMsg | `string` | Textual message describing the reason for the update |
-
-**Example**
-
+**Example**  
 ```javascript
 client.updateTriples("schema", "alt", turtle_string, "dumping triples to graph alt")
 ```
 
 ## Query
-
-**woqlClient.query(woql, \[commitMsg], \[allWitnesses], \[lastDataVersion], \[getDataVersion]) ⇒ `Promise`**
-
+##### woqlClient.query(woql, [commitMsg], [allWitnesses], [lastDataVersion], [getDataVersion]) ⇒ <code>Promise</code>
 Executes a WOQL query on the specified database and returns the results
 
-**Returns**: `Promise` - A promise that returns the call response object or object having _result_ and _dataVersion_ object if _**getDataVersion**_ parameter is true, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object or object having *result*
+and *dataVersion* object if ***getDataVersion*** parameter is true, or an Error if rejected.  
 
-| Param              | Type        | Description                                                                                                                             |
-| ------------------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| woql               | `WOQLQuery` | an instance of the WOQLQuery class                                                                                                      |
-| \[commitMsg]       | `string`    | a message describing the reason for the change that will be written into the commit log (only relevant if the query contains an update) |
-| \[allWitnesses]    | `boolean`   |                                                                                                                                         |
-| \[lastDataVersion] | `string`    | the last data version tracking id.                                                                                                      |
-| \[getDataVersion]  | `boolean`   | If true the function will return object having result and dataVersion.                                                                  |
+| Param | Type | Description |
+| --- | --- | --- |
+| woql | <code>WOQLQuery</code> | an instance of the WOQLQuery class |
+| [commitMsg] | <code>string</code> | a message describing the reason for the change that will be written into the commit log (only relevant if the query contains an update) |
+| [allWitnesses] | <code>boolean</code> |  |
+| [lastDataVersion] | <code>string</code> | the last data version tracking id. |
+| [getDataVersion] | <code>boolean</code> | If true the function will return object having result and dataVersion. |
 
-**Example**
-
+**Example**  
 ```javascript
 const result = await client.query(WOQL.star())
 ```
 
 ## Clonedb
-
-**woqlClient.clonedb(cloneSource, newDbId, \[orgId]) ⇒ `Promise`**
-
+##### woqlClient.clonedb(cloneSource, newDbId, [orgId]) ⇒ <code>Promise</code>
 Clones a remote repo and creates a local copy
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param       | Type                         | Description                                                                                                           |
-| ----------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| cloneSource | `typedef.CloneSourceDetails` | object describing the source branch to be used as a base                                                              |
-| newDbId     | `string`                     | id of the new cloned database on the local server                                                                     |
-| \[orgId]    | `string`                     | id of the local organization that the new cloned database will be created in (in desktop mode this is always “admin”) |
+| Param | Type | Description |
+| --- | --- | --- |
+| cloneSource | <code>typedef.CloneSourceDetails</code> | object describing the source branch to be used as a base |
+| newDbId | <code>string</code> | id of the new cloned database on the local server |
+| [orgId] | <code>string</code> | id of the local organization that the new cloned database will be created in (in desktop mode this is always “admin”) |
 
-**Example**
-
+**Example**  
 ```javascript
 client.clonedb({remote_url: "https://my.terminusdb.com/myorg/mydb", label "Cloned DB", comment: "Cloned from mydb"}, newid: "mydb")
 ```
 
 ## Branch
+##### woqlClient.branch(newBranchId, [isEmpty]) ⇒ <code>Promise</code>
+Creates a new branch with a TerminusDB database, starting from the current context of
+the client (branch / ref)
 
-**woqlClient.branch(newBranchId, \[isEmpty]) ⇒ `Promise`**
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-Creates a new branch with a TerminusDB database, starting from the current context of the client (branch / ref)
+| Param | Type | Description |
+| --- | --- | --- |
+| newBranchId | <code>string</code> | local identifier of the new branch the ID of the new branch to be created |
+| [isEmpty] | <code>boolean</code> | if isEmpty is true it will create a empty branch. |
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
-
-| Param       | Type      | Description                                                               |
-| ----------- | --------- | ------------------------------------------------------------------------- |
-| newBranchId | `string`  | local identifier of the new branch the ID of the new branch to be created |
-| \[isEmpty]  | `boolean` | if isEmpty is true it will create a empty branch.                         |
-
-**Example**
-
+**Example**  
 ```javascript
 client.branch("dev")
 ```
 
 ## Rebase
-
-**woqlClient.rebase(rebaseSource) ⇒ `Promise`**
-
+##### woqlClient.rebase(rebaseSource) ⇒ <code>Promise</code>
 Merges the passed branch into the current one using the rebase operation
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param        | Type     | Description                                            |
-| ------------ | -------- | ------------------------------------------------------ |
-| rebaseSource | `object` | json describing the source branch to be used as a base |
+| Param | Type | Description |
+| --- | --- | --- |
+| rebaseSource | <code>object</code> | json describing the source branch to be used as a base |
 
-**Example**
-
+**Example**  
 ```javascript
 //from the branch head
 client.rebase({rebase_from: "admin/db_name/local/branch/branch_name", message:
@@ -231,152 +216,139 @@ message: "Merging from dev")
 ```
 
 ## Pull
-
-**woqlClient.pull(remoteSourceRepo) ⇒ `Promise`**
-
+##### woqlClient.pull(remoteSourceRepo) ⇒ <code>Promise</code>
 Pull changes from a branch on a remote database to a branch on a local database
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param            | Type                        | Description                                 |
-| ---------------- | --------------------------- | ------------------------------------------- |
-| remoteSourceRepo | `typedef.RemoteRepoDetails` | an object describing the source of the pull |
+| Param | Type | Description |
+| --- | --- | --- |
+| remoteSourceRepo | <code>typedef.RemoteRepoDetails</code> | an object describing the source of the pull |
 
-**Example**
-
+**Example**  
 ```javascript
 client.pull({remote: "origin", remote_branch: "main", message: "Pulling from remote"})
 ```
 
 ## Push
-
-**woqlClient.push(remoteTargetRepo) ⇒ `Promise`**
-
+##### woqlClient.push(remoteTargetRepo) ⇒ <code>Promise</code>
 Push changes from a branch on a local database to a branch on a remote database
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param            | Type                        | Description                                                                                                                       |
-| ---------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| remoteTargetRepo | `typedef.RemoteRepoDetails` | an object describing the target of the push {remote: "origin", "remote\_branch": "main", "author": "admin", "message": "message"} |
+| Param | Type | Description |
+| --- | --- | --- |
+| remoteTargetRepo | <code>typedef.RemoteRepoDetails</code> | an object describing the target of the push {remote: "origin", "remote_branch": "main", "author": "admin", "message": "message"} |
 
-**Example**
-
+**Example**  
 ```javascript
 client.push({remote: "origin", remote_branch: "main", message: "Pulling from remote"})
 ```
 
 ## Fetch
-
-**woqlClient.fetch(remoteId) ⇒ `Promise`**
-
+##### woqlClient.fetch(remoteId) ⇒ <code>Promise</code>
 Fetch updates to a remote database to a remote repository with the local database
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param    | Type     | Description                              |
-| -------- | -------- | ---------------------------------------- |
-| remoteId | `string` | if of the remote to fetch (eg: 'origin') |
+| Param | Type | Description |
+| --- | --- | --- |
+| remoteId | <code>string</code> | if of the remote to fetch (eg: 'origin') |
 
-## local\_auth
 
-~~**woqlClient.local\_auth**~~
+## local_auth
+##### ~~woqlClient.local\_auth~~
+***Deprecated***
 
-_**Deprecated**_
+Use [#localAuth](#localAuth) instead.
 
-Use [#localAuth](woqlclient.md#localAuth) instead.
 
-## remote\_auth
+## remote_auth
+##### ~~woqlClient.remote\_auth~~
+***Deprecated***
 
-~~**woqlClient.remote\_auth**~~
+Use [#remoteAuth](#remoteAuth) instead.
 
-_**Deprecated**_
-
-Use [#remoteAuth](woqlclient.md#remoteAuth) instead.
 
 ## setApiKey
-
-**woqlClient.setApiKey(accessToken)**
-
+##### woqlClient.setApiKey(accessToken)
 set the api key to access the cloud resources
 
-| Param       | Type     |
-| ----------- | -------- |
-| accessToken | `string` |
+
+| Param | Type |
+| --- | --- |
+| accessToken | <code>string</code> | 
+
 
 ## customHeaders
-
-**woqlClient.customHeaders(customHeaders) ⇒ `object`**
-
+##### woqlClient.customHeaders(customHeaders) ⇒ <code>object</code>
 add extra headers to your request
 
-| Param         | Type     |
-| ------------- | -------- |
-| customHeaders | `object` |
+
+| Param | Type |
+| --- | --- |
+| customHeaders | <code>object</code> | 
+
 
 ## copy
+##### woqlClient.copy() ⇒ [<code>WOQLClient</code>](#WOQLClient)
+creates a copy of the client with identical internal state and context
+useful if we want to change context for a particular API call without changing
+the current client context
 
-**woqlClient.copy() ⇒** [**`WOQLClient`**](woqlclient.md#WOQLClient)
-
-creates a copy of the client with identical internal state and context useful if we want to change context for a particular API call without changing the current client context
-
-**Returns**: [`WOQLClient`](woqlclient.md#WOQLClient) - new client object with identical state to original but which can be manipulated independently\
-**Example**
-
+**Returns**: [<code>WOQLClient</code>](#WOQLClient) - new client object with identical state to original but
+which can be manipulated independently  
+**Example**  
 ```javascript
 let newClient = client.copy()
 ```
 
 ## server
+##### woqlClient.server() ⇒ <code>string</code>
+Gets the current connected server url
+it can only be set creating a new WOQLCLient instance
 
-**woqlClient.server() ⇒ `string`**
-
-Gets the current connected server url it can only be set creating a new WOQLCLient instance
 
 ## api
-
-**woqlClient.api() ⇒ `string`**
-
+##### woqlClient.api() ⇒ <code>string</code>
 Retrieve the URL of the server’s API base that we are currently connected to
 
-**Returns**: `string` - the URL of the TerminusDB server api endpoint we are connected to (typically server() + “api/”)\
-**Example**
-
+**Returns**: <code>string</code> - the URL of the TerminusDB server api endpoint we are connected
+to (typically server() + “api/”)  
+**Example**  
 ```javascript
 let api_url = client.api()
 ```
 
 ## organization
+##### woqlClient.organization([orgId]) ⇒ <code>string</code> \| <code>boolean</code>
+Gets/Sets the client’s internal organization context value, if you change the organization
+name the databases list will be set to empty
 
-**woqlClient.organization(\[orgId]) ⇒ `string` | `boolean`**
 
-Gets/Sets the client’s internal organization context value, if you change the organization name the databases list will be set to empty
+| Param | Type | Description |
+| --- | --- | --- |
+| [orgId] | <code>string</code> \| <code>boolean</code> | the organization id to set the context to |
 
-| Param    | Type                  | Description                               |
-| -------- | --------------------- | ----------------------------------------- |
-| \[orgId] | `string` \| `boolean` | the organization id to set the context to |
-
-**Example**
-
+**Example**  
 ```javascript
 client.organization("admin")
 ```
 
 ## hasDatabase
-
-**woqlClient.hasDatabase(\[orgName], \[dbName]) ⇒ `Promise`**
-
+##### woqlClient.hasDatabase([orgName], [dbName]) ⇒ <code>Promise</code>
 Checks if a database exists
 
-Returns true if a DB exists and false if it doesn't. Other results throw an exception.
+Returns true if a DB exists and false if it doesn't. Other results
+throw an exception.
 
-| Param      | Type     | Description                               |
-| ---------- | -------- | ----------------------------------------- |
-| \[orgName] | `string` | the organization id to set the context to |
-| \[dbName]  | `string` | the db name to set the context to         |
 
-**Example**
+| Param | Type | Description |
+| --- | --- | --- |
+| [orgName] | <code>string</code> | the organization id to set the context to |
+| [dbName] | <code>string</code> | the db name to set the context to |
 
+**Example**  
 ```javascript
 async function executeIfDatabaseExists(f){
      const hasDB = await client.hasDatabase("admin", "testdb")
@@ -387,15 +359,12 @@ async function executeIfDatabaseExists(f){
 ```
 
 ## getDatabases
-
-**woqlClient.getDatabases() ⇒ `Promise`**
-
+##### woqlClient.getDatabases() ⇒ <code>Promise</code>
 Gets the organization's databases list.
 
 If no organization has been set up, the function throws an exception
 
-**Example**
-
+**Example**  
 ```javascript
 async function callGetDatabases(){
      const dbList = await client.getDatabases()
@@ -404,19 +373,17 @@ async function callGetDatabases(){
 ```
 
 ## databases
+##### woqlClient.databases([dbList]) ⇒ <code>array</code>
+Set/Get the organization's databases list (id, label, comment) that the current
+user has access to on the server.
 
-**woqlClient.databases(\[dbList]) ⇒ `array`**
+**Returns**: <code>array</code> - the organization's databases list  
 
-Set/Get the organization's databases list (id, label, comment) that the current user has access to on the server.
+| Param | Type | Description |
+| --- | --- | --- |
+| [dbList] | <code>array</code> | a list of databases the user has access to on the server, each having: |
 
-**Returns**: `array` - the organization's databases list
-
-| Param     | Type    | Description                                                            |
-| --------- | ------- | ---------------------------------------------------------------------- |
-| \[dbList] | `array` | a list of databases the user has access to on the server, each having: |
-
-**Example**
-
+**Example**  
 ```javascript
 //to get the list of all organization's databases
 async function callGetDatabases(){
@@ -426,157 +393,136 @@ async function callGetDatabases(){
 ```
 
 ## user
+##### woqlClient.user() ⇒ <code>Object</code>
+Gets the current user object as returned by the connect capabilities response
+user has fields: [id, name, notes, author]
 
-**woqlClient.user() ⇒ `Object`**
-
-Gets the current user object as returned by the connect capabilities response user has fields: \[id, name, notes, author]
 
 ## userOrganization
-
-**woqlClient.userOrganization() ⇒ `string`**
-
-**Returns**: `string` - the user organization name\
-**Desription**: Gets the user's organization id
+##### woqlClient.userOrganization() ⇒ <code>string</code>
+**Returns**: <code>string</code> - the user organization name  
+**Desription**: Gets the user's organization id  
 
 ## databaseInfo
-
-**woqlClient.databaseInfo(\[dbName]) ⇒ `object`**
-
+##### woqlClient.databaseInfo([dbName]) ⇒ <code>object</code>
 Gets the database's details
 
-**Returns**: `object` - the database description object
+**Returns**: <code>object</code> - the database description object  
 
-| Param     | Type     | Description      |
-| --------- | -------- | ---------------- |
-| \[dbName] | `string` | the datbase name |
+| Param | Type | Description |
+| --- | --- | --- |
+| [dbName] | <code>string</code> | the datbase name |
+
 
 ## db
-
-**woqlClient.db(\[dbId]) ⇒ `string` | `boolean`**
-
+##### woqlClient.db([dbId]) ⇒ <code>string</code> \| <code>boolean</code>
 Sets / Gets the current database
 
-**Returns**: `string` | `boolean` - - the current database or false
+**Returns**: <code>string</code> \| <code>boolean</code> - - the current database or false  
 
-| Param   | Type     | Description                           |
-| ------- | -------- | ------------------------------------- |
-| \[dbId] | `string` | the database id to set the context to |
+| Param | Type | Description |
+| --- | --- | --- |
+| [dbId] | <code>string</code> | the database id to set the context to |
 
-**Example**
-
+**Example**  
 ```javascript
 client.db("mydb")
 ```
 
 ## setSystemDb
-
-**woqlClient.setSystemDb()**
-
+##### woqlClient.setSystemDb()
 Sets the internal client context to allow it to talk to the server’s internal system database
 
+
 ## repo
-
-**woqlClient.repo(\[repoId]) ⇒ `string`**
-
+##### woqlClient.repo([repoId]) ⇒ <code>string</code>
 Gets / Sets the client’s internal repository context value (defaults to ‘local’)
 
-**Returns**: `string` - the current repository id within the client context
+**Returns**: <code>string</code> - the current repository id within the client context  
 
-| Param     | Type                           | Description            |
-| --------- | ------------------------------ | ---------------------- |
-| \[repoId] | `typedef.RepoType` \| `string` | default value is local |
+| Param | Type | Description |
+| --- | --- | --- |
+| [repoId] | <code>typedef.RepoType</code> \| <code>string</code> | default value is local |
 
-**Example**
-
+**Example**  
 ```javascript
 client.repo("origin")
 ```
 
 ## checkout
-
-**woqlClient.checkout(\[branchId]) ⇒ `string`**
-
+##### woqlClient.checkout([branchId]) ⇒ <code>string</code>
 Gets/Sets the client’s internal branch context value (defaults to ‘main’)
 
-**Returns**: `string` - the current branch id within the client context
+**Returns**: <code>string</code> - the current branch id within the client context  
 
-| Param       | Type     | Description                         |
-| ----------- | -------- | ----------------------------------- |
-| \[branchId] | `string` | the branch id to set the context to |
+| Param | Type | Description |
+| --- | --- | --- |
+| [branchId] | <code>string</code> | the branch id to set the context to |
+
 
 ## ref
+##### woqlClient.ref([commitId]) ⇒ <code>string</code> \| <code>boolean</code>
+Sets / gets the current ref pointer (pointer to a commit within a branch)
+Reference ID or Commit ID are unique hashes that are created whenever a new commit is recorded
 
-**woqlClient.ref(\[commitId]) ⇒ `string` | `boolean`**
+**Returns**: <code>string</code> \| <code>boolean</code> - the current commit id within the client context  
 
-Sets / gets the current ref pointer (pointer to a commit within a branch) Reference ID or Commit ID are unique hashes that are created whenever a new commit is recorded
+| Param | Type | Description |
+| --- | --- | --- |
+| [commitId] | <code>string</code> | the reference ID or commit ID |
 
-**Returns**: `string` | `boolean` - the current commit id within the client context
-
-| Param       | Type     | Description                   |
-| ----------- | -------- | ----------------------------- |
-| \[commitId] | `string` | the reference ID or commit ID |
-
-**Example**
-
+**Example**  
 ```javascript
 client.ref("mkz98k2h3j8cqjwi3wxxzuyn7cr6cw7")
 ```
 
 ## localAuth
-
-**woqlClient.localAuth(\[newCredential]) ⇒ `typedef.CredentialObj` | `boolean`**
-
+##### woqlClient.localAuth([newCredential]) ⇒ <code>typedef.CredentialObj</code> \| <code>boolean</code>
 Sets/Gets set the database basic connection credential
 
-| Param            | Type                    |
-| ---------------- | ----------------------- |
-| \[newCredential] | `typedef.CredentialObj` |
 
-**Example**
+| Param | Type |
+| --- | --- |
+| [newCredential] | <code>typedef.CredentialObj</code> | 
 
+**Example**  
 ```javascript
 client.localAuth({user:"admin","key":"mykey","type":"basic"})
 ```
 
 ## remoteAuth
+##### woqlClient.remoteAuth([newCredential]) ⇒ <code>typedef.CredentialObj</code> \| <code>boolean</code>
+Sets/Gets the jwt token for authentication
+we need this to connect 2 terminusdb server to each other for push, pull, clone actions
 
-**woqlClient.remoteAuth(\[newCredential]) ⇒ `typedef.CredentialObj` | `boolean`**
 
-Sets/Gets the jwt token for authentication we need this to connect 2 terminusdb server to each other for push, pull, clone actions
+| Param | Type |
+| --- | --- |
+| [newCredential] | <code>typedef.CredentialObj</code> | 
 
-| Param            | Type                    |
-| ---------------- | ----------------------- |
-| \[newCredential] | `typedef.CredentialObj` |
-
-**Example**
-
+**Example**  
 ```javascript
 client.remoteAuth({"key":"dhfmnmjglkrelgkptohkn","type":"jwt"})
 ```
 
 ## author
-
-**woqlClient.author() ⇒ `string`**
-
+##### woqlClient.author() ⇒ <code>string</code>
 Gets the string that will be written into the commit log for the current user
 
-**Returns**: `string` - the current user\
-**Example**
-
+**Returns**: <code>string</code> - the current user  
+**Example**  
 ```javascript
 client.author()
 ```
 
 ## set
+##### woqlClient.set(params)
 
-**woqlClient.set(params)**
+| Param | Type | Description |
+| --- | --- | --- |
+| params | <code>typedef.ParamsObj</code> | a object with connection params |
 
-| Param  | Type                | Description                     |
-| ------ | ------------------- | ------------------------------- |
-| params | `typedef.ParamsObj` | a object with connection params |
-
-**Example**
-
+**Example**  
 ```javascript
 sets several of the internal state values in a single call
 (similar to connect, but only sets internal client state, does not communicate with server)
@@ -584,224 +530,206 @@ client.set({key: "mypass", branch: "dev", repo: "origin"})
 ```
 
 ## resource
+##### woqlClient.resource(resourceType, [resourceId]) ⇒ <code>string</code>
+Generates a resource string for the required context
+of the current context for "commits" "meta" "branch" and "ref" special resources
 
-**woqlClient.resource(resourceType, \[resourceId]) ⇒ `string`**
+**Returns**: <code>string</code> - a resource string for the desired context  
 
-Generates a resource string for the required context of the current context for "commits" "meta" "branch" and "ref" special resources
+| Param | Type | Description |
+| --- | --- | --- |
+| resourceType | <code>typedef.ResourceType</code> | the type of resource string that is required - one of “db”, “meta”, “repo”, “commits”, “branch”, “ref” |
+| [resourceId] | <code>string</code> | can be used to specify a specific branch / ref - if not supplied the current context will be used |
 
-**Returns**: `string` - a resource string for the desired context
-
-| Param         | Type                   | Description                                                                                            |
-| ------------- | ---------------------- | ------------------------------------------------------------------------------------------------------ |
-| resourceType  | `typedef.ResourceType` | the type of resource string that is required - one of “db”, “meta”, “repo”, “commits”, “branch”, “ref” |
-| \[resourceId] | `string`               | can be used to specify a specific branch / ref - if not supplied the current context will be used      |
-
-**Example**
-
+**Example**  
 ```javascript
 const branch_resource = client.resource("branch")
 ```
 
 ## updateDatabase
-
-**woqlClient.updateDatabase(dbDoc) ⇒ `Promise`**
-
+##### woqlClient.updateDatabase(dbDoc) ⇒ <code>Promise</code>
 Update a database in TerminusDB server
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param | Type            | Description                                                |
-| ----- | --------------- | ---------------------------------------------------------- |
-| dbDoc | `typedef.DbDoc` | object containing details about the database to be updated |
+| Param | Type | Description |
+| --- | --- | --- |
+| dbDoc | <code>typedef.DbDoc</code> | object containing details about the database to be updated |
 
-**Example**
-
+**Example**  
 ```javascript
 client.updateDatabase({id: "mydb", label: "My Database", comment: "Testing"})
 ```
 
 ## insertTriples
-
-**woqlClient.insertTriples(graphType, turtle, commitMsg) ⇒ `Promise`**
-
+##### woqlClient.insertTriples(graphType, turtle, commitMsg) ⇒ <code>Promise</code>
 Appends the passed turtle to the contents of a graph
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param     | Type     | Description                                          |
-| --------- | -------- | ---------------------------------------------------- |
-| graphType | `string` | type of graph                                        |
-| turtle    | `string` | is a valid set of triples in turtle format (OWL)     |
-| commitMsg | `string` | Textual message describing the reason for the update |
+| Param | Type | Description |
+| --- | --- | --- |
+| graphType | <code>string</code> | type of graph  |instance|schema|inference| |
+| turtle | <code>string</code> | is a valid set of triples in turtle format (OWL) |
+| commitMsg | <code>string</code> | Textual message describing the reason for the update |
+
 
 ## message
-
-**woqlClient.message(message, \[pathname]) ⇒ `Promise`**
-
+##### woqlClient.message(message, [pathname]) ⇒ <code>Promise</code>
 Sends a message to the server
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param       | Type     | Description                          |
-| ----------- | -------- | ------------------------------------ |
-| message     | `string` | textual string                       |
-| \[pathname] | `string` | a server path to send the message to |
+| Param | Type | Description |
+| --- | --- | --- |
+| message | <code>string</code> | textual string |
+| [pathname] | <code>string</code> | a server path to send the message to |
+
 
 ## action
-
-**woqlClient.action(actionName, \[payload]) ⇒ `Promise`**
-
+##### woqlClient.action(actionName, [payload]) ⇒ <code>Promise</code>
 Sends an action to the server
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description             |
-| ---------- | -------- | ----------------------- |
-| actionName | `string` | structure of the action |
-| \[payload] | `object` | a request body call     |
+| Param | Type | Description |
+| --- | --- | --- |
+| actionName | <code>string</code> | structure of the action |
+| [payload] | <code>object</code> | a request body call |
+
 
 ## info
-
-**woqlClient.info() ⇒ `Promise`**
-
+##### woqlClient.info() ⇒ <code>Promise</code>
 Gets TerminusDB Server Information
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.\
-**Example**
-
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+**Example**  
 ```javascript
 client.info()
 ```
 
 ## squashBranch
-
-**woqlClient.squashBranch(branchId, commitMsg) ⇒ `Promise`**
-
+##### woqlClient.squashBranch(branchId, commitMsg) ⇒ <code>Promise</code>
 Squash branch commits
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param     | Type     | Description                                          |
-| --------- | -------- | ---------------------------------------------------- |
-| branchId  | `string` | local identifier of the new branch                   |
-| commitMsg | `string` | Textual message describing the reason for the update |
+| Param | Type | Description |
+| --- | --- | --- |
+| branchId | <code>string</code> | local identifier of the new branch |
+| commitMsg | <code>string</code> | Textual message describing the reason for the update |
+
 
 ## resetBranch
+##### woqlClient.resetBranch(branchId, commitId) ⇒ <code>Promise</code>
+Reset branch to a commit id, Reference ID or Commit ID are unique hashes that are
+created whenever a new commit is recorded
 
-**woqlClient.resetBranch(branchId, commitId) ⇒ `Promise`**
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-Reset branch to a commit id, Reference ID or Commit ID are unique hashes that are created whenever a new commit is recorded
+| Param | Type | Description |
+| --- | --- | --- |
+| branchId | <code>string</code> | local identifier of the new branch |
+| commitId | <code>string</code> | Reference ID or Commit ID |
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
-
-| Param    | Type     | Description                        |
-| -------- | -------- | ---------------------------------- |
-| branchId | `string` | local identifier of the new branch |
-| commitId | `string` | Reference ID or Commit ID          |
 
 ## optimizeBranch
-
-**woqlClient.optimizeBranch(branchId) ⇒ `Promise`**
-
+##### woqlClient.optimizeBranch(branchId) ⇒ <code>Promise</code>
 Optimize db branch
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param    | Type     | Description                        |
-| -------- | -------- | ---------------------------------- |
-| branchId | `string` | local identifier of the new branch |
+| Param | Type | Description |
+| --- | --- | --- |
+| branchId | <code>string</code> | local identifier of the new branch |
+
 
 ## deleteBranch
-
-**woqlClient.deleteBranch(branchId) ⇒ `Promise`**
-
+##### woqlClient.deleteBranch(branchId) ⇒ <code>Promise</code>
 Deletes a branch from database
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param    | Type     | Description                    |
-| -------- | -------- | ------------------------------ |
-| branchId | `string` | local identifier of the branch |
+| Param | Type | Description |
+| --- | --- | --- |
+| branchId | <code>string</code> | local identifier of the branch |
+
 
 ## reset
-
-**woqlClient.reset(commitPath) ⇒ `Promise`**
-
+##### woqlClient.reset(commitPath) ⇒ <code>Promise</code>
 Reset the current branch HEAD to the specified commit path
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description                                  |
-| ---------- | -------- | -------------------------------------------- |
-| commitPath | `string` | The commit path to set the current branch to |
+| Param | Type | Description |
+| --- | --- | --- |
+| commitPath | <code>string</code> | The commit path to set the current branch to |
+
 
 ## dispatch
-
-**woqlClient.dispatch() ⇒ `Promise`**
-
+##### woqlClient.dispatch() ⇒ <code>Promise</code>
 Common request dispatch function
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.\
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 **Properties**
 
-| Name              | Type      | Description                                                |
-| ----------------- | --------- | ---------------------------------------------------------- |
-| action            | `string`  | the action name                                            |
-| apiUrl            | `string`  | the server call endpoint                                   |
-| \[payload]        | `object`  | the post body                                              |
-| \[getDataVersion] | `boolean` | If true return response with data version                  |
-| \[compress]       | `boolean` | If true, compress the data if it is bigger than 1024 bytes |
+| Name | Type | Description |
+| --- | --- | --- |
+| action | <code>string</code> | the action name |
+| apiUrl | <code>string</code> | the server call endpoint |
+| [payload] | <code>object</code> | the post body |
+| [getDataVersion] | <code>boolean</code> | If true return response with data version |
+| [compress] | <code>boolean</code> | If true, compress the data if it is bigger than 1024 bytes |
+
 
 ## generateCommitInfo
-
-**woqlClient.generateCommitInfo(msg, \[author]) ⇒ `object`**
-
+##### woqlClient.generateCommitInfo(msg, [author]) ⇒ <code>object</code>
 Generates the json structure for commit messages
 
-| Param     | Type     | Description                                                        |
-| --------- | -------- | ------------------------------------------------------------------ |
-| msg       | `string` | textual string describing reason for the change                    |
-| \[author] | `string` | optional author id string - if absent current user id will be used |
+
+| Param | Type | Description |
+| --- | --- | --- |
+| msg | <code>string</code> | textual string describing reason for the change |
+| [author] | <code>string</code> | optional author id string - if absent current user id will be used |
+
 
 ## generateCommitDescriptor
-
-**woqlClient.generateCommitDescriptor(commitId)**
-
+##### woqlClient.generateCommitDescriptor(commitId)
 Generates the json structure for commit descriptor
 
-| Param    | Type     | Description         |
-| -------- | -------- | ------------------- |
-| commitId | `string` | a valid commit id o |
+
+| Param | Type | Description |
+| --- | --- | --- |
+| commitId | <code>string</code> | a valid commit id o |
+
 
 ## prepareRevisionControlArgs
-
-**woqlClient.prepareRevisionControlArgs(\[rc\_args]) ⇒ `object` | `boolean`**
-
+##### woqlClient.prepareRevisionControlArgs([rc_args]) ⇒ <code>object</code> \| <code>boolean</code>
 Adds an author string (from the user object returned by connect) to the commit message.
 
-| Param       | Type     |
-| ----------- | -------- |
-| \[rc\_args] | `object` |
+
+| Param | Type |
+| --- | --- |
+| [rc_args] | <code>object</code> | 
+
 
 ## addDocument
-
-**woqlClient.addDocument(json, \[params], \[dbId], \[string], \[lastDataVersion], \[getDataVersion]) ⇒ `Promise`**
-
+##### woqlClient.addDocument(json, [params], [dbId], [string], [lastDataVersion], [getDataVersion]) ⇒ <code>Promise</code>
 to add a new document or a list of new documents into the instance or the schema graph.
 
-**Returns**: `Promise` - A promise that returns the call response object or object having _result_ and _dataVersion_ object if _**getDataVersion**_ parameter is true, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object or object having *result*
+and *dataVersion* object if ***getDataVersion*** parameter is true, or an Error if rejected.  
 
-| Param              | Type                    | Description                                                                       |
-| ------------------ | ----------------------- | --------------------------------------------------------------------------------- |
-| json               | `object`                |                                                                                   |
-| \[params]          | `typedef.DocParamsPost` | the post parameters [#typedef.DocParamsPost](woqlclient.md#typedef.DocParamsPost) |
-| \[dbId]            | `string`                | the dbid                                                                          |
-| \[string]          | `message`               | the insert commit message                                                         |
-| \[lastDataVersion] | `string`                | the last data version tracking id.                                                |
-| \[getDataVersion]  | `boolean`               | If true the function will return object having result and dataVersion.            |
+| Param | Type | Description |
+| --- | --- | --- |
+| json | <code>object</code> |  |
+| [params] | <code>typedef.DocParamsPost</code> | the post parameters [#typedef.DocParamsPost](#typedef.DocParamsPost) |
+| [dbId] | <code>string</code> | the dbid |
+| [string] | <code>message</code> | the insert commit message |
+| [lastDataVersion] | <code>string</code> | the last data version tracking id. |
+| [getDataVersion] | <code>boolean</code> | If true the function will return object having result and dataVersion. |
 
-**Example**
-
+**Example**  
 ```javascript
 const json = [{ "@type" : "Class",
              "@id" : "Coordinate",
@@ -816,8 +744,28 @@ const json = [{ "@type" : "Class",
              "name" : "xsd:string",
              "perimeter" : { "@type" : "List",
                              "@class" : "Coordinate" } }]
-client.addDocument(json,{"graph_type":"schema"},"mydb","add new schema")
+client.addDocument(json,{"graph_type":"schema"},"mydb","add new schema documents")
 
+//if we would like to override the entire schema
+const json = [
+{"@base": "terminusdb:///data/",
+      "@schema": "terminusdb:///schema#",
+      "@type": "@context"
+  },
+  {
+      "@id": "Person",
+       "@key": {
+          "@type": "Random"
+      },
+      "@type": "Class",
+      "name": {
+          "@class": "xsd:string",
+          "@type": "Optional"
+      }
+  }]
+
+// client.addDocument(json,{"graph_type":"schema","full_replace:true"},
+      "mydb","update the all schema");
 
 // Here we will pass true to show how to get dataVersion
 
@@ -844,26 +792,24 @@ const response1 = await client.addDocument(json, {"graph_type": "schema"},
 ```
 
 ## queryDocument
+##### ~~woqlClient.queryDocument(query, [params], [dbId], [branch], [lastDataVersion], [getDataVersion]) ⇒ <code>Promise</code>~~
+***Deprecated***
 
-~~**woqlClient.queryDocument(query, \[params], \[dbId], \[branch], \[lastDataVersion], \[getDataVersion]) ⇒**** ****`Promise`**~~
+Use [#getDocument](#getDocument) instead.
 
-_**Deprecated**_
+**Returns**: <code>Promise</code> - A promise that returns the call response object or object having *result*
+and *dataVersion* object if ***getDataVersion*** parameter is true, or an Error if rejected.  
 
-Use [#getDocument](woqlclient.md#getDocument) instead.
+| Param | Type | Description |
+| --- | --- | --- |
+| query | <code>object</code> | the query template |
+| [params] | <code>typedef.DocParamsGet</code> | the get parameters |
+| [dbId] | <code>string</code> | the database id |
+| [branch] | <code>string</code> | the database branch |
+| [lastDataVersion] | <code>string</code> | the last data version tracking id. |
+| [getDataVersion] | <code>boolean</code> | If true the function will return object having result and dataVersion. |
 
-**Returns**: `Promise` - A promise that returns the call response object or object having _result_ and _dataVersion_ object if _**getDataVersion**_ parameter is true, or an Error if rejected.
-
-| Param              | Type                   | Description                                                            |
-| ------------------ | ---------------------- | ---------------------------------------------------------------------- |
-| query              | `object`               | the query template                                                     |
-| \[params]          | `typedef.DocParamsGet` | the get parameters                                                     |
-| \[dbId]            | `string`               | the database id                                                        |
-| \[branch]          | `string`               | the database branch                                                    |
-| \[lastDataVersion] | `string`               | the last data version tracking id.                                     |
-| \[getDataVersion]  | `boolean`              | If true the function will return object having result and dataVersion. |
-
-**Example**
-
+**Example**  
 ```javascript
 const query = {
   "type": "Person",
@@ -908,22 +854,20 @@ console.log(response);
 ```
 
 ## getDocument
+##### woqlClient.getDocument([params], [dbId], [branch], [lastDataVersion], [getDataVersion], [query]) ⇒ <code>Promise</code>
+**Returns**: <code>Promise</code> - A promise that returns the call response object or object having *result*
+and *dataVersion* object if ***getDataVersion*** parameter is true, or an Error if rejected.  
 
-**woqlClient.getDocument(\[params], \[dbId], \[branch], \[lastDataVersion], \[getDataVersion], \[query]) ⇒ `Promise`**
+| Param | Type | Description |
+| --- | --- | --- |
+| [params] | <code>typedef.DocParamsGet</code> | the get parameters, you can pass document query search template with the params |
+| [dbId] | <code>string</code> | the database id |
+| [branch] | <code>string</code> | the database branch |
+| [lastDataVersion] | <code>string</code> | the last data version tracking id. |
+| [getDataVersion] | <code>boolean</code> | If true the function will return object having result and dataVersion. |
+| [query] | <code>object</code> | document query search template |
 
-**Returns**: `Promise` - A promise that returns the call response object or object having _result_ and _dataVersion_ object if _**getDataVersion**_ parameter is true, or an Error if rejected.
-
-| Param              | Type                   | Description                                                                     |
-| ------------------ | ---------------------- | ------------------------------------------------------------------------------- |
-| \[params]          | `typedef.DocParamsGet` | the get parameters, you can pass document query search template with the params |
-| \[dbId]            | `string`               | the database id                                                                 |
-| \[branch]          | `string`               | the database branch                                                             |
-| \[lastDataVersion] | `string`               | the last data version tracking id.                                              |
-| \[getDataVersion]  | `boolean`              | If true the function will return object having result and dataVersion.          |
-| \[query]           | `object`               | document query search template                                                  |
-
-**Example**
-
+**Example**  
 ```javascript
 //return the schema graph as a json array
 client.getDocument({"graph_type":"schema","as_list":true}).then(result={
@@ -936,8 +880,8 @@ client.getDocument({"graph_type":"schema","as_list":true,"id":"Country"}).then(r
 })
 
 //pass a document query template to query the document interface
-const queryTemplate = { "name": "Ireland", "@type":"Country" }
-client.getDocument({"graph_type":"schema","as_list":true,
+const queryTemplate = { "name": "Ireland"}
+client.getDocument({"as_list":true, "@type":"Country"
            query:queryTemplate}).then(result=>{
    console.log(result)
 })
@@ -969,23 +913,22 @@ const response1 = await client.getDocument({"graph_type":"schema","as_list":true
 ```
 
 ## updateDocument
+##### woqlClient.updateDocument(json, [params], [dbId], [message], [lastDataVersion], [getDataVersion], [compress], [create]) ⇒ <code>Promise</code>
+**Returns**: <code>Promise</code> - A promise that returns the call response object or object having *result*
+and *dataVersion* object if ***getDataVersion*** parameter is true, or an Error if rejected.  
 
-**woqlClient.updateDocument(json, \[params], \[dbId], \[message], \[lastDataVersion], \[getDataVersion], \[create]) ⇒ `Promise`**
+| Param | Type | Description |
+| --- | --- | --- |
+| json | <code>object</code> |  |
+| [params] | <code>typedef.DocParamsPut</code> | the Put parameters [#typedef.DocParamsPut](#typedef.DocParamsPut) |
+| [dbId] | <code>\*</code> | the database id |
+| [message] | <code>\*</code> | the update commit message |
+| [lastDataVersion] | <code>string</code> | the last data version tracking id. |
+| [getDataVersion] | <code>boolean</code> | If true the function will return object having result and dataVersion. |
+| [compress] | <code>boolean</code> | If true, the function will create a new document if it doesn't exist. |
+| [create] | <code>boolean</code> | Perform an *upsert* which inserts if the document is not present (also works on nested documents) |
 
-**Returns**: `Promise` - A promise that returns the call response object or object having _result_ and _dataVersion_ object if _**getDataVersion**_ parameter is true, or an Error if rejected.
-
-| Param              | Type                   | Description                                                                    |
-| ------------------ | ---------------------- | ------------------------------------------------------------------------------ |
-| json               | `object`               |                                                                                |
-| \[params]          | `typedef.DocParamsPut` | the Put parameters [#typedef.DocParamsPut](woqlclient.md#typedef.DocParamsPut) |
-| \[dbId]            | `*`                    | the database id                                                                |
-| \[message]         | `*`                    | the update commit message                                                      |
-| \[lastDataVersion] | `string`               | the last data version tracking id.                                             |
-| \[getDataVersion]  | `boolean`              | If true the function will return object having result and dataVersion.         |
-| \[create]          | `boolean`              | If true, the function will create a new document if it doesn't exist.          |
-
-**Example**
-
+**Example**  
 ```javascript
 client.updateDocument(
 {
@@ -1042,26 +985,35 @@ const response1 = await client.updateDocument(
       "",
       response.dataVersion
     );
+
+ // update a document and create the linked document together
+ // we are update the document "Person/Person01"
+ // and create a new document {"@type": "Person","name": "child01"} at the same time
+ const response1 = await client.updateDocument(
+     {
+      "@id": "Person/Person01",
+      "@type": "Person",
+      "name": "Person01"
+      "children":[{"@type": "Person","name": "child01"}]
+    },{create:true})
 ```
 
 ## deleteDocument
-
-**woqlClient.deleteDocument(\[params], \[dbId], \[message], \[lastDataVersion], \[getDataVersion]) ⇒ `Promise`**
-
+##### woqlClient.deleteDocument([params], [dbId], [message], [lastDataVersion], [getDataVersion]) ⇒ <code>Promise</code>
 to delete the document
 
-**Returns**: `Promise` - A promise that returns the call response object or object having _result_ and _dataVersion_ object if _**getDataVersion**_ parameter is true, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object or object having *result*
+and *dataVersion* object if ***getDataVersion*** parameter is true, or an Error if rejected.  
 
-| Param              | Type                      | Description                                                            |
-| ------------------ | ------------------------- | ---------------------------------------------------------------------- |
-| \[params]          | `typedef.DocParamsDelete` |                                                                        |
-| \[dbId]            | `string`                  | the database id                                                        |
-| \[message]         | `string`                  | the delete message                                                     |
-| \[lastDataVersion] | `string`                  | the last data version tracking id.                                     |
-| \[getDataVersion]  | `boolean`                 | If true the function will return object having result and dataVersion. |
+| Param | Type | Description |
+| --- | --- | --- |
+| [params] | <code>typedef.DocParamsDelete</code> |  |
+| [dbId] | <code>string</code> | the database id |
+| [message] | <code>string</code> | the delete message |
+| [lastDataVersion] | <code>string</code> | the last data version tracking id. |
+| [getDataVersion] | <code>boolean</code> | If true the function will return object having result and dataVersion. |
 
-**Example**
-
+**Example**  
 ```javascript
 client.deleteDocument({"graph_type":"schema",id:['Country','Coordinate']})
 
@@ -1094,147 +1046,124 @@ const response1 = await client.deleteDocument({"graph_type":"schema",
 ```
 
 ## getSchemaFrame
-
-**woqlClient.getSchemaFrame(\[type], \[dbId]) ⇒ `Promise`**
-
+##### woqlClient.getSchemaFrame([type], [dbId]) ⇒ <code>Promise</code>
 The purpose of this method is to quickly discover the supported fields of a particular type.
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param   | Type     | Description                                                                                  |
-| ------- | -------- | -------------------------------------------------------------------------------------------- |
-| \[type] | `string` | If given, the type to get information for. If omitted, information for all types is returned |
-| \[dbId] | `string` | the database id                                                                              |
+| Param | Type | Description |
+| --- | --- | --- |
+| [type] | <code>string</code> | If given, the type to get information for. If omitted, information for all types is returned |
+| [dbId] | <code>string</code> | the database id |
 
-**Example**
-
+**Example**  
 ```javascript
 client.getSchemaFrame("Country")
 ```
 
 ## getSchema
-
-**woqlClient.getSchema(\[dbId], \[branch]) ⇒ `Promise`**
-
+##### woqlClient.getSchema([dbId], [branch]) ⇒ <code>Promise</code>
 get the database schema in json format
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param     | Type     | Description                  |
-| --------- | -------- | ---------------------------- |
-| \[dbId]   | `string` | the database id              |
-| \[branch] | `string` | specific a branch/collection |
+| Param | Type | Description |
+| --- | --- | --- |
+| [dbId] | <code>string</code> | the database id |
+| [branch] | <code>string</code> | specific a branch/collection |
 
-**Example**
-
+**Example**  
 ```javascript
 client.getSchema()
 ```
 
 ## getClasses
-
-**woqlClient.getClasses(\[dbId]) ⇒ `Promise`**
-
+##### woqlClient.getClasses([dbId]) ⇒ <code>Promise</code>
 get all the schema classes (documents,subdocuments,abstracts)
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param   | Type     | Description     |
-| ------- | -------- | --------------- |
-| \[dbId] | `string` | the database id |
+| Param | Type | Description |
+| --- | --- | --- |
+| [dbId] | <code>string</code> | the database id |
 
-**Example**
-
+**Example**  
 ```javascript
 client.getClasses()
 ```
 
 ## getEnums
-
-**woqlClient.getEnums(\[dbId]) ⇒ `Promise`**
-
+##### woqlClient.getEnums([dbId]) ⇒ <code>Promise</code>
 get all the Enum Objects
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param   | Type     |
-| ------- | -------- |
-| \[dbId] | `string` |
+| Param | Type |
+| --- | --- |
+| [dbId] | <code>string</code> | 
 
-**Example**
-
+**Example**  
 ```javascript
 client.getEnums()
 ```
 
 ## getClassDocuments
-
-**woqlClient.getClassDocuments(\[dbId]) ⇒ `Promise`**
-
+##### woqlClient.getClassDocuments([dbId]) ⇒ <code>Promise</code>
 get all the Document Classes (no abstract or subdocument)
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param   | Type     |
-| ------- | -------- |
-| \[dbId] | `string` |
+| Param | Type |
+| --- | --- |
+| [dbId] | <code>string</code> | 
 
-**Example**
-
+**Example**  
 ```javascript
 client.getClassDocuments()
 ```
 
 ## getBranches
-
-**woqlClient.getBranches(\[dbId]) ⇒ `Promise`**
-
+##### woqlClient.getBranches([dbId]) ⇒ <code>Promise</code>
 get the database collections list
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param   | Type     | Description     |
-| ------- | -------- | --------------- |
-| \[dbId] | `string` | the database id |
+| Param | Type | Description |
+| --- | --- | --- |
+| [dbId] | <code>string</code> | the database id |
 
-**Example**
-
+**Example**  
 ```javascript
 client.getBranches()
 ```
 
 ## getCommitsLog
-
-**woqlClient.getCommitsLog(\[dbId]) ⇒ `Promise`**
-
+##### woqlClient.getCommitsLog([start], [count]) ⇒ <code>Promise</code>
 get the database collections list
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param   | Type     | Description     |
-| ------- | -------- | --------------- |
-| \[dbId] | `string` | the database id |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| [start] | <code>number</code> | <code>0</code> | where to start printing the commit    information in the log (starting from the head of the current branch) |
+| [count] | <code>number</code> | <code>1</code> | The number of total commit log records to return |
 
-**Example**
-
+**Example**  
 ```javascript
-client.getCommitsLog()
+client.getCommitsLog(count=10)
 ```
 
 ## getPrefixes
-
-**woqlClient.getPrefixes(\[dbId]) ⇒ `Promise`**
-
+##### woqlClient.getPrefixes([dbId]) ⇒ <code>Promise</code>
 get the database prefixes object
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param   | Type     | Description     |
-| ------- | -------- | --------------- |
-| \[dbId] | `string` | the database id |
+| Param | Type | Description |
+| --- | --- | --- |
+| [dbId] | <code>string</code> | the database id |
 
-**Example**
-
+**Example**  
 ```javascript
 client.getPrefixes()
 //return object example
@@ -1245,14 +1174,11 @@ client.getPrefixes()
 ```
 
 ## getUserOrganizations
-
-**woqlClient.getUserOrganizations() ⇒ `Promise`**
-
+##### woqlClient.getUserOrganizations() ⇒ <code>Promise</code>
 Get the list of the user's organizations and the database related
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.\
-**Example**
-
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+**Example**  
 ```javascript
 async funtion callGetUserOrganizations(){
      await getUserOrganizations()
@@ -1261,19 +1187,16 @@ async funtion callGetUserOrganizations(){
 ```
 
 ## userOrganizations
-
-**woqlClient.userOrganizations(\[orgList]) ⇒ `array`**
-
+##### woqlClient.userOrganizations([orgList]) ⇒ <code>array</code>
 Get/Set the list of the user's organizations (id, organization, label, comment).
 
-**Returns**: `array` - the user Organizations list
+**Returns**: <code>array</code> - the user Organizations list  
 
-| Param      | Type    | Description                   |
-| ---------- | ------- | ----------------------------- |
-| \[orgList] | `array` | a list of user's Organization |
+| Param | Type | Description |
+| --- | --- | --- |
+| [orgList] | <code>array</code> | a list of user's Organization |
 
-**Example**
-
+**Example**  
 ```javascript
 async funtion callGetUserOrganizations(){
      await client.getUserOrganizations()
@@ -1281,22 +1204,94 @@ async funtion callGetUserOrganizations(){
 }
 ```
 
+## patch
+##### woqlClient.patch(before, patch) ⇒ <code>Promise</code>
+Apply a patch object to another object
+
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| before | <code>object</code> | The current state of JSON document |
+| patch | <code>object</code> | The patch object |
+
+**Example**  
+```javascript
+client.patch(
+     { "@id" : "Person/Jane", "@type" : "Person", "name" : "Jane"},
+     { "name" : { "@op" : "ValueSwap", "@before" : "Jane", "@after": "Janine" }}
+ ).then(patchResult=>{
+ console.log(patchResult)
+})
+//result example
+//{ "@id" : "Person/Jane", "@type" : "Person", "name" : "Jannet"}
+```
+
+## patchResource
+##### woqlClient.patchResource(patch, message) ⇒ <code>Promise</code>
+Apply a patch object to the current resource
+
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| patch | <code>array</code> | The patch object |
+| message | <code>string</code> | The commit message |
+
+**Example**  
+```javascript
+const patch = [
+  {
+   "@id": "Obj/id1",
+    "name": {
+     "@op": "SwapValue",
+      "@before": "foo",
+      "@after": "bar"
+    }
+  },
+ {
+   "@id": "Obj/id2",
+    "name": {
+      "@op": "SwapValue",
+      "@before": "foo",
+     "@after": "bar"
+    }
+ }
+]
+client.db("mydb")
+client.checkout("mybranch")
+client.patchResource(patch,"apply patch to mybranch").then(patchResult=>{
+ console.log(patchResult)
+})
+// result example
+// ["Obj/id1",
+// "Obj/id2"]
+// or conflict error 409
+// {
+// "@type": "api:PatchError",
+// "api:status": "api:conflict",
+// "api:witnesses": [
+//  {
+//   "@op": "InsertConflict",
+//    "@id_already_exists": "Person/Jane"
+//  }
+//]
+//}
+```
+
 ## getJSONDiff
-
-**woqlClient.getJSONDiff(before, after, \[options]) ⇒ `Promise`**
-
+##### woqlClient.getJSONDiff(before, after, [options]) ⇒ <code>Promise</code>
 Get the patch of difference between two documents.
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param      | Type     | Description                                                                                                                                                                                            |
-| ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| before     | `object` | The current state of JSON document                                                                                                                                                                     |
-| after      | `object` | The updated state of JSON document                                                                                                                                                                     |
-| \[options] | `object` | {keep:{\}} Options to send to the diff endpoint. The diff api outputs the changes between the input, in options you can list the properties that you would like to see in the diff result in any case. |
+| Param | Type | Description |
+| --- | --- | --- |
+| before | <code>object</code> | The current state of JSON document |
+| after | <code>object</code> | The updated state of JSON document |
+| [options] | <code>object</code> | {keep:{}} Options to send to the diff endpoint. The diff api outputs the changes between the input, in options you can list the properties that you would like to see in the diff result in any case. |
 
-**Example**
-
+**Example**  
 ```javascript
 client.getJSONDiff(
      { "@id": "Person/Jane", "@type": "Person", name: "Jane" },
@@ -1310,22 +1305,19 @@ client.getJSONDiff(
 ```
 
 ## getVersionObjectDiff
-
-**woqlClient.getVersionObjectDiff(dataVersion, jsonObject, id, \[options]) ⇒ `Promise`**
-
+##### woqlClient.getVersionObjectDiff(dataVersion, jsonObject, id, [options]) ⇒ <code>Promise</code>
 Get the patch of difference between two documents.
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param       | Type     | Description                                                                                                                                                                                    |
-| ----------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dataVersion | `string` | The version from which to compare the object                                                                                                                                                   |
-| jsonObject  | `object` | The updated state of JSON document                                                                                                                                                             |
-| id          | `string` | The document id to be diffed                                                                                                                                                                   |
-| \[options]  | `object` | {keep:{\}} Options to send to the diff endpoint the diff api outputs the changes between the input, but you can list the properties that you would like to see in the diff result in any case. |
+| Param | Type | Description |
+| --- | --- | --- |
+| dataVersion | <code>string</code> | The version from which to compare the object |
+| jsonObject | <code>object</code> | The updated state of JSON document |
+| id | <code>string</code> | The document id to be diffed |
+| [options] | <code>object</code> | {keep:{}} Options to send to the diff endpoint the diff api outputs the changes between the input, but you can list the properties that you would like to see in the diff result in any case. |
 
-**Example**
-
+**Example**  
 ```javascript
 const jsonObj =  { "@id": "Person/Jane", "@type": "Person", name: "Janine" }
 client.getVersionObjectDiff("main",jsonObj
@@ -1335,22 +1327,19 @@ client.getVersionObjectDiff("main",jsonObj
 ```
 
 ## getVersionDiff
-
-**woqlClient.getVersionDiff(beforeVersion, afterVersion, \[id], \[options]) ⇒ `Promise`**
-
+##### woqlClient.getVersionDiff(beforeVersion, afterVersion, [id], [options]) ⇒ <code>Promise</code>
 Get the patch of difference between branches or commits.
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param         | Type     | Description                                                                                                                                                                                                                  |
-| ------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| beforeVersion | `string` | Before branch/commit to compare                                                                                                                                                                                              |
-| afterVersion  | `string` | After branch/commit to compare                                                                                                                                                                                               |
-| \[id]         | `string` | The document id to be diffed, if it is omitted all the documents will be compared                                                                                                                                            |
-| \[options]    | `object` | {keep:{\}} Options to send to the diff endpoint. The diff api outputs the changes between the input (branches or commits), in options you can list the properties that you would like to see in the diff result in any case. |
+| Param | Type | Description |
+| --- | --- | --- |
+| beforeVersion | <code>string</code> | Before branch/commit to compare |
+| afterVersion | <code>string</code> | After branch/commit to compare |
+| [id] | <code>string</code> | The document id to be diffed, if it is omitted all the documents will be compared |
+| [options] | <code>typedef.DiffObject</code> | {keep:{},count:10,start:0} Options to send to the diff endpoint. The diff api outputs the changes between the input (branches or commits), in options you can list the properties that you would like to see in the diff result in any case. |
 
-**Example**
-
+**Example**  
 ```javascript
 //This is to view all the changes between two commits
 const beforeCommit = "a73ssscfx0kke7z76083cgswszdxy6l"
@@ -1371,76 +1360,70 @@ client.getVersionDiff("main", afterCommit, "Person/Tom" ).then(diffResult=>{
 })
 
 //This is to view the changes between two branches with the keep options
-const options = {"keep":{"@id":true, "name": true}}
+const options = {"keep":{"@id":true, "name": true}, start:0, count:10}
 client.getVersionDiff("main","mybranch",options).then(diffResult=>{
    console.log(diffResult)
 })
 ```
 
 ## apply
+##### woqlClient.apply(beforeVersion, afterVersion, message, [matchFinalState], [options])
+Diff two different commits and apply changes on the current branch/commit.
+If you would like to change branch or commit before apply use client.checkout("branchName")
 
-**woqlClient.apply(beforeVersion, afterVersion, message, \[matchFinalState], \[options])**
 
-Diff two different commits and apply changes on the current branch/commit. If you would like to change branch or commit before apply use client.checkout("branchName")
+| Param | Type | Description |
+| --- | --- | --- |
+| beforeVersion | <code>string</code> | Before branch/commit to compare |
+| afterVersion | <code>string</code> | After branch/commit to compare |
+| message | <code>string</code> | apply commit message |
+| [matchFinalState] | <code>boolean</code> | the default value is false |
+| [options] | <code>object</code> | {keep:{}} Options to send to the apply endpoint |
 
-| Param              | Type      | Description                                      |
-| ------------------ | --------- | ------------------------------------------------ |
-| beforeVersion      | `string`  | Before branch/commit to compare                  |
-| afterVersion       | `string`  | After branch/commit to compare                   |
-| message            | `string`  | apply commit message                             |
-| \[matchFinalState] | `boolean` | the default value is false                       |
-| \[options]         | `object`  | {keep:{\}} Options to send to the apply endpoint |
-
-**Example**
-
+**Example**  
 ```javascript
 client.checkout("mybranch")
-client.apply("main","mybranch","merge main").then(result=>{
+client.apply("mybranch","mybranch_new","merge main").then(result=>{
    console.log(result)
 })
 ```
 
-## patch
+## getDocumentHistory
+##### woqlClient.getDocumentHistory(id, [historyParams])
+Get the document's history for a specific database or branch
 
-**woqlClient.patch(before, patch) ⇒ `Promise`**
 
-Patch the difference between two documents.
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>string</code> | id of document to report history of |
+| [historyParams] | <code>typedef.DocHistoryParams</code> |  |
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
-
-| Param  | Type     | Description                        |
-| ------ | -------- | ---------------------------------- |
-| before | `object` | The current state of JSON document |
-| patch  | `object` | The patch object                   |
-
-**Example**
-
+**Example**  
 ```javascript
-let diffPatch = await client.getJSONDiff(
-     { "@id": "Person/Jane", "@type": "Person", name: "Jane" },
-     { "@id": "Person/Jane", "@type": "Person", name: "Janine" }
- );
-
-let patch = await client.patch( { "@id": "Person/Jane", "@type": "Person", name: "Jane" },
-diffPatch);
+//this will return the last 5 commits for the Person/Anna document
+client.checkout("mybranch")
+client.docHistory("Person/Anna",{start:0,count:5}).then(result=>{
+   console.log(result)
+})
+//this will return the last and the first commit for the Person/Anna document
+client.docHistory("Person/Anna",{updated:true,created:true}).then(result=>{
+   console.log(result)
+})
 ```
 
 ## sendCustomRequest
-
-**woqlClient.sendCustomRequest(requestType, customRequestURL, \[payload]) ⇒ `Promise`**
-
+##### woqlClient.sendCustomRequest(requestType, customRequestURL, [payload]) ⇒ <code>Promise</code>
 Call a custom Api endpoit
 
-**Returns**: `Promise` - A promise that returns the call response object, or an Error if rejected.
+**Returns**: <code>Promise</code> - A promise that returns the call response object, or an Error if rejected.  
 
-| Param            | Type     | Description                        |
-| ---------------- | -------- | ---------------------------------- |
-| requestType      | `string` | The current state of JSON document |
-| customRequestURL | `string` | The patch object                   |
-| \[payload]       | `object` | the request payload                |
+| Param | Type | Description |
+| --- | --- | --- |
+| requestType | <code>string</code> | The current state of JSON document |
+| customRequestURL | <code>string</code> | The patch object |
+| [payload] | <code>object</code> | the request payload |
 
-**Example**
-
+**Example**  
 ```javascript
 client.sendCustomRequest("GET", "http://localhost:3030/changes/").then(result=>{
    console.log(result)
