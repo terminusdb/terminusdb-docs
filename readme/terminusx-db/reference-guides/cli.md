@@ -335,6 +335,12 @@ or two commits (path required).
   * `-s`, `--after_commit`, `--after-commit`=[value]:
   Commit or branch of the *after* document(s)
 
+  * `-n`, `--start`=[value]:
+  How many diff results to skip before returning (ignored if not comparing resources)
+
+  * `-l`, `--count`=[value]:
+  Number of results to return (ignored if not comparing resources)
+
 ### apply
 
 `terminusdb apply [Path] OPTIONS`
@@ -389,6 +395,9 @@ Get the log for a branch given by DB_SPEC.
   * `-c`, `--count`=[value]:
   Number of results to return
 
+  * `-v`, `--verbose`=[value]:
+  Give back additional information on commits
+
 ### history
 
 `terminusdb history DB_SPEC`
@@ -418,6 +427,9 @@ Get the history for a given document by id in DB_SPEC.
 
   * `-c`, `--count`=[value]:
   Number of results to return
+
+  * `-v`, `--verbose`=[value]:
+  give back schema update information
 
 ### reset
 
@@ -611,6 +623,12 @@ Insert documents.
   * `-g`, `--graph_type`, `--graph-type`=[value]:
   graph type (instance or schema)
 
+  * `-r`, `--require-migration`=[value]:
+  require an inferred migration (assuming this is a schema change)
+
+  * `-x`, `--allow-destructive-migration`=[value]:
+  allow inferred migration to be destructive (assuming this is a schema change)
+
   * `-d`, `--data`=[value]:
   document data
 
@@ -641,6 +659,12 @@ Delete documents.
   * `-g`, `--graph_type`, `--graph-type`=[value]:
   graph type (instance or schema)
 
+  * `-r`, `--require-migration`=[value]:
+  require an inferred migration (assuming this is a schema change)
+
+  * `-x`, `--allow-destructive-migration`=[value]:
+  allow inferred migration to be destructive (assuming this is a schema change)
+
   * `-i`, `--id`=[value]:
   document id to delete
 
@@ -670,6 +694,12 @@ Replace documents.
 
   * `-g`, `--graph_type`, `--graph-type`=[value]:
   graph type (instance or schema)
+
+  * `-r`, `--require-migration`=[value]:
+  require an inferred migration (assuming this is a schema change)
+
+  * `-x`, `--allow-destructive-migration`=[value]:
+  allow inferred migration to be destructive (assuming this is a schema change)
 
   * `-d`, `--data`=[value]:
   document data
