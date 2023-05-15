@@ -8,6 +8,9 @@ The TerminusDB documents User Interface generates forms representing the propert
 
 [**To get started read the Document UI SDK how-to guide**](./)****
 
+## Demo 
+Click here **[**Playground**](https://documents-ui-playground.terminusdb.com)** to view ``<FrameViewier/>`` demo in Create, edit or view mode.
+
 ## Data types
 
 ### Basic data types
@@ -25,8 +28,11 @@ The table below lists the basic data types supported and their specifications.
 | Temporal      | `"xsd:dateTime"` | `"DOB": "xsd:dateTime"`                         |
 
 ### Data value optionality
-
-Form values are mandatory by default and corresponding field names are rendered with an asterisk. To define a property as optional, use the `"@type": "Optional"` declaration.
+If a property in the Form is displayed with a (Required) tab, that would mean this property is mandatory & has to be filled in order to submit the form.
+To define a property as optional, use the `"@type": "Optional"` declaration which would mean the property is optional.
+A property can also be defined as an array in the following 
+`"@type": "Set"` - property can hold multiple value in an unordered fashion & can be optional
+`"@type": "List"` - property can hold multiple value in an ordered fashion & requires minimum one entry
 
 ### An example with all basic types
 
@@ -132,10 +138,6 @@ return <FrameViewer
     type = {type}
     mode = {mode}/>
 ```
-
-**Screen-print/s of the output:**
-
-![](../../.gitbook/assets/documents-ui-data-types-01.png)
 
 ## Set properties
 
