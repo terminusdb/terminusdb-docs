@@ -284,7 +284,7 @@ Fetch updates to a remote database to a remote repository with the local databas
 
 _**Deprecated**_
 
-Use [#localAuth](woqlclient.md#localAuth) instead.
+Use [#localAuth](woqlclient.md#localauth) instead.
 
 ## remote\_auth
 
@@ -292,7 +292,7 @@ Use [#localAuth](woqlclient.md#localAuth) instead.
 
 _**Deprecated**_
 
-Use [#remoteAuth](woqlclient.md#remoteAuth) instead.
+Use [#remoteAuth](woqlclient.md#remoteauth) instead.
 
 ## setApiKey
 
@@ -849,7 +849,7 @@ const response1 = await client.addDocument(json, {"graph_type": "schema"},
 
 _**Deprecated**_
 
-Use [#getDocument](woqlclient.md#getDocument) instead.
+Use [#getDocument](woqlclient.md#getdocument) instead.
 
 **Returns**: `Promise` - A promise that returns the call response object or object having _result_ and _dataVersion_ object if _**getDataVersion**_ parameter is true, or an Error if rejected.
 
