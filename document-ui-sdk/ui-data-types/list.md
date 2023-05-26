@@ -2,7 +2,7 @@
 This example shows how ``<FrameViewier/>`` appears for a document called ``OrderedPerson`` with list fields in Create/ Edit and View mode. If a field is described as a List it means the field can have one or more values and is ordered. The field must have at least one entry.
 
 ## Demo 
-Take a look at the [**Demo**](https://documents-ui-playground.terminusdb.com/List) to view the ``<FrameViewier/>`` with list properties in Create, Edit and View mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/List) to view the ``<FrameViewier/>`` with list properties in Create, Edit and View mode.
 
 ## Frame 
 The below frame consists of an `OrderedPerson` document 
@@ -116,7 +116,7 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 ```
 
 ### Edit & View
-Note - make sure the document is filled in View mode. The form will be in read only mode for View.
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
 ```javascript
 let data = {
