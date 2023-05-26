@@ -476,7 +476,7 @@ The equivalent geoJSON frame that can be retrieved from ``getSchemaFrame()`` cal
 ```
 
 ## Demo 
-Take a look at the [**Demo Playground**](https://documents-ui-geoJSON-playground.terminusdb.com/Feature) to view ``<FrameViewier/>`` with geoJSON data.
+Take a look at the [**Demo Playground**](https://documents-ui-playground-geojson.terminusdb.com/) to view ``<FrameViewier/>`` with geoJSON data.
 
 ## Example
 
