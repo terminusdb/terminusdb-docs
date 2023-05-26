@@ -1,13 +1,14 @@
 # render_as using @metadata
-This example shows how ``<FrameViewier/>`` apepars for a document ``metaDataExample`` with field ``body`` & ``title`` in Create/ Edit or View mode. Check out the Frame below to see ``@metadata`` with ``render_as`` tag included in frames which tell ``<FrameViewier/>`` to render field ``body`` as a markdown.
+This example shows how ``<FrameViewier/>`` appears for a document ``metaDataExample`` with the fields ``body`` & ``title`` in Create/ Edit or View mode. The Frame below shows ``@metadata`` with the ``render_as`` tag included that tells ``<FrameViewier/>`` to render field ``body`` as Markdown.
 
 ## Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/Render%20As)** to view ``<FrameViewier/>`` with properties where render_as is defined in @metadata tag - in Create, edit or view mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/Render%20As) to view ``<FrameViewier/>`` with properties where render_as is defined in @metadata tag - in Create, Edit or View mode.
 
 
-#### Frame 
-Below Frame consists of an metaDataExample document 
-```
+## Frame 
+This frame consists of an `metaDataExample` document 
+
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -35,7 +36,7 @@ Below Frame consists of an metaDataExample document
 ```
 
 
-#### Create
+### Create
 
 ```
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
@@ -47,10 +48,10 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     type={"metaDataExample"}/> // type of document 
 ```
 
-#### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+### Edit & View
+Note - make sure the document is filled in View mode. The form will be in read only mode for View.
 
-```
+```javascript
 let data = {
 	"@id": "metaDataExample/431b3406a64d99714b57133019408a16a6a514755fb229aff01419b4b423cb62",
 	"@type": "metaDataExample",
@@ -65,4 +66,3 @@ return <FrameViewer
   formData={data}
   type={"metaDataExample"}/>
 ```
-
