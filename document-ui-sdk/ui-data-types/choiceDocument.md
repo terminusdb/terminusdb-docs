@@ -3,12 +3,12 @@ This example shows how ``<FrameViewier/>`` appears for a document ``Guy`` with c
 
 In this example ``Guy`` has a mandatory property called ``favorite_group`` with the choice of documents called Art, Dance or Music, an optional ``"second_favorite_group"`` property also with the choice Art, Dance or Music, a set ``member_of`` property with the same choices, and a list ``attends_group_in_order`` property with the above same choices, in an ordered fashion.
 
-#### Demo 
-Take a look at the **[**Demo**](https://documents-ui-playground.terminusdb.com/Choice%20Documents)** to view ``<FrameViewier/>`` with Choice properties in Create, edit or view mode.
+## Demo 
+Take a look at the **[**Demo Playground**](https://documents-ui-playground.terminusdb.com/Choice%20Documents)** to view ``<FrameViewier/>`` with Choice properties in Create, edit or view mode.
 
 The below Frames show the definition of Art, Dance or Music which are other document classes.
 
-#### Frame 
+## Frame 
 The below Frame consists of the `Guy` document 
 
 ```javascript
@@ -159,7 +159,7 @@ The below Frame consists of the `Guy` document
 ```
 
 
-#### Create
+### Create
 
 ```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
@@ -171,8 +171,8 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     type={"Guy"}/>           // type of document 
 ```
 
-#### Edit & View
-Note - make sure the document is filled in View mode. The form will be in read only mode for View.
+### Edit & View
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
 ```javascript
 let data = {
