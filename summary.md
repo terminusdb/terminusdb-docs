@@ -116,7 +116,6 @@
 * [Reference Guides](guides/reference-guides/README.md)
   * [CLI](guides/reference-guides/cli.md)
   * [Document Interface](guides/reference-guides/document-interface.md)
-  * [Document UI SDK](guides/reference-guides/document-ui-sdk.md)
   * [GraphQL Reference](guides/reference-guides/graphql-reference/README.md)
     * [GraphQL Queries](guides/reference-guides/graphql-reference/graphql\_query.md)
     * [Connecting to GraphQL](guides/reference-guides/graphql-reference/connecting\_to\_graphql.md)

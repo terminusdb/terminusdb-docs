@@ -6,7 +6,7 @@ description: Understand the different data types to build data driven user inter
 
 The TerminusDB documents User Interface generates forms representing the properties or fields of document/s in your schema. For data entry, each field is one of several data types and is mandatory by default. Schema definitions enable the linking of documents and the specification of sets.
 
-[**To get started read the Document UI SDK how-to guide**](./)****
+[**To get started read the Document UI SDK how-to guide**](./)
 
 ## Data types
 
@@ -353,8 +353,8 @@ In `View` mode the form is displayed in the order it was created.
 
 ## Further Reading
 
-****[**Get started with the Document UI SDK**](./)****
+[**Get started with the Document UI SDK**](./)
 
-****[**Document UI SDK Customization**](documents-user-interface-customization.md)****
+[**Document UI SDK Customization**](documents-user-interface-customization.md)
 
-****[**Document UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)
+[**Document UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)

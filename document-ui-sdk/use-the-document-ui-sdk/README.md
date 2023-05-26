@@ -49,7 +49,7 @@ Use the `FrameViewer` object of `terminusdb-documents-ui` to configure, customiz
 
 A common use of `terminusdb-documents-ui` is as follows:
 
-1. Set **** up a Webpack.
+1. Set up a Webpack.
 2. Use the [TerminusDB JavaScript client](../../guides/reference-guides/javascript-client-reference/woqlclient.md).
 3. Use the client function `getSchemaFrame` to retrieve frame data from a TerminusDB database.
 4. Set custom values and behaviour for `FrameViewer` parameters and functions as required.
@@ -255,10 +255,10 @@ return <FrameViewer
 
 The Document UI SDK reference guide:
 
-****[**Documents UI SDK data types**](documents-user-interface-data-types.md).
+[**Documents UI SDK data types**](documents-user-interface-data-types.md).
 
-****[**Documents UI SDK customization**](documents-user-interface-customization.md)**.**
+[**Documents UI SDK customization**](documents-user-interface-customization.md)**.**
 
-****[**Documents UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)**.**
+[**Documents UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)**.**
 
-****[**TerminusDB JavaScript client reference guide**](../../guides/reference-guides/javascript-client-reference/woqlclient.md)**.**
+[**TerminusDB JavaScript client reference guide**](../../guides/reference-guides/javascript-client-reference/woqlclient.md)**.**
