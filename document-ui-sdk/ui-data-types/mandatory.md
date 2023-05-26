@@ -111,7 +111,7 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 ```
 
 ### Edit & View
-Note - make sure the document is filled in View mode. The form will be in read only mode for View.
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
 ```javascript
   let data = {
