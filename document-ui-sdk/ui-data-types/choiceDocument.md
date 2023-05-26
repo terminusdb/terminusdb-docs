@@ -1,22 +1,17 @@
 # Choice Document
-This example shows how ``<FrameViewier/>`` apepars for a document ``Guy`` with choice document fields
-in Create/ Edit or View mode. 
-In this example ``Guy``  
-has a mandatory property ``favorite_group`` with choices of documents Art, Dance or Music
-an optional property ``"second_favorite_group"`` with choices Art, Dance or Music
-a set property ``member_of`` with the above same choices
-a list property ``attends_group_in_order`` with the above same choices in an ordered fashion
+This example shows how ``<FrameViewier/>`` appears for a document ``Guy`` with choice document fields in Create/ Edit or View mode. 
+
+In this example ``Guy`` has a mandatory property called ``favorite_group`` with the choice of documents called Art, Dance or Music, an optional ``"second_favorite_group"`` property also with the choice Art, Dance or Music, a set ``member_of`` property with the same choices, and a list ``attends_group_in_order`` property with the above same choices, in an ordered fashion.
 
 #### Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/Choice%20Documents)** to view ``<FrameViewier/>`` with Choice  properties in Create, edit or view mode.
+Take a look at the **[**Demo**](https://documents-ui-playground.terminusdb.com/Choice%20Documents)** to view ``<FrameViewier/>`` with Choice properties in Create, edit or view mode.
 
-
-Check the below Frames to see the definition of Art, Dance or Music which are other document classes
-
+The below Frames show the definition of Art, Dance or Music which are other document classes.
 
 #### Frame 
-Below Frame consists of a Guy document 
-```
+The below Frame consists of the `Guy` document 
+
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -166,7 +161,7 @@ Below Frame consists of a Guy document
 
 #### Create
 
-```
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
@@ -177,9 +172,9 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 ```
 
 #### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+Note - make sure the document is filled in View mode. The form will be in read only mode for View.
 
-```
+```javascript
 let data = {
 	"@id": "Guy/4489199036b83dbf79a6e7527a1594fbd416d11b9dde2f8a67fe6fa495dae433",
 	"@type": "Guy",
@@ -202,4 +197,3 @@ return <FrameViewer
   formData={data}
   type={"Guy"}/>
 ```
-
