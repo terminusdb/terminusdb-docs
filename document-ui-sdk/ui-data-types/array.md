@@ -4,12 +4,12 @@ in Create/ Edit or View mode. If a field is described as array it means the fiel
 value to it in an ordered fashion. The field can also be considered as an optional field meaning it can be empty or filled.
 
 #### Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/Array)** to view ``<FrameViewier/>`` with Array properties in Create, edit or view mode.
+Take a look at the **[**Demo**](https://documents-ui-playground.terminusdb.com/Array)** to view ``<FrameViewier/>`` with Array properties in Create, edit or view mode.
 
 
 #### Frame 
-Below Frame consists of an ArrayExamplePerson document
-```
+The below frame consists of an ArrayExamplePerson document
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -107,7 +107,7 @@ Below Frame consists of an ArrayExamplePerson document
 
 #### Create 
 
-```
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
@@ -118,9 +118,9 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 ```
 
 #### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+Note - make sure the filled document is provided in View mode. The form will be in read only mode for View.
 
-```
+```javascript
 let data = {
 	"@id": "ArrayExamplePerson/c92d269b0dce719299bf86fc19f2065937ec4ef82d8a2a53702867a326d6144b",
 	"@type": "OrderedPerson",
