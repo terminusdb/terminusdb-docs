@@ -31,7 +31,7 @@ The library has two main components [`TDBReactTable`](#tdbreacttable) and [`Adva
 The following options are supported on any column object you can pass to columns.
 | Properties |Description |
 |---|---|
-| `accessor:String|Function(originalRow, rowIndex) => any` | - Required - This string/function is used to build the data model for your column.
+| `accessor:String`| - Function(originalRow, rowIndex) => any  - Required - This string/function is used to build the data model for your column.
 | `id: String`| - Required - This is the unique ID for the column. It is used as a reference in things like sorting, grouping, filtering etc.
 |`Header: String`| - Optional, the column title, the id will used if this property is not provided
 |`width:Number`| - Optional |
@@ -91,7 +91,7 @@ useEffect(() => {
 
 return  <Container  className='my-5'>
 	<Alert><pre>{`Row selected id ${rowSelected}`}
-	You need to Impemant a logic to change the Hidden status</pre>	</Alert>
+	You need to Implement a logic to change the Hidden status</pre>	</Alert>
 
 <Alert><pre>{`YOU NEED TO IMPLEMENT A FILTER LOGIC, Table filter ${JSON.stringify(filter)}`}</pre></Alert>
 
@@ -148,6 +148,7 @@ The following options are supported on any files object that you can pass to fie
 |`defaultOperator:String`| - Optional - the default operator for the type
 |`fieldSettings`| - Optional - an Array of options for the valuetype ENUM
 |`subfields`| - Optional - a list of subfields for the type `!group` valuetype Object
+
 ```json
 {"myfield":{
 	"label":"myfiledLabel",
@@ -157,7 +158,8 @@ The following options are supported on any files object that you can pass to fie
 	}
 }
 ```
-[advancedSearchMatchType code](....)
+
+[advancedSearchMatchType code](https://github.com/terminusdb/terminusdb-dashboard/blob/main/packages/tdb-react-table/src/advancedSearchUtils.js)
 
 **You can use the following method to format the advanced search fields**
 
