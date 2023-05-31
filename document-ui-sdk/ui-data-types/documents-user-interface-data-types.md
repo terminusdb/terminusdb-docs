@@ -178,15 +178,6 @@ return <FrameViewer
     mode = {mode}/>
 ```
 
-**Screen-Print/s of the Output:**
-
-Click  `+Add nickName` to add a **set** of `nickName` properties.
-
-![](../../.gitbook/assets/documents-ui-data-types-02.png)
-
-Populate multiple `nickName`fields.
-
-![](../../.gitbook/assets/documents-ui-data-types-03.png)
 
 ### Document Class Set Example
 
@@ -228,13 +219,6 @@ return <FrameViewer
     mode = {mode}/>
 ```
 
-**Screen-Print/s of the Output:**
-
-![](../../.gitbook/assets/documents-ui-data-types-04.png)
-
-Populated with multiple `Jobs` shown below
-
-![](../../.gitbook/assets/documents-ui-data-types-05.png)
 
 ### Subdocument Class Set Example
 
@@ -281,18 +265,6 @@ return <FrameViewer
     type = {type}
     mode = {mode}/>
 ```
-
-**Screen-Print/s of the Output:**
-
-![](../../.gitbook/assets/documents-ui-data-types-06.png)
-
-Click the `lived` card to expand the subdocument.
-
-![](../../.gitbook/assets/documents-ui-data-types-07.png)
-
-Fill in the fields for the subdocument.
-
-![](../../.gitbook/assets/documents-ui-data-types-08.png)
 
 ## List Properties
 
@@ -344,13 +316,3 @@ return <FrameViewer
     type = {type}
     mode = {mode}/>
 ```
-
-**Screen-Print/s of the Output:**
-
-The form contains arrows to order entered values.
-
-![](../../.gitbook/assets/documents-ui-data-types-09.png)
-
-In `View` mode the form is displayed in the order it was created.
-
-![](../../.gitbook/assets/documents-ui-data-types-10.png)
