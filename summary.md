@@ -159,7 +159,7 @@
   * [UI SDK GeoJSON](document-ui-sdk/ui-geoJSON/documents-user-interface-geoJSON.md)
 * [Document UI Templates](guides/reference-guides/document-ui-templates/README.md)
   * [TDB React Table](guides/reference-guides/document-ui-templates/tdb-react-table.md)
-  * [Use TDB Documents](document-ui-sdk/document-ui-templates/use-tdb-documents.md)
+  * [Use TDB Documents](guides/reference-guides/document-ui-templates/useTDBDocuments.md)
   * [Use TDB GraphQL Query](guides/reference-guides/document-ui-templates/useTDBGraphqlQuery.md)
   * [UI Components](guides/reference-guides/document-ui-templates/components/README.md)
     * [Document Classes Summary](guides/reference-guides/document-ui-templates/components/DocumentClassesSummary.md)
