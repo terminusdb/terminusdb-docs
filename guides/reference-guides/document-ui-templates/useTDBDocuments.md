@@ -1,7 +1,7 @@
  # useTDBDocuments
 `useTDBDocuments` is the main hook to connect @terminusdb/terminusdb-documents-ui with the TerminusCMS server. To use it, pass it with an instance of [@terminusdb/terminusdb-client](https://github.com/terminusdb/terminusdb-client-js)
 
-## useTDBGraphqlQuery parameters
+## useTDBDocuments parameters
 `useTDBDocuments(woqlClient:WOQLClient) `
  - `woqlClient : WOQLClient` 
    - Required
