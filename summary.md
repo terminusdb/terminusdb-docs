@@ -144,9 +144,30 @@
 ## DOCUMENT UI SDK
 
 * [Use the Document UI SDK](document-ui-sdk/use-the-document-ui-sdk/README.md)
-  * [Documents UI SDK Data Types](document-ui-sdk/use-the-document-ui-sdk/documents-user-interface-data-types.md)
-  * [Documents UI SDK Customization](document-ui-sdk/use-the-document-ui-sdk/documents-user-interface-customization.md)
-  * [Documents UI SDK Maps](document-ui-sdk/use-the-document-ui-sdk/documents-user-interface-geographic-maps.md)
+  * [UI SDK Data Types](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/documents-user-interface-data-types.md)
+    * [Array](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/array.md)
+    * [Choice Document](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/choiceDocument.md)
+    * [Choice Sub Document](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/choiceSubDocument.md)
+    * [List](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/list.md)
+    * [Mandatory](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/mandatory.md)
+    * [One Of](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/oneOf.md)
+    * [Optional](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/optional.md)
+    * [Order By](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/order_by.md)
+    * [Render As](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/render_as.md)
+    * [Set](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/set.md)
+    * [SysJSON](document-ui-sdk/use-the-document-ui-sdk/ui-data-types/sysJSON.md)
+  * [UI SDK GeoJSON](document-ui-sdk/use-the-document-ui-sdk/ui-geoJSON/README.md)
+* [Document UI Templates](guides/reference-guides/document-ui-templates/README.md)
+    * [TDB React Table](guides/reference-guides/document-ui-templates/tdb-react-table.md)
+    * [Use TDB Documents](guides/reference-guides/document-ui-templates/usTDBDocuments.md)
+    * [Use TDB GraphQL Query](guides/reference-guides/document-ui-templates/useTDBGraphqlQuery.md)
+    * [UI Components](guides/reference-guides/document-ui-templates/components/README.md)
+      * [Document Classes Summary](guides/reference-guides/document-ui-templates/components/DocumentClassesSummary.md)
+      * [Documents GraphQL Table](guides/reference-guides/document-ui-templates/components/DocumentsGraphqlTable.md)
+      * [Edit Documents](guides/reference-guides/document-ui-templates/components/EditDocumentComponent.md)
+      * [List Documents](guides/reference-guides/document-ui-templates/components/ListDocumentsComponent.md)
+      * [New Documents](guides/reference-guides/document-ui-templates/components/NewDocumentComponent.md)
+      * [View Documents](guides/reference-guides/document-ui-templates/components/ViewDocumentComponent.md) 
 
 ## Explanations
 

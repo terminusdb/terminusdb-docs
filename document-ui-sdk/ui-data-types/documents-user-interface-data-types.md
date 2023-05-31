@@ -4,9 +4,12 @@ description: Understand the different data types to build data driven user inter
 
 # Documents UI SDK Data Types
 
-The TerminusDB documents User Interface generates forms representing the properties or fields of document/s in your schema. For data entry, each field is one of several data types and is mandatory by default. Schema definitions enable the linking of documents and the specification of sets.
+The TerminusDB documents user interface generates forms representing the properties or fields of document/s in your schema. For data entry, each field is one of several data types and is mandatory by default. Schema definitions enable the linking of documents and the specification of sets.
 
-[**To get started read the Document UI SDK how-to guide**](./)
+[**Click here to find how how to get started with the Document UI SDK**](./)
+
+## Demo 
+Take a look at the [**Document UI SDK Playground**](https://documents-ui-playground.terminusdb.com) to view the ``<FrameViewier/>`` demo in Create, edit or view mode.
 
 ## Data types
 
@@ -25,10 +28,15 @@ The table below lists the basic data types supported and their specifications.
 | Temporal      | `"xsd:dateTime"` | `"DOB": "xsd:dateTime"`                         |
 
 ### Data value optionality
+If a property in the Form is displayed with a (Required) tab, that means the property is mandatory & has to be filled in order to submit the form. To define a property as optional, use the `"@type": "Optional"` declaration meaning the property is optional.
 
-Form values are mandatory by default and corresponding field names are rendered with an asterisk. To define a property as optional, use the `"@type": "Optional"` declaration.
+A property can also be defined as an array in the following ways -
 
-### An example with all basic types
+`"@type": "Set"` - property can hold multiple values in an unordered fashion & can be optional
+
+`"@type": "List"` - property can hold multiple values in an ordered fashion & requires at least one entry
+
+### An example of all basic types
 
 **Enum**
 
@@ -81,9 +89,9 @@ return <FrameViewer
 
 ## Link Properties
 
-Link properties enable links to other document or subdocument classes and are displayed as a `Select` components.
+Link properties enable links to other document or subdocument classes and are displayed as `Select` components.
 
-### Link properties example
+### Link Properties Example
 
 The example below demonstrates:
 
@@ -133,17 +141,13 @@ return <FrameViewer
     mode = {mode}/>
 ```
 
-**Screen-print/s of the output:**
-
-![](../../.gitbook/assets/documents-ui-data-types-01.png)
-
 ## Set properties
 
 A set specifies an **unordered set** of values of a class or data type.
 
 ### Set property example
 
-In the example below, the document `Person` consists of several nicknames - property `"nickName"` of `"@type": "Set"`. A set consists of zero or multiple items.
+In the example below, the document `Person` consists of several nicknames - property `"nickName"` of `"@type": "Set"`. A set consists of zero, one or multiple items.
 
 ```javascript
 let frames = {
@@ -174,17 +178,8 @@ return <FrameViewer
     mode = {mode}/>
 ```
 
-**Screen-print/s of the output:**
 
-Click  `+Add nickName` to add a **set** of `nickName` properties.
-
-![](../../.gitbook/assets/documents-ui-data-types-02.png)
-
-Populate multiple `nickName`fields.
-
-![](../../.gitbook/assets/documents-ui-data-types-03.png)
-
-### Document class set example
+### Document Class Set Example
 
 In the example below, a `Person` has a property `works_as` defined as a set that links to the document `Job`, representing a person with multiple jobs.
 
@@ -224,15 +219,8 @@ return <FrameViewer
     mode = {mode}/>
 ```
 
-**Screen-print/s of the output:**
 
-![](../../.gitbook/assets/documents-ui-data-types-04.png)
-
-Populate multiple `Jobs` as shown below
-
-![](../../.gitbook/assets/documents-ui-data-types-05.png)
-
-### Subdocument class set example
+### Subdocument Class Set Example
 
 In the example below, a `Person` has a property `lived` defined as a set that links to the subdocument `Address`, representing a person's address history.
 
@@ -278,25 +266,13 @@ return <FrameViewer
     mode = {mode}/>
 ```
 
-**Screen-print/s of the output:**
-
-![](../../.gitbook/assets/documents-ui-data-types-06.png)
-
-Click the `lived` card to expand the subdocument.
-
-![](../../.gitbook/assets/documents-ui-data-types-07.png)
-
-Fill in the fields for the subdocument.
-
-![](../../.gitbook/assets/documents-ui-data-types-08.png)
-
-## List properties
+## List Properties
 
 A list specifies an **ordered collection** of values of a class or data type. An ordered collection means values are displayed in the order they are entered in the form.
 
 ### List property example
 
-In the example below, a `Person` has two properties `ordered_property` (a string data type) and `has_task` (a subdocument of type `"List"`.)
+In the example below, a `Person` has two properties, `ordered_property` (a string data type) and `has_task` (a subdocument of type `"List"`.)
 
 ```javascript
 let frames = {
@@ -340,21 +316,3 @@ return <FrameViewer
     type = {type}
     mode = {mode}/>
 ```
-
-**Screen-print/s of the output:**
-
-The form contains arrows to order entered values.
-
-![](../../.gitbook/assets/documents-ui-data-types-09.png)
-
-In `View` mode the form is displayed in the order it was created.
-
-![](../../.gitbook/assets/documents-ui-data-types-10.png)
-
-## Further Reading
-
-[**Get started with the Document UI SDK**](./)
-
-[**Document UI SDK Customization**](documents-user-interface-customization.md)
-
-[**Document UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)
