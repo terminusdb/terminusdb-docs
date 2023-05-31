@@ -255,10 +255,10 @@ return <FrameViewer
 
 The Document UI SDK reference guide:
 
-[**Documents UI SDK data types**](documents-user-interface-data-types.md).
+[**Documents UI SDK data types**](ui-sdk-data-types/).
 
-[**Documents UI SDK customization**](documents-user-interface-customization.md)**.**
+[**Documents UI SDK GeoJSON**](../ui-geoJSON/documents-user-interface-geoJSON.md)**.**
 
-[**Documents UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)**.**
+[**UI SDK Demo Playground**](https://documents-ui-playground.terminusdb.com/)**.**
 
 [**TerminusDB JavaScript client reference guide**](../../guides/reference-guides/javascript-client-reference/woqlclient.md)**.**

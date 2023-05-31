@@ -157,6 +157,8 @@
     * [Set](document-ui-sdk/ui-data-types/set.md)
     * [SysJSON](document-ui-sdk/ui-data-types/sysJSON.md)
   * [UI SDK GeoJSON](document-ui-sdk/ui-geoJSON/documents-user-interface-geoJSON.md)
+  * [UI SDK Playground](https://documents-ui-playground.terminusdb.com/)
+  * [GeoJSON Playground](https://documents-ui-playground-geojson.terminusdb.com/)
 * [Document UI Templates](guides/reference-guides/document-ui-templates/README.md)
   * [TDB React Table](guides/reference-guides/document-ui-templates/tdb-react-table.md)
   * [Use TDB Documents](guides/reference-guides/document-ui-templates/useTDBDocuments.md)
