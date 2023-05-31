@@ -2,8 +2,13 @@
 description: Understand how <FrameViewer/> can load geoJSON to display geographic data structures in create, edit or View Mode 
 ---
 
+## Demo 
+Click here **[**Playground**](https://documents-ui-playground-geojson.terminusdb.com/Feature)** to view ``<FrameViewier/>`` demo in Create, edit or view mode.
+
 ### GeoJSON schema 
 Below is the schema for loading geoJSON into a TerminusDB data product.
+
+
 
 ```
 [
@@ -476,7 +481,7 @@ The equivalent geoJSON frame which can be retrieved from ``getSchemaFrame()`` ca
 ```
 
 #### Demo 
-Click here **[**Demo**](https://documents-ui-geoJSON-playground.terminusdb.com/Feature)** to view ``<FrameViewier/>`` with geoJSON data.
+Click here **[**Demo**](https://documents-ui-playground-geojson.terminusdb.com/FeatureCollection)** to view ``<FrameViewier/>`` with geoJSON data.
 
 #### Example
 

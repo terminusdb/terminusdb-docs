@@ -9,7 +9,7 @@ The TerminusDB documents User Interface generates forms representing the propert
 [**To get started read the Document UI SDK how-to guide**](./)****
 
 ## Demo 
-Click here **[**Playground**](https://documents-ui-playground.terminusdb.com)** to view ``<FrameViewier/>`` demo in Create, edit or view mode.
+Click here **[**Playground**](https://documents-ui-playground.terminusdb.com/)** to view ``<FrameViewier/>`` demo in Create, edit or view mode.
 
 ## Data types
 
