@@ -1,14 +1,18 @@
 ---
-description: Understand how <FrameViewer/> can load geoJSON to display geographic data structures in Create, Edit or View Mode 
+description: >-
+  Understand how <FrameViewer/> can load geoJSON to display geographic data
+  structures in Create, Edit or View Mode
 ---
 
-## Demo 
-Click here **[**Playground**](https://documents-ui-playground-geojson.terminusdb.com/Feature)** to view ``<FrameViewier/>`` demo in Create, edit or view mode.
+# UI SDK GeoJSON
 
-### GeoJSON schema 
+#### Demo
+
+Click here [**Playground**](https://documents-ui-playground-geojson.terminusdb.com/Feature) to view `<FrameViewier/>` demo in Create, edit or view mode.
+
+### GeoJSON Schema
+
 Below is the schema for loading geoJSON into a TerminusDB data product.
-
-
 
 ```
 [
@@ -180,9 +184,9 @@ Below is the schema for loading geoJSON into a TerminusDB data product.
 ]
 ```
 
-##  GeoJSON Frames 
+### GeoJSON Frames
 
-The equivalent geoJSON frame that can be retrieved from ``getSchemaFrame()`` call
+The equivalent geoJSON frame that can be retrieved from `getSchemaFrame()` call
 
 ```json
 {
@@ -480,17 +484,13 @@ The equivalent geoJSON frame that can be retrieved from ``getSchemaFrame()`` cal
 }
 ```
 
-<<<<<<< HEAD
-#### Demo 
-Click here **[**Demo**](https://documents-ui-playground-geojson.terminusdb.com/FeatureCollection)** to view ``<FrameViewier/>`` with geoJSON data.
-=======
-## Demo 
-Take a look at the [**Demo Playground**](https://documents-ui-playground-geojson.terminusdb.com/) to view ``<FrameViewier/>`` with geoJSON data.
->>>>>>> 2fae9cb51a7cf619fa160fb4154f03dd8eed5c06
+### **Demo**
 
-## Example
+Take a look at the [**Demo Playground**](https://documents-ui-playground-geojson.terminusdb.com/) to view `<FrameViewier/>` with geoJSON data.
 
-This example shows how to load a `FeartureCollection` into ``<FrameViewier/>``. 
+### Example
+
+This example shows how to load a `FeartureCollection` into `<FrameViewier/>`.
 
 > Note: In View mode we display the map view of geoJSONs using react-leaflets under the hood.
 
@@ -503,9 +503,3 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     mode={"Create"}                         // mode 
     type={"FeartureCollection"}/>           // type of document 
 ```
-
-
-
-
-
-

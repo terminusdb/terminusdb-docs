@@ -1,7 +1,10 @@
-## ListDocumentsComponent
+# List Documents
+
+### ListDocumentsComponent
+
 The `ListDocumentsComponent` element allows you to visualize the documents inside the [TDBReactTable](../tdb-react-table.md) and query the documents using the advanced search component.
 
-## Installation
+### Installation
 
 Install the dependencies from npm
 
@@ -11,22 +14,24 @@ Install the dependencies from npm
  npm install @terminusdb/terminusdb-documents-ui-templates
 ```
 
-## Properties
-| Properties |Description  |
-|--|--|
-|type|The document type
-|gqlQuery|The graphql query|
-|apolloClient|An apollo client instance - [documentation](https://www.apollographql.com/docs/react/)|
-|tableConfig| An object with the table configuration to pass to the [TDBReactTable Component](../tdb-react-table.md)| 
-|advancedSearchConfig| An object with the advancedSearch configuration to pass to the [AdvancedSearch Component](../tdb-react-table.md)| 
-|onRowClick|A function that acts as a callback when the table row is clicked|
-|onViewButtonClick|A function that acts as a callback when the table row view button is clicked|
-|onEditButtonClick|A function that acts as a callback when the table row edit button is clicked|
-|onDeleteButtonClick|A function that acts as a callback when the table row delete button is clicked|
-|onCreateButtonClick|A function that acts as a callback when the create button is clicked|
-|showGraphqlTab|A boolean property that enables the GraphQL query view tab|
+### Properties
 
-## Example
+| Properties           | Description                                                                                                                       |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| type                 | The document type                                                                                                                 |
+| gqlQuery             | The graphql query                                                                                                                 |
+| apolloClient         | An apollo client instance - [documentation](https://www.apollographql.com/docs/react/)                                            |
+| tableConfig          | An object with the table configuration to pass to the [TDBReactTable Component](../tdb-react-table.md)                            |
+| advancedSearchConfig | An object with the advancedSearch configuration to pass to the  [Advanced Search Component](../tdb-react-table.md#advancedsearch) |
+| onRowClick           | A function that acts as a callback when the table row is clicked                                                                  |
+| onViewButtonClick    | A function that acts as a callback when the table row view button is clicked                                                      |
+| onEditButtonClick    | A function that acts as a callback when the table row edit button is clicked                                                      |
+| onDeleteButtonClick  | A function that acts as a callback when the table row delete button is clicked                                                    |
+| onCreateButtonClick  | A function that acts as a callback when the create button is clicked                                                              |
+| showGraphqlTab       | A boolean property that enables the GraphQL query view tab                                                                        |
+
+### Example
+
 ```js
 import React, {useEffect} from "react";
 import {gql} from "@apollo/client";
@@ -100,9 +105,8 @@ export const ListDocuments = ({type,apolloClient,tdbClient}) => {
 }
 ```
 
-View the ListDocumentsComponent integrated inside a dashboard here 
+View the ListDocumentsComponent integrated inside a dashboard here
 
 [ListDocumentsComponent full example JS code](https://github.com/terminusdb/dashboard-examples-sandbox/blob/main/terminusdb-documents-ui-template-example/dashboard-demo/src/pages/ListDocuments.js)
 
 [Code Sandbox](https://codesandbox.io/s/github/terminusdb/dashboard-examples-sandbox/tree/main/terminusdb-documents-ui-template-example/dashboard-demo)
-
