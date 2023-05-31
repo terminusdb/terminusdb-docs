@@ -1,17 +1,15 @@
 # oneOf Document
-This example shows how ``<FrameViewier/>`` apepars for a document ``Graduate`` with a one of field
-in Create/ Edit or View mode. The value of the @oneOf field is a set, so can be any number of documents all of which have mutually disjoint properties, but which can coexist.  
-In this example ``Graduate``  
-has a property ``scored`` with points to ``Grades``
-``Grades`` is defined as @oneOf which is an array of docs which can take any choices within. In this example
-``Grades`` can take any choices ``grade`` or ``marks`` or ``report``
+This example shows how ``<FrameViewier/>`` appears for a document called ``Graduate`` with a one of field in Create/ Edit and View mode. The value of the @oneOf field is a set, so can be any number of documents all of which have mutually disjointed properties, but which can coexist.
+
+In this example ``Graduate`` has a property ``scored`` that points to ``Grades``. ``Grades`` is defined as @oneOf that is an array of documents which can take any choice within. In this example, ``Grades`` can take any choice from ``grade``, ``marks`` or ``report``.
 
 ## Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/OneOfs)** to view ``<FrameViewier/>`` with OneOfs properties in Create, edit or view mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/OneOfs) to view the ``<FrameViewier/>`` with the OneOfs properties in Create, Edit and View mode.
 
-#### Frame 
-Below Frame consists of a Graduate document 
-```
+## Frame 
+This frame consists of a Graduate document -
+
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -92,10 +90,9 @@ Below Frame consists of a Graduate document
   }
 ```
 
+### Create
 
-#### Create
-
-```
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
@@ -105,10 +102,10 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     type={"Graduate"}/>           // type of document 
 ```
 
-#### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+### Edit & View
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
-```
+```javascript
 let data = {
 	"@id": "Graduate/efb4f89c825dd2c6404b5998b0d170b1df9a250103d7556833c3017e2107da23",
 	"@type": "Graduate",

@@ -1,14 +1,13 @@
 # List 
-This example shows how ``<FrameViewier/>`` apepars for a document ``OrderedPerson`` with list fields
-in Create/ Edit or View mode. If a field is described as List it means the field can have more than one 
-value to it in an ordered fashion. The field should have minimum one entry.
+This example shows how ``<FrameViewier/>`` appears for a document called ``OrderedPerson`` with list fields in Create/ Edit and View mode. If a field is described as a List it means the field can have one or more values and is ordered. The field must have at least one entry.
 
 ## Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/List)** to view ``<FrameViewier/>`` with list properties in Create, edit or view mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/List) to view the ``<FrameViewier/>`` with list properties in Create, Edit and View mode.
 
-#### Frame 
-Below Frame consists of an OrderedPerson document 
-```
+## Frame 
+The below frame consists of an `OrderedPerson` document 
+
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -104,9 +103,9 @@ Below Frame consists of an OrderedPerson document
 ```
 
 
-#### Create
+### Create
 
-```
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
@@ -116,10 +115,10 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     type={"OrderedPerson"}/>           // type of document 
 ```
 
-#### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+### Edit & View
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
-```
+```javascript
 let data = {
 	"@id": "OrderedPerson/c92d269b0dce719299bf86fc19f2065937ec4ef82d8a2a53702867a326d6144b",
 	"@type": "OrderedPerson",
@@ -159,4 +158,3 @@ return <FrameViewer
   formData={data}
   type={"OrderedPerson"}/>
 ```
-

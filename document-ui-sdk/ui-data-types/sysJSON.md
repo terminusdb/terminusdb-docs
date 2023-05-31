@@ -1,13 +1,15 @@
 # sys:JSON 
-This example shows how ``<FrameViewier/>`` apepars for a document ``ComputerStudent`` with sys:JSON field
-in Create/ Edit or View mode. ``ComputerStudent`` has a required mandatory field ``likes`` & a set field ``stores_as``
+This example shows how ``<FrameViewier/>`` appears for a document ``ComputerStudent`` with sys:JSON field in Create/ Edit or View mode. 
+
+``ComputerStudent`` has a required mandatory field ``likes`` and a set field ``stores_as``.
 
 ## Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/JSON)** to view ``<FrameViewier/>`` with sys:JSON properties in Create, edit or view mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/JSON) to view ``<FrameViewier/>`` with sys:JSON properties in Create, Edit or View mode.
 
-#### Frame 
-Below Frame consists of an ComputerStudent document 
-```
+## Frame 
+This frame consists of an ComputerStudent document 
+
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -30,7 +32,7 @@ Below Frame consists of an ComputerStudent document
 ```
 
 
-#### Create
+### Create
 
 ```
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
@@ -42,10 +44,10 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     type={"ComputerStudent"}/> // type of document 
 ```
 
-#### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+### Edit & View
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
-```
+```javascript
 let data = {
 	"@id": "ComputerStudent/431b3406a64d99714b57133019408a16a6a514755fb229aff01419b4b423cb62",
 	"@type": "ComputerStudent",

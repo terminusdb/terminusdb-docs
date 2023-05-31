@@ -1,14 +1,13 @@
 # Optional 
-This example shows how ``<FrameViewier/>`` apepars for a document ``Person_Optional`` with optional fields
-in Create/ Edit or View mode. 
-
+This example shows how ``<FrameViewier/>`` appears for a document ``Person_Optional`` with optional fields in Create/ Edit and View mode. 
  
 ## Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/Optional)** to view ``<FrameViewier/>`` with Optional properties in Create, edit or view mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/Optional)** to view ``<FrameViewier/>`` with Optional properties in Create, Edit and View mode.
 
-#### Frame 
-Below Frame consists of a Person document
-```
+## Frame 
+This frame consists of a `Person` document
+
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -128,7 +127,7 @@ Below Frame consists of a Person document
 
 #### Create
 
-```
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
@@ -139,9 +138,9 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 ```
 
 #### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
-```
+```javascript
   let data = {
     "@id": "Person_Optional/72a8a2778bafbc4290f59ca851e0307c6918f7205207d93ac1b2a1f796a94587",
     "@type": "Person_Optional",
@@ -169,4 +168,3 @@ Note - make sure filled document is provided in View mode. The form will be in r
       formData={data}
       type={"Person_Optional"}/>
 ```
-

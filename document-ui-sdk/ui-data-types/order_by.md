@@ -1,14 +1,16 @@
 # order_by using @metadata
-This example shows how ``<FrameViewier/>`` apepars for a document ``OrderByExample`` in Create/ Edit or View mode. Check out the Frame below to see ``@metadata`` with ``order_by`` tag included in frames which tell ``<FrameViewier/>`` to order fields  according to ``order_by`` array. Note there is a ``@metadata`` tag in 
-``SubBody`` class definition which also tells ``<FrameViewier/>`` to order the subdocument's internal fields in order included in ``@metadata`` ``order_by`` array
+This example shows how ``<FrameViewier/>`` appears for a document ``OrderByExample`` in Create/ Edit and View mode. 
+
+The Frame below to shows ``@metadata`` with  an ``order_by`` tag which tells ``<FrameViewier/>`` to order fields according to the ``order_by`` array. Note there is a ``@metadata`` tag in the ``SubBody`` class definition which also tells ``<FrameViewier/>`` to order the subdocument's internal fields in the order included in the ``@metadata`` ``order_by`` array.
 
 
 ## Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/Order%20By)** to view ``<FrameViewier/>`` with properties where order_by is defined in @metadata tag - in Create, edit or view mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/Order%20By) to view ``<FrameViewier/>`` with properties where order_by is defined in the `@metadata` tag - in Create, Edit and view mode.
 
-#### Frame 
-Below Frame consists of an OrderByExample document 
-```
+## Frame 
+This frame consists of an `OrderByExample` document 
+
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -52,9 +54,9 @@ Below Frame consists of an OrderByExample document
 ```
 
 
-#### Create
+### Create
 
-```
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
@@ -64,10 +66,10 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     type={"OrderByExample"}/> // type of document 
 ```
 
-#### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+### Edit & View
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
-```
+```javascript
 let data = {
 	"@id": "OrderByExample/431b3406a64d99714b57133019408a16a6a514755fb229aff01419b4b423cb62",
 	"@type": "OrderByExample",
@@ -90,4 +92,3 @@ return <FrameViewer
   formData={data}
   type={"OrderByExample"}/>
 ```
-

@@ -1,13 +1,13 @@
 # Mandatory 
-This example shows how ``<FrameViewier/>`` apepars for a document ``Person`` with mandatory fields
-in Create/ Edit or View mode. A required tag will appear against every mandatory fields.
+This example shows how ``<FrameViewier/>`` appears for a document called ``Person`` with mandatory fields in Create/ Edit and View mode. A required tag will appear against every mandatory field.
 
 ## Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/Mandatory)** to view ``<FrameViewier/>`` with mandatory properties in Create, edit or view mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/Mandatory)to view the ``<FrameViewier/>`` with mandatory properties in Create, Edit and View mode.
 
-#### Frame 
-Below Frame consists of a Person document with mandatory fields 
-```
+## Frame 
+The below frame consists of a `Person` document with mandatory fields - 
+
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -98,9 +98,9 @@ Below Frame consists of a Person document with mandatory fields
   ```
 
 
-#### Create
+### Create
 
-```
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
@@ -110,10 +110,10 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     type={"Person"}/>           // type of document 
 ```
 
-#### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+### Edit & View
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
-```
+```javascript
   let data = {
     "@id": "Person/72a8a2778bafbc4290f59ca851e0307c6918f7205207d93ac1b2a1f796a94587",
     "@type": "Person",
@@ -141,4 +141,3 @@ Note - make sure filled document is provided in View mode. The form will be in r
       formData={data}
       type={"Person"}/>
 ```
-

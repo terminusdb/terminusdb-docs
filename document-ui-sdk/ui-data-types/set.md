@@ -1,15 +1,14 @@
 # Set 
-This example shows how ``<FrameViewier/>`` apepars for a document ``UnorderedPerson`` with set fields
-in Create/ Edit or View mode. If a field is described as Set it means the field can have more than one 
-value to it in any unordered fashion. The field can also be considered as an optional field meaning it can be empty or filled.
+This example shows how ``<FrameViewier/>`` appears for a document ``UnorderedPerson`` with set fields in Create/ Edit or View mode. If a field is described as a Set it means the field can have more than one 
+value to it in any unordered fashion. The field can also be considered optional, meaning it can be empty.
 
 ## Demo 
-Clicke here **[**Demo**](https://documents-ui-playground.terminusdb.com/Set)** to view ``<FrameViewier/>`` with set properties in Create, edit or view mode.
+Take a look at the [**Demo Playground**](https://documents-ui-playground.terminusdb.com/Set) to view ``<FrameViewier/>`` with set properties in Create, Edit or View mode.
 
+## Frame 
+This frame consists of an `UnorderedPerson` document 
 
-#### Frame 
-Below Frame consists of an UnorderedPerson document 
-```
+```javascript
   let frame = {
     "@context": {
       "@base": "terminusdb:///data/",
@@ -109,9 +108,9 @@ Below Frame consists of an UnorderedPerson document
 ```
 
 
-#### Create
+### Create
 
-```
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
@@ -121,10 +120,10 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
     type={"UnorderedPerson"}/> // type of document 
 ```
 
-#### Edit & View
-Note - make sure filled document is provided in View mode. The form will be in read only mode for View.
+### Edit & View
+Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
-```
+```javascript
 let data = {
 	"@id": "UnorderedPerson/3ca7d7a9c64ca2bc8319d83bca14b71697528ebb8536024e3e1795cbd049acdf",
 	"@type": "UnorderedPerson",

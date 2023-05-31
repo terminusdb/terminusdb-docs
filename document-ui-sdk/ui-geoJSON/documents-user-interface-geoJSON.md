@@ -1,5 +1,5 @@
 ---
-description: Understand how <FrameViewer/> can load geoJSON to display geographic data structures in create, edit or View Mode 
+description: Understand how <FrameViewer/> can load geoJSON to display geographic data structures in Create, Edit or View Mode 
 ---
 
 ## Demo 
@@ -180,11 +180,11 @@ Below is the schema for loading geoJSON into a TerminusDB data product.
 ]
 ```
 
-###  GeoJSON Frames 
+##  GeoJSON Frames 
 
-The equivalent geoJSON frame which can be retrieved from ``getSchemaFrame()`` call
+The equivalent geoJSON frame that can be retrieved from ``getSchemaFrame()`` call
 
-```
+```json
 {
   "@context": {
     "@base": "terminusdb:///data/",
@@ -480,14 +480,21 @@ The equivalent geoJSON frame which can be retrieved from ``getSchemaFrame()`` ca
 }
 ```
 
+<<<<<<< HEAD
 #### Demo 
 Click here **[**Demo**](https://documents-ui-playground-geojson.terminusdb.com/FeatureCollection)** to view ``<FrameViewier/>`` with geoJSON data.
+=======
+## Demo 
+Take a look at the [**Demo Playground**](https://documents-ui-playground-geojson.terminusdb.com/) to view ``<FrameViewier/>`` with geoJSON data.
+>>>>>>> 2fae9cb51a7cf619fa160fb4154f03dd8eed5c06
 
-#### Example
+## Example
 
-This example shows how to load a FeartureCollection into ``<FrameViewier/>``. Note in View mode we display the map view of geoJSONs which uses react-leaflets under the hood.
+This example shows how to load a `FeartureCollection` into ``<FrameViewier/>``. 
 
-```
+> Note: In View mode we display the map view of geoJSONs using react-leaflets under the hood.
+
+```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 
   return <FrameViewer
