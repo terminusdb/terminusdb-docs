@@ -1,14 +1,15 @@
-# Array 
-This example shows how ``<FrameViewier/>`` apepars for a document ``ArrayExamplePerson`` with array fields
-in Create/ Edit or View mode. If a field is described as array it means the field can have more than one 
-value to it in an ordered fashion. The field can also be considered as an optional field meaning it can be empty or filled.
+# Array
 
-## Demo 
-Take a look at the **[**Demo**](https://documents-ui-playground.terminusdb.com/Array)** to view ``<FrameViewier/>`` with Array properties in Create, edit or view mode.
+This example shows how `<FrameViewier/>` appears for a document `ArrayExamplePerson` with array fields in Create/ Edit or View mode. If a field is described as an array it means the field can have more than one value to it in an ordered fashion. The field can also be considered as an optional field meaning it can be empty or filled.
 
+## Demo
 
-## Frame 
+Take a look at the [**Demo**](https://documents-ui-playground.terminusdb.com/Array) to view `<FrameViewier/>` with Array properties in Create, edit or view mode.
+
+## Frame
+
 The below frame consists of an ArrayExamplePerson document
+
 ```javascript
   let frame = {
     "@context": {
@@ -104,8 +105,7 @@ The below frame consists of an ArrayExamplePerson document
   }
 ```
 
-
-### Create 
+### Create
 
 ```javascript
 import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
@@ -118,6 +118,7 @@ import { FrameViewer } from '@terminusdb/terminusdb-documents-ui'
 ```
 
 ### Edit & View
+
 Note - make sure to provide document values for View mode. The form will be in read only mode for View.
 
 ```javascript
@@ -160,4 +161,3 @@ return <FrameViewer
   formData={data}
   type={"ArrayExamplePerson"}/>
 ```
-
