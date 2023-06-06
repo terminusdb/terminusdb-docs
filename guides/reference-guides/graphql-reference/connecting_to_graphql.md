@@ -34,17 +34,17 @@ For example, if you would like to connect to `admin/people` with the apollo clie
 npx apollo client:download-schema --endpoint=http://127.0.0.1:6363/api/graphql/admin/people schema.graphql --header='Authorization: Basic YWRtaW46cm9vdA=='
 ```
 
-### TerminusX: COMING SOON!
+### TerminusCMS
 
-In TerminusX you can use an API key with the following header.
+In TerminusCMS you can use an API key with the following header.
 
-For instance, with the apollo client, you can download your schema as follows:
+For instance, with the Apollo client, you can download your schema as follows:
 
 ```shell
 npx apollo client:download-schema --endpoint=https://cloud.terminusdb.com/TEAM/api/graphql/TEAM/people schema.graphql --header="Authorization: Token $(cat ~/my_token_file)"
 ```
 
-Where `my_token_file` contains an API token for TerminusX.
+Where `my_token_file` contains an API token for TerminusCMS.
 
 ## GraphiQL
 
