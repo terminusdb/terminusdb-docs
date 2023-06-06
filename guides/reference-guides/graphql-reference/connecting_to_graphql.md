@@ -12,7 +12,7 @@ For instance, with a data product named `admin/people`, and a locally installed 
 http://127.0.0.1:6363/api/graphql/admin/people
 ```
 
-For TerminusCMS (TO BE RELEASED) you can use the following URL:
+For TerminusCMS you can use the following URL:
 
 ```
 https://cloud.terminusdb.com/ORG/api/graphql/ORG/DATA_PRODUCT
@@ -45,6 +45,8 @@ npx apollo client:download-schema --endpoint=https://cloud.terminusdb.com/TEAM/a
 ```
 
 Where `my_token_file` contains an API token for TerminusCMS.
+
+See how to [connect with the Apollo Client](connect-with-apollo-client.md).
 
 ## GraphiQL
 
