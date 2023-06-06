@@ -10,10 +10,20 @@ description: How to use GraphQL with the Apollo Client with TerminusDB & Terminu
     npm install @apollo/client graphql
 ```
 
-2. To initialize ApolloClient and connect with TerminusDB/CMS import these dependencies
+2. Initialize ApolloClient and Connect with TerminusDB
+
+Import the required dependencies needed -
 
 ```javascript
 import { ApolloClient, InMemoryCache, ApolloProvider, gql,HttpLink,ApolloLink } from '@apollo/client';
+```
+
+Or
+
+```javascript
+const Apollo =  require( '@apollo/client');
+
+const { ApolloClient, InMemoryCache, concat, gql,HttpLink,ApolloLink } = Apollo
 ```
 
 Initialize ApolloClient by passing its constructor with a configuration object with the TerminusDB server endpoint, user credentials and cache fields.
@@ -55,7 +65,7 @@ const apolloClient = new ApolloClient({
     link: value,       
 });
 
-3. Query your database
+// Query your database
 
 apolloClient
   .query({
@@ -68,7 +78,8 @@ apolloClient
     }
     `,
   })
-  .then((result) => console.log(result));
+  .then((result) => console.log(result.data))
+  .catch(err =>console.log(err.message));
 ```
 
 ### Connect with TerminusCMS
@@ -80,12 +91,9 @@ const orgName = "myOrganizationName"
 const dbName = "myDBname"
 const myBranch = "main"
 
-const user = "admin"
-const password = "mypass"
-const userPassEnc = btoa(`${user}:${password}`)
+const myAPIToken = 'replaceYourToken'
 
 const terminusdbURL = `https://cloud.terminusdb.com/${orgName}/api/graphql/${orgName}/${dbName}/local/branch/${myBranch}/`
-const myAPIToken = 'replaceYourToken'
 
 const httpLink = new HttpLink({ uri: terminusdbURL });
 const authMiddleware = new ApolloLink((operation, forward) => {
@@ -109,7 +117,7 @@ const apolloClient = new ApolloClient({
     link: value,       
 });
 
-3. Query your database
+// Query your database
 
 apolloClient
   .query({
@@ -122,5 +130,6 @@ apolloClient
     }
     `,
   })
-  .then((result) => console.log(result));
+  .then((result) => console.log(result.data))
+  .catch(err =>console.log(err.message));
 ```
