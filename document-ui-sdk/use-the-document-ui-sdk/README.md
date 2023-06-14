@@ -97,13 +97,13 @@ try {
 
 Use three simple steps - input, configure, and output:
 
-[Step 1. Create frame data](..#step-1.-create-frame-data)
+[Step 1. Create frame data](./#step-1.-create-frame-data)
 
-[Step 2. Configure properties and functions](..#step-2.-configure-properties-and-functions)
+[Step 2. Configure properties and functions](./#step-2.-configure-properties-and-functions)
 
-[Step 3. Generate the form](..#step-3.-generate-the-form)
+[Step 3. Generate the form](./#step-3.-generate-the-form)
 
-**Step 1. Create frame data**
+#### **Step 1. Create frame data**
 
 For simplicity, all examples use the `frames` definition below consisting of one document `Person`.
 
@@ -131,7 +131,7 @@ let frames = {
 let type = "Person"
 ```
 
-**Step 2. Configure properties and functions**
+#### **Step 2. Configure properties and functions**
 
 The example below generates an empty frame for the attributes of the `Person` document. The callback function `handleSubmit` displays any user-entered form data. Add functionality to `handleSubmit` to suit your requirements.
 
@@ -147,7 +147,7 @@ function handleSubmit(data) {
 }
 ```
 
-**Step 3. Generate the form**
+#### **Step 3. Generate the form**
 
 Generate the form using the properties and functions defined in the previous step.
 
@@ -165,9 +165,9 @@ return <FrameViewer
 
 The `FrameViewer` object supports three modes:
 
-* [Create](..#create-mode)
-* [Edit](..#edit-mode)
-* [View](..#view-mode)
+* Create
+* Edit
+* View
 
 **Create mode**
 
