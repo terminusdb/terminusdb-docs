@@ -6,7 +6,7 @@
 [![Reddit](https://img.shields.io/reddit/subreddit-subscribers/TerminusDB?style=social)](https://www.reddit.com/r/TerminusDB/)
 [![Twitter](https://img.shields.io/twitter/follow/terminusdb?color=skyblue&label=Follow%20on%20Twitter&logo=twitter&style=flat)](https://twitter.com/TerminusDB)
 
-> [Documentation][terminusdb-docs] source files for TerminusDB and TerminusX.
+**TerminusDB documentation is now served through our [headless content management system TerminusCMS](https://terminusdb.com/terminuscms/) meaning this repository is out of date. For up-to-date documentation, visit our [documentation site][terminusdb-docs].**
 
 [**TerminusDB**][terminusdb] is an [open-source][terminusdb-repo] graph database
 and document store. It allows you to link JSON documents in a powerful knowledge
