@@ -37,6 +37,7 @@ This is the Ref schema. It gives a specification for storage of references, bran
 | `message` | `xsd:string` | The message associated with the commit. |
 | `identifier` | `xsd:string` | The identifier of the commit. |
 | `timestamp` | `xsd:decimal` | The timestamp for the commit. |
+| `metadata` | `sys:JSON` | User supplied metadata for commit as JSON. |
 | `parent` | `Commit` | The previous commit (if one exists). |
 | `migration` | `xsd:string` | The schema migration script (if one exists). |
 
