@@ -18,10 +18,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. The variable must be bound. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. The variable must be bound. |
-| `object` | `DataValue` | A data value or variable which is the target or object of the graph edge. The variable must be bound. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `DataValue` | A data value or variable which is the target or object of the graph edge. The variable must be bound. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. The variable must be bound. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. The variable must be bound. |
 
 ---
 
@@ -37,10 +37,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -56,10 +56,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -75,10 +75,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `DataValue` | A datatype or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `DataValue` | A datatype or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -94,10 +94,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -113,10 +113,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -198,8 +198,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `query` | `Query` | The query from which to obtain the count. |
 | `count` | `DataValue` | The count of the number of solutions. |
+| `query` | `Query` | The query from which to obtain the count. |
 
 ---
 
@@ -215,10 +215,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `DataValue` | A data type or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `DataValue` | A data type or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -233,8 +233,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
 | `data` | `xsd:anySimpleType` | An xsd data type value. |
-| `variable` | `xsd:string` | A variable. |
 | `list` | `DataValue` | A list of datavalues |
+| `variable` | `xsd:string` | A variable. |
 
 ---
 
@@ -266,10 +266,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. The variable must be bound. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. The variable must be bound. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. The variable must be bound. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. The variable must be bound. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. The variable must be bound. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. The variable must be bound. |
 
 ---
 
@@ -285,10 +285,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -304,10 +304,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -323,10 +323,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -356,8 +356,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `variables` | `xsd:string` | The variables which must be distinct from the query. |
 | `query` | `Query` | The query which will be run prior to selection. |
+| `variables` | `xsd:string` | The variables which must be distinct from the query. |
 
 ---
 
@@ -515,8 +515,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `query` | `Query` | The subquery with a new default graph. |
 | `graph` | `xsd:string` | The graph filter: 'schema' or 'instance' or '*'. |
+| `query` | `Query` | The subquery with a new default graph. |
 
 ---
 
@@ -559,10 +559,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `template` | `Value` | The template of elements in the result list. |
 | `group_by` | `xsd:string` | The variables which should be grouped into like solutions. |
-| `query` | `Query` | The subquery providing the solutions for the grouping. |
 | `grouped` | `Value` | The final list of templated solutions. |
+| `query` | `Query` | The subquery providing the solutions for the grouping. |
+| `template` | `Value` | The template of elements in the result list. |
 
 ---
 
@@ -596,9 +596,9 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
+| `else` | `Query` | A query which runs whenever test fails. |
 | `test` | `Query` | A query which will provide bindings for the then clause. |
 | `then` | `Query` | A query which will run for every solution of test with associated bindings. |
-| `else` | `Query` | A query which runs whenever test fails. |
 
 ---
 
@@ -655,8 +655,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `query` | `Query` | The subquery with a new default write graph. |
 | `graph` | `xsd:string` | The graph filter: schema or instance. |
+| `query` | `Query` | The subquery with a new default write graph. |
 
 ---
 
@@ -706,8 +706,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
 | `list` | `DataValue` | The list to concatenate. |
-| `separator` | `DataValue` | The separator between each joined string |
 | `result` | `DataValue` | The result string. |
+| `separator` | `DataValue` | The separator between each joined string |
 
 ---
 
@@ -723,8 +723,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `list` | `DataValue` | The list of which to find the length. |
 | `length` | `DataValue` | The length of the list. |
+| `list` | `DataValue` | The list of which to find the length. |
 
 ---
 
@@ -793,8 +793,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `query` | `Query` | The query to perform. |
 | `limit` | `xsd:nonNegativeInteger` | Maximum number of solutions. |
+| `query` | `Query` | The query to perform. |
 
 ---
 
@@ -810,10 +810,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `NodeValue` | A URI or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -829,8 +829,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `mixed` | `DataValue` | The mixed case string. |
 | `lower` | `DataValue` | The lower case string. |
+| `mixed` | `DataValue` | The mixed case string. |
 
 ---
 
@@ -846,8 +846,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `member` | `DataValue` | The element to test for membership or to supply as generated. |
 | `list` | `DataValue` | The list of elements against which to generate or test. |
+| `member` | `DataValue` | The element to test for membership or to supply as generated. |
 
 ---
 
@@ -998,8 +998,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `query` | `Query` | The base query giving the solutions to order. |
 | `ordering` | `OrderTemplate` | A specification of the ordering of solutions. |
+| `query` | `Query` | The base query giving the solutions to order. |
 
 ---
 
@@ -1030,10 +1030,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `string` | `DataValue` | The starting string. |
 | `char` | `DataValue` | The padding character. |
-| `times` | `DataValue` | The number of times to repeat the padding character. |
 | `result` | `DataValue` | The result of the padding as a string. |
+| `string` | `DataValue` | The starting string. |
+| `times` | `DataValue` | The number of times to repeat the padding character. |
 
 ---
 
@@ -1049,10 +1049,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `Value` | The starting node. |
-| `pattern` | `PathPattern` | The pattern which describes how to traverse edges. |
 | `object` | `Value` | The ending node. |
 | `path` | `Value` | An optional list of edges traversed. |
+| `pattern` | `PathPattern` | The pattern which describes how to traverse edges. |
+| `subject` | `Value` | The starting node. |
 
 ---
 
@@ -1156,8 +1156,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `times` | `PathPattern` | A path pattern. |
 | `from` | `xsd:nonNegativeInteger` | The number of times to start the repetition of the pattern |
+| `times` | `PathPattern` | A path pattern. |
 | `to` | `xsd:nonNegativeInteger` | The number of times after which to end the repeition of the pattern. |
 
 ---
@@ -1242,8 +1242,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
 | `pattern` | `DataValue` | The PCRE style pattern. |
-| `string` | `DataValue` | The string to test. |
 | `result` | `DataValue` | An optional result list of matches. |
+| `string` | `DataValue` | The string to test. |
 
 ---
 
@@ -1259,8 +1259,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `variables` | `xsd:string` | The variables to select from the query. |
 | `query` | `Query` | The query which will be run prior to selection. |
+| `variables` | `xsd:string` | The variables to select from the query. |
 
 ---
 
@@ -1301,9 +1301,9 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `string` | `DataValue` | The starting string. |
-| `pattern` | `DataValue` | The splitting pattern. |
 | `list` | `DataValue` | The result list of strings. |
+| `pattern` | `DataValue` | The splitting pattern. |
+| `string` | `DataValue` | The starting string. |
 
 ---
 
@@ -1336,11 +1336,11 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
+| `after` | `DataValue` | The count of characters after substring as an integer or variable. |
+| `before` | `DataValue` | The count of characters before substring as an integer or variable. |
+| `length` | `DataValue` | The length of the string as an integer or variable. |
 | `string` | `DataValue` | The super-string as data or variable. |
 | `substring` | `DataValue` | The super-string as data or variable. |
-| `length` | `DataValue` | The length of the string as an integer or variable. |
-| `before` | `DataValue` | The count of characters before substring as an integer or variable. |
-| `after` | `DataValue` | The count of characters after substring as an integer or variable. |
 
 ---
 
@@ -1407,8 +1407,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `untrimmed` | `DataValue` | The untrimmed string. |
 | `trimmed` | `DataValue` | The string to be trimmed. |
+| `untrimmed` | `DataValue` | The untrimmed string. |
 
 ---
 
@@ -1424,10 +1424,10 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
-| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
-| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
 | `graph` | `xsd:string` | An optional graph (either 'instance' or 'schema') |
+| `object` | `Value` | A URI, datatype or variable which is the target or object of the graph edge. |
+| `predicate` | `NodeValue` | A URI or variable which is the edge-label or predicate of the graph edge. |
+| `subject` | `NodeValue` | A URI or variable which is the source or subject of the graph edge. |
 
 ---
 
@@ -1443,8 +1443,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `resource` | `xsd:string` | The resource to obtain the edges from. |
 | `count` | `DataValue` | The count of edges. |
+| `resource` | `xsd:string` | The resource to obtain the edges from. |
 
 ---
 
@@ -1470,8 +1470,8 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `value` | `Value` | The value of which to obtain the type. |
 | `type` | `NodeValue` | The URI which that specifies the type. |
+| `value` | `Value` | The value of which to obtain the type. |
 
 ---
 
@@ -1487,9 +1487,9 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
-| `value` | `Value` | The value to cast. |
-| `type` | `NodeValue` | The type to which to cast. |
 | `result` | `Value` | The resulting value after cast. |
+| `type` | `NodeValue` | The type to which to cast. |
+| `value` | `Value` | The value to cast. |
 
 ---
 
@@ -1554,9 +1554,9 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 | Property | Range  | Desc |
 | -------- | ------ | ---- |
+| `data` | `xsd:anySimpleType` | An xsd data type value. |
+| `list` | `Value` | A list of datavalues |
 | `node` | `xsd:string` | A URI representing a resource. |
 | `variable` | `xsd:string` | A variable. |
-| `list` | `Value` | A list of datavalues |
-| `data` | `xsd:anySimpleType` | An xsd data type value. |
 
 ---
