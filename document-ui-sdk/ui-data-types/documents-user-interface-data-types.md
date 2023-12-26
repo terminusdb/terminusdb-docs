@@ -21,7 +21,7 @@ The table below lists the basic data types supported and their specifications.
 | ------------- | ---------------- | ----------------------------------------------- |
 | Boolean       | `"xsd:boolean"`  | `"active": "xsd:boolean"`                       |
 | Decimal       | `"xsd:decimal"`  | `"age": "xsd:decimal"`                          |
-| Enum          | `"@type: "Enum"` | `"@values": ["red", "blue", "yellow", "green"]` |
+| Enum          | `"@type": "Enum"` | `"@values": ["red", "blue", "yellow", "green"]` |
 | Integer       | `"xsd:integer"`  | `"age": "xsd:integer"`                          |
 | Decimal       | `"xsd:decimal"`  | `"age": "xsd:decimal"`                          |
 | String        | `"xsd:string"`   | `"name": "xsd:string"`                          |
