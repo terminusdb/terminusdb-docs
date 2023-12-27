@@ -17,15 +17,15 @@ Take a look at the [**Document UI SDK Playground**](https://documents-ui-playgro
 
 The table below lists the basic data types supported and their specifications.
 
-| **Data type** | **Declaration**  | **Example**                                     |
-| ------------- | ---------------- | ----------------------------------------------- |
-| Boolean       | `"xsd:boolean"`  | `"active": "xsd:boolean"`                       |
-| Decimal       | `"xsd:decimal"`  | `"age": "xsd:decimal"`                          |
-| Enum          | `"@type: "Enum"` | `"@values": ["red", "blue", "yellow", "green"]` |
-| Integer       | `"xsd:integer"`  | `"age": "xsd:integer"`                          |
-| Decimal       | `"xsd:decimal"`  | `"age": "xsd:decimal"`                          |
-| String        | `"xsd:string"`   | `"name": "xsd:string"`                          |
-| Temporal      | `"xsd:dateTime"` | `"DOB": "xsd:dateTime"`                         |
+| **Data type** | **Declaration**   | **Example**                                     |
+| ------------- | ----------------- | ----------------------------------------------- |
+| Boolean       | `"xsd:boolean"`   | `"active": "xsd:boolean"`                       |
+| Decimal       | `"xsd:decimal"`   | `"age": "xsd:decimal"`                          |
+| Enum          | `"@type": "Enum"` | `"@values": ["red", "blue", "yellow", "green"]` |
+| Integer       | `"xsd:integer"`   | `"age": "xsd:integer"`                          |
+| Decimal       | `"xsd:decimal"`   | `"age": "xsd:decimal"`                          |
+| String        | `"xsd:string"`    | `"name": "xsd:string"`                          |
+| Temporal      | `"xsd:dateTime"`  | `"DOB": "xsd:dateTime"`                         |
 
 ### Data value optionality
 If a property in the Form is displayed with a (Required) tab, that means the property is mandatory & has to be filled in order to submit the form. To define a property as optional, use the `"@type": "Optional"` declaration meaning the property is optional.

@@ -18,15 +18,15 @@ Take a look at the [**Document UI SDK Playground**](https://documents-ui-playgro
 
 The table below lists the basic data types supported and their specifications.
 
-| **Data type** | **Declaration**  | **Example**                                     |
-| ------------- | ---------------- | ----------------------------------------------- |
-| Boolean       | `"xsd:boolean"`  | `"active": "xsd:boolean"`                       |
-| Decimal       | `"xsd:decimal"`  | `"age": "xsd:decimal"`                          |
-| Enum          | `"@type: "Enum"` | `"@values": ["red", "blue", "yellow", "green"]` |
-| Integer       | `"xsd:integer"`  | `"age": "xsd:integer"`                          |
-| Decimal       | `"xsd:decimal"`  | `"age": "xsd:decimal"`                          |
-| String        | `"xsd:string"`   | `"name": "xsd:string"`                          |
-| Temporal      | `"xsd:dateTime"` | `"DOB": "xsd:dateTime"`                         |
+| **Data type** | **Declaration**   | **Example**                                     |
+| ------------- | ----------------- | ----------------------------------------------- |
+| Boolean       | `"xsd:boolean"`   | `"active": "xsd:boolean"`                       |
+| Decimal       | `"xsd:decimal"`   | `"age": "xsd:decimal"`                          |
+| Enum          | `"@type": "Enum"` | `"@values": ["red", "blue", "yellow", "green"]` |
+| Integer       | `"xsd:integer"`   | `"age": "xsd:integer"`                          |
+| Decimal       | `"xsd:decimal"`   | `"age": "xsd:decimal"`                          |
+| String        | `"xsd:string"`    | `"name": "xsd:string"`                          |
+| Temporal      | `"xsd:dateTime"`  | `"DOB": "xsd:dateTime"`                         |
 
 #### Data value optionality
 
