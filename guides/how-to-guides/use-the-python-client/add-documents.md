@@ -22,7 +22,7 @@ To insert multiple documents you can also invoke `insert_document`:
 ```python
 documents = [{ '@type' : 'Person', 'name' : "Jim" },
             { '@type' : 'Person', 'name' : "Jill" }]
-results = client.insert_document(document)
+results = client.insert_document(documents)
 ```
 
 ### Insert schema document(s)
