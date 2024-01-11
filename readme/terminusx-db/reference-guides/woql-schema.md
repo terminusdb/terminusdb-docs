@@ -1162,6 +1162,22 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 ---
 
+### Pin
+
+<p class="tdb-f">Keep a subquery from being optimized, 'Pin' it in the order given</p>
+
+**Class:** `Pin`
+
+**Super class:** `Query`
+
+**Properties:**
+
+| Property | Range  | Desc |
+| -------- | ------ | ---- |
+| `query` | `Query` | The query to pin |
+
+---
+
 ### Plus
 
 <p class="tdb-f">Add two numbers.</p>
