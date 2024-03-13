@@ -161,6 +161,23 @@ This is the WOQL schema. It gives a complete specification of the syntax of the 
 
 ---
 
+### Call
+
+<p class="tdb-f">A call of a named parametric query. Variables will be passed to the named query and bound according to the results. Named queries can be (mutually) recursive.</p>
+
+**Class:** `Call`
+
+**Super class:** `Query`
+
+**Properties:**
+
+| Property | Range  | Desc |
+| -------- | ------ | ---- |
+| `name` | `xsd:string` | The name of the NamedParametricQuery to be retrieved. |
+| `arguments` | `Value` | The arguments to use when binding formal parameters of the parametric query. |
+
+---
+
 ### Column
 
 <p class="tdb-f">Description pending.</p>
