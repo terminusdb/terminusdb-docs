@@ -47,6 +47,7 @@ the PUT document interface query parameters
 | Name | Type | Description |
 | --- | --- | --- |
 | [raw_json] | <code>boolean</code> | default is false, If true, the input documents  are treated as raw JSON, inserted as type sys:JSONDocument and are not subject  to schema restrictions. |
+| [create] | <code>boolean</code> | If true, the function will create  a new document if it doesn't exist. |
 | [graph_type] | <code>GraphType</code> | default is instance, instance|schema Used to switch between  getting documents from the instance or the schema graph. |
 
 
@@ -60,7 +61,7 @@ the DELETE document interface query parameters
 | --- | --- | --- |
 | [graph_type] | <code>GraphType</code> | default is instance, instance|schema Used to switch between  getting documents from the instance or the schema graph. |
 | id | <code>string</code> \| <code>array</code> | a single id or a list of ids to delete. |
-| [nuke] | <code>booleam</code> | default is false, If true, delete everything at this resource  location (dangerous!). |
+| [nuke] | <code>boolean</code> | default is false, If true, delete everything at this resource  location (dangerous!). |
 
 
 ## GraphRef
@@ -198,4 +199,27 @@ the manage capability command type
 ## RolesActions
 ##### RolesActions:  `  Array.<ACTIONS>`
 [ACTIONS.CREATE_DATABASE | ACTIONS.DELETE_DATABASE]
+
+
+## DocHistoryParams
+##### DocHistoryParams:  `  Object`
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| [start] | <code>number</code> | Index to start from, 0 is the default |
+| [count] | <code>number</code> | Amount of commits to show, 10 is the default |
+| [updated] | <code>boolean</code> | Last updated time (excludes history) false is the default |
+| [created] | <code>boolean</code> | Created date of object (excludes history) false is the default |
+
+
+## DiffObject
+##### DiffObject:  `  Object`
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| [Object] | <code>keep</code> | Index to start from, 0 is the default |
+| [number] | <code>start</code> | Amount of commits to show, 10 is the default |
+| [number] | <code>count</code> | Last updated time (excludes history) false is the default |
 
