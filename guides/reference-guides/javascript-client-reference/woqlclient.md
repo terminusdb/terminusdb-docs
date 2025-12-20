@@ -260,8 +260,7 @@ Fetch updates to a remote database to a remote repository with the local databas
 ##### ~~woqlClient.local\_auth~~
 ***Deprecated***
 
-Use [#localAuth](#localAuth) instead.
-
+Use [#localAuth](woqlclient.md#localauth) instead.
 
 ## remote_auth
 ##### ~~woqlClient.remote\_auth~~
@@ -269,6 +268,7 @@ Use [#localAuth](#localAuth) instead.
 
 Use [#remoteAuth](#remoteAuth) instead.
 
+Use [#remoteAuth](woqlclient.md#remoteauth) instead.
 
 ## setApiKey
 ##### woqlClient.setApiKey(accessToken)
@@ -800,14 +800,18 @@ Use [#getDocument](#getDocument) instead.
 **Returns**: <code>Promise</code> - A promise that returns the call response object or object having *result*
 and *dataVersion* object if ***getDataVersion*** parameter is true, or an Error if rejected.  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| query | <code>object</code> | the query template |
-| [params] | <code>typedef.DocParamsGet</code> | the get parameters |
-| [dbId] | <code>string</code> | the database id |
-| [branch] | <code>string</code> | the database branch |
-| [lastDataVersion] | <code>string</code> | the last data version tracking id. |
-| [getDataVersion] | <code>boolean</code> | If true the function will return object having result and dataVersion. |
+Use [#getDocument](woqlclient.md#getdocument) instead.
+
+**Returns**: `Promise` - A promise that returns the call response object or object having _result_ and _dataVersion_ object if _**getDataVersion**_ parameter is true, or an Error if rejected.
+
+| Param              | Type                   | Description                                                            |
+| ------------------ | ---------------------- | ---------------------------------------------------------------------- |
+| query              | `object`               | the query template                                                     |
+| \[params]          | `typedef.DocParamsGet` | the get parameters                                                     |
+| \[dbId]            | `string`               | the database id                                                        |
+| \[branch]          | `string`               | the database branch                                                    |
+| \[lastDataVersion] | `string`               | the last data version tracking id.                                     |
+| \[getDataVersion]  | `boolean`              | If true the function will return object having result and dataVersion. |
 
 **Example**  
 ```javascript

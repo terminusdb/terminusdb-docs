@@ -103,6 +103,12 @@ Query a database.
   * `-a`, `--author`=[value]:
   author to place on the commit
 
+  * `-o`, `--optimize`=[value]:
+  allow query reordering
+
+  * `-l`, `--library`=[value]:
+  Add a WOQL library to use for defined predicates.
+
   * `-j`, `--json`=[value]:
   return results as a json object
 
@@ -335,6 +341,12 @@ or two commits (path required).
   * `-s`, `--after_commit`, `--after-commit`=[value]:
   Commit or branch of the *after* document(s)
 
+  * `-n`, `--start`=[value]:
+  How many diff results to skip before returning (ignored if not comparing resources)
+
+  * `-l`, `--count`=[value]:
+  Number of results to return (ignored if not comparing resources)
+
 ### apply
 
 `terminusdb apply [Path] OPTIONS`
@@ -389,6 +401,9 @@ Get the log for a branch given by DB_SPEC.
   * `-c`, `--count`=[value]:
   Number of results to return
 
+  * `-v`, `--verbose`=[value]:
+  Give back additional information on commits
+
 ### history
 
 `terminusdb history DB_SPEC`
@@ -418,6 +433,9 @@ Get the history for a given document by id in DB_SPEC.
 
   * `-c`, `--count`=[value]:
   Number of results to return
+
+  * `-v`, `--verbose`=[value]:
+  give back schema update information
 
 ### reset
 
@@ -460,6 +478,27 @@ Reset the branch at BRANCH_SPEC to the COMMIT_OR_COMMIT_SPEC
 
   * `-d`, `--dry_run`=[value]:
   provide information about what would occur if the operations were performed
+
+### concat
+
+`terminusdb concat DB_SPEC`
+
+Concatenate any number of space-separated COMMIT_SPEC or BRANCH_SPEC (provided they are base layers only) passed on standard-input into a commit on DB_SPEC
+
+  * `--impersonate`=[value]:
+  impersonate a particular user
+
+  * `-h`, `--help`=[value]:
+  print help for the `concat` command
+
+  * `-a`, `--author`=[value]:
+  author to place on the commit
+
+  * `-m`, `--message`=[value]:
+  message to associate with the commit
+
+  * `-j`, `--json`=[value]:
+  Return a JSON readable commit identifier
 
 ### branch create
 
@@ -611,11 +650,20 @@ Insert documents.
   * `-g`, `--graph_type`, `--graph-type`=[value]:
   graph type (instance or schema)
 
+  * `-r`, `--require-migration`=[value]:
+  require an inferred migration (assuming this is a schema change)
+
+  * `-x`, `--allow-destructive-migration`=[value]:
+  allow inferred migration to be destructive (assuming this is a schema change)
+
   * `-d`, `--data`=[value]:
   document data
 
   * `-j`, `--raw_json`, `--raw-json`=[value]:
   inserts as raw json
+
+  * `-s`, `--merge_repeats`, `--merge-repeats`=[value]:
+  merge repeated documents into a single document record
 
   * `-f`, `--full_replace`, `--full-replace`=[value]:
   delete all previous documents and substitute these
@@ -641,8 +689,17 @@ Delete documents.
   * `-g`, `--graph_type`, `--graph-type`=[value]:
   graph type (instance or schema)
 
+  * `-r`, `--require-migration`=[value]:
+  require an inferred migration (assuming this is a schema change)
+
+  * `-x`, `--allow-destructive-migration`=[value]:
+  allow inferred migration to be destructive (assuming this is a schema change)
+
   * `-i`, `--id`=[value]:
   document id to delete
+
+  * `-t`, `--type`=[value]:
+  document type to delete
 
   * `-d`, `--data`=[value]:
   document data
@@ -670,6 +727,12 @@ Replace documents.
 
   * `-g`, `--graph_type`, `--graph-type`=[value]:
   graph type (instance or schema)
+
+  * `-r`, `--require-migration`=[value]:
+  require an inferred migration (assuming this is a schema change)
+
+  * `-x`, `--allow-destructive-migration`=[value]:
+  allow inferred migration to be destructive (assuming this is a schema change)
 
   * `-d`, `--data`=[value]:
   document data
@@ -712,6 +775,9 @@ Query documents.
 
   * `-i`, `--id`=[value]:
   id of document to retrieve
+
+  * `--ids`=[value]:
+  list of document ids to retrieve
 
   * `-t`, `--type`=[value]:
   type of document to retrieve

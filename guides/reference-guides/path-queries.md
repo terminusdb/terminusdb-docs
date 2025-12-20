@@ -12,18 +12,7 @@ For guidance on back-links and path queries using GraphQL visit the [GraphQL ref
 
 The syntax of path expressions, for expressions `A`, `B` and fields `F` is as follows:
 
-| Expression | Example         | Name     | Description                                                      |
-| ---------- | --------------- | -------- | ---------------------------------------------------------------- |
-| `A,B`      | `friend,name`   | Sequence | First follow expression `A`, then from that node expression `B`  |
-| `A\|B`     | `friend\|foe`   | Choice   | Follow expression `A` or expression `B`                          |
-| `F+`       | `friend+`       | Plus     | Follow the field `F` any number of times, but at least once      |
-| `F*`       | `friend*`       | Star     | Follow the field `F` any number of times, including zero         |
-| `.`        | `.`             | Any      | Follow any field `F` regardless of name                          |
-| `F`        | `friend`        | Field    | Follow the field `F`                                             |
-| `F{n,m}`   | `friend{1,3}`   | Times    | Follow the field `F` between `n` and `m` times                   |
-| `(A)`      | `(friend\|foe)` | Group    | Group the expression for inclusion in a larger expression        |
-| `F>`       | `friend>`       | Forward  | Follow the field `F` forward. This is the same as `F`.           |
-| `<F`       | `<friend`       | Backward | Follow the field `F` backward (who is linked to this node by `F` |
+<table><thead><tr><th width="166">Expression</th><th width="151">Example</th><th width="114">Name</th><th>Description</th></tr></thead><tbody><tr><td><code>A,B</code></td><td><code>friend,name</code></td><td>Sequence</td><td>First follow expression <code>A</code>, then from that node expression <code>B</code></td></tr><tr><td><code>A|B</code></td><td><code>friend|foe</code></td><td>Choice</td><td>Follow expression <code>A</code> or expression <code>B</code></td></tr><tr><td><code>F+</code></td><td><code>friend+</code></td><td>Plus</td><td>Follow the field <code>F</code> any number of times, but at least once</td></tr><tr><td><code>F*</code></td><td><code>friend*</code></td><td>Star</td><td>Follow the field <code>F</code> any number of times, including zero</td></tr><tr><td><code>.</code></td><td><code>.</code></td><td>Any</td><td>Follow any field <code>F</code> regardless of name</td></tr><tr><td><code>F</code></td><td><code>friend</code></td><td>Field</td><td>Follow the field <code>F</code></td></tr><tr><td><code>F{n,m}</code></td><td><code>friend{1,3}</code></td><td>Times</td><td>Follow the field <code>F</code> between <code>n</code> and <code>m</code> times</td></tr><tr><td><code>(A)</code></td><td><code>(friend|foe)</code></td><td>Group</td><td>Group the expression for inclusion in a larger expression</td></tr><tr><td><code>F></code></td><td><code>friend></code></td><td>Forward</td><td>Follow the field <code>F</code> forward. This is the same as <code>F</code>.</td></tr><tr><td><code>&#x3C;F</code></td><td><code>&#x3C;friend</code></td><td>Backward</td><td>Follow the field <code>F</code> backward (who is linked to this node by <code>F</code></td></tr></tbody></table>
 
 ### Example: Ancestry
 

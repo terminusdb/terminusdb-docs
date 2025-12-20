@@ -12,11 +12,7 @@ A list of prerequisite components depending on your operating system. Click on t
 
 **Table: Installation requirements**
 
-| Component                                     | Version  | Required to:                                                                                          | Linux | macOS | Windows |
-| --------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------- | :---: | :---: | :-----: |
-| [GitBash](https://git-scm.com/downloads)      | `Latest` | Use the `npm` CLI.                                                                                    |   ✔   |   ✔   |    ✔    |
-| [NodeJS](https://nodejs.org/en/)              | `0.10+`  | Use NodeJS event functionality. Version `0.10` or higher is required, version `8.1.4` is recommended. |   ✔   |   ✔   |    ✔    |
-| [npm](https://www.npmjs.com/package/download) | `Latest` | Use NodeJS package manager.                                                                           |   ✔   |   ✔   |    ✔    |
+<table><thead><tr><th width="143">Component</th><th width="111">Version</th><th>Required to:</th><th width="94" align="center">Linux</th><th width="107" align="center">macOS</th><th width="121" align="center">Windows</th></tr></thead><tbody><tr><td><a href="https://git-scm.com/downloads">GitBash</a></td><td><code>Latest</code></td><td>Use the <code>npm</code> CLI.</td><td align="center">✔</td><td align="center">✔</td><td align="center">✔</td></tr><tr><td><a href="https://nodejs.org/en/">NodeJS</a></td><td><code>0.10+</code></td><td>Use NodeJS event functionality. Version <code>0.10</code> or higher is required, version <code>8.1.4</code> is recommended.</td><td align="center">✔</td><td align="center">✔</td><td align="center">✔</td></tr><tr><td><a href="https://www.npmjs.com/package/download">npm</a></td><td><code>Latest</code></td><td>Use NodeJS package manager.</td><td align="center">✔</td><td align="center">✔</td><td align="center">✔</td></tr></tbody></table>
 
 ### Install steps
 

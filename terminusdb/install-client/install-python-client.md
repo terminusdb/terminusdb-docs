@@ -10,12 +10,7 @@ A list of prerequisite components depending on your operating system. Click on t
 
 **Installation requirements**
 
-| Required                                    | Version  | Required to:                                         | Linux | macOS | Windows |
-| ------------------------------------------- | -------- | ---------------------------------------------------- | :---: | :---: | :-----: |
-| [TerminusDB bootstrap](broken-reference)    | `Latest` | Install the TerminusDB server as a Docker container. |   ✔   |   ✔   |    ✔    |
-| [Git](https://git-scm.com/downloads)        | `Latest` | Build and install the Python client from source.     |   ✔   |   ✔   |    ✔    |
-| [GitBash](https://git-scm.com/downloads)    | `Latest` | Use the Python CLI (recommended shell.)              |   ✔   |   ✔   |    ✔    |
-| [Python](https://www.python.org/downloads/) | `3.6+`   | Use the TerminusDB Python client.                    |   ✔   |   ✔   |    ✔    |
+<table><thead><tr><th>Required</th><th width="109">Version</th><th>Required to:</th><th width="93" align="center">Linux</th><th width="103" align="center">macOS</th><th width="111" align="center">Windows</th></tr></thead><tbody><tr><td><a href="broken-reference">TerminusDB bootstrap</a></td><td><code>Latest</code></td><td>Install the TerminusDB server as a Docker container.</td><td align="center">✔</td><td align="center">✔</td><td align="center">✔</td></tr><tr><td><a href="https://git-scm.com/downloads">Git</a></td><td><code>Latest</code></td><td>Build and install the Python client from source.</td><td align="center">✔</td><td align="center">✔</td><td align="center">✔</td></tr><tr><td><a href="https://git-scm.com/downloads">GitBash</a></td><td><code>Latest</code></td><td>Use the Python CLI (recommended shell.)</td><td align="center">✔</td><td align="center">✔</td><td align="center">✔</td></tr><tr><td><a href="https://www.python.org/downloads/">Python</a></td><td><code>3.6+</code></td><td>Use the TerminusDB Python client.</td><td align="center">✔</td><td align="center">✔</td><td align="center">✔</td></tr></tbody></table>
 
 ### Install steps
 

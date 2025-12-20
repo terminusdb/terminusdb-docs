@@ -6,7 +6,7 @@ description: Details for customizing your user interfaces using the Document UI 
 
 Customize the look and feel of your forms with styles, widgets, and additional information.
 
-[**To get started read the Document UI SDK how-to guide**](./)****
+[**To get started read the Document UI SDK how-to guide**](./)
 
 ## The uiFrames parameter
 
@@ -70,24 +70,13 @@ The `uiFrames` parameter supports several customizable properties and widgets pr
 
 Summary of `ui:` prefixed properties.
 
-| **Property**    | **Description**                                 | **Example**                                                                                                 |
-| --------------- | ----------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| **description** | Add a field description.                        | `name: { "ui:description": "A person's first name" }`                                                       |
-| **placeholder** | Add instructions in a field.                    | `name: { "ui:placeholder": "Please enter your name" }`                                                      |
-| **order**       | Specify the order in which fields are rendered. | `"ui:order": ["name", "DOB", "email"]` or `"ui:order": ["name", "*"]` to ensure `"name"` is rendered first. |
+<table data-header-hidden><thead><tr><th width="173.33333333333331"></th><th width="234"></th><th></th></tr></thead><tbody><tr><td><strong>Property</strong></td><td><strong>Description</strong></td><td><strong>Example</strong></td></tr><tr><td><strong>description</strong></td><td>Add a field description.</td><td><code>name: { "ui:description": "A person's first name" }</code></td></tr><tr><td><strong>placeholder</strong></td><td>Add instructions in a field.</td><td><code>name: { "ui:placeholder": "Please enter your name" }</code></td></tr><tr><td><strong>order</strong></td><td>Specify the order in which fields are rendered.</td><td><code>"ui:order": ["name", "DOB", "email"]</code> or <code>"ui:order": ["name", "*"]</code> to ensure <code>"name"</code> is rendered first.</td></tr></tbody></table>
 
 ### ui:widget prefixed properties
 
 Summary of `ui:widget` prefixed properties.
 
-| **Property** | **Description**                                                                       | **Example**                             |
-| ------------ | ------------------------------------------------------------------------------------- | --------------------------------------- |
-| **hidden**   | Hide a field.                                                                         | `name: { "ui:widget": 'hidden' }`       |
-| **radio**    | Create a **Yes** (true) or **No** (false) radio button for a `boolean` field.         | `subscribe: { "ui:widget": 'radio' }`   |
-| **select**   | Create a **Yes** (true) or **No** (false) select/dropdown list for a `boolean` field. | `subscribe: { "ui:widget": 'select' }`  |
-| **textarea** | Create a text area for multiline input.                                               | `bio: { "ui:widget": 'textarea' }`      |
-| **password** | Create obfuscated password entry.                                                     | `password: { "ui:widget": 'password' }` |
-| **color**    | Create a color picker.                                                                | `color: { "ui:widget": 'color' }`       |
+<table data-header-hidden><thead><tr><th width="165"></th><th width="297.3333333333333"></th><th width="267.6666666666667"></th></tr></thead><tbody><tr><td><strong>Property</strong></td><td><strong>Description</strong></td><td><strong>Example</strong></td></tr><tr><td><strong>hidden</strong></td><td>Hide a field.</td><td><code>name: { "ui:widget": 'hidden' }</code></td></tr><tr><td><strong>radio</strong></td><td>Create a <strong>Yes</strong> (true) or <strong>No</strong> (false) radio button for a <code>boolean</code> field.</td><td><code>subscribe: { "ui:widget": 'radio' }</code></td></tr><tr><td><strong>select</strong></td><td>Create a <strong>Yes</strong> (true) or <strong>No</strong> (false) select/dropdown list for a <code>boolean</code> field.</td><td><code>subscribe: { "ui:widget": 'select' }</code></td></tr><tr><td><strong>textarea</strong></td><td>Create a text area for multiline input.</td><td><code>bio: { "ui:widget": 'textarea' }</code></td></tr><tr><td><strong>password</strong></td><td>Create obfuscated password entry.</td><td><code>password: { "ui:widget": 'password' }</code></td></tr><tr><td><strong>color</strong></td><td>Create a color picker.</td><td><code>color: { "ui:widget": 'color' }</code></td></tr></tbody></table>
 
 ### Boolean data types
 
@@ -259,8 +248,8 @@ return <FrameViewer
 
 ## Further Reading
 
-****[**Get started with the Document UI SDK**](./)****
+[**Get started with the Document UI SDK**](./)
 
-****[**Document UI SDK Data Types**](documents-user-interface-data-types.md)****
+[**Document UI SDK Data Types**](documents-user-interface-data-types.md)
 
-****[**Document UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)
+[**Document UI SDK Geographic Maps**](documents-user-interface-geographic-maps.md)

@@ -54,13 +54,7 @@ For relational and graph databases, an entity or element relationship model is a
 
 #### Table: The properties of elements
 
-| **Element**    | **Properties**                                     |
-| -------------- | -------------------------------------------------- |
-| `organization` | `name`, `desc`, `start-date`                       |
-| `team`         | `name`, `desc`, `start-date`                       |
-| `employee`     | `name`, `date-of-birth`, `start-date`, `role`      |
-| `project`      | `name`, `start-date`, `end-date`, `desc`, `status` |
-| `task`         | `name`, `start-date`, `end-date`, `desc`, `status` |
+<table data-header-hidden><thead><tr><th width="292"></th><th></th></tr></thead><tbody><tr><td><strong>Element</strong></td><td><strong>Properties</strong></td></tr><tr><td><code>organization</code></td><td><code>name</code>, <code>desc</code>, <code>start-date</code></td></tr><tr><td><code>team</code></td><td><code>name</code>, <code>desc</code>, <code>start-date</code></td></tr><tr><td><code>employee</code></td><td><code>name</code>, <code>date-of-birth</code>, <code>start-date</code>, <code>role</code></td></tr><tr><td><code>project</code></td><td><code>name</code>, <code>start-date</code>, <code>end-date</code>, <code>desc</code>, <code>status</code></td></tr><tr><td><code>task</code></td><td><code>name</code>, <code>start-date</code>, <code>end-date</code>, <code>desc</code>, <code>status</code></td></tr></tbody></table>
 
 ### Step 3. Identify the relationships between elements
 
@@ -70,10 +64,5 @@ For relational and graph databases, an entity or element relationship model is a
 
 #### Table: The relationship between elements
 
-| **Element**    | **Element** | **Relationship (phrasal verb)** | **Relationship description**            |
-| -------------- | ----------- | ------------------------------- | --------------------------------------- |
-| `organization` | `team`      | `consists-of`                   | An `organization` `consists of` `team`s |
-| `team`         | `project`   | `collaborates-on`               | A `team` `collaborates-on` `project`s   |
-| `project`      | `task`      | `divided-into`                  | A `project` is `divided-into` `task`s   |
-| `task`         | `employee`  | `assigned-to`                   | A `task` is `assigned-to` an `employee` |
+<table data-header-hidden><thead><tr><th width="176"></th><th width="129"></th><th width="195"></th><th></th></tr></thead><tbody><tr><td><strong>Element</strong></td><td><strong>Element</strong></td><td><strong>Relationship (phrasal verb)</strong></td><td><strong>Relationship description</strong></td></tr><tr><td><code>organization</code></td><td><code>team</code></td><td><code>consists-of</code></td><td>An <code>organization</code> <code>consists of</code> <code>team</code>s</td></tr><tr><td><code>team</code></td><td><code>project</code></td><td><code>collaborates-on</code></td><td>A <code>team</code> <code>collaborates-on</code> <code>project</code>s</td></tr><tr><td><code>project</code></td><td><code>task</code></td><td><code>divided-into</code></td><td>A <code>project</code> is <code>divided-into</code> <code>task</code>s</td></tr><tr><td><code>task</code></td><td><code>employee</code></td><td><code>assigned-to</code></td><td>A <code>task</code> is <code>assigned-to</code> an <code>employee</code></td></tr></tbody></table>
 

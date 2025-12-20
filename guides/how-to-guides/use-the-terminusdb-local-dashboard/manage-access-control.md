@@ -47,7 +47,7 @@ Admin can create a new personal team where they are the admin and can also creat
 ### **Creating a new team for the admin user**
 
 1. Click the button _**Create a new Team**_&#x20;
-2. The Create new team window will pop **** up&#x20;
+2. The Create new team window will pop up&#x20;
 3. Insert the team name in the input field (the team name must be unique)&#x20;
 4. Click _**Create Team button**_&#x20;
 5. You will be redirected to the Team home page
@@ -302,8 +302,8 @@ Now select _**dataproduct\_01**_, you will see that the user’s role is reader,
 
 ## Further Reading
 
-[**Access Control Documentation**](https://terminusdb.github.io/terminusdb-access-control/#/)****
+[**Access Control Documentation**](https://terminusdb.github.io/terminusdb-access-control/#/)
 
-****[**Access Control JavaScript Reference Guide**](../../reference-guides/javascript-client-reference/accesscontrol.md)****
+[**Access Control JavaScript Reference Guide**](../../reference-guides/javascript-client-reference/accesscontrol.md)
 
-****[**Manage Access Control with the JavaScript Client**](https://terminusdb.github.io/terminusdb-access-control/#/README)****
+[**Manage Access Control with the JavaScript Client**](https://terminusdb.github.io/terminusdb-access-control/#/README)

@@ -24,17 +24,7 @@ By default, this will return a stream of all documents to be found at this locat
 
 #### Parameters
 
-| parameter   | default | explanation                                                                                                                                       |
-| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| graph\_type |         | either instance or schema. Used to switch between getting documents from the instance or the schema graph.                                        |
-| type        |         | If given, only documents of the given type are returned.                                                                                          |
-| id          |         | If given, only the document with the given ID is returned.                                                                                        |
-| prefixed    | true    | If true (the default), return IRIs using a prefixed notation wherever possible. If false, full IRIs are used.                                     |
-| minimized   | false   | If true, forego pretty printing, and return the documents with very little whitespace. Each json document will be on its own line.                |
-| unfold      | true    | If true (the default), any subdocuments contained in the returned document are returned too. If false, these are referred to by their ID instead. |
-| skip        | 0       | How many results to skip                                                                                                                          |
-| count       |         | How many results to return. If this option is absent, all results are returned.                                                                   |
-| as\_list    | false   | If true, don't return a stream of json objects, but a list. This makes parsing the json easier in some environments.                              |
+<table><thead><tr><th width="158">parameter</th><th width="113.33333333333331">default</th><th>explanation</th></tr></thead><tbody><tr><td>graph_type</td><td></td><td>either instance or schema. Used to switch between getting documents from the instance or the schema graph.</td></tr><tr><td>type</td><td></td><td>If given, only documents of the given type are returned.</td></tr><tr><td>id</td><td></td><td>If given, only the document with the given ID is returned.</td></tr><tr><td>prefixed</td><td>true</td><td>If true (the default), return IRIs using a prefixed notation wherever possible. If false, full IRIs are used.</td></tr><tr><td>minimized</td><td>false</td><td>If true, forego pretty printing, and return the documents with very little whitespace. Each json document will be on its own line.</td></tr><tr><td>unfold</td><td>true</td><td>If true (the default), any subdocuments contained in the returned document are returned too. If false, these are referred to by their ID instead.</td></tr><tr><td>skip</td><td>0</td><td>How many results to skip</td></tr><tr><td>count</td><td></td><td>How many results to return. If this option is absent, all results are returned.</td></tr><tr><td>as_list</td><td>false</td><td>If true, don't return a stream of json objects, but a list. This makes parsing the json easier in some environments.</td></tr></tbody></table>
 
 #### Alternate query mechanism
 
@@ -68,13 +58,7 @@ The documents to be submitted are given as post data. Multiple documents can be 
 
 #### Parameters
 
-| parameter     | default  | explanation                                                                                                                                                                                            |
-| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| author        |          | The commit author                                                                                                                                                                                      |
-| message       |          | The commit message                                                                                                                                                                                     |
-| graph\_type   | instance | either instance or schema. Used to switch between submitting to the instance or the schema graph.                                                                                                      |
-| full\_replace | false    | If true, all existing documents are deleted before inserting the posted documents. This allows the full replacement of the contents of a database. This is especially useful for replacing the schema. |
-| raw\_json     | false    | If true, the input documents are treated as raw JSON , inserted as type `sys:JSONDocument` and are not subject to schema restrictions.                                                                 |
+<table><thead><tr><th width="159.33333333333331">parameter</th><th width="132">default</th><th>explanation</th></tr></thead><tbody><tr><td>author</td><td></td><td>The commit author</td></tr><tr><td>message</td><td></td><td>The commit message</td></tr><tr><td>graph_type</td><td>instance</td><td>either instance or schema. Used to switch between submitting to the instance or the schema graph.</td></tr><tr><td>full_replace</td><td>false</td><td>If true, all existing documents are deleted before inserting the posted documents. This allows the full replacement of the contents of a database. This is especially useful for replacing the schema.</td></tr><tr><td>raw_json</td><td>false</td><td>If true, the input documents are treated as raw JSON , inserted as type <code>sys:JSONDocument</code> and are not subject to schema restrictions.</td></tr></tbody></table>
 
 #### Result
 
@@ -94,13 +78,7 @@ The documents to be submitted are given as post data. Multiple documents can be 
 
 #### Parameters
 
-| parameter   | default  | explanation                                                                                                                                                             |
-| ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| author      |          | The commit author                                                                                                                                                       |
-| message     |          | The commit message                                                                                                                                                      |
-| graph\_type | instance | either instance or schema. Used to switch between submitting to the instance or the schema graph.                                                                       |
-| create      | false    | insert if the document was not already in the database.                                                                                                                 |
-| raw\_json   | false    | If true, the replaced documents are treated as raw JSON , they must be replacing a document of type `sys:JSONDocument` and they are not subject to schema restrictions. |
+<table><thead><tr><th width="163.33333333333331">parameter</th><th>default</th><th width="472.66666666666674">explanation</th></tr></thead><tbody><tr><td>author</td><td></td><td>The commit author</td></tr><tr><td>message</td><td></td><td>The commit message</td></tr><tr><td>graph_type</td><td>instance</td><td>either instance or schema. Used to switch between submitting to the instance or the schema graph.</td></tr><tr><td>create</td><td>false</td><td>insert if the document was not already in the database.</td></tr><tr><td>raw_json</td><td>false</td><td>If true, the replaced documents are treated as raw JSON , they must be replacing a document of type <code>sys:JSONDocument</code> and they are not subject to schema restrictions.</td></tr></tbody></table>
 
 ### Deleting documents
 
@@ -114,13 +92,7 @@ Where resource path is the usual strings like `admin/foo` for database foo, or `
 
 #### Parameters
 
-| parameter   | default  | explanation                                                                                                             |
-| ----------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| author      |          | The commit author                                                                                                       |
-| message     |          | The commit message                                                                                                      |
-| graph\_type | instance | either instance or schema. Used to switch between submitting to the instance or the schema graph.                       |
-| id          |          | If given, the document to delete. If not given, it is expected that the post data will contain a list of ids to delete. |
-| nuke        | false    | If true, delete everything at this resource location (dangerous!).                                                      |
+<table><thead><tr><th width="249.33333333333331">parameter</th><th width="119">default</th><th width="474.6666666666667">explanation</th></tr></thead><tbody><tr><td>author</td><td></td><td>The commit author</td></tr><tr><td>message</td><td></td><td>The commit message</td></tr><tr><td>graph_type</td><td>instance</td><td>either instance or schema. Used to switch between submitting to the instance or the schema graph.</td></tr><tr><td>id</td><td></td><td>If given, the document to delete. If not given, it is expected that the post data will contain a list of ids to delete.</td></tr><tr><td>nuke</td><td>false</td><td>If true, delete everything at this resource location (dangerous!).</td></tr></tbody></table>
 
 #### Specifying what documents to delete
 
@@ -288,4 +260,4 @@ The result of this POST request is either an updated branch with a successful ap
 
 ## Further Reading
 
-****[**Documents in a knowledge graph and how to use them**](../../explanations/documents.md).
+[**Documents in a knowledge graph and how to use them**](../../explanations/documents.md).

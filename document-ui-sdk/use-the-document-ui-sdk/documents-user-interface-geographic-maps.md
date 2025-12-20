@@ -10,10 +10,7 @@ Use the `FrameViewer` object of `terminusdb-documents-ui` to automatically gener
 
 ## FrameViewer and MapViewer objects
 
-| **Object**    | **Modes supported**                                                  | **Import**                                                        | **Details**                                                   |
-| ------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------- |
-| `FrameViewer` | <p><code>Create</code><br><code>Edit</code><br><code>View</code></p> | `import {FrameViewer} from '@terminusdb/terminusdb-documents-ui'` | [Generate forms and maps using FrameViewer](broken-reference) |
-| `MapViewer`   | `View`                                                               | `import {MapViewer} from '@terminusdb/terminusdb-documents-ui'`   | [Display maps using MapViewer](broken-reference)              |
+<table data-header-hidden><thead><tr><th width="163"></th><th width="124"></th><th width="257"></th><th></th></tr></thead><tbody><tr><td><strong>Object</strong></td><td><strong>Modes supported</strong></td><td><strong>Import</strong></td><td><strong>Details</strong></td></tr><tr><td><code>FrameViewer</code></td><td><code>Create</code><br><code>Edit</code><br><code>View</code></td><td><code>import {FrameViewer} from '@terminusdb/terminusdb-documents-ui'</code></td><td><a href="broken-reference">Generate forms and maps using FrameViewer</a></td></tr><tr><td><code>MapViewer</code></td><td><code>View</code></td><td><code>import {MapViewer} from '@terminusdb/terminusdb-documents-ui'</code></td><td><a href="broken-reference">Display maps using MapViewer</a></td></tr></tbody></table>
 
 ## Generate forms and maps using FrameViewer
 
@@ -274,8 +271,8 @@ return <MapViewer
 
 ## Further Reading
 
-****[**Get started with the Document UI SDK**](./)****
+[**Get started with the Document UI SDK**](./)
 
-****[**Document UI SDK Customization**](documents-user-interface-customization.md)****
+[**Document UI SDK Customization**](documents-user-interface-customization.md)
 
-****[**Document UI SDK Data Types**](documents-user-interface-data-types.md)****
+[**Document UI SDK Data Types**](documents-user-interface-data-types.md)
